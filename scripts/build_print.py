@@ -48,10 +48,15 @@ def extract_section(sid):
     h = f.read_text(encoding="utf-8")
     m = re.search(rf'<section id="{re.escape(sid)}"[^>]*>(?:.*?)</section>', h, flags=re.S)
     if not m:
-        # Fallback: from raw file body, between <main> tags
         m2 = re.search(r'<main[^>]*>(.*?)</main>', h, flags=re.S)
-        return m2.group(1) if m2 else f"<!-- {sid} not found -->"
-    return m.group(0)
+        body = m2.group(1) if m2 else f"<!-- {sid} not found -->"
+    else:
+        body = m.group(0)
+    # Path normalization: section files are in /sections/, print.html is at root
+    body = body.replace('href="../assets/', 'href="assets/')
+    body = body.replace('src="../assets/', 'src="assets/')
+    body = body.replace('href="../', 'href="')
+    return body
 
 # Build TOC
 toc_items = "\n".join(
@@ -74,7 +79,7 @@ print_html = f"""<!DOCTYPE html>
 <title>DreamCar Brand Book v3.0 · Версія для друку</title>
 <meta name="description" content="DreamCar Brand Book v3.0 — повна друкована версія всіх 29 розділів.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <style>
 /* Print-page specific */

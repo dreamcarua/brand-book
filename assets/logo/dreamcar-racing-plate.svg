@@ -7,8 +7,9 @@
       .plate-frame { fill: none; stroke: #FFFFFF; stroke-width: 6; }
       .plate-shadow { fill: #B8050F; }
       .ua-tag-bg { fill: #E30613; }
-      .ua-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 64px; fill: #FFFFFF; letter-spacing: 0.04em; }
-      .brand-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 92px; letter-spacing: 0.02em; }
+      .heavy { font-family: "Archivo Black", "Arial Black", "Helvetica Neue Black", "Liberation Sans Bold", "DejaVu Sans Bold", sans-serif; font-weight: 900; }
+      .ua-text { font-size: 64px; fill: #FFFFFF; letter-spacing: 0; }
+      .brand-text { font-size: 92px; letter-spacing: -0.02em; }
       .brand-white { fill: #FFFFFF; }
       .brand-red { fill: #E30613; }
     </style>
@@ -23,9 +24,15 @@
 
   <!-- UA tag (left) -->
   <rect class="ua-tag-bg" x="20" y="20" width="120" height="132" rx="2"/>
-  <text x="80" y="112" text-anchor="middle" class="ua-text">UA</text>
+  <text x="80" y="118" text-anchor="middle"
+        class="heavy ua-text"
+        textLength="80" lengthAdjust="spacingAndGlyphs">UA</text>
 
-  <!-- DREAMCAR text -->
-  <text x="170" y="118" class="brand-text brand-white">DREAM</text>
-  <text x="488" y="118" class="brand-text brand-red">CAR</text>
+  <!-- DREAMCAR text — fixed widths via textLength -->
+  <text x="170" y="120"
+        class="heavy brand-text brand-white"
+        textLength="310" lengthAdjust="spacingAndGlyphs">DREAM</text>
+  <text x="490" y="120"
+        class="heavy brand-text brand-red"
+        textLength="180" lengthAdjust="spacingAndGlyphs">CAR</text>
 </svg>

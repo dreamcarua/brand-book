@@ -5,7 +5,8 @@
     <style>
       .bg-circle { fill: #0A0A0A; }
       .frame { fill: none; stroke: #FFFFFF; stroke-width: 10; }
-      .dc-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 220px; letter-spacing: 0; }
+      .heavy { font-family: "Archivo Black", "Arial Black", "Helvetica Neue Black", "Liberation Sans Bold", "DejaVu Sans Bold", sans-serif; font-weight: 900; }
+      .dc-text { font-size: 220px; }
       .dc-d { fill: #FFFFFF; }
       .dc-c { fill: #E30613; }
     </style>
@@ -16,15 +17,14 @@
     </radialGradient>
   </defs>
 
-  <!-- red glow halo -->
   <circle cx="200" cy="200" r="200" fill="url(#glow)"/>
-  <!-- main dark circle -->
   <circle class="bg-circle" cx="200" cy="200" r="186"/>
-  <!-- white frame -->
   <circle class="frame" cx="200" cy="200" r="180"/>
 
-  <!-- DC monogram, vertically centered -->
-  <text x="200" y="278" text-anchor="middle" class="dc-text">
-    <tspan class="dc-d">D</tspan><tspan class="dc-c">C</tspan>
-  </text>
+  <text x="60" y="278"
+        class="heavy dc-text dc-d"
+        textLength="130" lengthAdjust="spacingAndGlyphs">D</text>
+  <text x="200" y="278"
+        class="heavy dc-text dc-c"
+        textLength="130" lengthAdjust="spacingAndGlyphs">C</text>
 </svg>
