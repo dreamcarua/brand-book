@@ -96,13 +96,13 @@ def build_racing_plate():
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="DreamCar Racing Plate">
   <title>DreamCar — клуб дій з вручення авто</title>
-  <!-- offset shadow -->
-  <rect x="14" y="14" width="{plate_w}" height="{plate_h}" rx="6" fill="#B8050F"/>
+  <!-- offset shadow (гострі кути) -->
+  <rect x="14" y="14" width="{plate_w}" height="{plate_h}" fill="#B8050F"/>
   <!-- main plate -->
-  <rect x="0" y="0" width="{plate_w}" height="{plate_h}" rx="6" fill="#0A0A0A"/>
-  <rect x="3" y="3" width="{plate_w-6}" height="{plate_h-6}" rx="4" fill="none" stroke="#FFFFFF" stroke-width="6"/>
-  <!-- UA tag (квадрат) -->
-  <rect x="{inner}" y="{inner}" width="{ua_size}" height="{ua_size}" rx="2" fill="#E30613"/>
+  <rect x="0" y="0" width="{plate_w}" height="{plate_h}" fill="#0A0A0A"/>
+  <rect x="3" y="3" width="{plate_w-6}" height="{plate_h-6}" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <!-- UA tag (квадрат, гострі кути) -->
+  <rect x="{inner}" y="{inner}" width="{ua_size}" height="{ua_size}" fill="#E30613"/>
   {chr(10).join("  " + p for p in ua_paths)}
   {chr(10).join("  " + p for p in dream_paths + car_paths)}
 </svg>
@@ -126,8 +126,11 @@ def build_avatar_circle():
     ua_text_x = ua_box_x + (ua_box_size - ua_text_w) / 2
     baseline_ua = ua_box_y + (ua_box_size + fs_ua * CAP/UPM) / 2
 
-    # === DC monogram у центрі ===
-    fs_dc = 168
+    # === DC monogram у центрі (~78% від внутрішнього диаметра) ===
+    inner_diameter = inner_radius * 2
+    target_dc = inner_diameter * 0.78
+    dc_text_units = LETTERS["D"][1] + LETTERS["C"][1]
+    fs_dc = target_dc / dc_text_units * UPM
     dc_w = text_width("DC", fs_dc)
     dc_x = cx - dc_w/2
     baseline_dc = cy + fs_dc * CAP/UPM / 2 + 6   # трошки нижче центру кола
@@ -156,7 +159,7 @@ def build_avatar_circle():
   <circle cx="{cx}" cy="{cy}" r="200" fill="url(#glow)"/>
   <circle cx="{cx}" cy="{cy}" r="190" fill="#0A0A0A"/>
   <circle cx="{cx}" cy="{cy}" r="{inner_radius}" fill="none" stroke="#FFFFFF" stroke-width="8"/>
-  <rect x="{ua_box_x}" y="{ua_box_y}" width="{ua_box_size}" height="{ua_box_size}" rx="3" fill="#E30613"/>
+  <rect x="{ua_box_x}" y="{ua_box_y}" width="{ua_box_size}" height="{ua_box_size}" fill="#E30613"/>
   {chr(10).join("  " + p for p in ua_paths)}
   {chr(10).join("  " + p for p in d_paths + c_paths)}
   {chr(10).join("  " + p for p in brand_paths)}
@@ -170,8 +173,8 @@ def build_avatar_mark():
     W = H = 400
     cx, cy = W/2, H/2
 
-    # Цілимось у ~62% від диаметра внутр. кола (360 px)
-    target = 360 * 0.62
+    # Цілимось у ~80% від диаметра внутр. кола (360 px) — як на сайті
+    target = 360 * 0.80
     dc_text_units = LETTERS["D"][1] + LETTERS["C"][1]
     fs_dc = target / dc_text_units * UPM
     dc_w = text_width("DC", fs_dc)

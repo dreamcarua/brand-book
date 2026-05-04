@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="DreamCar Racing Plate">
   <title>DreamCar — клуб дій з вручення авто</title>
-  <!-- offset shadow -->
-  <rect x="14" y="14" width="692" height="172" rx="6" fill="#B8050F"/>
+  <!-- offset shadow (гострі кути) -->
+  <rect x="14" y="14" width="692" height="172" fill="#B8050F"/>
   <!-- main plate -->
-  <rect x="0" y="0" width="692" height="172" rx="6" fill="#0A0A0A"/>
-  <rect x="3" y="3" width="686" height="166" rx="4" fill="none" stroke="#FFFFFF" stroke-width="6"/>
-  <!-- UA tag (квадрат) -->
-  <rect x="20" y="20" width="132" height="132" rx="2" fill="#E30613"/>
+  <rect x="0" y="0" width="692" height="172" fill="#0A0A0A"/>
+  <rect x="3" y="3" width="686" height="166" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <!-- UA tag (квадрат, гострі кути) -->
+  <rect x="20" y="20" width="132" height="132" fill="#E30613"/>
     <path transform="translate(45.08 103.48) scale(0.0508 -0.0508)" d="M417 -12Q253 -12 163.5 62.0Q74 136 74 277V688H295V280Q295 222 326.0 187.5Q357 153 416 153Q475 153 506.5 188.0Q538 223 538 280V688H759V277Q759 136 670.0 62.0Q581 -12 417 -12Z" fill="#FFFFFF"/>
   <path transform="translate(87.40 103.48) scale(0.0508 -0.0508)" d="M535 0 506 97H265L236 0H10L261 688H518L769 0ZM311 251H460L388 496H384Z" fill="#FFFFFF"/>
     <path transform="translate(178.08 112.28) scale(0.0764 -0.0764)" d="M733 344Q733 0 372 0H74V688H372Q733 688 733 344ZM295 165H368Q507 165 507 314V374Q507 523 368 523H295Z" fill="#FFFFFF"/>
