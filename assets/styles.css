@@ -2605,3 +2605,19 @@ body.has-sidebar { display: flex; min-height: 100vh; }
 .sidebar nav a .num {
   flex-shrink: 0;
 }
+
+/* === AVATAR A1 size-xs варіант (для favicon preview) === */
+.avatar-a1.size-xs {
+  width: 56px;
+  height: 56px;
+  border-width: 2px;
+}
+.avatar-a1.size-xs::before,
+.avatar-a1.size-xs::after { display: none !important; }
+.avatar-a1.size-xs .dc {
+  font-size: 26px;
+  letter-spacing: 0;
+}
+
+/* === FIX накладання у блоці МАСШТАБИ === */
+.logo-grid .card { overflow: hidden; }

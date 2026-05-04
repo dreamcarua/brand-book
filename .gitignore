@@ -23,6 +23,7 @@ yarn-error.log
 # Build artifacts
 dist/
 build/
+tmp-fonts/
 
 # Local
 *.local

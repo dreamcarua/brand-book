@@ -765,21 +765,21 @@
 
   <h3 class="s-subtitle">/// МАСШТАБИ — <span class="red">SIZES</span></h3>
   <p class="s-desc">
-    Мінімальні розміри для кожного контексту. Менше = логотип не читається.
+    Мінімальні розміри для кожного контексту. Менше = логотип не читається. У прев'ю всі логотипи показані в одному масштабі для порівняння — реальний розмір у проді відрізнятиметься згідно з ширинами в підписах карток.
   </p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
     <div class="card">
       <span class="label">/// XS · 16-32PX</span>
       <h4>FAVICON</h4>
-      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+      <div style="display:flex;justify-content:center;align-items:center;padding:24px 16px;background:var(--graphite);margin:12px 0;min-height:100px;overflow:hidden;">
         <div class="avatar-a1 size-xs"><div class="dc">D<span class="red">C</span></div></div>
       </div>
-      <p>Тільки кругла версія. UA-плашка та назва зникають.</p>
+      <p>Тільки кругла версія (DC monogram). UA-плашка та назва зникають.</p>
     </div>
     <div class="card">
       <span class="label">/// SM · 32-80PX</span>
       <h4>МОБ. НАВІГАЦІЯ</h4>
-      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+      <div style="display:flex;justify-content:center;align-items:center;padding:24px 16px;background:var(--graphite);margin:12px 0;min-height:100px;overflow:hidden;">
         <div class="racing-h size-sm">
           <div class="ua-tag">UA</div>
           <div class="text-block">DREAM<span class="red">CAR</span></div>
@@ -790,8 +790,8 @@
     <div class="card">
       <span class="label">/// MD · 80-200PX</span>
       <h4>DESKTOP HEADER</h4>
-      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
-        <div class="racing-h size-md">
+      <div style="display:flex;justify-content:center;align-items:center;padding:24px 16px;background:var(--graphite);margin:12px 0;min-height:100px;overflow:hidden;">
+        <div class="racing-h size-sm">
           <div class="ua-tag">UA</div>
           <div class="text-block">DREAM<span class="red">CAR</span></div>
         </div>
@@ -801,13 +801,13 @@
     <div class="card">
       <span class="label">/// LG · 200-500PX</span>
       <h4>ПОСТЕРИ · БІЛБОРДИ</h4>
-      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
-        <div class="racing-h">
+      <div style="display:flex;justify-content:center;align-items:center;padding:24px 16px;background:var(--graphite);margin:12px 0;min-height:100px;overflow:hidden;">
+        <div class="racing-h size-sm">
           <div class="ua-tag">UA</div>
           <div class="text-block">DREAM<span class="red">CAR</span></div>
         </div>
       </div>
-      <p>Постери, банери, презентації, печатна продукція.</p>
+      <p>Постери, банери, презентації, печатна продукція. У реальному форматі — від 200 px ширини.</p>
     </div>
   </div>
 
