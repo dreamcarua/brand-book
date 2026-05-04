@@ -2535,3 +2535,59 @@ body.has-sidebar { display: flex; min-height: 100vh; }
     size: A4;
   }
 }
+
+/* === SIDEBAR PDF GROUP === */
+.sidebar .group.pdf-group { margin-top: 8px; }
+.sidebar .group.pdf-group nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(227,6,19,0.08);
+  border-left: 2px solid var(--red);
+  color: var(--white);
+  font-weight: 700;
+}
+.sidebar .group.pdf-group nav a:hover {
+  background: rgba(227,6,19,0.18);
+  color: var(--white);
+}
+.sidebar .group.pdf-group nav a::before {
+  content: '⇩';
+  font-size: 16px;
+  line-height: 1;
+  color: var(--red);
+}
+.sidebar .group.pdf-group nav a .num { display: none; }
+
+/* === MOBILE BREADCRUMB + PDF BUTTON FIX === */
+@media (max-width: 900px) {
+  .section-bread {
+    padding: 14px 16px 0;
+    font-size: 10px;
+  }
+  .section-bread .print-btn {
+    margin-left: 0;
+    padding: 6px 12px;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+  /* Mobile topbar PDF button — additional always-visible access */
+  .topbar .topbar-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    margin-right: 8px;
+  }
+  .topbar .topbar-pdf::before { content: '⇩'; font-size: 12px; line-height: 1; }
+  .topbar .topbar-actions { display: flex; align-items: center; gap: 4px; }
+}
+@media (min-width: 901px) {
+  .topbar .topbar-pdf { display: none; }
+}
