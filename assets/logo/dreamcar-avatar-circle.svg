@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="DreamCar Avatar Circle Native">
+  <title>DreamCar — кругла аватарка з UA tag і DC monogram</title>
+  <defs>
+    <style>
+      .bg-circle { fill: #0A0A0A; }
+      .frame { fill: none; stroke: #FFFFFF; stroke-width: 8; }
+      .ua-tag-bg { fill: #E30613; }
+      .ua-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 36px; fill: #FFFFFF; letter-spacing: 0.04em; }
+      .dc-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 144px; letter-spacing: 0; }
+      .dc-d { fill: #FFFFFF; }
+      .dc-c { fill: #E30613; }
+      .brand-tag { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 22px; fill: #FFFFFF; letter-spacing: 0.18em; }
+    </style>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E30613" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#E30613" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#E30613" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- glow halo -->
+  <circle cx="200" cy="200" r="200" fill="url(#glow)"/>
+  <!-- main dark circle -->
+  <circle class="bg-circle" cx="200" cy="200" r="190"/>
+  <!-- white frame -->
+  <circle class="frame" cx="200" cy="200" r="184"/>
+
+  <!-- UA tag (top) -->
+  <rect class="ua-tag-bg" x="158" y="58" width="84" height="48" rx="3"/>
+  <text x="200" y="92" text-anchor="middle" class="ua-text">UA</text>
+
+  <!-- DC monogram (center) -->
+  <text x="200" y="240" text-anchor="middle" class="dc-text">
+    <tspan class="dc-d">D</tspan><tspan class="dc-c">C</tspan>
+  </text>
+
+  <!-- DREAMCAR (bottom) -->
+  <text x="200" y="320" text-anchor="middle" class="brand-tag">DREAMCAR</text>
+</svg>

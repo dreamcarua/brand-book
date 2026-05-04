@@ -1,0 +1,3400 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>DreamCar Brand Book v3.0 · Версія для друку</title>
+<meta name="description" content="DreamCar Brand Book v3.0 — повна друкована версія всіх 29 розділів.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+/* Print-page specific */
+.print-toolbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--black);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.print-toolbar .info {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--bone);
+}
+.print-toolbar .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.print-toolbar .btn-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  color: var(--bone);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+.print-toolbar .btn-link.primary { background: var(--red); color: var(--white); border-color: var(--red); }
+.print-toolbar .btn-link:hover { border-color: var(--red); color: var(--white); }
+
+.print-cover {
+  padding: 96px 32px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.print-cover .ver { font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 12px; letter-spacing: 0.3em; margin-bottom: 24px; }
+.print-cover h1 { font-family: 'Bebas Neue', sans-serif; font-size: 84px; line-height: 0.9; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
+.print-cover h1 .red { color: var(--red); }
+.print-cover .sub { font-size: 14px; color: var(--bone); margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.print-cover .meta { margin-top: 48px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
+
+.print-toc {
+  padding: 32px;
+  border-bottom: 1px solid var(--line);
+}
+.print-toc h2 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
+.print-toc ol { list-style: none; padding: 0; column-count: 2; column-gap: 32px; }
+.print-toc li { break-inside: avoid; margin-bottom: 6px; }
+.print-toc li a { color: var(--bone); text-decoration: none; font-size: 14px; line-height: 1.7; }
+.print-toc li a:hover { color: var(--white); }
+.print-toc .num { color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-right: 10px; letter-spacing: 0.16em; }
+
+@media (max-width: 700px) {
+  .print-toc ol { column-count: 1; }
+  .print-cover h1 { font-size: 56px; }
+}
+
+@media print {
+  .print-toolbar { display: none !important; }
+  .print-cover { background: var(--white) !important; color: var(--black) !important; min-height: 100vh; }
+  .print-cover h1 { color: var(--black) !important; }
+  .print-cover h1 .red { color: var(--red) !important; }
+  .print-toc { background: var(--white) !important; color: var(--black) !important; }
+  .print-toc h2 { color: var(--black) !important; }
+  .print-toc li a { color: var(--black) !important; }
+  section + section { page-break-before: always; break-before: page; }
+}
+</style>
+</head>
+<body style="background:#0A0A0A;color:#FFFFFF;">
+
+<div class="print-toolbar">
+  <span class="info">DREAMCAR · BRAND BOOK · V3.0 · ВЕРСІЯ ДЛЯ ДРУКУ</span>
+  <div class="actions">
+    <a href="index.html" class="btn-link">← НАЗАД У ВЕБ-ВЕРСІЮ</a>
+    <button class="btn-link primary" type="button" onclick="window.print()">ЗБЕРЕГТИ PDF / ДРУКУВАТИ</button>
+  </div>
+</div>
+
+<div class="print-cover">
+  <div class="ver">DREAMCAR · BRAND BOOK · V3.0</div>
+  <h1>МРІЯ.<br>ЗА ЦІНОЮ<br><span class="red">ЧАШКИ КАВИ.</span></h1>
+  <p class="sub">Повне керівництво з бренду DreamCar. Усі 29 розділів в одному документі для друку або експорту в PDF.</p>
+  <div class="meta">
+    [ОРГАНІЗАТОР] <br>
+    vg@dreamcar.ua · dreamcar.ua<br>
+    05.2026
+  </div>
+</div>
+
+<div class="print-toc">
+  <h2>ЗМІСТ</h2>
+  <ol><li><a href="#quickstart"><span class="num">00</span> Quick Start</a></li>
+<li><a href="#manifesto"><span class="num">01</span> Маніфест</a></li>
+<li><a href="#strategy"><span class="num">02</span> Стратегія</a></li>
+<li><a href="#personas"><span class="num">03</span> Аудиторія</a></li>
+<li><a href="#compete"><span class="num">04</span> Контекст ринку</a></li>
+<li><a href="#logo"><span class="num">05</span> Логотип</a></li>
+<li><a href="#avatar-mark"><span class="num">05B</span> Avatar Mark</a></li>
+<li><a href="#colors"><span class="num">06</span> Кольори</a></li>
+<li><a href="#typo"><span class="num">07</span> Типографіка</a></li>
+<li><a href="#spacing"><span class="num">08</span> Відступи і сітка</a></li>
+<li><a href="#elements"><span class="num">09</span> Візуальні елементи</a></li>
+<li><a href="#components"><span class="num">10</span> UI-компоненти</a></li>
+<li><a href="#motion"><span class="num">11</span> Анімації</a></li>
+<li><a href="#voice"><span class="num">12</span> Тон голосу</a></li>
+<li><a href="#legal-language"><span class="num">12B</span> Юридична мова</a></li>
+<li><a href="#content"><span class="num">13</span> Контент</a></li>
+<li><a href="#crisis"><span class="num">14</span> Кризові комунікації</a></li>
+<li><a href="#partners"><span class="num">15</span> Партнери</a></li>
+<li><a href="#trust"><span class="num">16</span> Довіра і доступність</a></li>
+<li><a href="#tokens"><span class="num">17</span> Design tokens</a></li>
+<li><a href="#apps"><span class="num">18</span> Asset Library</a></li>
+<li><a href="#audio"><span class="num">19</span> Аудіо-айдентика</a></li>
+<li><a href="#email"><span class="num">20</span> Email</a></li>
+<li><a href="#touchpoints"><span class="num">21</span> Точки контакту</a></li>
+<li><a href="#photo"><span class="num">22</span> Фото-режисура</a></li>
+<li><a href="#merch"><span class="num">23</span> Мерч</a></li>
+<li><a href="#empty"><span class="num">24</span> Empty states</a></li>
+<li><a href="#metrics"><span class="num">25</span> Метрики</a></li>
+<li><a href="#roadmap"><span class="num">26</span> Roadmap</a></li></ol>
+</div>
+
+<section id="quickstart" style="background: linear-gradient(135deg, rgba(227,6,19,0.08), transparent); border-bottom: 4px solid var(--red);">
+  <div class="s-num">/// ПІДРЯДНИКАМ — ЧИТАТИ ОБОВ'ЯЗКОВО</div>
+  <h2 class="s-title">QUICK <span class="red">START</span></h2>
+  <p class="s-desc">
+    Якщо у тебе 5 хвилин і одне завдання — читай тільки цю сторінку. Решта брендбука — для глибокого занурення.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 32px;">
+
+    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// 01 · ЛОГОТИП</div>
+      <div style="margin: 12px 0;">
+        <div class="racing-h size-sm">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+        Горизонталь — для всього де є місце. Кругла «DC» — для соцмереж і favicon. SVG-файли — у пакеті ассетів. <strong>НІКОЛИ</strong> не змінюй пропорції чи кольори.
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// 02 · КОЛЬОРИ</div>
+      <div style="display: flex; gap: 8px; margin: 12px 0;">
+        <div style="width: 40px; height: 40px; background: #0A0A0A; border: 1px solid var(--steel);"></div>
+        <div style="width: 40px; height: 40px; background: #E30613;"></div>
+        <div style="width: 40px; height: 40px; background: #FFFFFF;"></div>
+      </div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+        <strong style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">#0A0A0A · #E30613 · #FFFFFF</strong><br>
+        Пропорція 60/25/15. Червоний — акцент, не фон. Жодних інших кольорів у бренд-комунікації.
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// 03 · ШРИФТИ</div>
+      <div style="margin: 12px 0;">
+        <div style="font-family: 'Bebas Neue'; font-size: 28px; line-height: 1;">BEBAS NEUE</div>
+        <div style="font-family: 'Archivo Black'; font-size: 16px; margin-top: 6px;">ARCHIVO BLACK</div>
+        <div style="font-family: 'Manrope'; font-weight: 700; font-size: 14px; margin-top: 6px;">Manrope Bold</div>
+      </div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+        Усі шрифти безкоштовні через Google Fonts. <strong>НЕ замінюй</strong> на схожі (Oswald, Anton тощо).
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--success); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 12px;">/// 04 · 5 ДОЗВОЛЕНИХ ФРАЗ</div>
+      <ul style="list-style: none; font-size: 13px; line-height: 1.8;">
+        <li style="color: var(--white);">«Мрія за ціною чашки кави»</li>
+        <li style="color: var(--white);">«Бери. Дій. Виграй.»</li>
+        <li style="color: var(--white);">«17 авто вже знайшли власників»</li>
+        <li style="color: var(--white);">«Прямий ефір [дата] о [час]»</li>
+        <li style="color: var(--white);">«Твій токен активовано»</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--danger); color: var(--white); border-left: 3px solid var(--white); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.85;">/// 05 · 8 ЗАБОРОНЕНИХ ФРАЗ</div>
+      <ul style="list-style: none; font-size: 14px; line-height: 1.8; font-weight: 600;">
+        <li>«шанс» (у будь-якому контексті)</li>
+        <li>«гарантовано виграєш»</li>
+        <li>«інвестиція в надію»</li>
+        <li>«казино», «лотерея»</li>
+        <li>«останній шанс»</li>
+        <li>«ставка», «азарт»</li>
+        <li>«купи більше = більше шансів»</li>
+        <li>«100 токенів = майже перемога»</li>
+      </ul>
+      <p style="margin-top: 12px; font-size: 12px; opacity: 0.85; line-height: 1.5;">
+        Якщо побачив будь-яке з цих слів у тексті — це автоматичний редірект на переробку.
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// 06 · CTA · ЄДИНИЙ ФОРМАТ</div>
+      <div style="margin: 16px 0;">
+        <div style="background: var(--red); color: var(--white); padding: 12px 24px; border-radius: 999px; font-family: 'Archivo Black'; font-size: 13px; letter-spacing: 0.1em; display: inline-block;">ВЗЯТИ УЧАСТЬ →</div>
+      </div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+        Червона pill-кнопка, Archivo Black, стрілка справа. Тільки один CTA на сторінці/постері.
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--warning); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 12px;">/// 07 · ОБОВ'ЯЗКОВИЙ ДИСКЛЕЙМЕР</div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6; font-style: italic;">
+        «Промоакція триває з [дата] по [дата]. Організатор — [юридична особа з реквізитами в публічній оферті]. Повні правила участі — на dreamcar.ua»
+      </p>
+      <p style="font-size: 12px; color: var(--ash); margin-top: 8px;">
+        Маленьким шрифтом унизу макету. Юридично обов'язково для всієї реклами.
+      </p>
+    </div>
+
+    <div style="background: var(--coal); border-left: 3px solid var(--info); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--info); letter-spacing: 0.2em; margin-bottom: 12px;">/// 08 · ПОГОДЖЕННЯ ТА КОНТАКТ</div>
+      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+        <strong style="color: var(--white);">Дедлайн узгодження:</strong> мінімум 5 робочих днів до публікації.<br>
+        <strong style="color: var(--white);">Контакт:</strong> <span style="font-family: 'JetBrains Mono', monospace; color: #4ade80;">vg@dreamcar.ua</span><br>
+        <strong style="color: var(--white);">Ассети:</strong> Google Drive (TBD)
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding: 24px; background: var(--black); border: 2px solid var(--red); text-align: center;">
+    <p style="font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 0.05em; line-height: 1.2;">
+      ВСЕ ЯСНО? <span class="red">МОЖЕШ ПОЧИНАТИ.</span><br>
+      <span style="font-family: 'Manrope'; font-size: 13px; color: var(--bone); font-weight: 400; letter-spacing: 0;">Якщо щось не зрозуміло — глибше деталі в розділах 5-15 нижче.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="manifesto">
+  <div class="s-num">/// 01 — МАНІФЕСТ</div>
+  <h2 class="s-title">ХТО МИ <span class="red">ТАКІ</span></h2>
+  <p class="s-desc">
+    Перед тим як говорити про логотипи й кольори — зрозумій душу бренду.
+    Усе, що йде далі, виходить звідси. Маніфест — це не маркетинговий текст,
+    а компас. Якщо щось не б'ється з ним — викидаємо.
+  </p>
+  <div class="manifesto">
+    Ми не <span class="strike">лотерея</span>. Не <span class="strike">казино</span>. Не <span class="strike">розвага</span>.<br>
+    Ми — <span class="red">спільнота тих, хто діє</span>.<br>
+    Поки інші чекають "правильного моменту",<br>
+    наші учасники <span class="red">забирають ключі</span>.<br>
+    Кожен токен — це крок до того,<br>
+    щоб ти став наступним.
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="strategy">
+  <div class="s-num">/// 02 — БРЕНД-СТРАТЕГІЯ</div>
+  <h2 class="s-title">СТРАТЕГІЯ <span class="red">НА ОДНІЙ СТОРІНЦІ</span></h2>
+  <p class="s-desc">
+    Brand Strategy One-Pager. Усе, що потрібно знати кожному, хто працює з брендом —
+    від нового SMM-щика до CEO. Якщо ти можеш закрити цей розділ і переказати все своїми словами — стратегія працює.
+  </p>
+
+  <div class="strategy-grid">
+    <div class="strategy-cell featured">
+      <div class="label">/// МІСІЯ — ЧОМУ МИ ІСНУЄМО</div>
+      <div class="heading">ЗРОБИТИ МРІЮ ПРО АВТО<br><span class="red">ДОСЯЖНОЮ.</span></div>
+      <div class="body">
+        Ми перетворюємо мрію на продукт за ціною кави. Без кредитів, без років збирання, без брехні — за справжньою, відкритою механікою.
+      </div>
+    </div>
+
+    <div class="strategy-cell">
+      <div class="label">/// БАЧЕННЯ — КУДИ ЙДЕМО</div>
+      <div class="heading">КОЖЕН 1000-Й УКРАЇНЕЦЬ —<br>ВЛАСНИК <span class="red">DREAMCAR.</span></div>
+      <div class="body">
+        До 2030 року стати клубом, у якому щомісяця хтось забирає ключі. Розширення в Польщу та Чехію.
+      </div>
+    </div>
+
+    <div class="strategy-cell">
+      <div class="label">/// ЦІННОСТІ — ЯК МИ ДІЄМО</div>
+      <ul>
+        <li><strong>ЧЕСНІСТЬ</strong> — ефір, документи, прозорість</li>
+        <li><strong>ДРАЙВ</strong> — енергія дії, не пасив</li>
+        <li><strong>ДОСЯЖНІСТЬ</strong> — ціна, мова, формат</li>
+        <li><strong>СПІЛЬНОТА</strong> — переможці = клуб</li>
+      </ul>
+    </div>
+
+    <div class="strategy-cell">
+      <div class="label">/// УТП — УНІКАЛЬНА ТОРГОВА ПРОПОЗИЦІЯ</div>
+      <div class="heading">АВТОМОБІЛЬ МРІЇ<br>ЗА ЦІНОЮ <span class="red">ЧАШКИ КАВИ.</span></div>
+      <div class="body">
+        За 249 ₴ ти отримуєш доступ до акції та номер участі. 17 реальних людей за 10 років забрали ключі — підтверджено документами та прямим ефіром.
+      </div>
+    </div>
+
+    <div class="strategy-cell">
+      <div class="label">/// TAGLINE — ОСНОВНЕ ГАСЛО</div>
+      <div class="heading">МРІЯ ЗА ЦІНОЮ<br><span class="red">ЧАШКИ КАВИ.</span></div>
+      <div class="body">
+        Це наша головна фраза. Не змінюємо, не перевигадуємо. Альтернативи для контекстів:
+        «Бери. Дій. Виграй.» (CTA) · «Ти — наступний.» (story) · «Авто, ефір, ключі.» (legal/paid).
+      </div>
+    </div>
+
+    <div class="strategy-cell">
+      <div class="label">/// АРХЕТИП БРЕНДУ</div>
+      <div class="heading"><span class="red">ЧЕЛЕНДЖЕР</span> +<br>МАГ ВРУЧЕННЯ</div>
+      <div class="body">
+        Челенджер — кидаємо виклик «правильному» шляху до мрії (іпотека, кредит, роки збирання). Маг — момент вручення ключів у прямому ефірі перетворює буденність на подію. Революційно, але дисципліновано.
+      </div>
+    </div>
+  </div>
+
+  <span class="s-eyebrow">/// БРЕНД-ПІРАМІДА — ВІД ФУНКЦІЇ ДО СУТНОСТІ</span>
+  <div class="pyramid">
+    <div class="pyramid-level">
+      <div class="layer">/// СУТНІСТЬ</div>
+      <div class="value">ЗУХВАЛІ МРІЇ</div>
+      <div class="desc">Мрії в дії — без чекання</div>
+    </div>
+    <div class="pyramid-level">
+      <div class="layer">/// ХАРАКТЕР</div>
+      <div class="value">ЗУХВАЛИЙ · ЧЕСНИЙ · ДРАЙВОВИЙ</div>
+    </div>
+    <div class="pyramid-level">
+      <div class="layer">/// ЕМОЦІЙНА ВИГОДА</div>
+      <div class="value">АДРЕНАЛІН · НАДІЯ · ПРИНАЛЕЖНІСТЬ</div>
+    </div>
+    <div class="pyramid-level">
+      <div class="layer">/// ФУНКЦІОНАЛЬНА ВИГОДА</div>
+      <div class="value">АВТО ЗА 249 ₴ + ПРОЗОРИЙ ЕФІР</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="personas">
+  <div class="s-num">/// 03 — ПОРТРЕТИ АУДИТОРІЇ</div>
+  <h2 class="s-title">ДЛЯ <span class="red">КОГО</span> МИ</h2>
+  <p class="s-desc">
+    Аудиторія описується не за демографією (вік, місто, дохід), а за <strong style="color: var(--white);">поведінкою і тригерами</strong>. Демографія об'єднує — поведінка розділяє: 28-річний хлопець з тим самим доходом, що в Івана, може ненавидіти автомобілі і витрачати все на ігри. Тому для кожного портрета — не «де живе», а <strong style="color: var(--white);">навіщо зайшов у соцмережу</strong> і <strong style="color: var(--white);">що штовхає на кнопку «оплатити»</strong>.
+  </p>
+
+  <div class="persona-grid">
+
+    <div class="persona">
+      <div class="persona-head">
+        <div class="avatar">IT</div>
+        <div class="name">Іван (IT)</div>
+        <div class="age">СТАБІЛЬНИЙ ДОХІД · НЕ ХОЧЕ КРЕДИТУ</div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-section">
+          <div class="label">/// СИТУАЦІЯ</div>
+          <p>Заробляє стабільно вище середнього. Хоче кращу машину, але не готовий заморозити велику суму у пасиві або на 5–7 років влізти в кредит. Логіка: «гроші мають працювати, а не стояти на парковці».</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div>
+          <p>Здебільшого щоб <strong>відключитися</strong> після роботи: Reels, огляди техніки, авто-тести.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div>
+          <ul>
+            <li>Подивився YouTube-огляд тачки мрії</li>
+            <li>Зайшла зарплата</li>
+            <li>Колега з'явився на новій машині</li>
+            <li>Реклама зловила у правильному настрої (вечір п'ятниці)</li>
+          </ul>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЩО РУХАЄ</div>
+          <p>Драйв без фінансового рабства. Раціональний шлях до мрії, де ризик чітко обмежений сумою токена.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЯК ВПЛИВАТИ</div>
+          <ul>
+            <li>Цифри і порівняння: «249 ₴ vs 3 роки кредиту»</li>
+            <li>Прозорість: документи, ЄДРПОУ, ефір</li>
+            <li>Соцдоказ: реальні переможці з близького середовища</li>
+          </ul>
+        </div>
+        <blockquote class="persona-quote">«Усе чесно — і ризик обмежений 249 ₴. Чому ні.»</blockquote>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-head">
+        <div class="avatar">SMB</div>
+        <div class="name">Микола (СМБ-власник)</div>
+        <div class="age">СВОЯ СПРАВА · СІМ'Я · ПРАГМАТИК</div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-section">
+          <div class="label">/// СИТУАЦІЯ</div>
+          <p>Має невеликий бізнес (СТО, магазин, сервіс). Сім'я: дружина + діти. Авто старше 7 років, потрібен апгрейд для родини. Великі сімейні витрати: садок, ремонт, відпустка.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div>
+          <p>Здебільшого щоб <strong>вирішити проблему</strong>: знайти запчастину, підрядника, рекламу. Менше для розваг — більше для роботи.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div>
+          <ul>
+            <li>Чергова поломка старого авто (раптовий рахунок ремонту)</li>
+            <li>Розмова з дружиною: «треба нову машину»</li>
+            <li>Друг розповів про свій вдалий випадок</li>
+            <li>Бачить, що організатор — ТОВ, а не блогер</li>
+          </ul>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЩО РУХАЄ</div>
+          <p>Сімейне рішення «без шкоди для бюджету». Хоче, щоб дружина схвалила, а не сприйняла як азарт.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЯК ВПЛИВАТИ</div>
+          <ul>
+            <li>Сімейні історії переможців («тато привіз ключі додому»)</li>
+            <li>Чітко по податках, оформленню, документах</li>
+            <li>Тарифи від 1–3 токенів (низький поріг)</li>
+          </ul>
+        </div>
+        <blockquote class="persona-quote">«Якщо це не казино, а легальна акція — і дружина не злиться — спробую один токен.»</blockquote>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-head">
+        <div class="avatar">P</div>
+        <div class="name">Ольга (продуктовий профі)</div>
+        <div class="age">КАР'ЄРА · ЕСТЕТИКА · ВТОМА</div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-section">
+          <div class="label">/// СИТУАЦІЯ</div>
+          <p>Робота у медіа, маркетингу, продукті чи дизайні. Уважна до естетики бренду. Власне авто може бути, може не бути — не маркер. Маркер: вона не «грає», але любить красиві історії.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div>
+          <p>Здебільшого для <strong>натхнення і відключення</strong>: Stories, Pinterest, lifestyle-пости. Не любить кричущу рекламу.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div>
+          <ul>
+            <li>Естетична реклама / красиво знятий ефір</li>
+            <li>Жіноча історія переможниці (а не «парень з гаража»)</li>
+            <li>Рекомендація подруги</li>
+            <li>«Чому б ні» в момент втоми / після робочого дня</li>
+          </ul>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЩО РУХАЄ</div>
+          <p>Хоче відчувати, що це «її формат», а не «чоловіча історія». Цінує приватність — щоб ніхто не змусив виходити на камеру.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЯК ВПЛИВАТИ</div>
+          <ul>
+            <li>Жіночі переможниці у комунікаціях</li>
+            <li>Естетика бренду — не «гаражна», елегантна</li>
+            <li>Опція приватності («не хочу у відео — не покажуть»)</li>
+          </ul>
+        </div>
+        <blockquote class="persona-quote">«Це більше схоже на клуб, ніж на азарт. І зроблено зі смаком — спробую.»</blockquote>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona-head">
+        <div class="avatar">Z</div>
+        <div class="name">Дмитро (молодий, без авто)</div>
+        <div class="age">МАЛИЙ ДОХІД · ХОЧЕ ЗМІНИ</div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-section">
+          <div class="label">/// СИТУАЦІЯ</div>
+          <p>Студент чи перші роки роботи. Авто немає. Живе з батьками або в орендованій кімнаті. 249 ₴ — реальна сума, не дрібниця.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div>
+          <p>Здебільшого щоб <strong>вбити час</strong>: TikTok, Reels, Twitch. Реклама працює, якщо зловила за 2 секунди.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div>
+          <ul>
+            <li>Бачить мемне відео переможця-однолітка</li>
+            <li>Друзі обговорюють у компанії</li>
+            <li>Зайшла перша зарплата / стипендія</li>
+            <li>Розрив з дівчиною / момент «треба щось змінити»</li>
+          </ul>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЩО РУХАЄ</div>
+          <p>Незалежність і повагу серед однолітків. Не вірить у «казки», але вірить у конкретні історії.</p>
+        </div>
+        <div class="persona-section">
+          <div class="label">/// ЯК ВПЛИВАТИ</div>
+          <ul>
+            <li>Тарифи від 1 токена</li>
+            <li>Молоді переможці 20–25 років</li>
+            <li>TikTok-формат, мемний контент, прямий монтаж</li>
+          </ul>
+        </div>
+        <blockquote class="persona-quote">«За 249 ₴ — спробую. Інакше така машина мені не світить найближчі 5 років.»</blockquote>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 32px; padding: 18px 22px; background: var(--coal); border-left: 3px solid var(--red);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 8px;">/// ВАЖЛИВЕ ПРАВИЛО</div>
+    <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">
+      Ці портрети — не закриті касти. Та сама людина в різні моменти життя може бути «Іваном», «Ольгою» або «Дмитром». Звіряємось із <strong style="color: var(--white);">тригером і ситуацією</strong>, а не з паспортними даними. Інтереси аудиторії змінюються швидко — переглядаємо профілі мінімум раз на півроку, після кожної великої акції.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="compete">
+  <div class="s-num">/// 04 — КОНКУРЕНТНИЙ ЛАНДШАФТ</div>
+  <h2 class="s-title">ЧИМ МИ <span class="red">ВІДРІЗНЯЄМОСЬ</span></h2>
+  <p class="s-desc">
+    На ринку існують різні формати «недорогої перемоги»: ліцензовані лотереї, безкоштовні розіграші у соцмережах, інші платні моделі. У таблиці порівнюємо нашу пропозицію з категоріями (не з конкретними гравцями) — щоб було зрозуміло, де наше місце.
+  </p>
+
+  <div class="table-scroll-hint">ГОРТАЙ ТАБЛИЦЮ ВПРАВО</div>
+  <div class="table-scroll">
+  <table class="compete-table">
+    <thead>
+      <tr>
+        <th>Критерій</th>
+        <th>DREAMCAR</th>
+        <th>Ліцензовані лотереї</th>
+        <th>Безкоштовні розіграші у блогерів</th>
+        <th>Інші платні формати</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="us">
+        <td>Поріг входу</td>
+        <td><strong>249 ₴</strong></td>
+        <td>20–50 ₴</td>
+        <td>Безкоштовно (за лайк/підписку)</td>
+        <td>Залежить від платформи</td>
+      </tr>
+      <tr class="us">
+        <td>Прозорість процедури</td>
+        <td><span class="check">✓ Прямий ефір з рандомайзером</span></td>
+        <td>Закон + комісія</td>
+        <td>Не завжди верифіковано</td>
+        <td>Варіюється</td>
+      </tr>
+      <tr class="us">
+        <td>Документи переможця</td>
+        <td><span class="check">✓ Договір купівлі-продажу + ПТС</span></td>
+        <td>За правилами оператора</td>
+        <td>За домовленістю</td>
+        <td>Не стандартизовано</td>
+      </tr>
+      <tr class="us">
+        <td>Тип призу</td>
+        <td><strong>Авто</strong></td>
+        <td>Грошові виплати</td>
+        <td>Дрібні товари / гроші</td>
+        <td>Залежить від моделі</td>
+      </tr>
+      <tr class="us">
+        <td>Спільнота</td>
+        <td><span class="check">Постійний клуб переможців</span></td>
+        <td>Немає</td>
+        <td>Тимчасова за акцію</td>
+        <td>Залежить</td>
+      </tr>
+      <tr class="us">
+        <td>Юридична форма</td>
+        <td><strong>ТОВ + публічна оферта</strong></td>
+        <td>Ліцензія</td>
+        <td>Сіра зона / договір з блогером</td>
+        <td>Залежить</td>
+      </tr>
+      <tr class="us">
+        <td><strong>УТП</strong></td>
+        <td><strong>Авто за 249 ₴ + прозорий ефір</strong></td>
+        <td>Дозвілля з державою</td>
+        <td>Підписка/охоплення замість грошей</td>
+        <td>Різне</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <span class="s-eyebrow">/// ПОЗИЦІОНУВАННЯ ОДНИМ РЕЧЕННЯМ</span>
+  <div class="card" style="background: linear-gradient(135deg, rgba(227,6,19,0.15), transparent); border-color: var(--red); padding: 32px;">
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1.1; letter-spacing: 0.02em; color: var(--white);">
+      DreamCar — <span style="color:var(--red);">клуб дій</span>, де щомісяця реальні люди отримують ключі від авто в прямому ефірі. За доступом до акції — 249 ₴.
+    </p>
+  </div>
+
+  <p class="callout-rule" style="margin-top:18px; padding: 14px 18px; border:1px solid var(--graphite); background: var(--coal); font-size: 13px; color: var(--bone); line-height: 1.6;">
+    <strong style="color: var(--white);">Принцип спілкування про конкурентів:</strong> ми не говоримо, що вони погані — ми знаємо, що ми кращі. У публічних і внутрішніх комунікаціях не порівнюємо себе з іншими гравцями ринку поіменно.
+  </p>
+</section>
+
+<!-- ============================ -->
+
+<section id="logo">
+  <div class="s-num">/// 05 — ЛОГОТИП</div>
+  <h2 class="s-title">RACING <span class="red">PLATE</span></h2>
+  <p class="s-desc">
+    Концепція — український номерний знак гоночного формату. Червоний UA-блок зліва, жирний sans-serif Archivo Black, біла рамка з червоною тінню для динаміки. Метафора прямо натякає: «це твоя машина, твій номер, твоє володіння».
+  </p>
+
+  <h3 class="s-subtitle">/// ГОРИЗОНТАЛЬНА ВЕРСІЯ — <span class="red">PRIMARY</span></h3>
+  <p class="s-desc">
+    Основна форма логотипу. Використовуй для всього: сайт, реклама, друк, відео. Якщо є місце — завжди ставимо горизонтальну.
+  </p>
+  <div class="logo-grid">
+    <div class="logo-cell dark">
+      <span class="corner">/// ON BLACK</span>
+      <div class="racing-h">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+    </div>
+    <div class="logo-cell">
+      <span class="corner">/// ON COAL</span>
+      <div class="racing-h">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+    </div>
+    <div class="logo-cell red">
+      <span class="corner">/// ON RED</span>
+      <div class="racing-h on-red">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+    </div>
+    <div class="logo-cell white">
+      <span class="corner">/// ON WHITE</span>
+      <div class="racing-h on-white">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// КРУГЛА АВАТАРКА — <span class="red">CIRCLE NATIVE (A1)</span></h3>
+  <p class="s-desc">
+    Спеціально розроблена для круглого формату. UA-плашка зверху, велика монограма «DC» по центру, тонка назва внизу. <strong>НЕ обрізай горизонтальний логотип кругом</strong> — використовуй цю версію.
+  </p>
+  <div class="logo-grid">
+    <div class="logo-cell dark">
+      <span class="corner">/// ON BLACK</span>
+      <div class="avatar-a1">
+        <div class="dc">D<span class="red">C</span></div>
+      </div>
+    </div>
+    <div class="logo-cell">
+      <span class="corner">/// ON COAL</span>
+      <div class="avatar-a1 on-light">
+        <div class="dc">D<span class="red">C</span></div>
+      </div>
+    </div>
+    <div class="logo-cell red">
+      <span class="corner">/// ON RED</span>
+      <div class="avatar-a1">
+        <div class="dc">D<span class="red">C</span></div>
+      </div>
+    </div>
+    <div class="logo-cell white">
+      <span class="corner">/// ON WHITE</span>
+      <div class="avatar-a1">
+        <div class="dc">D<span class="red">C</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// СІТКА ПОБУДОВИ — <span class="red">CONSTRUCTION</span></h3>
+  <p class="s-desc">
+    Усі пропорції логотипу зав'язані на висоті літери «D» (= X). Це базова одиниця.
+  </p>
+  <div class="construction">
+    <div class="construction-content">
+      <div class="racing-h size-lg">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <div class="marks">
+        <div class="mark"><strong>X</strong>висота літери «D»</div>
+        <div class="mark"><strong>0.4X</strong>UA-блок ширина</div>
+        <div class="mark"><strong>0.1X</strong>обводка</div>
+        <div class="mark"><strong>0.7X</strong>UA розмір тексту</div>
+        <div class="mark"><strong>0.5X</strong>відступ всередині</div>
+        <div class="mark"><strong>1X</strong>clear space навколо</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// МАСШТАБИ — <span class="red">SIZES</span></h3>
+  <p class="s-desc">
+    Мінімальні розміри для кожного контексту. Менше = логотип не читається.
+  </p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+    <div class="card">
+      <span class="label">/// XS · 16-32PX</span>
+      <h4>FAVICON</h4>
+      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+        <div class="avatar-a1 size-xs"><div class="dc">D<span class="red">C</span></div></div>
+      </div>
+      <p>Тільки кругла версія. UA-плашка та назва зникають.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// SM · 32-80PX</span>
+      <h4>МОБ. НАВІГАЦІЯ</h4>
+      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+        <div class="racing-h size-sm">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <p>Горизонталь у мобільному header'і, чат-аватарці.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// MD · 80-200PX</span>
+      <h4>DESKTOP HEADER</h4>
+      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+        <div class="racing-h size-md">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <p>Стандартний розмір на сайті, в email-підписах.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LG · 200-500PX</span>
+      <h4>ПОСТЕРИ · БІЛБОРДИ</h4>
+      <div style="display:flex;justify-content:center;padding:16px;background:var(--graphite);margin:12px 0;">
+        <div class="racing-h">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <p>Постери, банери, презентації, печатна продукція.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПРАВИЛА — <span class="red">DO</span></h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// MIN SIZE</span>
+      <h4>МІНІМАЛЬНІ РОЗМІРИ</h4>
+      <p>Горизонталь — мінімум 80px шириною (для друку — 25mm). Кругла — мінімум 16px (для favicon — 32×32).</p>
+    </div>
+    <div class="card">
+      <span class="label">/// CLEAR SPACE</span>
+      <h4>ОХОРОННА ЗОНА</h4>
+      <p>Навколо логотипу завжди вільне поле, рівне висоті літери «D» (1X). Жодних інших елементів у цій зоні.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// CONTRAST</span>
+      <h4>КОНТРАСТ</h4>
+      <p>Логотип завжди добре читабельний. Якщо фон складний — використовуй білу плашку чи затемнення.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// FILE FORMAT</span>
+      <h4>ФОРМАТИ</h4>
+      <p>SVG — основний (web, print). PNG (256/512/1024) — для соцмереж. EPS — для друку та підрядників.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ЗАБОРОНЕНО — <span class="red">DON'T</span></h3>
+  <div class="donts">
+    <div class="dont dont-stretch">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ РОЗТЯГУВАТИ</span>
+    </div>
+    <div class="dont dont-color">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ ЗМІНЮВАТИ КОЛІР</span>
+    </div>
+    <div class="dont dont-rotate">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ ОБЕРТАТИ</span>
+    </div>
+    <div class="dont dont-shadow">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ ДОДАВАТИ ЕФЕКТИ</span>
+    </div>
+    <div class="dont dont-blur">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ РОЗМИВАТИ</span>
+    </div>
+    <div class="dont dont-gradient">
+      <div class="racing-h size-sm">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+      <span class="label">// НЕ ГРАДІЄНТИ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="avatar-mark">
+  <div class="s-num">/// 05B — AVATAR MARK</div>
+  <h2 class="s-title">ЛОГО ДЛЯ <span class="red">СОЦМЕРЕЖ</span></h2>
+  <p class="s-desc">
+    Простий чистий знак для аватарок, favicon, app icon, email signatures. Тільки «DC» — без UA-плашки і без тексту DREAMCAR. Завжди читабельний у будь-якому розмірі — від 16×16px до 1024×1024px.
+  </p>
+
+  <h3 class="s-subtitle">/// PRIMARY — <span class="red">DC ON BLACK</span></h3>
+  <p class="s-desc">Основний варіант. Чорне коло з білою «D» і червоною «C». Біла рамка + червоне сяйво.</p>
+  <div class="logo-grid">
+    <div class="logo-cell dark">
+      <span class="corner">/// 220PX · IG / TW PROFILE</span>
+      <div class="avatar-mark"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+    <div class="logo-cell">
+      <span class="corner">/// 120PX · APP ICON</span>
+      <div class="avatar-mark size-md"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+    <div class="logo-cell red">
+      <span class="corner">/// ON RED BACKGROUND</span>
+      <div class="avatar-mark"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+    <div class="logo-cell white">
+      <span class="corner">/// ON WHITE BACKGROUND</span>
+      <div class="avatar-mark"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// VARIATIONS — <span class="red">3 КОЛЬОРОВІ ВЕРСІЇ</span></h3>
+  <div class="logo-grid">
+    <div class="logo-cell dark">
+      <span class="corner">/// V1 · DC ON BLACK · PRIMARY</span>
+      <div class="avatar-mark size-md"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+    <div class="logo-cell dark">
+      <span class="corner">/// V2 · RED SOLID · ATTENTION</span>
+      <div class="avatar-mark size-md red-solid"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+    <div class="logo-cell dark">
+      <span class="corner">/// V3 · INVERTED · LIGHT BG</span>
+      <div class="avatar-mark size-md inverted"><div class="dc">D<span class="red">C</span></div></div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// SIZES — <span class="red">ВІД 16 ДО 220PX</span></h3>
+  <p class="s-desc">Один знак працює в усіх розмірах. Жодного дублювання, жодних обрізань.</p>
+  <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 32px;">
+    <div style="text-align: center;">
+      <div class="avatar-mark"><div class="dc">D<span class="red">C</span></div></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.2em; margin-top: 12px;">220×220</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ash); letter-spacing: 0.15em; margin-top: 4px;">PROFILE</div>
+    </div>
+    <div style="text-align: center;">
+      <div class="avatar-mark size-md"><div class="dc">D<span class="red">C</span></div></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.2em; margin-top: 12px;">120×120</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ash); letter-spacing: 0.15em; margin-top: 4px;">APP ICON</div>
+    </div>
+    <div style="text-align: center;">
+      <div class="avatar-mark size-sm"><div class="dc">D<span class="red">C</span></div></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.2em; margin-top: 12px;">64×64</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ash); letter-spacing: 0.15em; margin-top: 4px;">EMAIL SIG</div>
+    </div>
+    <div style="text-align: center;">
+      <div class="avatar-mark size-xs"><div class="dc">D<span class="red">C</span></div></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.2em; margin-top: 12px;">32×32</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ash); letter-spacing: 0.15em; margin-top: 4px;">FAVICON</div>
+    </div>
+    <div style="text-align: center;">
+      <div class="avatar-mark size-favicon"><div class="dc">D<span class="red">C</span></div></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.2em; margin-top: 12px;">16×16</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ash); letter-spacing: 0.15em; margin-top: 4px;">FAVICON XS</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// КОЛИ ВИКОРИСТОВУВАТИ — <span class="red">2 КРУГЛІ ВЕРСІЇ ЛОГО</span></h3>
+  <p class="s-desc">У нас є 2 круглі версії лого. Знай коли яку використовувати.</p>
+  <div class="card-grid">
+    <div class="card" style="border-color: var(--red); border-width: 2px;">
+      <span class="label">/// AVATAR-MARK · ПРОСТИЙ</span>
+      <h4>ДЛЯ МАЛЕНЬКИХ І СОЦМЕРЕЖ</h4>
+      <div style="margin: 16px 0; display: flex; gap: 12px; align-items: center;">
+        <div class="avatar-mark size-sm"><div class="dc">D<span class="red">C</span></div></div>
+        <div class="avatar-mark size-xs"><div class="dc">D<span class="red">C</span></div></div>
+        <div class="avatar-mark size-favicon"><div class="dc">D<span class="red">C</span></div></div>
+      </div>
+      <p>Аватарка Instagram, Twitter, TikTok, Telegram. Favicon сайту. App icon. Email signature. Будь-яка маленька кругла форма ≤ 120px.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// AVATAR-A1 · З ДЕТАЛЯМИ</span>
+      <h4>ДЛЯ ВЕЛИКИХ І ПРЕЗЕНТАЦІЙ</h4>
+      <div style="margin: 16px 0; display: flex; gap: 12px; align-items: center;">
+        <div class="avatar-a1 size-md"><div class="dc">D<span class="red">C</span></div></div>
+      </div>
+      <p>Декоративні великі круглі форми ≥ 200px. Презентаційні матеріали. Hero-секції. Сайт. <strong>НЕ використовуй на малих</strong> — UA-плашка і DREAMCAR не читаються.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// HORIZONTAL · ОСНОВНИЙ</span>
+      <h4>ДЛЯ ВСЬОГО ІНШОГО</h4>
+      <div style="margin: 16px 0;">
+        <div class="racing-h size-sm">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <p>Header сайту, друк, презентації, банери, постери, реклама. Скрізь де є горизонтальне місце ≥ 80px шириною.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="colors">
+  <div class="s-num">/// 06 — КОЛЬОРИ</div>
+  <h2 class="s-title">ПАЛІТРА <span class="red">DC</span></h2>
+  <p class="s-desc">
+    Двошарова система: <strong>основна</strong> — для брендингу і атмосфери, <strong>службова</strong> — для функціональних станів (помилки, успіх, попередження).
+  </p>
+
+  <h3 class="s-subtitle">/// PRIMARY — <span class="red">ОСНОВНА</span></h3>
+  <div class="colors-grid">
+    <div class="color-cell cl-black">
+      <div>
+        <div class="role">PRIMARY · ОСНОВА</div>
+        <div class="name">DC BLACK</div>
+      </div>
+      <div class="codes">HEX #0A0A0A<br>RGB 10·10·10<br>CMYK 0·0·0·100</div>
+    </div>
+    <div class="color-cell cl-red">
+      <div>
+        <div class="role">SIGNAL · АКЦЕНТ</div>
+        <div class="name">DC RED</div>
+      </div>
+      <div class="codes">HEX #E30613<br>RGB 227·6·19<br>CMYK 0·100·100·0</div>
+    </div>
+    <div class="color-cell cl-red-deep">
+      <div>
+        <div class="role">DEPTH · ГРАДІЄНТ</div>
+        <div class="name">DC DEEP</div>
+      </div>
+      <div class="codes">HEX #B8050F<br>RGB 184·5·15<br>CMYK 15·100·100·15</div>
+    </div>
+    <div class="color-cell cl-coal">
+      <div>
+        <div class="role">SURFACE · КАРТКИ</div>
+        <div class="name">DC COAL</div>
+      </div>
+      <div class="codes">HEX #141414<br>RGB 20·20·20<br>CMYK 0·0·0·92</div>
+    </div>
+    <div class="color-cell cl-graphite">
+      <div>
+        <div class="role">DIVIDER · РОЗДІЛИ</div>
+        <div class="name">DC GRAPHITE</div>
+      </div>
+      <div class="codes">HEX #1F1F1F<br>RGB 31·31·31<br>CMYK 0·0·0·88</div>
+    </div>
+    <div class="color-cell cl-white">
+      <div>
+        <div class="role">CONTRAST · ТЕКСТ</div>
+        <div class="name">DC WHITE</div>
+      </div>
+      <div class="codes">HEX #FFFFFF<br>RGB 255·255·255<br>CMYK 0·0·0·0</div>
+    </div>
+  </div>
+
+  <div class="color-ratio">
+    <div class="ratio-bar r1">60% BLACK</div>
+    <div class="ratio-bar r2">25% RED</div>
+    <div class="ratio-bar r3">15% WHITE</div>
+  </div>
+  <div class="color-ratio-label">/// ПРАВИЛО 60·25·15 — ПРОПОРЦІЯ В КОМПОЗИЦІЇ. ЧЕРВОНИЙ — ЦЕ АКЦЕНТ, А НЕ ФОН.</div>
+
+  <h3 class="s-subtitle">/// SECONDARY — <span class="red">СЛУЖБОВА ПАЛІТРА</span></h3>
+  <p class="s-desc">
+    Для UI-станів (інтерфейс): успіх, попередження, помилка, інформація. Не використовуються в брендингу — тільки в продукті.
+  </p>
+  <div class="colors-grid">
+    <div class="color-cell cl-success">
+      <div>
+        <div class="role">UI · УСПІХ</div>
+        <div class="name">SUCCESS</div>
+      </div>
+      <div class="codes">HEX #10B981<br>USE: оплата пройшла, токен активовано</div>
+    </div>
+    <div class="color-cell cl-warning">
+      <div>
+        <div class="role">UI · УВАГА</div>
+        <div class="name">WARNING</div>
+      </div>
+      <div class="codes">HEX #F59E0B<br>USE: акція завершується, мало часу</div>
+    </div>
+    <div class="color-cell cl-danger">
+      <div>
+        <div class="role">UI · ПОМИЛКА</div>
+        <div class="name">DANGER</div>
+      </div>
+      <div class="codes">HEX #DC2626<br>USE: помилка оплати, валідація</div>
+    </div>
+    <div class="color-cell cl-info">
+      <div>
+        <div class="role">UI · ІНФО</div>
+        <div class="name">INFO</div>
+      </div>
+      <div class="codes">HEX #3B82F6<br>USE: посилання, нотатки, підказки</div>
+    </div>
+  </div>
+  <p style="color: var(--ash); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em;">
+    /// УВАГА: DANGER (#DC2626) ≠ DC RED (#E30613). Бренд-червоний не використовуємо для помилок — це порушує ієрархію.
+  </p>
+
+  <h3 class="s-subtitle">/// ACCESSIBILITY — <span class="red">КОНТРАСТНІСТЬ</span></h3>
+  <p class="s-desc">
+    Перевірка по WCAG 2.1 AA. Усі основні комбінації мають проходити мінімум 4.5:1 для звичайного тексту і 3:1 для крупного.
+  </p>
+  <div class="table-scroll-hint">ГОРТАЙ ТАБЛИЦЮ ВПРАВО</div>
+  <div class="table-scroll">
+  <table class="a11y-table">
+    <thead>
+      <tr>
+        <th>Текст</th>
+        <th>Фон</th>
+        <th>Ratio</th>
+        <th>WCAG AA</th>
+        <th>Демо</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">19.5:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#FFFFFF;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>RED #E30613</td>
+        <td><span class="ratio">5.4:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#E30613;color:#FFFFFF;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>BLACK #0A0A0A</td>
+        <td>WHITE #FFFFFF</td>
+        <td><span class="ratio">19.5:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#FFFFFF;color:#0A0A0A;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>RED #E30613</td>
+        <td>WHITE #FFFFFF</td>
+        <td><span class="ratio">5.4:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#FFFFFF;color:#E30613;font-weight:700;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>BONE #DDDDDD</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">14.4:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#DDDDDD;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>RED #E30613</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">3.7:1</span></td>
+        <td><span class="pass">PASS LARGE</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#E30613;font-size:18px;font-weight:700;">Великий текст ОК</span></td>
+      </tr>
+      <tr>
+        <td>ASH #888888</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">5.6:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#888888;">Допоміжний текст</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="typo">
+  <div class="s-num">/// 07 — ТИПОГРАФІКА</div>
+  <h2 class="s-title">ШРИФТИ <span class="red">DC</span></h2>
+  <p class="s-desc">
+    4 шрифти, кожен зі своєю роллю. Bebas Neue — для драматичних заголовків. Archivo Black — для брендингу і CTA. Manrope — теплий гротеск для тексту. JetBrains Mono — для тех-міток.
+  </p>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>BEBAS NEUE</strong>
+      DISPLAY · HEADLINES<br>
+      WEIGHT 400<br>
+      TRACKING +20<br>
+      LINE 0.9
+    </div>
+    <div class="type-display">КУПУЙ. ВИГРАЙ. ЇДЬ.</div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>ARCHIVO BLACK</strong>
+      LOGO · CTA · BRAND<br>
+      WEIGHT 900<br>
+      TRACKING +40<br>
+      LINE 1
+    </div>
+    <div class="type-headline">DREAM<span class="red">CAR</span></div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>MANROPE</strong>
+      BODY · INTERFACE<br>
+      WEIGHT 400-800<br>
+      TRACKING 0<br>
+      LINE 1.5
+    </div>
+    <div class="type-body">
+      <strong>17 авто вже знайшли своїх власників.</strong> Серед звичайних людей, які наважились зробити крок. Кожен новий проєкт — це підтверджена документами історія, а не гасло.
+    </div>
+  </div>
+
+  <div class="type-row">
+    <div class="type-meta">
+      <strong>JETBRAINS MONO</strong>
+      TECHNICAL · LABELS<br>
+      WEIGHT 400-700<br>
+      TRACKING +200<br>
+      USE: МІТКИ · НОМЕРИ
+    </div>
+    <div class="type-mono">/// PROJECT_017 · BMW_X5_HYBRID · DRAW_DATE: 19.04.2026 · 20:00 EEST</div>
+  </div>
+
+  <h3 class="s-subtitle">/// ШКАЛА — <span class="red">TYPE SCALE</span></h3>
+  <p class="s-desc">
+    Типографічна шкала. 11 рівнів. Не вигадуй проміжні розміри — вибирай з шкали.
+  </p>
+  <div class="type-scale">
+    <div class="type-scale-row">
+      <div class="scale-name">DISPLAY</div>
+      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:96px;line-height:0.9;">DISPLAY</div>
+      <div class="scale-spec">96px · LH 0.9 · BEBAS</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">H1</div>
+      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:64px;line-height:0.95;">H1 HEADING</div>
+      <div class="scale-spec">64px · LH 0.95 · BEBAS</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">H2</div>
+      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:48px;line-height:1;">H2 HEADING</div>
+      <div class="scale-spec">48px · LH 1 · BEBAS</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">H3</div>
+      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:32px;line-height:1.1;">H3 HEADING</div>
+      <div class="scale-spec">32px · LH 1.1 · BEBAS</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">H4</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:800;font-size:24px;line-height:1.2;">H4 Heading</div>
+      <div class="scale-spec">24px · LH 1.2 · MANROPE 800</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">H5</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:700;font-size:18px;line-height:1.3;">H5 Heading</div>
+      <div class="scale-spec">18px · LH 1.3 · MANROPE 700</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">BODY-LG</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:400;font-size:18px;line-height:1.6;">Body large для важливих описів та цитат</div>
+      <div class="scale-spec">18px · LH 1.6 · MANROPE 400</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">BODY</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:400;font-size:16px;line-height:1.6;">Body — основний текст параграфів</div>
+      <div class="scale-spec">16px · LH 1.6 · MANROPE 400</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">BODY-SM</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:400;font-size:14px;line-height:1.55;">Body small — описи карток, форм</div>
+      <div class="scale-spec">14px · LH 1.55 · MANROPE 400</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">CAPTION</div>
+      <div class="scale-sample" style="font-family:'Manrope';font-weight:400;font-size:13px;line-height:1.5;">Caption — підписи, метаінформація</div>
+      <div class="scale-spec">13px · LH 1.5 · MANROPE 400</div>
+    </div>
+    <div class="type-scale-row">
+      <div class="scale-name">MONO</div>
+      <div class="scale-sample" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.2em;">/// MONO TAG · LABEL</div>
+      <div class="scale-spec">11px · TR +200 · MONO</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="spacing">
+  <div class="s-num">/// 08 — SPACING + ГРІД</div>
+  <h2 class="s-title">SPACING <span class="red">SCALE</span></h2>
+  <p class="s-desc">
+    Усі відступи з шкали. Не пиши "padding: 18px" — це означає що ти не знаєш системи. Базова одиниця — 4px.
+  </p>
+
+  <div class="spacing-grid">
+    <div class="spacing-row s1"><span class="name">--s-1</span><span class="px">4PX</span><div class="bar"></div></div>
+    <div class="spacing-row s2"><span class="name">--s-2</span><span class="px">8PX</span><div class="bar"></div></div>
+    <div class="spacing-row s3"><span class="name">--s-3</span><span class="px">12PX</span><div class="bar"></div></div>
+    <div class="spacing-row s4"><span class="name">--s-4</span><span class="px">16PX</span><div class="bar"></div></div>
+    <div class="spacing-row s5"><span class="name">--s-5</span><span class="px">24PX</span><div class="bar"></div></div>
+    <div class="spacing-row s6"><span class="name">--s-6</span><span class="px">32PX</span><div class="bar"></div></div>
+    <div class="spacing-row s7"><span class="name">--s-7</span><span class="px">48PX</span><div class="bar"></div></div>
+    <div class="spacing-row s8"><span class="name">--s-8</span><span class="px">64PX</span><div class="bar"></div></div>
+    <div class="spacing-row s9"><span class="name">--s-9</span><span class="px">96PX</span><div class="bar"></div></div>
+    <div class="spacing-row s10"><span class="name">--s-10</span><span class="px">128PX</span><div class="bar"></div></div>
+  </div>
+
+  <h3 class="s-subtitle">/// ГРІД — <span class="red">12 КОЛОНОК</span></h3>
+  <p class="s-desc">
+    Стандарт 12-колонкового гріду. Gutter 16px (--s-4) на mobile, 24px (--s-5) на desktop. Контейнер max-width 1280px.
+  </p>
+  <div class="grid-demo">
+    <div class="grid-12">
+      <div class="col">1</div><div class="col">2</div><div class="col">3</div><div class="col">4</div>
+      <div class="col">5</div><div class="col">6</div><div class="col">7</div><div class="col">8</div>
+      <div class="col">9</div><div class="col">10</div><div class="col">11</div><div class="col">12</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// БРЕЙКПОЙНТИ — <span class="red">BREAKPOINTS</span></h3>
+  <div class="breakpoints">
+    <div class="bp-card">
+      <div class="name">/// MOBILE</div>
+      <div class="val">< 640px</div>
+      <div class="desc">1 колонка<br>Padding 20px</div>
+    </div>
+    <div class="bp-card">
+      <div class="name">/// TABLET</div>
+      <div class="val">640-1024px</div>
+      <div class="desc">2-3 колонки<br>Padding 32px</div>
+    </div>
+    <div class="bp-card">
+      <div class="name">/// DESKTOP</div>
+      <div class="val">1024-1440px</div>
+      <div class="desc">4-12 колонок<br>Padding 40px</div>
+    </div>
+    <div class="bp-card">
+      <div class="name">/// WIDE</div>
+      <div class="val">> 1440px</div>
+      <div class="desc">Контейнер 1280px<br>Центрований</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// РАДІУСИ — <span class="red">BORDER RADIUS</span></h3>
+  <div class="card-grid">
+    <div class="card" style="text-align:center;">
+      <div style="width:80px;height:80px;background:var(--red);border-radius:0;margin:16px auto;"></div>
+      <h4>NONE · 0PX</h4>
+      <p>За замовчуванням. Картки, секції, лого. Це базова естетика бренду — гострі кути.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="width:80px;height:80px;background:var(--red);border-radius:4px;margin:16px auto;"></div>
+      <h4>SM · 4PX</h4>
+      <p>Form input, теги, маленькі чіпи.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="width:80px;height:80px;background:var(--red);border-radius:8px;margin:16px auto;"></div>
+      <h4>MD · 8PX</h4>
+      <p>Modal, картки в продукті, плашки.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="width:80px;height:80px;background:var(--red);border-radius:999px;margin:16px auto;"></div>
+      <h4>PILL · 999PX</h4>
+      <p>Кнопки CTA, статусні плашки, аватарки.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="elements">
+  <div class="s-num">/// 09 — ВІЗУАЛЬНІ ЕЛЕМЕНТИ</div>
+  <h2 class="s-title">ВІЗУАЛЬНА <span class="red">МОВА</span></h2>
+  <p class="s-desc">
+    Рекурентні елементи, що створюють впізнаваність бренду. Використовуй їх як «константи» у комунікації — вони роблять матеріали впізнаваними з першої секунди.
+  </p>
+
+  <h3 class="s-subtitle">/// ОСНОВНІ ЕЛЕМЕНТИ</h3>
+  <div class="elements-grid">
+    <div class="element-card">
+      <div class="label">CTA · КНОПКА ДІЇ</div>
+      <div class="demo"><div class="pill">ВЗЯТИ УЧАСТЬ</div></div>
+      <div class="label">RED PILL · ARCHIVO BLACK</div>
+    </div>
+    <div class="element-card">
+      <div class="label">SLASH BADGE · АКЦЕНТ</div>
+      <div class="demo"><div class="slash-badge"><span><span class="red">///</span> АКЦІЯ</span></div></div>
+      <div class="label">SKEW -12° · WHITE BG</div>
+    </div>
+    <div class="element-card">
+      <div class="label">NUMBER · ПРОЕКТИ</div>
+      <div class="demo"><div class="num-badge">17</div></div>
+      <div class="label">CIRCLE · ARCHIVO BLACK</div>
+    </div>
+    <div class="element-card" style="padding: 0; overflow: hidden;">
+      <div class="label" style="position: absolute; top: 16px; left: 16px; z-index: 2;">DIAGONAL · ШВИДКІСТЬ</div>
+      <div class="stripes" style="height: 100%;"></div>
+    </div>
+    <div class="element-card">
+      <div class="label">RED GLOW · СЯЙВО</div>
+      <div class="demo" style="background: radial-gradient(circle, var(--red) 0%, transparent 70%); margin: -32px; flex: 1;"></div>
+      <div class="label">RADIAL · 0.6 OPACITY</div>
+    </div>
+    <div class="element-card">
+      <div class="label">MONO TAG · ТЕХ.МІТКА</div>
+      <div class="demo"><span class="mono-tag">/// ID_017</span></div>
+      <div class="label">JETBRAINS MONO · BORDER</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ІКОНКИ — <span class="red">ICON SYSTEM</span></h3>
+  <p class="s-desc">
+    Стиль: <strong>лінійний (outline)</strong>, товщина обводки 1.5px, кутові радіуси 2px, розмір 24×24 (стандарт). Бібліотека на основі <strong>Lucide</strong> — 1000+ іконок з єдиним стилем. <strong>НЕ використовуй emoji</strong> в продакшні — тільки для соцмереж.
+  </p>
+  <div class="icon-grid">
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span class="iname">CLOCK</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M3 12l2-2 4 4 8-8 4 4"/><circle cx="6" cy="6" r="2"/></svg>
+      <span class="iname">TRENDING</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <span class="iname">ALERT</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+      <span class="iname">CHECK</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <span class="iname">CLOSE</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"/></svg>
+      <span class="iname">PLUS</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span class="iname">ARROW</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      <span class="iname">PACKAGE</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      <span class="iname">SETTINGS</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      <span class="iname">CHAT</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg>
+      <span class="iname">SHIELD</span>
+    </div>
+    <div class="icon-cell">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+      <span class="iname">SMILE</span>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПАТЕРНИ — <span class="red">PATTERNS</span></h3>
+  <p class="s-desc">
+    Декоративні фонові патерни для упаковки, презентацій, бекграундів соцмереж. 3 базові патерни — змінюємо тільки масштаб, не пропорції.
+  </p>
+  <div class="card-grid">
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 200px; background: repeating-linear-gradient(-12deg, var(--red) 0px, var(--red) 8px, var(--black) 8px, var(--black) 24px);"></div>
+      <div style="padding: 24px;">
+        <h4>DIAGONAL <span class="red">ШВИДКІСТЬ</span></h4>
+        <p>Гонкові смуги під кутом -12°. Для динамічних композицій, banner'ів, брендованої упаковки.</p>
+      </div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 200px; background:
+        linear-gradient(45deg, transparent 47%, var(--red) 47%, var(--red) 53%, transparent 53%),
+        linear-gradient(-45deg, transparent 47%, var(--red) 47%, var(--red) 53%, transparent 53%),
+        var(--black);
+        background-size: 30px 30px;"></div>
+      <div style="padding: 24px;">
+        <h4>X-MARKS <span class="red">ХРЕСТИКИ</span></h4>
+        <p>Точні позначки, як на номерному знаку. Для тонких бекграундів, текстур UI.</p>
+      </div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 200px; background:
+        radial-gradient(circle, var(--red) 1px, transparent 2px),
+        var(--black);
+        background-size: 20px 20px;"></div>
+      <div style="padding: 24px;">
+        <h4>DOTS <span class="red">ТОЧКИ</span></h4>
+        <p>Тонкий патерн крапок. Для subtle бекграундів секцій, тонких розділювачів.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="components">
+  <div class="s-num">/// 10 — UI КОМПОНЕНТИ</div>
+  <h2 class="s-title">КОМПОНЕНТИ <span class="red">ПРОДУКТУ</span></h2>
+  <p class="s-desc">
+    Базова бібліотека UI-компонентів для розробників і дизайнерів. Використовуй їх «з полиці» — не вигадуй власні варіанти кнопок чи інпутів.
+  </p>
+
+  <h3 class="s-subtitle">/// КНОПКИ — <span class="red">BUTTONS</span></h3>
+  <p class="s-desc">Стани: default · hover · active · focus · disabled · loading.</p>
+  <div class="button-row">
+    <button class="btn btn-primary">PRIMARY CTA</button>
+    <button class="btn btn-secondary">SECONDARY</button>
+    <button class="btn btn-ghost">GHOST</button>
+    <button class="btn btn-danger">DANGER</button>
+    <button class="btn btn-disabled">DISABLED</button>
+    <button class="btn btn-primary btn-loading">LOADING</button>
+  </div>
+
+  <p class="s-desc" style="margin-top: 16px; font-size: 14px;">
+    <strong style="color: var(--white);">PRIMARY</strong> — головна дія (купити токен, взяти участь). Тільки одна на сторінку.<br>
+    <strong style="color: var(--white);">SECONDARY</strong> — альтернативна дія (підписатись, дізнатись більше).<br>
+    <strong style="color: var(--white);">GHOST</strong> — третинна дія (скасувати, повернутись).<br>
+    <strong style="color: var(--white);">DANGER</strong> — небезпечна дія (видалити, відмовитись).
+  </p>
+
+  <h3 class="s-subtitle">/// <span class="red">ФОРМИ І ПОЛЯ</span></h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+    <div class="form-demo">
+      <label class="form-label" style="margin-bottom: 12px; display:block;">/// ОБЕРИ ПАКЕТ</label>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px;">
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">1 токен</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">249 ₴</div>
+        </div>
+        <div style="border: 1px solid var(--red); background: rgba(227,6,19,0.08); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">5 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); margin-top: 4px;">ПОПУЛЯРНИЙ</div>
+        </div>
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">15 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+        </div>
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">50 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">/// EMAIL</label>
+        <input class="form-input" type="email" placeholder="ivan@example.com" value="ivan@dreamcar.ua">
+      </div>
+      <button class="btn btn-primary" style="width: 100%; justify-content: center;">ОТРИМАТИ ТОКЕНИ →</button>
+      <p style="font-size: 11px; color: var(--ash); margin-top: 12px; line-height: 1.5;">У всіх рекламних і партнерських матеріалах показуємо <strong style="color: var(--white);">усі чотири пакети</strong>, не лише мінімальний. Блогер чи агентство, яке отримує матеріали, має бачити повну продуктову лінійку.</p>
+    </div>
+
+    <div class="form-demo">
+      <div class="form-group">
+        <label class="form-label">/// EMAIL · ERROR STATE</label>
+        <input class="form-input error" type="email" placeholder="email" value="ivan@invalid">
+        <div class="form-error">⚠ Введіть коректну email-адресу.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">/// TELEGRAM</label>
+        <input class="form-input" type="text" placeholder="@username">
+        <div class="form-help">Для входу в DreamCar Club.</div>
+      </div>
+      <button class="btn btn-disabled" style="width: 100%; justify-content: center;" disabled>ЗАПОВНІТЬ ВСІ ПОЛЯ</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="motion">
+  <div class="s-num">/// 11 — АНІМАЦІЇ</div>
+  <h2 class="s-title">MOTION <span class="red">SYSTEM</span></h2>
+  <p class="s-desc">
+    Стандартні тривалості та easing-функції. Не вигадуй довільні. Наведи курсор на демо — побачиш різницю.
+  </p>
+
+  <h3 class="s-subtitle">/// ТРИВАЛОСТІ — <span class="red">DURATIONS</span></h3>
+  <div class="motion-grid">
+    <div class="motion-card" data-speed="fast">
+      <div class="name">/// FAST</div>
+      <div class="val">150ms</div>
+      <div class="demo"><div class="ball"></div></div>
+      <div class="desc">Hover, focus, малі transitions. Швидкі мікро-взаємодії — наведення на кнопку, зміна кольору іконки.</div>
+    </div>
+    <div class="motion-card" data-speed="base">
+      <div class="name">/// BASE</div>
+      <div class="val">300ms</div>
+      <div class="demo"><div class="ball"></div></div>
+      <div class="desc">Стандартні переходи — поява/зникнення модалок, accordion, dropdown. Найчастіше вживане.</div>
+    </div>
+    <div class="motion-card" data-speed="slow">
+      <div class="name">/// SLOW</div>
+      <div class="val">500ms</div>
+      <div class="demo"><div class="ball"></div></div>
+      <div class="desc">Драматичні переходи — поява hero-секції, перехід між сторінками. Використовуй обережно.</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// EASING — <span class="red">КРИВІ РУХУ</span></h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// EASE-OUT</span>
+      <h4>RESPONSIVE</h4>
+      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:#4ade80;margin:12px 0;">cubic-bezier(0.2, 0.9, 0.3, 1)</code>
+      <p>Стандарт для всього. Швидкий старт, плавне завершення. Відчувається "натуральним".</p>
+    </div>
+    <div class="card">
+      <span class="label">/// EASE-IN-OUT</span>
+      <h4>SMOOTH</h4>
+      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:#4ade80;margin:12px 0;">cubic-bezier(0.4, 0, 0.2, 1)</code>
+      <p>Для довгих і безперервних анімацій. Плавний старт і фініш.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// EASE-LINEAR</span>
+      <h4>CONTINUOUS</h4>
+      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:#4ade80;margin:12px 0;">linear</code>
+      <p>Тільки для безперервних рухів — ticker, прогрес-бари, спінери.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПРИНЦИПИ</h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// PURPOSE</span>
+      <h4>АНІМАЦІЯ З ПРИЧИНОЮ</h4>
+      <p>Кожна анімація має ціль — підказати, привернути увагу, дати feedback. Не анімуй для краси.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// SPEED</span>
+      <h4>ШВИДКО — ЗАВЖДИ КРАЩЕ</h4>
+      <p>Користувач прийшов виграти авто, а не дивитись на твою анімацію. Базовий час — 300ms максимум.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// REDUCED MOTION</span>
+      <h4>ПОВАГА ДО НАЛАШТУВАНЬ</h4>
+      <p>Завжди враховуй <code style="background:var(--black);padding:2px 6px;color:#4ade80;font-size:11px;">prefers-reduced-motion</code>. Деякі люди мають вестибулярні розлади.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="voice">
+  <div class="s-num">/// 12 — ТОН ГОЛОСУ</div>
+  <h2 class="s-title">ЯК МИ <span class="red">ГОВОРИМО</span></h2>
+  <p class="s-desc">
+    Прямо. Коротко. Дієсловом. Завжди конкретно: цифри, дати, імена. У більшості каналів звертаємося на «ти» (зближення), у підтримці — на «Ви» (повага до клієнта).
+  </p>
+
+  <div class="voice-grid">
+    <div class="voice-card do">
+      <div class="head">/// ТАК — DO</div>
+      <ul>
+        <li>Прямо. Коротко. Дієсловом.</li>
+        <li>«Бери. Дій. Виграй.»</li>
+        <li>Конкретні цифри: 17 авто, 249 ₴</li>
+        <li>На «ти» — у рекламі, контенті, публічних каналах</li>
+        <li>На «Ви» — у підтримці та юридичних повідомленнях</li>
+        <li>Конкретна дата і час</li>
+      </ul>
+    </div>
+    <div class="voice-card dont">
+      <div class="head">/// НІ — DON'T</div>
+      <ul>
+        <li>Пасивні конструкції</li>
+        <li>«Унікальна можливість»</li>
+        <li>«Скоріш за все»</li>
+        <li>«Скинь чек», «кинь скрін» — навіть у підтримці</li>
+        <li>Слово «шанс» — у будь-якому каналі</li>
+        <li>Згадки про конкурентів — поіменно або негативно</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(227,6,19,0.15), transparent); border-color: var(--red); padding: 24px; margin-top: 24px;">
+    <span class="label">/// ОСОБЛИВЕ ПРАВИЛО — ЗАБОРОНЕНЕ СЛОВО</span>
+    <h4 style="margin-top: 8px;">«ШАНС» — НІКОЛИ НЕ ВИКОРИСТОВУЄМО</h4>
+    <p style="margin-top: 8px;">«Шанс» — це слово лотереї та казино. Воно знецінює нашу позицію. Ми не пропонуємо «шанс» — ми пропонуємо <strong>конкретну дію</strong>: купити токен, прийти на ефір, забрати ключі. Замість «шанс виграти» — кажи «можеш виграти». Замість «твій шанс» — «твій крок». Це правило непорушне для всіх каналів — від Instagram до прес-релізів.</p>
+  </div>
+
+  <h3 class="s-subtitle">/// ТОН ГОЛОСУ — <span class="red">ПО КАНАЛАХ</span></h3>
+  <p class="s-desc">
+    Голос один — тон різний. У різних каналах звучимо по-різному, бо там різний контекст і очікування.
+  </p>
+
+  <div class="channel-grid">
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">📸</div>
+        <div class="ch-name">INSTAGRAM</div>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>Драйв і азарт. Емоція, не пояснення. Короткі фрази, великі заголовки.</span>
+      </div>
+      <div class="row">
+        <strong>ДОВЖИНА</strong>
+        <span>Підпис до 100 слів. Кожне речення — окрема думка.</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«17. Audi e-tron. 249 ₴ за токен. Прямий ефір 19 квітня. Бери.»</span>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">💬</div>
+        <div class="ch-name">TELEGRAM</div>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>Інсайдерсько і прямо. Учасник = свій. Без зайвих пояснень.</span>
+      </div>
+      <div class="row">
+        <strong>ДОВЖИНА</strong>
+        <span>2-3 речення. Часто емодзі, рідко картинки.</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«🔥 Ось і він. Audi e-tron #018. Старт продажу токенів — завтра 10:00.»</span>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">📧</div>
+        <div class="ch-name">EMAIL</div>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>Структуровано і поважно. Без жаргону. Конкретика і дії — кроки 1-2-3.</span>
+      </div>
+      <div class="row">
+        <strong>ДОВЖИНА</strong>
+        <span>До 200 слів. Підзаголовки, списки, чіткі CTA.</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«Іване, дякуємо за купівлю токена #018-A4F2. Прямий ефір — 19.04 о 20:00 у нашому Instagram.»</span>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">🎬</div>
+        <div class="ch-name">TIKTOK · REELS</div>
+      </div>
+      <div class="row">
+        <strong>СТАТУС</strong>
+        <span>Тестуємо. Жорстких правил поки не встановлюємо — формат і таймінги визначаємо за результатами перших 5–10 публікацій. Тримаємось загального тону бренду + словника безпечної мови.</span>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>Швидко, мемно, по-людськи. Не серйозний-офіційний, не клоунський.</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«249 ₴. Ефір. Ключі.» (3 кадри з реальним переможцем)</span>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">📞</div>
+        <div class="ch-name">ПІДТРИМКА</div>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>На «Ви». Уважно. Швидко. Емпатично. Конкретно: або чим допоможемо, або чому не можемо і коли зможемо.</span>
+      </div>
+      <div class="row">
+        <strong>ФОРМУЛИ ПОВАГИ</strong>
+        <span>«Надішліть, будь ласка…», «Дякуємо, що звернулися», «Розуміємо, що це важливо». Ніяких «скинь», «кинь», «кидай».</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«Доброго дня! Бачимо, що оплата не пройшла. Перевіряємо просто зараз — повернемося з відповіддю протягом 5 хвилин. Дякуємо за терпіння.»</span>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="ch-head">
+        <div class="ch-icon">⚖️</div>
+        <div class="ch-name">ЮРИДИЧНІ</div>
+      </div>
+      <div class="row">
+        <strong>ТОН</strong>
+        <span>Формально, точно, без емоцій. Наша «обіцянка» = наш «контракт».</span>
+      </div>
+      <div class="row">
+        <strong>ДОВЖИНА</strong>
+        <span>Скільки треба. Структуровано: преамбула → положення → відповідальність.</span>
+      </div>
+      <div class="row">
+        <strong>ПРИКЛАД</strong>
+        <span style="font-style: italic;">«[Організатор] оголошує проведення акції №017 від 19.04.2026.»</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="legal-language">
+  <div class="s-num">/// 12B — ЮРИДИЧНА МОВА БРЕНДУ</div>
+  <h2 class="s-title">СЛОВНИК <span class="red">БЕЗПЕЧНОЇ МОВИ</span></h2>
+  <p class="s-desc">
+    Українське законодавство про азартні ігри та реклама конкурсів — реальні юридичні ризики. Усі формулювання нижче пройшли через юридичний фільтр. <strong>Використовуй цей словник у всіх рекламних матеріалах, paid ads, пресрелізах і платіжних формулюваннях.</strong>
+  </p>
+
+  <h3 class="s-subtitle">/// ТРИ РІВНІ — <span class="red">DO / CAREFUL / NEVER</span></h3>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 24px;">
+
+    <div style="background: rgba(16,185,129,0.08); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 16px;">/// ✓ DO — БЕЗПЕЧНО</div>
+      <ul style="list-style: none; line-height: 2;">
+        <li style="color: var(--white); font-weight: 600;">промоакція</li>
+        <li style="color: var(--white); font-weight: 600;">маркетингова акція</li>
+        <li style="color: var(--white); font-weight: 600;">офіційні правила</li>
+        <li style="color: var(--white); font-weight: 600;">номер участі</li>
+        <li style="color: var(--white); font-weight: 600;">бонусний номер</li>
+        <li style="color: var(--white); font-weight: 600;">цифровий токен</li>
+        <li style="color: var(--white); font-weight: 600;">доступ до сервісу</li>
+        <li style="color: var(--white); font-weight: 600;">визначення переможця</li>
+        <li style="color: var(--white); font-weight: 600;">пряма трансляція</li>
+        <li style="color: var(--white); font-weight: 600;">офіційний протокол</li>
+        <li style="color: var(--white); font-weight: 600;">фінал промоакції</li>
+        <li style="color: var(--white); font-weight: 600;">взяти участь</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(245,158,11,0.08); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 16px;">/// ⚠ CAREFUL — ВУЗЬКО І РІДКО</div>
+      <ul style="list-style: none; line-height: 2;">
+        <li style="color: var(--white); font-weight: 600;">розіграш</li>
+        <li style="color: var(--white); font-weight: 600;">виграш</li>
+        <li style="color: var(--white); font-weight: 600;">переможець</li>
+        <li style="color: var(--white); font-weight: 600;">приз</li>
+      </ul>
+      <p style="font-size: 12px; color: var(--bone); margin-top: 16px; line-height: 1.5; font-style: italic;">
+        <strong style="color: var(--warning);">Принцип: де можна — заміняй (на «акція», «вручення», «учасник», «авто»), де критично — залишай.</strong> Допустимо тільки в живих сторіс/Reels та в офіційних юридичних документах (де термін має юридичне значення). У hero, footer, hashtags, brief, FAQ, checkout, paid ads — НЕ використовуй.
+      </p>
+    </div>
+
+    <div style="background: var(--danger); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 16px; opacity: 0.85;">/// ✕ NEVER — НІКОЛИ</div>
+      <ul style="list-style: none; line-height: 2; color: var(--white); font-weight: 600;">
+        <li>шанс</li>
+        <li>гра / в грі</li>
+        <li>програв</li>
+        <li>ставка</li>
+        <li>азарт</li>
+        <li>казино</li>
+        <li>лотерея</li>
+        <li>квиток</li>
+        <li>гарантовано виграєш</li>
+        <li>інвестиція в надію</li>
+        <li>останній шанс</li>
+        <li>купи більше = більше шансів</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПРИКЛАДИ — <span class="red">ЯК ПЕРЕПИСУВАТИ</span></h3>
+  <p class="s-desc">Беремо ризиковану фразу — переписуємо в безпечну. Зберігаємо емоцію, прибираємо юридичний ризик.</p>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px;">
+
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: var(--coal); border: 1px solid var(--line); padding: 20px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--danger); letter-spacing: 0.2em; margin-bottom: 6px;">// РИЗИКОВАНО</div>
+        <div style="font-size: 14px; color: var(--bone); line-height: 1.5;">«Виграй BMW X5 за 249 грн!»</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 18px;">→</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 6px;">// БЕЗПЕЧНО</div>
+        <div style="font-size: 14px; color: var(--white); line-height: 1.5;">«Отримай токен DreamCar за 249 грн та номер участі в промоакції BMW X5. Умови — на сайті.»</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: var(--coal); border: 1px solid var(--line); padding: 20px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--danger); letter-spacing: 0.2em; margin-bottom: 6px;">// РИЗИКОВАНО</div>
+        <div style="font-size: 14px; color: var(--bone); line-height: 1.5;">«Твій шанс забрати ключі!»</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 18px;">→</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 6px;">// БЕЗПЕЧНО</div>
+        <div style="font-size: 14px; color: var(--white); line-height: 1.5;">«Твій номер участі вже у фіналі.»</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: var(--coal); border: 1px solid var(--line); padding: 20px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--danger); letter-spacing: 0.2em; margin-bottom: 6px;">// РИЗИКОВАНО</div>
+        <div style="font-size: 14px; color: var(--bone); line-height: 1.5;">«Ти в грі!»</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 18px;">→</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 6px;">// БЕЗПЕЧНО</div>
+        <div style="font-size: 14px; color: var(--white); line-height: 1.5;">«Твій токен активовано.»</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; background: var(--coal); border: 1px solid var(--line); padding: 20px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--danger); letter-spacing: 0.2em; margin-bottom: 6px;">// РИЗИКОВАНО</div>
+        <div style="font-size: 14px; color: var(--bone); line-height: 1.5;">«249 грн — це не ризик, це інвестиція в надію»</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 18px;">→</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 6px;">// БЕЗПЕЧНО</div>
+        <div style="font-size: 14px; color: var(--white); line-height: 1.5;">«249 грн — доступ до акції та номер участі»</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПО КАНАЛАХ — <span class="red">ДЕ ЯКА МОВА</span></h3>
+  <div class="card-grid" style="margin-top: 24px;">
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <span class="label">/// PAID ADS · MAX SAFETY</span>
+      <h4>META · GOOGLE · TIKTOK ADS</h4>
+      <p><strong style="color:var(--white);">Тільки DO-словник.</strong> Жодних «розіграш», «виграй», «шанс». Ризик блокування акаунту.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--warning);">
+      <span class="label">/// ОРГАНІКА · BALANCED</span>
+      <h4>INSTAGRAM · TELEGRAM · TIKTOK</h4>
+      <p>DO + CAREFUL у живих сторіс/Reels (вузько і рідко). У статичних постах і обкладинках — DO-словник. Юридичну інформацію виносимо в окрему сторіс/слайд, не дрібним рядком знизу.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// САЙТ · LEGAL FIRST</span>
+      <h4>DREAMCAR.UA · CHECKOUT</h4>
+      <p>Тільки DO. На checkout-сторінці — лише «токен», «доступ до акції», «номер участі».</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--red);">
+      <span class="label">/// ЕФІР · LIVE</span>
+      <h4>INSTAGRAM LIVE</h4>
+      <p>Найвільніший контекст. CAREFUL-слова допустимі, але без надужитку.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding: 24px; background: linear-gradient(135deg, rgba(245,158,11,0.1), transparent); border-left: 3px solid var(--warning);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 12px;">/// ⚠ ОБОВ'ЯЗКОВИЙ ДИСКЛЕЙМЕР — ЯК ПОДАВАТИ</div>
+    <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">
+      За українським законодавством реклама конкурсів і промоакцій <strong style="color: var(--white);">має містити інформацію про строки, місце проведення та джерело правил</strong>. Подаємо її <strong style="color: var(--white);">не дрібним рядком знизу постера</strong> (це візуально читається як ТБ-реклама і знижує довіру), а одним з трьох способів:
+    </p>
+    <ul style="margin-top: 12px; font-size: 14px; color: var(--bone); line-height: 1.7; padding-left: 20px;">
+      <li><strong style="color: var(--white);">Окремий слайд / сторіс</strong> у серії — повна юридична інформація крупно і чітко.</li>
+      <li><strong style="color: var(--white);">Прив'язаний пост-закріплення</strong> у профілі: «Правила і строки акцій».</li>
+      <li><strong style="color: var(--white);">Лінк у bio + у CTA-кнопці</strong> — на сторінку правил dreamcar.ua/legal.</li>
+    </ul>
+    <p style="margin-top: 14px; padding: 12px 16px; background: var(--black); border-left: 2px solid var(--red); font-style: italic; color: var(--bone); font-size: 13px;">
+      Базовий шаблон: «Промоакція триває з [дата] по [дата]. Організатор — [юридична особа з реквізитами в публічній оферті]. Повні правила участі — на dreamcar.ua/legal.»
+    </p>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="content">
+  <div class="s-num">/// 13 — КОНТЕНТ-СТРАТЕГІЯ</div>
+  <h2 class="s-title">ЩО МИ <span class="red">ПОСТИМО</span></h2>
+  <p class="s-desc">
+    Контент-рубрики, хештеги, FAQ, шаблони сторітелінгу. Без рубрик — у feed хаос. З рубриками — кожен пост на своєму місці і робить свою роботу.
+  </p>
+
+  <h3 class="s-subtitle">/// 8 РУБРИК — <span class="red">ОПОРИ КОНТЕНТУ</span></h3>
+  <div class="rubric-grid">
+    <div class="rubric">
+      <div class="tag">#ANATOMY</div>
+      <h4>АНАТОМІЯ ПРИЗУ</h4>
+      <p>Розглядаємо авто акції з усіх сторін: потужність, опції, кольори, історія моделі. 1 пост = 1 деталь.</p>
+      <div class="freq">/// 2-3 РАЗИ НА ТИЖДЕНЬ · АКЦІЯ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#WINNER</div>
+      <h4>ПЕРЕМОЖЦІ</h4>
+      <p>Історії минулих переможців. До-під час-після. Як змінилось життя. Соціальний доказ — найсильніший контент.</p>
+      <div class="freq">/// 1 РАЗ НА ТИЖДЕНЬ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#BACKSTAGE</div>
+      <h4>ЗАКУЛІССЯ</h4>
+      <p>Як готується ефір. Хто такі засновники. Як працює рандомайзер. Прозорість — наша валюта.</p>
+      <div class="freq">/// 1-2 РАЗИ НА ТИЖДЕНЬ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#TRUST</div>
+      <h4>ПРОЗОРІСТЬ</h4>
+      <p>Юридичні документи, ліцензії, сертифікати. Відповіді на сумніви — без слова «лохотрон». Прямі цифри, прямі факти.</p>
+      <div class="freq">/// 1 РАЗ НА ТИЖДЕНЬ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#COUNTDOWN</div>
+      <h4>ЗВОРОТНИЙ ВІДЛІК</h4>
+      <p>Лічильник до ефіру. -7 днів, -3 дні, -24 години. Готуємо аудиторію до моменту дії.</p>
+      <div class="freq">/// ОСТАННІЙ ТИЖДЕНЬ АКЦІЇ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#LIVE</div>
+      <h4>ПРЯМИЙ ЕФІР</h4>
+      <p>Сам ефір. Live в Instagram. Анонси за 1 годину, 30 хв, 10 хв. Запис ефіру в Reels після.</p>
+      <div class="freq">/// 1 РАЗ НА АКЦІЮ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#COMMUNITY</div>
+      <h4>СПІЛЬНОТА</h4>
+      <p>Учасники, їхні мрії, відгуки. UGC — фото з купленими токенами, скріни оплат, селфі з логотипом.</p>
+      <div class="freq">/// 1-2 РАЗИ НА ТИЖДЕНЬ</div>
+    </div>
+    <div class="rubric">
+      <div class="tag">#FAQ</div>
+      <h4>ПИТАННЯ-ВІДПОВІДІ</h4>
+      <p>Відповіді на типові питання. «Як купити?», «А податки?», «Що якщо я з-за кордону?». Карусель формат.</p>
+      <div class="freq">/// 1 РАЗ НА ТИЖДЕНЬ</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ХЕШТЕГ-СТРАТЕГІЯ</h3>
+  <p class="s-desc">3 рівні: брендові (завжди), тематичні (за рубриками), геолокаційні (для локального охоплення).</p>
+
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// БРЕНДОВІ — на КОЖНИЙ пост</p>
+  <div class="hashtags">
+    <span class="hashtag brand">#DreamCar</span>
+    <span class="hashtag brand">#DreamCarUA</span>
+    <span class="hashtag brand">#МріяПрокачка</span>
+    <span class="hashtag brand">#DreamCar017</span>
+  </div>
+
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТЕМАТИЧНІ — за рубрикою</p>
+  <div class="hashtags">
+    <span class="hashtag">#АудіУкраїна</span>
+    <span class="hashtag">#BMWUkraine</span>
+    <span class="hashtag">#ЕлектроАвто</span>
+    <span class="hashtag">#АвтоПодарунок</span>
+    <span class="hashtag">#АкціяDreamCar</span>
+    <span class="hashtag">#АвтоВручення</span>
+  </div>
+
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ГЕО — за регіоном</p>
+  <div class="hashtags">
+    <span class="hashtag">#Kyiv</span>
+    <span class="hashtag">#Lviv</span>
+    <span class="hashtag">#Dnipro</span>
+    <span class="hashtag">#Kharkiv</span>
+    <span class="hashtag">#Odesa</span>
+    <span class="hashtag">#УкраїнаОнлайн</span>
+  </div>
+
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТРЕНДИ — мінливо, моніторити щотижня</p>
+  <div class="hashtags">
+    <span class="hashtag trend">#trending</span>
+    <span class="hashtag trend">#fyp</span>
+    <span class="hashtag trend">#viral</span>
+  </div>
+
+  <h3 class="s-subtitle">/// FAQ — <span class="red">ОБ'ЄКЦІЇ І ВІДПОВІДІ</span></h3>
+  <p class="s-desc">10 найчастіших питань і відповіді в стилі бренду. Це твій basic для контенту, відповідей у DM, шаблонів для агенцій.</p>
+
+  <details class="faq-item">
+    <summary>Як я можу впевнитися, що це не обман?</summary>
+    <div class="answer">
+      <strong>Вручення проходить у прямому ефірі</strong> в нашому Instagram — будь-хто може спостерігати в реальному часі. 17 переможців за 10 років — реальні люди, з якими ти можеш зв'язатись напряму. Усі юридичні документи доступні на сайті у розділі «Прозорість». Організатор — [організатор з реквізитами у публічній оферті]
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>Чому так дешево — 249 ₴ за токен?</summary>
+    <div class="answer">
+      Бо ми <strong>не лотерея</strong> — ми клуб. Ми не намагаємось зробити максимум прибутку з одної людини. Ми робимо так, щоб максимум людей могли долучитись. Чим більше учасників — тим більше довіри і впізнаваності бренду. А значить — більше акцій, більше переможців.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>А податки? Хто їх платить?</summary>
+    <div class="answer">
+      <strong>Податки бере на себе DreamCar.</strong> Ти отримуєш авто без додаткових витрат. Усі формальності з оподаткуванням виграшу — наша зона відповідальності. Це прописано в публічній оферті.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>Що якщо я з-за кордону?</summary>
+    <div class="answer">
+      Купити токени можна звідусіль. Але <strong>отримати авто можна тільки на території України</strong> — оформлення документів вимагає особистої присутності. Якщо ти переможець, ми допомагаємо з логістикою.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>Як обираєте переможця?</summary>
+    <div class="answer">
+      <strong>Прозорий рандомайзер у прямому ефірі.</strong> Кожен токен = унікальний номер. Програма випадково обирає номер серед усіх куплених. Ефір на сторінці @dreamcar.ua, дата і час — на сайті за тиждень до події.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary>А якщо я виграв і не хочу публічності?</summary>
+    <div class="answer">
+      <strong>Твоє рішення.</strong> Ми обов'язково повідомляємо про переможця, але форму комунікації обираєш ти: повне інтерв'ю, тільки фото з ключами, або просто згадка імені без фото. Конфіденційність гарантуємо.
+    </div>
+  </details>
+
+  <h3 class="s-subtitle">/// СТОРІТЕЛЛІНГ ПЕРЕМОЖЦЯ — <span class="red">3-АКТНА СТРУКТУРА</span></h3>
+  <p class="s-desc">Шаблон для контенту про переможців. Кожна історія = 3 акти. Працює для постів, відео, рекламних креативів.</p>
+  <div class="story-arc">
+    <div class="arc-step">
+      <div class="num">1</div>
+      <h4>ДО — МРІЯ</h4>
+      <p>Хто він був до DreamCar? Який його контекст? Яка була мрія? <strong>Конкретно:</strong> «Микола, СТО-механік з Дніпра, мріяв про Audi Q5 з 2014 року».</p>
+    </div>
+    <div class="arc-step">
+      <div class="num">2</div>
+      <h4>МОМЕНТ — ВИГРАШ</h4>
+      <p>Що він зробив? Як це сталось? Що відчував коли почув своє ім'я? <strong>Конкретно:</strong> «Купив 5 токенів на 1245 ₴. Дивився ефір з дружиною. Коли почули номер — заплакали».</p>
+    </div>
+    <div class="arc-step">
+      <div class="num">3</div>
+      <h4>ПІСЛЯ — ЗМІНА</h4>
+      <p>Як змінилось життя? Куди він поїхав? Що тепер? <strong>Конкретно:</strong> «Тепер Микола їздить на Audi на роботу. Дітей вози в школу. Каже: ‘Це не просто авто — це віра в те, що мрії можна досягти’».</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="crisis">
+  <div class="s-num">/// 14 — КРИЗОВІ КОМУНІКАЦІЇ</div>
+  <h2 class="s-title">КРИЗА — <span class="red">ГОТОВІ СКРИПТИ</span></h2>
+  <p class="s-desc">
+    Що казати коли все йде не за планом. Готові шаблони відповідей на 7 типових сценаріїв. <strong>Час реакції критичний</strong> — у кризі мовчання сприймається як вина. Перша відповідь — не пізніше ніж через 15 хвилин після появи проблеми.
+  </p>
+
+  <div class="crisis-grid">
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #1 — НИЗЬКА ВЕРОГІДНІСТЬ · ВИСОКИЙ ВПЛИВ</div>
+      <h4>ПЕРЕМОЖЕЦЬ ВІДМОВИВСЯ ВІД АВТО</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Переможець з'явився, але відмовляється від призу — особисті причини, страх публічності, юридичні складнощі. Якщо просто пропадає з ефіру — глядачі сприймуть це як обман.</p>
+      <div class="response">
+        Друзі, переможець акції #018 за особистими обставинами вирішив скористатись правом на грошовий еквівалент призу замість фізичного авто. Це його законне право, прописане в умовах участі. Кошти буде перераховано протягом 14 робочих днів. Ефір з документальним підтвердженням — у п'ятницю о 19:00.
+      </div>
+      <div class="timeline">/// РЕАКЦІЯ: 1 ГОДИНА · КАНАЛИ: STORIES + POST + EMAIL</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #2 — СЕРЕДНЯ ВЕРОГІДНІСТЬ · ВИСОКИЙ ВПЛИВ</div>
+      <h4>ТЕХНІЧНИЙ ЗБІЙ ПІД ЧАС ЕФІРУ</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Instagram упав, рандомайзер не завантажився, мікрофон сів. Глядачі бачать «технічну тишу» — починаються звинувачення в маніпуляції.</p>
+      <div class="response">
+        Технічний збій. Працюємо. Ефір продовжимо протягом 30 хвилин. Усі учасники — токени активні. Вручення проведемо в повному ефірі сьогодні. Дякуємо за терпіння — ми це цінуємо. Якщо ефір не буде відновлено — повне повернення коштів за всіма токенами.
+      </div>
+      <div class="timeline">/// РЕАКЦІЯ: 5 ХВИЛИН · КАНАЛИ: STORIES + LIVE COMMENT + TG</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #3 — ВИСОКА ВЕРОГІДНІСТЬ · СЕРЕДНІЙ ВПЛИВ</div>
+      <h4>«ЦЕ ЛОХОТРОН» В КОМЕНТАРЯХ</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Хейтери у коментарях під постами. Не одиничні — 5+ за день. Можуть впливати на конверсію нових учасників.</p>
+      <div class="response">
+        Привіт! Розумію скептицизм — у мережі багато скаму. Тому ми навмисно проводимо розіграші у прямому ефірі — щоб ти міг переконатись особисто. Ось наш юридичний статус: [організатор з реквізитами у публічній оферті] Ось архів усіх ефірів за 10 років: [посилання]. Завжди готові відповісти на конкретні питання.
+      </div>
+      <div class="timeline">/// РЕАКЦІЯ: 30 ХВИЛИН · КАНАЛИ: ВІДПОВІДЬ В КОМЕНТАРЯХ</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #4 — ВИСОКА ВЕРОГІДНІСТЬ · НИЗЬКИЙ ВПЛИВ</div>
+      <h4>ПОМИЛКА ОПЛАТИ КОРИСТУВАЧА</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Учасник пише: «Я заплатив, а токена немає». Потрібна швидка реакція щоб не втратити довіру.</p>
+      <div class="response">
+        Привіт! Бачу твоє повідомлення. Зараз перевірю транзакцію — 5 хвилин. Якщо є помилка з нашого боку — оперативно виправимо і додам бонусний токен за незручності. Якщо банк не списав кошти — підкажу як перевірити.
+      </div>
+      <div class="timeline">/// РЕАКЦІЯ: 15 ХВИЛИН · КАНАЛИ: DM · PERSONAL</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #5 — НИЗЬКА ВЕРОГІДНІСТЬ · ДУЖЕ ВИСОКИЙ ВПЛИВ</div>
+      <h4>НЕГАТИВНА СТАТТЯ В ЗМІ</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Журналіст або блогер пише розслідування з заголовком «DreamCar — лохотрон». Поширюється швидко. Реактивна реакція погіршує. Потрібна стратегія.</p>
+      <div class="response">
+        Перша холдинг-відповідь протягом 15-30 хвилин: «Ми бачимо публікацію. Зараз перевіряємо факти. Повна відповідь з усіма документами буде до [час].» Потім — повна відповідь з доказами: документи, статистика виграшів, сертифікати, інтерв'ю переможців. Публікуємо як окрему статтю на сайті. На атаки в соцмережах — лінк на цю статтю. Не ведемось на провокації, не виправдовуємось — конкретні факти.
+      </div>
+      <div class="timeline">/// ПЕРША РЕАКЦІЯ: 15-30 ХВ · ПОВНА ВІДПОВІДЬ: 4-6 ГОДИН · КАНАЛИ: ОФІЦІЙНА СТАТТЯ + EMOTIONAL POST</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #6 — СЕРЕДНЯ ВЕРОГІДНІСТЬ · СЕРЕДНІЙ ВПЛИВ</div>
+      <h4>НЕДОЛІК В ОПЕРАЦІЙКАХ — ЗАТРИМКА ПЕРЕДАЧІ АВТО</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Авто переможцеві передається з затримкою — митниця, ремонт, документи. Громадськість ще не знає, але якщо переможець напише — буде хвиля.</p>
+      <div class="response">
+        Випереджаємо публічно: «Передача авто переможцеві #018 затримується на 14 днів через [конкретна причина]. Юридичний контракт між нами і переможцем виконуємо повністю. Як тільки авто буде готове — публічна передача в прямому ефірі». Не приховуємо.
+      </div>
+      <div class="timeline">/// РЕАКЦІЯ: 24 ГОДИНИ З МОМЕНТУ ЯСНОСТІ · КАНАЛИ: POST + STORIES</div>
+    </div>
+
+    <div class="crisis-card">
+      <div class="scenario">/// СЦЕНАРІЙ #7 — ДУЖЕ НИЗЬКА ВЕРОГІДНІСТЬ · КАТАСТРОФА</div>
+      <h4>ВТРАТА БАЗИ КЛІЄНТІВ / DATA BREACH</h4>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Хакерська атака, витік даних, втрата токенів. GDPR-наслідки. Юридичні наслідки. Може закрити бізнес.</p>
+      <div class="response">
+        <strong style="color:var(--white);">Шаблон (заповнюємо реальними фактами на момент інциденту):</strong><br>
+        [ДАТА], [ЧАС] ми зафіксували інцидент з безпекою даних, що міг вплинути на [N] учасників. Ось що ми зробили / робимо:<br>
+        • [які операції зупинено]<br>
+        • [які органи повідомлено — поліція, СБУ, GDPR-наглядач]<br>
+        • [яку компанію з кібербезпеки залучено]<br>
+        • [що зроблено для постраждалих]<br>
+        • [план відновлення]<br>
+        Наступне оновлення — [час]. Контакт: vg@dreamcar.ua.
+      </div>
+      <div class="timeline">/// ПЕРША РЕАКЦІЯ: 1 ГОДИНА · GDPR ВИМАГАЄ: ПОВІДОМИТИ НАГЛЯДОВИЙ ОРГАН ЗА 72 ГОДИНИ · КАНАЛИ: PERSONAL EMAIL + OFFICIAL STATEMENT</div>
+    </div>
+
+  </div>
+
+  <h3 class="s-subtitle">/// ЗАГАЛЬНІ ПРИНЦИПИ КРИЗОВОГО МЕНЕДЖМЕНТУ</h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// SPEED</span>
+      <h4>ПЕРША ВІДПОВІДЬ — 15 ХВ</h4>
+      <p>Мовчання у кризі = підтвердження вини. Навіть якщо ще не знаєш деталей — пиши «Бачимо. Працюємо. Скоро напишемо».</p>
+    </div>
+    <div class="card">
+      <span class="label">/// HONESTY</span>
+      <h4>ПРАВДА — ЗАВЖДИ</h4>
+      <p>Не приховуй проблему — її все одно знайдуть. Краще ти сам розкажеш як є — тоді ти автор історії.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ACTION</span>
+      <h4>КОНКРЕТНІ КРОКИ</h4>
+      <p>«Ми працюємо над цим» — недостатньо. Що саме? До коли? Хто відповідальний? Конкретика — це довіра.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ESCALATION</span>
+      <h4>ХТО ЩО ВИРІШУЄ</h4>
+      <p>SMM відповідає сам на P3-сценарії. P2 — через approval від PR. P1 — рішення CEO + юрист.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="partners">
+  <div class="s-num">/// 15 — ЗОВНІШНІ ПІДРЯДНИКИ</div>
+  <h2 class="s-title">ПАРТНЕРИ <span class="red">ТА АГЕНЦІЇ</span></h2>
+  <p class="s-desc">
+    Усе для тих, хто з нами працює іззовні: блогери, агенції, продакшн-студії, фрілансери. Brief-template, правила використання логотипу, co-branding. Чим зрозуміліше для них — тим швидше і якісніше.
+  </p>
+
+  <h3 class="s-subtitle">/// КОРОТКИЙ БРИФ — <span class="red">7 ПИТАНЬ НА СТАРТ</span></h3>
+  <p class="s-desc">Цей мінімальний шаблон надсилаємо блогерам, агенціям, фрілансерам на початку розмови. Сім полів — щоб не лякати «п'ятирівневим узгодженням». Усе інше уточнюється в переговорах і фіксується в розширеному брифі вже після згоди працювати разом.</p>
+
+  <div class="brief-template">
+    <div class="field"><span class="key">/// 1 · ПРОЄКТ</span><span class="placeholder">DreamCar #018 — Audi e-tron / коротка назва кампанії</span></div>
+    <div class="field"><span class="key">/// 2 · ФОРМАТ</span><span class="placeholder">Reels / IG-пост / TikTok / стаття / сторіс — що саме потрібно</span></div>
+    <div class="field"><span class="key">/// 3 · ЦІЛЬ</span><span class="placeholder">1 речення: продаж токенів / охоплення / довіра / запуск</span></div>
+    <div class="field"><span class="key">/// 4 · АУДИТОРІЯ</span><span class="placeholder">Одна з персон + ситуація / тригер</span></div>
+    <div class="field"><span class="key">/// 5 · КЛЮЧОВЕ ПОВІДОМЛЕННЯ</span><span class="placeholder">1 фраза, яку має донести матеріал</span></div>
+    <div class="field"><span class="key">/// 6 · БЮДЖЕТ + ДЕДЛАЙН</span><span class="placeholder">Сума в ₴ і дата публікації / здачі</span></div>
+    <div class="field"><span class="key">/// 7 · КОНТАКТ</span><span class="placeholder">З нашого боку: ім'я, email, telegram</span></div>
+  </div>
+
+  <div style="margin-top: 18px; padding: 16px 20px; background: var(--coal); border-left: 3px solid var(--ash);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 8px;">/// РОЗШИРЕНІ ПОЛЯ — ПІСЛЯ ЗГОДИ ПРАЦЮВАТИ</div>
+    <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
+      Технічні деталі (deliverables у мегабайтах, канали публікації, точні розміри, sticker pack, час відповіді менеджера, штрафи за дедлайн тощо) виносимо в окремий «розширений бриф», який підписуємо разом із договором. На етапі знайомства такі поля відлякують: блогер просто не пише як довго відповідатиме і чи робить sticker pack — це обговорюємо живцем.
+    </p>
+  </div>
+
+  <h3 class="s-subtitle">/// ПРАВИЛА ВИКОРИСТАННЯ — <span class="red">МОЖНА І НЕ МОЖНА</span></h3>
+  <div class="partner-grid">
+
+    <div class="partner-rule allow">
+      <div class="head">/// МОЖНА</div>
+      <h5>ВИКОРИСТАННЯ ЛОГОТИПУ</h5>
+      <ul>
+        <li>Згадка у позитивному/нейтральному контексті</li>
+        <li>Логотип у точно тих кольорах що в брендбуку</li>
+        <li>Логотип на дозволеному фоні (білий, чорний, червоний)</li>
+        <li>Збереження мінімальної clear space зони</li>
+        <li>Використання офіційних SVG/PNG файлів</li>
+        <li>Co-branding з підтвердженням через email</li>
+      </ul>
+    </div>
+
+    <div class="partner-rule deny">
+      <div class="head">/// НЕ МОЖНА</div>
+      <h5>ЗАБОРОНЕНО АБСОЛЮТНО</h5>
+      <ul>
+        <li>Зміна кольорів, форми чи пропорцій</li>
+        <li>Використання на еротичному контенті</li>
+        <li>Використання у промо алкоголю / тютюну / гемблінгу</li>
+        <li>Згадка у негативному/маніпулятивному контексті</li>
+        <li>Перемальовування, "відстворення" з нуля</li>
+        <li>Розміщення поверх непідходящих фото</li>
+      </ul>
+    </div>
+
+    <div class="partner-rule allow">
+      <div class="head">/// БЛОГЕРАМ — РЕКОМЕНДАЦІЇ</div>
+      <h5>ЯКЩО РОБИШ ОГЛЯД</h5>
+      <ul>
+        <li>Покажи свій реальний досвід з токенами</li>
+        <li>Згадуй свої щирі враження — добрі та погані</li>
+        <li>Маркуй матеріал як партнерський (#ad #partner)</li>
+        <li>Не обіцяй людям що вони виграють</li>
+        <li>Згадуй конкретні цифри: 17 переможців, 249 ₴</li>
+        <li>Заклик: «перевірте самі — ефір буде [дата]»</li>
+      </ul>
+    </div>
+
+    <div class="partner-rule deny">
+      <div class="head">/// БЛОГЕРАМ — ЗАБОРОНЕНО</div>
+      <h5>ЦЕ ВБИВАЄ ДОВІРУ</h5>
+      <ul>
+        <li>«Гарантовано виграєш!» (брехня)</li>
+        <li>«Це краще за лотерею!» (порівняння)</li>
+        <li>«Ось мій секретний промокод 50% знижки» (ми не даємо знижки)</li>
+        <li>Перебивати ефіри з прямими контактами</li>
+        <li>Вигадувати власну статистику</li>
+        <li>Робити «розіграш» від свого імені на наш бренд</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <h3 class="s-subtitle">/// CO-BRANDING — <span class="red">СПІЛЬНІ ПРОЄКТИ</span></h3>
+  <p class="s-desc">
+    Якщо колаб з іншим брендом (наприклад, BMW Україна, Audi Center, Eldorado) — нашу сторону представляє лого по конкретних правилах. Ось приклад спільного банера BMW Україна × DreamCar:
+  </p>
+
+  <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px; margin-top: 24px;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap;">
+      <div style="font-family: 'Manrope', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); letter-spacing: 0.05em;">BMW</div>
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--ash); opacity: 0.5;">×</div>
+      <div class="racing-h size-md">
+        <div class="ua-tag">UA</div>
+        <div class="text-block">DREAM<span class="red">CAR</span></div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em; line-height: 1.8;">
+      /// CLEAR SPACE МІЖ ЛОГОТИПАМИ — МІНІМУМ 60PX (4×X)<br>
+      /// ВЕРТИКАЛЬНА ВІСЬ ВИРІВНЮВАННЯ — ЦЕНТР<br>
+      /// ОПТИЧНІ РОЗМІРИ ВИРІВНЯНІ (НЕ МАТЕМАТИЧНІ)<br>
+      /// ЗНАК × — BEBAS NEUE 60% OPACITY · СІРИЙ
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// КОНТАКТНІ ТОЧКИ</h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// БРЕНД-МЕНЕДЖЕР</span>
+      <h4>ЗАГАЛЬНІ ПИТАННЯ</h4>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4ade80;">vg@dreamcar.ua</p>
+      <p style="margin-top: 8px;">Будь-які питання щодо брендингу, тонкої налаштування матеріалів, узгоджень. Відповідь — до 24 годин.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// PR + ЗМІ</span>
+      <h4>ПРЕС-КОНТАКТ</h4>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4ade80;">vg@dreamcar.ua</p>
+      <p style="margin-top: 8px;">Для журналістів, інтерв'ю, коментарів. Відповідь — до 4 годин у робочий час.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ПАРТНЕРСТВО</span>
+      <h4>КОЛАБИ ТА СПОНСОРСТВО</h4>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4ade80;">vg@dreamcar.ua</p>
+      <p style="margin-top: 8px;">Пропозиції про спільні проєкти, спонсорство, бартер. Відповідь — до 48 годин.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ЮРИДИЧНИЙ</span>
+      <h4>КОНТРАКТИ ТА ДОКУМЕНТИ</h4>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4ade80;">vg@dreamcar.ua</p>
+      <p style="margin-top: 8px;">Договори, NDA, юридичні запити. [організатор з реквізитами у публічній оферті]</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// APPROVAL WORKFLOW</h3>
+  <p class="s-desc">Хто погоджує дизайн перед публікацією. Це економить тижні переробок.</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 16px;">
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
+      <div style="font-family: 'Bebas Neue'; font-size: 48px; color: var(--red); line-height: 1;">1</div>
+      <h4 style="font-family: 'Bebas Neue'; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПЕРШИЙ ДРАФТ</h4>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Підрядник надсилає в email. Дедлайн — за 5 днів до публікації.</p>
+    </div>
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
+      <div style="font-family: 'Bebas Neue'; font-size: 48px; color: var(--red); line-height: 1;">2</div>
+      <h4 style="font-family: 'Bebas Neue'; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">BRAND CHECK</h4>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Бренд-менеджер перевіряє: лого, кольори, тон, повідомлення. 24 год.</p>
+    </div>
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
+      <div style="font-family: 'Bebas Neue'; font-size: 48px; color: var(--red); line-height: 1;">3</div>
+      <h4 style="font-family: 'Bebas Neue'; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПРАВКИ</h4>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Коментарі повертаються. Підрядник правит. До 2 кіл правок входять у вартість.</p>
+    </div>
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
+      <div style="font-family: 'Bebas Neue'; font-size: 48px; color: var(--red); line-height: 1;">4</div>
+      <h4 style="font-family: 'Bebas Neue'; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">FINAL APPROVAL</h4>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Письмове підтвердження. Тільки після цього — публікація.</p>
+    </div>
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
+      <div style="font-family: 'Bebas Neue'; font-size: 48px; color: var(--red); line-height: 1;">5</div>
+      <h4 style="font-family: 'Bebas Neue'; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПУБЛІКАЦІЯ</h4>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Підрядник публікує + надсилає лінки. Аналітика — через тиждень.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="trust">
+  <div class="s-num">/// 16 — ДОВІРА ТА ДОСТУПНІСТЬ</div>
+  <h2 class="s-title">ДОВІРА — <span class="red">СИСТЕМНО</span></h2>
+  <p class="s-desc">
+    Trust — не маркетинг. Це системний компонент бренду. Ось 6 trust-сигналів, які мають бути присутні скрізь — на сайті, в кожному пості, у listing'ах підрядників.
+  </p>
+
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span class="icon">📺</span>
+      <div class="name">ВІДЕО АРХІВ</div>
+      <p>Усі ефіри за 10 років зберігаються відкрито. Кожен може переглянути будь-яку акцію.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">📜</span>
+      <div class="name">ЮРИДИЧНІ ДОКУМЕНТИ</div>
+      <p>Публічна оферта, правила акцій, договір переможця — у вільному доступі на сайті.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">🏢</span>
+      <div class="name">ЄДРПОУ ВІДКРИТО</div>
+      <p>Юридична особа — реквізити публікуються в офіційних правилах акції на сайті. Перевірити можна у відкритих державних реєстрах.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">🤝</span>
+      <div class="name">КОНТРАКТИ ПЕРЕМОЖЦІВ</div>
+      <p>Кожна передача авто — нотаріально оформлений договір. Зразок — у відкритому доступі.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">📊</span>
+      <div class="name">СТАТИСТИКА В РЕАЛЬНОМУ ЧАСІ</div>
+      <p>Кількість проданих токенів, сума акції, прізвища попередніх переможців — публічно.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">📞</span>
+      <div class="name">ЗВ'ЯЗОК З ПЕРЕМОЖЦЯМИ</div>
+      <p>Контакти попередніх переможців (з їхньої згоди) — для тих, хто хоче перевірити особисто.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">👥</span>
+      <div class="name">350К У СПІЛЬНОТІ</div>
+      <p>Найбільша клубна спільнота навколо авто-акцій в Україні. Кожен підписник — свідок.</p>
+    </div>
+    <div class="trust-card">
+      <span class="icon">🏆</span>
+      <div class="name">17 ПЕРЕМОЖЦІВ</div>
+      <p>За 10 років 17 реальних людей отримали ключі від авто. Кожна історія задокументована.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ДОСТУПНІСТЬ — <span class="red">WCAG 2.1 AA</span></h3>
+  <p class="s-desc">
+    Усі сторінки сайту і додатку відповідають WCAG 2.1 рівня AA. Це не тільки етично — це юридично (GDPR, EU Accessibility Act 2025) і SEO (Google ранжує доступні сайти вище).
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// CONTRAST</span>
+      <h4>КОНТРАСТНІСТЬ</h4>
+      <p>4.5:1 для звичайного тексту, 3:1 для крупного. Усі комбінації перевірені (див. розділ 06).</p>
+    </div>
+    <div class="card">
+      <span class="label">/// FOCUS</span>
+      <h4>FOCUS-СТАНИ</h4>
+      <p>Усі інтерактивні елементи мають видимі focus-стани. Червона рамка 2px на focus.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// TARGET</span>
+      <h4>МІНІМАЛЬНІ ЗОНИ ДОТИКУ</h4>
+      <p>44×44px мінімум для кнопок і клікабельних елементів на мобільних.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ALT</span>
+      <h4>ALT-ТЕКСТИ</h4>
+      <p>Усі зображення мають опис. Декоративні — alt="". Логотипу — alt="DreamCar — клуб дій з вручення авто".</p>
+    </div>
+    <div class="card">
+      <span class="label">/// ARIA</span>
+      <h4>ARIA-МІТКИ</h4>
+      <p>Складні компоненти (модалки, dropdown'и, форми) мають aria-labels та role-атрибути.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// KEYBOARD</span>
+      <h4>KEYBOARD НАВІГАЦІЯ</h4>
+      <p>Усі функції доступні з клавіатури. Tab-порядок логічний. Skip-links на сторінках.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// SCREEN READERS</span>
+      <h4>ЧИТАЧАМИ ЕКРАНУ</h4>
+      <p>Тестуємо з NVDA (Win), VoiceOver (Mac/iOS). Усі форми та CTA озвучуються коректно.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// MOTION</span>
+      <h4>ПОВАГА ДО REDUCED-MOTION</h4>
+      <p>Усі анімації вимикаються при <code style="background:var(--black);padding:2px 6px;color:#4ade80;font-size:11px;">prefers-reduced-motion</code>.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// GDPR + ОБРОБКА ДАНИХ</h3>
+  <p class="s-desc">Куди йдуть дані учасників і як ми їх захищаємо.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// COLLECTION</span>
+      <h4>ЩО ЗБИРАЄМО</h4>
+      <p>Email, телефон, ім'я (опціонально), Telegram (опціонально). Без надлишку. Без cookie-tracking без згоди.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// STORAGE</span>
+      <h4>ДЕ ЗБЕРІГАЄМО</h4>
+      <p>База в Україні (Hetzner UA). Резервні копії шифруються. Доступ — тільки 3 особи з NDA.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// RIGHTS</span>
+      <h4>ПРАВА КОРИСТУВАЧА</h4>
+      <p>Видалення даних — за 7 днів після запиту. Експорт даних — за 14 днів. Зміна — миттєво в особистому кабінеті.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="tokens">
+  <div class="s-num">/// 17 — DESIGN TOKENS</div>
+  <h2 class="s-title">ТОКЕНИ ДЛЯ <span class="red">РОЗРОБНИКІВ</span></h2>
+  <p class="s-desc">
+    Усі змінні бренду — у форматах JSON та CSS. Просто скопіюй у проєкт. Імпорт у Figma через плагін Tokens Studio. Single source of truth.
+  </p>
+
+  <h3 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h3>
+  <div class="tokens-code">{
+  <span class="comment">// КОЛЬОРИ — ПЕРВИННІ</span>
+  <span class="key">"color"</span>: {
+    <span class="key">"black"</span>:        { <span class="key">"value"</span>: <span class="str">"#0A0A0A"</span> },
+    <span class="key">"coal"</span>:         { <span class="key">"value"</span>: <span class="str">"#141414"</span> },
+    <span class="key">"graphite"</span>:     { <span class="key">"value"</span>: <span class="str">"#1F1F1F"</span> },
+    <span class="key">"steel"</span>:        { <span class="key">"value"</span>: <span class="str">"#2A2A2A"</span> },
+    <span class="key">"ash"</span>:          { <span class="key">"value"</span>: <span class="str">"#888888"</span> },
+    <span class="key">"bone"</span>:         { <span class="key">"value"</span>: <span class="str">"#DDDDDD"</span> },
+    <span class="key">"white"</span>:        { <span class="key">"value"</span>: <span class="str">"#FFFFFF"</span> },
+    <span class="key">"red"</span>:          { <span class="key">"value"</span>: <span class="str">"#E30613"</span> },
+    <span class="key">"red-deep"</span>:     { <span class="key">"value"</span>: <span class="str">"#B8050F"</span> },
+
+    <span class="comment">// КОЛЬОРИ — СЛУЖБОВІ (UI states)</span>
+    <span class="key">"success"</span>:      { <span class="key">"value"</span>: <span class="str">"#10B981"</span> },
+    <span class="key">"warning"</span>:      { <span class="key">"value"</span>: <span class="str">"#F59E0B"</span> },
+    <span class="key">"danger"</span>:       { <span class="key">"value"</span>: <span class="str">"#DC2626"</span> },
+    <span class="key">"info"</span>:         { <span class="key">"value"</span>: <span class="str">"#3B82F6"</span> }
+  },
+
+  <span class="comment">// SPACING SCALE — БАЗА 4PX</span>
+  <span class="key">"spacing"</span>: {
+    <span class="key">"1"</span>: { <span class="key">"value"</span>: <span class="val">"4px"</span> },
+    <span class="key">"2"</span>: { <span class="key">"value"</span>: <span class="val">"8px"</span> },
+    <span class="key">"3"</span>: { <span class="key">"value"</span>: <span class="val">"12px"</span> },
+    <span class="key">"4"</span>: { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"5"</span>: { <span class="key">"value"</span>: <span class="val">"24px"</span> },
+    <span class="key">"6"</span>: { <span class="key">"value"</span>: <span class="val">"32px"</span> },
+    <span class="key">"7"</span>: { <span class="key">"value"</span>: <span class="val">"48px"</span> },
+    <span class="key">"8"</span>: { <span class="key">"value"</span>: <span class="val">"64px"</span> },
+    <span class="key">"9"</span>: { <span class="key">"value"</span>: <span class="val">"96px"</span> },
+    <span class="key">"10"</span>: { <span class="key">"value"</span>: <span class="val">"128px"</span> }
+  },
+
+  <span class="comment">// ТИПОГРАФІЯ — ШРИФТИ</span>
+  <span class="key">"font"</span>: {
+    <span class="key">"display"</span>: { <span class="key">"value"</span>: <span class="str">"'Bebas Neue', sans-serif"</span> },
+    <span class="key">"brand"</span>:   { <span class="key">"value"</span>: <span class="str">"'Archivo Black', sans-serif"</span> },
+    <span class="key">"body"</span>:    { <span class="key">"value"</span>: <span class="str">"'Manrope', sans-serif"</span> },
+    <span class="key">"mono"</span>:    { <span class="key">"value"</span>: <span class="str">"'JetBrains Mono', monospace"</span> }
+  },
+
+  <span class="comment">// ТИПОГРАФІЯ — ШКАЛА</span>
+  <span class="key">"fontSize"</span>: {
+    <span class="key">"display"</span>:  { <span class="key">"value"</span>: <span class="val">"96px"</span> },
+    <span class="key">"h1"</span>:       { <span class="key">"value"</span>: <span class="val">"64px"</span> },
+    <span class="key">"h2"</span>:       { <span class="key">"value"</span>: <span class="val">"48px"</span> },
+    <span class="key">"h3"</span>:       { <span class="key">"value"</span>: <span class="val">"32px"</span> },
+    <span class="key">"h4"</span>:       { <span class="key">"value"</span>: <span class="val">"24px"</span> },
+    <span class="key">"h5"</span>:       { <span class="key">"value"</span>: <span class="val">"18px"</span> },
+    <span class="key">"body-lg"</span>:  { <span class="key">"value"</span>: <span class="val">"18px"</span> },
+    <span class="key">"body"</span>:     { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"body-sm"</span>:  { <span class="key">"value"</span>: <span class="val">"14px"</span> },
+    <span class="key">"caption"</span>:  { <span class="key">"value"</span>: <span class="val">"13px"</span> },
+    <span class="key">"mono"</span>:     { <span class="key">"value"</span>: <span class="val">"11px"</span> }
+  },
+
+  <span class="comment">// РАДІУСИ</span>
+  <span class="key">"radius"</span>: {
+    <span class="key">"none"</span>: { <span class="key">"value"</span>: <span class="val">"0px"</span> },
+    <span class="key">"sm"</span>:   { <span class="key">"value"</span>: <span class="val">"4px"</span> },
+    <span class="key">"md"</span>:   { <span class="key">"value"</span>: <span class="val">"8px"</span> },
+    <span class="key">"lg"</span>:   { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"pill"</span>: { <span class="key">"value"</span>: <span class="val">"999px"</span> }
+  },
+
+  <span class="comment">// АНІМАЦІЇ</span>
+  <span class="key">"motion"</span>: {
+    <span class="key">"fast"</span>:    { <span class="key">"value"</span>: <span class="val">"150ms"</span> },
+    <span class="key">"base"</span>:    { <span class="key">"value"</span>: <span class="val">"300ms"</span> },
+    <span class="key">"slow"</span>:    { <span class="key">"value"</span>: <span class="val">"500ms"</span> },
+    <span class="key">"easeOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.2, 0.9, 0.3, 1)"</span> },
+    <span class="key">"easeInOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.4, 0, 0.2, 1)"</span> }
+  },
+
+  <span class="comment">// ТІНІ</span>
+  <span class="key">"shadow"</span>: {
+    <span class="key">"sm"</span>: { <span class="key">"value"</span>: <span class="str">"0 2px 4px rgba(0,0,0,0.5)"</span> },
+    <span class="key">"md"</span>: { <span class="key">"value"</span>: <span class="str">"0 8px 16px rgba(0,0,0,0.4)"</span> },
+    <span class="key">"lg"</span>: { <span class="key">"value"</span>: <span class="str">"0 20px 40px rgba(0,0,0,0.5)"</span> },
+    <span class="key">"glow-red"</span>: { <span class="key">"value"</span>: <span class="str">"0 0 0 3px #E30613"</span> }
+  },
+
+  <span class="comment">// БРЕЙКПОЙНТИ</span>
+  <span class="key">"breakpoint"</span>: {
+    <span class="key">"mobile"</span>:  { <span class="key">"value"</span>: <span class="val">"640px"</span> },
+    <span class="key">"tablet"</span>:  { <span class="key">"value"</span>: <span class="val">"1024px"</span> },
+    <span class="key">"desktop"</span>: { <span class="key">"value"</span>: <span class="val">"1440px"</span> }
+  }
+}</div>
+
+  <h3 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h3>
+  <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v2.1 */</span>
+:root {
+  <span class="comment">/* === COLORS === */</span>
+  --dc-black:        #0A0A0A;
+  --dc-coal:         #141414;
+  --dc-graphite:     #1F1F1F;
+  --dc-steel:        #2A2A2A;
+  --dc-ash:          #888888;
+  --dc-bone:         #DDDDDD;
+  --dc-white:        #FFFFFF;
+  --dc-red:          #E30613;
+  --dc-red-deep:     #B8050F;
+
+  <span class="comment">/* UI states */</span>
+  --dc-success:      #10B981;
+  --dc-warning:      #F59E0B;
+  --dc-danger:       #DC2626;
+  --dc-info:         #3B82F6;
+
+  <span class="comment">/* === SPACING === */</span>
+  --dc-s-1:  4px;   --dc-s-2:  8px;
+  --dc-s-3:  12px;  --dc-s-4:  16px;
+  --dc-s-5:  24px;  --dc-s-6:  32px;
+  --dc-s-7:  48px;  --dc-s-8:  64px;
+  --dc-s-9:  96px;  --dc-s-10: 128px;
+
+  <span class="comment">/* === RADIUS === */</span>
+  --dc-r-none: 0;   --dc-r-sm: 4px;
+  --dc-r-md:   8px; --dc-r-lg: 16px;
+  --dc-r-pill: 999px;
+
+  <span class="comment">/* === TYPOGRAPHY === */</span>
+  --dc-font-display: 'Bebas Neue', sans-serif;
+  --dc-font-brand:   'Archivo Black', sans-serif;
+  --dc-font-body:    'Manrope', sans-serif;
+  --dc-font-mono:    'JetBrains Mono', monospace;
+
+  <span class="comment">/* === MOTION === */</span>
+  --dc-d-fast: 150ms;
+  --dc-d-base: 300ms;
+  --dc-d-slow: 500ms;
+  --dc-e-out:  cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dc-e-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  <span class="comment">/* === SHADOWS === */</span>
+  --dc-shadow-sm:  0 2px 4px rgba(0, 0, 0, 0.5);
+  --dc-shadow-md:  0 8px 16px rgba(0, 0, 0, 0.4);
+  --dc-shadow-lg:  0 20px 40px rgba(0, 0, 0, 0.5);
+  --dc-glow-red:   0 0 0 3px var(--dc-red);
+
+  <span class="comment">/* === BREAKPOINTS (use in JS) === */</span>
+  --dc-bp-mobile:  640px;
+  --dc-bp-tablet:  1024px;
+  --dc-bp-desktop: 1440px;
+}
+
+<span class="comment">/* === Reduced motion === */</span>
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</div>
+</section>
+
+<!-- ============================ -->
+
+<section id="apps">
+  <div class="s-num">/// 18 — ASSET LIBRARY</div>
+  <h2 class="s-title">ФАЙЛИ ТА <span class="red">ПОСИЛАННЯ</span></h2>
+  <p class="s-desc">
+    Усе для скачування: лого у всіх форматах, шрифти, шаблони, презентації. Доступ за посиланнями нижче — не обов'язково писати запит.
+  </p>
+
+  <div class="assets">
+    <div class="asset">
+      <h4>/// ЛОГОТИП</h4>
+      <div class="name">DREAMCAR LOGO PACK</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Горизонтальний + кругла аватарка у всіх форматах та кольорах.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">PNG · 256/512/1024/2048</span>
+        <span class="format-tag">EPS · CMYK + RGB</span>
+        <span class="format-tag">AI</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ШРИФТИ</h4>
+      <div class="name">FONT FAMILY</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Усі 4 шрифти безкоштовно через Google Fonts.</p>
+      <code>fonts.google.com — Bebas Neue + Archivo Black + Manrope + JetBrains Mono</code>
+      <div class="formats">
+        <span class="format-tag">WOFF2 · WEB</span>
+        <span class="format-tag">TTF · PRINT</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ШАБЛОНИ ДЛЯ SMM</h4>
+      <div class="name">CANVA · FIGMA TEMPLATES</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Готові шаблони Instagram постів, stories, reels covers.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">FIGMA</span>
+        <span class="format-tag">CANVA</span>
+        <span class="format-tag">PSD</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ПРЕЗЕНТАЦІЇ</h4>
+      <div class="name">DECK TEMPLATES</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Шаблони для пітчів, корпоративних презентацій, медіа-кітів.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">KEYNOTE</span>
+        <span class="format-tag">POWERPOINT</span>
+        <span class="format-tag">GOOGLE SLIDES</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ВІДЕО · BRAND PACK</h4>
+      <div class="name">MOTION ASSETS</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Анімований логотип, заставки, lower thirds, фінальні картки.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">MP4 · 4K</span>
+        <span class="format-tag">AFTER EFFECTS</span>
+        <span class="format-tag">LOTTIE JSON</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ICON LIBRARY</h4>
+      <div class="name">LUCIDE ICONS</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">1000+ іконок у єдиному стилі. MIT-ліцензія, безкоштовно.</p>
+      <code>lucide.dev — npm install lucide-react</code>
+      <div class="formats">
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">REACT</span>
+        <span class="format-tag">VUE</span>
+        <span class="format-tag">FIGMA</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ФОТОГРАФІЇ</h4>
+      <div class="name">BRAND PHOTO BANK</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Архів фото переможців (з дозволу), студійні зйомки авто, behind-the-scenes.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">JPG · 4K</span>
+        <span class="format-tag">RAW</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ЦЕЙ БРЕНДБУК</h4>
+      <div class="name">BRAND BOOK V2.1</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">PDF + HTML версії цього документа. Завжди останній актуальний.</p>
+      <code>TBD — посилання незабаром</code>
+      <div class="formats">
+        <span class="format-tag">PDF</span>
+        <span class="format-tag">HTML</span>
+        <span class="format-tag">NOTION</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// СТРУКТУРА GOOGLE DRIVE / NOTION</h3>
+  <div class="tokens-code">📁 dreamcar-brand/
+├── 📁 01-logo/
+│   ├── horizontal/
+│   │   ├── on-black.svg, on-white.svg, on-red.svg
+│   │   └── png-pack/ (256, 512, 1024, 2048)
+│   ├── circle-avatar/
+│   │   └── ig-profile-320.png, app-icon-1024.png, favicon-32.ico
+│   └── construction-grid.pdf
+
+├── 📁 02-fonts/
+│   ├── bebas-neue/, archivo-black/, inter/, jetbrains-mono/
+│   └── google-fonts-link.txt
+
+├── 📁 03-design-system/
+│   ├── tokens.json, tokens.css
+│   ├── figma-library.fig
+│   └── components-storybook.html
+
+├── 📁 04-templates/
+│   ├── smm-instagram/, smm-tiktok/, smm-telegram/
+│   ├── presentations/
+│   └── email-signatures/
+
+├── 📁 05-content/
+│   ├── photo-bank/ (winners, cars, bts)
+│   ├── video-archive/ (live-streams 2016-2026)
+│   └── motion-pack/ (logo-anim, lower-thirds)
+
+├── 📁 06-legal/
+│   ├── public-offer.pdf
+│   ├── winner-contract-template.pdf
+│   └── edrpou-statement.pdf
+
+└── 📁 07-brand-book/
+    ├── v2.1-final.pdf
+    ├── v2.1-final.html
+    └── changelog.md</div>
+
+  <h3 class="s-subtitle">/// ВЕРСІЇ ТА ЗМІНИ</h3>
+  <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--red);">v2.1 · 04.2026</strong> — Розширення: аудіо-айдентика, email-шаблони, touchpoints, фото-напрямок, мерч-правила, empty states, бренд-метрики, roadmap. Виправлено пропорції круглої аватарки (DREAMCAR піднято і збільшено).
+    </div>
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--ash);">v2.1 · 04.2026</strong> — Повне оновлення. Додано: персони, конкуренти, secondary палітра, accessibility, design tokens, кризові скрипти, партнерські гайдлайни. Зміна логотипу на Racing Plate.
+    </div>
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--ash);">v1.0 · 03.2026</strong> — Перша версія. Базовий лого, кольори, типографіка.
+    </div>
+    <div>
+      <strong style="color: var(--ash);">v0.5 · 01.2026</strong> — Чорновик. Маніфест, перші концепції.
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="audio">
+  <div class="s-num">/// 19 — АУДІО-АЙДЕНТИКА</div>
+  <h2 class="s-title">ЯК МИ <span class="red">ЗВУЧИМО</span></h2>
+  <p class="s-desc">
+    Звук — це 50% бренду в епоху reels та live-стрімів. У DreamCar з прямими ефірами і відео-контентом — аудіо-ідентичність критична.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// SONIC LOGO</span>
+      <h4>ЗВУК ЛОГОТИПУ</h4>
+      <p>1.5 секунди. Низький бас → металевий клік (як замок авто) → коротке ревіння двигуна → тиша. Грає на початку кожного відео, ефіру, ролика.</p>
+      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:#4ade80;margin-top:12px;">audio/sonic-logo-1.5s.wav</code>
+    </div>
+    <div class="card">
+      <span class="label">/// HOLD MUSIC</span>
+      <h4>МУЗИКА ОЧІКУВАННЯ</h4>
+      <p>Ambient electronic, темп 90-100 BPM. Мінорні акорди з електронними елементами. Грає в підтримці та перед стартом ефіру.</p>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--ash);">Тривалість: 2-хвилинний loop. Без вокалу.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LIVE INTRO</span>
+      <h4>ЗАСТАВКА ЕФІРУ</h4>
+      <p>15-секундна композиція — наростання драйву. Грає за хвилину до старту прямого ефіру розіграшу. Створює напругу очікування.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// VICTORY</span>
+      <h4>ПЕРЕМОЖНИЙ STING</h4>
+      <p>3-секундний акорд. Грає у момент оголошення переможця в ефірі. Домажорний, тріумфальний, але без китчу.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// VOICE GUIDELINES</span>
+      <h4>ГОЛОС ДИКТОРА</h4>
+      <p>Чоловічий, 30-40 років, низький тембр. Спокійний, впевнений. Без типового «рекламного» захвату. Українська мова — стандартна, без діалекту.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LICENSING</span>
+      <h4>МУЗИЧНА ЛІЦЕНЗІЯ</h4>
+      <p>Тільки royalty-free треки (Epidemic Sound, Artlist, Soundstripe) або кастомна композиція. Ніколи — піратська музика чи популярні треки без ліцензії.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="email">
+  <div class="s-num">/// 20 — EMAIL ШАБЛОНИ</div>
+  <h2 class="s-title">EMAIL <span class="red">КОМУНІКАЦІЯ</span></h2>
+  <p class="s-desc">
+    Стандартні email-шаблони для всіх типових сценаріїв. Один тон голосу, одна структура. Учасник завжди знає що очікувати.
+  </p>
+
+  <h3 class="s-subtitle">/// ПІДПИС СПІВРОБІТНИКА — <span class="red">EMAIL SIGNATURE</span></h3>
+  <div style="background: var(--white); color: var(--black); padding: 32px; max-width: 540px; font-family: 'Manrope', sans-serif; border: 1px solid var(--line);">
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+      <div style="width: 64px; height: 64px; flex-shrink: 0;">
+        <div class="avatar-mark size-sm">
+          <div class="dc">D<span class="red">C</span></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 16px; font-weight: 800; color: #000;">Володимир Котляр</div>
+        <div style="font-size: 13px; color: #666;">Brand Manager · DreamCar</div>
+      </div>
+    </div>
+    <div style="border-top: 2px solid var(--red); padding-top: 12px; font-size: 12px; line-height: 1.7;">
+      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red); letter-spacing: 0.1em; font-size: 10px; margin-bottom: 4px;">/// CONTACT</div>
+      <div style="color: #000;">vg@dreamcar.ua · t.me/dreamcar_brand</div>
+      <div style="color: #000;">dreamcar.ua · @dreamcar.ua</div>
+    </div>
+    <div style="margin-top: 16px; font-size: 10px; color: #888; line-height: 1.5; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">
+      Цей email і вкладення можуть містити конфіденційну інформацію.
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ШАБЛОН: ПІДТВЕРДЖЕННЯ ОПЛАТИ</h3>
+  <div style="background: var(--white); color: var(--black); padding: 0; max-width: 600px; border: 1px solid var(--line); overflow: hidden;">
+    <div style="background: var(--black); padding: 24px; text-align: center;">
+      <div style="display: inline-block;">
+        <div class="racing-h size-md">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 32px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// ТОКЕН АКТИВОВАНО</div>
+      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; color: #000; margin-bottom: 16px;">ІВАНЕ, ТИ В КЛУБІ.</h2>
+      <p style="font-size: 14px; line-height: 1.6; color: #333;">
+        Оплата 249 ₴ пройшла. Твій токен <strong>#018-A4F2-K3</strong> зареєстровано на акцію Audi e-tron #018.
+      </p>
+      <div style="background: #f5f5f5; padding: 16px; margin: 20px 0; border-left: 3px solid var(--red);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.15em; margin-bottom: 8px;">/// КОЛИ ЕФІР</div>
+        <div style="font-size: 18px; font-weight: 800; color: #000;">19 квітня · 20:00 EEST</div>
+        <div style="font-size: 13px; color: #666; margin-top: 4px;">Прямий ефір в Instagram @dreamcar.ua</div>
+      </div>
+      <a href="#" style="display: inline-block; background: var(--red); color: var(--white); padding: 14px 28px; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-decoration: none;">ПОДИВИТИСЬ ТОКЕН →</a>
+      <p style="font-size: 12px; color: #888; margin-top: 24px; line-height: 1.6;">
+        Питання? Відповіді — на dreamcar.ua/faq, або напиши на vg@dreamcar.ua — відповімо протягом 4 годин.
+      </p>
+    </div>
+    <div style="background: #f5f5f5; padding: 16px 32px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; letter-spacing: 0.1em;">
+      DREAMCAR.UA · UNSUBSCRIBE
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ТИПИ EMAIL — <span class="red">ЯКІ ЛИСТИ І КОЛИ</span></h3>
+  <div class="rubric-grid">
+    <div class="rubric">
+      <div class="tag">TRANSACTIONAL</div>
+      <h4>ОПЛАТА ПРОЙШЛА</h4>
+      <p>Миттєво після оплати. Номер токена, дата ефіру, посилання в особистий кабінет.</p>
+    </div>
+    <div class="rubric">
+      <div class="tag">REMINDER</div>
+      <h4>ЗА 24 ГОДИНИ ДО ЕФІРУ</h4>
+      <p>Нагадування — твій токен у фіналі. Лінк на ефір. Час старту.</p>
+    </div>
+    <div class="rubric">
+      <div class="tag">REMINDER</div>
+      <h4>ЗА 1 ГОДИНУ ДО ЕФІРУ</h4>
+      <p>Останнє нагадування. Лінк на live. CTA: «приєднайся до ефіру».</p>
+    </div>
+    <div class="rubric">
+      <div class="tag">RESULT</div>
+      <h4>ПІСЛЯ ЕФІРУ — НЕ ВИГРАВ</h4>
+      <p>«Цього разу не вийшло. Наступна акція — [дата]. Ось як підготуватись».</p>
+    </div>
+    <div class="rubric">
+      <div class="tag">VICTORY</div>
+      <h4>ТИ ВИГРАВ! 🏆</h4>
+      <p>Особливий шаблон. Інструкція що далі: контакт менеджера, документи, передача.</p>
+    </div>
+    <div class="rubric">
+      <div class="tag">NEWSLETTER</div>
+      <h4>МІСЯЧНИЙ ДАЙДЖЕСТ</h4>
+      <p>Що було за місяць: переможці, статистика, наступні розіграші, інсайди.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="touchpoints">
+  <div class="s-num">/// 21 — ТОЧКИ ДОТИКУ З БРЕНДОМ</div>
+  <h2 class="s-title">CUSTOMER <span class="red">JOURNEY</span></h2>
+  <p class="s-desc">
+    Карта всіх місць де людина зустрічає DreamCar. У кожній точці — свій настрій, своя задача. Якщо хоч одна точка «провисає» — ламається довіра.
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 32px;">
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">01</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// AWARENESS · ПЕРШИЙ КОНТАКТ</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">РЕКЛАМА В INSTAGRAM / TIKTOK</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина прокручує feed і бачить наш рекламний пост або reel. <strong>Завдання точки:</strong> зачепити за 2 секунди — конкретний приз, конкретна ціна, конкретна дата. <strong>Емоція:</strong> зацікавленість + здивування.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">02</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// CONSIDERATION · ПЕРЕВІРКА</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">ПРОФІЛЬ + САЙТ</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина переходить у наш профіль, потім на сайт. Шукає: «чи це лохотрон?». <strong>Завдання точки:</strong> trust-сигнали (відеоархів, документи, переможці) + перші відповіді на FAQ. <strong>Емоція:</strong> впевненість.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">03</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// PURCHASE · ОПЛАТА</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">КУПІВЛЯ ТОКЕНА</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Чекаут — найкритичніший момент. Тут ми втрачаємо людей. <strong>Завдання точки:</strong> мінімум полів, швидка оплата (Apple/Google Pay, Privat24), миттєвий чек. <strong>Емоція:</strong> спокій, відсутність тривоги.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">04</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// EXPECTATION · ОЧІКУВАННЯ</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">ВІД ОПЛАТИ ДО ЕФІРУ</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Період між купівлею токена і ефіром (день-тиждень). <strong>Завдання точки:</strong> підігрівати інтерес контентом, нагадувати, не дати забути. Email + Telegram + Instagram. <strong>Емоція:</strong> наростання азарту.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">05</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// PEAK MOMENT · ПРЯМИЙ ЕФІР</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">МОМЕНТ ІСТИНИ</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Ефір розіграшу. <strong>Завдання точки:</strong> прозорість + драйв. Шоу одночасно з юридично-чистою процедурою. <strong>Емоція:</strong> адреналін, очікування, потім — або тріумф, або «ну добре, наступного разу».</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">06</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// AFTERMATH · ПІСЛЯ ЕФІРУ</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">НЕ ВИГРАВ — ЩО ДАЛІ</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Більшість не виграли. <strong>Завдання точки:</strong> не дати «згаснути». Email з результатом, лінк на наступну акцію, історія переможця, який раніше теж не вигравав. <strong>Емоція:</strong> «наступного разу».</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">07</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// DELIVERY · ПЕРЕДАЧА АВТО</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">ВІД РУК ДО РУК</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Тільки для переможця. <strong>Завдання точки:</strong> ВАУ-досвід. Брендоване packaging ключів, фотозйомка, відеосторі для соцмереж. Цей момент — головний UGC-актив. <strong>Емоція:</strong> сльози, недовіра, щастя.</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">08</div>
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 6px;">/// LOYALTY · СПІЛЬНОТА</div>
+        <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px;">КЛУБ DREAMCAR</h4>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Закритий Telegram-чат для тих, хто бере участь регулярно. Зустрічі переможців. Інсайди. <strong>Завдання точки:</strong> перетворити учасника на амбасадора. <strong>Емоція:</strong> приналежність, гордість.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="photo">
+  <div class="s-num">/// 22 — ФОТО-НАПРЯМОК</div>
+  <h2 class="s-title">ЯК МИ <span class="red">ЗНІМАЄМО</span></h2>
+  <p class="s-desc">
+    Стиль фото — частина візуальної ідентичності. Усі фотографи (штатні, фрілансери, продакшн) мають дотримуватись цих правил.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// LIGHTING</span>
+      <h4>ОСВІТЛЕННЯ</h4>
+      <p>Контрастне, «cinematic». Бічне світло з одного боку, контрасуюча тінь з іншого. Уникати «плоского» рівного освітлення. Час — golden hour або студія.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// COLORS</span>
+      <h4>КОЛЬОРОВА ОБРОБКА</h4>
+      <p>Знижені midtones, посилені тіні, теплі shadows + холодні highlights. Червоний акцент завжди насичений. LUT-пресет — у файлах бренду.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// COMPOSITION</span>
+      <h4>КОМПОЗИЦІЯ</h4>
+      <p>Правило третин для портретів. Симетрія для авто. Diagonal lines для динамічних сцен. Завжди — простір для тексту в правій третині.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// SUBJECT</span>
+      <h4>ГЕРОЇ КАДРУ</h4>
+      <p>Реальні люди, не моделі. Українські обличчя. Емоції справжні (радість після перемоги, серйозність перед ефіром). Без «глянцевого» позування.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// CAR SHOTS</span>
+      <h4>ЗЙОМКА АВТО</h4>
+      <p>Завжди 3/4 ракурс або профіль. Колеса повністю в кадрі. Логотип авто читається. Фон — нейтральний (студія, чорний асфальт, стіна).</p>
+    </div>
+    <div class="card">
+      <span class="label">/// WINNER MOMENTS</span>
+      <h4>МОМЕНТ ПЕРЕМОГИ</h4>
+      <p>Ключі в руці. Очі переможця. Авто на задньому плані. Без постановки — реальна емоція. Якщо людина плаче — ми знімаємо. Якщо обіймається з родиною — фіксуємо.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// УНИКАТИ — <span class="red">ВІЗУАЛЬНІ КЛІШЕ</span></h3>
+  <div class="card-grid">
+    <div class="card" style="border-left: 3px solid var(--danger);">
+      <span class="label" style="color: var(--danger);">/// ✕ DON'T</span>
+      <h4>ШИРОКОПОСМІШКОВІ STOCK-ФОТО</h4>
+      <p>Фото з іноземних стоків з людьми у костюмах і неможливо ідеальними посмішками. Виглядає фейково — підриває довіру.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--danger);">
+      <span class="label" style="color: var(--danger);">/// ✕ DON'T</span>
+      <h4>«ОБГОРТКОВІ» АВТО</h4>
+      <p>Авто з бантом, на тлі бенгальських вогнів, з кулями. Це лотерейний кітч — ми позиціонуємось вище.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--danger);">
+      <span class="label" style="color: var(--danger);">/// ✕ DON'T</span>
+      <h4>ГРУПОВІ ФОТО З БУХЛОМ</h4>
+      <p>Святкування з шампанським, келихи, тости. Алкоголь і азартні розіграші — небезпечне поєднання. Категорично ні.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="merch">
+  <div class="s-num">/// 23 — МЕРЧ ТА УПАКОВКА</div>
+  <h2 class="s-title">ФІЗИЧНИЙ <span class="red">БРЕНД</span></h2>
+  <p class="s-desc">
+    Усе, що людина може покласти в руку. Мерч переможців, упаковка ключів, наклейки, печатні матеріали для партнерів.
+  </p>
+
+  <h3 class="s-subtitle">/// <span class="red">ПАКЕТ ПЕРЕМОЖЦЯ</span></h3>
+  <p class="s-desc">Те, що отримує кожен переможець разом з ключами від авто.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// 01</span>
+      <h4>ДЕРЕВ'ЯНА КОРОБКА</h4>
+      <p>Дуб або горіх. Розмір 30×20×8 см. Гравірований логотип DreamCar на кришці. Усередині оксамитова обкладинка для ключів.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// 02</span>
+      <h4>БРЕЛОК</h4>
+      <p>Метал, лазерне гравірування. Логотип «DC» з одного боку, номер розіграшу і дата з іншого («#018 · 19.04.2026»).</p>
+    </div>
+    <div class="card">
+      <span class="label">/// 03</span>
+      <h4>СЕРТИФІКАТ</h4>
+      <p>Iмітація автомобільного техпаспорту, тільки брендовий. Лінкований папір, водяний знак, підпис CEO. Колекційний об'єкт.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// 04</span>
+      <h4>ФУТБОЛКА «WINNER»</h4>
+      <p>Чорна, 100% бавовна. Червоний принт «WINNER #018» на грудях, маленький DC-лого на рукаві. Дві штуки в розмір.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// 05</span>
+      <h4>ЛИСТ ЗАСНОВНИКА</h4>
+      <p>Рукописний лист від CEO. Особисте звернення. Друкований на дизайнерському папері. Це ВАУ-деталь, яку всі фотографують.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// 06</span>
+      <h4>ПЕРСОНАЛЬНА КАРТКА</h4>
+      <p>Запрошення в DreamCar Club. Ім'я переможця, номер у клубі, доступ до закритого Telegram-чату.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// АПАРЕЛ — <span class="red">МЕРЧ ДЛЯ ВСІХ</span></h3>
+  <p class="s-desc">Що можна продавати/дарувати учасникам, амбасадорам, партнерам.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// CAP</span>
+      <h4>КЕПКА</h4>
+      <p>Чорна snapback. Червона вишивка «DC» спереду. Печатна етикетка «DREAMCAR · UA» ззаду.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// HOODIE</span>
+      <h4>ХУДІ</h4>
+      <p>Чорне, важке (350+ г/м²). Великий логотип Racing Plate спереду. Лозунг «БЕРИ. ДІЙ. ВИГРАЙ.» на спині.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// STICKERS</span>
+      <h4>НАКЛЕЙКИ</h4>
+      <p>Holographic вініл. Розміри: 5×5 (для авто), 10×10 (для ноутбука), 20×20 (для гаража). Безкоштовно з кожним токеном.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LANYARD</span>
+      <h4>ШНУРОК ДЛЯ КЛЮЧІВ</h4>
+      <p>Чорний, повторювальний логотип DC. Карабін металевий. Раздача на ефірах, на зйомках, в офісі.</p>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// ПРАВИЛА ВИРОБНИЦТВА</h3>
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// QUALITY</span>
+      <h4>ТІЛЬКИ ПРЕМІУМ</h4>
+      <p>Краще менше і дорожче. Дешевий мерч = дешевий бренд. Якщо немає бюджету — не виробляємо взагалі.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LOCAL</span>
+      <h4>УКРАЇНСЬКЕ ВИРОБНИЦТВО</h4>
+      <p>Усе виробляється в Україні. Підтримка локальних виробників — частина наших цінностей. Перелік перевірених постачальників — у внутрішньому Notion.</p>
+    </div>
+    <div class="card">
+      <span class="label">/// LIMITED</span>
+      <h4>ЛІМІТОВАНІ ТИРАЖІ</h4>
+      <p>Кожна серія мерчу — лімітована. Номер розіграшу = номер серії. Це створює колекційну цінність.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="empty">
+  <div class="s-num">/// 24 — EMPTY STATES + ERROR PAGES</div>
+  <h2 class="s-title">КОЛИ <span class="red">ЩОСЬ ПІШЛО НЕ ТАК</span></h2>
+  <p class="s-desc">
+    Сторінки помилок і порожні стани часто забувають при дизайні. А це — найкращий момент показати характер бренду. Ми не виправдовуємось — ми діємо.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 32px;">
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">404</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin: 16px 0;">МАШИНУ<br>ВЖЕ ЗАБРАЛИ.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Сторінки, яку ти шукаєш, не існує — або вона переїхала. На головній є те, що тобі потрібно.</p>
+      <button class="btn btn-primary" style="margin: 0 auto;">НА ГОЛОВНУ →</button>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">500</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin: 16px 0;">У НАС<br>ТЕХНІЧНИЙ ЗБІЙ.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Працюємо. Якщо ти намагався купити токен — гроші не списались. Спробуй за 5 хвилин.</p>
+      <button class="btn btn-secondary" style="margin: 0 auto;">ОНОВИТИ →</button>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-size: 60px; opacity: 0.3;">🎫</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin: 16px 0;">ТУТ ПОКИ<br>ПОРОЖНЬО.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">У тебе ще немає токенів на активну акцію. Поточна — Audi e-tron #018.</p>
+      <button class="btn btn-primary" style="margin: 0 auto;">КУПИТИ ТОКЕН →</button>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 12px;">/// АКЦІЯ #018</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin-bottom: 16px;">ЗАВЕРШЕНА.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Переможець — Микола з Дніпра. Подивись запис ефіру або готуйся до акції #018 — старт 25 квітня.</p>
+      <button class="btn btn-ghost" style="margin: 0 auto;">ЗАПИС ЕФІРУ →</button>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-size: 60px; opacity: 0.5;">🔧</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin: 16px 0;">ТЕХНІЧНА<br>ПЕРЕРВА.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Сайт оновлюється. Повертаємось через 30 хвилин. Усі токени та оплати в безпеці.</p>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em;">/// FOLLOW: @dreamcar.ua</p>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-size: 60px; opacity: 0.5;">📡</div>
+      <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin: 16px 0;">НЕМАЄ<br>ІНТЕРНЕТУ.</h3>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Перевір підключення. Якщо ти на ефірі — він автоматично відновиться при поверненні зв'язку.</p>
+      <button class="btn btn-secondary" style="margin: 0 auto;">СПРОБУВАТИ ЗНОВУ →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="metrics">
+  <div class="s-num">/// 25 — БРЕНД-МЕТРИКИ</div>
+  <h2 class="s-title">ЯК МІРЯЄМО <span class="red">УСПІХ БРЕНДУ</span></h2>
+  <p class="s-desc">
+    Бренд — це не «відчуття». Це конкретні цифри. 6 ключових метрик, які ми треком щомісяця. Якщо вони ростуть — бренд здоровий. Якщо падають — копаємо причини.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="label">/// AWARENESS</span>
+      <h4>BRAND AWARENESS</h4>
+      <p>«Чи чули ви про DreamCar?» серед цільової аудиторії. Опитування щокварталу через Gradus / Re-volt.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">25%</div>
+        <div style="color: var(--ash); font-size: 11px;">серед 18-45, Україна</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">/// NPS</span>
+      <h4>NET PROMOTER SCORE</h4>
+      <p>«Наскільки ймовірно ви порекомендуєте DreamCar?» від 0 до 10. Опитування після кожного розіграшу.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">+50</div>
+        <div style="color: var(--ash); font-size: 11px;">benchmark luxury: +30 / e-comm: +40</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">/// SOV</span>
+      <h4>SHARE OF VOICE</h4>
+      <p>Скільки розмов про DreamCar у соцмережах vs конкуренти. Brand24 / YouScan моніторинг.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">35%</div>
+        <div style="color: var(--ash); font-size: 11px;">серед сегменту «розіграші авто»</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">/// REPEAT</span>
+      <h4>REPEAT PARTICIPATION</h4>
+      <p>% учасників, які купили токен у 2+ розіграшах поспіль. Прямий показник лояльності.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">40%</div>
+        <div style="color: var(--ash); font-size: 11px;">2026 baseline: 28%</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">/// ORGANIC</span>
+      <h4>ORGANIC TRAFFIC</h4>
+      <p>% трафіку без реклами. Показник сили бренду — людей не треба «купляти», вони шукають нас самі.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">45%</div>
+        <div style="color: var(--ash); font-size: 11px;">brand searches + direct</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">/// SENTIMENT</span>
+      <h4>SENTIMENT ANALYSIS</h4>
+      <p>Тональність згадок у соцмережах: позитив / нейтрал / негатив. Відстежуємо щотижня.</p>
+      <div style="margin-top: 16px; padding: 12px; background: var(--graphite); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <div style="color: var(--red);">ЦІЛЬ 2026:</div>
+        <div style="color: var(--white); font-size: 18px; font-weight: 700;">75% +</div>
+        <div style="color: var(--ash); font-size: 11px;">не менше 75% позитивних</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+
+<section id="roadmap">
+  <div class="s-num">/// 26 — ROADMAP БРЕНДУ</div>
+  <h2 class="s-title">КУДИ <span class="red">ЙДЕМО</span></h2>
+  <p class="s-desc">
+    Стратегічні етапи розвитку бренду на 3 роки. Це не операційний план, а напрямок руху бренду.
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 32px;">
+
+    <div style="background: var(--coal); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em;">/// PHASE 01 · 2026</div>
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; margin-top: 4px;">УКРІПЛЕННЯ ОСНОВИ</h3>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">КУРРЕНТ</div>
+      </div>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
+        Виправити основу: ребрендинг, accessibility, design system, brand book. Запустити DreamCar Club. Збільшити частоту розіграшів до щомісячного циклу.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">✓ Запуск нового брендбуку</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">✓ DreamCar Club Telegram</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Щомісячний розіграш</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Партнерство з блогерами</div>
+      </div>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em;">/// PHASE 02 · 2027</div>
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; margin-top: 4px;">МАСШТАБУВАННЯ КАТЕГОРІЇ</h3>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+12 МІСЯЦІВ</div>
+      </div>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
+        Розширення продукту: окрім авто — нерухомість (квартири у Києві, Львові), електроніка (MacBook Pro, iPhone), подорожі. Запуск суб-бренду «DreamLife».
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ DreamLife: квартири</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ DreamTech: гаджети</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ DreamTrips: подорожі</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Великий ребрендинг 2.0</div>
+      </div>
+    </div>
+
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 32px; opacity: 0.85;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em;">/// PHASE 03 · 2028</div>
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; margin-top: 4px;">ВИХІД В ЄС</h3>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+24 МІСЯЦІ</div>
+      </div>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
+        Експансія на ринки Польщі та Чехії — країни з великими українськими діаспорами. Локалізація бренду — DreamCar.pl, DreamCar.cz. Adapted brand book для нових ринків.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Запуск Польща</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Запуск Чехія</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ Локалізовані бренди</div>
+        <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">→ EU compliance</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer style="padding: 32px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.18em; border-top: 1px solid var(--line);">
+  DREAMCAR · BRAND BOOK · V3.0 · 05.2026<br>
+  vg@dreamcar.ua
+</footer>
+
+</body>
+</html>

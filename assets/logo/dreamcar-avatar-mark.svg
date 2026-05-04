@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="DreamCar DC Monogram">
+  <title>DreamCar — DC monogram для соцмереж і favicon</title>
+  <defs>
+    <style>
+      .bg-circle { fill: #0A0A0A; }
+      .frame { fill: none; stroke: #FFFFFF; stroke-width: 10; }
+      .dc-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 220px; letter-spacing: 0; }
+      .dc-d { fill: #FFFFFF; }
+      .dc-c { fill: #E30613; }
+    </style>
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#E30613" stop-opacity="0.22"/>
+      <stop offset="65%" stop-color="#E30613" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#E30613" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- red glow halo -->
+  <circle cx="200" cy="200" r="200" fill="url(#glow)"/>
+  <!-- main dark circle -->
+  <circle class="bg-circle" cx="200" cy="200" r="186"/>
+  <!-- white frame -->
+  <circle class="frame" cx="200" cy="200" r="180"/>
+
+  <!-- DC monogram, vertically centered -->
+  <text x="200" y="278" text-anchor="middle" class="dc-text">
+    <tspan class="dc-d">D</tspan><tspan class="dc-c">C</tspan>
+  </text>
+</svg>

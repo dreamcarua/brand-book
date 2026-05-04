@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="DreamCar Racing Plate">
+  <title>DreamCar — клуб дій з вручення авто</title>
+  <defs>
+    <style>
+      .plate-bg { fill: #0A0A0A; }
+      .plate-frame { fill: none; stroke: #FFFFFF; stroke-width: 6; }
+      .plate-shadow { fill: #B8050F; }
+      .ua-tag-bg { fill: #E30613; }
+      .ua-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 64px; fill: #FFFFFF; letter-spacing: 0.04em; }
+      .brand-text { font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 92px; letter-spacing: 0.02em; }
+      .brand-white { fill: #FFFFFF; }
+      .brand-red { fill: #E30613; }
+    </style>
+  </defs>
+
+  <!-- offset shadow -->
+  <rect class="plate-shadow" x="14" y="14" width="692" height="172" rx="6"/>
+
+  <!-- main plate -->
+  <rect class="plate-bg" x="0" y="0" width="692" height="172" rx="6"/>
+  <rect class="plate-frame" x="3" y="3" width="686" height="166" rx="4"/>
+
+  <!-- UA tag (left) -->
+  <rect class="ua-tag-bg" x="20" y="20" width="120" height="132" rx="2"/>
+  <text x="80" y="112" text-anchor="middle" class="ua-text">UA</text>
+
+  <!-- DREAMCAR text -->
+  <text x="170" y="118" class="brand-text brand-white">DREAM</text>
+  <text x="488" y="118" class="brand-text brand-red">CAR</text>
+</svg>
