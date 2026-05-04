@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="supported-color-schemes" content="dark">
+<title>10 UI-компоненти · DreamCar Brand Book</title>
+<meta name="description" content="DreamCar Brand Book — 10 UI-компоненти.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar">
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button>
+</header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.0</span>
+<div class="group">
+<span class="group-title">На старт</span>
+<nav>
+<a href="quickstart.html"><span class="num">00</span>Quick Start</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Стратегія</span>
+<nav>
+<a href="manifesto.html"><span class="num">01</span>Маніфест</a>
+<a href="strategy.html"><span class="num">02</span>Стратегія</a>
+<a href="personas.html"><span class="num">03</span>Аудиторія</a>
+<a href="compete.html"><span class="num">04</span>Контекст ринку</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Візуальна система</span>
+<nav>
+<a href="logo.html"><span class="num">05</span>Логотип</a>
+<a href="avatar-mark.html"><span class="num">05B</span>Avatar Mark</a>
+<a href="colors.html"><span class="num">06</span>Кольори</a>
+<a href="typo.html"><span class="num">07</span>Типографіка</a>
+<a href="spacing.html"><span class="num">08</span>Відступи і сітка</a>
+<a href="elements.html"><span class="num">09</span>Візуальні елементи</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Інтерфейс</span>
+<nav>
+<a href="components.html" class="active"><span class="num">10</span>UI-компоненти</a>
+<a href="motion.html"><span class="num">11</span>Анімації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Голос і контент</span>
+<nav>
+<a href="voice.html"><span class="num">12</span>Тон голосу</a>
+<a href="legal-language.html"><span class="num">12B</span>Юридична мова</a>
+<a href="content.html"><span class="num">13</span>Контент</a>
+<a href="crisis.html"><span class="num">14</span>Кризові комунікації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Партнери і довіра</span>
+<nav>
+<a href="partners.html"><span class="num">15</span>Партнери</a>
+<a href="trust.html"><span class="num">16</span>Довіра і доступність</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Техніка</span>
+<nav>
+<a href="tokens.html"><span class="num">17</span>Design tokens</a>
+<a href="apps.html"><span class="num">18</span>Asset Library</a>
+<a href="audio.html"><span class="num">19</span>Аудіо-айдентика</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Точки контакту</span>
+<nav>
+<a href="email.html"><span class="num">20</span>Email</a>
+<a href="touchpoints.html"><span class="num">21</span>Точки контакту</a>
+<a href="photo.html"><span class="num">22</span>Фото-режисура</a>
+<a href="merch.html"><span class="num">23</span>Мерч</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Стан і метрики</span>
+<nav>
+<a href="empty.html"><span class="num">24</span>Empty states</a>
+<a href="metrics.html"><span class="num">25</span>Метрики</a>
+<a href="roadmap.html"><span class="num">26</span>Roadmap</a>
+</nav>
+</div>
+<div class="foot">vg@dreamcar.ua<br>ТОВ «ПЛЕТФОКС» · 44236899<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">10 · UI-компоненти</span></div>
+<section id="components">
+  <div class="s-num">/// 10 — UI КОМПОНЕНТИ</div>
+  <h2 class="s-title">КОМПОНЕНТИ <span class="red">ПРОДУКТУ</span></h2>
+  <p class="s-desc">
+    Базова бібліотека UI-компонентів для розробників і дизайнерів. Використовуй їх «з полиці» — не вигадуй власні варіанти кнопок чи інпутів.
+  </p>
+
+  <h3 class="s-subtitle">/// КНОПКИ — <span class="red">BUTTONS</span></h3>
+  <p class="s-desc">Стани: default · hover · active · focus · disabled · loading.</p>
+  <div class="button-row">
+    <button class="btn btn-primary">PRIMARY CTA</button>
+    <button class="btn btn-secondary">SECONDARY</button>
+    <button class="btn btn-ghost">GHOST</button>
+    <button class="btn btn-danger">DANGER</button>
+    <button class="btn btn-disabled">DISABLED</button>
+    <button class="btn btn-primary btn-loading">LOADING</button>
+  </div>
+
+  <p class="s-desc" style="margin-top: 16px; font-size: 14px;">
+    <strong style="color: var(--white);">PRIMARY</strong> — головна дія (купити токен, взяти участь). Тільки одна на сторінку.<br>
+    <strong style="color: var(--white);">SECONDARY</strong> — альтернативна дія (підписатись, дізнатись більше).<br>
+    <strong style="color: var(--white);">GHOST</strong> — третинна дія (скасувати, повернутись).<br>
+    <strong style="color: var(--white);">DANGER</strong> — небезпечна дія (видалити, відмовитись).
+  </p>
+
+  <h3 class="s-subtitle">/// <span class="red">ФОРМИ І ПОЛЯ</span></h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+    <div class="form-demo">
+      <label class="form-label" style="margin-bottom: 12px; display:block;">/// ОБЕРИ ПАКЕТ</label>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px;">
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">1 токен</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">249 ₴</div>
+        </div>
+        <div style="border: 1px solid var(--red); background: rgba(227,6,19,0.08); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">5 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); margin-top: 4px;">ПОПУЛЯРНИЙ</div>
+        </div>
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">15 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+        </div>
+        <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
+          <div style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white);">50 токенів</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">[TBD] ₴</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">/// EMAIL</label>
+        <input class="form-input" type="email" placeholder="ivan@example.com" value="ivan@dreamcar.ua">
+      </div>
+      <button class="btn btn-primary" style="width: 100%; justify-content: center;">ОТРИМАТИ ТОКЕНИ →</button>
+      <p style="font-size: 11px; color: var(--ash); margin-top: 12px; line-height: 1.5;">У всіх рекламних і партнерських матеріалах показуємо <strong style="color: var(--white);">усі чотири пакети</strong>, не лише мінімальний. Блогер чи агентство, яке отримує матеріали, має бачити повну продуктову лінійку.</p>
+    </div>
+
+    <div class="form-demo">
+      <div class="form-group">
+        <label class="form-label">/// EMAIL · ERROR STATE</label>
+        <input class="form-input error" type="email" placeholder="email" value="ivan@invalid">
+        <div class="form-error">⚠ Введіть коректну email-адресу.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">/// TELEGRAM</label>
+        <input class="form-input" type="text" placeholder="@username">
+        <div class="form-help">Для входу в DreamCar Club.</div>
+      </div>
+      <button class="btn btn-disabled" style="width: 100%; justify-content: center;" disabled>ЗАПОВНІТЬ ВСІ ПОЛЯ</button>
+    </div>
+  </div>
+</section>
+<nav class="section-page-nav">
+<a href="elements.html" class="prev"><span class="nav-label">← 09 ПОПЕРЕДНІЙ</span><span class="nav-title">Візуальні елементи</span></a>
+<a href="motion.html" class="next"><span class="nav-label">11 НАСТУПНИЙ →</span><span class="nav-title">Анімації</span></a>
+</nav>
+</main>
+
+<script>
+// Close mobile sidebar when clicking a link
+document.querySelectorAll('.sidebar nav a').forEach(a => {
+  a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+});
+// Close on backdrop click
+document.body.addEventListener('click', (e) => {
+  if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
+    document.body.classList.remove('sidebar-open');
+  }
+});
+</script>
+</body>
+</html>

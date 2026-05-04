@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="supported-color-schemes" content="dark">
+<title>17 Design tokens · DreamCar Brand Book</title>
+<meta name="description" content="DreamCar Brand Book — 17 Design tokens.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar">
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button>
+</header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.0</span>
+<div class="group">
+<span class="group-title">На старт</span>
+<nav>
+<a href="quickstart.html"><span class="num">00</span>Quick Start</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Стратегія</span>
+<nav>
+<a href="manifesto.html"><span class="num">01</span>Маніфест</a>
+<a href="strategy.html"><span class="num">02</span>Стратегія</a>
+<a href="personas.html"><span class="num">03</span>Аудиторія</a>
+<a href="compete.html"><span class="num">04</span>Контекст ринку</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Візуальна система</span>
+<nav>
+<a href="logo.html"><span class="num">05</span>Логотип</a>
+<a href="avatar-mark.html"><span class="num">05B</span>Avatar Mark</a>
+<a href="colors.html"><span class="num">06</span>Кольори</a>
+<a href="typo.html"><span class="num">07</span>Типографіка</a>
+<a href="spacing.html"><span class="num">08</span>Відступи і сітка</a>
+<a href="elements.html"><span class="num">09</span>Візуальні елементи</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Інтерфейс</span>
+<nav>
+<a href="components.html"><span class="num">10</span>UI-компоненти</a>
+<a href="motion.html"><span class="num">11</span>Анімації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Голос і контент</span>
+<nav>
+<a href="voice.html"><span class="num">12</span>Тон голосу</a>
+<a href="legal-language.html"><span class="num">12B</span>Юридична мова</a>
+<a href="content.html"><span class="num">13</span>Контент</a>
+<a href="crisis.html"><span class="num">14</span>Кризові комунікації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Партнери і довіра</span>
+<nav>
+<a href="partners.html"><span class="num">15</span>Партнери</a>
+<a href="trust.html"><span class="num">16</span>Довіра і доступність</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Техніка</span>
+<nav>
+<a href="tokens.html" class="active"><span class="num">17</span>Design tokens</a>
+<a href="apps.html"><span class="num">18</span>Asset Library</a>
+<a href="audio.html"><span class="num">19</span>Аудіо-айдентика</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Точки контакту</span>
+<nav>
+<a href="email.html"><span class="num">20</span>Email</a>
+<a href="touchpoints.html"><span class="num">21</span>Точки контакту</a>
+<a href="photo.html"><span class="num">22</span>Фото-режисура</a>
+<a href="merch.html"><span class="num">23</span>Мерч</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Стан і метрики</span>
+<nav>
+<a href="empty.html"><span class="num">24</span>Empty states</a>
+<a href="metrics.html"><span class="num">25</span>Метрики</a>
+<a href="roadmap.html"><span class="num">26</span>Roadmap</a>
+</nav>
+</div>
+<div class="foot">vg@dreamcar.ua<br>ТОВ «ПЛЕТФОКС» · 44236899<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">17 · Design tokens</span></div>
+<section id="tokens">
+  <div class="s-num">/// 17 — DESIGN TOKENS</div>
+  <h2 class="s-title">ТОКЕНИ ДЛЯ <span class="red">РОЗРОБНИКІВ</span></h2>
+  <p class="s-desc">
+    Усі змінні бренду — у форматах JSON та CSS. Просто скопіюй у проєкт. Імпорт у Figma через плагін Tokens Studio. Single source of truth.
+  </p>
+
+  <h3 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h3>
+  <div class="tokens-code">{
+  <span class="comment">// КОЛЬОРИ — ПЕРВИННІ</span>
+  <span class="key">"color"</span>: {
+    <span class="key">"black"</span>:        { <span class="key">"value"</span>: <span class="str">"#0A0A0A"</span> },
+    <span class="key">"coal"</span>:         { <span class="key">"value"</span>: <span class="str">"#141414"</span> },
+    <span class="key">"graphite"</span>:     { <span class="key">"value"</span>: <span class="str">"#1F1F1F"</span> },
+    <span class="key">"steel"</span>:        { <span class="key">"value"</span>: <span class="str">"#2A2A2A"</span> },
+    <span class="key">"ash"</span>:          { <span class="key">"value"</span>: <span class="str">"#888888"</span> },
+    <span class="key">"bone"</span>:         { <span class="key">"value"</span>: <span class="str">"#DDDDDD"</span> },
+    <span class="key">"white"</span>:        { <span class="key">"value"</span>: <span class="str">"#FFFFFF"</span> },
+    <span class="key">"red"</span>:          { <span class="key">"value"</span>: <span class="str">"#E30613"</span> },
+    <span class="key">"red-deep"</span>:     { <span class="key">"value"</span>: <span class="str">"#B8050F"</span> },
+
+    <span class="comment">// КОЛЬОРИ — СЛУЖБОВІ (UI states)</span>
+    <span class="key">"success"</span>:      { <span class="key">"value"</span>: <span class="str">"#10B981"</span> },
+    <span class="key">"warning"</span>:      { <span class="key">"value"</span>: <span class="str">"#F59E0B"</span> },
+    <span class="key">"danger"</span>:       { <span class="key">"value"</span>: <span class="str">"#DC2626"</span> },
+    <span class="key">"info"</span>:         { <span class="key">"value"</span>: <span class="str">"#3B82F6"</span> }
+  },
+
+  <span class="comment">// SPACING SCALE — БАЗА 4PX</span>
+  <span class="key">"spacing"</span>: {
+    <span class="key">"1"</span>: { <span class="key">"value"</span>: <span class="val">"4px"</span> },
+    <span class="key">"2"</span>: { <span class="key">"value"</span>: <span class="val">"8px"</span> },
+    <span class="key">"3"</span>: { <span class="key">"value"</span>: <span class="val">"12px"</span> },
+    <span class="key">"4"</span>: { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"5"</span>: { <span class="key">"value"</span>: <span class="val">"24px"</span> },
+    <span class="key">"6"</span>: { <span class="key">"value"</span>: <span class="val">"32px"</span> },
+    <span class="key">"7"</span>: { <span class="key">"value"</span>: <span class="val">"48px"</span> },
+    <span class="key">"8"</span>: { <span class="key">"value"</span>: <span class="val">"64px"</span> },
+    <span class="key">"9"</span>: { <span class="key">"value"</span>: <span class="val">"96px"</span> },
+    <span class="key">"10"</span>: { <span class="key">"value"</span>: <span class="val">"128px"</span> }
+  },
+
+  <span class="comment">// ТИПОГРАФІЯ — ШРИФТИ</span>
+  <span class="key">"font"</span>: {
+    <span class="key">"display"</span>: { <span class="key">"value"</span>: <span class="str">"'Bebas Neue', sans-serif"</span> },
+    <span class="key">"brand"</span>:   { <span class="key">"value"</span>: <span class="str">"'Archivo Black', sans-serif"</span> },
+    <span class="key">"body"</span>:    { <span class="key">"value"</span>: <span class="str">"'Manrope', sans-serif"</span> },
+    <span class="key">"mono"</span>:    { <span class="key">"value"</span>: <span class="str">"'JetBrains Mono', monospace"</span> }
+  },
+
+  <span class="comment">// ТИПОГРАФІЯ — ШКАЛА</span>
+  <span class="key">"fontSize"</span>: {
+    <span class="key">"display"</span>:  { <span class="key">"value"</span>: <span class="val">"96px"</span> },
+    <span class="key">"h1"</span>:       { <span class="key">"value"</span>: <span class="val">"64px"</span> },
+    <span class="key">"h2"</span>:       { <span class="key">"value"</span>: <span class="val">"48px"</span> },
+    <span class="key">"h3"</span>:       { <span class="key">"value"</span>: <span class="val">"32px"</span> },
+    <span class="key">"h4"</span>:       { <span class="key">"value"</span>: <span class="val">"24px"</span> },
+    <span class="key">"h5"</span>:       { <span class="key">"value"</span>: <span class="val">"18px"</span> },
+    <span class="key">"body-lg"</span>:  { <span class="key">"value"</span>: <span class="val">"18px"</span> },
+    <span class="key">"body"</span>:     { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"body-sm"</span>:  { <span class="key">"value"</span>: <span class="val">"14px"</span> },
+    <span class="key">"caption"</span>:  { <span class="key">"value"</span>: <span class="val">"13px"</span> },
+    <span class="key">"mono"</span>:     { <span class="key">"value"</span>: <span class="val">"11px"</span> }
+  },
+
+  <span class="comment">// РАДІУСИ</span>
+  <span class="key">"radius"</span>: {
+    <span class="key">"none"</span>: { <span class="key">"value"</span>: <span class="val">"0px"</span> },
+    <span class="key">"sm"</span>:   { <span class="key">"value"</span>: <span class="val">"4px"</span> },
+    <span class="key">"md"</span>:   { <span class="key">"value"</span>: <span class="val">"8px"</span> },
+    <span class="key">"lg"</span>:   { <span class="key">"value"</span>: <span class="val">"16px"</span> },
+    <span class="key">"pill"</span>: { <span class="key">"value"</span>: <span class="val">"999px"</span> }
+  },
+
+  <span class="comment">// АНІМАЦІЇ</span>
+  <span class="key">"motion"</span>: {
+    <span class="key">"fast"</span>:    { <span class="key">"value"</span>: <span class="val">"150ms"</span> },
+    <span class="key">"base"</span>:    { <span class="key">"value"</span>: <span class="val">"300ms"</span> },
+    <span class="key">"slow"</span>:    { <span class="key">"value"</span>: <span class="val">"500ms"</span> },
+    <span class="key">"easeOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.2, 0.9, 0.3, 1)"</span> },
+    <span class="key">"easeInOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.4, 0, 0.2, 1)"</span> }
+  },
+
+  <span class="comment">// ТІНІ</span>
+  <span class="key">"shadow"</span>: {
+    <span class="key">"sm"</span>: { <span class="key">"value"</span>: <span class="str">"0 2px 4px rgba(0,0,0,0.5)"</span> },
+    <span class="key">"md"</span>: { <span class="key">"value"</span>: <span class="str">"0 8px 16px rgba(0,0,0,0.4)"</span> },
+    <span class="key">"lg"</span>: { <span class="key">"value"</span>: <span class="str">"0 20px 40px rgba(0,0,0,0.5)"</span> },
+    <span class="key">"glow-red"</span>: { <span class="key">"value"</span>: <span class="str">"0 0 0 3px #E30613"</span> }
+  },
+
+  <span class="comment">// БРЕЙКПОЙНТИ</span>
+  <span class="key">"breakpoint"</span>: {
+    <span class="key">"mobile"</span>:  { <span class="key">"value"</span>: <span class="val">"640px"</span> },
+    <span class="key">"tablet"</span>:  { <span class="key">"value"</span>: <span class="val">"1024px"</span> },
+    <span class="key">"desktop"</span>: { <span class="key">"value"</span>: <span class="val">"1440px"</span> }
+  }
+}</div>
+
+  <h3 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h3>
+  <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v2.1 */</span>
+:root {
+  <span class="comment">/* === COLORS === */</span>
+  --dc-black:        #0A0A0A;
+  --dc-coal:         #141414;
+  --dc-graphite:     #1F1F1F;
+  --dc-steel:        #2A2A2A;
+  --dc-ash:          #888888;
+  --dc-bone:         #DDDDDD;
+  --dc-white:        #FFFFFF;
+  --dc-red:          #E30613;
+  --dc-red-deep:     #B8050F;
+
+  <span class="comment">/* UI states */</span>
+  --dc-success:      #10B981;
+  --dc-warning:      #F59E0B;
+  --dc-danger:       #DC2626;
+  --dc-info:         #3B82F6;
+
+  <span class="comment">/* === SPACING === */</span>
+  --dc-s-1:  4px;   --dc-s-2:  8px;
+  --dc-s-3:  12px;  --dc-s-4:  16px;
+  --dc-s-5:  24px;  --dc-s-6:  32px;
+  --dc-s-7:  48px;  --dc-s-8:  64px;
+  --dc-s-9:  96px;  --dc-s-10: 128px;
+
+  <span class="comment">/* === RADIUS === */</span>
+  --dc-r-none: 0;   --dc-r-sm: 4px;
+  --dc-r-md:   8px; --dc-r-lg: 16px;
+  --dc-r-pill: 999px;
+
+  <span class="comment">/* === TYPOGRAPHY === */</span>
+  --dc-font-display: 'Bebas Neue', sans-serif;
+  --dc-font-brand:   'Archivo Black', sans-serif;
+  --dc-font-body:    'Manrope', sans-serif;
+  --dc-font-mono:    'JetBrains Mono', monospace;
+
+  <span class="comment">/* === MOTION === */</span>
+  --dc-d-fast: 150ms;
+  --dc-d-base: 300ms;
+  --dc-d-slow: 500ms;
+  --dc-e-out:  cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dc-e-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  <span class="comment">/* === SHADOWS === */</span>
+  --dc-shadow-sm:  0 2px 4px rgba(0, 0, 0, 0.5);
+  --dc-shadow-md:  0 8px 16px rgba(0, 0, 0, 0.4);
+  --dc-shadow-lg:  0 20px 40px rgba(0, 0, 0, 0.5);
+  --dc-glow-red:   0 0 0 3px var(--dc-red);
+
+  <span class="comment">/* === BREAKPOINTS (use in JS) === */</span>
+  --dc-bp-mobile:  640px;
+  --dc-bp-tablet:  1024px;
+  --dc-bp-desktop: 1440px;
+}
+
+<span class="comment">/* === Reduced motion === */</span>
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</div>
+</section>
+<nav class="section-page-nav">
+<a href="trust.html" class="prev"><span class="nav-label">← 16 ПОПЕРЕДНІЙ</span><span class="nav-title">Довіра і доступність</span></a>
+<a href="apps.html" class="next"><span class="nav-label">18 НАСТУПНИЙ →</span><span class="nav-title">Asset Library</span></a>
+</nav>
+</main>
+
+<script>
+// Close mobile sidebar when clicking a link
+document.querySelectorAll('.sidebar nav a').forEach(a => {
+  a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+});
+// Close on backdrop click
+document.body.addEventListener('click', (e) => {
+  if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
+    document.body.classList.remove('sidebar-open');
+  }
+});
+</script>
+</body>
+</html>
