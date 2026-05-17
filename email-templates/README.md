@@ -28,7 +28,7 @@
 | `{{PROJECT_NUM}}` | Номер проекту | "17" |
 | `{{HERO_KICKER}}` | Pre-title над заголовком | "СТАРТ НОВОЇ АКЦІЇ" |
 | `{{HERO_TITLE_LINE_1}}` | Перший рядок заголовка | "ТВОЄ АВТО МРІЇ —" |
-| `{{HERO_TITLE_LINE_2}}` | Другий рядок (буде з градієнтом) | "BMW X5 HYBRID" |
+| `{{HERO_TITLE_LINE_2}}` | Другий рядок (DC RED акцент) | "BMW X5 HYBRID" |
 | `{{HERO_SUBTITLE}}` | Підзаголовок | "Преміум-кросовер з гібридом..." |
 | `{{LIVE_DATE}}` | Дата ефіру | "19.04 · 20:00" |
 | `{{PRICE_FROM}}` | Мінімальна ціна | "249" |
@@ -37,7 +37,7 @@
 | `{{HERO_IMAGE_URL}}` | URL фото героя | "https://dreamcar.ua/assets/email/x5.jpg" |
 | `{{HERO_IMAGE_ALT}}` | Alt-text для accessibility | "BMW X5 Hybrid · DreamCar" |
 | `{{BODY_HEADLINE_1}}` | Body title (чорний) | "16 АВТО ВЖЕ ЗНАЙШЛИ" |
-| `{{BODY_HEADLINE_2}}` | Body title (червоний акцент) | "СВОЇХ ВЛАСНИКІВ" |
+| `{{BODY_HEADLINE_2}}` | Body title (DC RED акцент) | "СВОЇХ ВЛАСНИКІВ" |
 | `{{BODY_PARAGRAPH_1}}` | Перший параграф | "З 2019 року DreamCar розіграв..." |
 | `{{BODY_PARAGRAPH_2}}` | Другий параграф | "Долучайся, бо це твій шанс..." |
 | `{{STEP_1_TITLE}}` / `{{STEP_1_DESC}}` | Перший крок "Як це працює" | "КУПУЄШ ТОКЕНИ" / "Від 249 ₴..." |
@@ -49,7 +49,7 @@
 | `{{CTA_SECONDARY_URL}}` | URL secondary | "https://dreamcar.ua/winners" |
 | `{{SITE_URL}}` | URL сайту у footer | "https://dreamcar.ua" |
 | `{{INSTAGRAM_URL}}` / `{{TELEGRAM_URL}}` / `{{TIKTOK_URL}}` / `{{YOUTUBE_URL}}` | Соцмережі | "https://instagram.com/dreamcar.ua" |
-| `{{TERMS_URL}}` | Правила сервісу | "https://dreamcar.ua/terms" |
+| `{{YEAR}}` | Поточний рік для копірайту | "2026" |
 | `{{UNSUBSCRIBE_URL}}` | Список розсилки | _Auto-injected ESP-ом_ |
 | `{{PREFERENCES_URL}}` | Налаштування підписки | "https://dreamcar.ua/preferences" |
 
@@ -80,14 +80,30 @@
 - ✅ Gmail (web + iOS + Android)
 - ✅ Apple Mail (macOS + iOS)
 - ✅ Outlook 2016 + 365 web
-- ⚠️ Outlook 2010-2013 (старі): градієнт у CTA не показується — fallback на solid `#E30613`
+- ✅ Outlook 2010-2013 (старі): CTA — solid `#E30613` з білою рамкою (без градієнтів — згідно брендбуку)
 
 ## Брендові правила (важливо!)
 
-- **Не змінювати** `#0A0A0A` (чорний) та `#E30613` (червоний) — ключові кольори.
-- **Можна** використовувати `#FF6A1F` (оранжевий-accent) для CTA та highlights.
+Згідно брендбуку DreamCar v3.7 (`sections/colors.html`):
+
+**Дозволені кольори:**
+- `#0A0A0A` — **DC BLACK** (основний фон)
+- `#E30613` — **DC RED** (signal/акцент)
+- `#B8050F` — **DC DEEP** (тільки для градієнту глибини, не основний колір)
+- `#141414` — **DC COAL** (картки/поверхні)
+- `#1F1F1F` — **DC GRAPHITE** (роздільники)
+- `#FFFFFF` — **DC WHITE** (текст/контраст)
+
+**❌ Заборонено:**
+- Помаранчевий, синій, зелений у брендингу (це service-кольори тільки для UI: success/warning/danger/info)
+- Будь-які градієнти на самому логотипі (`logo.html` → "НЕ ГРАДІЄНТИ")
+- Інші бренди / суміжні проекти кольори
+
+**Інше:**
 - **Заголовки** — `Oswald`/`Bebas Neue`/`Impact` (sans-serif). Не використовувати serif!
 - **CTA** — `Archivo Black`/`Arial Black`. Завжди UPPERCASE. Завжди з стрілкою `→`.
+- **Логотип у header** — повноцінний Racing Plate (UA-блок + DREAMCAR з білою рамкою).
+- **Логотип у footer** — кругла DC monogram (avatar mark).
 - **Тон голосу:** прямий, на "ти", без вибачень. Без "будь ласка", "якщо вам зручно".
 
 ## Як зробити нову варіацію
