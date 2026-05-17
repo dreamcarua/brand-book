@@ -187,6 +187,57 @@
     Стандартні email-шаблони для всіх типових сценаріїв. Один тон голосу, одна структура. Учасник завжди знає що очікувати.
   </p>
 
+  <h3 class="s-subtitle">/// ГОТОВИЙ ШАБЛОН — <span class="red">DOWNLOAD &amp; IMPORT</span></h3>
+  <p class="s-desc" style="margin-bottom: 20px;">
+    Інтерактивне прев'ю реального HTML-шаблону. Завантаж файл і імпортуй у eSputnik / Yespo / MailChimp / Sendgrid. Всі стилі inline, table-based, mobile-responsive — рендериться однаково у Gmail, Outlook, Apple Mail.
+  </p>
+
+  <div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,360px); gap: 24px; align-items: start; margin-bottom: 32px;">
+
+    <!-- iframe preview -->
+    <div style="background: var(--coal); border: 1px solid var(--line); overflow: hidden;">
+      <div style="background: var(--black); padding: 12px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></span>
+        <span style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></span>
+        <span style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em; margin-left: 10px;">/// PREVIEW · example-bmw-x5.html</span>
+      </div>
+      <iframe src="../email-templates/example-bmw-x5.html" loading="lazy" style="width: 100%; height: 720px; border: 0; background: #f4f4f4; display: block;" title="DreamCar email template preview"></iframe>
+    </div>
+
+    <!-- download panel -->
+    <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 16px; text-transform: uppercase;">/// FILES</div>
+
+      <a href="../email-templates/dreamcar-master-launch.html" download="dreamcar-master-launch.html" style="display: block; padding: 16px; background: var(--black); border: 1px solid var(--line); text-decoration: none; margin-bottom: 8px;">
+        <div style="font-family: 'Oswald', 'Bebas Neue', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 4px;">↓ MASTER ШАБЛОН</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em;">dreamcar-master-launch.html · 15 KB · placeholders</div>
+      </a>
+
+      <a href="../email-templates/example-bmw-x5.html" download="dreamcar-bmw-x5.html" style="display: block; padding: 16px; background: var(--black); border: 1px solid var(--line); text-decoration: none; margin-bottom: 8px;">
+        <div style="font-family: 'Oswald', 'Bebas Neue', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 4px;">↓ ПРИКЛАД: BMW X5</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em;">example-bmw-x5.html · 15 KB · заповнений</div>
+      </a>
+
+      <a href="../email-templates/README.md" target="_blank" style="display: block; padding: 16px; background: var(--black); border: 1px solid var(--line); text-decoration: none; margin-bottom: 16px;">
+        <div style="font-family: 'Oswald', 'Bebas Neue', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 4px;">📖 README · ГАЙД</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em;">eSputnik / Yespo / MailChimp import</div>
+      </a>
+
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin: 24px 0 12px 0; text-transform: uppercase;">/// КРОКИ ІМПОРТУ</div>
+      <ol style="padding-left: 18px; font-family: 'Manrope', sans-serif; font-size: 13px; line-height: 1.7; color: var(--bone); margin: 0;">
+        <li>Завантаж <code style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 11px;">dreamcar-master-launch.html</code></li>
+        <li>У eSputnik → <strong style="color: var(--white);">Шаблони → Імпорт HTML</strong></li>
+        <li>Заміни placeholder-и <code style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 11px;">{{NAME}}</code> на eSputnik-синтаксис <code style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 11px;">${contact.firstName}</code></li>
+        <li>Залий зображення у Media Library, встав URL у <code style="font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 11px;">{{HERO_IMAGE_URL}}</code></li>
+        <li>Тестова розсилка на 2-3 свої email-и (Gmail, Outlook)</li>
+      </ol>
+
+      <a href="https://github.com/dreamcarua/brand-book/tree/main/email-templates" target="_blank" style="display: inline-block; margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.15em; text-decoration: underline;">VIEW ON GITHUB →</a>
+    </div>
+
+  </div>
+
   <h3 class="s-subtitle">/// ПІДПИС СПІВРОБІТНИКА — <span class="red">EMAIL SIGNATURE</span></h3>
   <div style="background: var(--white); color: var(--black); padding: 32px; max-width: 540px; font-family: 'Manrope', sans-serif; border: 1px solid var(--line);">
     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
@@ -207,37 +258,6 @@
     </div>
     <div style="margin-top: 16px; font-size: 10px; color: #888; line-height: 1.5; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">
       Цей email і вкладення можуть містити конфіденційну інформацію.
-    </div>
-  </div>
-
-  <h3 class="s-subtitle">/// ШАБЛОН: ПІДТВЕРДЖЕННЯ ОПЛАТИ</h3>
-  <div style="background: var(--white); color: var(--black); padding: 0; max-width: 600px; border: 1px solid var(--line); overflow: hidden;">
-    <div style="background: var(--black); padding: 24px; text-align: center;">
-      <div style="display: inline-block;">
-        <div class="racing-h size-md">
-          <div class="ua-tag">UA</div>
-          <div class="text-block">DREAM<span class="red">CAR</span></div>
-        </div>
-      </div>
-    </div>
-    <div style="padding: 32px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.2em; margin-bottom: 12px;">/// ТОКЕН АКТИВОВАНО</div>
-      <h2 style="font-family: 'Oswald', 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; color: #000; margin-bottom: 16px;">ІВАНЕ, ТИ В КЛУБІ.</h2>
-      <p style="font-size: 14px; line-height: 1.6; color: #333;">
-        Оплата 249 ₴ пройшла. Твій токен <strong>#018-A4F2-K3</strong> зареєстровано на акцію Audi e-tron #018.
-      </p>
-      <div style="background: #f5f5f5; padding: 16px; margin: 20px 0; border-left: 3px solid var(--red);">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.15em; margin-bottom: 8px;">/// КОЛИ ЕФІР</div>
-        <div style="font-size: 18px; font-weight: 800; color: #000;">19 квітня · 20:00 EEST</div>
-        <div style="font-size: 13px; color: #666; margin-top: 4px;">Прямий ефір в Instagram @dreamcar.ua</div>
-      </div>
-      <a href="#" style="display: inline-block; background: var(--red); color: var(--white); padding: 14px 28px; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.1em; text-decoration: none;">ПОДИВИТИСЬ ТОКЕН →</a>
-      <p style="font-size: 12px; color: #888; margin-top: 24px; line-height: 1.6;">
-        Питання? Відповіді — на dreamcar.ua/faq, або напиши на vg@dreamcar.ua — відповімо протягом 4 годин.
-      </p>
-    </div>
-    <div style="background: #f5f5f5; padding: 16px 32px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; letter-spacing: 0.1em;">
-      DREAMCAR.UA · UNSUBSCRIBE
     </div>
   </div>
 
@@ -283,11 +303,9 @@
 </main>
 
 <script>
-// Close mobile sidebar when clicking a link
 document.querySelectorAll('.sidebar nav a').forEach(a => {
   a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
 });
-// Close on backdrop click
 document.body.addEventListener('click', (e) => {
   if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
     document.body.classList.remove('sidebar-open');
@@ -326,7 +344,6 @@ document.body.addEventListener('click', (e) => {
     emptyMsg.classList.toggle('show', !anyVisible && !!q);
   });
 
-  // Hotkey: '/' to focus
   document.addEventListener('keydown', e => {
     if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
       e.preventDefault(); inp.focus();
