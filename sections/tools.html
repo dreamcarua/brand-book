@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>27 Brand Tools · DreamCar Brand Book</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .tool-card { background: var(--coal); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 28px; margin-top: 24px; }
+  .tool-card h3 { font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
+  .tool-card .desc { font-size: 14px; color: var(--bone); line-height: 1.6; margin-bottom: 18px; }
+
+  /* ====== VOICE LINTER ====== */
+  .linter-area { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .linter-input, .linter-output { background: var(--black); border: 1px solid var(--steel); padding: 16px; min-height: 240px; font-family: 'Manrope', sans-serif; font-size: 14px; color: var(--white); line-height: 1.6; }
+  .linter-input { resize: vertical; width: 100%; outline: none; }
+  .linter-input:focus { border-color: var(--red); }
+  .linter-output { overflow-y: auto; max-height: 480px; }
+  .lint-issue { background: rgba(220,38,38,0.15); border-left: 3px solid var(--danger); padding: 10px 12px; margin-bottom: 8px; }
+  .lint-issue.warn { background: rgba(245,158,11,0.15); border-color: var(--warning); }
+  .lint-issue.good { background: rgba(16,185,129,0.15); border-color: var(--success); }
+  .lint-issue .level { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; margin-bottom: 4px; }
+  .lint-issue .word { font-family: 'Archivo Black', sans-serif; font-size: 14px; color: var(--white); }
+  .lint-issue .sugg { font-size: 12px; color: var(--bone); margin-top: 4px; }
+  .linter-stats { display: flex; gap: 16px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; }
+  .linter-stats .stat { padding: 8px 14px; background: var(--black); border: 1px solid var(--steel); border-radius: 4px; }
+  .linter-stats .stat.danger { border-color: var(--danger); color: var(--danger); }
+  .linter-stats .stat.warning { border-color: var(--warning); color: var(--warning); }
+  .linter-stats .stat.success { border-color: var(--success); color: var(--success); }
+
+  /* ====== COLOR CONTRAST CHECKER ====== */
+  .cc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: flex-start; margin-top: 16px; }
+  .cc-inputs { display: flex; flex-direction: column; gap: 14px; }
+  .cc-input-row { display: flex; align-items: center; gap: 12px; }
+  .cc-input-row input[type="color"] { width: 60px; height: 60px; border: 1px solid var(--steel); border-radius: 4px; cursor: pointer; background: transparent; }
+  .cc-input-row input[type="text"] { background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; flex: 1; }
+  .cc-input-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--bone); min-width: 80px; }
+  .cc-preview { padding: 32px; border-radius: 8px; text-align: center; min-height: 200px; display: flex; flex-direction: column; justify-content: center; gap: 10px; transition: background 0.2s, color 0.2s; }
+  .cc-preview .big { font-family: 'Archivo Black', sans-serif; font-size: 28px; }
+  .cc-preview .small { font-size: 14px; }
+  .cc-result { padding: 18px; background: var(--black); border: 1px solid var(--steel); margin-top: 14px; }
+  .cc-result .ratio { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--white); line-height: 1; }
+  .cc-grade { display: inline-block; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; margin-left: 8px; border-radius: 3px; }
+  .cc-grade.aaa { background: var(--success); color: var(--black); }
+  .cc-grade.aa { background: var(--info); color: var(--white); }
+  .cc-grade.fail { background: var(--danger); color: var(--white); }
+
+  /* ====== ASSETS DOWNLOAD ====== */
+  .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 16px; }
+  .asset { background: var(--black); border: 1px solid var(--steel); padding: 20px; transition: border-color 0.15s; cursor: pointer; text-align: center; text-decoration: none; color: var(--white); }
+  .asset:hover { border-color: var(--red); }
+  .asset .asset-icon { font-size: 36px; margin-bottom: 10px; }
+  .asset .asset-name { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .asset .asset-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em; }
+
+  /* ====== TOKEN PICKER ====== */
+  .token-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 14px; }
+  .token { background: var(--black); border: 1px solid var(--steel); padding: 12px; cursor: pointer; transition: border-color 0.15s; }
+  .token:hover { border-color: var(--red); }
+  .token .swatch { height: 50px; border-radius: 4px; margin-bottom: 8px; }
+  .token .name { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); margin-bottom: 2px; }
+  .token .val { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); }
+  .token.copied { border-color: var(--success); }
+
+  .copy-action { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; transition: border-color 0.15s; margin-top: 10px; }
+  .copy-action:hover { border-color: var(--red); }
+  .copy-action.copied { border-color: var(--success); color: var(--success); }
+
+  @media (max-width: 768px) {
+    .linter-area, .cc-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button></div></header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group"><span class="group-title">На старт</span><nav><a href="quickstart.html"><span class="num">00</span>Quick Start</a><a href="onboarding.html"><span class="num">26</span>Onboarding 10хв</a></nav></div>
+<div class="group"><span class="group-title">Стратегія</span><nav><a href="manifesto.html"><span class="num">01</span>Маніфест</a><a href="strategy.html"><span class="num">02</span>Стратегія</a><a href="personas.html"><span class="num">03</span>Аудиторія</a><a href="compete.html"><span class="num">04</span>Контекст ринку</a></nav></div>
+<div class="group"><span class="group-title">Візуальна система</span><nav><a href="logo.html"><span class="num">05</span>Логотип</a><a href="colors.html"><span class="num">06</span>Кольори</a><a href="typo.html"><span class="num">07</span>Типографіка</a><a href="spacing.html"><span class="num">08</span>Сітка та елементи</a></nav></div>
+<div class="group"><span class="group-title">Інтерфейс</span><nav><a href="components.html"><span class="num">09</span>UI-компоненти</a><a href="motion.html"><span class="num">10</span>Анімації</a><a href="mobile.html"><span class="num">25</span>Mobile-First</a></nav></div>
+<div class="group"><span class="group-title">Голос і контент</span><nav><a href="voice.html"><span class="num">11</span>Голос і мова</a><a href="content.html"><span class="num">12</span>Контент</a><a href="crisis.html"><span class="num">13</span>Кризові комунікації</a><a href="examples.html"><span class="num">23</span>Examples Library</a></nav></div>
+<div class="group"><span class="group-title">Партнери і довіра</span><nav><a href="partners.html"><span class="num">14</span>Партнери</a><a href="trust.html"><span class="num">15</span>Довіра і доступність</a></nav></div>
+<div class="group"><span class="group-title">Техніка</span><nav><a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a><a href="audio.html"><span class="num">17</span>Стиль медіа</a><a href="photography-brief.html"><span class="num">24</span>Photography Brief</a><a href="tools.html" class="active"><span class="num">27</span>Brand Tools 🛠</a></nav></div>
+<div class="group"><span class="group-title">Точки контакту</span><nav><a href="touchpoints.html"><span class="num">18</span>Точки контакту</a><a href="merch.html"><span class="num">19</span>Мерч</a></nav></div>
+<div class="group"><span class="group-title">Підсумки</span><nav><a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a><a href="support.html"><span class="num">21</span>Регламент підтримки</a><a href="ai-content.html"><span class="num">22</span>AI-контент</a></nav></div>
+<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="../print.html">Завантажити повний PDF</a></nav></div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">27 · Brand Tools</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="tools">
+  <div class="s-num">/// 27 — BRAND TOOLS</div>
+  <h2 class="s-title">ІНТЕРАКТИВНІ <span class="red">ІНСТРУМЕНТИ</span></h2>
+  <p class="s-desc">
+    Не документація — а <strong style="color: var(--white);">робочі інструменти</strong>. Vчирай текст одним кліком. Перевір контраст одним кліком. Скачай асет одним кліком. Те що раніше займало 10 хвилин — тут за 10 секунд.
+  </p>
+
+  <!-- ============== VOICE LINTER ============== -->
+  <div class="tool-card">
+    <h3>🔍 VOICE LINTER — ПЕРЕВІРКА ТЕКСТУ</h3>
+    <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="voice.html" style="color: var(--red);">розділу 11 DO/CAREFUL/NEVER</a>.</p>
+
+    <div class="linter-area">
+      <textarea class="linter-input" id="lintInput" placeholder="Встав текст сюди... Наприклад: «Шанс виграти BMW за 249 грн! Купуй квиток!»" oninput="runLinter()">Шанс виграти BMW X5 за 249 грн! Купи квиток — твій шанс стати власником авто мрії! Поспішай, лотерея сьогодні!</textarea>
+      <div class="linter-output" id="lintOutput"></div>
+    </div>
+    <div class="linter-stats" id="lintStats"></div>
+
+    <button class="copy-action" onclick="clearLinter()">🧹 ОЧИСТИТИ</button>
+    <button class="copy-action" onclick="copyFixed()" id="copyFixedBtn">✨ ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ</button>
+  </div>
+
+  <!-- ============== COLOR CONTRAST CHECKER ============== -->
+  <div class="tool-card">
+    <h3>🎨 COLOR CONTRAST CHECKER — WCAG 2.1</h3>
+    <p class="desc">Перевір чи комбінація кольорів проходить WCAG AA / AAA. <strong style="color: var(--white);">Контраст 4.5:1 для body тексту = мінімум.</strong> 7:1 = AAA (ідеально).</p>
+
+    <div class="cc-grid">
+      <div class="cc-inputs">
+        <div class="cc-input-row">
+          <span class="label">/// ТЕКСТ</span>
+          <input type="color" id="ccFg" value="#ffffff" oninput="updateCC()">
+          <input type="text" id="ccFgHex" value="#FFFFFF" oninput="updateCCFromHex('fg')">
+        </div>
+        <div class="cc-input-row">
+          <span class="label">/// ФОН</span>
+          <input type="color" id="ccBg" value="#0a0a0a" oninput="updateCC()">
+          <input type="text" id="ccBgHex" value="#0A0A0A" oninput="updateCCFromHex('bg')">
+        </div>
+
+        <div class="cc-result">
+          <div class="ratio" id="ccRatio">21.00</div>
+          <div style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em;">CONTRAST RATIO</div>
+          <div style="margin-top: 12px;">
+            <span id="ccAA" class="cc-grade">AA Normal</span>
+            <span id="ccAAA" class="cc-grade">AAA Normal</span>
+          </div>
+          <div style="margin-top: 8px;">
+            <span id="ccAALarge" class="cc-grade">AA Large</span>
+            <span id="ccAAALarge" class="cc-grade">AAA Large</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-preview" id="ccPreview" style="background: #0A0A0A; color: #FFFFFF;">
+        <div class="big">МРІЯ.</div>
+        <div class="small">За ціною чашки кави. Big text vs small text перевірка.</div>
+        <div style="font-size: 10px; opacity: 0.7;">Це 10px — найменший допустимий розмір</div>
+      </div>
+    </div>
+
+    <h4 style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red);">/// ПРЕСЕТИ — НАШІ БРЕНДОВІ ПАРИ</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 12px;">
+      <button class="copy-action" onclick="setColors('#FFFFFF','#0A0A0A')">⚪ Білий на чорному</button>
+      <button class="copy-action" onclick="setColors('#FFFFFF','#E30613')">⚪ Білий на червоному</button>
+      <button class="copy-action" onclick="setColors('#0A0A0A','#FFFFFF')">⚫ Чорний на білому</button>
+      <button class="copy-action" onclick="setColors('#E30613','#0A0A0A')">🔴 Червоний на чорному</button>
+      <button class="copy-action" onclick="setColors('#E30613','#FFFFFF')">🔴 Червоний на білому</button>
+    </div>
+  </div>
+
+  <!-- ============== TOKEN PICKER ============== -->
+  <div class="tool-card">
+    <h3>🎟 DESIGN TOKENS — КЛІК = СКОПІЙОВАНО</h3>
+    <p class="desc">Кожен токен — клікни і отримай HEX (для дизайнерів) або CSS-змінну (для розробників). Холдер «Alt» при кліку = JSON value.</p>
+
+    <h4 style="margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// КОЛЬОРИ</h4>
+    <div class="token-grid">
+      <div class="token" onclick="copyToken(this, '#0A0A0A', '--bg')"><div class="swatch" style="background: #0A0A0A; border: 1px solid var(--steel);"></div><div class="name">--bg</div><div class="val">#0A0A0A</div></div>
+      <div class="token" onclick="copyToken(this, '#E30613', '--red')"><div class="swatch" style="background: #E30613;"></div><div class="name">--red</div><div class="val">#E30613</div></div>
+      <div class="token" onclick="copyToken(this, '#FFFFFF', '--white')"><div class="swatch" style="background: #FFFFFF;"></div><div class="name">--white</div><div class="val">#FFFFFF</div></div>
+      <div class="token" onclick="copyToken(this, '#1A1A1A', '--coal')"><div class="swatch" style="background: #1A1A1A;"></div><div class="name">--coal</div><div class="val">#1A1A1A</div></div>
+      <div class="token" onclick="copyToken(this, '#262626', '--line')"><div class="swatch" style="background: #262626;"></div><div class="name">--line</div><div class="val">#262626</div></div>
+      <div class="token" onclick="copyToken(this, '#404040', '--steel')"><div class="swatch" style="background: #404040;"></div><div class="name">--steel</div><div class="val">#404040</div></div>
+      <div class="token" onclick="copyToken(this, '#A8A8A8', '--bone')"><div class="swatch" style="background: #A8A8A8;"></div><div class="name">--bone</div><div class="val">#A8A8A8</div></div>
+      <div class="token" onclick="copyToken(this, '#10B981', '--success')"><div class="swatch" style="background: #10B981;"></div><div class="name">--success</div><div class="val">#10B981</div></div>
+      <div class="token" onclick="copyToken(this, '#F59E0B', '--warning')"><div class="swatch" style="background: #F59E0B;"></div><div class="name">--warning</div><div class="val">#F59E0B</div></div>
+      <div class="token" onclick="copyToken(this, '#DC2626', '--danger')"><div class="swatch" style="background: #DC2626;"></div><div class="name">--danger</div><div class="val">#DC2626</div></div>
+    </div>
+
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// SPACING (4px BASE)</h4>
+    <div class="token-grid">
+      <div class="token" onclick="copyToken(this, '4px', '--space-1')"><div class="swatch" style="background: var(--red); height: 4px;"></div><div class="name">--space-1</div><div class="val">4px</div></div>
+      <div class="token" onclick="copyToken(this, '8px', '--space-2')"><div class="swatch" style="background: var(--red); height: 8px;"></div><div class="name">--space-2</div><div class="val">8px</div></div>
+      <div class="token" onclick="copyToken(this, '16px', '--space-3')"><div class="swatch" style="background: var(--red); height: 16px;"></div><div class="name">--space-3</div><div class="val">16px</div></div>
+      <div class="token" onclick="copyToken(this, '24px', '--space-4')"><div class="swatch" style="background: var(--red); height: 24px;"></div><div class="name">--space-4</div><div class="val">24px</div></div>
+      <div class="token" onclick="copyToken(this, '32px', '--space-5')"><div class="swatch" style="background: var(--red); height: 32px;"></div><div class="name">--space-5</div><div class="val">32px</div></div>
+      <div class="token" onclick="copyToken(this, '48px', '--space-6')"><div class="swatch" style="background: var(--red); height: 48px;"></div><div class="name">--space-6</div><div class="val">48px</div></div>
+    </div>
+
+    <button class="copy-action" onclick="downloadAllTokens()" style="margin-top: 16px;">⬇ DOWNLOAD tokens.json + tokens.css</button>
+  </div>
+
+  <!-- ============== ASSETS DOWNLOAD ============== -->
+  <div class="tool-card">
+    <h3>📦 ASSET DOWNLOAD CENTER</h3>
+    <p class="desc">Всі офіційні бренд-ассети в одному місці. Кожен — у потрібному форматі. Не використовуй ассети з інших джерел.</p>
+
+    <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// ЛОГОТИП</h4>
+    <div class="asset-grid">
+      <a class="asset" href="../favicon.svg" download="dreamcar-logo.svg">
+        <div class="asset-icon">🏁</div>
+        <div class="asset-name">Logo SVG (vector)</div>
+        <div class="asset-meta">DREAMCAR · Racing Plate</div>
+      </a>
+      <a class="asset" href="../favicon-32.png" download="dreamcar-icon-32.png">
+        <div class="asset-icon">🔲</div>
+        <div class="asset-name">Favicon 32×32</div>
+        <div class="asset-meta">PNG · 32px</div>
+      </a>
+      <a class="asset" href="../apple-touch-icon.png" download="dreamcar-apple-touch.png">
+        <div class="asset-icon">📱</div>
+        <div class="asset-name">Apple Touch Icon</div>
+        <div class="asset-meta">PNG · 180×180</div>
+      </a>
+      <a class="asset" href="../og-image.svg" download="dreamcar-og.svg">
+        <div class="asset-icon">🖼</div>
+        <div class="asset-name">OG Image (vector)</div>
+        <div class="asset-meta">SVG · social preview</div>
+      </a>
+      <a class="asset" href="../og-image.png" download="dreamcar-og.png">
+        <div class="asset-icon">🌐</div>
+        <div class="asset-name">OG Image (raster)</div>
+        <div class="asset-meta">PNG · 1200×630</div>
+      </a>
+    </div>
+
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// PDF / БРИФИ</h4>
+    <div class="asset-grid">
+      <a class="asset" href="../print.html" target="_blank">
+        <div class="asset-icon">📄</div>
+        <div class="asset-name">Brand Book PDF</div>
+        <div class="asset-meta">всі 27 розділів</div>
+      </a>
+      <a class="asset" href="photography-brief.html" target="_blank">
+        <div class="asset-icon">📸</div>
+        <div class="asset-name">Photography Brief</div>
+        <div class="asset-meta">шаблон для фотографа</div>
+      </a>
+      <a class="asset" href="onboarding.html" target="_blank">
+        <div class="asset-icon">🎓</div>
+        <div class="asset-name">Onboarding Deck</div>
+        <div class="asset-meta">10 слайдів — Brand за 10 хв</div>
+      </a>
+    </div>
+
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// ШРИФТИ (Google Fonts)</h4>
+    <div class="asset-grid">
+      <a class="asset" href="https://fonts.google.com/specimen/Oswald" target="_blank">
+        <div class="asset-icon" style="font-family: 'Oswald'; font-weight: 700;">Aa</div>
+        <div class="asset-name">Oswald</div>
+        <div class="asset-meta">500 / 700 · Заголовки</div>
+      </a>
+      <a class="asset" href="https://fonts.google.com/specimen/Archivo+Black" target="_blank">
+        <div class="asset-icon" style="font-family: 'Archivo Black'; font-weight: 900;">Aa</div>
+        <div class="asset-name">Archivo Black</div>
+        <div class="asset-meta">900 · Hero / CTA</div>
+      </a>
+      <a class="asset" href="https://fonts.google.com/specimen/Manrope" target="_blank">
+        <div class="asset-icon" style="font-family: 'Manrope'; font-weight: 800;">Aa</div>
+        <div class="asset-name">Manrope</div>
+        <div class="asset-meta">400 / 700 / 800 · Body</div>
+      </a>
+      <a class="asset" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank">
+        <div class="asset-icon" style="font-family: 'JetBrains Mono'; font-weight: 700;">Aa</div>
+        <div class="asset-name">JetBrains Mono</div>
+        <div class="asset-meta">400 / 700 · Code / Meta</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============== AI ASSISTANT PROMPT ============== -->
+  <div class="tool-card">
+    <h3>🤖 BRAND AI ASSISTANT</h3>
+    <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Cкопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
+    <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">📋 СКОПІЮВАТИ AI SYSTEM PROMPT</button>
+    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red);">розділі 22 AI-контент</a>.</p>
+  </div>
+
+  <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
+    <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
+      <strong>Voice Linter</strong> — 1 хв замість 10 хв ручної перевірки.<br>
+      <strong>Contrast Checker</strong> — 5 сек замість пошуку онлайн-калькулятора.<br>
+      <strong>Token Picker</strong> — клік замість «де ця CSS-змінна».<br>
+      <strong>Asset Download</strong> — все офіційне в одному місці, без пошуку в Google Drive.<br>
+      <strong>AI Prompt</strong> — мінус 5 хв на ручне формулювання промпта.
+    </p>
+  </div>
+
+  <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="voice.html" style="color: var(--red); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
+      <li>→ <a href="colors.html" style="color: var(--red); font-weight: 600; text-decoration: none;">06 Кольори</a> — повна палітра.</li>
+      <li>→ <a href="tokens.html" style="color: var(--red); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — повний набір design tokens у JSON / CSS.</li>
+      <li>→ <a href="ai-content.html" style="color: var(--red); font-weight: 600; text-decoration: none;">22 AI-контент</a> — детальний AI prompt + чеклисти.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="section-page-nav">
+<a href="onboarding.html" class="prev"><span class="nav-label">← 26 ПОПЕРЕДНІЙ</span><span class="nav-title">Onboarding Deck</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+// ===== VOICE LINTER =====
+const NEVER_WORDS = {
+  'шанс': 'можливість / варіант',
+  'шанси': 'можливості',
+  'квиток': 'токен',
+  'квитка': 'токена',
+  'квитки': 'токени',
+  'квитків': 'токенів',
+  'квитку': 'токену',
+  'квитком': 'токеном',
+  'білет': 'токен',
+  'білетів': 'токенів',
+  'лотерея': 'промоакція',
+  'лотереї': 'промоакції',
+  'лотерею': 'промоакцію',
+  'розіграш': 'промоакція / прямий ефір',
+  'розіграшу': 'промоакції',
+  'розіграші': 'промоакції',
+  'розіграші': 'промоакції',
+  'виграти': 'отримати / забрати',
+  'виграш': 'отримання авто',
+  'виграшу': 'отримання',
+  'виграй': 'отримай / забери',
+  'грати': 'брати участь',
+  'гра': 'промоакція',
+  'казино': '— не вживати взагалі',
+  'джекпот': '— не вживати',
+  'халява': 'безкоштовно (з контекстом)',
+  'ставка': 'токен',
+  'ставки': 'токени',
+  'азарт': '— не вживати',
+  'програв': '— не вживати',
+  'обираємо випадково': 'визначаємо за алгоритмом'
+};
+
+const CAREFUL_WORDS = ['переможець', 'переможці', 'приз', 'призу', 'призи'];
+
+const DEAR_HEAVY = {
+  'привіт': 'Доброго дня',
+  'привіт!': 'Доброго дня!',
+  'халявно': 'безкоштовно',
+  'на халяву': 'безкоштовно',
+  'унікальна можливість': 'промоакція',
+  'інвестиція в надію': 'доступ до акції',
+  'легкі гроші': 'участь у промоакції',
+  'останній шанс': 'фінальний день промоакції'
+};
+
+const VI_PATTERNS = [
+  { re: /\bви\b/g, suggest: 'Ви (з великої)' },
+  { re: /\bвас\b/g, suggest: 'Вас (з великої)' },
+  { re: /\bвам\b/g, suggest: 'Вам (з великої)' },
+  { re: /\bваш\b/g, suggest: 'Ваш (з великої)' },
+  { re: /\bваша\b/g, suggest: 'Ваша (з великої)' },
+  { re: /\bваше\b/g, suggest: 'Ваше (з великої)' },
+  { re: /\bваші\b/g, suggest: 'Ваші (з великої)' }
+];
+
+function runLinter() {
+  const text = document.getElementById('lintInput').value;
+  const output = document.getElementById('lintOutput');
+  const stats = document.getElementById('lintStats');
+
+  if (!text.trim()) {
+    output.innerHTML = '<div style="color: var(--ash); text-align: center; padding: 40px;">Встав текст у поле зліва ↑</div>';
+    stats.innerHTML = '';
+    return;
+  }
+
+  const lower = text.toLowerCase();
+  let issues = [];
+  let neverCount = 0, warnCount = 0, viCount = 0;
+
+  // Перевірка NEVER слів
+  Object.entries(NEVER_WORDS).forEach(([bad, good]) => {
+    const re = new RegExp('\\\\b' + bad.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + '\\\\b', 'gi');
+    const matches = text.match(re);
+    if (matches) {
+      matches.forEach(m => {
+        issues.push({
+          level: 'NEVER',
+          word: m,
+          suggest: '→ ' + good,
+          color: 'danger'
+        });
+        neverCount++;
+      });
+    }
+  });
+
+  // CAREFUL слова
+  CAREFUL_WORDS.forEach(w => {
+    const re = new RegExp('\\\\b' + w + '\\\\b', 'gi');
+    const matches = text.match(re);
+    if (matches) {
+      matches.forEach(m => {
+        issues.push({
+          level: 'CAREFUL',
+          word: m,
+          suggest: 'тільки у юр. документах; у маркетингу — заміни на "власник авто" / "учасник"',
+          color: 'warn'
+        });
+        warnCount++;
+      });
+    }
+  });
+
+  // DEAR HEAVY (стайл маркери)
+  Object.entries(DEAR_HEAVY).forEach(([bad, good]) => {
+    if (lower.includes(bad)) {
+      issues.push({
+        level: 'STYLE',
+        word: bad,
+        suggest: '→ ' + good,
+        color: 'warn'
+      });
+      warnCount++;
+    }
+  });
+
+  // Перевірка "ви" з малої літери
+  VI_PATTERNS.forEach(p => {
+    const matches = text.match(p.re);
+    if (matches) {
+      matches.forEach(m => {
+        issues.push({
+          level: 'CAPITAL',
+          word: m,
+          suggest: p.suggest,
+          color: 'warn'
+        });
+        viCount++;
+      });
+    }
+  });
+
+  // КАПС перевірка
+  const capsRegex = /[А-ЯЁA-Z]{4,}/g;
+  const capsMatches = text.match(capsRegex);
+  if (capsMatches && capsMatches.length > 2) {
+    issues.push({
+      level: 'CAPS',
+      word: capsMatches.slice(0, 3).join(', ') + '…',
+      suggest: 'Багато CAPS LOCK слів — спам-фільтри Gmail/Meta блокують. Зменш до 1-2.',
+      color: 'warn'
+    });
+    warnCount++;
+  }
+
+  // Знаки оклику
+  const exclaimCount = (text.match(/!/g) || []).length;
+  if (exclaimCount >= 3) {
+    issues.push({
+      level: 'EXCLAIM',
+      word: exclaimCount + ' знаків оклику',
+      suggest: 'Більше 2 знаків оклику = спам-маркер. 1 максимум.',
+      color: 'warn'
+    });
+    warnCount++;
+  }
+
+  // Render
+  if (issues.length === 0) {
+    output.innerHTML = '<div class="lint-issue good"><div class="level" style="color: var(--success);">/// ✓ ВСЕ ЧИСТО</div><div class="sugg">Текст пройшов перевірку. Жодного слова з NEVER-списку, "Ви" з великої літери, нема спам-маркерів. Можна публікувати!</div></div>';
+  } else {
+    output.innerHTML = issues.map(i => '<div class="lint-issue ' + (i.color === 'danger' ? '' : i.color) + '"><div class="level" style="color: var(--' + (i.color === 'danger' ? 'danger' : 'warning') + ');">/// ' + i.level + '</div><div class="word">' + i.word + '</div><div class="sugg">' + i.suggest + '</div></div>').join('');
+  }
+
+  // Stats
+  stats.innerHTML = (neverCount > 0 ? '<span class="stat danger">' + neverCount + ' NEVER слів</span>' : '<span class="stat success">0 NEVER слів</span>') +
+                    (warnCount > 0 ? '<span class="stat warning">' + warnCount + ' попереджень</span>' : '<span class="stat success">0 попереджень</span>') +
+                    (viCount > 0 ? '<span class="stat warning">' + viCount + ' "ви" з малої</span>' : '<span class="stat success">"Ви" коректно</span>');
+}
+
+function clearLinter() {
+  document.getElementById('lintInput').value = '';
+  runLinter();
+}
+
+function copyFixed() {
+  let text = document.getElementById('lintInput').value;
+  Object.entries(NEVER_WORDS).forEach(([bad, good]) => {
+    // Заміна тільки першого з варіантів
+    const replaceWith = good.split(' / ')[0].split(' (')[0];
+    const re = new RegExp('\\\\b' + bad.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + '\\\\b', 'gi');
+    text = text.replace(re, replaceWith);
+  });
+  Object.entries(DEAR_HEAVY).forEach(([bad, good]) => {
+    text = text.replace(new RegExp(bad, 'gi'), good);
+  });
+  // Capitalize ви/вас/вам/ваш
+  text = text.replace(/\bви\b/g, 'Ви').replace(/\bвас\b/g, 'Вас').replace(/\bвам\b/g, 'Вам').replace(/\bваш\b/g, 'Ваш');
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyFixedBtn');
+    btn.classList.add('copied');
+    btn.textContent = '✓ СКОПІЙОВАНО ВИПРАВЛЕНУ ВЕРСІЮ';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '✨ ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ'; }, 2500);
+  });
+}
+
+// ===== COLOR CONTRAST CHECKER =====
+function hexToRgb(hex) {
+  hex = hex.replace('#', '');
+  if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+  return { r: parseInt(hex.substr(0,2), 16), g: parseInt(hex.substr(2,2), 16), b: parseInt(hex.substr(4,2), 16) };
+}
+function luminance(rgb) {
+  const a = [rgb.r, rgb.g, rgb.b].map(v => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+function contrastRatio(hex1, hex2) {
+  const l1 = luminance(hexToRgb(hex1));
+  const l2 = luminance(hexToRgb(hex2));
+  return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+}
+function updateCC() {
+  const fg = document.getElementById('ccFg').value;
+  const bg = document.getElementById('ccBg').value;
+  document.getElementById('ccFgHex').value = fg.toUpperCase();
+  document.getElementById('ccBgHex').value = bg.toUpperCase();
+  const preview = document.getElementById('ccPreview');
+  preview.style.background = bg;
+  preview.style.color = fg;
+  const ratio = contrastRatio(fg, bg);
+  document.getElementById('ccRatio').textContent = ratio.toFixed(2);
+
+  const setGrade = (id, pass, label) => {
+    const el = document.getElementById(id);
+    el.textContent = label + ' ' + (pass ? '✓' : '✕');
+    el.className = 'cc-grade ' + (pass ? (id.includes('AAA') ? 'aaa' : 'aa') : 'fail');
+  };
+  setGrade('ccAA', ratio >= 4.5, 'AA Normal (4.5)');
+  setGrade('ccAAA', ratio >= 7, 'AAA Normal (7)');
+  setGrade('ccAALarge', ratio >= 3, 'AA Large (3)');
+  setGrade('ccAAALarge', ratio >= 4.5, 'AAA Large (4.5)');
+}
+function updateCCFromHex(which) {
+  const val = document.getElementById('cc' + (which === 'fg' ? 'Fg' : 'Bg') + 'Hex').value;
+  if (/^#[0-9A-F]{6}$/i.test(val)) {
+    document.getElementById('cc' + (which === 'fg' ? 'Fg' : 'Bg')).value = val.toLowerCase();
+    updateCC();
+  }
+}
+function setColors(fg, bg) {
+  document.getElementById('ccFg').value = fg.toLowerCase();
+  document.getElementById('ccBg').value = bg.toLowerCase();
+  updateCC();
+}
+
+// ===== TOKEN COPY =====
+function copyToken(el, val, name) {
+  const isAlt = event.altKey;
+  let toCopy;
+  if (isAlt) {
+    toCopy = '"' + name + '": "' + val + '"';
+  } else if (val.startsWith('#')) {
+    toCopy = val;
+  } else {
+    toCopy = 'var(' + name + ')';
+  }
+  navigator.clipboard.writeText(toCopy).then(() => {
+    el.classList.add('copied');
+    const orig = el.querySelector('.val').textContent;
+    el.querySelector('.val').textContent = '✓ скопійовано';
+    setTimeout(() => { el.classList.remove('copied'); el.querySelector('.val').textContent = orig; }, 1500);
+  });
+}
+
+function downloadAllTokens() {
+  const tokens = {
+    color: {
+      bg: '#0A0A0A', red: '#E30613', white: '#FFFFFF',
+      coal: '#1A1A1A', line: '#262626', steel: '#404040', bone: '#A8A8A8',
+      success: '#10B981', warning: '#F59E0B', danger: '#DC2626', info: '#3B82F6'
+    },
+    space: { 1: '4px', 2: '8px', 3: '16px', 4: '24px', 5: '32px', 6: '48px' },
+    fontFamily: {
+      heading: '"Oswald", "Bebas Neue", sans-serif',
+      hero: '"Archivo Black", sans-serif',
+      body: '"Manrope", sans-serif',
+      mono: '"JetBrains Mono", monospace'
+    },
+    radius: { sm: '4px', md: '8px', lg: '12px', pill: '999px' }
+  };
+
+  const json = JSON.stringify(tokens, null, 2);
+  const css = Object.entries(tokens.color).map(([k,v]) => '  --' + k + ': ' + v + ';').join('\\n') + '\\n' +
+              Object.entries(tokens.space).map(([k,v]) => '  --space-' + k + ': ' + v + ';').join('\\n');
+
+  const jsonBlob = new Blob([json], { type: 'application/json' });
+  const cssBlob = new Blob([':root {\\n' + css + '\\n}'], { type: 'text/css' });
+
+  ['tokens.json', 'tokens.css'].forEach((name, i) => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(i === 0 ? jsonBlob : cssBlob);
+    a.download = name;
+    a.click();
+  });
+}
+
+// ===== AI PROMPT =====
+function copyAIPrompt() {
+  const prompt = `Ти — копірайтер бренду DreamCar (Україна, авто-клуб). Пиши у нашому voice:
+
+ТОН: прямо, коротко, дієсловом. Конкретні цифри (17 авто, 249 ₴). "Ви" з великої. Без зменшувальних. Gender-neutral дієслова.
+
+ЗАБОРОНЕНО: шанс, лотерея, виграй, квиток, джекпот, халява, розіграш (у paid ads), казино.
+
+ЗАМІСТЬ: квиток → токен, розіграш → промоакція, переможець → власник авто.
+
+ХОРОШІ ФРАЗИ: "Мрія за ціною чашки кави", "Бери. Дій. Виграй.", "17 авто вже знайшли власників".
+
+Завдання нижче — виконай у цьому voice.
+
+---
+[ТУТ ТВОЄ ЗАВДАННЯ]`;
+  navigator.clipboard.writeText(prompt).then(() => {
+    const btn = document.getElementById('aiPromptBtn');
+    btn.classList.add('copied');
+    btn.textContent = '✓ СКОПІЙОВАНО';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 СКОПІЮВАТИ AI SYSTEM PROMPT'; }, 2500);
+  });
+}
+
+// Init
+runLinter();
+updateCC();
+
+// Sidebar
+document.querySelectorAll('.sidebar nav a').forEach(a => { a.addEventListener('click', () => document.body.classList.remove('sidebar-open')); });
+document.body.addEventListener('click', (e) => { if (e.target === document.body && document.body.classList.contains('sidebar-open')) document.body.classList.remove('sidebar-open'); });
+(function(){
+  const inp = document.getElementById('sb-search'); if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a'); const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div'); emptyMsg.className = 'sidebar-search-empty'; emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim()); let anyVisible = false;
+    links.forEach(a => { const t = normalize(a.textContent); const num = a.querySelector('.num'); const numTxt = num ? normalize(num.textContent) : ''; const matches = !q || t.includes(q) || numTxt.includes(q); a.classList.toggle('is-hidden', !matches); if (matches) anyVisible = true; });
+    groups.forEach(g => { const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)'); g.classList.toggle('is-empty', visibleLinks.length === 0); });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+})();
+</script>
+</body>
+</html>
