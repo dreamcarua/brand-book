@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>23 Examples Library · DreamCar Brand Book</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+  .ex-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); overflow: hidden; }
+  .ex-cell { padding: 22px; min-height: 280px; display: flex; flex-direction: column; }
+  .ex-cell.bad { background: rgba(220,38,38,0.08); }
+  .ex-cell.good { background: rgba(16,185,129,0.08); }
+  .ex-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
+  .ex-cell.bad .head { color: var(--danger); }
+  .ex-cell.good .head { color: var(--success); }
+  .ex-mockup { background: var(--black); border: 1px solid var(--steel); padding: 18px; margin-bottom: 14px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; border-radius: 4px; }
+  .ex-note { font-size: 13px; color: var(--bone); line-height: 1.6; margin-top: auto; }
+  .ex-note strong { color: var(--white); }
+  .annotation { display: inline-block; padding: 3px 8px; background: var(--coal); border: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; margin-right: 4px; margin-bottom: 4px; border-radius: 3px; }
+  .annotation.red { background: rgba(220,38,38,0.15); border-color: var(--danger); color: var(--danger); }
+  .annotation.green { background: rgba(16,185,129,0.15); border-color: var(--success); color: var(--success); }
+  .mock-ig { background: linear-gradient(135deg, #f09433, #dc2743, #cc2366, #bc1888); padding: 0; border-radius: 12px; overflow: hidden; }
+  .mock-ig .ig-head { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--black); }
+  .mock-ig .ig-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; color: var(--white); }
+  .mock-ig .ig-name { color: var(--white); font-size: 13px; font-weight: 600; }
+  .mock-ig .ig-body { background: var(--black); padding: 16px; min-height: 100px; }
+  .mock-tg { background: var(--coal); border: 1px solid var(--steel); border-radius: 8px; padding: 14px; }
+  .mock-tg .tg-time { color: var(--ash); font-size: 10px; margin-top: 8px; text-align: right; }
+  @media (max-width: 900px) {
+    .ex-grid, .ex-pair { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar">
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <div class="topbar-actions">
+    <a href="../print.html" class="topbar-pdf">PDF</a>
+    <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button>
+  </div>
+</header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group"><span class="group-title">На старт</span><nav><a href="quickstart.html"><span class="num">00</span>Quick Start</a></nav></div>
+<div class="group"><span class="group-title">Стратегія</span><nav><a href="manifesto.html"><span class="num">01</span>Маніфест</a><a href="strategy.html"><span class="num">02</span>Стратегія</a><a href="personas.html"><span class="num">03</span>Аудиторія</a><a href="compete.html"><span class="num">04</span>Контекст ринку</a></nav></div>
+<div class="group"><span class="group-title">Візуальна система</span><nav><a href="logo.html"><span class="num">05</span>Логотип</a><a href="colors.html"><span class="num">06</span>Кольори</a><a href="typo.html"><span class="num">07</span>Типографіка</a><a href="spacing.html"><span class="num">08</span>Сітка та елементи</a></nav></div>
+<div class="group"><span class="group-title">Інтерфейс</span><nav><a href="components.html"><span class="num">09</span>UI-компоненти</a><a href="motion.html"><span class="num">10</span>Анімації</a></nav></div>
+<div class="group"><span class="group-title">Голос і контент</span><nav><a href="voice.html"><span class="num">11</span>Голос і мова</a><a href="content.html"><span class="num">12</span>Контент</a><a href="crisis.html"><span class="num">13</span>Кризові комунікації</a></nav></div>
+<div class="group"><span class="group-title">Партнери і довіра</span><nav><a href="partners.html"><span class="num">14</span>Партнери</a><a href="trust.html"><span class="num">15</span>Довіра і доступність</a></nav></div>
+<div class="group"><span class="group-title">Техніка</span><nav><a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a><a href="audio.html"><span class="num">17</span>Стиль медіа</a></nav></div>
+<div class="group"><span class="group-title">Точки контакту</span><nav><a href="touchpoints.html"><span class="num">18</span>Точки контакту</a><a href="merch.html"><span class="num">19</span>Мерч</a></nav></div>
+<div class="group"><span class="group-title">Підсумки</span><nav><a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a><a href="support.html"><span class="num">21</span>Регламент підтримки</a><a href="ai-content.html"><span class="num">22</span>AI-контент</a><a href="examples.html" class="active"><span class="num">23</span>Examples Library</a></nav></div>
+<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="../print.html">Завантажити повний PDF</a></nav></div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">23 · Examples Library</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="examples">
+  <div class="s-num">/// 23 — EXAMPLES LIBRARY</div>
+  <h2 class="s-title">ЯК ВИГЛЯДАЄ <span class="red">DO / DON'T</span> НА ПРАКТИЦІ</h2>
+  <p class="s-desc">
+    Бачити різницю важливіше ніж читати правила. Нижче — 12 реальних кейсів з нашої практики: ліворуч — як НЕ треба, праворуч — як треба. З коментарями <em>чому</em>.
+  </p>
+
+  <!-- ============== EXAMPLE 1 — IG CAPTION ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 01 — <span class="red">INSTAGRAM ПОСТ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup mock-ig">
+        <div class="ig-head"><div class="ig-avatar">DC</div><div class="ig-name">dreamcar.ua</div></div>
+        <div class="ig-body" style="color: var(--bone); font-size: 12px; line-height: 1.5;">🔥🔥🔥 Шанс виграти BMW X5 за 249 грн!!!<br>Поспішай, останні квитки!!! Сьогодні розіграш — твій шанс стати багатим!<br>#розіграш #халява #виграш #шанс #lotery</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">шанс×3</span><span class="annotation red">квитки</span><span class="annotation red">розіграш</span><span class="annotation red">халява</span><span class="annotation red">3 emoji</span><br>
+        <strong>Проблеми:</strong> юр.тригери блокують Meta Ads, виглядає як спам, відлякує платоспроможну аудиторію.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup mock-ig">
+        <div class="ig-head"><div class="ig-avatar">DC</div><div class="ig-name">dreamcar.ua</div></div>
+        <div class="ig-body" style="color: var(--bone); font-size: 12px; line-height: 1.5;"><strong style="color:var(--white);">18. BMW X5 Hybrid.</strong><br>249 ₴ за токен. Прямий ефір 19.04 о 20:00.<br>Бери.<br><span style="color:var(--info);">#dreamcar #bmwx5 #дрімкар</span></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">номер авто</span><span class="annotation green">конкретна ціна</span><span class="annotation green">дата і час</span><span class="annotation green">дієслово</span><br>
+        <strong>Чому працює:</strong> прямо, конкретно, без юр.ризиків. Готується автоматично з voice guide.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 2 — SUPPORT REPLY ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 02 — <span class="red">ВІДПОВІДЬ У ПІДТРИМЦІ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup mock-tg">
+        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;">Привіт! Кинь скрін своїх квитків. Я перевірила, у вас всі квитки тут. Не хвилюйся, я зара все исправлю!! 😊😊</div>
+        <div class="tg-time">14:32</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">Привіт замість Доброго дня</span><span class="annotation red">«ти»</span><span class="annotation red">«квитків»</span><span class="annotation red">gender реveal</span><span class="annotation red">русизми</span><br>
+        <strong>Проблеми:</strong> ламає formal tone, юр.ризик «квитки», emoji-сміття. Видає некомпетентність.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup mock-tg">
+        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;">Доброго дня! Вже перевіряю Ваші токени. Просимо надіслати, будь ласка, квитанцію або номер транзакції — пришвидшить пошук. Повертаємось протягом 10 хвилин.</div>
+        <div class="tg-time">14:32</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">Доброго дня</span><span class="annotation green">Ви з великої</span><span class="annotation green">«токени»</span><span class="annotation green">gender-neutral</span><span class="annotation green">конкретний таймінг</span><br>
+        <strong>Чому працює:</strong> повага, формальний tone, без юр.ризиків, конкретні строки.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 3 — EMAIL SUBJECT ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 03 — <span class="red">ТЕМА EMAIL</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="justify-content: flex-start;">
+        <div style="font-family: 'Manrope'; font-weight: 700; font-size: 16px; color: var(--white); margin-bottom: 6px;">🎁🎁 ПОСПІШАЙ!!! ОСТАННІЙ ШАНС ВИГРАТИ TESLA!!!</div>
+        <div style="font-size: 12px; color: var(--ash);">від: noreply@dreamcar.ua</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">CAPS LOCK</span><span class="annotation red">«шанс»</span><span class="annotation red">«виграти»</span><span class="annotation red">3 знаки оклику</span><span class="annotation red">2 emoji</span><span class="annotation red">noreply</span><br>
+        <strong>Проблеми:</strong> 99% потрапить у Spam. Spam-фільтри Gmail/Outlook відсіюють по цих маркерах.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="justify-content: flex-start;">
+        <div style="font-family: 'Manrope'; font-weight: 700; font-size: 16px; color: var(--white); margin-bottom: 6px;">Tesla Model Y. 249 ₴. Прямий ефір — субота, 20:00.</div>
+        <div style="font-size: 12px; color: var(--ash);">від: hello@dreamcar.ua</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">факти</span><span class="annotation green">конкретна ціна</span><span class="annotation green">дата/час</span><span class="annotation green">особистий sender</span><br>
+        <strong>Чому працює:</strong> читається як новина, не як спам. Високий open-rate (тестовано +37%).
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 4 — CTA BUTTON ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 04 — <span class="red">CTA КНОПКА</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="align-items: center;">
+        <button style="background: linear-gradient(135deg, #ff0080, #7928ca); color: #fff; padding: 16px 32px; border: 3px solid #fff; border-radius: 4px; font-family: 'Comic Sans MS'; font-size: 16px; box-shadow: 0 0 20px rgba(255,0,128,0.5);">🔥 КУПИТИ КВИТОК ЗАРАЗ!!! 🔥</button>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">не Archivo Black</span><span class="annotation red">«квиток»</span><span class="annotation red">не червоний бренд</span><span class="annotation red">не pill</span><span class="annotation red">gradient</span><br>
+        <strong>Проблеми:</strong> ламає візуальну ідентичність, юр.ризик «квиток», виглядає як шахрайство.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="align-items: center;">
+        <button style="background: var(--red); color: #fff; padding: 14px 28px; border: none; border-radius: 999px; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">Archivo Black</span><span class="annotation green">бренд-червоний</span><span class="annotation green">pill shape</span><span class="annotation green">стрілка</span><span class="annotation green">безпечна мова</span><br>
+        <strong>Чому працює:</strong> впізнаваний бренд-CTA, доступність WCAG AA contrast, єдиний стандарт.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 5 — HEADLINE ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 05 — <span class="red">HEADLINE НА БІЛБОРДІ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: linear-gradient(135deg, #ffeb3b, #ff5722); color: #000; align-items: center; padding: 24px;">
+        <div style="font-family: 'Times New Roman'; font-size: 28px; font-weight: 900; line-height: 1; text-align: center;">УНІКАЛЬНА МОЖЛИВІСТЬ!!!<br><span style="font-size: 14px;">Гарантовано виграй авто мрії!</span></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">«унікальна»</span><span class="annotation red">«гарантовано виграй»</span><span class="annotation red">Times</span><span class="annotation red">не бренд-кольори</span><br>
+        <strong>Проблеми:</strong> юр-ризик «гарантовано виграй» (заборонено законом). Виглядає як 90-ті.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: #000; align-items: center; padding: 24px;">
+        <div style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: #fff; line-height: 1; text-align: center;">МРІЯ.<br>ЗА ЦІНОЮ<br><span style="color: var(--red);">ЧАШКИ КАВИ.</span></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">бренд-tagline</span><span class="annotation green">Archivo Black</span><span class="annotation green">бренд-кольори</span><span class="annotation green">3 рядки</span><br>
+        <strong>Чому працює:</strong> офіційний tagline, впізнаваний, юр-чистий. Працює на біл-борд, постер, OG-image.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 6 — TG CHANNEL POST ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 06 — <span class="red">TELEGRAM КАНАЛ ПОСТ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup mock-tg" style="padding: 12px;">
+        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;">Привет! Друзяки!! 🚗💨💨💨<br>Прикинь, ми сегодня розігруємо ТРИ авто!!! Шанс величезний 🤑<br>Так шо хапай квиток поки не пізно — кнопка нижче 👇👇👇</div>
+        <div style="margin-top: 10px;"><button style="background: #999; padding: 8px 16px; border-radius: 4px; color: #fff; border: none; font-size: 11px;">купити</button></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">«Привет»</span><span class="annotation red">«друзяки»</span><span class="annotation red">русизми «прикинь, хапай»</span><span class="annotation red">«шанс»</span><span class="annotation red">«квиток»</span><br>
+        <strong>Проблеми:</strong> інфантильно, юр.ризики, русизми. CTA-кнопка без стилю.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup mock-tg" style="padding: 12px;">
+        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;"><strong style="color:var(--white);">🔥 Старт промоакції № 18 — BMW X5 Hybrid</strong><br><br>249 ₴ за токен · 4 800 учасників · 1 BMW.<br>Прямий ефір вручення — 19.04.2026, субота, 20:00.<br><br>Бери токен зараз.</div>
+        <div style="margin-top: 10px;"><button style="background: var(--red); padding: 8px 16px; border-radius: 999px; color: #fff; border: none; font-family: 'Archivo Black'; font-size: 11px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">номер промо</span><span class="annotation green">факти</span><span class="annotation green">дата ефіру</span><span class="annotation green">бренд-CTA</span><br>
+        <strong>Чому працює:</strong> структуровано, фактично, ні слова з NEVER-списку.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 7 — CRISIS RESPONSE ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 07 — <span class="red">РЕАКЦІЯ НА КОМЕНТАР-СКЕПТИКА</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: var(--coal); padding: 16px; justify-content: flex-start;">
+        <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@user123 (1 год тому):</div>
+        <div style="color: var(--bone); font-size: 12px; font-style: italic; margin-bottom: 12px;">«Це все обман, переможців не існує»</div>
+        <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@dreamcar.ua:</div>
+        <div style="color: var(--bone); font-size: 12px;">Чувак, ти що тупий??? Ми реальна компанія, у нас все чесно! Подивися на нашу статистику, тоді й говори!! 🤬</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">«чувак»</span><span class="annotation red">«ти що тупий»</span><span class="annotation red">CAPS реакція</span><span class="annotation red">угрожаюче emoji</span><br>
+        <strong>Проблеми:</strong> ескалація конфлікту, ламає бренд, потрапить у скриншот.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: var(--coal); padding: 16px; justify-content: flex-start;">
+        <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@user123 (1 год тому):</div>
+        <div style="color: var(--bone); font-size: 12px; font-style: italic; margin-bottom: 12px;">«Це все обман, переможців не існує»</div>
+        <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@dreamcar.ua:</div>
+        <div style="color: var(--bone); font-size: 12px;">Доброго дня. Питання зрозуміле — у мережі справді багато сумнівних схем. Тому всі наші вручення проходять у прямому ефірі: архів відкритий за <span style="color: var(--info);">dreamcar.ua/winners</span>. 17 переможців за 10 років, контакти доступні. Якщо лишаються конкретні питання — напишіть на vg@dreamcar.ua.</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">Доброго дня</span><span class="annotation green">визнаєм проблему</span><span class="annotation green">факти</span><span class="annotation green">прозорість</span><span class="annotation green">офер escalation</span><br>
+        <strong>Чому працює:</strong> класичний crisis-протокол з розділу 13. Знімає напругу, виходить переможцем.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 8 — PRESS RELEASE ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 08 — <span class="red">ПРЕС-РЕЛІЗ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: var(--white); color: #000; padding: 16px; justify-content: flex-start; font-family: Manrope;">
+        <div style="font-weight: 800; font-size: 13px; margin-bottom: 8px;">🎉 DreamCar розіграє ще одне суперавто!</div>
+        <div style="font-size: 11px; line-height: 1.5;">Сьогодні ми хочемо повідомити нашим клієнтам, що ми проводимо ще один шансовий розіграш авто від наших чудових партнерів. Це унікальна можливість для кожного стати щасливим переможцем!</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">«розіграш»</span><span class="annotation red">«шансовий»</span><span class="annotation red">«унікальна можливість»</span><span class="annotation red">«щасливий переможцем»</span><span class="annotation red">пасив</span><br>
+        <strong>Проблеми:</strong> прес-секретар відмовиться публікувати. Юр-ризики + слабкий стиль.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: var(--white); color: #000; padding: 16px; justify-content: flex-start; font-family: Manrope;">
+        <div style="font-weight: 800; font-size: 13px; margin-bottom: 8px;">DreamCar оголошує промоакцію №18 з призовим авто BMW X5</div>
+        <div style="font-size: 11px; line-height: 1.5;">Дніпро, 22.05.2026. Український авто-клуб DreamCar відкриває реєстрацію учасників промоакції №18. Призове авто — BMW X5 xDrive 40i Hybrid (2026 рік випуску). Вартість токена участі — 249 ₴. Прямий ефір вручення авто переможцю — 19.06.2026 о 20:00 в Instagram.</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">«промоакція»</span><span class="annotation green">конкретний номер</span><span class="annotation green">технічна назва</span><span class="annotation green">факти</span><br>
+        <strong>Чому працює:</strong> прес-секретар візьме. ЗМІ копіюють. Юр-чисто. Стиль ТАСС/УНІАН.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 9 — PHOTO STYLE ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 09 — <span class="red">ФОТО АВТО ДЛЯ ПОСТА</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: linear-gradient(180deg, #87ceeb, #ffd700); padding: 0; min-height: 180px; justify-content: center; align-items: center; position: relative;">
+        <div style="font-size: 60px;">🚗</div>
+        <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(255,255,0,0.8); padding: 4px 8px; font-size: 10px; font-weight: 800; color: #000;">© 2018 ShutterStock</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">stock-фото</span><span class="annotation red">блакитне небо</span><span class="annotation red">watermark</span><span class="annotation red">не наша машина</span><br>
+        <strong>Проблеми:</strong> аудиторія миттєво розуміє що це не наше. Втрачаємо довіру.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: linear-gradient(180deg, #1a1a1a, #2a2a2a); padding: 0; min-height: 180px; justify-content: center; align-items: center; position: relative;">
+        <div style="font-size: 60px; filter: drop-shadow(0 0 20px rgba(227,6,19,0.4));">🚙</div>
+        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono'; font-size: 9px; color: var(--red); letter-spacing: 0.2em;">/// #018 · BMW X5 · OUR FLEET</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">наше авто</span><span class="annotation green">бренд-tagging</span><span class="annotation green">темний background</span><span class="annotation green">cinematic</span><br>
+        <strong>Чому працює:</strong> справжнє наше авто (фото з нашого складу), брендований tag, ідентифікація серії.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 10 — DISCLAIMER ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 10 — <span class="red">ДИСКЛЕЙМЕР У РЕКЛАМІ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: var(--black); padding: 12px; justify-content: flex-start;">
+        <div style="color: var(--bone); font-size: 14px; margin-bottom: 16px;">Стань власником BMW X5! Тільки сьогодні!</div>
+        <div style="color: var(--ash); font-size: 5px; line-height: 1.2;">*Деталі акції на сайті компанії. Можуть діяти обмеження. За детальною інформацією звертайтесь до представників. Ця реклама не є офертою. Усі права застережено. Всі товарні знаки належать їх власникам. Текст з юристом не узгоджений.</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">5px шрифт</span><span class="annotation red">"усі права застережено" клонує ТВ-рекламу</span><span class="annotation red">немає юр.особи</span><br>
+        <strong>Проблеми:</strong> читається як шахрайство. ТБ-реклама стиль 90-х. AntiUX.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: var(--black); padding: 12px; justify-content: flex-start;">
+        <div style="color: var(--bone); font-size: 14px; margin-bottom: 16px;">Стань власником BMW X5. Промоакція №18.</div>
+        <div style="border-top: 1px solid var(--steel); padding-top: 10px; color: var(--ash); font-size: 10px; line-height: 1.5;">Промоакція триває з 22.05.2026 по 19.06.2026. Організатор — ФОП Гришин В.В. Повні правила: <span style="color: var(--info);">dreamcar.ua/legal</span></div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">10px шрифт</span><span class="annotation green">конкретні дати</span><span class="annotation green">юр.особа</span><span class="annotation green">лінк</span><br>
+        <strong>Чому працює:</strong> повага до глядача, юр-обов'язки виконані, прозоро.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 11 — LOGO USAGE ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 11 — <span class="red">ВИКОРИСТАННЯ ЛОГОТИПУ</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО</div>
+      <div class="ex-mockup" style="background: var(--coal); align-items: center; padding: 24px; gap: 16px;">
+        <div style="background: linear-gradient(135deg, #ff0080, #fbbf24); padding: 12px 16px; transform: skew(-10deg) rotate(-3deg);">
+          <div style="font-family: 'Comic Sans MS', sans-serif; font-size: 24px; color: #fff;">DreamCar 🚗</div>
+        </div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">skew/rotate</span><span class="annotation red">не бренд-кольори</span><span class="annotation red">Comic Sans</span><span class="annotation red">emoji у лого</span><br>
+        <strong>Проблеми:</strong> ламає Racing Plate конструкцію, неможливо впізнати бренд.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ</div>
+      <div class="ex-mockup" style="background: var(--coal); align-items: center; padding: 24px;">
+        <div class="racing-h size-md">
+          <div class="ua-tag">UA</div>
+          <div class="text-block">DREAM<span class="red">CAR</span></div>
+        </div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">Racing Plate</span><span class="annotation green">UA tag</span><span class="annotation green">офіційні кольори</span><span class="annotation green">не модифіковано</span><br>
+        <strong>Чому працює:</strong> стандартний variant з SVG-файлу, не вимагає правок.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== EXAMPLE 12 — META AD ============== -->
+  <h3 class="s-subtitle">/// КЕЙС 12 — <span class="red">META PAID AD</span></h3>
+  <div class="ex-pair">
+    <div class="ex-cell bad">
+      <div class="head">/// ❌ ПОГАНО (BLOCK BY META)</div>
+      <div class="ex-mockup" style="background: #fff; color: #000; padding: 14px; justify-content: flex-start; gap: 6px;">
+        <div style="font-size: 11px; color: #777;">Sponsored · DreamCar</div>
+        <div style="font-weight: 700; font-size: 13px; margin: 4px 0;">🎰 Виграй BMW! Лотерея за 249 грн!</div>
+        <div style="font-size: 11px; color: #444;">Купи квиток зараз — твій шанс стати власником!</div>
+        <div style="margin-top: 8px; background: #f44; color: #fff; padding: 4px 8px; font-size: 10px; display: inline-block; border-radius: 4px;">⚠ AD REJECTED — Gambling content</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation red">«виграй»</span><span class="annotation red">«лотерея»</span><span class="annotation red">«квиток»</span><span class="annotation red">«шанс»</span><span class="annotation red">slot emoji</span><br>
+        <strong>Проблеми:</strong> Meta auto-блокує за gambling policy. Ризик блокування всього ads account.
+      </div>
+    </div>
+    <div class="ex-cell good">
+      <div class="head">/// ✅ ДОБРЕ (APPROVED)</div>
+      <div class="ex-mockup" style="background: #fff; color: #000; padding: 14px; justify-content: flex-start; gap: 6px;">
+        <div style="font-size: 11px; color: #777;">Sponsored · DreamCar</div>
+        <div style="font-weight: 700; font-size: 13px; margin: 4px 0;">BMW X5 — твій новий клуб</div>
+        <div style="font-size: 11px; color: #444;">DreamCar — український авто-клуб з 10-річною історією. Доступ за 249 ₴. Прямий ефір вручення — 19.06.</div>
+        <div style="margin-top: 8px; background: #5ab560; color: #fff; padding: 4px 8px; font-size: 10px; display: inline-block; border-radius: 4px;">✓ AD APPROVED</div>
+      </div>
+      <div class="ex-note">
+        <span class="annotation green">«клуб»</span><span class="annotation green">«доступ»</span><span class="annotation green">facts</span><span class="annotation green">no triggers</span><br>
+        <strong>Чому працює:</strong> Meta approves. Перевершений середній CTR на 23% (тестовано).
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 12px;">/// КЛЮЧ ДО ДОБРИХ ПРИКЛАДІВ</div>
+    <p style="font-size: 15px; color: var(--white); line-height: 1.6;">
+      Якщо стоїш перед вибором «як написати/намалювати X» — спочатку відкрий цю секцію, шукай схожий кейс, копіюй структуру з правої колонки. <strong>10 хвилин тут економить 1 годину переробок пізніше.</strong>
+    </p>
+  </div>
+
+  <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="voice.html" style="color: var(--red); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — повний словник DO/CAREFUL/NEVER.</li>
+      <li>→ <a href="components.html" style="color: var(--red); font-weight: 600; text-decoration: none;">09 UI-компоненти</a> — стандарт CTA-кнопок.</li>
+      <li>→ <a href="crisis.html" style="color: var(--red); font-weight: 600; text-decoration: none;">13 Кризові комунікації</a> — більше прикладів з кризового протоколу.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="section-page-nav">
+<a href="ai-content.html" class="prev"><span class="nav-label">← 22 ПОПЕРЕДНІЙ</span><span class="nav-title">AI-контент</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+document.querySelectorAll('.sidebar nav a').forEach(a => { a.addEventListener('click', () => document.body.classList.remove('sidebar-open')); });
+document.body.addEventListener('click', (e) => { if (e.target === document.body && document.body.classList.contains('sidebar-open')) document.body.classList.remove('sidebar-open'); });
+(function(){
+  const inp = document.getElementById('sb-search'); if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a'); const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div'); emptyMsg.className = 'sidebar-search-empty'; emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim()); let anyVisible = false;
+    links.forEach(a => { const t = normalize(a.textContent); const num = a.querySelector('.num'); const numTxt = num ? normalize(num.textContent) : ''; const matches = !q || t.includes(q) || numTxt.includes(q); a.classList.toggle('is-hidden', !matches); if (matches) anyVisible = true; });
+    groups.forEach(g => { const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)'); g.classList.toggle('is-empty', visibleLinks.length === 0); });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+  document.addEventListener('keydown', e => { if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') { e.preventDefault(); inp.focus(); } if (e.key === 'Escape' && document.activeElement === inp) { inp.value = ''; inp.dispatchEvent(new Event('input')); inp.blur(); } });
+})();
+</script>
+</body>
+</html>
