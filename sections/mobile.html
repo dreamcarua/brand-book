@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>25 Mobile-First Spec · DreamCar Brand Book</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .bp-table { width: 100%; border-collapse: collapse; margin-top: 18px; background: var(--coal); border: 1px solid var(--line); }
+  .bp-table th { padding: 14px 16px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.18em; text-align: left; border-bottom: 2px solid var(--red); }
+  .bp-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--bone); }
+  .bp-table td:first-child { font-family: 'Archivo Black', sans-serif; color: var(--white); font-size: 16px; }
+  .device-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 22px; }
+  .device { background: var(--coal); border: 1px solid var(--line); padding: 18px; text-align: center; }
+  .device .icon { font-size: 36px; margin-bottom: 8px; }
+  .device .name { font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--white); margin-bottom: 4px; font-weight: 700; }
+  .device .px { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.1em; }
+  .device .share { font-size: 11px; color: var(--ash); margin-top: 4px; }
+  .thumb-demo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 22px; }
+  .phone-mock { background: var(--coal); border: 2px solid var(--steel); border-radius: 24px; padding: 14px; aspect-ratio: 9/19; position: relative; overflow: hidden; }
+  .phone-mock .phone-screen { background: var(--black); border-radius: 12px; height: 100%; padding: 12px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+  .phone-mock .phone-label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--bone); letter-spacing: 0.15em; }
+  .phone-mock .zone { position: absolute; left: 0; right: 0; background: rgba(220,38,38,0.20); }
+  .phone-mock .zone.easy { background: rgba(16,185,129,0.20); }
+  .phone-mock .zone.hard { background: rgba(220,38,38,0.20); }
+  .phone-mock .zone-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--white); padding: 4px 8px; }
+  .touch-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .touch-card { background: var(--coal); border: 1px solid var(--line); padding: 18px; }
+  .touch-card.bad { border-color: var(--danger); }
+  .touch-card.good { border-color: var(--success); }
+  .touch-target { background: var(--red); color: var(--white); display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; }
+  .checklist-mobile { background: var(--coal); border-left: 3px solid var(--red); padding: 22px; margin-top: 22px; }
+  .checklist-mobile label { display: block; padding: 10px 12px; cursor: pointer; font-size: 14px; color: var(--bone); border-bottom: 1px solid var(--line); }
+  .checklist-mobile label:last-child { border-bottom: none; }
+  .checklist-mobile input[type="checkbox"] { margin-right: 12px; transform: scale(1.2); accent-color: var(--red); }
+  .checklist-mobile label.checked { color: var(--success); text-decoration: line-through; opacity: 0.6; }
+  @media (max-width: 900px) { .thumb-demo { grid-template-columns: 1fr; } .touch-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button></div></header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group"><span class="group-title">На старт</span><nav><a href="quickstart.html"><span class="num">00</span>Quick Start</a></nav></div>
+<div class="group"><span class="group-title">Стратегія</span><nav><a href="manifesto.html"><span class="num">01</span>Маніфест</a><a href="strategy.html"><span class="num">02</span>Стратегія</a><a href="personas.html"><span class="num">03</span>Аудиторія</a><a href="compete.html"><span class="num">04</span>Контекст ринку</a></nav></div>
+<div class="group"><span class="group-title">Візуальна система</span><nav><a href="logo.html"><span class="num">05</span>Логотип</a><a href="colors.html"><span class="num">06</span>Кольори</a><a href="typo.html"><span class="num">07</span>Типографіка</a><a href="spacing.html"><span class="num">08</span>Сітка та елементи</a></nav></div>
+<div class="group"><span class="group-title">Інтерфейс</span><nav><a href="components.html"><span class="num">09</span>UI-компоненти</a><a href="motion.html"><span class="num">10</span>Анімації</a></nav></div>
+<div class="group"><span class="group-title">Голос і контент</span><nav><a href="voice.html"><span class="num">11</span>Голос і мова</a><a href="content.html"><span class="num">12</span>Контент</a><a href="crisis.html"><span class="num">13</span>Кризові комунікації</a></nav></div>
+<div class="group"><span class="group-title">Партнери і довіра</span><nav><a href="partners.html"><span class="num">14</span>Партнери</a><a href="trust.html"><span class="num">15</span>Довіра і доступність</a></nav></div>
+<div class="group"><span class="group-title">Техніка</span><nav><a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a><a href="audio.html"><span class="num">17</span>Стиль медіа</a></nav></div>
+<div class="group"><span class="group-title">Точки контакту</span><nav><a href="touchpoints.html"><span class="num">18</span>Точки контакту</a><a href="merch.html"><span class="num">19</span>Мерч</a></nav></div>
+<div class="group"><span class="group-title">Підсумки</span><nav><a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a><a href="support.html"><span class="num">21</span>Регламент підтримки</a><a href="ai-content.html"><span class="num">22</span>AI-контент</a><a href="examples.html"><span class="num">23</span>Examples Library</a><a href="photography-brief.html"><span class="num">24</span>Photography Brief</a><a href="mobile.html" class="active"><span class="num">25</span>Mobile-First Spec</a></nav></div>
+<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="../print.html">Завантажити повний PDF</a></nav></div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">25 · Mobile-First Spec</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="mobile">
+  <div class="s-num">/// 25 — MOBILE-FIRST SPEC</div>
+  <h2 class="s-title">МОБІЛЬНИЙ — <span class="red">ГОЛОВНИЙ ЕКРАН</span></h2>
+  <p class="s-desc">
+    <strong style="color: var(--white);">85% нашої аудиторії читає бренд з телефона.</strong> Дизайн який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані юзера — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 09 UI-компоненти.
+  </p>
+
+  <!-- ============== ЦІЛЬОВІ ПРИСТРОЇ ============== -->
+  <h3 class="s-subtitle">/// ЦІЛЬОВІ <span class="red">ПРИСТРОЇ</span></h3>
+  <p class="s-desc">Це 95% нашої мобільної аудиторії (за даними GA + Mixpanel). Тестуй на цих breakpoint-ах ПЕРЕД продакшеном.</p>
+
+  <div class="device-row">
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">iPhone 15/16</div>
+      <div class="px">393 × 852</div>
+      <div class="share">~27%</div>
+    </div>
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">iPhone 13/14</div>
+      <div class="px">390 × 844</div>
+      <div class="share">~19%</div>
+    </div>
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">iPhone SE</div>
+      <div class="px">375 × 667</div>
+      <div class="share">~8%</div>
+    </div>
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">Pixel / Samsung S</div>
+      <div class="px">412 × 915</div>
+      <div class="share">~24%</div>
+    </div>
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">Older Android</div>
+      <div class="px">360 × 800</div>
+      <div class="share">~14%</div>
+    </div>
+    <div class="device">
+      <div class="icon">📱</div>
+      <div class="name">iPad mini</div>
+      <div class="px">744 × 1133</div>
+      <div class="share">~3%</div>
+    </div>
+  </div>
+
+  <!-- ============== BREAKPOINTS ============== -->
+  <h3 class="s-subtitle">/// СТАНДАРТНІ <span class="red">BREAKPOINTS</span></h3>
+  <table class="bp-table">
+    <thead>
+      <tr>
+        <th>Назва</th>
+        <th>Ширина</th>
+        <th>Що змінюється</th>
+        <th>Приклад CSS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>XS</td>
+        <td><strong style="color: var(--red);">320-374</strong></td>
+        <td>Найменші екрани. Single column. Тільки essentials.</td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (max-width: 374px)</code></td>
+      </tr>
+      <tr>
+        <td>SM</td>
+        <td><strong style="color: var(--red);">375-767</strong></td>
+        <td>Основні смартфони. Single column, повна типографіка.</td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (max-width: 767px)</code></td>
+      </tr>
+      <tr>
+        <td>MD</td>
+        <td><strong style="color: var(--red);">768-1023</strong></td>
+        <td>Планшети + малі ноутбуки. 2-column layout.</td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 768px)</code></td>
+      </tr>
+      <tr>
+        <td>LG</td>
+        <td><strong style="color: var(--red);">1024-1439</strong></td>
+        <td>Стандартні десктопи. 3-4 column. Sidebar з'являється.</td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1024px)</code></td>
+      </tr>
+      <tr>
+        <td>XL</td>
+        <td><strong style="color: var(--red);">1440+</strong></td>
+        <td>Великі моніторі. Max-width 1480px, центрована.</td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1440px)</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============== TOUCH TARGETS ============== -->
+  <h3 class="s-subtitle">/// TOUCH TARGETS — <span class="red">МІН 44×44 PX</span></h3>
+  <p class="s-desc">
+    Apple HIG, Google Material і WCAG 2.5.5 рекомендують <strong style="color: var(--white);">мінімум 44×44 px (CSS) для будь-якого clickable елемента</strong>. У нас — теж саме. Менше — користувач промахується, бувають фрустрацій.
+  </p>
+
+  <div class="touch-grid">
+    <div class="touch-card bad">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger); letter-spacing: 0.18em; margin-bottom: 14px;">/// ❌ ПОГАНО — 24×24px</div>
+      <div class="touch-target" style="width: 24px; height: 24px; padding: 0; text-align: center; line-height: 24px;">×</div>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Кнопка закриття 24px. На iPhone Pro = 9pt — складно потрапити пальцем. Фрустрація = вийде з flow.</p>
+    </div>
+    <div class="touch-card good">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✅ ДОБРЕ — 44×44px (видимий 24px)</div>
+      <div class="touch-target" style="width: 44px; height: 44px; padding: 0; text-align: center; line-height: 44px;">×</div>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Видимий icon 24px, але hit area 44×44. Padding робить кнопку фізично кліклабельною.</p>
+    </div>
+    <div class="touch-card good">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✅ ІДЕАЛЬНО — 48×48px (Material)</div>
+      <div class="touch-target" style="width: 48px; height: 48px; padding: 0; text-align: center; line-height: 48px;">×</div>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">48px = Material Design recommendation. На дрібних екранах (iPhone SE) — особливо комфортно.</p>
+    </div>
+  </div>
+
+  <p class="s-desc" style="margin-top: 20px;">
+    <strong style="color: var(--white);">Spacing between touch targets:</strong> мін 8px (idеально 12px). Якщо кнопки впритул — користувач промахується на сусідню.
+  </p>
+
+  <!-- ============== THUMB ZONES ============== -->
+  <h3 class="s-subtitle">/// THUMB ZONES — <span class="red">ДЕ ПАЛЕЦЬ ДОТЯГУЄТЬСЯ</span></h3>
+  <p class="s-desc">
+    Більшість користувачів тримають телефон однією рукою. Це означає що нижня частина екрана = easy reach, а верхня = hard. Розміщуй критичні елементи (CTA, головна навігація) у easy zone.
+  </p>
+
+  <div class="thumb-demo">
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="zone hard" style="top: 0; height: 30%;"><div class="zone-label">⚠ HARD ZONE</div></div>
+        <div class="zone" style="top: 30%; height: 30%; background: rgba(245,158,11,0.18);"><div class="zone-label" style="color: var(--warning);">~ STRETCH</div></div>
+        <div class="zone easy" style="bottom: 0; height: 40%;"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
+      </div>
+      <div class="phone-label">RIGHT HAND THUMB</div>
+    </div>
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="zone hard" style="top: 0; height: 30%; clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);"><div class="zone-label">⚠ HARD</div></div>
+        <div class="zone easy" style="bottom: 0; height: 60%; clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);"><div class="zone-label" style="color: var(--success);">✓ EASY</div></div>
+      </div>
+      <div class="phone-label">LEFT HAND THUMB</div>
+    </div>
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="zone hard" style="top: 0; height: 20%;"><div class="zone-label">⚠ HARD</div></div>
+        <div class="zone easy" style="bottom: 0; top: 20%; background: rgba(16,185,129,0.20);"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
+      </div>
+      <div class="phone-label">TWO HANDS</div>
+    </div>
+  </div>
+
+  <p class="s-desc" style="margin-top: 22px;">
+    <strong style="color: var(--white);">Практичні висновки:</strong>
+  </p>
+  <ul style="line-height: 2; font-size: 14px; padding-left: 22px; color: var(--bone);">
+    <li><strong style="color: var(--white);">Primary CTA</strong> — внизу екрана (sticky bottom bar або bottom modal).</li>
+    <li><strong style="color: var(--white);">Bottom navigation</strong> — у самому низу (де natural thumb position).</li>
+    <li><strong style="color: var(--white);">Verхні елементи</strong> — статус, breadcrumb, заголовок секції (не критичні дії).</li>
+    <li><strong style="color: var(--white);">Бургер-меню</strong> — top-left = compromise, але виправдане якщо є sticky bottom.</li>
+    <li><strong style="color: var(--white);">Назад-кнопка</strong> — top-left (iOS swipe-back + visible button).</li>
+  </ul>
+
+  <!-- ============== MOBILE PATTERNS ============== -->
+  <h3 class="s-subtitle">/// СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h3>
+  <div class="card-grid" style="margin-top: 20px;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// BOTTOM SHEET</span>
+      <h4>ЗАМІСТЬ MODAL</h4>
+      <p>На мобільному — bottom sheet (як у Maps). Swipe-down закриває. Less aggressive ніж full-screen modal.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// PULL-TO-REFRESH</span>
+      <h4>СТАНДАРТНИЙ ПАТЕРН</h4>
+      <p>Лента постів / запитів — обовʼязково pull-to-refresh. Користувачі очікують, що це є.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// SWIPE ACTIONS</span>
+      <h4>SWIPE LEFT/RIGHT</h4>
+      <p>Списки = swipe для дій. swipe-right = approve/like, swipe-left = delete/decline. Як у Mail/Telegram.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// FAB</span>
+      <h4>FLOATING ACTION BUTTON</h4>
+      <p>Primary action як FAB у bottom-right (Material). Завжди видимий. Для DC — червоний pill з іконкою.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// STICKY HEADER</span>
+      <h4>ШАПКА ПРИ SCROLL</h4>
+      <p>Чорна шапка з лого і CTA "Взяти участь" — sticky зверху при scroll вниз. Зникає при scroll up.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// INFINITE SCROLL</span>
+      <h4>НА ФІДАХ</h4>
+      <p>Лента постів / архів промоакцій — infinite scroll з spinner внизу. Не пагінація на мобільному.</p>
+    </div>
+  </div>
+
+  <!-- ============== TYPOGRAPHY MOBILE ============== -->
+  <h3 class="s-subtitle">/// ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h3>
+  <p class="s-desc">Скейлинг типографічної шкали з розділу 07 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
+
+  <table class="bp-table">
+    <thead>
+      <tr><th>Рівень</th><th>Desktop</th><th>Mobile</th><th>Line-height</th><th>Призначення</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>H1</td><td>72px</td><td><strong style="color: var(--red);">40px</strong></td><td>1.05</td><td>Hero, найбільші заголовки</td></tr>
+      <tr><td>H2</td><td>56px</td><td><strong style="color: var(--red);">32px</strong></td><td>1.1</td><td>Section titles</td></tr>
+      <tr><td>H3</td><td>40px</td><td><strong style="color: var(--red);">24px</strong></td><td>1.2</td><td>Subsection</td></tr>
+      <tr><td>H4</td><td>24px</td><td><strong style="color: var(--red);">18px</strong></td><td>1.3</td><td>Card titles</td></tr>
+      <tr><td>BODY</td><td>16px</td><td><strong style="color: var(--red);">16px</strong></td><td>1.5</td><td>Текст постів і статей</td></tr>
+      <tr><td>SMALL</td><td>14px</td><td><strong style="color: var(--red);">14px</strong></td><td>1.5</td><td>Captions, meta</td></tr>
+      <tr><td>TINY</td><td>12px</td><td><strong style="color: var(--red);">12px</strong></td><td>1.4</td><td>Юр. дисклеймери, footer</td></tr>
+    </tbody>
+  </table>
+
+  <p class="s-desc" style="margin-top: 18px;">
+    <strong style="color: var(--white);">Min font-size:</strong> 12px. Менше — нечитабельно навіть з ідеальним зором.<br>
+    <strong style="color: var(--white);">Line-height:</strong> 1.5 для body — комфортний для читання довгих текстів.<br>
+    <strong style="color: var(--white);">Max characters per line:</strong> 65-70 на десктопі, ~30-40 на мобільному.
+  </p>
+
+  <!-- ============== PERFORMANCE ============== -->
+  <h3 class="s-subtitle">/// PERFORMANCE — <span class="red">ШВИДКІСТЬ</span></h3>
+  <p class="s-desc">
+    Аудиторія DC у Україні значна частка на 4G/3G (особливо у регіонах). <strong style="color: var(--white);">3 секунди до first paint</strong> — це наш бар. Більше — bounce rate стрибає на 50%+.
+  </p>
+
+  <div class="card-grid" style="margin-top: 20px;">
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <span class="label">/// LCP</span>
+      <h4>< 2.5 СЕК</h4>
+      <p>Largest Contentful Paint — головна картинка/заголовок видна за 2.5 сек на 3G.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <span class="label">/// FID</span>
+      <h4>< 100 МС</h4>
+      <p>First Input Delay — кнопки реагують через 100ms максимум.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <span class="label">/// CLS</span>
+      <h4>< 0.1</h4>
+      <p>Cumulative Layout Shift — макет не "стрибає" при загрузці.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--warning);">
+      <span class="label">/// IMAGES</span>
+      <h4>WEBP + LAZY</h4>
+      <p>Всі зображення у WebP (фолбек JPEG). Lazy-load для below-fold. Розмір ≤200KB на hero.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--warning);">
+      <span class="label">/// FONTS</span>
+      <h4>SUBSET</h4>
+      <p>Google Fonts через display=swap + preload. Latin + Cyrillic subset. Не вантажити italics якщо не використовуєш.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--warning);">
+      <span class="label">/// JS BUNDLE</span>
+      <h4>< 200KB GZIP</h4>
+      <p>Початковий JS bundle — макс 200KB. Інше — lazy-load (code splitting).</p>
+    </div>
+  </div>
+
+  <!-- ============== CHECKLIST ============== -->
+  <h3 class="s-subtitle">/// ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h3>
+
+  <div class="checklist-mobile">
+    <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✅ 12 ПУНКТІВ</h4>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Перевірив на 375px (iPhone SE) — найменший популярний</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Touch targets ≥ 44×44 px, spacing ≥ 8px між ними</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Primary CTA у easy thumb zone (нижня третина екрана)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Font-size ≥ 16px для body, мінімум 12px загалом</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Контраст ≥ 4.5:1 для body тексту (WCAG AA)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Hero LCP < 2.5 сек на 3G (PageSpeed Insights)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Жодних horizontal scroll на жодному breakpoint</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Форми: тип input відповідає (tel, email, number) — мобільна клавіатура змінюється</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Input fields — autoCapitalize, autoCorrect налаштовані</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Sticky header не закриває контент при scroll</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Modals — bottom sheet, не full-screen</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Перевірив на реальному iPhone (не тільки Chrome DevTools)</label>
+  </div>
+
+  <div style="margin-top: 32px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="components.html" style="color: var(--red); font-weight: 600; text-decoration: none;">09 UI-компоненти</a> — буттони, форми, поля + їх мобільна версія.</li>
+      <li>→ <a href="trust.html" style="color: var(--red); font-weight: 600; text-decoration: none;">15 Довіра і доступність</a> — WCAG 2.1 AA — touch targets частина a11y.</li>
+      <li>→ <a href="tokens.html" style="color: var(--red); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — design tokens для responsive дизайнів.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="section-page-nav">
+<a href="photography-brief.html" class="prev"><span class="nav-label">← 24 ПОПЕРЕДНІЙ</span><span class="nav-title">Photography Brief</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+document.querySelectorAll('.sidebar nav a').forEach(a => { a.addEventListener('click', () => document.body.classList.remove('sidebar-open')); });
+document.body.addEventListener('click', (e) => { if (e.target === document.body && document.body.classList.contains('sidebar-open')) document.body.classList.remove('sidebar-open'); });
+(function(){
+  const inp = document.getElementById('sb-search'); if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a'); const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div'); emptyMsg.className = 'sidebar-search-empty'; emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim()); let anyVisible = false;
+    links.forEach(a => { const t = normalize(a.textContent); const num = a.querySelector('.num'); const numTxt = num ? normalize(num.textContent) : ''; const matches = !q || t.includes(q) || numTxt.includes(q); a.classList.toggle('is-hidden', !matches); if (matches) anyVisible = true; });
+    groups.forEach(g => { const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)'); g.classList.toggle('is-empty', visibleLinks.length === 0); });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+})();
+</script>
+</body>
+</html>
