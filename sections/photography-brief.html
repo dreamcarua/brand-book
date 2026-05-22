@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>24 Photography Brief · DreamCar Brand Book</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .brief-form { background: var(--coal); border: 1px solid var(--line); padding: 32px; margin-top: 24px; }
+  .field-block { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .field-block:last-child { border-bottom: none; }
+  .field-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red); margin-bottom: 8px; display: block; }
+  .field-value { font-size: 14px; color: var(--bone); line-height: 1.7; }
+  .field-value.placeholder { color: var(--ash); font-style: italic; }
+  .shot-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
+  .shot-card { background: var(--black); border: 1px solid var(--steel); padding: 16px; }
+  .shot-card .shot-num { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--red); margin-bottom: 6px; line-height: 1; }
+  .shot-card .shot-type { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .shot-card .shot-desc { font-size: 12px; color: var(--bone); line-height: 1.5; }
+  .copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; transition: border-color 0.15s; }
+  .copy-btn:hover { border-color: var(--red); }
+  .copy-btn.copied { border-color: var(--success); color: var(--success); }
+  .mood-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 16px; }
+  .mood-cell { background: var(--coal); padding: 14px; min-height: 100px; display: flex; flex-direction: column; gap: 6px; }
+  .mood-swatch { height: 24px; border-radius: 4px; }
+  .mood-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em; }
+  .mood-desc { font-size: 11px; color: var(--bone); line-height: 1.4; }
+  @media (max-width: 768px) {
+    .shot-list { grid-template-columns: 1fr; }
+    .mood-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button></div></header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group"><span class="group-title">На старт</span><nav><a href="quickstart.html"><span class="num">00</span>Quick Start</a></nav></div>
+<div class="group"><span class="group-title">Стратегія</span><nav><a href="manifesto.html"><span class="num">01</span>Маніфест</a><a href="strategy.html"><span class="num">02</span>Стратегія</a><a href="personas.html"><span class="num">03</span>Аудиторія</a><a href="compete.html"><span class="num">04</span>Контекст ринку</a></nav></div>
+<div class="group"><span class="group-title">Візуальна система</span><nav><a href="logo.html"><span class="num">05</span>Логотип</a><a href="colors.html"><span class="num">06</span>Кольори</a><a href="typo.html"><span class="num">07</span>Типографіка</a><a href="spacing.html"><span class="num">08</span>Сітка та елементи</a></nav></div>
+<div class="group"><span class="group-title">Інтерфейс</span><nav><a href="components.html"><span class="num">09</span>UI-компоненти</a><a href="motion.html"><span class="num">10</span>Анімації</a></nav></div>
+<div class="group"><span class="group-title">Голос і контент</span><nav><a href="voice.html"><span class="num">11</span>Голос і мова</a><a href="content.html"><span class="num">12</span>Контент</a><a href="crisis.html"><span class="num">13</span>Кризові комунікації</a></nav></div>
+<div class="group"><span class="group-title">Партнери і довіра</span><nav><a href="partners.html"><span class="num">14</span>Партнери</a><a href="trust.html"><span class="num">15</span>Довіра і доступність</a></nav></div>
+<div class="group"><span class="group-title">Техніка</span><nav><a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a><a href="audio.html"><span class="num">17</span>Стиль медіа</a></nav></div>
+<div class="group"><span class="group-title">Точки контакту</span><nav><a href="touchpoints.html"><span class="num">18</span>Точки контакту</a><a href="merch.html"><span class="num">19</span>Мерч</a></nav></div>
+<div class="group"><span class="group-title">Підсумки</span><nav><a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a><a href="support.html"><span class="num">21</span>Регламент підтримки</a><a href="ai-content.html"><span class="num">22</span>AI-контент</a><a href="examples.html"><span class="num">23</span>Examples Library</a><a href="photography-brief.html" class="active"><span class="num">24</span>Photography Brief</a></nav></div>
+<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="../print.html">Завантажити повний PDF</a></nav></div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">24 · Photography Brief</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="photography-brief">
+  <div class="s-num">/// 24 — PHOTOGRAPHY BRIEF</div>
+  <h2 class="s-title">ШАБЛОН <span class="red">ДЛЯ ФОТОГРАФА</span></h2>
+  <p class="s-desc">
+    Перед кожною зйомкою — заповнюємо цей brief, надсилаємо фотографу за 7 днів до зйомки. Тоді на shoot не буде сюрпризів. <strong style="color: var(--white);">Якщо нема цього brief — не починаємо.</strong>
+  </p>
+
+  <button class="copy-btn" id="copyBrief" onclick="copyBriefToClipboard()">📋 СКОПІЮВАТИ ШАБЛОН У БУФЕР</button>
+
+  <!-- ============== ШАБЛОН ============== -->
+  <div class="brief-form" id="briefForm">
+    <h3 style="font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--white); margin-bottom: 8px;">PHOTOGRAPHY BRIEF — [НАЗВА ПРОЕКТУ]</h3>
+    <p style="color: var(--bone); font-size: 13px; margin-bottom: 18px;">DreamCar · <span style="color: var(--ash);">v1.0 · автор: [імʼя] · дата: [DD.MM.YYYY]</span></p>
+
+    <div class="field-block">
+      <label class="field-label">/// 1 — ПРОЕКТ І КОНТЕКСТ</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Назва промоакції:</strong> <span class="placeholder">[наприклад, Промоакція №18 — BMW X5 Hybrid]</span><br>
+        <strong style="color: var(--white);">Авто:</strong> <span class="placeholder">[марка, модель, рік, VIN опційно]</span><br>
+        <strong style="color: var(--white);">Етап:</strong> <span class="placeholder">[студійна зйомка / hand-over / live ефір / glamour shot]</span><br>
+        <strong style="color: var(--white);">Дата зйомки:</strong> <span class="placeholder">[DD.MM.YYYY]</span><br>
+        <strong style="color: var(--white);">Час зйомки:</strong> <span class="placeholder">[start–end]</span><br>
+        <strong style="color: var(--white);">Локація:</strong> <span class="placeholder">[адреса + контакт-особа на місці]</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 2 — DELIVERABLES (ЩО ОЧІКУЄМО)</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Hero-кадри:</strong> <span class="placeholder">3-5 шт горизонталь 16:9 + 3-5 шт вертикаль 9:16 (для Reels/IG Stories)</span><br>
+        <strong style="color: var(--white);">Деталі:</strong> <span class="placeholder">10-15 кадрів — інтерʼєр, екстерʼєр, фари, диски, мотор, лого, текстури</span><br>
+        <strong style="color: var(--white);">Lifestyle:</strong> <span class="placeholder">5-10 кадрів з людиною біля авто (без обличчя якщо актор не підписав release)</span><br>
+        <strong style="color: var(--white);">Розширення:</strong> <span class="placeholder">RAW + JPEG (sRGB)</span><br>
+        <strong style="color: var(--white);">Дозвіл:</strong> <span class="placeholder">мін 6000×4000 px, 300 DPI для друку</span><br>
+        <strong style="color: var(--white);">Терміни:</strong> <span class="placeholder">RAW preview — у день зйомки. Фінал — за 3 робочі дні.</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 3 — MOOD & STYLE</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Загальна атмосфера:</strong> <span class="placeholder">premium auto magazine + cinematic. Не "stock photo", не "instagram lifestyle".</span><br>
+        <strong style="color: var(--white);">Кольорова палітра:</strong>
+      </p>
+      <div class="mood-grid">
+        <div class="mood-cell"><div class="mood-swatch" style="background: #0A0A0A;"></div><div class="mood-name">CARBON · #0A0A0A</div><div class="mood-desc">Глибокий чорний фон / темне освітлення</div></div>
+        <div class="mood-cell"><div class="mood-swatch" style="background: #E30613;"></div><div class="mood-name">RACING RED · #E30613</div><div class="mood-desc">Акцент — тільки наш червоний</div></div>
+        <div class="mood-cell"><div class="mood-swatch" style="background: #FFFFFF;"></div><div class="mood-name">WHITE · #FFFFFF</div><div class="mood-desc">Контрастні зони, хром, прожектори</div></div>
+        <div class="mood-cell"><div class="mood-swatch" style="background: #FFD700;"></div><div class="mood-name">GOLD HOUR · #FFD700</div><div class="mood-desc">Тільки для outdoor sunset shots</div></div>
+      </div>
+      <p class="field-value" style="margin-top: 14px;">
+        <strong style="color: var(--white);">Mood references:</strong> <span class="placeholder">[лінки на Behance/Pinterest moodboard — мін 10 референсів]</span><br>
+        <strong style="color: var(--white);">Фотографи-надихаючі:</strong> <span class="placeholder">Easton Chang, Webb Bland, Tim Wallace, James Lipman</span><br>
+        <strong style="color: var(--white);">УНИКАТИ:</strong> <span class="placeholder">overSaturated HDR, bokeh-fest, instagram-presets, AI-generated style</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 4 — ОСВІТЛЕННЯ І ТЕХНІКА</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Освітлення hero:</strong> <span class="placeholder">light painting або continuous LED + softbox 90×120 згори і збоку.</span><br>
+        <strong style="color: var(--white);">Освітлення details:</strong> <span class="placeholder">spot light на акценти (диски, фари, лого), темний background.</span><br>
+        <strong style="color: var(--white);">Camera:</strong> <span class="placeholder">full-frame mirrorless (Sony A7R V / Canon R5 / Nikon Z9) — must.</span><br>
+        <strong style="color: var(--white);">Lens-список:</strong> <span class="placeholder">24-70 f/2.8 + 70-200 f/2.8 + 16-35 f/4 для wide shots</span><br>
+        <strong style="color: var(--white);">Tripod:</strong> <span class="placeholder">обовʼязково — bracket exposures для HDR композиції.</span><br>
+        <strong style="color: var(--white);">Шум:</strong> <span class="placeholder">ISO до 800 на hero. Більше — переробка.</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 5 — POST-PRODUCTION</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Color grading:</strong> <span class="placeholder">desaturated mid-tones, push contrast у тінях, червоний з нашого бренду — не змінюваний.</span><br>
+        <strong style="color: var(--white);">Skin tones:</strong> <span class="placeholder">природні, без orange/teal trend.</span><br>
+        <strong style="color: var(--white);">Background cleanup:</strong> <span class="placeholder">обовʼязково. Жодних провідних знаків, людей, машин з не-DC.</span><br>
+        <strong style="color: var(--white);">Watermark:</strong> <span class="placeholder">НЕ додавай — ми робимо самі</span><br>
+        <strong style="color: var(--white);">Сертифікат подачі:</strong> <span class="placeholder">JPEG + PSD (з шарами) у Google Drive.</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 6 — SHOT LIST (приклад)</label>
+      <p class="field-value">Обовʼязкові кадри для кожної промоакції. Чекліст для фотографа:</p>
+      <div class="shot-list">
+        <div class="shot-card">
+          <div class="shot-num">01</div>
+          <div class="shot-type">/// HERO · WIDE</div>
+          <div class="shot-desc">Авто 3/4 кут, low angle. Light painting. Чорний backdrop. Для головного банера сайту.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">02</div>
+          <div class="shot-type">/// HERO · FRONT</div>
+          <div class="shot-desc">Лицем у камеру, фари горять. Симетрія. Для постера / Email header.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">03</div>
+          <div class="shot-type">/// HERO · REAR</div>
+          <div class="shot-desc">Задня частина, ліхтарі ввімкнено. Для Reels intro shot.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">04</div>
+          <div class="shot-type">/// DETAIL · WHEELS</div>
+          <div class="shot-desc">Крупний план диска + гальмівних супортів. Diagonal композиція. Для деталей-постів.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">05</div>
+          <div class="shot-type">/// DETAIL · LOGO</div>
+          <div class="shot-desc">Лого виробника крупним. Бренд-нейтрально. Для повідомлень про серію.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">06</div>
+          <div class="shot-type">/// DETAIL · INTERIOR</div>
+          <div class="shot-desc">Кермо + панель приладів. Symmetrical. Доступне світло салону.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">07</div>
+          <div class="shot-type">/// LIFESTYLE · HANDS</div>
+          <div class="shot-desc">Руки на кермі / на ключах. Без обличчя. Для Stories і email.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">08</div>
+          <div class="shot-type">/// LIFESTYLE · KEY</div>
+          <div class="shot-desc">Передача ключа з рук в руки. Крупний план. Для post-event пост.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">09</div>
+          <div class="shot-type">/// VERTICAL · 9:16</div>
+          <div class="shot-desc">Той же hero, але вертикальна композиція. Для Reels/TikTok/Stories.</div>
+        </div>
+        <div class="shot-card">
+          <div class="shot-num">10</div>
+          <div class="shot-type">/// VERTICAL · 9:16</div>
+          <div class="shot-desc">Той же detail logo, вертикально. Для соцмереж.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 7 — БЮДЖЕТ І ПРАВА</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Бюджет:</strong> <span class="placeholder">[сума] грн (включає shoot + 3 дні post + final delivery)</span><br>
+        <strong style="color: var(--white);">Авансова частина:</strong> <span class="placeholder">50% до зйомки, 50% після приймання.</span><br>
+        <strong style="color: var(--white);">Авторські права:</strong> <span class="placeholder">все на DreamCar (work-for-hire / повне переуступлення).</span><br>
+        <strong style="color: var(--white);">Дозвіл на use:</strong> <span class="placeholder">unlimited — DreamCar + партнерські канали (без перепродажу третім особам).</span><br>
+        <strong style="color: var(--white);">Атрибуція:</strong> <span class="placeholder">не обовʼязкова, але вітається у credits секції.</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 8 — КОНТАКТИ І ESCALATION</label>
+      <p class="field-value">
+        <strong style="color: var(--white);">Креатив-директор:</strong> <span class="placeholder">[імʼя, телефон, telegram, email]</span><br>
+        <strong style="color: var(--white);">На локації (день shoot):</strong> <span class="placeholder">[імʼя, телефон]</span><br>
+        <strong style="color: var(--white);">Затвердження кадрів:</strong> <span class="placeholder">Vadym Hryshyn · vg@dreamcar.ua · 24h reply</span><br>
+        <strong style="color: var(--white);">Платіжки:</strong> <span class="placeholder">[bookkeeper email]</span>
+      </p>
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">/// 9 — ПІДПИС</label>
+      <p class="field-value" style="font-style: italic; color: var(--bone);">
+        Прочитав, зрозумів, погоджуюсь. Виконаю згідно з цим brief — або повідомлю про відхилення до початку зйомки.<br><br>
+        <span class="placeholder">Імʼя фотографа: ___________________ · Дата: ___________________ · Підпис: ___________________</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============== TIPS ============== -->
+  <h3 class="s-subtitle">/// ПРАКТИЧНІ <span class="red">ПОРАДИ</span></h3>
+  <div class="card-grid" style="margin-top: 20px;">
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 01 · BACKUP</span>
+      <h4>2 КАРТКИ ОДНОЧАСНО</h4>
+      <p>Завжди — dual-slot camera з двома CF/SD. Якщо одна вмерла — друга має все. Втрата shoot = втрата 10000-50000 ₴.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 02 · WEATHER</span>
+      <h4>BACKUP DAY +1</h4>
+      <p>Outdoor зйомки — завжди закладай резервну дату. Forecast перевіряти за 48 год + морозний контроль за 12 год.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 03 · RELEASE FORMS</span>
+      <h4>МОДЕЛЬ-РЕЛІЗ</h4>
+      <p>Якщо хоч одне обличчя у кадрі (навіть боком) — підписаний release form. Без цього не публікуємо.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 04 · OBJECT RELEASE</span>
+      <h4>ДЛЯ ПАРТНЕРСЬКИХ ЛОГО</h4>
+      <p>BMW, Audi, Mercedes — логотипи у фоні OK, але якщо центр кадру — потрібен okay від дилера.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 05 · POST-EVENT</span>
+      <h4>HAND-OVER ЗЙОМКА</h4>
+      <p>Найважливіша зйомка року — передача ключів. Завжди 2 фотографи + 1 videograph. Дублюємо все.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// 06 · BTS</span>
+      <h4>BEHIND THE SCENES</h4>
+      <p>На кожному shoot — 5-10 BTS кадрів для Stories/Reels. Це формат що добре конвертить.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="audio.html" style="color: var(--red); font-weight: 600; text-decoration: none;">17 Стиль медіа</a> — повний photo direction.</li>
+      <li>→ <a href="examples.html" style="color: var(--red); font-weight: 600; text-decoration: none;">23 Examples Library</a> — кейс №09 «Фото авто для пост».</li>
+      <li>→ <a href="ai-content.html" style="color: var(--red); font-weight: 600; text-decoration: none;">22 AI-контент</a> — коли можна використовувати AI-зображення замість реального фото.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="section-page-nav">
+<a href="examples.html" class="prev"><span class="nav-label">← 23 ПОПЕРЕДНІЙ</span><span class="nav-title">Examples Library</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+function copyBriefToClipboard() {
+  const form = document.getElementById('briefForm');
+  const text = form.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBrief');
+    btn.classList.add('copied');
+    btn.textContent = '✓ СКОПІЙОВАНО';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 СКОПІЮВАТИ ШАБЛОН У БУФЕР'; }, 2000);
+  });
+}
+document.querySelectorAll('.sidebar nav a').forEach(a => { a.addEventListener('click', () => document.body.classList.remove('sidebar-open')); });
+document.body.addEventListener('click', (e) => { if (e.target === document.body && document.body.classList.contains('sidebar-open')) document.body.classList.remove('sidebar-open'); });
+(function(){
+  const inp = document.getElementById('sb-search'); if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a'); const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div'); emptyMsg.className = 'sidebar-search-empty'; emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim()); let anyVisible = false;
+    links.forEach(a => { const t = normalize(a.textContent); const num = a.querySelector('.num'); const numTxt = num ? normalize(num.textContent) : ''; const matches = !q || t.includes(q) || numTxt.includes(q); a.classList.toggle('is-hidden', !matches); if (matches) anyVisible = true; });
+    groups.forEach(g => { const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)'); g.classList.toggle('is-empty', visibleLinks.length === 0); });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+})();
+</script>
+</body>
+</html>
