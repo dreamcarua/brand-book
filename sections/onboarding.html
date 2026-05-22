@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>26 Onboarding Deck · DreamCar Brand Book</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .deck-intro { padding: 32px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent 60%); border-left: 3px solid var(--red); margin-bottom: 28px; }
+  .slide-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
+  .slide { background: var(--coal); border: 1px solid var(--line); padding: 0; aspect-ratio: 16/9; max-width: 1080px; margin: 0 auto; position: relative; overflow: hidden; }
+  .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
+  .slide-content { padding: 48px 56px; height: 100%; display: flex; flex-direction: column; position: relative; }
+  .slide-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 12px; }
+  .slide h2 { font-family: 'Archivo Black', sans-serif; font-size: 48px; color: var(--white); line-height: 1.05; margin-bottom: 24px; }
+  .slide .lead { font-size: 18px; color: var(--bone); line-height: 1.5; max-width: 720px; margin-bottom: 24px; }
+  .slide ul { list-style: none; padding: 0; line-height: 1.9; font-size: 16px; color: var(--bone); }
+  .slide ul li::before { content: '▸ '; color: var(--red); font-weight: 700; }
+  .slide .footer-mark { position: absolute; bottom: 24px; right: 32px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.18em; }
+  .slide .corner-num { position: absolute; bottom: 24px; left: 32px; font-family: 'Archivo Black', sans-serif; font-size: 56px; color: var(--coal); line-height: 1; }
+  .slide.hero { background: linear-gradient(135deg, var(--red), #8B0000); }
+  .slide.hero h2 { color: var(--white); font-size: 64px; }
+  .slide.hero .lead { color: rgba(255,255,255,0.85); font-size: 20px; }
+  .slide.green { background: linear-gradient(135deg, rgba(16,185,129,0.15), transparent); border-color: var(--success); }
+  .slide.red { background: linear-gradient(135deg, rgba(220,38,38,0.15), transparent); border-color: var(--danger); }
+  .slide.dark { background: var(--black); }
+  .swatch-row { display: flex; gap: 14px; margin: 14px 0; }
+  .swatch { width: 80px; height: 80px; border-radius: 4px; }
+  .deck-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+  .deck-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.15em; cursor: pointer; text-decoration: none; transition: border-color 0.15s; }
+  .deck-btn:hover { border-color: var(--red); color: var(--red); }
+  @media print {
+    body { background: white; color: black; }
+    .sidebar, .topbar, .section-bread, .section-page-nav, .deck-actions { display: none !important; }
+    .main { padding: 0; }
+    .slide { page-break-after: always; break-after: page; max-width: 100%; aspect-ratio: auto; min-height: 100vh; }
+  }
+  @media (max-width: 900px) {
+    .slide-content { padding: 32px 24px; }
+    .slide h2 { font-size: 32px; }
+    .slide.hero h2 { font-size: 40px; }
+    .slide .lead { font-size: 15px; }
+    .slide .corner-num { font-size: 32px; }
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button></div></header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group"><span class="group-title">На старт</span><nav><a href="quickstart.html"><span class="num">00</span>Quick Start</a></nav></div>
+<div class="group"><span class="group-title">Стратегія</span><nav><a href="manifesto.html"><span class="num">01</span>Маніфест</a><a href="strategy.html"><span class="num">02</span>Стратегія</a><a href="personas.html"><span class="num">03</span>Аудиторія</a><a href="compete.html"><span class="num">04</span>Контекст ринку</a></nav></div>
+<div class="group"><span class="group-title">Візуальна система</span><nav><a href="logo.html"><span class="num">05</span>Логотип</a><a href="colors.html"><span class="num">06</span>Кольори</a><a href="typo.html"><span class="num">07</span>Типографіка</a><a href="spacing.html"><span class="num">08</span>Сітка та елементи</a></nav></div>
+<div class="group"><span class="group-title">Інтерфейс</span><nav><a href="components.html"><span class="num">09</span>UI-компоненти</a><a href="motion.html"><span class="num">10</span>Анімації</a></nav></div>
+<div class="group"><span class="group-title">Голос і контент</span><nav><a href="voice.html"><span class="num">11</span>Голос і мова</a><a href="content.html"><span class="num">12</span>Контент</a><a href="crisis.html"><span class="num">13</span>Кризові комунікації</a></nav></div>
+<div class="group"><span class="group-title">Партнери і довіра</span><nav><a href="partners.html"><span class="num">14</span>Партнери</a><a href="trust.html"><span class="num">15</span>Довіра і доступність</a></nav></div>
+<div class="group"><span class="group-title">Техніка</span><nav><a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a><a href="audio.html"><span class="num">17</span>Стиль медіа</a></nav></div>
+<div class="group"><span class="group-title">Точки контакту</span><nav><a href="touchpoints.html"><span class="num">18</span>Точки контакту</a><a href="merch.html"><span class="num">19</span>Мерч</a></nav></div>
+<div class="group"><span class="group-title">Підсумки</span><nav><a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a><a href="support.html"><span class="num">21</span>Регламент підтримки</a><a href="ai-content.html"><span class="num">22</span>AI-контент</a><a href="examples.html"><span class="num">23</span>Examples Library</a><a href="photography-brief.html"><span class="num">24</span>Photography Brief</a><a href="mobile.html"><span class="num">25</span>Mobile-First Spec</a><a href="onboarding.html" class="active"><span class="num">26</span>Onboarding Deck</a></nav></div>
+<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="../print.html">Завантажити повний PDF</a></nav></div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">26 · Onboarding Deck</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="onboarding">
+  <div class="s-num">/// 26 — ONBOARDING DECK</div>
+  <h2 class="s-title">BRAND ЗА <span class="red">10 ХВИЛИН</span></h2>
+
+  <div class="deck-intro">
+    <p style="font-size: 15px; color: var(--white); line-height: 1.65; max-width: 720px;">
+      <strong>10 слайдів. 10 хвилин. Усе найважливіше з 26-розділового брендбуку.</strong> Для нових працівників, підрядників, агенцій. Покажи перед першим завданням — і людина не зробить найпоширеніших помилок.
+    </p>
+    <p style="font-size: 13px; color: var(--bone); margin-top: 12px;">
+      Кожен слайд — окрема ідея. Прокручуй вниз або натисни «Презентація» для повноекранного режиму.
+    </p>
+  </div>
+
+  <div class="deck-actions">
+    <button class="deck-btn" onclick="document.documentElement.requestFullscreen ? document.documentElement.requestFullscreen() : alert('Fullscreen не підтримується')">🖥 ПОВНОЕКРАННА ПРЕЗЕНТАЦІЯ</button>
+    <button class="deck-btn" onclick="window.print()">📄 ДРУК / PDF</button>
+    <a class="deck-btn" href="../index.html">← НАЗАД ДО БРЕНДБУКУ</a>
+  </div>
+
+  <!-- ============== SLIDES ============== -->
+  <div class="slide-grid">
+
+    <!-- SLIDE 1: HERO -->
+    <div class="slide hero">
+      <div class="slide-content">
+        <div class="slide-num" style="color: rgba(255,255,255,0.6);">/// 01 / 10 — ВІТАЄМО У DREAMCAR</div>
+        <h2 style="margin-top: auto;">МРІЯ.<br>ЗА ЦІНОЮ<br>ЧАШКИ КАВИ.</h2>
+        <p class="lead" style="margin-top: 20px;">DreamCar — український авто-клуб з 10-річною історією. 17 авто вручено. 350K спільнота. Один з найдовговічних клубів цього формату в Європі.</p>
+        <div class="footer-mark" style="color: rgba(255,255,255,0.5);">DREAMCAR BRAND ONBOARDING · 2026</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: MISSION -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="slide-num">/// 02 / 10 — НАША МІСІЯ</div>
+        <h2>ВЕРНУТИ <span style="color: var(--red);">МРІЮ</span> УКРАЇНЦЯМ.</h2>
+        <p class="lead">Авто — більше ніж транспорт. Це символ свободи, успіху, маленьких перемог. Ми робимо це доступним для тих, хто не може купити Audi за свою зарплату — але має право на цю мрію.</p>
+        <ul style="margin-top: 20px;">
+          <li><strong style="color: var(--white);">Хто ми:</strong> авто-клуб, не «лотерея»</li>
+          <li><strong style="color: var(--white);">Що даємо:</strong> доступ + досвід + спільноту</li>
+          <li><strong style="color: var(--white);">Чим відрізняємось:</strong> 10 років без зривів</li>
+        </ul>
+        <div class="footer-mark">DREAMCAR · MISSION</div>
+        <div class="corner-num">02</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: AUDIENCE -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="slide-num">/// 03 / 10 — НАША АУДИТОРІЯ</div>
+        <h2>ЧОЛОВІК <span style="color: var(--red);">25-45</span>, УКРАЇНА.</h2>
+        <p class="lead">Працює, заробляє, мріє. Не очікує «легких грошей» — поважає чесний обмін. Слідкує за авто-новинами. Серйозний як клієнт — серйозне ставлення у відповідь.</p>
+        <ul style="margin-top: 20px;">
+          <li>Розуміється на машинах — не обдуриш «гарантованим виграшем»</li>
+          <li>Цінить конкретику — цифри, дати, факти</li>
+          <li>Поважає прозорість — кожен ефір у Live, не закулісно</li>
+          <li>На «Ви» — завжди, з великої літери</li>
+        </ul>
+        <div class="footer-mark">DREAMCAR · WHO WE TALK TO</div>
+        <div class="corner-num">03</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: VISUAL IDENTITY -->
+    <div class="slide dark">
+      <div class="slide-content">
+        <div class="slide-num">/// 04 / 10 — ВІЗУАЛЬНА ІДЕНТИЧНІСТЬ</div>
+        <h2>3 КОЛЬОРИ.<br>3 ШРИФТИ.<br><span style="color: var(--red);">1 ЛОГО.</span></h2>
+        <div class="swatch-row" style="margin-top: 24px;">
+          <div class="swatch" style="background: #0A0A0A; border: 1px solid var(--steel);"></div>
+          <div class="swatch" style="background: #E30613;"></div>
+          <div class="swatch" style="background: #FFFFFF;"></div>
+        </div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--bone); letter-spacing: 0.1em; margin-top: 8px;">#0A0A0A · #E30613 · #FFFFFF</p>
+        <div style="margin-top: 20px; display: flex; gap: 24px; flex-wrap: wrap;">
+          <span style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; color: var(--white);">OSWALD</span>
+          <span style="font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--white);">ARCHIVO</span>
+          <span style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 22px; color: var(--white);">Manrope</span>
+        </div>
+        <p class="lead" style="margin-top: 24px; font-size: 14px;">Жодних інших кольорів. Жодних інших шрифтів. Це не порада — це закон.</p>
+        <div class="footer-mark">DREAMCAR · VISUAL</div>
+        <div class="corner-num">04</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: VOICE -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="slide-num">/// 05 / 10 — ГОЛОС БРЕНДУ</div>
+        <h2>ПРЯМО.<br>КОРОТКО.<br><span style="color: var(--red);">ДІЄСЛОВОМ.</span></h2>
+        <p class="lead">«Бери. Дій. Виграй.» — це наш ритм. Конкретні цифри: <strong style="color: var(--white);">17 авто, 249 ₴, 19.04.2026</strong>. Тимчасова, конкретна, фактична інформація.</p>
+        <ul style="margin-top: 20px;">
+          <li><strong style="color: var(--white);">Завжди «Ви»</strong> — з великої літери, у всіх каналах</li>
+          <li><strong style="color: var(--white);">«Ти»</strong> — тільки у Reels-влогах, мемному контенті</li>
+          <li><strong style="color: var(--white);">Без зменшувальних</strong> — «кошти», не «грошики»</li>
+        </ul>
+        <div class="footer-mark">DREAMCAR · VOICE</div>
+        <div class="corner-num">05</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: NEVER WORDS -->
+    <div class="slide red">
+      <div class="slide-content">
+        <div class="slide-num" style="color: var(--danger);">/// 06 / 10 — ЦІ СЛОВА — НІКОЛИ</div>
+        <h2>ЗАБОРОНЕНИЙ <span style="color: var(--danger);">СЛОВНИК.</span></h2>
+        <p class="lead">Юридичні ризики, блокування реклами, втрата довіри. Якщо хтось бачить ці слова — повертаємо матеріал на переробку. Без винятків.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--danger);">
+          <div>✕ ШАНС</div><div>✕ ЛОТЕРЕЯ</div>
+          <div>✕ ВИГРАЙ</div><div>✕ КАЗИНО</div>
+          <div>✕ КВИТОК</div><div>✕ ДЖЕКПОТ</div>
+          <div>✕ ХАЛЯВА</div><div>✕ СТАВКА</div>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px; color: var(--bone);"><strong style="color: var(--white);">Замість «квитки» — «токени». Замість «розіграш» — «промоакція».</strong></p>
+        <div class="footer-mark" style="color: var(--danger);">DREAMCAR · NEVER WORDS</div>
+        <div class="corner-num">06</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: DO WORDS -->
+    <div class="slide green">
+      <div class="slide-content">
+        <div class="slide-num" style="color: var(--success);">/// 07 / 10 — А ЦІ — ЗАВЖДИ</div>
+        <h2>БЕЗПЕЧНИЙ <span style="color: var(--success);">СЛОВНИК.</span></h2>
+        <p class="lead">Юридично чисто, проходить Meta/Google ads, не лякає платоспроможну аудиторію.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--success);">
+          <div>✓ ПРОМОАКЦІЯ</div><div>✓ ТОКЕН</div>
+          <div>✓ ВЛАСНИК АВТО</div><div>✓ УЧАСНИК</div>
+          <div>✓ ПРЯМИЙ ЕФІР</div><div>✓ ДОСТУП</div>
+          <div>✓ НОМЕР УЧАСТІ</div><div>✓ КЛУБ</div>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px; color: var(--bone);"><strong style="color: var(--white);">Принцип:</strong> ми продаємо доступ до знань і клубу. Авто — приємний бонус.</p>
+        <div class="footer-mark" style="color: var(--success);">DREAMCAR · SAFE WORDS</div>
+        <div class="corner-num">07</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: WORKFLOW -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="slide-num">/// 08 / 10 — ЯК ПРАЦЮЄ ПРОЦЕС</div>
+        <h2>ВІД ІДЕЇ ДО <span style="color: var(--red);">ПУБЛІКАЦІЇ</span>.</h2>
+        <p class="lead">5 етапів. 5 робочих днів мінімум. Дедлайн до публікації — мінімум 5 робочих днів. Без винятків — це не наша примха, це юр.вимога.</p>
+        <ul style="margin-top: 20px;">
+          <li><strong style="color: var(--white);">DRAFT</strong> — пишемо/малюємо, перевіряємо voice</li>
+          <li><strong style="color: var(--white);">REVIEW</strong> — погодження CEO / маркетолога</li>
+          <li><strong style="color: var(--white);">APPROVED</strong> — фіксується дата і час публікації</li>
+          <li><strong style="color: var(--white);">PUBLISHED</strong> — автопостинг у канал</li>
+          <li><strong style="color: var(--white);">METRICS</strong> — заміряємо результат</li>
+        </ul>
+        <div class="footer-mark">DREAMCAR · WORKFLOW</div>
+        <div class="corner-num">08</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: WHERE TO LEARN -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="slide-num">/// 09 / 10 — ДЕ ДЕТАЛІ</div>
+        <h2>BRAND.DREAMCAR.UA</h2>
+        <p class="lead">Повний брендбук на 26 розділів. Якщо є питання — спочатку шукай тут (працює пошук «/»). Якщо немає відповіді — пиши.</p>
+        <ul style="margin-top: 20px;">
+          <li><strong style="color: var(--white);">Voice guide:</strong> розділ 11 — DO/CAREFUL/NEVER, матриця по 6 каналах</li>
+          <li><strong style="color: var(--white);">Examples:</strong> розділ 23 — 12 прикладів good vs bad</li>
+          <li><strong style="color: var(--white);">Кризи:</strong> розділ 13 — 8 готових скриптів</li>
+          <li><strong style="color: var(--white);">AI:</strong> розділ 22 — як використовувати Claude/ChatGPT</li>
+          <li><strong style="color: var(--white);">Mobile:</strong> розділ 25 — breakpoints і touch targets</li>
+        </ul>
+        <div class="footer-mark">DREAMCAR · LEARN MORE</div>
+        <div class="corner-num">09</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: CONTACT -->
+    <div class="slide hero">
+      <div class="slide-content">
+        <div class="slide-num" style="color: rgba(255,255,255,0.6);">/// 10 / 10 — ВПЕРЕД</div>
+        <h2 style="margin-top: auto;">ГОТОВО?<br><span style="color: rgba(255,255,255,0.8);">ПИШИ.</span></h2>
+        <p class="lead" style="margin-top: 20px;">Будь-які питання — звертайся. Краще запитати 10 раз і зробити правильно, ніж зробити неправильно і переробляти.</p>
+        <ul style="margin-top: 20px;">
+          <li><strong>Email:</strong> vg@dreamcar.ua</li>
+          <li><strong>Telegram:</strong> @dreamcar_brand</li>
+          <li><strong>Brand Book:</strong> brand.dreamcar.ua</li>
+          <li><strong>Дедлайн на узгодження:</strong> мін 5 робочих днів</li>
+        </ul>
+        <div class="footer-mark" style="color: rgba(255,255,255,0.5);">DREAMCAR · CONTACT · 2026</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
+    <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
+      <strong>На першому день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
+    </p>
+    <p style="font-size: 14px; color: var(--white); line-height: 1.6; margin-top: 10px;">
+      <strong>Друк:</strong> кнопка «Друк/PDF» зверху — кожен слайд на окремій сторінці. Ідеально для офлайн-зустрічей з агенціями.
+    </p>
+  </div>
+
+  <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="quickstart.html" style="color: var(--red); font-weight: 600; text-decoration: none;">00 Quick Start</a> — це наступний крок після onboarding deck (детальніший).</li>
+      <li>→ <a href="voice.html" style="color: var(--red); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — глибше про NEVER/SAFE words.</li>
+      <li>→ <a href="examples.html" style="color: var(--red); font-weight: 600; text-decoration: none;">23 Examples Library</a> — як виглядають правильні приклади.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="section-page-nav">
+<a href="mobile.html" class="prev"><span class="nav-label">← 25 ПОПЕРЕДНІЙ</span><span class="nav-title">Mobile-First Spec</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+document.querySelectorAll('.sidebar nav a').forEach(a => { a.addEventListener('click', () => document.body.classList.remove('sidebar-open')); });
+document.body.addEventListener('click', (e) => { if (e.target === document.body && document.body.classList.contains('sidebar-open')) document.body.classList.remove('sidebar-open'); });
+(function(){
+  const inp = document.getElementById('sb-search'); if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a'); const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div'); emptyMsg.className = 'sidebar-search-empty'; emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim()); let anyVisible = false;
+    links.forEach(a => { const t = normalize(a.textContent); const num = a.querySelector('.num'); const numTxt = num ? normalize(num.textContent) : ''; const matches = !q || t.includes(q) || numTxt.includes(q); a.classList.toggle('is-hidden', !matches); if (matches) anyVisible = true; });
+    groups.forEach(g => { const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)'); g.classList.toggle('is-empty', visibleLinks.length === 0); });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+})();
+</script>
+</body>
+</html>
