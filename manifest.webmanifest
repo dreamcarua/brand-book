@@ -1,0 +1,70 @@
+{
+  "name": "DreamCar Brand Book",
+  "short_name": "DC Brand",
+  "description": "DreamCar Brand Book v3.9 — повне керівництво з бренду з інтерактивними інструментами та генератором постів.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "categories": ["business", "design", "productivity"],
+  "lang": "uk",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Voice Linter",
+      "short_name": "Linter",
+      "description": "Перевірити текст на NEVER слова",
+      "url": "/sections/tools.html",
+      "icons": [{"src": "favicon-32.png", "sizes": "32x32"}]
+    },
+    {
+      "name": "Post Generator",
+      "short_name": "Generator",
+      "description": "Згенерувати пост для IG/TG/Email",
+      "url": "/sections/generator.html",
+      "icons": [{"src": "favicon-32.png", "sizes": "32x32"}]
+    },
+    {
+      "name": "Quick Start",
+      "short_name": "Quick",
+      "description": "Шпаргалка на 1 екран",
+      "url": "/sections/quickstart.html",
+      "icons": [{"src": "favicon-32.png", "sizes": "32x32"}]
+    },
+    {
+      "name": "Examples",
+      "short_name": "Examples",
+      "description": "Good vs Bad приклади",
+      "url": "/sections/examples.html",
+      "icons": [{"src": "favicon-32.png", "sizes": "32x32"}]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
