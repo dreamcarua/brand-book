@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="supported-color-schemes" content="dark">
+<title>21 Регламент підтримки · DreamCar Brand Book</title>
+<meta name="description" content="DreamCar Brand Book — 21 Регламент підтримки клієнтів.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .support-hero { padding: 32px; background: linear-gradient(135deg, rgba(227,6,19,0.12), transparent 60%); border-left: 3px solid var(--red); margin-bottom: 28px; }
+  .support-hero .schedule { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--bone); letter-spacing: 0.18em; margin-top: 12px; }
+  .term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 16px; }
+  .term-cell { padding: 22px 26px; background: var(--coal); }
+  .term-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 16px; }
+  .term-cell.bad { background: rgba(220,38,38,0.08); }
+  .term-cell.bad .head { color: var(--danger); }
+  .term-cell.good { background: rgba(16,185,129,0.08); }
+  .term-cell.good .head { color: var(--success); }
+  .term-cell ul { list-style: none; padding: 0; line-height: 2.1; }
+  .term-cell li { color: var(--white); font-weight: 600; font-size: 14px; }
+  .term-cell.bad li::before { content: '⛔  '; color: var(--danger); }
+  .term-cell.good li::before { content: '✅  '; color: var(--success); }
+  .k-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+  .k-card { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px; min-height: 200px; display: flex; flex-direction: column; }
+  .k-card .k-num { font-family: 'Archivo Black', sans-serif; font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
+  .k-card .k-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.18em; margin-bottom: 14px; }
+  .k-card .k-title { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+  .k-card .k-quote { font-size: 13px; color: var(--bone); line-height: 1.55; font-style: italic; padding: 10px 12px; background: var(--black); border-left: 2px solid var(--red); margin-top: auto; }
+  .stop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+  .stop-card { background: var(--coal); border: 1px solid var(--line); padding: 22px; position: relative; }
+  .stop-card .stop-letter { position: absolute; top: 14px; right: 18px; font-family: 'Archivo Black', sans-serif; font-size: 46px; color: rgba(227,6,19,0.25); line-height: 1; }
+  .stop-card .stop-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.18em; margin-bottom: 8px; }
+  .stop-card .stop-title { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 10px; }
+  .stop-card .stop-quote { font-size: 13px; color: var(--bone); line-height: 1.55; font-style: italic; }
+  .step-row { display: grid; grid-template-columns: 60px 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .step-row:last-child { border-bottom: none; }
+  .step-row .step-num { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--red); line-height: 1; }
+  .step-row .step-content h4 { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
+  .step-row .step-content p { font-size: 14px; color: var(--bone); line-height: 1.6; margin-bottom: 8px; }
+  .step-row .step-content ul { padding-left: 22px; line-height: 1.8; color: var(--bone); font-size: 14px; }
+  .step-row .step-content ul li { margin-bottom: 4px; }
+  .step-row .step-content .step-note { padding: 12px 16px; background: var(--coal); border-left: 2px solid var(--warning); margin-top: 10px; font-size: 13px; color: var(--bone); line-height: 1.6; }
+  .step-row .step-content .step-link { display: inline-block; padding: 10px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-decoration: none; margin-top: 10px; transition: border-color 0.15s; }
+  .step-row .step-content .step-link:hover { border-color: var(--red); }
+  .phrase-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+  .phrase-table th { background: var(--coal); padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red); border-bottom: 2px solid var(--red); text-align: left; }
+  .phrase-table td { padding: 16px; border-bottom: 1px solid var(--line); background: var(--black); }
+  .phrase-table td:first-child { font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--white); font-weight: 600; letter-spacing: 0.04em; width: 28%; }
+  .phrase-table td:last-child { font-style: italic; color: var(--bone); font-size: 14px; line-height: 1.6; }
+  @media (max-width: 768px) {
+    .k-grid, .stop-grid, .term-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar">
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <div class="topbar-actions">
+    <a href="../print.html" class="topbar-pdf">PDF</a>
+    <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button>
+  </div>
+</header>
+
+<aside class="sidebar">
+<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · v3.7</span>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
+<div class="group">
+<span class="group-title">На старт</span>
+<nav>
+<a href="quickstart.html"><span class="num">00</span>Quick Start</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Стратегія</span>
+<nav>
+<a href="manifesto.html"><span class="num">01</span>Маніфест</a>
+<a href="strategy.html"><span class="num">02</span>Стратегія</a>
+<a href="personas.html"><span class="num">03</span>Аудиторія</a>
+<a href="compete.html"><span class="num">04</span>Контекст ринку</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Візуальна система</span>
+<nav>
+<a href="logo.html"><span class="num">05</span>Логотип</a>
+<a href="colors.html"><span class="num">06</span>Кольори</a>
+<a href="typo.html"><span class="num">07</span>Типографіка</a>
+<a href="spacing.html"><span class="num">08</span>Сітка та елементи</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Інтерфейс</span>
+<nav>
+<a href="components.html"><span class="num">09</span>UI-компоненти</a>
+<a href="motion.html"><span class="num">10</span>Анімації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Голос і контент</span>
+<nav>
+<a href="voice.html"><span class="num">11</span>Голос і мова</a>
+<a href="content.html"><span class="num">12</span>Контент</a>
+<a href="crisis.html"><span class="num">13</span>Кризові комунікації</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Партнери і довіра</span>
+<nav>
+<a href="partners.html"><span class="num">14</span>Партнери</a>
+<a href="trust.html"><span class="num">15</span>Довіра і доступність</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Техніка</span>
+<nav>
+<a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a>
+<a href="audio.html"><span class="num">17</span>Стиль медіа</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Точки контакту</span>
+<nav>
+<a href="touchpoints.html"><span class="num">18</span>Точки контакту</a>
+<a href="merch.html"><span class="num">19</span>Мерч</a>
+</nav>
+</div>
+<div class="group">
+<span class="group-title">Підсумки</span>
+<nav>
+<a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a>
+<a href="support.html" class="active"><span class="num">21</span>Регламент підтримки</a>
+</nav>
+</div>
+<div class="group pdf-group"><span class="group-title">Експорт</span>
+<nav>
+<a href="../print.html">Завантажити повний PDF</a>
+</nav>
+</div>
+<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+</aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">21 · Регламент підтримки</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+
+<section id="support">
+  <div class="s-num">/// 21 — РЕГЛАМЕНТ ПІДТРИМКИ КЛІЄНТІВ</div>
+  <h2 class="s-title">КЛІЄНТ — <span class="red">ЗАСПОКОЇТИ І ВТРИМАТИ</span></h2>
+
+  <div class="support-hero">
+    <p style="font-size: 15px; color: var(--white); line-height: 1.65; max-width: 720px;">
+      <strong>Твоя задача — не просто «відповісти», а зробити так, щоб клієнт заспокоївся і залишився задоволеним.</strong>
+      Ми спілкуємося як експертні друзі: ввічливо, чітко і без зайвої «води». Швидко. На «Ви». Без юридичних тригерів.
+    </p>
+    <div class="schedule">/// ГРАФІК ПІДТРИМКИ: 09:00 — 20:00 (CET/CEST)</div>
+  </div>
+
+  <!-- ============== 1. ЗАБОРОНЕНА ТЕРМІНОЛОГІЯ ============== -->
+  <h3 class="s-subtitle">/// 1 — <span class="red">ЗАБОРОНЕНА ТЕРМІНОЛОГІЯ</span></h3>
+  <p class="s-desc">
+    <strong style="color: var(--white);">Ми ніколи не граємо в лотерею. Ми продаємо знання.</strong> Слова нижче заборонені у будь-якій комунікації з клієнтом — як з його боку, так і з нашого. Якщо клієнт вживає заборонене слово — ми не повторюємо за ним, а перекладаємо у безпечну термінологію.
+  </p>
+
+  <div class="term-grid">
+    <div class="term-cell bad">
+      <div class="head">/// ⛔ НІКОЛИ НЕ КАЖЕМО</div>
+      <ul>
+        <li>квитки</li>
+        <li>шанси</li>
+        <li>лотерея</li>
+        <li>розіграш</li>
+        <li>виграти</li>
+        <li>грати</li>
+      </ul>
+    </div>
+    <div class="term-cell good">
+      <div class="head">/// ✅ ЗАВЖДИ КАЖЕМО</div>
+      <ul>
+        <li>токен / токени</li>
+        <li>доступ до гайдів</li>
+        <li>бонусні коди</li>
+        <li>участь в акції</li>
+        <li>DreamCar Credits</li>
+        <li>підтвердження покупки</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background: var(--coal); border-left: 3px solid var(--white); padding: 20px 24px; margin-top: 20px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 8px;">/// ЯКЩО ПИТАЮТЬ «ЩО ВИ ПРОДАЄТЕ?»</div>
+    <p style="font-size: 14px; color: var(--bone); line-height: 1.6; font-style: italic;">
+      «Ми продаємо цифрові інфо-продукти (гайди / чек-листи) про авто. А участь в акції з машиною — це приємний бонус для наших покупців.»
+    </p>
+  </div>
+
+  <div class="card" style="background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 20px 24px; margin-top: 14px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 10px;">/// 📝 ВНУТРІШНІ ЗАМІНИ (термінологія)</div>
+    <p style="font-size: 13px; color: var(--bone); line-height: 1.7; margin-bottom: 10px;">Слово «квитки» у будь-якому відмінку — скрізь замінюється на «токени» / «токен»:</p>
+    <ul style="list-style: none; padding: 0; line-height: 1.9; font-size: 14px;">
+      <li><span style="color: var(--danger);">⛔ «квитки не знайдено»</span> &nbsp;→&nbsp; <span style="color: var(--success);">✅ «токени не знайдено»</span></li>
+      <li><span style="color: var(--danger);">⛔ «відправити квитки»</span> &nbsp;→&nbsp; <span style="color: var(--success);">✅ «надіслати токени»</span></li>
+      <li><span style="color: var(--danger);">⛔ «номери квитків»</span> &nbsp;→&nbsp; <span style="color: var(--success);">✅ «токени / підтвердження токенів»</span></li>
+      <li><span style="color: var(--danger);">⛔ «кількість квитків»</span> &nbsp;→&nbsp; <span style="color: var(--success);">✅ «кількість токенів»</span></li>
+    </ul>
+  </div>
+
+  <!-- ============== 2. TONE OF VOICE ============== -->
+  <h3 class="s-subtitle">/// 2 — <span class="red">TONE OF VOICE — ЯК МИ ПИШЕМО</span></h3>
+  <p class="s-desc">
+    <strong style="color: var(--white);">Наші клієнти — переважно чоловіки.</strong> Вони цінують конкретику та повагу до свого часу.
+  </p>
+
+  <div class="card" style="background: var(--coal); border-left: 3px solid var(--red); padding: 22px 26px; margin-top: 18px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// 🎯 КЛЮЧОВЕ ПРАВИЛО</div>
+    <p style="font-size: 16px; color: var(--white); line-height: 1.5; font-weight: 600;">
+      Ведемо всі діалоги виключно на «Ви» (з великої літери). Ніякого «ти» — навіть якщо клієнт спілкується неформально.
+    </p>
+  </div>
+
+  <div class="table-scroll" style="margin-top: 18px;">
+    <table class="compete-table" style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="width: 28%;">ПРИНЦИП</th>
+          <th>ЯК ЦЕ ВИГЛЯДАЄ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Завжди «Ви»</td><td>Вам, Вас, Ваш — завжди з великої літери у зверненні до клієнта.</td></tr>
+        <tr><td>Спокій завжди</td><td>Навіть якщо клієнт пише капсом — відповідаємо рівно та впевнено.</td></tr>
+        <tr><td>Без зменшувальних слів</td><td>«кошти», «авто», «замовлення» — замість «грошиків», «машинки», «замовленнячка».</td></tr>
+        <tr><td>Одне повідомлення = одна дія</td><td>Не надсилаємо 5 повідомлень підряд. Краще одне структуроване.</td></tr>
+        <tr><td>Без технічних деталей</td><td>Клієнт не повинен знати про внутрішні збої чи причини помилок.</td></tr>
+        <tr><td>Gender-neutral дієслова</td><td>«перевіряю», «передаємо» (а не «перевірив(ла)», «передала»). Не вгадуємо стать оператора.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============== 3. АЛГОРИТМ 4К ============== -->
+  <h3 class="s-subtitle">/// 3 — <span class="red">АЛГОРИТМ «4К»</span> — СТАНДАРТ ОБРОБКИ ЗВЕРНЕНЬ</h3>
+  <p class="s-desc">Кожне звернення проходить через 4 кроки. Це гарантує що клієнт відчує контроль і отримає відповідь у потрібному форматі.</p>
+
+  <div class="k-grid">
+    <div class="k-card">
+      <div class="k-num">К1</div>
+      <div class="k-label">/// КОНТАКТ</div>
+      <div class="k-title">ВІДПОВІДЬ ЯКНАЙШВИДШЕ</div>
+      <div class="k-quote">«Доброго дня! Вже перевіряю.»</div>
+    </div>
+    <div class="k-card">
+      <div class="k-num">К2</div>
+      <div class="k-label">/// КОНТЕКСТ</div>
+      <div class="k-title">ЗАПИТАТИ ДАНІ</div>
+      <div class="k-quote">«Вкажіть, будь ласка, Ваш Email або номер телефону.»</div>
+    </div>
+    <div class="k-card">
+      <div class="k-num">К3</div>
+      <div class="k-label">/// КОНТРОЛЬ</div>
+      <div class="k-title">ПОВІДОМИТИ ПРО ПРОЦЕС</div>
+      <div class="k-quote">«Передаємо інформацію технічному відділу — це не займе багато часу.»</div>
+    </div>
+    <div class="k-card">
+      <div class="k-num">К4</div>
+      <div class="k-label">/// КІНЕЦЬ</div>
+      <div class="k-title">ОСТАННЄ СЛОВО — ЗА ТОБОЮ</div>
+      <div class="k-quote">«Все готово. Гарного дня!»</div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(16,185,129,0.10), transparent); border-left: 3px solid var(--success); padding: 20px 24px; margin-top: 22px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 8px;">/// 📌 ФІКСАЦІЯ ОБРОБКИ</div>
+    <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">
+      Після закриття кожного звернення — постав 👍 на повідомлення у Telegram-чаті команди, щоб усі бачили, що звернення оброблено.
+    </p>
+  </div>
+
+  <!-- ============== 4. ПРОТОКОЛ S.T.O.P. ============== -->
+  <h3 class="s-subtitle">/// 4 — <span class="red">ПРОТОКОЛ S.T.O.P.</span> — ГАСІННЯ НЕГАТИВУ</h3>
+  <p class="s-desc">Якщо клієнт роздратований або конфліктний — виконуй чотири кроки послідовно. Не пропускай — кожен крок знижує градус.</p>
+
+  <div class="stop-grid">
+    <div class="stop-card">
+      <div class="stop-letter">S</div>
+      <div class="stop-label">/// STABILIZE</div>
+      <div class="stop-title">ЗАСПОКОЇТИ</div>
+      <div class="stop-quote">«Я Вас почув. Це неприємна ситуація — зараз розберемося.»</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-letter">T</div>
+      <div class="stop-label">/// TAKE CONTROL</div>
+      <div class="stop-title">ВЗЯТИ УПРАВЛІННЯ</div>
+      <div class="stop-quote">«Вже перевіряю Ваші дані.»</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-letter">O</div>
+      <div class="stop-label">/// OFFER</div>
+      <div class="stop-title">ДАТИ ВИБІР</div>
+      <div class="stop-quote">«Відновлюємо доступ + бонус АБО повне повернення коштів без питань.»</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-letter">P</div>
+      <div class="stop-label">/// PROCEED</div>
+      <div class="stop-title">ВИКОНАТИ ВИБІР</div>
+      <div class="stop-quote">«Виконуємо вибраний варіант — і закриваємо діалог на позитиві.»</div>
+    </div>
+  </div>
+
+  <!-- ============== 5. ПОВЕРНЕННЯ КОШТІВ ============== -->
+  <h3 class="s-subtitle">/// 5 — <span class="red">ПОВЕРНЕННЯ КОШТІВ</span></h3>
+  <p class="s-desc">
+    <strong style="color: var(--white);">Репутація дорожча за вартість одного замовлення.</strong> Якщо розмова зайшла в глухий кут — не сперечайся.
+  </p>
+
+  <div class="card" style="background: rgba(220,38,38,0.08); border-left: 3px solid var(--danger); padding: 20px 24px; margin-top: 18px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger); letter-spacing: 0.2em; margin-bottom: 12px;">/// КОЛИ СТАВИТИ ПИТАННЯ ПРО ПОВЕРНЕННЯ</div>
+    <ul style="list-style: none; padding: 0; line-height: 1.9; font-size: 14px; color: var(--bone);">
+      <li>• Клієнт звинувачує компанію у шахрайстві</li>
+      <li>• Клієнт погрожує скаргами або публічним розголосом</li>
+      <li>• Розмова зайшла в глухий кут після двох спроб вирішення</li>
+    </ul>
+  </div>
+
+  <div style="margin-top: 18px;">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>ЗАПРОПОНУВАТИ ПОВЕРНЕННЯ</h4>
+        <p style="font-style: italic; color: var(--bone);">«Мені шкода, що у Вас залишилося таке враження. Щоб не витрачати Ваш час — уточнюю можливість повернення коштів.»</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>УЗГОДИТИ З КЕРІВНИКОМ</h4>
+        <p>Кожен випадок повернення — окремий, розглядається разом з керівником. Жодних обіцянок до підтвердження.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>ПОВІДОМИТИ КЛІЄНТА ПІСЛЯ ПІДТВЕРДЖЕННЯ</h4>
+        <p style="font-style: italic; color: var(--bone);">«Повернення підтверджено, кошти надійдуть протягом [строк].»</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== 6. ІНСТРУКЦІЯ ТОКЕНИ НЕ ЗНАЙДЕНО ============== -->
+  <h3 class="s-subtitle">/// 6 — ІНСТРУКЦІЯ: <span class="red">«ТОКЕНИ НЕ ЗНАЙДЕНО»</span></h3>
+  <p class="s-desc">
+    Клієнт оплатив, але токени не відображаються в кабінеті. <strong style="color: var(--white);">Мета: швидко знайти токени, зафіксувати, зберегти довіру.</strong>
+  </p>
+
+  <div class="step-row">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>ПРИЙОМ ЗВЕРНЕННЯ</h4>
+      <p>Подякувати клієнту та запросити обов'язкові дані:</p>
+      <ul>
+        <li>Номер телефону</li>
+        <li>Email</li>
+        <li>Квитанцію / підтвердження оплати</li>
+        <li>Дату та час оплати</li>
+        <li>Тариф / кількість токенів</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>САМОСТІЙНА ПЕРЕВІРКА</h4>
+      <p>Перевір дані у кабінеті <strong style="color: var(--white);">cabinet.dreamcar.ua</strong>.</p>
+      <ul>
+        <li><strong style="color: var(--success);">Знайдено:</strong> одразу надіслати клієнту його токени.</li>
+        <li><strong style="color: var(--warning);">Не знайдено:</strong> переходимо до кроку 3.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>ФІКСАЦІЯ У ТАБЛИЦІ МОНІТОРИНГУ</h4>
+      <p>Внести звернення з усіма даними клієнта та описом підтвердження оплати. <strong>Кожна дія — зафіксована.</strong></p>
+      <p style="margin-top: 8px;">Структура таблиці (колонки):</p>
+      <ul>
+        <li><strong style="color: var(--white);">Дата/час</strong> — наприклад, 17.05.2026 20:02</li>
+        <li><strong style="color: var(--white);">Ім'я клієнта</strong></li>
+        <li><strong style="color: var(--white);">Телефон</strong></li>
+        <li><strong style="color: var(--white);">Email</strong></li>
+        <li><strong style="color: var(--white);">Опис проблеми</strong> (наприклад: «Токени не відображаються»)</li>
+        <li><strong style="color: var(--white);">Статус</strong> («В роботі» / «Виконано»)</li>
+        <li><strong style="color: var(--white);">Посилання SendPulse</strong> (для перевірки історії листів)</li>
+      </ul>
+      <a class="step-link" href="https://docs.google.com/spreadsheets/d/1ziqnHfIMbUc64zUcKM4KBZAQd2canMhRb9f56iiCZGw/edit?gid=747394996#gid=747394996" target="_blank" rel="noopener">↗ Відкрити таблицю моніторингу</a>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>МОНІТОРИНГ</h4>
+      <ul>
+        <li>Оновлюй таблицю кожні 30 хвилин.</li>
+        <li>При статусі <strong style="color: var(--success);">«виконано»</strong> — повторно перевір кабінет і надішли клієнту токени.</li>
+        <li><strong style="color: var(--warning);">Максимальний час без реакції: 30 хвилин у робочий час.</strong> Якщо вирішення потребує більше часу — повідом клієнта проміжним статусом.</li>
+      </ul>
+      <div class="step-note">
+        <strong style="color: var(--warning);">⚠ ВАЖЛИВО ДЛЯ ВИКОНАВЦЯ:</strong>
+        <ul style="margin-top: 6px;">
+          <li>Спокійна, впевнена комунікація — без технічних деталей.</li>
+          <li>Не обіцяй точних строків вирішення.</li>
+          <li>Не повідомляй клієнту внутрішніх причин збоїв.</li>
+          <li>Принцип: клієнт уже заплатив — твоя задача знайти його токени і заспокоїти його.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== 7. ГОТОВІ ФРАЗИ ============== -->
+  <h3 class="s-subtitle">/// 7 — <span class="red">ГОТОВІ ФРАЗИ ПІДТРИМКИ</span></h3>
+  <p class="s-desc">Універсальні шаблони відповідей. Кожна — на «Ви», без зменшувальних, gender-neutral, без юридичних тригерів.</p>
+
+  <div class="table-scroll">
+    <table class="phrase-table">
+      <thead>
+        <tr>
+          <th>СИТУАЦІЯ</th>
+          <th>ФРАЗА</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Перший контакт</td>
+          <td>«Доброго дня! Вже перевіряю Ваші токени.»</td>
+        </tr>
+        <tr>
+          <td>Запит даних</td>
+          <td>«Вкажіть, будь ласка, Ваш Email або номер телефону.»</td>
+        </tr>
+        <tr>
+          <td>Передача технікам</td>
+          <td>«Передаємо інформацію технічному відділу — це не займе багато часу.»</td>
+        </tr>
+        <tr>
+          <td>Проміжний статус</td>
+          <td>«Ще перевіряємо, дякуємо за терпіння.»</td>
+        </tr>
+        <tr>
+          <td>Вирішено</td>
+          <td>«Готово! [деталі]. Якщо виникнуть питання — ми поряд. Гарного дня!»</td>
+        </tr>
+        <tr>
+          <td>Пропозиція повернення</td>
+          <td>«Мені шкода, що у Вас залишилося таке враження. Уточнюю можливість повернення коштів — відповім Вам найближчим часом.»</td>
+        </tr>
+        <tr>
+          <td>Клієнт капсом і агресивно</td>
+          <td>«Я Вас почув. Це справді неприємно. Зараз все перевірю і повернуся з конкретною відповіддю — потрібно до 10 хвилин.»</td>
+        </tr>
+        <tr>
+          <td>Клієнт перейшов на «ти»</td>
+          <td>(не переходимо у відповідь — продовжуємо на «Ви») «Дякую за повідомлення. Перевіряю Ваші дані прямо зараз.»</td>
+        </tr>
+        <tr>
+          <td>Технічна неможливість</td>
+          <td>«Технічно зараз не маємо змоги виконати [дію]. Альтернатива: [варіант 1] або [варіант 2]. Який зручніше?»</td>
+        </tr>
+        <tr>
+          <td>Поза графіком (після 20:00)</td>
+          <td>«Доброго вечора. Я бачу Ваше звернення — відповім детально завтра о 09:00. Якщо терміново — vg@dreamcar.ua.»</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============== 8. SLA + ЕСКАЛАЦІЯ ============== -->
+  <h3 class="s-subtitle">/// 8 — <span class="red">SLA І ЕСКАЛАЦІЯ</span></h3>
+  <p class="s-desc">Час реакції залежить від тяжкості. Якщо не вкладаємось — пишемо клієнту проміжний статус.</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-left: 3px solid var(--success);">
+      <span class="label">/// P3 — СТАНДАРТ</span>
+      <h4>30 ХВ У РОБОЧИЙ ЧАС</h4>
+      <p>Запит на токени, питання по тарифу, загальна інформація. Відповідає черговий оператор.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--warning);">
+      <span class="label">/// P2 — ВАЖЛИВО</span>
+      <h4>15 ХВ + ПЕРЕДАЧА ТЕХН.</h4>
+      <p>Не пройшла оплата, помилка авторизації, скарга. Оператор → технічний відділ → відповідь клієнту.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--danger);">
+      <span class="label">/// P1 — КРИЗА</span>
+      <h4>5 ХВ + CEO</h4>
+      <p>Публічний скандал, погроза публікації, питання про шахрайство. Підключається CEO + кризова комунікація (розділ 13).</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--info);">
+      <span class="label">/// ПОЗА ГОДИНАМИ</span>
+      <h4>09:00 НАСТУПНОГО ДНЯ</h4>
+      <p>Після 20:00 і у вихідні — auto-reply про час відкриття. Критичні (P1) — на vg@dreamcar.ua з пометкою URGENT.</p>
+    </div>
+  </div>
+
+  <!-- ============== 9. ЗВ'ЯЗОК З ІНШИМИ РОЗДІЛАМИ ============== -->
+  <div style="margin-top: 40px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
+      <li>→ <a href="voice.html" style="color: var(--red); text-decoration: none; font-weight: 600;">11 Голос і мова</a> &nbsp; — повний словник DO/CAREFUL/NEVER, матриця «ти/Ви» по каналах.</li>
+      <li>→ <a href="crisis.html" style="color: var(--red); text-decoration: none; font-weight: 600;">13 Кризові комунікації</a> &nbsp; — для P1-сценаріїв і ескалацій.</li>
+      <li>→ <a href="trust.html" style="color: var(--red); text-decoration: none; font-weight: 600;">15 Довіра і доступність</a> &nbsp; — як говорити про прозорість і будувати довіру.</li>
+      <li>→ <a href="touchpoints.html" style="color: var(--red); text-decoration: none; font-weight: 600;">18 Точки контакту</a> &nbsp; — Customer Journey і email-шаблони.</li>
+    </ul>
+  </div>
+
+</section>
+
+<nav class="section-page-nav">
+<a href="metrics.html" class="prev"><span class="nav-label">← 20 ПОПЕРЕДНІЙ</span><span class="nav-title">Метрики · Roadmap</span></a>
+<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+</nav>
+</main>
+
+<script>
+document.querySelectorAll('.sidebar nav a').forEach(a => {
+  a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+});
+document.body.addEventListener('click', (e) => {
+  if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
+    document.body.classList.remove('sidebar-open');
+  }
+});
+</script>
+
+<script>
+(function(){
+  const inp = document.getElementById('sb-search');
+  if (!inp) return;
+  const links = document.querySelectorAll('.sidebar nav a');
+  const groups = document.querySelectorAll('.sidebar .group');
+  const emptyMsg = document.createElement('div');
+  emptyMsg.className = 'sidebar-search-empty';
+  emptyMsg.textContent = 'Нічого не знайдено';
+  inp.closest('.sidebar-search').after(emptyMsg);
+
+  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
+
+  inp.addEventListener('input', () => {
+    const q = normalize(inp.value.trim());
+    let anyVisible = false;
+    links.forEach(a => {
+      const t = normalize(a.textContent);
+      const num = a.querySelector('.num');
+      const numTxt = num ? normalize(num.textContent) : '';
+      const matches = !q || t.includes(q) || numTxt.includes(q);
+      a.classList.toggle('is-hidden', !matches);
+      if (matches) anyVisible = true;
+    });
+    groups.forEach(g => {
+      const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)');
+      g.classList.toggle('is-empty', visibleLinks.length === 0);
+    });
+    emptyMsg.classList.toggle('show', !anyVisible && !!q);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); inp.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === inp) {
+      inp.value = ''; inp.dispatchEvent(new Event('input')); inp.blur();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
