@@ -1,103 +1,92 @@
-# DreamCar Brand Book v2.1
+# DreamCar Brand Book v3.7
 
 > Мрія за ціною чашки кави.
 
-Повне керівництво з фірмового стилю DreamCar — українського сервісу чесних авто-розіграшів.
+Повне керівництво з фірмового стилю DreamCar — українського авто-клубу з 10-річною історією.
 
-🌐 **Live:** https://dreamcar.github.io/brand-book/
+🌐 **Live:** https://brand.dreamcar.ua/
 
 ---
 
 ## 📚 Що всередині
 
-29 розділів, які покривають усе:
+**22 розділи**, які покривають усе:
 
-- **Стратегія** — маніфест, місія, бачення, цінності, персони
-- **Конкурентний ландшафт** — позиціонування, UVP
-- **Логотип** — Racing Plate, Avatar Mark для соцмереж, конструкція, заборони
-- **Кольори** — primary палітра, UI-стани, accessibility (WCAG 2.1 AA)
-- **Типографіка** — Bebas Neue · Archivo Black · Manrope · JetBrains Mono
-- **Spacing & Grid** — 10-рівнева шкала, 12-колонковий грід
-- **UI компоненти** — кнопки, форми, motion система
-- **Голос бренду** — DO/DON'T, ToV по 6 каналах
-- **Юридична мова** — Legal Language Matrix (DO / CAREFUL / NEVER)
-- **Контент** — 8 рубрик, хештег-стратегія, FAQ, сторітелінг
-- **Кризові комунікації** — 7 готових скриптів реакції
-- **Партнери** — brief-template, гайдлайни, co-branding
-- **Trust & Compliance** — trust-сигнали, GDPR
-- **Design Tokens** — JSON + CSS для розробників
-- **+ 8 додаткових розділів**: audio, email шаблони, touchpoints, фото-напрямок, мерч, empty states, метрики, roadmap
+| Блок | Розділи |
+|---|---|
+| **Стратегія** | 00 Quick Start · 01 Маніфест · 02 Стратегія · 03 Аудиторія · 04 Контекст ринку |
+| **Візуальна система** | 05 Логотип · 06 Кольори · 07 Типографіка · 08 Сітка та елементи |
+| **Інтерфейс** | 09 UI-компоненти · 10 Анімації |
+| **Голос і контент** | 11 Голос і мова · 12 Контент · 13 Кризові комунікації |
+| **Партнери і довіра** | 14 Партнери · 15 Довіра і доступність (WCAG 2.1 AA) |
+| **Техніка** | 16 Дизайн-ресурси · 17 Стиль медіа |
+| **Точки контакту** | 18 Touchpoints · 19 Мерч |
+| **Підсумки** | 20 Метрики · Roadmap · **21 Регламент підтримки** (новий) |
 
 ## 🎯 Quick Start
 
 Якщо у тебе 5 хвилин і одне завдання — читай розділ **Quick Start** на початку. Все необхідне на одній сторінці.
 
+## 🆕 Що нового у v3.7
+
+- **+ Section 21 — Регламент підтримки клієнтів**: операційний скрипт (Алгоритм 4К, протокол S.T.O.P., готові фрази, SLA, ескалація). Імпортовано з docx, інтегровано в стиль книги.
+- Уточнення: gender-neutral дієслова у підтримці («перевіряю», «передаємо» замість «перевірив(ла)», «передала»).
+- Усі скрипти підтримки переписано на «Ви» з великої літери і без терміну «квитки» (тільки «токени»).
+- SLA: реакція на стандартні звернення — 30 хвилин у робочий час (раніше 10 хв — не реалістично).
+
 ## 📁 Структура
 
 ```
 brand-book/
-├── index.html          # Сам брендбук (single-file)
-├── 404.html            # Сторінка помилки
-├── favicon.svg         # Favicon в бренд-стилі
-├── apple-touch-icon.png # Apple touch icon
-├── og-image.svg        # Open Graph preview
-├── robots.txt          # SEO
-├── .nojekyll           # Disable Jekyll processing
-└── README.md           # Цей файл
+├── index.html                # Головна (TOC + sidebar)
+├── print.html                # Один PDF для друку
+├── 404.html                  # Сторінка помилки
+├── sections/                 # 22 розділи окремими сторінками
+│   ├── quickstart.html
+│   ├── manifesto.html
+│   ├── ...
+│   ├── metrics.html
+│   └── support.html          # ← v3.7 NEW
+├── assets/
+│   └── styles.css            # Спільні стилі
+├── email-templates/          # Email-шаблони (eSputnik-compatible)
+├── scripts/                  # Допоміжні скрипти
+├── favicon.svg · favicon-32.png · apple-touch-icon.png
+├── og-image.svg · og-image.png
+├── CNAME                     # brand.dreamcar.ua
+├── robots.txt · .nojekyll
+└── README.md
 ```
 
-## 🚀 Запуск локально
+## 🚀 Локально
 
 ```bash
-# Просто відкрий index.html у браузері
+# Швидко
 open index.html
 
-# Або підніми локальний сервер
+# Або як SPA
 python3 -m http.server 8000
-# Відкрий http://localhost:8000
+# → http://localhost:8000
 ```
 
-## 🌐 Деплой на GitHub Pages
+## 🌐 Deploy
 
-```bash
-# 1. Закомітити зміни
-git add .
-git commit -m "Update brand book"
-git push origin main
-
-# 2. У Settings → Pages → Source: main / (root)
-# 3. Сторінка з'явиться на https://[username].github.io/brand-book/
-```
-
-### Кастомний домен
-
-Створи файл `CNAME` з твоїм доменом:
-```
-brand.dreamcar.ua
-```
-
-У DNS налаштуваннях твого домену додай CNAME запис:
-```
-brand → [username].github.io
-```
+Auto-deploy через GitHub Pages при push у `main`. Custom domain: `brand.dreamcar.ua` (CNAME).
 
 ## 🔄 Версіонування
 
 | Версія | Дата | Зміни |
-|--------|------|-------|
-| v2.1 | 04.2026 | Manrope замість Inter, Quick Start, Legal Matrix, mobile фікси |
-| v2.0 | 04.2026 | Розширення: персони, конкуренти, secondary палітра, accessibility, design tokens, кризові скрипти |
-| v1.0 | 03.2026 | Перша версія: базовий лого, кольори, типографіка |
+|---|---|---|
+| **v3.7** | 22.05.2026 | + Section 21 Регламент підтримки, gender-neutral, SLA 30хв, «токени» |
+| v3.0 | 05.2026 | Розширення до 21 розділу, email templates, audit |
+| v2.1 | 04.2026 | Manrope, Quick Start, Legal Matrix, mobile fixes |
+| v2.0 | 04.2026 | Personas, конкуренти, secondary палітра, design tokens, кризові скрипти |
+| v1.0 | 03.2026 | Лого, кольори, типографіка |
 
 ## 📞 Контакт
 
-Усі питання щодо бренду:
 - **Email:** vg@dreamcar.ua
 - **Telegram:** @dreamcar_brand
-
-## 📜 Юридично
-
-ТОВ «Плетфокс» · ЄДРПОУ 44236899 · м. Дніпро · EST. 2016
 
 ---
 
