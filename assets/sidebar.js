@@ -1,22 +1,23 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector
+// DreamCar Brand Book — Universal Sidebar Injector v2
 // =====================================================================
-// Один файл правди для sidebar всіх сторінок. Якщо треба додати розділ —
-// редагуй ЦЕЙ файл, а не 29 окремих HTML.
-//
-// Як використовувати у HTML:
-//   <aside class="sidebar" id="sb"></aside>
-//   <script src="../assets/sidebar.js" defer></script>
-//
-// На index.html — без префікса "../":
-//   <aside class="sidebar" id="sb"></aside>
-//   <script src="assets/sidebar.js" defer></script>
+// Універсальний sidebar для всіх 29 сторінок.
+// Авто-реєструє Service Worker (для майбутніх візитів).
+// Завжди ЗАМІНЮЄ inline sidebar на актуальний.
 // =====================================================================
 
 (function() {
   'use strict';
 
-  // Detect context: index.html vs sections/*.html
+  // Auto-register Service Worker
+  if ('serviceWorker' in navigator) {
+    const swPath = window.location.pathname.includes('/sections/')
+      ? '../service-worker.js'
+      : 'service-worker.js';
+    navigator.serviceWorker.register(swPath).catch(() => {});
+  }
+
+  // Detect context
   const path = window.location.pathname;
   const isSection = path.includes('/sections/');
   const prefix = isSection ? '' : 'sections/';
@@ -77,14 +78,6 @@
     const sb = document.querySelector('aside.sidebar') || document.getElementById('sb');
     if (!sb) return;
 
-    // Skip render if sidebar is already populated (inline fallback)
-    if (sb.children.length > 5 && !sb.dataset.injected) {
-      // Old inline sidebar still present — clear it and re-render
-      // (handles case when user upgrades pages)
-    }
-    if (sb.dataset.injected === '1') return;
-    sb.dataset.injected = '1';
-
     const groups = Object.entries(SECTIONS).map(([title, items]) => {
       const navItems = items.map(s => {
         const isActive = s.file.toLowerCase() === filename;
@@ -103,12 +96,12 @@ ${groups}
 <div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
     `;
 
-    // Re-bind close-on-click for mobile
+    // Mobile menu link click closes sidebar
     sb.querySelectorAll('nav a').forEach(a => {
       a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
     });
 
-    // Re-bind search
+    // Search bind
     const inp = document.getElementById('sb-search');
     if (inp) {
       const links = sb.querySelectorAll('nav a');
@@ -152,7 +145,7 @@ ${groups}
     }
   }
 
-  // Close sidebar on backdrop click
+  // Backdrop click closes mobile sidebar
   document.body.addEventListener('click', (e) => {
     if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
       document.body.classList.remove('sidebar-open');
