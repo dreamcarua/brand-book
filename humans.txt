@@ -1,0 +1,31 @@
+/* TEAM */
+  Author: Вадим Гришин
+  Contact: vg@dreamcar.ua
+  Location: Україна / Польща
+  From: 2016
+
+  Co-Founder: Артем
+  COO: Даніл
+
+/* SITE */
+  Last update: 2026-05-25
+  Standards: HTML5, CSS3, ES2020, WCAG 2.1 AA
+  Components: PWA, Service Worker, IndexedDB-free (memory-first)
+  Software: Pure HTML/CSS/JS (no build step)
+  Hosting: GitHub Pages
+  CDN: Cloudflare (через DNS)
+
+/* TECH STACK */
+  Fonts: Google Fonts (Oswald, Archivo Black, Manrope, JetBrains Mono)
+  Icons: Lucide
+  No-build: жоден npm пакет — все vanilla
+
+/* THANKS */
+  17 переможців за 10 років — за довіру.
+  350K спільнота — за повагу до бренду.
+
+                                  ╔═══════════════════════╗
+                                  ║  DREAMCAR · BRAND     ║
+                                  ║  МРІЯ ЗА ЦІНОЮ        ║
+                                  ║  ЧАШКИ КАВИ.          ║
+                                  ╚═══════════════════════╝
