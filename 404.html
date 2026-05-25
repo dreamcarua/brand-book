@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
-<title>404 — Сторінку не знайдено · DreamCar</title>
+<meta name="robots" content="noindex, follow">
+<title>404 — Сторінку не знайдено · DreamCar Brand Book</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" sizes="32x32" href="favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,7 +41,7 @@
   }
   .container {
     text-align: center;
-    max-width: 600px;
+    max-width: 640px;
     position: relative;
     z-index: 2;
   }
@@ -51,6 +54,7 @@
   }
   .number {
     font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-weight: 700;
     font-size: clamp(120px, 25vw, 240px);
     line-height: 0.85;
     letter-spacing: -0.02em;
@@ -60,6 +64,7 @@
   }
   .title {
     font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-weight: 700;
     font-size: clamp(32px, 6vw, 56px);
     line-height: 1;
     letter-spacing: 0.01em;
@@ -70,25 +75,65 @@
     color: #DDDDDD;
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
   .cta {
     display: inline-block;
     background: #E30613;
     color: #FFFFFF;
-    padding: 16px 32px;
+    padding: 16px 28px;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-decoration: none;
     border-radius: 999px;
-    transition: transform 150ms cubic-bezier(0.2, 0.9, 0.3, 1);
+    transition: transform 150ms cubic-bezier(0.2, 0.9, 0.3, 1), background 150ms;
   }
   .cta:hover { transform: translateY(-2px); background: #B8050F; }
   .cta::after { content: ' →'; }
+  .cta.ghost {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid #2A2A2A;
+  }
+  .cta.ghost:hover { border-color: #E30613; background: rgba(227,6,19,0.08); }
+
+  .shortcuts {
+    margin-top: 20px;
+    padding: 18px;
+    background: rgba(20,20,20,0.6);
+    border: 1px solid #2A2A2A;
+    border-radius: 4px;
+  }
+  .shortcuts .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  .shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .shortcut {
+    padding: 10px 12px;
+    background: #141414;
+    border: 1px solid #2A2A2A;
+    color: #DDDDDD;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: border-color 150ms, color 150ms;
+  }
+  .shortcut:hover { border-color: #E30613; color: #FFFFFF; }
 
   .meta {
-    margin-top: 60px;
+    margin-top: 40px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: #888;
@@ -98,6 +143,10 @@
   @media (prefers-color-scheme: light) {
     html, body { background: #0A0A0A !important; color: #FFFFFF !important; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -105,9 +154,21 @@
     <div class="tag">/// PAGE NOT FOUND</div>
     <div class="number">404</div>
     <h1 class="title">МАШИНУ <span class="red">ВЖЕ ЗАБРАЛИ.</span></h1>
-    <p class="desc">Сторінка, яку ти шукаєш, не існує — або переїхала. Повертайся на головну, там точно є те, що тобі потрібно.</p>
-    <a href="/" class="cta">НА ГОЛОВНУ</a>
-    <div class="meta">DREAMCAR · BRAND BOOK · V3.0</div>
+    <p class="desc">Сторінка, яку Ви шукаєте, не існує — або переїхала. Повертайтесь на головну, або одразу до інструментів.</p>
+    <div class="cta-row">
+      <a href="/" class="cta">НА ГОЛОВНУ</a>
+      <a href="/sections/quickstart.html" class="cta ghost">QUICK START</a>
+    </div>
+    <div class="shortcuts">
+      <div class="lbl">/// ШВИДКИЙ ДОСТУП</div>
+      <div class="shortcuts-grid">
+        <a href="/sections/tools.html" class="shortcut">🛠 BRAND TOOLS</a>
+        <a href="/sections/generator.html" class="shortcut">🚀 POST GENERATOR</a>
+        <a href="/sections/voice.html" class="shortcut">🗣 ГОЛОС І МОВА</a>
+        <a href="/sections/examples.html" class="shortcut">📚 EXAMPLES</a>
+      </div>
+    </div>
+    <div class="meta">DREAMCAR · BRAND BOOK · V3.9</div>
   </div>
 </body>
 </html>
