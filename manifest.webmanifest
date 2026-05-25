@@ -1,15 +1,21 @@
 {
+  "id": "/?source=pwa",
   "name": "DreamCar Brand Book",
   "short_name": "DC Brand",
   "description": "DreamCar Brand Book v3.9 — повне керівництво з бренду з інтерактивними інструментами та генератором постів.",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
   "background_color": "#0A0A0A",
   "theme_color": "#0A0A0A",
   "orientation": "portrait-primary",
   "categories": ["business", "design", "productivity"],
   "lang": "uk",
+  "dir": "ltr",
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
   "icons": [
     {
       "src": "favicon.svg",
@@ -64,7 +70,10 @@
       "src": "og-image.png",
       "sizes": "1200x630",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "DreamCar Brand Book — Hero"
     }
-  ]
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
