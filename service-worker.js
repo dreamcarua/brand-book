@@ -1,15 +1,21 @@
-// DreamCar Brand Book — Service Worker v5
+// DreamCar Brand Book — Service Worker v6
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
+// v6: bump cache → форсує всіх клієнтів отримати свіжий sidebar.js v3 (SEO meta injection).
 
-const CACHE = 'dreamcar-brand-v5';
+const CACHE = 'dreamcar-brand-v6';
 const PRECACHE = [
   '/',
   '/index.html',
   '/print.html',
+  '/404.html',
   '/manifest.webmanifest',
+  '/sitemap.xml',
+  '/robots.txt',
+  '/humans.txt',
   '/favicon.svg',
   '/favicon-32.png',
   '/apple-touch-icon.png',
+  '/og-image.png',
   '/assets/styles.css',
   '/assets/sidebar.js',
 ];
@@ -51,7 +57,6 @@ async function handleHtmlRequest(request) {
     // Relative path to sidebar.js
     const url = new URL(request.url);
     const segments = url.pathname.split('/').filter(Boolean);
-    // remove the file part (or empty for index)
     const dirDepth = segments.length > 0 && segments[segments.length - 1].endsWith('.html')
       ? segments.length - 1
       : segments.length;
@@ -116,5 +121,17 @@ self.addEventListener('fetch', (e) => {
         return resp;
       }).catch(() => caches.match('/index.html')))
     );
+  }
+});
+
+// Message channel — для cache invalidation з UI
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  if (event.data && event.data.type === 'CLEAR_CACHE') {
+    caches.delete(CACHE).then(() => {
+      event.ports[0]?.postMessage({ cleared: true });
+    });
   }
 });
