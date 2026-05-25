@@ -1,4 +1,18 @@
+# DreamCar Brand Book — robots.txt
+# https://brand.dreamcar.ua/
+
 User-agent: *
 Allow: /
 
-Sitemap: https://dreamcar.github.io/brand-book/sitemap.xml
+# Crawl-delay (для bot-ів які поважають)
+Crawl-delay: 1
+
+# Заборона індексувати службові директорії
+Disallow: /scripts/
+Disallow: /email-templates/README.md
+
+# Sitemap
+Sitemap: https://brand.dreamcar.ua/sitemap.xml
+
+# Канонічний домен — брендбук тільки тут
+Host: brand.dreamcar.ua
