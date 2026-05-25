@@ -24,83 +24,7 @@
   </div>
 </header>
 
-<aside class="sidebar">
-<a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v3.7</span>
-<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
-<div class="group">
-<span class="group-title">На старт</span>
-<nav>
-<a href="quickstart.html"><span class="num">00</span>Quick Start</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Стратегія</span>
-<nav>
-<a href="manifesto.html"><span class="num">01</span>Маніфест</a>
-<a href="strategy.html"><span class="num">02</span>Стратегія</a>
-<a href="personas.html"><span class="num">03</span>Аудиторія</a>
-<a href="compete.html"><span class="num">04</span>Контекст ринку</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Візуальна система</span>
-<nav>
-<a href="logo.html"><span class="num">05</span>Логотип</a>
-<a href="colors.html"><span class="num">06</span>Кольори</a>
-<a href="typo.html"><span class="num">07</span>Типографіка</a>
-<a href="spacing.html"><span class="num">08</span>Сітка та елементи</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Інтерфейс</span>
-<nav>
-<a href="components.html"><span class="num">09</span>UI-компоненти</a>
-<a href="motion.html"><span class="num">10</span>Анімації</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Голос і контент</span>
-<nav>
-<a href="voice.html"><span class="num">11</span>Голос і мова</a>
-<a href="content.html"><span class="num">12</span>Контент</a>
-<a href="crisis.html"><span class="num">13</span>Кризові комунікації</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Партнери і довіра</span>
-<nav>
-<a href="partners.html"><span class="num">14</span>Партнери</a>
-<a href="trust.html"><span class="num">15</span>Довіра і доступність</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Техніка</span>
-<nav>
-<a href="tokens.html"><span class="num">16</span>Дизайн-ресурси</a>
-<a href="audio.html"><span class="num">17</span>Стиль медіа</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Точки контакту</span>
-<nav>
-<a href="touchpoints.html"><span class="num">18</span>Точки контакту</a>
-<a href="merch.html" class="active"><span class="num">19</span>Мерч</a>
-</nav>
-</div>
-<div class="group">
-<span class="group-title">Підсумки</span>
-<nav>
-<a href="metrics.html"><span class="num">20</span>Метрики · Roadmap</a>
-</nav>
-</div>
-<div class="group pdf-group"><span class="group-title">Експорт</span>
-<nav>
-<a href="../print.html">Завантажити повний PDF</a>
-</nav>
-</div>
-<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
-</aside>
+<aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
 <div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">19 · Мерч</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
@@ -200,65 +124,11 @@
 </section>
 <nav class="section-page-nav">
 <a href="touchpoints.html" class="prev"><span class="nav-label">← 18 ПОПЕРЕДНІЙ</span><span class="nav-title">Точки контакту</span></a>
-<a href="metrics.html" class="next"><span class="nav-label">20 НАСТУПНИЙ →</span><span class="nav-title">Метрики · Roadmap</span></a>
+<a href="metrics.html" class="next"><span class="nav-label">19 НАСТУПНИЙ →</span><span class="nav-title">Метрики · Roadmap</span></a>
 </nav>
 </main>
 
-<script>
-// Close mobile sidebar when clicking a link
-document.querySelectorAll('.sidebar nav a').forEach(a => {
-  a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
-});
-// Close on backdrop click
-document.body.addEventListener('click', (e) => {
-  if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
-    document.body.classList.remove('sidebar-open');
-  }
-});
-</script>
-
-<script>
-(function(){
-  const inp = document.getElementById('sb-search');
-  if (!inp) return;
-  const links = document.querySelectorAll('.sidebar nav a');
-  const groups = document.querySelectorAll('.sidebar .group');
-  const emptyMsg = document.createElement('div');
-  emptyMsg.className = 'sidebar-search-empty';
-  emptyMsg.textContent = 'Нічого не знайдено';
-  inp.closest('.sidebar-search').after(emptyMsg);
-
-  function normalize(s){return s.toLowerCase().replace(/[\s‐-―·_/-]+/g,'');}
-
-  inp.addEventListener('input', () => {
-    const q = normalize(inp.value.trim());
-    let anyVisible = false;
-    links.forEach(a => {
-      const t = normalize(a.textContent);
-      const num = a.querySelector('.num');
-      const numTxt = num ? normalize(num.textContent) : '';
-      const matches = !q || t.includes(q) || numTxt.includes(q);
-      a.classList.toggle('is-hidden', !matches);
-      if (matches) anyVisible = true;
-    });
-    groups.forEach(g => {
-      const visibleLinks = g.querySelectorAll('nav a:not(.is-hidden)');
-      g.classList.toggle('is-empty', visibleLinks.length === 0);
-    });
-    emptyMsg.classList.toggle('show', !anyVisible && !!q);
-  });
-
-  // Hotkey: '/' to focus
-  document.addEventListener('keydown', e => {
-    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-      e.preventDefault(); inp.focus();
-    }
-    if (e.key === 'Escape' && document.activeElement === inp) {
-      inp.value = ''; inp.dispatchEvent(new Event('input')); inp.blur();
-    }
-  });
-})();
-</script>
+<script src="../assets/sidebar.js" defer></script>
 
 </body>
 </html>
