@@ -32,14 +32,14 @@
   <div class="s-num">/// 07 — ТИПОГРАФІКА</div>
   <h2 class="s-title">ШРИФТИ <span class="red">DC</span></h2>
   <p class="s-desc">
-    4 шрифти, кожен зі своєю роллю. Bebas Neue — для драматичних заголовків. Archivo Black — для брендингу і CTA. Manrope — теплий гротеск для тексту. JetBrains Mono — для тех-міток.
+    4 шрифти, кожен зі своєю роллю. <strong>Oswald</strong> — для драматичних заголовків. <strong>Archivo Black</strong> — для брендингу і CTA. <strong>Manrope</strong> — теплий гротеск для тексту. <strong>JetBrains Mono</strong> — для тех-міток.
   </p>
 
   <div class="type-row">
     <div class="type-meta">
-      <strong>BEBAS NEUE</strong>
+      <strong>OSWALD</strong>
       DISPLAY · HEADLINES<br>
-      WEIGHT 400<br>
+      WEIGHT 500 / 700<br>
       TRACKING +20<br>
       LINE 0.9
     </div>
@@ -61,7 +61,7 @@
     <div class="type-meta">
       <strong>MANROPE</strong>
       BODY · INTERFACE<br>
-      WEIGHT 400-800<br>
+      WEIGHT 400 / 700 / 800<br>
       TRACKING 0<br>
       LINE 1.5
     </div>
@@ -74,12 +74,23 @@
     <div class="type-meta">
       <strong>JETBRAINS MONO</strong>
       TECHNICAL · LABELS<br>
-      WEIGHT 400-700<br>
+      WEIGHT 400 / 700<br>
       TRACKING +200<br>
       USE: МІТКИ · НОМЕРИ
     </div>
     <div class="type-mono">/// PROJECT_017 · BMW_X5_HYBRID · DRAW_DATE: 19.04.2026 · 20:00 EEST</div>
   </div>
+
+  <h3 class="s-subtitle">/// ЗАВАНТАЖЕННЯ — <span class="red">GOOGLE FONTS</span></h3>
+  <p class="s-desc">
+    Усі чотири шрифти безкоштовні через Google Fonts. Підключаємо одним рядком у <code style="background:var(--black);padding:2px 6px;color:#4ade80;font-size:12px;">&lt;head&gt;</code>.
+  </p>
+  <div style="background:var(--black);border:1px solid var(--steel);padding:18px 20px;margin-top:14px;overflow-x:auto;">
+    <code style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bone);line-height:1.6;white-space:pre;display:block;">&lt;link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&amp;family=Archivo+Black&amp;family=Manrope:wght@400;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"&gt;</code>
+  </div>
+  <p style="font-size:13px;color:var(--ash);margin-top:10px;line-height:1.6;">
+    У CSS-стеку: <code style="background:var(--black);padding:2px 6px;color:#4ade80;font-size:11px;">'Oswald', 'Bebas Neue', sans-serif</code> — Bebas Neue є тільки як <strong>fallback-ім'я</strong> для систем, де він встановлений локально. Основний шрифт — Oswald.
+  </p>
 
   <h3 class="s-subtitle">/// ШКАЛА — <span class="red">TYPE SCALE</span></h3>
   <p class="s-desc">
@@ -88,23 +99,23 @@
   <div class="type-scale">
     <div class="type-scale-row">
       <div class="scale-name">DISPLAY</div>
-      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:96px;line-height:0.9;">DISPLAY</div>
-      <div class="scale-spec">96px · LH 0.9 · BEBAS</div>
+      <div class="scale-sample" style="font-family:'Oswald','Bebas Neue',sans-serif;font-weight:700;font-size:96px;line-height:0.9;">DISPLAY</div>
+      <div class="scale-spec">96px · LH 0.9 · OSWALD 700</div>
     </div>
     <div class="type-scale-row">
       <div class="scale-name">H1</div>
-      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:64px;line-height:0.95;">H1 HEADING</div>
-      <div class="scale-spec">64px · LH 0.95 · BEBAS</div>
+      <div class="scale-sample" style="font-family:'Oswald','Bebas Neue',sans-serif;font-weight:700;font-size:64px;line-height:0.95;">H1 HEADING</div>
+      <div class="scale-spec">64px · LH 0.95 · OSWALD 700</div>
     </div>
     <div class="type-scale-row">
       <div class="scale-name">H2</div>
-      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:48px;line-height:1;">H2 HEADING</div>
-      <div class="scale-spec">48px · LH 1 · BEBAS</div>
+      <div class="scale-sample" style="font-family:'Oswald','Bebas Neue',sans-serif;font-weight:700;font-size:48px;line-height:1;">H2 HEADING</div>
+      <div class="scale-spec">48px · LH 1 · OSWALD 700</div>
     </div>
     <div class="type-scale-row">
       <div class="scale-name">H3</div>
-      <div class="scale-sample" style="font-family:'Bebas Neue';font-size:32px;line-height:1.1;">H3 HEADING</div>
-      <div class="scale-spec">32px · LH 1.1 · BEBAS</div>
+      <div class="scale-sample" style="font-family:'Oswald','Bebas Neue',sans-serif;font-weight:500;font-size:32px;line-height:1.1;">H3 HEADING</div>
+      <div class="scale-spec">32px · LH 1.1 · OSWALD 500</div>
     </div>
     <div class="type-scale-row">
       <div class="scale-name">H4</div>
@@ -138,8 +149,8 @@
     </div>
     <div class="type-scale-row">
       <div class="scale-name">MONO</div>
-      <div class="scale-sample" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.2em;">/// MONO TAG · LABEL</div>
-      <div class="scale-spec">11px · TR +200 · MONO</div>
+      <div class="scale-sample" style="font-family:'JetBrains Mono',monospace;font-weight:400;font-size:11px;letter-spacing:0.2em;">/// MONO TAG · LABEL</div>
+      <div class="scale-spec">11px · TR +200 · JETBRAINS MONO 400</div>
     </div>
   </div>
 </section>
