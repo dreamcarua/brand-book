@@ -1,15 +1,18 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector v2
+// DreamCar Brand Book — Universal Sidebar Injector v3
 // =====================================================================
-// Універсальний sidebar для всіх 29 сторінок.
-// Авто-реєструє Service Worker (для майбутніх візитів).
-// Завжди ЗАМІНЮЄ inline sidebar на актуальний.
+// + Універсальний sidebar для всіх 29 сторінок (рендериться на льоту).
+// + Авто-реєструє Service Worker.
+// + Авто-додає canonical URL + Open Graph meta для SEO/соцмереж.
+// + Авто-додає humans.txt + author link.
 // =====================================================================
 
 (function() {
   'use strict';
 
-  // Auto-register Service Worker
+  const ORIGIN = 'https://brand.dreamcar.ua';
+
+  // ---- 1. Service Worker auto-register ----
   if ('serviceWorker' in navigator) {
     const swPath = window.location.pathname.includes('/sections/')
       ? '../service-worker.js'
@@ -17,13 +20,94 @@
     navigator.serviceWorker.register(swPath).catch(() => {});
   }
 
-  // Detect context
+  // ---- 2. Detect context ----
   const path = window.location.pathname;
   const isSection = path.includes('/sections/');
   const prefix = isSection ? '' : 'sections/';
   const upPrefix = isSection ? '../' : '';
   const filename = (path.split('/').pop() || 'index.html').toLowerCase();
 
+  // ---- 3. Auto-inject SEO meta (canonical, OG basics, humans link) ----
+  function injectMetaIfMissing() {
+    const head = document.head;
+    if (!head) return;
+
+    const has = (selector) => !!head.querySelector(selector);
+    const add = (tag, attrs) => {
+      const el = document.createElement(tag);
+      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+      head.appendChild(el);
+    };
+
+    const fullUrl = ORIGIN + path;
+    const pageTitle = (document.title || 'DreamCar Brand Book').trim();
+    const pageDesc = (head.querySelector('meta[name="description"]')?.getAttribute('content')) || 'DreamCar Brand Book — операційна система бренду.';
+
+    // Canonical
+    if (!has('link[rel="canonical"]')) {
+      add('link', { rel: 'canonical', href: fullUrl });
+    }
+
+    // OG basics (тільки якщо нема)
+    if (!has('meta[property="og:type"]')) {
+      add('meta', { property: 'og:type', content: 'article' });
+    }
+    if (!has('meta[property="og:site_name"]')) {
+      add('meta', { property: 'og:site_name', content: 'DreamCar Brand Book' });
+    }
+    if (!has('meta[property="og:url"]')) {
+      add('meta', { property: 'og:url', content: fullUrl });
+    }
+    if (!has('meta[property="og:title"]')) {
+      add('meta', { property: 'og:title', content: pageTitle });
+    }
+    if (!has('meta[property="og:description"]')) {
+      add('meta', { property: 'og:description', content: pageDesc });
+    }
+    if (!has('meta[property="og:image"]')) {
+      add('meta', { property: 'og:image', content: ORIGIN + '/og-image.png' });
+    }
+    if (!has('meta[property="og:locale"]')) {
+      add('meta', { property: 'og:locale', content: 'uk_UA' });
+    }
+
+    // Twitter Card
+    if (!has('meta[name="twitter:card"]')) {
+      add('meta', { name: 'twitter:card', content: 'summary_large_image' });
+    }
+    if (!has('meta[name="twitter:title"]')) {
+      add('meta', { name: 'twitter:title', content: pageTitle });
+    }
+    if (!has('meta[name="twitter:description"]')) {
+      add('meta', { name: 'twitter:description', content: pageDesc });
+    }
+    if (!has('meta[name="twitter:image"]')) {
+      add('meta', { name: 'twitter:image', content: ORIGIN + '/og-image.png' });
+    }
+
+    // Apple PWA
+    if (!has('meta[name="apple-mobile-web-app-capable"]')) {
+      add('meta', { name: 'apple-mobile-web-app-capable', content: 'yes' });
+    }
+    if (!has('meta[name="apple-mobile-web-app-status-bar-style"]')) {
+      add('meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' });
+    }
+    if (!has('meta[name="mobile-web-app-capable"]')) {
+      add('meta', { name: 'mobile-web-app-capable', content: 'yes' });
+    }
+
+    // Manifest (для sections/* — шлях угору)
+    if (!has('link[rel="manifest"]')) {
+      add('link', { rel: 'manifest', href: upPrefix + 'manifest.webmanifest' });
+    }
+
+    // humans.txt
+    if (!has('link[rel="author"]')) {
+      add('link', { rel: 'author', href: ORIGIN + '/humans.txt', type: 'text/plain' });
+    }
+  }
+
+  // ---- 4. Sidebar data ----
   const SECTIONS = {
     'На старт': [
       { num: '00', name: 'Quick Start',         file: 'quickstart.html' },
@@ -151,6 +235,9 @@ ${groups}
       document.body.classList.remove('sidebar-open');
     }
   });
+
+  // ---- 5. Run ----
+  injectMetaIfMissing();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderSidebar);
