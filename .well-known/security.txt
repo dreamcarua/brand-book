@@ -1,0 +1,8 @@
+# DreamCar Brand Book — Security Contact (RFC 9116)
+# Якщо знайшли вразливість — пишіть.
+
+Contact: mailto:vg@dreamcar.ua
+Expires: 2027-05-25T00:00:00.000Z
+Preferred-Languages: uk, en
+Canonical: https://brand.dreamcar.ua/.well-known/security.txt
+Policy: https://brand.dreamcar.ua/
