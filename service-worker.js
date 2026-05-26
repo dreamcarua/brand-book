@@ -1,8 +1,8 @@
-// DreamCar Brand Book — Service Worker v7
+// DreamCar Brand Book — Service Worker v8
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
-// v7: bump cache → форсує оновлений sidebar.js з brand-tag v3.9.1.
+// v8: bump cache → force sidebar.js v4 (search aliases + email logo fix).
 
-const CACHE = 'dreamcar-brand-v7';
+const CACHE = 'dreamcar-brand-v8';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -18,6 +18,8 @@ const PRECACHE = [
   '/og-image.png',
   '/assets/styles.css',
   '/assets/sidebar.js',
+  '/assets/logo/dreamcar-racing-plate.png',
+  '/assets/logo/dreamcar-avatar-mark.png',
 ];
 
 self.addEventListener('install', (e) => {
@@ -47,14 +49,12 @@ async function handleHtmlRequest(request) {
 
     const text = await response.text();
 
-    // Skip if already has script
     if (/sidebar\.js"\s+defer/i.test(text)) return new Response(text, {
       status: response.status,
       statusText: response.statusText,
       headers: cleanHeaders(response.headers),
     });
 
-    // Relative path to sidebar.js
     const url = new URL(request.url);
     const segments = url.pathname.split('/').filter(Boolean);
     const dirDepth = segments.length > 0 && segments[segments.length - 1].endsWith('.html')
@@ -124,7 +124,6 @@ self.addEventListener('fetch', (e) => {
   }
 });
 
-// Message channel — для cache invalidation з UI
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
