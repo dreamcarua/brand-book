@@ -173,7 +173,7 @@
 
     sb.innerHTML = `
 <a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v3.9</span>
+<span class="brand-tag">BRAND BOOK · v3.9.1</span>
 <div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати розділ…" aria-label="Пошук по розділах"></div>
 ${groups}
 <div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="${upPrefix}print.html">Завантажити повний PDF</a></nav></div>
