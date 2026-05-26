@@ -1,16 +1,18 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector v4
+// DreamCar Brand Book — Universal Sidebar Injector v5
 // =====================================================================
 // + Універсальний sidebar для всіх 29 сторінок (рендериться на льоту).
 // + Авто-реєструє Service Worker.
 // + Авто-додає canonical URL + Open Graph meta для SEO/соцмереж.
 // + Пошук по aliases — знаходить email, шрифти, кольори, AI, voice тощо.
+// + Cross-link на team.dreamcar.ua (Tasks, HQ, Onboarding...).
 // =====================================================================
 
 (function() {
   'use strict';
 
   const ORIGIN = 'https://brand.dreamcar.ua';
+  const TEAM_ORIGIN = 'https://team.dreamcar.ua';
 
   // ---- 1. Service Worker auto-register ----
   if ('serviceWorker' in navigator) {
@@ -27,18 +29,16 @@
   const upPrefix = isSection ? '../' : '';
   const filename = (path.split('/').pop() || 'index.html').toLowerCase();
 
-  // ---- 3. Auto-inject SEO meta (canonical, OG basics, humans link) ----
+  // ---- 3. Auto-inject SEO meta ----
   function injectMetaIfMissing() {
     const head = document.head;
     if (!head) return;
-
     const has = (selector) => !!head.querySelector(selector);
     const add = (tag, attrs) => {
       const el = document.createElement(tag);
       Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
       head.appendChild(el);
     };
-
     const fullUrl = ORIGIN + path;
     const pageTitle = (document.title || 'DreamCar Brand Book').trim();
     const pageDesc = (head.querySelector('meta[name="description"]')?.getAttribute('content')) || 'DreamCar Brand Book — операційна система бренду.';
@@ -62,10 +62,10 @@
     if (!has('link[rel="author"]')) add('link', { rel: 'author', href: ORIGIN + '/humans.txt', type: 'text/plain' });
   }
 
-  // ---- 4. Sidebar data + ALIASES для пошуку ----
+  // ---- 4. Sidebar data + ALIASES + EXTERNAL ----
   const SECTIONS = {
     'На старт': [
-      { num: '00', name: 'Quick Start',         file: 'quickstart.html',         aliases: 'старт швидко швидкий шпаргалка cheatsheet' },
+      { num: '00', name: 'Quick Start',         file: 'quickstart.html',         aliases: 'старт швидко шпаргалка cheatsheet' },
       { num: '26', name: 'Onboarding 10хв',     file: 'onboarding.html',         aliases: 'onboarding введення нові працівники підрядники агенції training brand 10 хв слайди презентація' },
       { num: '27', name: '🛠 Brand Tools',       file: 'tools.html',              aliases: 'tools інструменти voice linter лінтер contrast checker контраст color picker tokens ai prompt download ассет ассети wcag aa aaa' },
       { num: '28', name: '🚀 Post Generator',   file: 'generator.html',          aliases: 'generator генератор post пост ig instagram tg telegram email імейл хештеги hashtags export svg png' },
@@ -111,6 +111,14 @@
       { num: '21', name: 'Регламент підтримки', file: 'support.html',            aliases: 'support підтримка клієнт client sla scripts скрипти 4К stop протокол повернення refund tone' },
       { num: '22', name: 'AI-контент',          file: 'ai-content.html',         aliases: 'ai штучний інтелект ШІ claude chatgpt gpt midjourney sora elevenlabs deepfake prompt system prompt eu act copyright' },
     ],
+    '🔒 Team Hub': [
+      { name: 'Tasks (Kanban)',                  url: TEAM_ORIGIN + '/tasks/',      external: true, aliases: 'tasks завдання задачі kanban канбан to-do todo task manager' },
+      { name: 'HQ · Стіл SMM',                   url: TEAM_ORIGIN + '/hq/',         external: true, aliases: 'hq calendar approvals library smm стіл календар погодження бібліотека' },
+      { name: 'Onboarding',                      url: TEAM_ORIGIN + '/onboarding.html', external: true, aliases: 'onboarding онбординг новачки team' },
+      { name: 'Orgchart',                        url: TEAM_ORIGIN + '/orgchart.html',   external: true, aliases: 'orgchart структура команда команди roles ролі raci' },
+      { name: 'Survey 2026',                     url: TEAM_ORIGIN + '/survey.html',     external: true, aliases: 'survey опитування дашборд analytics 1302' },
+      { name: 'Team Hub →',                      url: TEAM_ORIGIN + '/',                external: true, aliases: 'team hub home всі ресурси' },
+    ],
   };
 
   function renderSidebar() {
@@ -119,7 +127,13 @@
 
     const groups = Object.entries(SECTIONS).map(([title, items]) => {
       const navItems = items.map(s => {
-        const isActive = s.file.toLowerCase() === filename;
+        // Зовнішнє посилання (Team Hub)
+        if (s.external && s.url) {
+          const aliases = s.aliases || '';
+          return `<a href="${s.url}" target="_blank" rel="noopener" data-aliases="${aliases}"><span class="num" style="color:#888;">↗</span>${s.name}</a>`;
+        }
+        // Внутрішнє посилання (брендбук)
+        const isActive = s.file && s.file.toLowerCase() === filename;
         const cls = isActive ? ' class="active"' : '';
         const aliases = s.aliases || '';
         return `<a href="${prefix}${s.file}"${cls} data-aliases="${aliases}"><span class="num">${s.num}</span>${s.name}</a>`;
@@ -136,12 +150,10 @@ ${groups}
 <div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
     `;
 
-    // Mobile menu link click closes sidebar
     sb.querySelectorAll('nav a').forEach(a => {
       a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
     });
 
-    // Search bind — шукає по name + num + aliases
     const inp = document.getElementById('sb-search');
     if (inp) {
       const links = sb.querySelectorAll('nav a');
@@ -187,14 +199,12 @@ ${groups}
     }
   }
 
-  // Backdrop click closes mobile sidebar
   document.body.addEventListener('click', (e) => {
     if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
       document.body.classList.remove('sidebar-open');
     }
   });
 
-  // ---- 5. Run ----
   injectMetaIfMissing();
 
   if (document.readyState === 'loading') {
