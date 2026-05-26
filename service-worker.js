@@ -1,8 +1,8 @@
-// DreamCar Brand Book — Service Worker v6
+// DreamCar Brand Book — Service Worker v7
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
-// v6: bump cache → форсує всіх клієнтів отримати свіжий sidebar.js v3 (SEO meta injection).
+// v7: bump cache → форсує оновлений sidebar.js з brand-tag v3.9.1.
 
-const CACHE = 'dreamcar-brand-v6';
+const CACHE = 'dreamcar-brand-v7';
 const PRECACHE = [
   '/',
   '/index.html',
