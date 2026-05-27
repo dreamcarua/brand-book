@@ -1,14 +1,8 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector v6
+// DreamCar Brand Book — Universal Sidebar Injector v7
 // =====================================================================
-// + Універсальний sidebar для всіх 29 сторінок (рендериться на льоту).
-// + Авто-реєструє Service Worker.
-// + Авто-додає canonical URL + Open Graph meta для SEO/соцмереж.
-// + Швидкий фільтр по назвах + aliases (миттєво).
-// + ПОВНОТЕКСТОВИЙ пошук по ВСЬОМУ ВМІСТУ розділів (assets/search-index.json).
-//   - Показує сніпети з підсвіткою терміна.
-//   - Перехід відразу до місця в розділі (Text Fragment :~:text=).
-// + Cross-link на team.dreamcar.ua (Tasks, HQ, Onboarding...).
+// v7: Заміна текстового логотипу на Racing Plate SVG + автозавантаження
+//     global-header.js (sticky top nav з cross-domain меню).
 // =====================================================================
 
 (function() {
@@ -16,6 +10,15 @@
 
   const ORIGIN = 'https://brand.dreamcar.ua';
   const TEAM_ORIGIN = 'https://team.dreamcar.ua';
+  const LOGO_URL = ORIGIN + '/assets/logo/dreamcar-racing-plate.svg';
+
+  // ---- 0. Auto-load global-header.js ----
+  if (!document.querySelector('script[src*="global-header.js"]')) {
+    const gh = document.createElement('script');
+    gh.src = ORIGIN + '/assets/global-header.js';
+    gh.defer = true;
+    document.head.appendChild(gh);
+  }
 
   // ---- 1. Service Worker auto-register ----
   if ('serviceWorker' in navigator) {
@@ -243,8 +246,10 @@
     }).join('');
 
     sb.innerHTML = `
-<a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v3.9.1</span>
+<a href="${upPrefix}index.html" class="brand-mark" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+  <img src="${LOGO_URL}" alt="DreamCar" style="height:28px;width:auto;display:block;" onerror="this.outerHTML='DREAM<span class=\\'red\\'>CAR</span>'">
+</a>
+<span class="brand-tag">BRAND BOOK · v3.9.2</span>
 <div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати по всьому брендбуку…" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
 ${groups}
