@@ -1,8 +1,8 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector v7
+// DreamCar Brand Book — Universal Sidebar Injector v8
 // =====================================================================
-// v7: Заміна текстового логотипу на Racing Plate SVG + автозавантаження
-//     global-header.js (sticky top nav з cross-domain меню).
+// v8: sidebar — текстовий бренд-знак (Racing Plate тільки у global-header).
+//     Уникає дублювання двох лого поряд.
 // =====================================================================
 
 (function() {
@@ -10,7 +10,6 @@
 
   const ORIGIN = 'https://brand.dreamcar.ua';
   const TEAM_ORIGIN = 'https://team.dreamcar.ua';
-  const LOGO_URL = ORIGIN + '/assets/logo/dreamcar-racing-plate.svg';
 
   // ---- 0. Auto-load global-header.js ----
   if (!document.querySelector('script[src*="global-header.js"]')) {
@@ -96,7 +95,7 @@
     'Голос і контент': [
       { num: '11', name: 'Голос і мова',        file: 'voice.html',              aliases: 'voice голос tone тон ти ви vy ty do dont never careful словник мова канали ig tg tt email звертання' },
       { num: '12', name: 'Контент',             file: 'content.html',            aliases: 'content рубрики контент-план хештеги hashtags faq сторітелінг storytelling переможці winners trust' },
-      { num: '13', name: 'Кризові комунікації', file: 'crisis.html',             aliases: 'crisis криза кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
+      { num: '13', name: 'Кризові комунікації', file: 'crisis.html',             aliases: 'crisis criza кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
       { num: '23', name: 'Examples Library',    file: 'examples.html',           aliases: 'examples приклади кейси good bad cases ig email mockup' },
     ],
     'Партнери і довіра': [
@@ -246,9 +245,7 @@
     }).join('');
 
     sb.innerHTML = `
-<a href="${upPrefix}index.html" class="brand-mark" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-  <img src="${LOGO_URL}" alt="DreamCar" style="height:28px;width:auto;display:block;" onerror="this.outerHTML='DREAM<span class=\\'red\\'>CAR</span>'">
-</a>
+<a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
 <span class="brand-tag">BRAND BOOK · v3.9.2</span>
 <div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати по всьому брендбуку…" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
