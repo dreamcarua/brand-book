@@ -2466,51 +2466,76 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
 .section-bread .br-spacer { flex: 1; }
 
 @media print {
+  /* Hide chrome */
   .sidebar, .topbar, .section-page-nav, .section-bread .print-btn,
-  .ticker, .toc-grid, footer, script {
+  .ticker, .toc-grid, footer, script,
+  .dc-gh, .dc-gh-panel, .sidebar-search, .sidebar-search-results {
     display: none !important;
   }
-  body.has-sidebar { display: block !important; }
+  body.has-sidebar { display: block !important; padding-top: 0 !important; }
   .main { padding: 0 !important; }
+
+  /* === DARK THEME У PDF — Давид хоче брендовий чорний фон === */
   html, body {
-    background: var(--white) !important;
-    color: var(--black) !important;
+    background: #0A0A0A !important;
+    color: #FFFFFF !important;
     font-size: 11pt;
     line-height: 1.45;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
-  .red, .hero-title .red, .s-title .red, h1, h2, h3, h4 {
-    color: var(--red) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+
+  /* Всім елементам — увімкнути збереження кольору у PDF */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
+
+  /* Дотримуємось dark-палітри */
   section, .card, .voice-card, .channel, .crisis-card, .persona, .toc-card,
-  .strategy-cell, .pyramid-level, .rubric, .trust-card {
+  .strategy-cell, .pyramid-level, .rubric, .trust-card, .hero, .manifesto {
     page-break-inside: avoid;
     break-inside: avoid;
-    background: var(--white) !important;
-    color: var(--black) !important;
-    border-color: var(--graphite) !important;
+    background: #141414 !important;
+    color: #FFFFFF !important;
+    border-color: #2A2A2A !important;
   }
-  section { padding: 0.6cm 0 !important; border-top: 1px solid var(--ash); }
-  h1, h2 { page-break-before: always; break-before: page; margin-top: 0; }
-  h1:first-of-type, h2:first-of-type { page-break-before: auto; break-before: auto; }
-  a { color: var(--red) !important; text-decoration: underline; }
-  .label, .s-num, .nav-label { color: var(--red) !important; }
-  a[href^="http"]::after, a[href^="/"]::after, a[href$=".html"]::after {
+
+  /* Кольори бренду залишаються червоними */
+  .red, .hero-title .red, .s-title .red, .num, .label, .s-num, .nav-label {
+    color: #E30613 !important;
+  }
+  h1, h2, h3, h4 { color: #FFFFFF !important; }
+
+  /* Анчоры */
+  a { color: #E30613 !important; text-decoration: underline; }
+
+  /* Inline URL після зовнішніх посилань */
+  a[href^="http"]::after, a[href$=".html"]::after {
     content: " (" attr(href) ")";
     font-size: 9pt;
-    color: var(--ash);
+    color: #888;
   }
-  .manifesto, .hero, [class*="hero-title"] {
-    background: var(--white) !important;
-    color: var(--black) !important;
-  }
+
+  /* Page setup */
+  section { padding: 0.6cm 0 !important; border-top: 1px solid #2A2A2A; }
+  h1, h2 { page-break-before: always; break-before: page; margin-top: 0; }
+  h1:first-of-type, h2:first-of-type { page-break-before: auto; break-before: auto; }
+
   @page {
     margin: 1.5cm;
     size: A4;
+    background: #0A0A0A;
   }
+
+  /* Світла альтернатива через клас на body (опційно) */
+  body.print-light { background: #fff !important; color: #0A0A0A !important; }
+  body.print-light section, body.print-light .card, body.print-light .hero, body.print-light .manifesto {
+    background: #fff !important; color: #0A0A0A !important;
+  }
+  body.print-light h1, body.print-light h2, body.print-light h3, body.print-light h4 { color: #0A0A0A !important; }
+  body.print-light a { color: #E30613 !important; }
 }
 
 /* === SIDEBAR PDF GROUP === */
