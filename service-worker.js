@@ -1,8 +1,8 @@
-// DreamCar Brand Book — Service Worker v9
+// DreamCar Brand Book — Service Worker v10
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
-// v9: bump cache → sidebar.js v6 (повнотекстовий пошук) + precache search-index.json.
+// v10: bump cache → sidebar v8 (text-only DREAMCAR) + PDF dark fix + brand-sync.
 
-const CACHE = 'dreamcar-brand-v9';
+const CACHE = 'dreamcar-brand-v10';
 const PRECACHE = [
   '/',
   '/index.html',
