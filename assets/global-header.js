@@ -203,22 +203,27 @@
     }
     .dc-gh-panel a .icon { font-size: 18px; }
 
-    /* Sidebar layout fix on brand-book (sidebar is sticky) */
+    /* Sidebar layout fix on brand-book — sidebar тягнеться під header (без "сходинки"),
+       контент відступає всередині через padding-top. */
     body.has-sidebar { padding-top: 0; }
-    body.has-sidebar .dc-gh ~ * .sidebar,
     body.has-sidebar .sidebar {
-      top: var(--dc-header-h);
-      height: calc(100vh - var(--dc-header-h));
+      top: 0;
+      height: 100vh;
+      padding-top: calc(var(--dc-header-h) + 28px);
     }
     @media (max-width: 920px) {
       body.has-sidebar .sidebar {
-        top: var(--dc-header-h-mobile);
-        height: calc(100vh - var(--dc-header-h-mobile));
+        padding-top: calc(var(--dc-header-h-mobile) + 28px);
       }
     }
     body.has-sidebar .topbar { top: var(--dc-header-h); }
     @media (max-width: 920px) {
       body.has-sidebar .topbar { top: var(--dc-header-h-mobile); }
+    }
+    /* Main content must also offset down so it's not hidden under header */
+    body.has-sidebar .main { padding-top: var(--dc-header-h); }
+    @media (max-width: 920px) {
+      body.has-sidebar .main { padding-top: var(--dc-header-h-mobile); }
     }
 
     /* Print: hide header */
