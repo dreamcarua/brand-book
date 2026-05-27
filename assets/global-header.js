@@ -86,8 +86,8 @@
   // ---- CSS ----
   const css = `
     :root {
-      --dc-header-h: 56px;
-      --dc-header-h-mobile: 50px;
+      --dc-header-h: 48px;
+      --dc-header-h-mobile: 46px;
       --dc-z: 999;
     }
     body { padding-top: var(--dc-header-h); }
@@ -96,25 +96,26 @@
       position: fixed; top: 0; left: 0; right: 0;
       height: var(--dc-header-h);
       z-index: var(--dc-z);
-      background: rgba(10,10,10,0.95);
+      background: rgba(10,10,10,0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid #2A2A2A;
       display: flex; align-items: center;
-      padding: 0 20px; gap: 16px;
+      padding: 0 18px; gap: 14px;
       font-family: 'JetBrains Mono', 'SF Mono', monospace;
       color: #fff;
     }
     .dc-gh-logo {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 8px;
       text-decoration: none; flex-shrink: 0;
+      height: 100%;
     }
     .dc-gh-logo img {
-      height: 32px; width: auto; display: block;
+      height: 24px; width: auto; display: block;
     }
     .dc-gh-logo-fallback {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 16px; letter-spacing: 0.04em;
+      font-size: 14px; letter-spacing: 0.04em;
       color: #fff; text-transform: uppercase;
       display: none;
     }
@@ -122,16 +123,16 @@
     .dc-gh-logo img.broken + .dc-gh-logo-fallback { display: inline; }
 
     .dc-gh-nav {
-      display: flex; align-items: center; gap: 4px;
-      flex: 1; justify-content: center;
+      display: flex; align-items: center; gap: 2px;
+      flex: 1; justify-content: flex-end;
       overflow-x: auto;
       scrollbar-width: none;
     }
     .dc-gh-nav::-webkit-scrollbar { display: none; }
     .dc-gh-nav a {
-      color: #DDD; text-decoration: none;
-      padding: 6px 12px; font-size: 11px;
-      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #BBB; text-decoration: none;
+      padding: 5px 10px; font-size: 10.5px;
+      letter-spacing: 0.16em; text-transform: uppercase;
       border: 1px solid transparent;
       transition: color 120ms, border-color 120ms, background 120ms;
       white-space: nowrap;
@@ -164,8 +165,8 @@
     .dc-gh-burger:hover { border-color: #E30613; }
 
     @media (max-width: 920px) {
-      .dc-gh { padding: 0 14px; height: var(--dc-header-h-mobile); }
-      .dc-gh-logo img { height: 26px; }
+      .dc-gh { padding: 0 12px; height: var(--dc-header-h-mobile); gap: 10px; }
+      .dc-gh-logo img { height: 22px; }
       .dc-gh-nav { display: none; }
       .dc-gh-burger { display: inline-flex; }
     }
