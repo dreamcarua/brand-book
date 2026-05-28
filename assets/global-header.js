@@ -266,37 +266,53 @@
       .dc-gh-burger { display: inline-flex; }
     }
 
-    /* Slide-down mobile panel */
+    /* Slide-down mobile panel — ФОРСУЄМО ВЕРТИКАЛЬНУ КОЛОНКУ через display:flex column.
+       Без цього на брендбуку посилання рендеряться горизонтальною сіткою (default a behaviour
+       з властивостями що задає брендбук css). */
     .dc-gh-panel {
-      position: fixed;
-      top: var(--dc-header-h-mobile);
-      left: 0; right: 0;
-      background: #0A0A0A;
-      border-bottom: 1px solid #2A2A2A;
+      position: fixed !important;
+      top: var(--dc-header-h-mobile) !important;
+      left: 0 !important; right: 0 !important;
+      background: #0A0A0A !important;
+      border-bottom: 1px solid #2A2A2A !important;
       transform: translateY(-110%);
       transition: transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1);
-      z-index: calc(var(--dc-z) - 1);
-      padding: 12px;
-      max-height: calc(100vh - var(--dc-header-h-mobile));
-      overflow-y: auto;
+      z-index: calc(var(--dc-z) - 1) !important;
+      padding: 12px !important;
+      max-height: calc(100vh - var(--dc-header-h-mobile)) !important;
+      overflow-y: auto !important;
+      /* CRITICAL: forces вертикальний layout */
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+      width: auto !important;
     }
     .dc-gh-panel.show { transform: translateY(0); }
     .dc-gh-panel a {
-      display: flex; align-items: center; gap: 12px;
-      color: #DDD; text-decoration: none;
-      padding: 14px 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px; letter-spacing: 0.1em;
-      border: 1px solid #2A2A2A;
-      margin-bottom: 6px;
-      border-radius: 3px;
-      transition: border-color 120ms, color 120ms;
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      width: 100% !important;
+      flex: 0 0 auto !important;
+      color: #DDD !important; text-decoration: none !important;
+      padding: 14px 16px !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 13px !important; letter-spacing: 0.1em !important;
+      border: 1px solid #2A2A2A !important;
+      margin: 0 !important;
+      border-radius: 3px !important;
+      transition: border-color 120ms, color 120ms, background 120ms !important;
+      box-sizing: border-box !important;
+      text-transform: uppercase !important;
+      font-weight: 500 !important;
+      background: transparent !important;
     }
     .dc-gh-panel a:hover, .dc-gh-panel a.active {
-      color: #fff; border-color: #E30613;
-      background: rgba(227,6,19,0.08);
+      color: #fff !important; border-color: #E30613 !important;
+      background: rgba(227,6,19,0.08) !important;
     }
-    .dc-gh-panel a .icon { font-size: 18px; }
+    .dc-gh-panel a .icon { font-size: 18px !important; line-height: 1 !important; }
+    .dc-gh-panel a .text, .dc-gh-panel a span:not(.icon) { flex: 1 !important; }
 
     /* Sidebar layout fix on brand-book — sidebar тягнеться під header (без "сходинки"),
        контент відступає всередині через padding-top. */
