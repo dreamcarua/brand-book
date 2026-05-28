@@ -13,7 +13,7 @@
 
   // ---- 0. Auto-load global-header.js ----
   // Bump version querystring при кожній зміні global-header.js → CDN/SW беруть свіжу.
-  const GH_VERSION = '20260528-4';
+  const GH_VERSION = '20260528-5';
   if (!document.querySelector('script[src*="global-header.js"]')) {
     const gh = document.createElement('script');
     gh.src = ORIGIN + '/assets/global-header.js?v=' + GH_VERSION;

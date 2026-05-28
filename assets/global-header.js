@@ -526,6 +526,10 @@
             <div class="dc-gh-search-section-title">📘 Brand Book</div>
             <div id="dcGhSearchBrand"></div>
           </div>
+          <div class="dc-gh-search-section" id="dcGhSearchLiveSection" style="display:none">
+            <div class="dc-gh-search-section-title">📡 Жива база <span id="dcGhSearchLiveLoading" style="color:#888;font-weight:400;letter-spacing:0;text-transform:none;display:none">завантаження…</span></div>
+            <div id="dcGhSearchLive"></div>
+          </div>
           <div class="dc-gh-search-tip" style="margin-top: 18px;">
             <kbd>↑↓</kbd> навігація · <kbd>↵</kbd> відкрити · <kbd>Esc</kbd> закрити
           </div>
@@ -631,10 +635,161 @@
       });
     }
 
+    // ─── Live deep search (Edge Function `global-search`) ───
+    // Шукає по publications / team_tasks / creatives / users / launches у Supabase.
+    // Працює ТІЛЬКИ на team.dreamcar.ua (де є SUPABASE auth).
+    let liveDebounce = null;
+    let liveAbortController = null;
+    const liveCache = new Map();
+
+    const TASK_LABELS = { p1:'P1', p2:'P2', p3:'P3', p4:'P4' };
+    const PUB_STATUS = {
+      draft:'Чернетка', in_work:'В роботі', review:'На погодженні',
+      approved:'Погоджено', rework:'Доопрацювання', published:'Опубліковано'
+    };
+
+    function renderLive(q) {
+      const section = searchOverlay.querySelector('#dcGhSearchLiveSection');
+      const container = searchOverlay.querySelector('#dcGhSearchLive');
+      const loading = searchOverlay.querySelector('#dcGhSearchLiveLoading');
+      if (!isTeam || !q || q.length < 2) {
+        section.style.display = 'none';
+        return;
+      }
+      // Cache
+      if (liveCache.has(q)) {
+        renderLiveData(liveCache.get(q), q, section, container, loading);
+        return;
+      }
+      // Abort попередній запит
+      if (liveAbortController) try { liveAbortController.abort(); } catch (_) {}
+      if (liveDebounce) clearTimeout(liveDebounce);
+      section.style.display = 'block';
+      loading.style.display = 'inline';
+      container.innerHTML = '';
+
+      liveDebounce = setTimeout(async () => {
+        liveAbortController = new AbortController();
+        try {
+          // Беремо ACCESS_TOKEN з window.supabase (HQ/Tasks) або localStorage
+          let token = '';
+          try {
+            if (window.supabase?.auth) {
+              const s = await window.supabase.auth.getSession();
+              token = s?.data?.session?.access_token || '';
+            }
+          } catch (_) {}
+          if (!token) {
+            // Fallback: пошук Supabase session у localStorage
+            try {
+              const keys = Object.keys(localStorage).filter(k => k.includes('sb-') && k.includes('-auth-token'));
+              if (keys.length) {
+                const raw = JSON.parse(localStorage.getItem(keys[0]) || '{}');
+                token = raw?.access_token || raw?.currentSession?.access_token || '';
+              }
+            } catch (_) {}
+          }
+          if (!token) {
+            section.style.display = 'none';
+            return;
+          }
+
+          const SB_URL = window.HQ_CONFIG?.SUPABASE_URL || 'https://wotghlaehnvxyeacznvv.supabase.co';
+          const SB_KEY = window.HQ_CONFIG?.SUPABASE_ANON_KEY || '';
+          const url = `${SB_URL}/functions/v1/global-search?q=${encodeURIComponent(q)}&limit=6`;
+          const r = await fetch(url, {
+            method: 'GET',
+            signal: liveAbortController.signal,
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'apikey': SB_KEY,
+              'Content-Type': 'application/json',
+            },
+          });
+          if (!r.ok) {
+            container.innerHTML = '<div class="dc-gh-search-empty">— помилка пошуку —</div>';
+            loading.style.display = 'none';
+            return;
+          }
+          const data = await r.json();
+          liveCache.set(q, data);
+          renderLiveData(data, q, section, container, loading);
+        } catch (e) {
+          if (e.name === 'AbortError') return;
+          container.innerHTML = '<div class="dc-gh-search-empty">— помилка —</div>';
+          loading.style.display = 'none';
+        }
+      }, 250);
+    }
+
+    function renderLiveData(data, q, section, container, loading) {
+      loading.style.display = 'none';
+      const r = data?.results || {};
+      const TEAM = TEAM_BASE;
+      const items = [];
+
+      (r.publications || []).forEach(p => {
+        items.push({
+          icon: '📝',
+          title: p.title || '(без назви)',
+          meta: 'Публікація · ' + (PUB_STATUS[p.status] || p.status || ''),
+          url: `${TEAM}/hq/#publication/${p.id}`,
+        });
+      });
+      (r.tasks || []).forEach(t => {
+        const pri = TASK_LABELS[t.priority] || t.priority || '';
+        items.push({
+          icon: '✅',
+          title: t.title || '(без назви)',
+          meta: `Задача · ${pri ? pri + ' · ' : ''}${t.status || ''}`,
+          url: `${TEAM}/tasks/#task/${t.id}`,
+        });
+      });
+      (r.creatives || []).forEach(c => {
+        items.push({
+          icon: c.kind === 'video' ? '🎬' : '🖼',
+          title: c.filename || '(без імені)',
+          meta: `Креатив · ${c.kind || ''}${c.tags ? ' · ' + c.tags : ''}`,
+          url: `${TEAM}/hq/#library`,
+        });
+      });
+      (r.launches || []).forEach(l => {
+        items.push({
+          icon: '🚀',
+          title: l.title || l.slug || '(без назви)',
+          meta: `Запуск · ${l.status || ''}`,
+          url: `${TEAM}/hq/#launches`,
+        });
+      });
+      (r.users || []).forEach(u => {
+        items.push({
+          icon: '👤',
+          title: u.name || u.email || '(без імені)',
+          meta: `Користувач · ${u.role || ''}${u.email ? ' · ' + u.email : ''}`,
+          url: `${TEAM}/orgchart.html`,
+        });
+      });
+
+      if (!items.length) {
+        section.style.display = 'none';
+        return;
+      }
+      section.style.display = 'block';
+      container.innerHTML = items.map(it => `
+        <a href="${it.url}" class="dc-gh-search-result">
+          <span class="dc-gh-result-icon">${it.icon}</span>
+          <div class="dc-gh-result-info">
+            <div class="dc-gh-result-title">${highlight(it.title, q)}</div>
+            <div class="dc-gh-result-meta">${escapeHtml(it.meta)}</div>
+          </div>
+        </a>`).join('');
+    }
+
     function doSearch(q) {
       renderSystems(q);
       renderLocal(q);
       renderBrand(q);
+      renderLive(q);
     }
 
     function openSearch() {
