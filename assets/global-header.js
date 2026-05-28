@@ -164,6 +164,86 @@
     }
     .dc-gh-burger:hover { border-color: #E30613; }
 
+    /* ── PAGE NAV DROPDOWN (опціонально, через window.DC_PAGE_NAV) ── */
+    .dc-gh-pages {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(227,6,19,0.1);
+      border: 1px solid #E30613;
+      color: #fff;
+      padding: 6px 10px; cursor: pointer;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px;
+      font-family: 'JetBrains Mono', monospace;
+      max-width: 200px;
+      transition: background 120ms;
+    }
+    .dc-gh-pages:hover { background: rgba(227,6,19,0.18); }
+    .dc-gh-pages .dc-gh-pages-label {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      max-width: 150px;
+    }
+    .dc-gh-pages .dc-gh-pages-num {
+      font-size: 9px; opacity: 0.65;
+    }
+    .dc-gh-pages .dc-gh-pages-chev {
+      font-size: 9px; opacity: 0.85;
+      transition: transform 180ms;
+    }
+    .dc-gh-pages[aria-expanded="true"] .dc-gh-pages-chev { transform: rotate(180deg); }
+
+    /* Pages dropdown — under header, sticky-positioned */
+    .dc-gh-pages-menu {
+      position: fixed;
+      top: var(--dc-header-h);
+      right: 12px;
+      background: #0A0A0A;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      min-width: 280px;
+      max-width: 360px;
+      max-height: calc(100vh - var(--dc-header-h) - 40px);
+      overflow-y: auto;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      z-index: calc(var(--dc-z) - 1);
+      opacity: 0; pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 140ms, transform 140ms;
+    }
+    .dc-gh-pages-menu.show {
+      opacity: 1; pointer-events: auto; transform: translateY(0);
+    }
+    .dc-gh-pages-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px;
+      color: #BBB; text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      transition: background 100ms, color 100ms;
+    }
+    .dc-gh-pages-menu a:last-child { border-bottom: none; }
+    .dc-gh-pages-menu a:hover { background: rgba(227,6,19,0.08); color: #fff; }
+    .dc-gh-pages-menu a.active {
+      background: rgba(227,6,19,0.15); color: #E30613; font-weight: 700;
+    }
+    .dc-gh-pages-menu a .num {
+      font-size: 9px; opacity: 0.6; min-width: 22px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dc-gh-pages-menu a.active .num { opacity: 1; }
+    .dc-gh-pages-menu a .label { flex: 1; }
+
+    @media (max-width: 920px) {
+      .dc-gh-pages { font-size: 10px; padding: 6px 8px; max-width: 150px; }
+      .dc-gh-pages .dc-gh-pages-label { max-width: 95px; }
+      .dc-gh-pages-menu {
+        top: var(--dc-header-h-mobile);
+        right: 6px; left: 6px;
+        max-width: none; min-width: 0;
+        max-height: calc(100vh - var(--dc-header-h-mobile) - 20px);
+      }
+    }
+
     @media (max-width: 920px) {
       .dc-gh { padding: 0 12px; height: var(--dc-header-h-mobile); gap: 10px; }
       .dc-gh-logo img { height: 22px; }
@@ -267,6 +347,11 @@
         ${buildNav()}
       </nav>
       <div class="dc-gh-right">
+        <button class="dc-gh-pages" aria-label="Розділи сторінки" aria-expanded="false" style="display:none">
+          <span class="dc-gh-pages-num"></span>
+          <span class="dc-gh-pages-label">Розділ</span>
+          <span class="dc-gh-pages-chev">▼</span>
+        </button>
         <button class="dc-gh-burger" aria-label="Меню" aria-expanded="false">≡</button>
       </div>
     `;
@@ -313,6 +398,80 @@
         burger.setAttribute('aria-expanded', 'false');
       }
     });
+
+    // ─────────────────────────────────────────────
+    // PAGE NAV DROPDOWN — рендеримо тільки якщо window.DC_PAGE_NAV встановлений
+    // ─────────────────────────────────────────────
+    const pageBtn = header.querySelector('.dc-gh-pages');
+    let pagesMenu = null;
+
+    function renderPageNav() {
+      const cfg = window.DC_PAGE_NAV;
+      if (!cfg || !cfg.pages || !cfg.pages.length) {
+        pageBtn.style.display = 'none';
+        return;
+      }
+      pageBtn.style.display = 'inline-flex';
+      const current = cfg.pages.find(p => p.id === cfg.current) || cfg.pages[0];
+      const numEl = pageBtn.querySelector('.dc-gh-pages-num');
+      const labelEl = pageBtn.querySelector('.dc-gh-pages-label');
+      numEl.textContent = current.num || '';
+      labelEl.textContent = current.label || '';
+
+      // (re)build dropdown menu
+      if (pagesMenu) pagesMenu.remove();
+      pagesMenu = document.createElement('div');
+      pagesMenu.className = 'dc-gh-pages-menu';
+      pagesMenu.setAttribute('role', 'menu');
+      pagesMenu.innerHTML = cfg.pages.map(p => {
+        const isActive = p.id === cfg.current ? ' active' : '';
+        return `<a href="#${p.id}" data-page-id="${p.id}" class="${isActive}"><span class="num">${p.num||''}</span><span class="label">${p.label}</span></a>`;
+      }).join('');
+      document.body.appendChild(pagesMenu);
+
+      // Click on items
+      pagesMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.dataset.pageId;
+        closePagesMenu();
+        if (typeof cfg.onSelect === 'function') cfg.onSelect(id);
+        else window.location.hash = '#' + id;
+        cfg.current = id;
+        renderPageNav();
+      }));
+    }
+    function openPagesMenu() {
+      if (!pagesMenu) return;
+      pagesMenu.classList.add('show');
+      pageBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closePagesMenu() {
+      if (!pagesMenu) return;
+      pagesMenu.classList.remove('show');
+      pageBtn.setAttribute('aria-expanded', 'false');
+    }
+    pageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (pagesMenu && pagesMenu.classList.contains('show')) closePagesMenu();
+      else openPagesMenu();
+    });
+    document.addEventListener('click', (e) => {
+      if (!pagesMenu || !pagesMenu.classList.contains('show')) return;
+      if (pagesMenu.contains(e.target) || pageBtn.contains(e.target)) return;
+      closePagesMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pagesMenu && pagesMenu.classList.contains('show')) closePagesMenu();
+    });
+
+    // Public API для сторінок: оновити поточний вибір
+    window.__dcUpdatePageNav = function(id) {
+      if (!window.DC_PAGE_NAV) return;
+      window.DC_PAGE_NAV.current = id;
+      renderPageNav();
+    };
+
+    renderPageNav();
   }
 
   if (document.readyState === 'loading') {
