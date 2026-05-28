@@ -1,8 +1,8 @@
-// DreamCar Brand Book — Service Worker v12
+// DreamCar Brand Book — Service Worker v13
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
-// v12: bump cache → sidebar тягнеться під header (прибрана "сходинка" зліва зверху)
+// v13: bump cache → global-header.js нові лейбли (Глобальний пошук / Усі системи) + лого +50% + mobile fit
 
-const CACHE = 'dreamcar-brand-v12';
+const CACHE = 'dreamcar-brand-v13';
 const PRECACHE = [
   '/',
   '/index.html',
