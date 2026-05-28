@@ -86,8 +86,8 @@
   // ---- CSS ----
   const css = `
     :root {
-      --dc-header-h: 48px;
-      --dc-header-h-mobile: 46px;
+      --dc-header-h: 56px;
+      --dc-header-h-mobile: 54px;
       --dc-z: 999;
     }
     body { padding-top: var(--dc-header-h); }
@@ -111,7 +111,7 @@
       height: 100%;
     }
     .dc-gh-logo img {
-      height: 24px; width: auto; display: block;
+      height: 36px; width: auto; display: block;
     }
     .dc-gh-logo-fallback {
       font-family: 'Archivo Black', sans-serif;
@@ -154,15 +154,26 @@
       flex-shrink: 0;
     }
 
-    /* Mobile */
+    /* Mobile burger з лейблом «ВСІ СИСТЕМИ» — щоб користувач бачив куди тиснути */
     .dc-gh-burger {
       display: none;
+      align-items: center; gap: 8px;
       background: transparent; border: 1px solid #2A2A2A;
-      color: #fff; padding: 7px 10px; cursor: pointer;
-      font-size: 16px; line-height: 1;
-      border-radius: 3px;
+      color: #fff; padding: 7px 12px; cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 600;
+      line-height: 1; border-radius: 3px;
+      transition: border-color 120ms, background 120ms;
     }
-    .dc-gh-burger:hover { border-color: #E30613; }
+    .dc-gh-burger:hover { border-color: #E30613; background: rgba(227,6,19,0.06); }
+    .dc-gh-burger .dc-gh-burger-icon { font-size: 16px; line-height: 1; }
+    .dc-gh-burger .dc-gh-burger-label { display: inline; }
+    /* На дуже малих екранах ховаємо текст, лишаємо лише іконку */
+    @media (max-width: 380px) {
+      .dc-gh-burger { padding: 7px 10px; }
+      .dc-gh-burger .dc-gh-burger-label { display: none; }
+    }
 
     /* ── GLOBAL SEARCH (🔍 у топбарі, overlay з полем + результатами) ── */
     .dc-gh-search-btn {
@@ -261,7 +272,7 @@
 
     @media (max-width: 920px) {
       .dc-gh { padding: 0 12px; height: var(--dc-header-h-mobile); gap: 10px; }
-      .dc-gh-logo img { height: 22px; }
+      .dc-gh-logo img { height: 33px; }
       .dc-gh-nav { display: none; }
       .dc-gh-burger { display: inline-flex; }
     }
@@ -382,7 +393,10 @@
           <span class="dc-gh-search-ico">⌕</span>
           <span class="dc-gh-search-lbl">Пошук</span>
         </button>
-        <button class="dc-gh-burger" aria-label="Меню" aria-expanded="false">≡</button>
+        <button class="dc-gh-burger" aria-label="Усі системи" aria-expanded="false" title="Усі системи DreamCar">
+          <span class="dc-gh-burger-icon">≡</span>
+          <span class="dc-gh-burger-label">Усі системи</span>
+        </button>
       </div>
     `;
 
@@ -396,18 +410,23 @@
 
     // Toggle
     const burger = header.querySelector('.dc-gh-burger');
+    const burgerIcon = burger.querySelector('.dc-gh-burger-icon');
+    const burgerLabel = burger.querySelector('.dc-gh-burger-label');
+    function setBurgerState(open) {
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (burgerIcon) burgerIcon.textContent = open ? '×' : '≡';
+      if (burgerLabel) burgerLabel.textContent = open ? 'Закрити' : 'Усі системи';
+    }
     burger.addEventListener('click', () => {
       const open = panel.classList.toggle('show');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.textContent = open ? '×' : '≡';
+      setBurgerState(open);
     });
 
     // Close panel after link click
     panel.querySelectorAll('a').forEach((a) =>
       a.addEventListener('click', () => {
         panel.classList.remove('show');
-        burger.textContent = '≡';
-        burger.setAttribute('aria-expanded', 'false');
+        setBurgerState(false);
       })
     );
 
@@ -416,16 +435,14 @@
       if (!panel.classList.contains('show')) return;
       if (panel.contains(e.target) || header.contains(e.target)) return;
       panel.classList.remove('show');
-      burger.textContent = '≡';
-      burger.setAttribute('aria-expanded', 'false');
+      setBurgerState(false);
     });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && panel.classList.contains('show')) {
         panel.classList.remove('show');
-        burger.textContent = '≡';
-        burger.setAttribute('aria-expanded', 'false');
+        setBurgerState(false);
       }
     });
 
