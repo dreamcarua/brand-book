@@ -177,18 +177,22 @@
 
     /* ── GLOBAL SEARCH (🔍 у топбарі, overlay з полем + результатами) ── */
     .dc-gh-search-btn {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 8px;
       background: transparent; border: 1px solid #2A2A2A;
       color: #fff; padding: 7px 12px; cursor: pointer;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      border-radius: 3px; transition: border-color 120ms, background 120ms;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 600;
+      line-height: 1;
+      border-radius: 3px;
+      transition: border-color 120ms, background 120ms;
       flex-shrink: 0;
     }
     .dc-gh-search-btn:hover { border-color: #E30613; background: rgba(227,6,19,0.06); }
-    .dc-gh-search-btn .dc-gh-search-ico { font-size: 14px; line-height: 1; }
+    .dc-gh-search-btn .dc-gh-search-ico { font-size: 16px; line-height: 1; }
     .dc-gh-search-btn .dc-gh-search-lbl { display: inline; }
-    @media (max-width: 920px) {
+    /* На дуже малих екранах ховаємо текст, лишаємо лише іконку */
+    @media (max-width: 380px) {
       .dc-gh-search-btn { padding: 7px 10px; }
       .dc-gh-search-btn .dc-gh-search-lbl { display: none; }
     }
@@ -389,9 +393,9 @@
         ${buildNav()}
       </nav>
       <div class="dc-gh-right">
-        <button class="dc-gh-search-btn" aria-label="Глобальний пошук" title="Пошук (⌘K)">
+        <button class="dc-gh-search-btn" aria-label="Глобальний пошук" title="Глобальний пошук (⌘K)">
           <span class="dc-gh-search-ico">⌕</span>
-          <span class="dc-gh-search-lbl">Пошук</span>
+          <span class="dc-gh-search-lbl">Глобальний пошук</span>
         </button>
         <button class="dc-gh-burger" aria-label="Усі системи" aria-expanded="false" title="Усі системи DreamCar">
           <span class="dc-gh-burger-icon">≡</span>
