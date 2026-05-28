@@ -164,84 +164,99 @@
     }
     .dc-gh-burger:hover { border-color: #E30613; }
 
-    /* ── PAGE NAV DROPDOWN (опціонально, через window.DC_PAGE_NAV) ── */
-    .dc-gh-pages {
+    /* ── GLOBAL SEARCH (🔍 у топбарі, overlay з полем + результатами) ── */
+    .dc-gh-search-btn {
       display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(227,6,19,0.1);
-      border: 1px solid #E30613;
-      color: #fff;
-      padding: 6px 10px; cursor: pointer;
-      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-      border-radius: 3px;
-      font-family: 'JetBrains Mono', monospace;
-      max-width: 200px;
-      transition: background 120ms;
+      background: transparent; border: 1px solid #2A2A2A;
+      color: #fff; padding: 7px 12px; cursor: pointer;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      border-radius: 3px; transition: border-color 120ms, background 120ms;
+      flex-shrink: 0;
     }
-    .dc-gh-pages:hover { background: rgba(227,6,19,0.18); }
-    .dc-gh-pages .dc-gh-pages-label {
-      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-      max-width: 150px;
-    }
-    .dc-gh-pages .dc-gh-pages-num {
-      font-size: 9px; opacity: 0.65;
-    }
-    .dc-gh-pages .dc-gh-pages-chev {
-      font-size: 9px; opacity: 0.85;
-      transition: transform 180ms;
-    }
-    .dc-gh-pages[aria-expanded="true"] .dc-gh-pages-chev { transform: rotate(180deg); }
-
-    /* Pages dropdown — under header, sticky-positioned */
-    .dc-gh-pages-menu {
-      position: fixed;
-      top: var(--dc-header-h);
-      right: 12px;
-      background: #0A0A0A;
-      border: 1px solid #2A2A2A;
-      border-radius: 4px;
-      min-width: 280px;
-      max-width: 360px;
-      max-height: calc(100vh - var(--dc-header-h) - 40px);
-      overflow-y: auto;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-      z-index: calc(var(--dc-z) - 1);
-      opacity: 0; pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity 140ms, transform 140ms;
-    }
-    .dc-gh-pages-menu.show {
-      opacity: 1; pointer-events: auto; transform: translateY(0);
-    }
-    .dc-gh-pages-menu a {
-      display: flex; align-items: center; gap: 10px;
-      padding: 11px 14px;
-      color: #BBB; text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      transition: background 100ms, color 100ms;
-    }
-    .dc-gh-pages-menu a:last-child { border-bottom: none; }
-    .dc-gh-pages-menu a:hover { background: rgba(227,6,19,0.08); color: #fff; }
-    .dc-gh-pages-menu a.active {
-      background: rgba(227,6,19,0.15); color: #E30613; font-weight: 700;
-    }
-    .dc-gh-pages-menu a .num {
-      font-size: 9px; opacity: 0.6; min-width: 22px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .dc-gh-pages-menu a.active .num { opacity: 1; }
-    .dc-gh-pages-menu a .label { flex: 1; }
-
+    .dc-gh-search-btn:hover { border-color: #E30613; background: rgba(227,6,19,0.06); }
+    .dc-gh-search-btn .dc-gh-search-ico { font-size: 14px; line-height: 1; }
+    .dc-gh-search-btn .dc-gh-search-lbl { display: inline; }
     @media (max-width: 920px) {
-      .dc-gh-pages { font-size: 10px; padding: 6px 8px; max-width: 150px; }
-      .dc-gh-pages .dc-gh-pages-label { max-width: 95px; }
-      .dc-gh-pages-menu {
-        top: var(--dc-header-h-mobile);
-        right: 6px; left: 6px;
-        max-width: none; min-width: 0;
-        max-height: calc(100vh - var(--dc-header-h-mobile) - 20px);
-      }
+      .dc-gh-search-btn { padding: 7px 10px; }
+      .dc-gh-search-btn .dc-gh-search-lbl { display: none; }
+    }
+
+    /* Search overlay */
+    .dc-gh-search-overlay {
+      position: fixed; inset: 0; z-index: calc(var(--dc-z) + 1);
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      display: none; flex-direction: column;
+      padding: 0;
+    }
+    .dc-gh-search-overlay.show { display: flex; }
+    .dc-gh-search-overlay-head {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 22px; border-bottom: 1px solid #2A2A2A;
+      background: rgba(10,10,10,0.92);
+    }
+    .dc-gh-search-overlay-head input {
+      flex: 1; background: transparent; border: none; outline: none;
+      color: #fff; font-family: 'Manrope', sans-serif;
+      font-size: 22px; letter-spacing: 0.01em;
+      padding: 4px 0;
+    }
+    .dc-gh-search-overlay-head input::placeholder { color: #555; }
+    .dc-gh-search-overlay-head .dc-gh-search-close {
+      background: transparent; border: 1px solid #2A2A2A;
+      color: #fff; padding: 8px 14px; cursor: pointer;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.2em; border-radius: 3px;
+    }
+    .dc-gh-search-overlay-head .dc-gh-search-close:hover { border-color: #E30613; }
+    .dc-gh-search-overlay-body {
+      flex: 1; overflow-y: auto; padding: 22px;
+      max-width: 880px; width: 100%; margin: 0 auto;
+    }
+    .dc-gh-search-section {
+      margin-bottom: 24px;
+    }
+    .dc-gh-search-section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #E30613; margin-bottom: 10px; font-weight: 700;
+    }
+    .dc-gh-search-result {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 14px; margin-bottom: 6px;
+      background: #141414; border: 1px solid #2A2A2A; border-radius: 4px;
+      cursor: pointer; text-decoration: none; color: #fff;
+      transition: border-color 120ms, background 120ms;
+    }
+    .dc-gh-search-result:hover { border-color: #E30613; background: rgba(227,6,19,0.06); }
+    .dc-gh-search-result .dc-gh-result-icon { font-size: 18px; }
+    .dc-gh-search-result .dc-gh-result-info { flex: 1; min-width: 0; }
+    .dc-gh-search-result .dc-gh-result-title {
+      font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600;
+      margin-bottom: 2px; color: #fff;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .dc-gh-search-result .dc-gh-result-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      color: #888; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .dc-gh-search-result mark {
+      background: #E30613; color: #fff; padding: 0 2px;
+    }
+    .dc-gh-search-empty {
+      text-align: center; color: #555;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      padding: 60px 20px; letter-spacing: 0.1em;
+    }
+    .dc-gh-search-tip {
+      color: #555; font-size: 11px;
+      font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em;
+      padding: 4px 0;
+    }
+    .dc-gh-search-tip kbd {
+      background: #1f1f1f; border: 1px solid #333;
+      padding: 1px 6px; border-radius: 3px;
+      font-family: inherit; font-size: 10px;
     }
 
     @media (max-width: 920px) {
@@ -347,10 +362,9 @@
         ${buildNav()}
       </nav>
       <div class="dc-gh-right">
-        <button class="dc-gh-pages" aria-label="Розділи сторінки" aria-expanded="false" style="display:none">
-          <span class="dc-gh-pages-num"></span>
-          <span class="dc-gh-pages-label">Розділ</span>
-          <span class="dc-gh-pages-chev">▼</span>
+        <button class="dc-gh-search-btn" aria-label="Глобальний пошук" title="Пошук (⌘K)">
+          <span class="dc-gh-search-ico">⌕</span>
+          <span class="dc-gh-search-lbl">Пошук</span>
         </button>
         <button class="dc-gh-burger" aria-label="Меню" aria-expanded="false">≡</button>
       </div>
@@ -400,78 +414,177 @@
     });
 
     // ─────────────────────────────────────────────
-    // PAGE NAV DROPDOWN — рендеримо тільки якщо window.DC_PAGE_NAV встановлений
+    // GLOBAL SEARCH — overlay з пошуком по всіх системах
+    // Джерела:
+    //   1. window.DC_PAGE_NAV.pages — поточна сторінка локально
+    //   2. brand.dreamcar.ua/assets/search-index.json — повний індекс брендбуку (29 розділів + контент)
+    //   3. SYSTEMS (Brand/HQ/Tasks/Onboarding/Org/Survey)
     // ─────────────────────────────────────────────
-    const pageBtn = header.querySelector('.dc-gh-pages');
-    let pagesMenu = null;
+    const searchBtn = header.querySelector('.dc-gh-search-btn');
+    let searchOverlay = null;
+    let brandIndex = null;
+    let brandIndexLoading = false;
 
-    function renderPageNav() {
+    function loadBrandIndex() {
+      if (brandIndex || brandIndexLoading) return Promise.resolve(brandIndex);
+      brandIndexLoading = true;
+      return fetch(BRAND_BASE + '/assets/search-index.json', { cache: 'force-cache' })
+        .then(r => r.ok ? r.json() : null)
+        .then(json => { brandIndex = json; return json; })
+        .catch(() => null);
+    }
+
+    function buildSearchOverlay() {
+      if (searchOverlay) return searchOverlay;
+      searchOverlay = document.createElement('div');
+      searchOverlay.className = 'dc-gh-search-overlay';
+      searchOverlay.innerHTML = `
+        <div class="dc-gh-search-overlay-head">
+          <input type="search" id="dcGhSearchInput" placeholder="Пошук по всіх системах…" autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <button class="dc-gh-search-close" aria-label="Закрити">ESC</button>
+        </div>
+        <div class="dc-gh-search-overlay-body" id="dcGhSearchBody">
+          <div class="dc-gh-search-section">
+            <div class="dc-gh-search-section-title">🏠 Системи</div>
+            <div id="dcGhSearchSystems"></div>
+          </div>
+          <div class="dc-gh-search-section" id="dcGhSearchLocalSection" style="display:none">
+            <div class="dc-gh-search-section-title">📍 На цій сторінці</div>
+            <div id="dcGhSearchLocal"></div>
+          </div>
+          <div class="dc-gh-search-section" id="dcGhSearchBrandSection" style="display:none">
+            <div class="dc-gh-search-section-title">📘 Brand Book</div>
+            <div id="dcGhSearchBrand"></div>
+          </div>
+          <div class="dc-gh-search-tip" style="margin-top: 18px;">
+            <kbd>↑↓</kbd> навігація · <kbd>↵</kbd> відкрити · <kbd>Esc</kbd> закрити
+          </div>
+        </div>
+      `;
+      document.body.appendChild(searchOverlay);
+
+      const input = searchOverlay.querySelector('#dcGhSearchInput');
+      const closeBtn = searchOverlay.querySelector('.dc-gh-search-close');
+      closeBtn.addEventListener('click', closeSearch);
+      input.addEventListener('input', () => doSearch(input.value));
+      searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) closeSearch();
+      });
+      return searchOverlay;
+    }
+
+    function highlight(text, q) {
+      if (!q || !text) return escapeHtml(text || '');
+      const safe = escapeHtml(text);
+      try {
+        const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + ')', 'ig');
+        return safe.replace(re, '<mark>$1</mark>');
+      } catch (_) { return safe; }
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    }
+
+    function renderSystems(q) {
+      const container = searchOverlay.querySelector('#dcGhSearchSystems');
+      const ql = (q || '').toLowerCase().trim();
+      const items = LINKS.filter(l => !ql || l.label.toLowerCase().includes(ql) || l.short.toLowerCase().includes(ql));
+      container.innerHTML = items.map(l => `
+        <a href="${l.url}" class="dc-gh-search-result">
+          <span class="dc-gh-result-icon">${l.icon}</span>
+          <div class="dc-gh-result-info">
+            <div class="dc-gh-result-title">${highlight(l.label, q)}</div>
+            <div class="dc-gh-result-meta">${l.url.replace(/^https?:\\/\\//, '')}</div>
+          </div>
+        </a>`).join('') || '<div class="dc-gh-search-empty">— нічого —</div>';
+    }
+
+    function renderLocal(q) {
+      const section = searchOverlay.querySelector('#dcGhSearchLocalSection');
+      const container = searchOverlay.querySelector('#dcGhSearchLocal');
       const cfg = window.DC_PAGE_NAV;
-      if (!cfg || !cfg.pages || !cfg.pages.length) {
-        pageBtn.style.display = 'none';
+      if (!cfg || !cfg.pages || !cfg.pages.length || !q) {
+        section.style.display = 'none';
         return;
       }
-      pageBtn.style.display = 'inline-flex';
-      const current = cfg.pages.find(p => p.id === cfg.current) || cfg.pages[0];
-      const numEl = pageBtn.querySelector('.dc-gh-pages-num');
-      const labelEl = pageBtn.querySelector('.dc-gh-pages-label');
-      numEl.textContent = current.num || '';
-      labelEl.textContent = current.label || '';
-
-      // (re)build dropdown menu
-      if (pagesMenu) pagesMenu.remove();
-      pagesMenu = document.createElement('div');
-      pagesMenu.className = 'dc-gh-pages-menu';
-      pagesMenu.setAttribute('role', 'menu');
-      pagesMenu.innerHTML = cfg.pages.map(p => {
-        const isActive = p.id === cfg.current ? ' active' : '';
-        return `<a href="#${p.id}" data-page-id="${p.id}" class="${isActive}"><span class="num">${p.num||''}</span><span class="label">${p.label}</span></a>`;
-      }).join('');
-      document.body.appendChild(pagesMenu);
-
-      // Click on items
-      pagesMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+      const ql = q.toLowerCase().trim();
+      const items = cfg.pages.filter(p => p.label.toLowerCase().includes(ql));
+      if (!items.length) { section.style.display = 'none'; return; }
+      section.style.display = 'block';
+      container.innerHTML = items.map(p => `
+        <a href="#${p.id}" data-page-id="${p.id}" class="dc-gh-search-result">
+          <span class="dc-gh-result-icon">${(p.label.match(/^\\p{Emoji}/u)||[''])[0] || '📄'}</span>
+          <div class="dc-gh-result-info">
+            <div class="dc-gh-result-title">${highlight(p.label, q)}</div>
+            <div class="dc-gh-result-meta">Розділ · ${p.num || ''}</div>
+          </div>
+        </a>`).join('');
+      // Перехоплюємо click щоб викликати onSelect
+      container.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
         e.preventDefault();
         const id = a.dataset.pageId;
-        closePagesMenu();
+        closeSearch();
         if (typeof cfg.onSelect === 'function') cfg.onSelect(id);
         else window.location.hash = '#' + id;
-        cfg.current = id;
-        renderPageNav();
       }));
     }
-    function openPagesMenu() {
-      if (!pagesMenu) return;
-      pagesMenu.classList.add('show');
-      pageBtn.setAttribute('aria-expanded', 'true');
+
+    function renderBrand(q) {
+      const section = searchOverlay.querySelector('#dcGhSearchBrandSection');
+      const container = searchOverlay.querySelector('#dcGhSearchBrand');
+      if (!q || q.length < 2) { section.style.display = 'none'; return; }
+      loadBrandIndex().then(idx => {
+        if (!idx || !idx.sections) { section.style.display = 'none'; return; }
+        const ql = q.toLowerCase().trim();
+        const results = [];
+        idx.sections.forEach(s => {
+          const title = (s.title || s.page_title || '').toLowerCase();
+          const text = (s.text || '').toLowerCase();
+          const headings = (s.headings || []).join(' ').toLowerCase();
+          if (title.includes(ql) || text.includes(ql) || headings.includes(ql)) {
+            results.push(s);
+          }
+        });
+        if (!results.length) { section.style.display = 'none'; return; }
+        section.style.display = 'block';
+        container.innerHTML = results.slice(0, 12).map(s => {
+          const url = BRAND_BASE + '/sections/' + s.file + (s.hash ? '#' + s.hash : '');
+          return `<a href="${url}" target="_blank" rel="noopener" class="dc-gh-search-result">
+            <span class="dc-gh-result-icon">📘</span>
+            <div class="dc-gh-result-info">
+              <div class="dc-gh-result-title">${highlight(s.title || s.page_title, q)}</div>
+              <div class="dc-gh-result-meta">${escapeHtml(s.page_title || s.file)}</div>
+            </div>
+          </a>`;
+        }).join('');
+      });
     }
-    function closePagesMenu() {
-      if (!pagesMenu) return;
-      pagesMenu.classList.remove('show');
-      pageBtn.setAttribute('aria-expanded', 'false');
+
+    function doSearch(q) {
+      renderSystems(q);
+      renderLocal(q);
+      renderBrand(q);
     }
-    pageBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (pagesMenu && pagesMenu.classList.contains('show')) closePagesMenu();
-      else openPagesMenu();
-    });
-    document.addEventListener('click', (e) => {
-      if (!pagesMenu || !pagesMenu.classList.contains('show')) return;
-      if (pagesMenu.contains(e.target) || pageBtn.contains(e.target)) return;
-      closePagesMenu();
-    });
+
+    function openSearch() {
+      buildSearchOverlay();
+      searchOverlay.classList.add('show');
+      const input = searchOverlay.querySelector('#dcGhSearchInput');
+      setTimeout(() => input.focus(), 50);
+      doSearch('');  // initial render — show systems
+    }
+    function closeSearch() {
+      if (searchOverlay) searchOverlay.classList.remove('show');
+    }
+    searchBtn.addEventListener('click', openSearch);
+    // ⌘K / Ctrl+K shortcut
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && pagesMenu && pagesMenu.classList.contains('show')) closePagesMenu();
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+      if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('show')) closeSearch();
     });
 
-    // Public API для сторінок: оновити поточний вибір
-    window.__dcUpdatePageNav = function(id) {
-      if (!window.DC_PAGE_NAV) return;
-      window.DC_PAGE_NAV.current = id;
-      renderPageNav();
-    };
-
-    renderPageNav();
+    // Public API
+    window.__dcOpenSearch = openSearch;
   }
 
   if (document.readyState === 'loading') {
