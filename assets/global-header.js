@@ -476,10 +476,11 @@
     function highlight(text, q) {
       if (!q || !text) return escapeHtml(text || '');
       const safe = escapeHtml(text);
-      try {
-        const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + ')', 'ig');
-        return safe.replace(re, '<mark>$1</mark>');
-      } catch (_) { return safe; }
+      const ql = String(q).toLowerCase();
+      const lower = safe.toLowerCase();
+      const idx = lower.indexOf(ql);
+      if (idx < 0) return safe;
+      return safe.slice(0, idx) + '<mark>' + safe.slice(idx, idx + q.length) + '</mark>' + safe.slice(idx + q.length);
     }
     function escapeHtml(s) {
       return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
@@ -494,7 +495,7 @@
           <span class="dc-gh-result-icon">${l.icon}</span>
           <div class="dc-gh-result-info">
             <div class="dc-gh-result-title">${highlight(l.label, q)}</div>
-            <div class="dc-gh-result-meta">${l.url.replace(/^https?:\\/\\//, '')}</div>
+            <div class="dc-gh-result-meta">${l.url.replace(/^https?:\/\//, '')}</div>
           </div>
         </a>`).join('') || '<div class="dc-gh-search-empty">— нічого —</div>';
     }
@@ -513,7 +514,7 @@
       section.style.display = 'block';
       container.innerHTML = items.map(p => `
         <a href="#${p.id}" data-page-id="${p.id}" class="dc-gh-search-result">
-          <span class="dc-gh-result-icon">${(p.label.match(/^\\p{Emoji}/u)||[''])[0] || '📄'}</span>
+          <span class="dc-gh-result-icon">📄</span>
           <div class="dc-gh-result-info">
             <div class="dc-gh-result-title">${highlight(p.label, q)}</div>
             <div class="dc-gh-result-meta">Розділ · ${p.num || ''}</div>
