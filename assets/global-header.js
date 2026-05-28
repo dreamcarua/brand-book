@@ -275,22 +275,41 @@
     }
 
     @media (max-width: 920px) {
-      .dc-gh { padding: 0 8px; height: var(--dc-header-h-mobile); gap: 6px; }
+      .dc-gh { padding: 0 8px; height: var(--dc-header-h-mobile); gap: 8px; }
       .dc-gh-logo img { height: 28px; }
+      .dc-gh-logo { flex-shrink: 0; }
       .dc-gh-nav { display: none; }
       .dc-gh-burger { display: inline-flex; }
-      /* Mobile-compact: усе має влізти у viewport */
-      .dc-gh-right { gap: 5px; flex-shrink: 0; }
-      .dc-gh-logo { flex-shrink: 1; min-width: 0; }
+      /* РОЗТЯГУЄМО search + burger на всю доступну ширину справа від лого.
+         Повні лейбли «Глобальний пошук» / «Усі системи» — без пустот. */
+      .dc-gh-right {
+        flex: 1 1 auto !important;
+        display: flex !important;
+        gap: 6px !important;
+        min-width: 0 !important;
+        justify-content: stretch !important;
+      }
       .dc-gh-search-btn,
       .dc-gh-burger {
-        padding: 6px 8px !important;
-        gap: 4px !important;
-        font-size: 9px !important;
-        letter-spacing: 0.05em !important;
+        flex: 1 1 0 !important;
+        justify-content: center !important;
+        padding: 8px 6px !important;
+        gap: 6px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.06em !important;
+        min-width: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
       }
       .dc-gh-search-btn .dc-gh-search-ico,
-      .dc-gh-burger .dc-gh-burger-icon { font-size: 12px !important; }
+      .dc-gh-burger .dc-gh-burger-icon { font-size: 13px !important; flex-shrink: 0 !important; }
+      .dc-gh-search-btn .dc-gh-search-lbl,
+      .dc-gh-burger .dc-gh-burger-label {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        min-width: 0 !important;
+      }
     }
 
     /* Slide-down mobile panel — ФОРСУЄМО ВЕРТИКАЛЬНУ КОЛОНКУ через display:flex column.
@@ -428,29 +447,13 @@
     const burger = header.querySelector('.dc-gh-burger');
     const burgerIcon = burger.querySelector('.dc-gh-burger-icon');
     const burgerLabel = burger.querySelector('.dc-gh-burger-label');
-    // Адаптивний лейбл: довге слово на широких екранах, коротке — на вузьких
-    function isNarrowViewport() { return window.innerWidth <= 460; }
+    // ПОВНІ лейбли завжди — кнопки розширюються щоб заповнити ширину
     function setBurgerState(open) {
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (burgerIcon) burgerIcon.textContent = open ? '×' : '≡';
-      if (burgerLabel) {
-        const narrow = isNarrowViewport();
-        burgerLabel.textContent = open
-          ? (narrow ? 'Закрити' : 'Закрити')
-          : (narrow ? 'Системи' : 'Усі системи');
-      }
+      if (burgerLabel) burgerLabel.textContent = open ? 'Закрити' : 'Усі системи';
     }
-    // Лейбл пошуку теж адаптивний
-    function updateSearchLabel() {
-      const lbl = header.querySelector('.dc-gh-search-lbl');
-      if (lbl) lbl.textContent = isNarrowViewport() ? 'Пошук' : 'Глобальний пошук';
-    }
-    updateSearchLabel();
     setBurgerState(false);  // initial state
-    window.addEventListener('resize', () => {
-      updateSearchLabel();
-      setBurgerState(panel.classList.contains('show'));
-    });
     burger.addEventListener('click', () => {
       const open = panel.classList.toggle('show');
       setBurgerState(open);
