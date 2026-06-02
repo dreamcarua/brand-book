@@ -24,12 +24,14 @@
 
   const BRAND_BASE = 'https://brand.dreamcar.ua';
   const TEAM_BASE  = 'https://team.dreamcar.ua';
+  const DASHBOARD_BASE = 'https://dashboard.dreamcar.ua';
   const LOGO_SVG   = BRAND_BASE + '/assets/logo/dreamcar-racing-plate.svg';
 
   const host = window.location.hostname;
   const path = window.location.pathname;
   const isBrand = host.includes('brand.') || host.includes('dreamcarua.github.io/brand-book');
   const isTeam  = host.includes('team.')  || host.includes('dreamcarua.github.io/dreamcar-team');
+  const isDashboard = host.includes('dashboard.');
 
   // ---- Меню ----
   const LINKS = [
@@ -80,6 +82,14 @@
       icon: '📊',
       url: TEAM_BASE + '/survey.html',
       active: isTeam && path.includes('survey'),
+    },
+    {
+      key: 'dashboard',
+      label: 'ДАШБОРД РЕЗУЛЬТАТІВ',
+      short: 'ДАШБОРД',
+      icon: '📊',
+      url: DASHBOARD_BASE + '/',
+      active: isDashboard,
     },
   ];
 
