@@ -44,9 +44,9 @@
       active: isBrand,
     },
     {
-      key: 'hq',
-      label: 'HQ · SMM',
-      short: 'HQ',
+      key: 'smm',
+      label: 'SMM',
+      short: 'SMM',
       icon: '🎯',
       url: TEAM_BASE + '/hq/',
       active: isTeam && path.startsWith('/hq'),
