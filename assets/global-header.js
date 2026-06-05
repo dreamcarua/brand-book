@@ -49,17 +49,15 @@
       short: 'SMM',
       icon: '🎯',
       url: TEAM_BASE + '/hq/',
-      // active тільки коли на /hq/ і НЕ у #projects (бо там окремий tab)
-      active: isTeam && path.startsWith('/hq') && (typeof window !== 'undefined' ? window.location.hash !== '#projects' && !window.location.hash.startsWith('#project/') : true),
+      active: isTeam && path.startsWith('/hq'),
     },
     {
       key: 'projects',
       label: 'ПРОЄКТИ',
       short: 'PROJECTS',
       icon: '📁',
-      url: TEAM_BASE + '/hq/#projects',
-      // active коли на /hq/#projects або /hq/#project/<id>
-      active: isTeam && path.startsWith('/hq') && (typeof window !== 'undefined' ? (window.location.hash === '#projects' || window.location.hash.startsWith('#project/')) : false),
+      url: TEAM_BASE + '/projects/',
+      active: isTeam && path.startsWith('/projects'),
     },
     {
       key: 'tasks',
