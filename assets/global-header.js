@@ -411,6 +411,79 @@
 
     /* Print: hide header */
     @media print { .dc-gh, .dc-gh-panel { display: none !important; } body { padding-top: 0 !important; } }
+
+    /* === MODAL OVERLAY OVERRIDE — щоб global header не перекривав модал === */
+    /* SMM/Retention/Tasks/Projects модалки можуть мати різні class names. Покриваємо все: */
+    .modal-backdrop,
+    .modal-overlay,
+    .dc-modal-backdrop,
+    .dialog-overlay,
+    .overlay,
+    [class*="modal-backdrop"],
+    [class*="modal-overlay"] {
+      z-index: 10000 !important;
+    }
+    /* Сам модал теж піднімаємо щоб не йшов «під» header при будь-якому розкладі */
+    .modal,
+    .dc-modal,
+    .dialog,
+    [class*="modal-content"] {
+      z-index: 10001 !important;
+    }
+    /* Гарантуємо що модал не вилазить ПІД global header — додаємо padding-top */
+    .modal-backdrop,
+    .modal-overlay,
+    .dc-modal-backdrop,
+    .dialog-overlay {
+      padding-top: calc(var(--dc-header-h) + 12px) !important;
+    }
+    @media (max-width: 920px) {
+      .modal-backdrop,
+      .modal-overlay,
+      .dc-modal-backdrop,
+      .dialog-overlay {
+        padding-top: calc(var(--dc-header-h-mobile) + 8px) !important;
+      }
+    }
+
+    /* === COMPACT TABLES — щоб не було величезних пустот між рядками === */
+    /* Уніфіковано: щільніше padding, акуратні розмір/висота рядків, числові колонки right-aligned */
+    table.dc-table,
+    table.data-table,
+    table.compact,
+    .table-wrap table,
+    .dashboard table,
+    .grid-table {
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      font-size: 13px !important;
+      line-height: 1.35 !important;
+    }
+    table.dc-table th, table.dc-table td,
+    table.data-table th, table.data-table td,
+    table.compact th, table.compact td,
+    .table-wrap th, .table-wrap td,
+    .dashboard table th, .dashboard table td,
+    .grid-table th, .grid-table td {
+      padding: 8px 10px !important;
+      height: auto !important;
+      vertical-align: middle !important;
+    }
+    table.dc-table th, table.data-table th,
+    table.compact th, .table-wrap th,
+    .dashboard table th, .grid-table th {
+      font-size: 10px !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+    }
+    /* Числові колонки (data-num) — right-align */
+    table.dc-table td[data-num], table.dc-table th[data-num],
+    table.data-table td.num, table.data-table th.num,
+    table.compact td.num, table.compact th.num,
+    .num-col {
+      text-align: right !important;
+      font-variant-numeric: tabular-nums !important;
+    }
   `;
 
   const style = document.createElement('style');
