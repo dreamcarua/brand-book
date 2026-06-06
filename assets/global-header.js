@@ -68,6 +68,14 @@
       active: isTeam && path.startsWith('/tasks'),
     },
     {
+      key: 'retention',
+      label: 'РЕТЕНШН',
+      short: 'РЕТЕНШН',
+      icon: '📬',
+      url: TEAM_BASE + '/retention/',
+      active: isTeam && path.startsWith('/retention'),
+    },
+    {
       key: 'onboard',
       label: 'ONBOARDING',
       short: 'ONBOARD',
