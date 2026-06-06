@@ -427,7 +427,7 @@
     .modal,
     .dc-modal,
     .dialog,
-    [class*="modal-content"] {
+    .modal-content {
       z-index: 10001 !important;
     }
     /* Гарантуємо що модал не вилазить ПІД global header — додаємо padding-top */
