@@ -115,6 +115,10 @@
       --dc-header-h: 56px;
       --dc-header-h-mobile: 54px;
       --dc-z: 999;
+      /* === DreamCar Brand Tokens (Sprint 1 UX — cross-system uniformity) === */
+      --dc-red: #E30613;           /* primary brand red (з brand book) */
+      --dc-red-hover: #ff1a2b;     /* hover state */
+      --dc-red-active: #b8050f;    /* pressed/active state */
     }
     body { padding-top: var(--dc-header-h); }
     @media (max-width: 720px) { body { padding-top: var(--dc-header-h-mobile); } }
