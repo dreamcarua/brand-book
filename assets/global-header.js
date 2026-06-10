@@ -33,10 +33,10 @@
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
-    { key: 'retention', label: 'РЕТЕНШН',     short: 'РЕТЕНШН',   icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
-    { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARD',   icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
+    { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
+    { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
     { key: 'org',       label: 'ORG',         short: 'ORG',       icon: '🌐', url: TEAM_BASE + '/orgchart.html',      active: isTeam && (path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
-    { key: 'dashboard', label: 'ДАШБОРД РЕЗУЛЬТАТІВ', short: 'ДАШБОРД', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
+    { key: 'dashboard', label: 'DASHBOARD',   short: 'DASHBOARD', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
   ];
 
   const css = `
