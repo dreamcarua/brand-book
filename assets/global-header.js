@@ -26,19 +26,16 @@
   const isTeam  = host.includes('team.')  || host.includes('dreamcarua.github.io/dreamcar-team');
   const isDashboard = host.includes('dashboard.');
 
+  // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→РЕТЕНШН→ONBOARD→ORG→ДАШБОРД.
+  // Прибрав НОВИНИ/РЕГЛ/SURVEY з топ-меню (їх preview-блоки тепер живуть на /orgchart.html).
   const LINKS = [
     { key: 'brand',     label: 'BRAND BOOK',  short: 'BRAND',     icon: '📘', url: BRAND_BASE + '/',                  active: isBrand },
-    { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
+    { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'retention', label: 'РЕТЕНШН',     short: 'РЕТЕНШН',   icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
-    // #272 Новини (10.06.2026 Давид) — badge unread додається динамічно через JS
-    { key: 'news',      label: 'НОВИНИ',      short: 'НОВИНИ',    icon: '📢', url: TEAM_BASE + '/news/',              active: isTeam && path.startsWith('/news') },
-    // #271 Регламенти (10.06.2026 Давид)
-    { key: 'reg',       label: 'РЕГЛАМЕНТИ',  short: 'РЕГЛ',      icon: '📋', url: TEAM_BASE + '/regulations/',       active: isTeam && path.startsWith('/regulations') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARD',   icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
-    { key: 'org',       label: 'ORG-CHART',   short: 'ORG',       icon: '🌐', url: TEAM_BASE + '/orgchart.html',      active: isTeam && path.includes('orgchart') },
-    { key: 'survey',    label: 'SURVEY 2026', short: 'SURVEY',    icon: '📊', url: TEAM_BASE + '/survey.html',        active: isTeam && path.includes('survey') },
+    { key: 'org',       label: 'ORG',         short: 'ORG',       icon: '🌐', url: TEAM_BASE + '/orgchart.html',      active: isTeam && (path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
     { key: 'dashboard', label: 'ДАШБОРД РЕЗУЛЬТАТІВ', short: 'ДАШБОРД', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
   ];
 
