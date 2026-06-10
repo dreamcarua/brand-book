@@ -35,7 +35,7 @@
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
-    { key: 'org',       label: 'ORG',         short: 'ORG',       icon: '🌐', url: TEAM_BASE + '/orgchart.html',      active: isTeam && (path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
+    { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/orgchart.html',      active: isTeam && (path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
     { key: 'dashboard', label: 'DASHBOARD',   short: 'DASHBOARD', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
   ];
 
