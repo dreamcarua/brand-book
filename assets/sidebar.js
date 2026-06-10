@@ -122,7 +122,7 @@
       { name: 'Tasks (Kanban)',                  url: TEAM_ORIGIN + '/tasks/',      external: true, aliases: 'tasks завдання задачі kanban канбан to-do todo task manager' },
       { name: 'HQ · Стіл SMM',                   url: TEAM_ORIGIN + '/hq/',         external: true, aliases: 'hq calendar approvals library smm стіл календар погодження бібліотека' },
       { name: 'Onboarding',                      url: TEAM_ORIGIN + '/onboarding.html', external: true, aliases: 'onboarding онбординг новачки team' },
-      { name: 'Orgchart',                        url: TEAM_ORIGIN + '/orgchart.html',   external: true, aliases: 'orgchart структура команда команди roles ролі raci' },
+      { name: 'INFO',                            url: TEAM_ORIGIN + '/info.html',       external: true, aliases: 'info orgchart структура команда команди roles ролі raci новини регламенти audience' },
       { name: 'Survey 2026',                     url: TEAM_ORIGIN + '/survey.html',     external: true, aliases: 'survey опитування дашборд analytics 1302' },
       { name: 'Team Hub →',                      url: TEAM_ORIGIN + '/',                external: true, aliases: 'team hub home всі ресурси' },
     ],

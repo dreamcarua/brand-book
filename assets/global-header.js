@@ -27,7 +27,7 @@
   const isDashboard = host.includes('dashboard.');
 
   // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→РЕТЕНШН→ONBOARD→ORG→ДАШБОРД.
-  // Прибрав НОВИНИ/РЕГЛ/SURVEY з топ-меню (їх preview-блоки тепер живуть на /orgchart.html).
+  // Прибрав НОВИНИ/РЕГЛ/SURVEY з топ-меню (їх preview-блоки тепер живуть на /info.html).
   const LINKS = [
     { key: 'brand',     label: 'BRAND BOOK',  short: 'BRAND',     icon: '📘', url: BRAND_BASE + '/',                  active: isBrand },
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
@@ -35,7 +35,7 @@
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
-    { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/orgchart.html',      active: isTeam && (path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
+    { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/info.html',          active: isTeam && (path.includes('info.html') || path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
     { key: 'dashboard', label: 'DASHBOARD',   short: 'DASHBOARD', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
   ];
 
@@ -461,7 +461,7 @@
       (r.tasks || []).forEach(t => { const pri = TASK_LABELS[t.priority] || t.priority || ''; items.push({ icon: '✅', title: t.title || '(без назви)', meta: `Задача · ${pri ? pri + ' · ' : ''}${t.status || ''}`, url: `${TEAM}/tasks/#task/${t.id}` }); });
       (r.creatives || []).forEach(c => items.push({ icon: c.kind === 'video' ? '🎬' : '🖼', title: c.filename || '(без імені)', meta: `Креатив · ${c.kind || ''}${c.tags ? ' · ' + c.tags : ''}`, url: `${TEAM}/hq/#library` }));
       (r.launches || []).forEach(l => items.push({ icon: '🚀', title: l.title || l.slug || '(без назви)', meta: `Запуск · ${l.status || ''}`, url: `${TEAM}/hq/#launches` }));
-      (r.users || []).forEach(u => items.push({ icon: '👤', title: u.name || u.email || '(без імені)', meta: `Користувач · ${u.role || ''}${u.email ? ' · ' + u.email : ''}`, url: `${TEAM}/orgchart.html` }));
+      (r.users || []).forEach(u => items.push({ icon: '👤', title: u.name || u.email || '(без імені)', meta: `Користувач · ${u.role || ''}${u.email ? ' · ' + u.email : ''}`, url: `${TEAM}/info.html` }));
       if (!items.length) { section.style.display = 'none'; return; }
       section.style.display = 'block';
       container.innerHTML = items.map(it => `
