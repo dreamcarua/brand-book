@@ -176,6 +176,12 @@
     table.dc-table th, table.dc-table td, table.data-table th, table.data-table td, table.compact th, table.compact td, .table-wrap th, .table-wrap td, .dashboard table th, .dashboard table td, .grid-table th, .grid-table td { padding: 8px 10px !important; height: auto !important; vertical-align: middle !important; }
     table.dc-table th, table.data-table th, table.compact th, .table-wrap th, .dashboard table th, .grid-table th { font-size: 10px !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; }
     table.dc-table td[data-num], table.dc-table th[data-num], table.data-table td.num, table.data-table th.num, table.compact td.num, table.compact th.num, .num-col { text-align: right !important; font-variant-numeric: tabular-nums !important; }
+
+    /* #audit Phase 7 (11.06.2026): global :focus-visible — a11y keyboard navigation */
+    *:focus-visible { outline: 2px solid #E30613 !important; outline-offset: 2px !important; border-radius: 2px; }
+    button:focus-visible, a:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible { outline: 2px solid #E30613 !important; outline-offset: 3px !important; box-shadow: 0 0 0 4px rgba(227,6,19,0.15) !important; }
+    /* Усуваємо суцільний outline на mouse click — focus-visible виключно для keyboard */
+    *:focus:not(:focus-visible) { outline: none !important; }
   `;
 
   const style = document.createElement('style');
