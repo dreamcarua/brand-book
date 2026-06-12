@@ -1,9 +1,9 @@
 // =====================================================================
-// DreamCar Global Header v1.1 — #271 + #272 Регламенти + Новини
+// DreamCar Global Header v1.2 — #345 + INVENTORY tab
 // =====================================================================
 // Універсальний sticky-header для:
 //   • brand.dreamcar.ua (брендбук, всі розділи)
-//   • team.dreamcar.ua (Hub, Tasks, HQ, Onboarding, Orgchart, Survey, Regulations, News)
+//   • team.dreamcar.ua (Hub, Tasks, HQ, Onboarding, Orgchart, Survey, Regulations, News, Inventory)
 //
 // Підключення:
 //   <script src="https://brand.dreamcar.ua/assets/global-header.js" defer></script>
@@ -26,14 +26,15 @@
   const isTeam  = host.includes('team.')  || host.includes('dreamcarua.github.io/dreamcar-team');
   const isDashboard = host.includes('dashboard.');
 
-  // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→РЕТЕНШН→ONBOARD→ORG→ДАШБОРД.
-  // Прибрав НОВИНИ/РЕГЛ/SURVEY з топ-меню (їх preview-блоки тепер живуть на /info.html).
+  // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→RETENTION→INVENTORY→ONBOARDING→INFO→DASHBOARD.
+  // #345 (12.06.2026): додано INVENTORY (Склад) між RETENTION і ONBOARDING.
   const LINKS = [
     { key: 'brand',     label: 'BRAND BOOK',  short: 'BRAND',     icon: '📘', url: BRAND_BASE + '/',                  active: isBrand },
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
+    { key: 'inventory', label: 'СКЛАД',       short: 'СКЛАД',     icon: '📦', url: TEAM_BASE + '/inventory/',         active: isTeam && path.startsWith('/inventory') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
     { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/info.html',          active: isTeam && (path.includes('info.html') || path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
     { key: 'dashboard', label: 'DASHBOARD',   short: 'DASHBOARD', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
@@ -81,7 +82,6 @@
     .dc-gh-nav a:hover { color: #fff; border-color: #E30613; background: rgba(227,6,19,0.08); }
     .dc-gh-nav a.active { color: #E30613; border-color: #E30613; background: rgba(227,6,19,0.12); font-weight: 700; }
     .dc-gh-nav a .icon { display: none; }
-    /* #272 News badge */
     .dc-gh-nav a .dc-gh-badge,
     .dc-gh-panel a .dc-gh-badge {
       display: inline-block; min-width: 16px; padding: 1px 5px; margin-left: 6px;
@@ -177,10 +177,8 @@
     table.dc-table th, table.data-table th, table.compact th, .table-wrap th, .dashboard table th, .grid-table th { font-size: 10px !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; }
     table.dc-table td[data-num], table.dc-table th[data-num], table.data-table td.num, table.data-table th.num, table.compact td.num, table.compact th.num, .num-col { text-align: right !important; font-variant-numeric: tabular-nums !important; }
 
-    /* #audit Phase 7 (11.06.2026): global :focus-visible — a11y keyboard navigation */
     *:focus-visible { outline: 2px solid #E30613 !important; outline-offset: 2px !important; border-radius: 2px; }
     button:focus-visible, a:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible { outline: 2px solid #E30613 !important; outline-offset: 3px !important; box-shadow: 0 0 0 4px rgba(227,6,19,0.15) !important; }
-    /* Усуваємо суцільний outline на mouse click — focus-visible виключно для keyboard */
     *:focus:not(:focus-visible) { outline: none !important; }
   `;
 
@@ -203,12 +201,9 @@
     }).join('');
   }
 
-  // #272 News unread badge — динамічно через RPC team_news_unread_count
-  // Якщо є supabase у window — підтягуємо badge
   async function updateNewsBadge() {
     if (!isTeam) return;
     try {
-      // Чекаємо поки window.supabase з'явиться (HQ/Tasks/Retention)
       let sb = null;
       for (let i = 0; i < 20 && !sb; i++) {
         sb = window.supabase || null;
@@ -281,7 +276,6 @@
       if (e.key === 'Escape' && panel.classList.contains('show')) { panel.classList.remove('show'); setBurgerState(false); }
     });
 
-    // #272 unread badge
     updateNewsBadge();
 
     const searchBtn = header.querySelector('.dc-gh-search-btn');
