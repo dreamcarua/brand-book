@@ -1,9 +1,9 @@
 // =====================================================================
-// DreamCar Global Header v1.2 — #345 + INVENTORY tab
+// DreamCar Global Header v1.3 — #352 INVENTORY removed from top menu
 // =====================================================================
 // Універсальний sticky-header для:
 //   • brand.dreamcar.ua (брендбук, всі розділи)
-//   • team.dreamcar.ua (Hub, Tasks, HQ, Onboarding, Orgchart, Survey, Regulations, News, Inventory)
+//   • team.dreamcar.ua (Hub, Tasks, HQ, Onboarding, Orgchart, Survey, Regulations, News)
 //
 // Підключення:
 //   <script src="https://brand.dreamcar.ua/assets/global-header.js" defer></script>
@@ -26,17 +26,16 @@
   const isTeam  = host.includes('team.')  || host.includes('dreamcarua.github.io/dreamcar-team');
   const isDashboard = host.includes('dashboard.');
 
-  // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→RETENTION→INVENTORY→ONBOARDING→INFO→DASHBOARD.
-  // #345 (12.06.2026): додано INVENTORY (Склад) між RETENTION і ONBOARDING.
+  // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→RETENTION→ONBOARDING→INFO→DASHBOARD.
+  // #352 (12.06.2026): INVENTORY прибрано з top меню — лишається лише блок на /info.html.
   const LINKS = [
     { key: 'brand',     label: 'BRAND BOOK',  short: 'BRAND',     icon: '📘', url: BRAND_BASE + '/',                  active: isBrand },
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
     { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
-    { key: 'inventory', label: 'СКЛАД',       short: 'СКЛАД',     icon: '📦', url: TEAM_BASE + '/inventory/',         active: isTeam && path.startsWith('/inventory') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
-    { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/info.html',          active: isTeam && (path.includes('info.html') || path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.includes('survey')) },
+    { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/info.html',          active: isTeam && (path.includes('info.html') || path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.startsWith('/inventory') || path.includes('survey')) },
     { key: 'dashboard', label: 'DASHBOARD',   short: 'DASHBOARD', icon: '📊', url: DASHBOARD_BASE + '/', active: isDashboard },
   ];
 
