@@ -13,7 +13,7 @@ from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from pathlib import Path
 
-ROOT = Path("/sessions/happy-wonderful-einstein/mnt/DreamCar.AI/dreamcar-brand-book")
+ROOT = Path(__file__).resolve().parent.parent
 WOFF = ROOT / "tmp-fonts/package/files/archivo-black-latin-400-normal.woff"
 LOGO = ROOT / "assets/logo"
 

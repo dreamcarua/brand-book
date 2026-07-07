@@ -2,7 +2,7 @@
   "id": "/?source=pwa",
   "name": "DreamCar Brand Book",
   "short_name": "DC Brand",
-  "description": "DreamCar Brand Book v3.9.1 — повне керівництво з бренду з інтерактивними інструментами та генератором постів.",
+  "description": "DreamCar Brand Book v4.0 — повне керівництво з бренду з інтерактивними інструментами та генератором постів.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",

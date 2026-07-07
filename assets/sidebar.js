@@ -250,7 +250,7 @@
     sb.innerHTML = `
 <a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
 <span class="brand-tag">BRAND BOOK · v4.0</span>
-<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати по всьому брендбуку…" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
+<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Пошук по брендбуку…  ( / або ⌘K )" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
 ${groups}
 <div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="${upPrefix}print.html">Завантажити повний PDF</a></nav></div>
@@ -382,6 +382,32 @@ ${groups}
       document.body.classList.remove('sidebar-open');
     }
   });
+
+  // ---- Keyboard UX: "/" або Cmd/Ctrl+K → пошук; Esc → закрити сайдбар ----
+  document.addEventListener('keydown', (e) => {
+    const ae = document.activeElement;
+    const typing = ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.isContentEditable);
+    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      const inp = document.getElementById('sb-search');
+      if (inp) { e.preventDefault(); document.body.classList.add('sidebar-open'); inp.focus(); inp.select(); }
+    } else if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+      document.body.classList.remove('sidebar-open');
+    }
+  });
+
+  // ---- Prefetch сусідніх розділів (prev/next) — миттєва навігація ----
+  function prefetchNeighbors() {
+    try {
+      document.querySelectorAll('.section-page-nav a[href]').forEach(a => {
+        const href = a.getAttribute('href') || '';
+        if (!href || href.startsWith('http')) return;
+        const l = document.createElement('link');
+        l.rel = 'prefetch'; l.href = a.href;
+        document.head.appendChild(l);
+      });
+    } catch (_) {}
+  }
+  prefetchNeighbors();
 
   injectMetaIfMissing();
 
