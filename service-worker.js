@@ -1,8 +1,8 @@
-// DreamCar Brand Book — Service Worker v15
+// DreamCar Brand Book — Service Worker v17
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
 // v15: deep global search — Edge Function global-search + Жива база section у search overlay
 
-const CACHE = 'dreamcar-brand-v16';
+const CACHE = 'dreamcar-brand-v17';
 const PRECACHE = [
   '/',
   '/index.html',

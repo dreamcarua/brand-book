@@ -37,7 +37,7 @@ def extract(sid):
     body = re.sub(r'<script\b.*?</script>', '', body, flags=re.S)
     body = body.replace('href="../assets/','href="assets/').replace('src="../assets/','src="assets/')
     body = body.replace('href="../index.html"','href="index.html"').replace('href="../','href="').replace('src="../','src="')
-    body = re.sub(r'href="([a-z0-9-]+\.html)(#[^"]*)?"', r'href="sections/\1\2"', body)
+    body = re.sub(r'href="(?!index\.html|print\.html)([a-z0-9-]+\.html)(#[^"]*)?"', r'href="sections/\1\2"', body)
     if f'id="{sid}"' not in body:
         body = body.replace('<section', f'<section id="{sid}"', 1)
     return body.strip()
