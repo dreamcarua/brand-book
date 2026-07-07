@@ -1,8 +1,10 @@
 # DreamCar Brand Book v4.0 «Etalon»
 
+[![Brand Lint](https://github.com/dreamcarua/brand-book/actions/workflows/brand-lint.yml/badge.svg)](https://github.com/dreamcarua/brand-book/actions/workflows/brand-lint.yml)
+
 > Мрія за ціною чашки кави.
 
-Операційна система бренду DreamCar — українського авто-клубу з 10-річною історією (17 авто вручено, 500K+ спільнота).
+Операційна система бренду DreamCar — українського авто-клубу з 10-річною історією (19 авто вручено, 500K+ спільнота).
 
 🌐 **Live:** https://brand.dreamcar.ua/
 
