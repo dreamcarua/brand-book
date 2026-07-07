@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="supported-color-schemes" content="dark">
+<title>11B Legal-safe лексикон · DreamCar Brand Book</title>
+<meta name="description" content="DreamCar Brand Book — 11B Legal-safe лексикон: словник замін, юридичні ризики, Voice Linter.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .legal-wrap { max-width: 1080px; padding: 0; }
+  h1 { font-family: 'Archivo Black', sans-serif; font-size: 42px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-family: 'Oswald', sans-serif; font-size: 28px; margin: 48px 0 16px; color: #fff; }
+  h3 { font-family: 'Oswald', sans-serif; font-size: 20px; margin: 24px 0 12px; color: #fff; }
+  .sub { color: var(--ash); font-size: 14px; margin-bottom: 32px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+  .warn-card { background: rgba(204,0,0,0.08); border: 1px solid rgba(204,0,0,0.3); border-left: 4px solid var(--red); border-radius: 8px; padding: 20px 24px; margin-bottom: 24px; }
+  .warn-card h3 { margin-top: 0; color: #ff6577; font-size: 16px; }
+  .warn-card p { margin: 8px 0 0; color: #ddd; font-size: 14px; }
+
+  .table-wrap { background: var(--coal); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-bottom: 24px; }
+  table.lex { width: 100%; border-collapse: collapse; }
+  table.lex th { background: #1a1a1a; padding: 14px 18px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ash); border-bottom: 1px solid var(--line); }
+  table.lex td { padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
+  table.lex tr:last-child td { border-bottom: none; }
+  table.lex .bad { color: #ff6577; font-weight: 600; font-family: 'JetBrains Mono', monospace; text-decoration: line-through; opacity: 0.85; }
+  table.lex .good { color: #4ade80; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+  table.lex .why { color: #aaa; font-size: 13px; }
+  table.lex .arrow { color: #555; font-size: 18px; text-align: center; }
+
+  .examples { display: grid; gap: 16px; margin: 24px 0 32px; }
+  .ex-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ex-card { background: var(--coal); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; }
+  .ex-card.bad { border-left: 4px solid var(--red); }
+  .ex-card.good { border-left: 4px solid #4ade80; }
+  .ex-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+  .ex-card.bad .label { color: #ff6577; }
+  .ex-card.good .label { color: #4ade80; }
+  .ex-card .ex-text { font-size: 13px; color: #ddd; line-height: 1.5; }
+  .ex-card .ex-text mark.bad { background: rgba(204,0,0,0.25); color: #ff6577; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .ex-card .ex-text mark.good { background: rgba(74,222,128,0.2); color: #4ade80; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+
+  .checklist { background: var(--coal); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .checklist h3 { margin-top: 0; }
+  .checklist ul { list-style: none; padding: 0; margin: 0; }
+  .checklist li { padding: 10px 0 10px 32px; position: relative; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '☐'; position: absolute; left: 0; top: 10px; color: #4ade80; font-size: 18px; font-weight: bold; }
+
+  .voice-linter { background: var(--coal); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .voice-linter textarea { width: 100%; min-height: 140px; background: var(--black); border: 1px solid var(--line); border-radius: 8px; color: #fff; padding: 14px 16px; font-family: Manrope; font-size: 14px; resize: vertical; }
+  .voice-linter textarea:focus { outline: none; border-color: var(--red); }
+  .voice-linter .result { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 13px; display: none; }
+  .voice-linter .result.show { display: block; }
+  .voice-linter .result.ok { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); color: #4ade80; }
+  .voice-linter .result.warn { background: rgba(204,0,0,0.1); border: 1px solid rgba(204,0,0,0.3); color: #ff6577; }
+  .voice-linter .result mark { background: rgba(204,0,0,0.3); color: #ff9999; padding: 1px 4px; border-radius: 3px; }
+
+  @media (max-width: 768px) {
+    .ex-row { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; }
+    
+  }
+</style>
+</head>
+<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+
+<header class="topbar">
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <div class="topbar-actions">
+    <a href="../print.html" class="topbar-pdf">PDF</a>
+    <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')">МЕНЮ</button>
+  </div>
+</header>
+
+<aside class="sidebar" id="sb"></aside>
+
+<main class="main" id="main">
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">11B · Legal-safe лексикон</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()">PDF</button></div>
+<section id="legal">
+<div class="legal-wrap">
+  <div class="s-num">/// 11B — LEGAL-SAFE ЛЕКСИКОН</div>
+  <h2 class="s-title">СЛОВА, ЩО КОШТУЮТЬ <span class="red">750 000 ₴</span></h2>
+  <p style="color:#aaa;font-size:15px;margin-bottom:32px;">Що НЕ говорити у комунікаціях DreamCar — і що сказати замість. Превентивний інструмент для команди.</p>
+
+  <div class="warn-card">
+    <h3>🔴 КОНТЕКСТ — чому це важливо</h3>
+    <p>DreamCar — це <b>промоакція до сервісу токенів ai.dreamcar.ua</b>, а НЕ лотерея чи розіграш. У нас немає (поки) ліцензії на проведення лотерейної діяльності в Україні. Вживання слів-маркерів азартних розваг — <b>прямий юридичний ризик</b> (штраф КРАІЛ до 750 000 ₴ + блокування реклами Meta/Google за ToS).</p>
+    <p style="margin-top:12px;">Якщо сумніваєшся щодо слова — використовуй Voice Linter нижче або питай у Вадима.</p>
+  </div>
+
+  <h2>📚 Словник замін</h2>
+  <div class="table-wrap">
+    <table class="lex">
+      <thead>
+        <tr><th style="width:25%">❌ Не вживай</th><th style="width:8%"></th><th style="width:25%">✅ Заміна</th><th>Чому</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="bad">розіграш</td><td class="arrow">→</td><td class="good">промоакція</td><td class="why">Маркер лотерейної діяльності</td></tr>
+        <tr><td class="bad">лотерея</td><td class="arrow">→</td><td class="good">промо / акція</td><td class="why">Прямий юр-термін, потребує ліцензії КРАІЛ</td></tr>
+        <tr><td class="bad">виграй / виграти</td><td class="arrow">→</td><td class="good">отримай / стати власником</td><td class="why">«Виграти» = lottery semantics</td></tr>
+        <tr><td class="bad">переможець</td><td class="arrow">→</td><td class="good">власник / учасник-фіналіст</td><td class="why">Перемога ⇒ азартний контекст</td></tr>
+        <tr><td class="bad">шанс</td><td class="arrow">→</td><td class="good">можливість</td><td class="why">«Шанс виграти» = lottery copy</td></tr>
+        <tr><td class="bad">квиток / лотерейка</td><td class="arrow">→</td><td class="good">токен / номер участі</td><td class="why">Квиток ⇒ ставка</td></tr>
+        <tr><td class="bad">азарт / гра / fortune</td><td class="arrow">→</td><td class="good">мрія / можливість / рішучість</td><td class="why">Gambling-маркер</td></tr>
+        <tr><td class="bad">рандомайзер у розіграші</td><td class="arrow">→</td><td class="good">прозоре визначення власника</td><td class="why">«Розіграш» — навіть з прозорим механізмом</td></tr>
+        <tr><td class="bad">«ВИГРАЙ AUDI E-TRON»</td><td class="arrow">→</td><td class="good">«ОТРИМАЙ AUDI E-TRON»</td><td class="why">Hero copy на лендінгах — найкритичніше</td></tr>
+        <tr><td class="bad">«фарт» / «удача»</td><td class="arrow">→</td><td class="good">«крок» / «дія»</td><td class="why">DreamCar — про дію, не випадок</td></tr>
+        <tr><td class="bad">«ставка»</td><td class="arrow">→</td><td class="good">«внесок» / «доступ»</td><td class="why">Ставка ⇒ азарт</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>📝 Контекстні приклади</h2>
+
+  <h3>🎯 Лендінг / hero copy</h3>
+  <div class="ex-row">
+    <div class="ex-card bad">
+      <div class="label">❌ ТАК НЕ МОЖНА</div>
+      <div class="ex-text">«<mark class="bad">Розіграш</mark> Audi e-tron 2026 — <mark class="bad">виграй</mark> електромобіль! <mark class="bad">Шанс</mark> для кожного <mark class="bad">переможця</mark>.»</div>
+    </div>
+    <div class="ex-card good">
+      <div class="label">✅ ТАК МОЖНА</div>
+      <div class="ex-text">«<mark class="good">Промоакція</mark> Audi e-tron 2026 — <mark class="good">отримай</mark> електромобіль! <mark class="good">Можливість</mark> для кожного <mark class="good">учасника</mark>.»</div>
+    </div>
+  </div>
+
+  <h3>📱 Telegram / Instagram пост</h3>
+  <div class="ex-row">
+    <div class="ex-card bad">
+      <div class="label">❌ ТАК НЕ МОЖНА</div>
+      <div class="ex-text">«🔥 <mark class="bad">Виграй</mark> авто мрії! Всі учасники <mark class="bad">розіграшу</mark> отримують <mark class="bad">шанс</mark> 1 з 5000. <mark class="bad">Хто буде переможцем</mark>? Дізнаємось 31.05.»</div>
+    </div>
+    <div class="ex-card good">
+      <div class="label">✅ ТАК МОЖНА</div>
+      <div class="ex-text">«🔥 <mark class="good">Отримай</mark> авто мрії! Учасники <mark class="good">промоакції</mark> отримують <mark class="good">можливість</mark> стати <mark class="good">власником</mark>. <mark class="good">Власника визначимо</mark> у live-трансляції 31.05.»</div>
+    </div>
+  </div>
+
+  <h3>📧 Email-розсилка</h3>
+  <div class="ex-row">
+    <div class="ex-card bad">
+      <div class="label">❌ ТАК НЕ МОЖНА</div>
+      <div class="ex-text">«Привіт! Сьогодні стартує новий <mark class="bad">розіграш</mark> — <mark class="bad">виграй</mark> Audi e-tron #018. <mark class="bad">Купуй квиток</mark> у нашому сервісі — більше квитків = більше <mark class="bad">шансів</mark> бути <mark class="bad">переможцем</mark>!»</div>
+    </div>
+    <div class="ex-card good">
+      <div class="label">✅ ТАК МОЖНА</div>
+      <div class="ex-text">«Доброго дня! Сьогодні стартує нова <mark class="good">промоакція</mark> — <mark class="good">долучайся</mark> щоб стати <mark class="good">власником</mark> Audi e-tron #018. <mark class="good">Бери токен</mark> у нашому сервісі — більше токенів = більше <mark class="good">можливостей</mark> бути <mark class="good">учасником-фіналістом</mark>!»</div>
+    </div>
+  </div>
+
+  <h3>💬 Опис тарифу / pricing card</h3>
+  <div class="ex-row">
+    <div class="ex-card bad">
+      <div class="label">❌ ТАК НЕ МОЖНА</div>
+      <div class="ex-text">«5 ТОКЕНІВ = 5 <mark class="bad">шансів виграти</mark> авто. Серйозний <mark class="bad">квиток</mark> для <mark class="bad">фарту</mark>.»</div>
+    </div>
+    <div class="ex-card good">
+      <div class="label">✅ ТАК МОЖНА</div>
+      <div class="ex-text">«5 ТОКЕНІВ = 5 <mark class="good">номерів участі</mark>. Розширена <mark class="good">можливість</mark> для <mark class="good">впевнених у своїй меті</mark>.»</div>
+    </div>
+  </div>
+
+  <h2>🔍 Voice Linter — перевір свій текст</h2>
+  <div class="voice-linter">
+    <textarea id="lintInput" placeholder="Встав свій draft тексту сюди — підкреслю заборонені слова..."></textarea>
+    <div class="result" id="lintResult"></div>
+  </div>
+
+  <h2>✅ Чеклист перед публікацією</h2>
+  <div class="checklist">
+    <h3>Перш ніж натиснути «Опублікувати»:</h3>
+    <ul>
+      <li>Знайди у тексті слова «розіграш», «виграй», «переможець», «шанс», «квиток», «лотерея», «удача», «фарт»</li>
+      <li>Заміни кожне за словником вище (або через Voice Linter)</li>
+      <li>Перевір title page / meta description / og:title (SEO-індексується!)</li>
+      <li>Перевір CTA-кнопки («ВИГРАЙ» → «ОТРИМАЙ»)</li>
+      <li>Перевір image alt-тексти (часто пропускають)</li>
+      <li>Якщо це reels/відео — перевір субтитри + закадровий текст</li>
+      <li>Якщо це email — перевір subject line (потрапляє у inbox preview)</li>
+      <li>Footer/legal: завжди «Промоакція DreamCar #XXX триває з DD.MM до DD.MM. Організатор — ФОП [реквізити]» <span style="color: var(--ash); font-size: 11px;">(точні реквізити — у внутрішньому документі команди)</span></li>
+      <li>Не запускати рекламу Meta/Google поки текст не пройшов цей чеклист (їхні ToS блокують lottery copy)</li>
+    </ul>
+  </div>
+
+  <div class="warn-card" style="margin-top:48px;">
+    <h3>⚠️ Виняток</h3>
+    <p>Це обмеження стосується тільки <b>DreamCar</b>. Для snEco, Abris Art, Barpi — обмеження <b>не діє</b>, можна вживати «розіграш / приз / переможець» у промо снеків чи рукоділля (там немає юр-ризику, бо немає авто-призу та немає КРАІЛ-контексту).</p>
+  </div>
+
+</div>
+</section>
+<nav class="section-page-nav">
+<a href="voice.html" class="prev"><span class="nav-label">← 11 ПОПЕРЕДНІЙ</span><span class="nav-title">Голос і мова</span></a>
+<a href="content.html" class="next"><span class="nav-label">12 НАСТУПНИЙ →</span><span class="nav-title">Контент</span></a>
+</nav>
+</main>
+
+<script>
+(function(){
+  var BAD_WORDS = {
+    'розіграш': 'промоакція',
+    'розіграшу': 'промоакції',
+    'розіграші': 'промоакції',
+    'розіграшів': 'промоакцій',
+    'розігруємо': 'проводимо промоакцію',
+    'лотерея': 'промо',
+    'лотереї': 'промо',
+    'лотерейку': 'промо',
+    'виграй': 'отримай',
+    'виграти': 'отримати',
+    'виграш': 'отримання',
+    'виграє': 'отримає',
+    'переможець': 'власник',
+    'переможця': 'власника',
+    'переможці': 'власники',
+    'переможців': 'власників',
+    'шанс': 'можливість',
+    'шанси': 'можливості',
+    'шансів': 'можливостей',
+    'квиток': 'токен',
+    'квитка': 'токена',
+    'квитки': 'токени',
+    'квитків': 'токенів',
+    'азарт': 'мета',
+    'азартна': 'цілеспрямована',
+    'фарт': 'крок',
+    'удача': 'дія',
+    'удачі': 'дії',
+    'ставка': 'внесок',
+    'ставки': 'внески',
+    'ставку': 'внесок'
+  };
+
+  var input = document.getElementById('lintInput');
+  var result = document.getElementById('lintResult');
+  if (!input || !result) return;
+
+  function lint(){
+    var text = input.value;
+    if (!text.trim()) { result.className = 'result'; return; }
+    var found = [];
+    var highlighted = text;
+    var lower = text.toLowerCase();
+    Object.keys(BAD_WORDS).forEach(function(bad){
+      var re = new RegExp('\\b' + bad + '\\b', 'gi');
+      var matches = lower.match(re);
+      if (matches) {
+        matches.forEach(function(){
+          if (found.indexOf(bad) === -1) found.push(bad);
+        });
+        highlighted = highlighted.replace(new RegExp('\\b(' + bad + ')\\b', 'gi'), '<mark>$1</mark>');
+      }
+    });
+    if (found.length === 0) {
+      result.className = 'result show ok';
+      result.innerHTML = '✅ <b>Чисто!</b> Заборонених слів не знайдено. Можеш публікувати.';
+    } else {
+      result.className = 'result show warn';
+      var suggestions = found.map(function(w){
+        return '<b>' + w + '</b> → <span style="color:#4ade80">' + BAD_WORDS[w] + '</span>';
+      }).join(' · ');
+      result.innerHTML = '🔴 <b>Знайдено заборонені слова (' + found.length + '):</b><br><br>' +
+        suggestions + '<br><br>' +
+        '<div style="background:#0a0a12;padding:10px;border-radius:6px;color:#ddd;line-height:1.6;">' +
+        highlighted.replace(/\n/g, '<br>') + '</div>';
+    }
+  }
+
+  input.addEventListener('input', lint);
+})();
+</script>
+<script src="../assets/sidebar.js" defer></script>
+
+</body>
+</html>

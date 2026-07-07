@@ -13,7 +13,7 @@
 
   // ---- 0. Auto-load global-header.js ----
   // Bump version querystring при кожній зміні global-header.js → CDN/SW беруть свіжу.
-  const GH_VERSION = '20260528-5';
+  const GH_VERSION = '20260707-1';
   if (!document.querySelector('script[src*="global-header.js"]')) {
     const gh = document.createElement('script');
     gh.src = ORIGIN + '/assets/global-header.js?v=' + GH_VERSION;
@@ -96,6 +96,7 @@
     ],
     'Голос і контент': [
       { num: '11', name: 'Голос і мова',        file: 'voice.html',              aliases: 'voice голос tone тон ти ви vy ty do dont never careful словник мова канали ig tg tt email звертання' },
+      { num: '11B', name: 'Legal-safe лексикон', file: 'legal.html',              aliases: 'legal legal-safe юридичний лексикон заборонені слова словник замін краіл krail штраф ризик комплаєнс gambling лотерея розіграш шанс квиток linter' },
       { num: '12', name: 'Контент',             file: 'content.html',            aliases: 'content рубрики контент-план хештеги hashtags faq сторітелінг storytelling переможці winners trust' },
       { num: '13', name: 'Кризові комунікації', file: 'crisis.html',             aliases: 'crisis criza кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
       { num: '23', name: 'Examples Library',    file: 'examples.html',           aliases: 'examples приклади кейси good bad cases ig email mockup' },
@@ -248,7 +249,7 @@
 
     sb.innerHTML = `
 <a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v3.9.2</span>
+<span class="brand-tag">BRAND BOOK · v4.0</span>
 <div class="sidebar-search"><input type="text" id="sb-search" placeholder="Шукати по всьому брендбуку…" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
 ${groups}

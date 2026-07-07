@@ -1,93 +1,59 @@
-# DreamCar Brand Book v3.7
+# DreamCar Brand Book v4.0 «Etalon»
 
 > Мрія за ціною чашки кави.
 
-Повне керівництво з фірмового стилю DreamCar — українського авто-клубу з 10-річною історією.
+Операційна система бренду DreamCar — українського авто-клубу з 10-річною історією (17 авто вручено, 500K+ спільнота).
 
 🌐 **Live:** https://brand.dreamcar.ua/
 
 ---
 
-## 📚 Що всередині
-
-**22 розділи**, які покривають усе:
+## 📚 Що всередині — 30 розділів
 
 | Блок | Розділи |
 |---|---|
-| **Стратегія** | 00 Quick Start · 01 Маніфест · 02 Стратегія · 03 Аудиторія · 04 Контекст ринку |
+| **На старт** | 00 Quick Start · 26 Onboarding 10хв · 27 Brand Tools · 28 Post Generator |
+| **Стратегія** | 01 Маніфест · 02 Стратегія · 03 Аудиторія · 04 Контекст ринку |
 | **Візуальна система** | 05 Логотип · 06 Кольори · 07 Типографіка · 08 Сітка та елементи |
-| **Інтерфейс** | 09 UI-компоненти · 10 Анімації |
-| **Голос і контент** | 11 Голос і мова · 12 Контент · 13 Кризові комунікації |
+| **Інтерфейс** | 09 UI-компоненти · 10 Анімації · 25 Mobile-First |
+| **Голос і контент** | 11 Голос і мова · **11B Legal-safe лексикон** · 12 Контент · 13 Кризові комунікації · 23 Examples Library |
 | **Партнери і довіра** | 14 Партнери · 15 Довіра і доступність (WCAG 2.1 AA) |
-| **Техніка** | 16 Дизайн-ресурси · 17 Стиль медіа |
+| **Техніка** | 16 Дизайн-ресурси · 17 Стиль медіа · 24 Photography Brief |
 | **Точки контакту** | 18 Touchpoints · 19 Мерч |
-| **Підсумки** | 20 Метрики · Roadmap · **21 Регламент підтримки** (новий) |
+| **Підсумки** | 20 Метрики · Roadmap · 21 Регламент підтримки · 22 AI-контент |
 
-## 🎯 Quick Start
+## 🛠 Живі інструменти
 
-Якщо у тебе 5 хвилин і одне завдання — читай розділ **Quick Start** на початку. Все необхідне на одній сторінці.
+- **Voice Linter** — миттєва перевірка тексту на NEVER-слова + автофікс
+- **Post Generator** — параметри акції → готовий пост IG/TG/Email + PNG
+- **Color Contrast Checker** — WCAG 2.1 AA/AAA
+- **Design Tokens** — JSON + CSS, клік = скопійовано
+- **PWA** — працює offline, встановлюється як додаток
 
-## 🆕 Що нового у v3.7
+## ⚖ Ієрархія правил
 
-- **+ Section 21 — Регламент підтримки клієнтів**: операційний скрипт (Алгоритм 4К, протокол S.T.O.P., готові фрази, SLA, ескалація). Імпортовано з docx, інтегровано в стиль книги.
-- Уточнення: gender-neutral дієслова у підтримці («перевіряю», «передаємо» замість «перевірив(ла)», «передала»).
-- Усі скрипти підтримки переписано на «Ви» з великої літери і без терміну «квитки» (тільки «токени»).
-- SLA: реакція на стандартні звернення — 30 хвилин у робочий час (раніше 10 хв — не реалістично).
+При конфлікті правил: **ЗАКОН (11B) → ГОЛОС (11) → ВІЗУАЛ**. Legal-safe лексикон не перекриває ніщо.
+Канонічний CTA-ритм: **«Бери. Дій. Володій.»**
 
-## 📁 Структура
-
-```
-brand-book/
-├── index.html                # Головна (TOC + sidebar)
-├── print.html                # Один PDF для друку
-├── 404.html                  # Сторінка помилки
-├── sections/                 # 22 розділи окремими сторінками
-│   ├── quickstart.html
-│   ├── manifesto.html
-│   ├── ...
-│   ├── metrics.html
-│   └── support.html          # ← v3.7 NEW
-├── assets/
-│   └── styles.css            # Спільні стилі
-├── email-templates/          # Email-шаблони (eSputnik-compatible)
-├── scripts/                  # Допоміжні скрипти
-├── favicon.svg · favicon-32.png · apple-touch-icon.png
-├── og-image.svg · og-image.png
-├── CNAME                     # brand.dreamcar.ua
-├── robots.txt · .nojekyll
-└── README.md
-```
-
-## 🚀 Локально
+## 🔧 Регенерація артефактів
 
 ```bash
-# Швидко
-open index.html
-
-# Або як SPA
-python3 -m http.server 8000
-# → http://localhost:8000
+python3 scripts/build_search_index.py   # assets/search-index.json
+python3 scripts/build_print.py          # print.html (усі 30 розділів)
 ```
 
-## 🌐 Deploy
+## 📦 Структура
 
-Auto-deploy через GitHub Pages при push у `main`. Custom domain: `brand.dreamcar.ua` (CNAME).
-
-## 🔄 Версіонування
-
-| Версія | Дата | Зміни |
-|---|---|---|
-| **v3.7** | 22.05.2026 | + Section 21 Регламент підтримки, gender-neutral, SLA 30хв, «токени» |
-| v3.0 | 05.2026 | Розширення до 21 розділу, email templates, audit |
-| v2.1 | 04.2026 | Manrope, Quick Start, Legal Matrix, mobile fixes |
-| v2.0 | 04.2026 | Personas, конкуренти, secondary палітра, design tokens, кризові скрипти |
-| v1.0 | 03.2026 | Лого, кольори, типографіка |
-
-## 📞 Контакт
-
-- **Email:** vg@dreamcar.ua
-- **Telegram:** @dreamcar_brand
+```
+index.html            — лендінг + TOC
+sections/*.html       — 30 розділів (кожен самодостатній)
+print.html            — версія для друку/PDF (генерується)
+assets/styles.css     — єдина дизайн-система
+assets/sidebar.js     — сайдбар + пошук + SEO-мета + global-header
+assets/search-index.json — повнотекстовий пошук (генерується)
+service-worker.js     — offline-кеш (PWA)
+```
 
 ---
 
-**© 2026 DreamCar. All rights reserved.**
+DREAMCAR · UA · EST. 2016 · [vg@dreamcar.ua](mailto:vg@dreamcar.ua)

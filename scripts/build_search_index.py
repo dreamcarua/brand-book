@@ -30,6 +30,7 @@ SECTION_TITLES = {
     'motion.html':            'Анімації',
     'mobile.html':            'Mobile-First',
     'voice.html':             'Голос і мова',
+    'legal.html':             'Legal-safe лексикон',
     'content.html':           'Контент',
     'crisis.html':            'Кризові комунікації',
     'examples.html':          'Examples Library',
@@ -102,8 +103,8 @@ def extract(path: str):
         pass
     headings = [clean(h) for h in parser.headings if clean(h)]
     text = clean(' '.join(parser.text_parts))
-    if len(text) > 12000:
-        text = text[:12000]
+    if len(text) > 4000:
+        text = text[:4000]
     return title, headings, text
 
 

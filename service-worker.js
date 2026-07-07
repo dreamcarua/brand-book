@@ -2,7 +2,7 @@
 // Offline-first + автоматичне впровадження assets/sidebar.js у HTML responses.
 // v15: deep global search — Edge Function global-search + Жива база section у search overlay
 
-const CACHE = 'dreamcar-brand-v15';
+const CACHE = 'dreamcar-brand-v16';
 const PRECACHE = [
   '/',
   '/index.html',
