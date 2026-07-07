@@ -2622,3 +2622,9 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
 
 /* === FIX накладання у блоці МАСШТАБИ === */
 .logo-grid .card { overflow: hidden; }
+
+/* === A11y: глобальний видимий фокус (обіцянка розділу 15) === */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}

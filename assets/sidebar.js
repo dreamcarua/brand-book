@@ -240,7 +240,7 @@
           return `<a href="${s.url}" target="_blank" rel="noopener" data-aliases="${aliases}"><span class="num" style="color:#888;">↗</span>${s.name}</a>`;
         }
         const isActive = s.file && s.file.toLowerCase() === filename;
-        const cls = isActive ? ' class="active"' : '';
+        const cls = isActive ? ' class="active" aria-current="page"' : '';
         const aliases = s.aliases || '';
         return `<a href="${prefix}${s.file}"${cls} data-aliases="${aliases}"><span class="num">${s.num}</span>${s.name}</a>`;
       }).join('');
@@ -320,6 +320,7 @@ ${groups}
     document.addEventListener('keydown', e => {
       if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
         e.preventDefault();
+        document.body.classList.add('sidebar-open');
         inp.focus();
       }
       if (e.key === 'Escape' && document.activeElement === inp) {
@@ -387,10 +388,10 @@ ${groups}
   document.addEventListener('keydown', (e) => {
     const ae = document.activeElement;
     const typing = ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.isContentEditable);
-    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       const inp = document.getElementById('sb-search');
       if (inp) { e.preventDefault(); document.body.classList.add('sidebar-open'); inp.focus(); inp.select(); }
-    } else if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+    } else if (e.key === 'Escape' && !typing && document.body.classList.contains('sidebar-open')) {
       document.body.classList.remove('sidebar-open');
     }
   });
