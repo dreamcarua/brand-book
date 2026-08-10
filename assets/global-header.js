@@ -33,6 +33,7 @@
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
     { key: 'smm',       label: 'SMM',         short: 'SMM',       icon: '🎯', url: TEAM_BASE + '/hq/',                active: isTeam && path.startsWith('/hq') },
+    { key: 'autosvit',  label: 'АВТОСВІТ',    short: 'АВТОСВІТ',  icon: '🚗', url: TEAM_BASE + '/autosvit/',          active: isTeam && path.startsWith('/autosvit') },
     { key: 'retention', label: 'RETENTION',    short: 'RETENTION', icon: '📬', url: TEAM_BASE + '/retention/',         active: isTeam && path.startsWith('/retention') },
     { key: 'onboard',   label: 'ONBOARDING',  short: 'ONBOARDING',icon: '🚀', url: TEAM_BASE + '/onboarding.html',    active: isTeam && path.includes('onboarding') },
     { key: 'info',      label: 'INFO',        short: 'INFO',      icon: 'ℹ️', url: TEAM_BASE + '/info.html',          active: isTeam && (path.includes('info.html') || path.includes('orgchart') || path.startsWith('/news') || path.startsWith('/regulations') || path.startsWith('/inventory') || path.includes('survey')) },
