@@ -1,0 +1,56 @@
+# DreamCar Brand Book — відкриті задачі
+
+Оновлено: 03.09.2026
+Трекер: немає (issues увімкнені, але порожні). Цей файл тримає все, що не видно з коду: невиконані пункти двох аудитів, техборг, передане й у очікуванні.
+
+🔴 ламає продакшн · 🟡 незавершений хвіст · ⚪ у черзі · ⏸ чекає рішення людини
+
+## 🔴 Ламає продакшн
+
+- **HTTPS не примусовий на Pages** — `gh api repos/dreamcarua/brand-book/pages` віддає `https_enforced: false` (перевірено 03.09.2026), тобто `http://brand.dreamcar.ua` віддається без редиректу. Для сайту з PWA і service worker це і безпекова, і функційна проблема. Наступний крок: Settings → Pages → Enforce HTTPS (або `gh api -X PUT repos/dreamcarua/brand-book/pages -f https_enforced=true`), потім перевірити, що SW і маніфест підхопились.
+
+## 🟡 Хвости — почато, не завершено
+
+- **Злити гілку `memory-v8`** — установка системи памʼяті v8 (03.09.2026). Гілка не змінює ані коду, ані вмісту сайту: додано `AGENTS.md`, `CLAUDE.md`, `memory/` і дослівну копію `COWORK-INSTRUCTIONS.md` в `memory/archive/`. Наступний крок: Вадим дивиться diff і зливає в `main`; відкат — видалити гілку.
+- **`CHANGELOG.md` відстав від сайту** — останній запис `[4.0.0] — 2026-07-07`, а в комітах уже v4.0.1, v4.1.0, v4.1.1, v4.1.2 і пункт АВТОСВІТ у глобальному хедері (`bd3ec10`, 10.08.2026). Наступний крок: дописати чотири релізи з комітів і синхронізувати номер версії у footer/manifest/SW.
+- **Три рекомендації аудиту 22.05.2026 так і не зроблені** (решту пʼять закрито розділами 22–26). Дослівно з файлу:
+  - «**Rec #5 — Multi-Language Guidelines (LOW, але буде потрібно)** … placeholder секція "Multi-language voice" — як зберігати голос при перекладі». Наступний крок: рішення, чи потрібна вона до експансії, — питання в `open-questions.md`.
+  - «**Rec #7 — Brand Asset Versioning (LOW)** … табличка «Active assets vs Deprecated» з датами. Зараз цього нема — підрядники можуть використати старі ассети 2024 року не знаючи». Наступний крок: додати таблицю в розділ 16 (дизайн-ресурси), позначити версії лого 2024 як deprecated. Перевірено 03.09.2026: слова «deprecated»/«застарілі» у розділах немає.
+  - «**Rec #8 — Data Viz Style (LOW)** … colors for charts, font sizes, axis style, error states у даних». Наступний крок: узгодити з `dreamcar-dashboard` і додати блок у розділ 17.
+
+## ⚪ Черга — невиконані пункти аудиту 25.05.2026 «РЕКОМЕНДАЦІЇ НА НАСТУПНУ ІТЕРАЦІЮ (v4.0)»
+
+Перевірено в коді 03.09.2026 — жоден із цих пунктів не зроблено.
+
+- **Контент:** «Розділ #29 — Video Style Guide: ratio, transitions, lower thirds, captions style»; «Розділ #30 — Localization: UA → EN/PL/CZ workflow для EU експансії 2027»; «Розділ #31 — Data Privacy: GDPR-friendly cookie banner, consent management». Наступний крок: обрати один — найкорисніший зараз Video Style Guide, бо відео виробляється щотижня, а правил немає.
+- **Технічне:** «Content Security Policy (CSP)» — у жодному HTML немає; «Subresource Integrity (SRI) для Google Fonts»; «WebP versions для og-image.png (40% менший)» — у корені тільки `og-image.png` і `og-image.svg`; «Lighthouse audit — пройти всі 4 категорії на 100/100». Наступний крок: почати з CSP у `<meta>` на `index.html` і виміряти, чи не ламає inline-скрипти інструментів.
+- **UX/UI:** «Dark/Light theme toggle»; «Print stylesheet — окремий @media print для всіх sections»; «Keyboard shortcuts overlay — `?` показує всі доступні keys»; «Breadcrumbs JSON-LD». Наступний крок: print stylesheet — найдешевший і найчастіше потрібний (агенції друкують окремі розділи).
+- **Інструменти:** «Voice Linter v2 — додати API endpoint для виклику з HQ»; «Color Palette Extractor»; «Typography Pairing»; «Logo Combine Tool». Наступний крок: Voice Linter v2 — єдиний, що має зовнішнього споживача (HQ), решта — приємні дрібниці.
+- **Аналітика:** «Privacy-friendly analytics — Plausible або Umami»; «Search Console — submit sitemap.xml вручну»; «Internal search log». Наступний крок: Search Console — питання до Вадима, чи сайт узагалі доданий (див. `open-questions.md`).
+- **Канал звітів у Telegram не підключений.** `gh secret list -R dreamcarua/brand-book` показує лише `SUPABASE_ACCESS_TOKEN`; `TG_BOT_TOKEN` і `TG_CHAT_ID` немає. Наступний крок — виконати дві команди зі справжніми значеннями (значення у файли не пишемо):
+
+  ```
+  gh secret set TG_BOT_TOKEN -R dreamcarua/brand-book --body "<токен бота>"
+  gh secret set TG_CHAT_ID  -R dreamcarua/brand-book --body "<id чату>"
+  ```
+
+  Після цього додати `.github/workflows/report-to-telegram.yml` (шаблон A.8 набору) і `reports/README.md`.
+
+## ⏸ Чекає рішення
+
+| Задача | Чому чекає | Чиє рішення | З якої дати |
+|---|---|---|---|
+| GitHub Pages чи Cloudflare Pages | питання аудиту 25.05.2026, без відповіді; ліміт 100 ГБ трафіку/міс | Вадим | 25.05.2026 |
+| Чи доданий сайт у Google Search Console | `sitemap.xml` готовий до submit із 25.05.2026 | Вадим | 25.05.2026 |
+| OG-image статичний чи динамічний на кожен розділ | питання аудиту 25.05.2026 | Вадим | 25.05.2026 |
+| Прибирати `Bebas Neue` з fallback-ланцюга чи лишити | залежить від того, чи є гарнітура на машинах дизайнерів | Вадим | 25.05.2026 |
+| Чи потрібен цьому репо власний канал звітів у Telegram | немає ані бота, ані id чату | Вадим | 03.09.2026 |
+
+<!--
+Правила (див. AGENTS.md → Entry/Exit):
+- Задача записується в момент отримання, дослівно, з іменем автора.
+- Кожен рядок — конкретний наступний крок, а не назва проблеми.
+- Рядок видаляється, коли підтвердив автор, а не коли роботу зроблено. Видаляється, не закреслюється.
+- Розділи за терміновістю, не за темою.
+- Понад ~80 рядків — сигнал, що накопичується незавершене, а не привід ділити файл.
+-->
