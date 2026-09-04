@@ -94,3 +94,13 @@ gh secret list -R dreamcarua/brand-book
 | Зміна видимості репозиторію | власник | наслідки для безпеки, необоротно |
 | Ротація будь-якого ключа | власник | агент не бачить наслідків для інших систем |
 | Будь-який платіж | власник | завжди |
+
+## Деплой і верифікація (внесено 04.09.2026)
+
+- **Деплой:** `git bundle` із пісочниці → на Mac свіжий клон → `git fetch <bundle>` → `merge --ff-only` → push. Прямий пуш із пісочниці неможливий; tar-копіювання губить renames/deletes.
+- **Верифікація проду:** тільки `curl` з Mac із `?v=N`. WebFetch таймаутить, браузерні MCP не конектяться. Cache-control на проді max-age=600, перед сайтом Cloudflare, HSTS є, CSP/X-Frame немає (Pages не вміє; можливо через CF).
+- **CI:** `.github/workflows/brand-lint.yml` → `scripts/brand_lint.py`; статуси доступні публічно через `api.github.com/repos/dreamcarua/brand-book/actions/runs` без токена.
+- **og-image:** рендер cairosvg + TTF з google/fonts у `~/.fonts` (variable Oswald коректно віддає вагу 700).
+- **`global-header.js`** інжектиться через `assets/sidebar.js` з квері-версією: бампати GH_VERSION лише при зміні самого хедера, а SW CACHE — при будь-якій зміні контенту.
+- **`email-templates/`** — живі робочі шаблони (eSputnik/Yespo), їх копіюють у розсилки.
+- **Хто ще змінює репо:** інші Cowork-сесії Вадима.
