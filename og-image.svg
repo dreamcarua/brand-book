@@ -44,7 +44,7 @@
   <text x="60" y="550" class="display" font-size="100" fill="#E30613" letter-spacing="-2">ЧАШКИ КАВИ.</text>
 
   <!-- Низ — meta -->
-  <text x="60" y="595" class="mono" font-size="14" letter-spacing="3" fill="#888">DREAMCAR · UA · EST. 2016 · 19 КЛЮЧІВ ВРУЧЕНО · 500K+ СПІЛЬНОТА</text>
+  <text x="60" y="595" class="mono" font-size="14" letter-spacing="3" fill="#888">DREAMCAR · UA · EST. 2016 · 21 КЛЮЧ ВРУЧЕНО · 500K+ СПІЛЬНОТА</text>
 
   <!-- Червона лінія справа знизу -->
   <rect x="1100" y="555" width="60" height="4" fill="#E30613"/>
