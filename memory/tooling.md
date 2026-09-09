@@ -79,11 +79,25 @@ gh secret list -R dreamcarua/brand-book
 | Перевірити стан Pages | `gh api repos/dreamcarua/brand-book/pages` | Settings → Pages |
 | Правити спільний хедер | `assets/global-header.js` → `node --check assets/global-header.js` → перевірити щонайменше дві системи DreamCar | див. пастку про спільний хедер |
 
-## Звіти
+## Reporting
 
-**Канал не підключений.** У репозиторії немає воркфлоу звітів, а `gh secret list -R dreamcarua/brand-book` (03.09.2026) показує лише `SUPABASE_ACCESS_TOKEN` — ані `TG_BOT_TOKEN`, ані `TG_CHAT_ID` немає. Поки канал не підключено, звіт за Exit віддається користувачеві прямо у відповіді: два-три речення про те, що змінилось для власника, і посилання або скріншот.
+Канал один на всі проєкти: приватний міст у `dreamcarua/memory-kit`.
 
-Щоб підключити стандартний канал: поставити обидва секрети командами з `memory/tasks.md`, додати `.github/workflows/report-to-telegram.yml` (шаблон A.8 набору памʼяті, назви секретів `TG_BOT_TOKEN` / `TG_CHAT_ID`) і `reports/README.md`. Перший звіт — про саму інсталяцію, він же перевірка каналу.
+Механізм: закомітити `cowork-notify/<YYYY-MM-DD-HHMM>-<slug>.json` у гілку `main` репозиторію
+`dreamcarua/memory-kit` з полями `{text, type, project, link}`. Воркфлоу `cowork-tg-notify.yml`
+вибирає бота за полем `project`, шле повідомлення в приватний чат Вадима і архівує файл.
+
+Для цього носія `project` = `dreamcar`.
+
+- `text` — суть зробленого, дозволений Telegram HTML (`<b>`, `<code>`, `\n`)
+- `type` — короткий ярлик: `deploy`, `fix`, `security`, `maintenance`, `report`
+- `link` — посилання на коміт, файл або запуск воркфлоу
+
+Коли: наприкінці кожної задачі, що змінила стан проєкту — закрита задача, пуш, деплой,
+виправлення в проді. Не для читання, проміжних комітів і правок одруківок.
+
+Старий міст у публічному `dreamcarua/dreamcar-team` не використовується з 05.09.2026:
+репозиторій публічний, і кожен звіт лишався в його історії назавжди.
 
 ## Межі доступу — чого агент свідомо не робить
 
