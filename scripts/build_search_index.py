@@ -98,15 +98,18 @@ def extract(path: str):
         html = f.read()
     title_match = re.search(r'<title[^>]*>([^<]*)</title>', html, re.I)
     title = clean(title_match.group(1)) if title_match else ''
+    m = re.search(r'<main[^>]*>(.*)</main>', html, re.S)
+    body = m.group(1) if m else html
+    body = re.sub(r'<div class="section-bread">.*?</div>', ' ', body, count=1, flags=re.S)
+    body = re.sub(r'<nav\b.*?</nav>', ' ', body, flags=re.S)
     parser = TextExtractor()
     try:
-        parser.feed(html)
+        parser.feed(body)
     except Exception:
         pass
     headings = [clean(h) for h in parser.headings if clean(h)]
     text = clean(' '.join(parser.text_parts))
-    if len(text) > 4000:
-        text = text[:4000]
+    text = text[:20000]
     return title, headings, text
 
 

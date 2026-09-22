@@ -11,6 +11,8 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
@@ -29,7 +31,7 @@
   .term-cell.good li::before { content: '✅  '; color: var(--success); }
   .k-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
   .k-card { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px; min-height: 200px; display: flex; flex-direction: column; }
-  .k-card .k-num { font-family: 'Archivo Black', sans-serif; font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
+  .k-card .k-num { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
   .k-card .k-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.18em; margin-bottom: 14px; }
   .k-card .k-title { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
   .k-card .k-quote { font-size: 13px; color: var(--bone); line-height: 1.55; font-style: italic; padding: 10px 12px; background: var(--black); border-left: 2px solid var(--red); margin-top: auto; }
@@ -86,7 +88,7 @@
     <div class="schedule">/// ГРАФІК ПІДТРИМКИ: 09:00 — 20:00 (за Києвом)</div>
   </div>
 
-  <h3 class="s-subtitle">/// 1 — <span class="red">ЗАБОРОНЕНА ТЕРМІНОЛОГІЯ</span></h3>
+  <h2 class="s-subtitle">/// 1 — <span class="red">ЗАБОРОНЕНА ТЕРМІНОЛОГІЯ</span></h2>
   <p class="s-desc">
     <strong style="color: var(--white);">Ми ніколи не граємо в лотерею. Ми продаємо знання.</strong> Слова нижче заборонені у будь-якій комунікації з клієнтом — як з його боку, так і з нашого. Якщо клієнт вживає заборонене слово — ми не повторюємо за ним, а перекладаємо у безпечну термінологію.
   </p>
@@ -134,7 +136,7 @@
     </ul>
   </div>
 
-  <h3 class="s-subtitle">/// 2 — <span class="red">TONE OF VOICE — ЯК МИ ПИШЕМО</span></h3>
+  <h2 class="s-subtitle">/// 2 — <span class="red">TONE OF VOICE — ЯК МИ ПИШЕМО</span></h2>
   <p class="s-desc">
     <strong style="color: var(--white);">Наші клієнти — переважно чоловіки.</strong> Вони цінують конкретику та повагу до свого часу.
   </p>
@@ -150,7 +152,7 @@
     <table class="compete-table" style="width: 100%;">
       <thead>
         <tr>
-          <th style="width: 28%;">ПРИНЦИП</th>
+          <th scope="col" style="width: 28%;">ПРИНЦИП</th>
           <th scope="col">ЯК ЦЕ ВИГЛЯДАЄ</th>
         </tr>
       </thead>
@@ -165,7 +167,7 @@
     </table>
   </div>
 
-  <h3 class="s-subtitle">/// 3 — <span class="red">АЛГОРИТМ «4К»</span> — СТАНДАРТ ОБРОБКИ ЗВЕРНЕНЬ</h3>
+  <h2 class="s-subtitle">/// 3 — <span class="red">АЛГОРИТМ «4К»</span> — СТАНДАРТ ОБРОБКИ ЗВЕРНЕНЬ</h2>
   <p class="s-desc">Кожне звернення проходить через 4 кроки. Це гарантує що клієнт відчує контроль і отримає відповідь у потрібному форматі.</p>
 
   <div class="k-grid">
@@ -202,7 +204,7 @@
     </p>
   </div>
 
-  <h3 class="s-subtitle">/// 4 — <span class="red">ПРОТОКОЛ S.T.O.P.</span> — ГАСІННЯ НЕГАТИВУ</h3>
+  <h2 class="s-subtitle">/// 4 — <span class="red">ПРОТОКОЛ S.T.O.P.</span> — ГАСІННЯ НЕГАТИВУ</h2>
   <p class="s-desc">Якщо клієнт роздратований або конфліктний — виконуй чотири кроки послідовно. Не пропускай — кожен крок знижує градус.</p>
 
   <div class="stop-grid">
@@ -232,7 +234,7 @@
     </div>
   </div>
 
-  <h3 class="s-subtitle">/// 5 — <span class="red">ПОВЕРНЕННЯ КОШТІВ</span></h3>
+  <h2 class="s-subtitle">/// 5 — <span class="red">ПОВЕРНЕННЯ КОШТІВ</span></h2>
   <p class="s-desc">
     <strong style="color: var(--white);">Репутація дорожча за вартість одного замовлення.</strong> Якщо розмова зайшла в глухий кут — не сперечайся.
   </p>
@@ -270,7 +272,7 @@
     </div>
   </div>
 
-  <h3 class="s-subtitle">/// 6 — ІНСТРУКЦІЯ: <span class="red">«ТОКЕНИ НЕ ЗНАЙДЕНО»</span></h3>
+  <h2 class="s-subtitle">/// 6 — ІНСТРУКЦІЯ: <span class="red">«ТОКЕНИ НЕ ЗНАЙДЕНО»</span></h2>
   <p class="s-desc">
     Клієнт оплатив, але токени не відображаються в кабінеті. <strong style="color: var(--white);">Мета: швидко знайти токени, зафіксувати, зберегти довіру.</strong>
   </p>
@@ -342,10 +344,10 @@
     </div>
   </div>
 
-  <h3 class="s-subtitle">/// 7 — <span class="red">ГОТОВІ ФРАЗИ ПІДТРИМКИ</span></h3>
+  <h2 class="s-subtitle">/// 7 — <span class="red">ГОТОВІ ФРАЗИ ПІДТРИМКИ</span></h2>
   <p class="s-desc">Універсальні шаблони відповідей. Кожна — на «Ви», без зменшувальних, gender-neutral, без юридичних тригерів.</p>
 
-  <div class="table-scroll">
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Таблиця">
     <table class="phrase-table">
       <thead>
         <tr>
@@ -398,7 +400,7 @@
     </table>
   </div>
 
-  <h3 class="s-subtitle">/// 8 — <span class="red">SLA І ЕСКАЛАЦІЯ</span></h3>
+  <h2 class="s-subtitle">/// 8 — <span class="red">SLA І ЕСКАЛАЦІЯ</span></h2>
   <p class="s-desc">Час реакції залежить від тяжкості. Якщо не вкладаємось — пишемо клієнту проміжний статус.</p>
 
   <div class="card-grid">

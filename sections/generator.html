@@ -6,6 +6,8 @@
 <meta name="color-scheme" content="dark">
 <title>28 Brand Post Generator · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
@@ -18,8 +20,8 @@
   .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--red); }
   .form-field textarea { resize: vertical; min-height: 60px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .gen-btn { width: 100%; padding: 14px; background: var(--red); color: var(--white); border: none; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.1em; cursor: pointer; margin-top: 8px; transition: background 0.15s; border-radius: 999px; }
-  .gen-btn:hover { background: #ff1a1a; }
+  .gen-btn { width: 100%; padding: 14px; background: var(--red); color: var(--white); border: none; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em; cursor: pointer; margin-top: 8px; transition: background 0.15s; border-radius: 0; }
+  .gen-btn:hover { background: var(--red-deep); }
   .preview-area { display: flex; flex-direction: column; gap: 24px; }
   .channel-card { background: var(--coal); border: 1px solid var(--line); overflow: hidden; }
   .channel-head { padding: 12px 18px; background: var(--black); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
@@ -51,7 +53,7 @@
   .tg-mock { background: #17212B; padding: 16px; }
   .tg-mock-bubble { background: #2B5278; max-width: 75%; padding: 10px 14px; border-radius: 12px 12px 12px 4px; color: white; font-size: 14px; line-height: 1.45; position: relative; }
   .tg-mock-title { font-weight: 700; color: var(--white); margin-bottom: 4px; }
-  .tg-mock-cta { background: #5288c1; color: white; padding: 8px 16px; border-radius: 999px; font-family: 'Archivo Black', sans-serif; font-size: 11px; letter-spacing: 0.08em; display: inline-block; margin-top: 8px; }
+  .tg-mock-cta { background: #5288c1; color: white; padding: 8px 16px; border-radius: 999px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; display: inline-block; margin-top: 8px; }
   .tg-mock-time { font-size: 10px; color: rgba(255,255,255,0.7); float: right; margin-top: 4px; }
 
   /* ====== EMAIL MOCKUP ====== */
@@ -61,7 +63,7 @@
   .email-mock-subject { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; color: #1a1a1a; line-height: 1.3; }
   .email-mock-body { padding: 24px; }
   .email-mock-body p { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 14px; }
-  .email-mock-cta { background: #E30613; color: white; padding: 12px 24px; border-radius: 999px; font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.08em; display: inline-block; text-decoration: none; }
+  .email-mock-cta { background: #E30613; color: white; padding: 12px 24px; border-radius: 0; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.08em; display: inline-block; text-decoration: none; }
 
   /* ====== HASHTAGS LIST ====== */
   .hash-list { background: var(--coal); border: 1px solid var(--line); padding: 16px; margin-top: 16px; }
@@ -104,23 +106,23 @@
       <h3>🎯 ПАРАМЕТРИ ПРОМОАКЦІЇ</h3>
 
       <div class="form-field">
-        <label>НОМЕР ПРОМОАКЦІЇ</label>
+        <label for="promoNum">НОМЕР ПРОМОАКЦІЇ</label>
         <input type="number" id="promoNum" value="17" min="1" max="999" oninput="generate()">
       </div>
 
       <div class="form-row">
         <div class="form-field">
-          <label>МАРКА</label>
+          <label for="carBrand">МАРКА</label>
           <input type="text" id="carBrand" value="BMW" placeholder="BMW" oninput="generate()">
         </div>
         <div class="form-field">
-          <label>МОДЕЛЬ</label>
+          <label for="carModel">МОДЕЛЬ</label>
           <input type="text" id="carModel" value="X5 Hybrid" placeholder="X5" oninput="generate()">
         </div>
       </div>
 
       <div class="form-field">
-        <label>EMOJI / ICON</label>
+        <label for="carEmoji">EMOJI / ICON</label>
         <select id="carEmoji" onchange="generate()">
           <option value="🚙">🚙 SUV</option>
           <option value="🚗">🚗 Sedan</option>
@@ -133,27 +135,27 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>ЦІНА ТОКЕНА (₴)</label>
+          <label for="price">ЦІНА ТОКЕНА (₴)</label>
           <input type="number" id="price" value="249" min="1" oninput="generate()">
         </div>
         <div class="form-field">
-          <label>УЧАСНИКИ</label>
+          <label for="participants">УЧАСНИКИ</label>
           <input type="number" id="participants" value="4800" min="100" oninput="generate()">
         </div>
       </div>
 
       <div class="form-field">
-        <label>ДАТА ЕФІРУ</label>
+        <label for="airDate">ДАТА ЕФІРУ</label>
         <input type="date" id="airDate" oninput="generate()">
       </div>
 
       <div class="form-field">
-        <label>ЧАС ЕФІРУ</label>
+        <label for="airTime">ЧАС ЕФІРУ</label>
         <input type="time" id="airTime" value="20:00" oninput="generate()">
       </div>
 
       <div class="form-field">
-        <label>ТИП ПОСТУ</label>
+        <label for="postType">ТИП ПОСТУ</label>
         <select id="postType" onchange="generate()">
           <option value="launch">🚀 Старт промоакції</option>
           <option value="reminder">⏰ Нагадування</option>
@@ -269,12 +271,13 @@
 </nav>
 </main>
 
+<script src="../assets/lexicon.js"></script>
 <script>
 // Set default date to 4 weeks from today
 const def = new Date(); def.setDate(def.getDate() + 28);
 document.getElementById('airDate').value = def.toISOString().split('T')[0];
 
-const NEVER_WORDS = ['шанс','лотерея','виграш','квиток','білет','казино','джекпот','халява','розіграш','азарт','програв'];
+// NEVER words: assets/lexicon.js
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
@@ -424,8 +427,8 @@ function generate() {
   document.getElementById('hashtagsList').textContent = hashtags.join(' ');
 
   // Voice check
-  const allText = (igCaption + ' ' + tgText + ' ' + emailSubject + ' ' + emailBody).toLowerCase();
-  let bad = NEVER_WORDS.filter(w => allText.includes(w));
+  const allText = (igCaption + ' ' + tgText + ' ' + emailSubject + ' ' + emailBody).replace(/<[^>]+>/g, ' ');
+  let bad = window.DC_LEXICON ? [...new Set(window.DC_LEXICON.scan(allText).filter(h => h.level === 'never').map(h => h.match))] : [];
   const vc = document.getElementById('voiceCheck');
   if (bad.length === 0) {
     vc.className = 'voice-check ok';

@@ -1,5 +1,8 @@
 // =====================================================================
-// DreamCar Brand Book — Universal Sidebar Injector v8
+// DreamCar Brand Book — Universal Sidebar Injector v9 (22.09.2026)
+// v9: a11y (skip link, labelled navs, drawer focus/aria), robust search
+//     (full index, stop-words, stems, keyboard), prev/next from SECTIONS,
+//     copy buttons, one VERSION constant.
 // =====================================================================
 // v8: sidebar — текстовий бренд-знак (Racing Plate тільки у global-header).
 //     Уникає дублювання двох лого поряд.
@@ -9,6 +12,9 @@
   'use strict';
 
   const ORIGIN = 'https://brand.dreamcar.ua';
+  const VERSION = 'v4.3';
+  window.DC_BRANDBOOK_VERSION = VERSION;
+  const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const TEAM_ORIGIN = 'https://team.dreamcar.ua';
 
   // ---- 0. Auto-load global-header.js ----
@@ -16,7 +22,9 @@
   const GH_VERSION = '20260707-1';
   if (!document.querySelector('script[src*="global-header.js"]')) {
     const gh = document.createElement('script');
-    gh.src = ORIGIN + '/assets/global-header.js?v=' + GH_VERSION;
+    const onProd = location.hostname === 'brand.dreamcar.ua';
+    const ghBase = onProd ? ORIGIN + '/' : (location.pathname.includes('/sections/') ? '../' : '');
+    gh.src = ghBase + 'assets/global-header.js?v=' + GH_VERSION;
     gh.defer = true;
     document.head.appendChild(gh);
   }
@@ -74,8 +82,8 @@
     'На старт': [
       { num: '00', name: 'Quick Start',         file: 'quickstart.html',         aliases: 'старт швидко шпаргалка cheatsheet' },
       { num: '26', name: 'Onboarding 10хв',     file: 'onboarding.html',         aliases: 'onboarding введення нові працівники підрядники агенції training brand 10 хв слайди презентація' },
-      { num: '27', name: '🛠 Brand Tools',       file: 'tools.html',              aliases: 'tools інструменти voice linter лінтер contrast checker контраст color picker tokens ai prompt download ассет ассети wcag aa aaa' },
-      { num: '28', name: '🚀 Post Generator',   file: 'generator.html',          aliases: 'generator генератор post пост ig instagram tg telegram email імейл хештеги hashtags export svg png' },
+      { num: '27', name: 'Brand Tools',          file: 'tools.html',              aliases: 'tools інструменти voice linter лінтер contrast checker контраст color picker tokens ai prompt download ассет ассети wcag aa aaa' },
+      { num: '28', name: 'Post Generator',       file: 'generator.html',          aliases: 'generator генератор post пост ig instagram tg telegram email імейл хештеги hashtags export svg png' },
     ],
     'Стратегія': [
       { num: '01', name: 'Маніфест',            file: 'manifesto.html',          aliases: 'manifesto душа бренду цінності філософія' },
@@ -121,7 +129,7 @@
       { num: '21', name: 'Регламент підтримки', file: 'support.html',            aliases: 'support підтримка клієнт client sla scripts скрипти 4К stop протокол повернення refund tone' },
       { num: '22', name: 'AI-контент',          file: 'ai-content.html',         aliases: 'ai штучний інтелект ШІ claude chatgpt gpt midjourney sora elevenlabs deepfake prompt system prompt eu act copyright' },
     ],
-    '🔒 Team Hub': [
+    'Внутрішнє · Team Hub': [
       { name: 'Tasks (Kanban)',                  url: TEAM_ORIGIN + '/tasks/',      external: true, aliases: 'tasks завдання задачі kanban канбан to-do todo task manager' },
       { name: 'HQ · Стіл SMM',                   url: TEAM_ORIGIN + '/hq/',         external: true, aliases: 'hq calendar approvals library smm стіл календар погодження бібліотека' },
       { name: 'Onboarding',                      url: TEAM_ORIGIN + '/onboarding.html', external: true, aliases: 'onboarding онбординг новачки team' },
@@ -176,6 +184,12 @@
     return s;
   }
 
+  const STOP = new Set(['на','у','в','і','й','та','для','з','із','зі','по','як','що','до','від','це','а','або','чи','the','a','of','to','and','for','on','in']);
+  function queryTerms(q) {
+    return q.toLowerCase().split(/[\s,.;:!?«»"()]+/).filter(t => t.length >= 2 && !STOP.has(t))
+      .map(t => (t.length >= 6 && /[а-яіїєґ]$/.test(t)) ? t.replace(/(ами|ями|ові|еві|ого|ому|ій|ий|ої|ою|ею|ів|ям|ам|ах|ях|ти|ть|і|и|а|я|у|ю|е|о)$/, '') : t);
+  }
+
   function scoreSection(section, terms) {
     const title = (section.title + ' ' + (section.page_title || '')).toLowerCase();
     const headings = (section.headings || []).join(' ').toLowerCase();
@@ -187,18 +201,19 @@
       const re = new RegExp(escapeRe(t), 'g');
       const titleMatches = (title.match(re) || []).length;
       const headingMatches = (headings.match(re) || []).length;
-      const textMatches = (text.match(re) || []).length;
+      const textMatches = Math.min((text.match(re) || []).length, 12);
       score += titleMatches * 20 + headingMatches * 5 + textMatches * 1;
       if (titleMatches + headingMatches + textMatches > 0) hitTerms++;
     });
-    if (hitTerms < terms.length) return 0;
-    return score;
+    if (!hitTerms) return 0;
+    // All terms present ranks far above partial matches; partial still shown.
+    return hitTerms === terms.length ? score * 3 : score * (hitTerms / terms.length);
   }
 
   function runContentSearch(query) {
     return loadSearchIndex().then(idx => {
       if (!idx || !idx.sections) return [];
-      const terms = query.toLowerCase().split(/\s+/).filter(t => t.length >= 2);
+      const terms = queryTerms(query);
       if (!terms.length) return [];
       const results = [];
       idx.sections.forEach(s => {
@@ -207,11 +222,11 @@
       });
       results.sort((a, b) => b.score - a.score);
       return results.slice(0, 10);
-    });
+    }).catch(() => []);
   }
 
   function renderResults(container, results, query) {
-    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length >= 2);
+    const terms = queryTerms(query);
     if (!results.length) {
       container.innerHTML = '';
       return;
@@ -220,9 +235,11 @@
       const snippet = buildSnippet(s.text, primary, 160);
       const safe = escapeHtml(snippet);
       const lit = highlight(safe, terms);
-      const fragRaw = buildSnippet(s.text, primary, 60).replace(/^…|…$/g, '').trim();
-      const frag = encodeURIComponent(fragRaw.slice(0, 60));
-      const href = `${prefix}${s.file}?q=${encodeURIComponent(query)}#:~:text=${frag}`;
+      let href = `${prefix}${s.file}?q=${encodeURIComponent(query)}`;
+      try {
+        const fragRaw = Array.from(buildSnippet(s.text, primary, 60).replace(/^…|…$/g, '').trim()).slice(0, 60).join('');
+        if (fragRaw) href += `#:~:text=${encodeURIComponent(fragRaw)}`;
+      } catch (_) {}
       return `<a class="sb-res" href="${href}">
         <span class="sb-res-title">${escapeHtml(s.title)}</span>
         <span class="sb-res-snip">${lit}</span>
@@ -239,25 +256,29 @@
       const navItems = items.map(s => {
         if (s.external && s.url) {
           const aliases = s.aliases || '';
-          return `<a href="${s.url}" target="_blank" rel="noopener" data-aliases="${aliases}"><span class="num" style="color:#888;">↗</span>${s.name}</a>`;
+          return `<a href="${s.url}" target="_blank" rel="noopener" data-aliases="${aliases}"><span class="num" aria-hidden="true">↗</span>${s.name}<span class="sr-only"> (нова вкладка)</span></a>`;
         }
         const isActive = s.file && s.file.toLowerCase() === filename;
         const cls = isActive ? ' class="active" aria-current="page"' : '';
         const aliases = s.aliases || '';
         return `<a href="${prefix}${s.file}"${cls} data-aliases="${aliases}"><span class="num">${s.num}</span>${s.name}</a>`;
       }).join('');
-      return `<div class="group"><span class="group-title">${title}</span><nav>${navItems}</nav></div>`;
+      return `<div class="group"><span class="group-title" aria-hidden="true">${title}</span><nav aria-label="${escapeHtml(title)}">${navItems}</nav></div>`;
     }).join('');
 
+    const touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    sb.setAttribute('aria-label', 'Розділи брендбуку');
     sb.innerHTML = `
-<a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v4.2</span>
-<div class="sidebar-search"><input type="text" id="sb-search" placeholder="Пошук по брендбуку…  ( / або ⌘K )" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
+<button type="button" class="sb-close" aria-label="Закрити меню">✕</button>
+<a href="${upPrefix}index.html" class="brand-mark" aria-label="DreamCar Brand Book — на головну">DREAM<span class="red">CAR</span></a>
+<span class="brand-tag">BRAND BOOK · ${VERSION}</span>
+<div class="sidebar-search"><input type="search" id="sb-search" placeholder="${touch ? 'Пошук по брендбуку' : 'Пошук по брендбуку…  ( / )'}" aria-label="Пошук по брендбуку" autocomplete="off" enterkeyhint="search"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
 ${groups}
-<div class="group pdf-group"><span class="group-title">Експорт</span><nav><a href="${upPrefix}print.html">Завантажити повний PDF</a></nav></div>
-<div class="foot">vg@dreamcar.ua<br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
+<div class="group pdf-group"><span class="group-title" aria-hidden="true">Друк</span><nav aria-label="Друк"><a href="${upPrefix}print.html">Уся книга однією сторінкою (друк / PDF)</a></nav></div>
+<div class="foot"><a href="mailto:vg@dreamcar.ua">vg@dreamcar.ua</a><br><a href="https://dreamcar.ua">dreamcar.ua</a></div>
     `;
+    sb.querySelector('.sb-close').addEventListener('click', closeDrawer);
 
     sb.querySelectorAll('nav a').forEach(a => {
       a.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
@@ -319,16 +340,36 @@ ${groups}
       }, 120);
     });
 
+    inp.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const first = resultsEl.querySelector('a.sb-res') || sb.querySelector('nav a:not(.is-hidden)');
+        if (first && inp.value.trim()) { e.preventDefault(); first.click(); }
+      } else if (e.key === 'ArrowDown') {
+        const first = resultsEl.querySelector('a.sb-res') || sb.querySelector('nav a:not(.is-hidden)');
+        if (first) { e.preventDefault(); first.focus(); }
+      }
+    });
+    resultsEl.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      const items = Array.from(resultsEl.querySelectorAll('a.sb-res'));
+      const i = items.indexOf(document.activeElement);
+      if (i < 0) return;
+      e.preventDefault();
+      if (e.key === 'ArrowDown' && items[i + 1]) items[i + 1].focus();
+      if (e.key === 'ArrowUp') (items[i - 1] || inp).focus();
+    });
+
     document.addEventListener('keydown', e => {
-      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      const ae = document.activeElement;
+      const typing = ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT' || ae.isContentEditable);
+      if (e.key === '/' && !typing) {
         e.preventDefault();
-        document.body.classList.add('sidebar-open');
+        openDrawer();
         inp.focus();
       }
-      if (e.key === 'Escape' && document.activeElement === inp) {
-        inp.value = '';
-        inp.dispatchEvent(new Event('input'));
-        inp.blur();
+      if (e.key === 'Escape' && ae === inp) {
+        if (inp.value) { inp.value = ''; inp.dispatchEvent(new Event('input')); }
+        else closeDrawer(true);
       }
     });
   }
@@ -339,7 +380,7 @@ ${groups}
       const url = new URL(window.location.href);
       const q = url.searchParams.get('q');
       if (!q || q.length < 2) return;
-      const terms = q.toLowerCase().split(/\s+/).filter(t => t.length >= 2);
+      const terms = queryTerms(q).filter(t => t.length >= 3);
       if (!terms.length) return;
       const root = document.querySelector('main') || document.body;
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
@@ -374,29 +415,117 @@ ${groups}
       });
       if (firstMark) {
         setTimeout(() => {
-          firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstMark.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'center' });
         }, 80);
       }
     } catch (_) {}
   }
 
+  // ---- Drawer (mobile) ----
+  function toggleEl() { return document.querySelector('.menu-toggle'); }
+  function syncToggle() {
+    const t = toggleEl();
+    if (!t) return;
+    t.setAttribute('aria-controls', 'sb');
+    t.setAttribute('aria-expanded', document.body.classList.contains('sidebar-open') ? 'true' : 'false');
+  }
+  function openDrawer() { document.body.classList.add('sidebar-open'); syncToggle(); }
+  function closeDrawer(returnFocus) {
+    const wasOpen = document.body.classList.contains('sidebar-open');
+    document.body.classList.remove('sidebar-open');
+    syncToggle();
+    if (returnFocus && wasOpen && window.matchMedia('(max-width: 900px)').matches) { const t = toggleEl(); if (t) t.focus(); }
+  }
+  new MutationObserver(syncToggle).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
   document.body.addEventListener('click', (e) => {
-    if (e.target === document.body && document.body.classList.contains('sidebar-open')) {
-      document.body.classList.remove('sidebar-open');
-    }
+    if (e.target === document.body && document.body.classList.contains('sidebar-open')) closeDrawer(true);
   });
 
-  // ---- Keyboard UX: "/" або Cmd/Ctrl+K → пошук; Esc → закрити сайдбар ----
+  // ---- Keyboard: Cmd/Ctrl+K → global search overlay if present, else sidebar search; Esc closes drawer ----
   document.addEventListener('keydown', (e) => {
     const ae = document.activeElement;
     const typing = ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.isContentEditable);
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      if (window.__dcOpenSearch) return; // global header owns ⌘K
       const inp = document.getElementById('sb-search');
-      if (inp) { e.preventDefault(); document.body.classList.add('sidebar-open'); inp.focus(); inp.select(); }
+      if (inp) { e.preventDefault(); openDrawer(); inp.focus(); inp.select(); }
     } else if (e.key === 'Escape' && !typing && document.body.classList.contains('sidebar-open')) {
-      document.body.classList.remove('sidebar-open');
+      closeDrawer(true);
     }
   });
+
+  // ---- Skip link ----
+  function addSkipLink() {
+    const main = document.getElementById('main') || document.querySelector('main');
+    if (!main || document.querySelector('.skip-link')) return;
+    if (!main.id) main.id = 'main';
+    main.setAttribute('tabindex', '-1');
+    const a = document.createElement('a');
+    a.className = 'skip-link'; a.href = '#' + main.id; a.textContent = 'До змісту';
+    document.body.insertBefore(a, document.body.firstChild);
+    // global-header.js prepends its bar later; keep the skip link the very first stop
+    const keepFirst = () => { if (document.body.firstChild !== a) document.body.insertBefore(a, document.body.firstChild); };
+    new MutationObserver(keepFirst).observe(document.body, { childList: true });
+  }
+
+  // ---- Prev / next from the one ordered list ----
+  function renderPageNav() {
+    const order = Object.values(SECTIONS).flat().filter(x => x.file);
+    const i = order.findIndex(x => x.file.toLowerCase() === filename);
+    const nav = document.querySelector('.section-page-nav');
+    if (i < 0 || !nav) return;
+    nav.setAttribute('aria-label', 'Попередній і наступний розділ');
+    const prev = order[i - 1], next = order[i + 1];
+    const link = (x, cls, label) => `<a href="${x.file}" class="${cls}"><span class="nav-label">${label}</span><span class="nav-title">${x.name}</span></a>`;
+    nav.innerHTML = (prev ? link(prev, 'prev', `← ${prev.num} ПОПЕРЕДНІЙ`) : `<a href="../index.html" class="prev"><span class="nav-label">↑ ЗМІСТ</span><span class="nav-title">Brand Book</span></a>`)
+      + (next ? link(next, 'next', `${next.num} НАСТУПНИЙ →`) : `<a href="../index.html" class="next"><span class="nav-label">↑ ЗМІСТ</span><span class="nav-title">Brand Book</span></a>`);
+  }
+
+  // ---- Copy buttons: colour HEX, token blocks, [data-copy] ----
+  let statusEl = null;
+  function announce(msg) {
+    if (!statusEl) { statusEl = document.createElement('div'); statusEl.className = 'sr-only'; statusEl.setAttribute('aria-live', 'polite'); document.body.appendChild(statusEl); }
+    statusEl.textContent = msg;
+  }
+  function copyText(text, btn) {
+    const done = ok => {
+      if (!btn) return;
+      btn.dataset.state = ok ? 'ok' : 'err';
+      const lbl = btn.querySelector('.cb-label');
+      if (lbl) { lbl.dataset.orig = lbl.dataset.orig || lbl.textContent; lbl.textContent = ok ? 'Скопійовано' : 'Не вдалося'; }
+      clearTimeout(btn._t);
+      btn._t = setTimeout(() => { delete btn.dataset.state; if (lbl) lbl.textContent = lbl.dataset.orig; }, 1500);
+      announce(ok ? 'Скопійовано: ' + text.slice(0, 80) : 'Не вдалося скопіювати');
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(() => done(true), () => done(false));
+    else done(false);
+  }
+  function makeCopyBtn(getText, label) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'copy-btn';
+    b.innerHTML = '<span class="cb-label">' + (label || 'Копіювати') + '</span>';
+    b.addEventListener('click', e => { e.stopPropagation(); copyText(getText(), b); });
+    return b;
+  }
+  function addCopyButtons() {
+    document.querySelectorAll('main .color-cell .codes').forEach(c => {
+      const m = c.textContent.match(/#[0-9A-F]{6}\b/i);
+      if (!m || c.parentNode.querySelector('.copy-btn')) return;
+      c.after(makeCopyBtn(() => m[0].toUpperCase(), 'Копіювати ' + m[0].toUpperCase()));
+    });
+    document.querySelectorAll('main .tokens-code').forEach(block => {
+      if (block.previousElementSibling && block.previousElementSibling.classList.contains('copy-row')) return;
+      const row = document.createElement('div'); row.className = 'copy-row';
+      row.appendChild(makeCopyBtn(() => block.innerText, 'Копіювати код'));
+      block.before(row);
+    });
+    document.querySelectorAll('main [data-copy]').forEach(el => {
+      if (el.querySelector(':scope > .copy-btn')) return;
+      const txt = el.getAttribute('data-copy') || el.innerText;
+      el.appendChild(makeCopyBtn(() => el.getAttribute('data-copy') || txt));
+    });
+  }
 
   // ---- Prefetch сусідніх розділів (prev/next) — миттєва навігація ----
   function prefetchNeighbors() {
@@ -410,13 +539,25 @@ ${groups}
       });
     } catch (_) {}
   }
-  prefetchNeighbors();
-
   injectMetaIfMissing();
 
+  function prefillSearch() {
+    try {
+      const q = new URL(location.href).searchParams.get('search');
+      const inp = document.getElementById('sb-search');
+      if (q && inp) { inp.value = q; inp.dispatchEvent(new Event('input')); openDrawer(); inp.focus(); }
+    } catch (_) {}
+  }
+
   function init() {
+    addSkipLink();
     renderSidebar();
+    prefillSearch();
+    renderPageNav();
+    addCopyButtons();
+    syncToggle();
     highlightQueryOnPage();
+    prefetchNeighbors();
   }
 
   if (document.readyState === 'loading') {

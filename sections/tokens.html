@@ -11,6 +11,8 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,7 +37,7 @@
     Усі змінні бренду — у форматах JSON та CSS, версія <strong>4.2.0 від 22.09.2026</strong>: темна тема (за замовчуванням), світла тема <code>[data-dc-theme="light"]</code>, палітра графіків, семантичні аліаси (<code>--dc-text</code>, <code>--dc-accent</code>…), які самі перемикаються між темами. Не копіюй значення руками — підключай файл: <a href="../tokens/dreamcar-tokens.css" style="color:var(--link);">dreamcar-tokens.css</a> · <a href="../tokens/dreamcar-tokens.json" style="color:var(--link);">dreamcar-tokens.json</a>. Імпорт у Figma — через плагін Tokens Studio із JSON.
   </p>
 
-  <h3 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h3>
+  <h2 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h2>
   <div class="tokens-code">{
   <span class="key">"$meta"</span>: {
     <span class="key">"name"</span>: "DreamCar Design Tokens",
@@ -148,7 +150,7 @@
   }
 }</div>
 
-  <h3 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h3>
+  <h2 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h2>
   <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v4.2.0 · 22.09.2026 · https://brand.dreamcar.ua/tokens/dreamcar-tokens.css */</span>
 :root {
   <span class="comment">/* === COLORS · DARK (default) === */</span>
@@ -372,9 +374,9 @@
 
   </div>
 
-  <h3 class="s-subtitle">/// ВЕРСІЇ АССЕТІВ — <span class="red">АКТУАЛЬНІ І ЗАСТАРІЛІ</span></h3>
+  <h2 class="s-subtitle">/// ВЕРСІЇ АССЕТІВ — <span class="red">АКТУАЛЬНІ І ЗАСТАРІЛІ</span></h2>
   <p class="s-desc">Підрядник, який знайшов старий файл у пошті чи на диску, звіряється з цією таблицею. Усе, чого немає в колонці «актуально», — не використовувати.</p>
-  <div class="table-scroll">
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Таблиця">
   <table class="a11y-table">
     <thead><tr><th scope="col">Ассет</th><th scope="col">Актуально</th><th scope="col">Застаріло — не використовувати</th><th scope="col">З якої дати</th></tr></thead>
     <tbody>
@@ -390,7 +392,7 @@
   </table>
   </div>
 
-  <h3 class="s-subtitle">/// СТРУКТУРА ПАПКИ БРЕНДУ</h3>
+  <h2 class="s-subtitle">/// СТРУКТУРА ПАПКИ БРЕНДУ</h2>
   <p class="s-desc">Рекомендована структура для Google Drive. Позначка «є» — файл уже лежить у цьому брендбуці й дублюється в папку як є.</p>
   <div class="tokens-code">dreamcar-brand/
 ├── 01-logo/                 є · assets/logo/ + dreamcar-logos.zip
@@ -415,7 +417,7 @@
 └── 07-brand-book/
     └── dreamcar-brand-book-v4.2.pdf   = print.html → «Зберегти як PDF»</div>
 
-  <h3 class="s-subtitle">/// ВЕРСІЇ ТА ЗМІНИ</h3>
+  <h2 class="s-subtitle">/// ВЕРСІЇ ТА ЗМІНИ</h2>
   <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
       <strong style="color: var(--red-glow);">v4.2 · 09.2026</strong> — Токени 4.2: світла тема, палітра графіків, --red-glow і --danger-text для контрасту; таблиця актуальних і застарілих ассетів; розділи 29 Відео і 30 Локалізація; «власник» замість «переможець» по всій книзі; Bebas Neue прибрано.

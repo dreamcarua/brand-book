@@ -9,7 +9,9 @@
 <title>404 — Сторінку не знайдено · DreamCar Brand Book</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="favicon-32.png">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body {
@@ -49,7 +51,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.3em;
-    color: var(--red-glow);
+    color: #FF1A2B;
     margin-bottom: 24px;
   }
   .number {
@@ -83,11 +85,11 @@
     background: #E30613;
     color: #FFFFFF;
     padding: 16px 28px;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Manrope', sans-serif; font-weight: 800;
     font-size: 13px;
     letter-spacing: 0.1em;
     text-decoration: none;
-    border-radius: 999px;
+    border-radius: 0;
     transition: transform 150ms cubic-bezier(0.2, 0.9, 0.3, 1), background 150ms;
   }
   .cta:hover { transform: translateY(-2px); background: #B8050F; }
@@ -147,28 +149,40 @@
     .cta { transition: none; }
     .cta:hover { transform: none; }
   }
+  .search404 { margin: 40px 0 8px; max-width: 560px; }
+  .search404-row { display: flex; gap: 8px; margin-top: 10px; }
+  .search404 input { flex: 1; min-width: 0; background: #0A0A0A; border: 1px solid #2A2A2A; color: #fff; padding: 14px 16px;
+    font-family: 'Manrope', sans-serif; font-size: 15px; }
+  .search404 input:focus-visible { outline: 2px solid #E30613; outline-offset: 0; }
 </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container" id="main">
     <div class="tag">/// PAGE NOT FOUND</div>
     <div class="number">404</div>
     <h1 class="title">МАШИНУ <span class="red">ВЖЕ ЗАБРАЛИ.</span></h1>
-    <p class="desc">Сторінка, яку Ви шукаєте, не існує — або переїхала. Повертайтесь на головну, або одразу до інструментів.</p>
+    <p class="desc">Сторінки, яку ти шукаєш, не існує — або вона переїхала. Знайди потрібне пошуком або почни з головної.</p>
     <div class="cta-row">
       <a href="/" class="cta">НА ГОЛОВНУ</a>
       <a href="/sections/quickstart.html" class="cta ghost">QUICK START</a>
     </div>
+    <form class="search404" action="/sections/quickstart.html" method="get" role="search">
+      <label for="q404" class="lbl">/// ЗНАЙТИ В БРЕНДБУЦІ</label>
+      <div class="search404-row">
+        <input id="q404" name="search" type="search" placeholder="логотип, червоний, заборонені слова…" autocomplete="off">
+        <button type="submit" class="cta">ШУКАТИ</button>
+      </div>
+    </form>
     <div class="shortcuts">
       <div class="lbl">/// ШВИДКИЙ ДОСТУП</div>
       <div class="shortcuts-grid">
-        <a href="/sections/tools.html" class="shortcut">🛠 BRAND TOOLS</a>
-        <a href="/sections/generator.html" class="shortcut">🚀 POST GENERATOR</a>
-        <a href="/sections/voice.html" class="shortcut">🗣 ГОЛОС І МОВА</a>
-        <a href="/sections/examples.html" class="shortcut">📚 EXAMPLES</a>
+        <a href="/sections/legal.html" class="shortcut">LEGAL-SAFE ЛЕКСИКОН</a>
+        <a href="/sections/logo.html" class="shortcut">ЛОГОТИП І ФАЙЛИ</a>
+        <a href="/sections/tools.html" class="shortcut">ІНСТРУМЕНТИ</a>
+        <a href="/sections/generator.html" class="shortcut">ГЕНЕРАТОР ПОСТІВ</a>
       </div>
     </div>
-    <div class="meta">DREAMCAR · BRAND BOOK · V4.0</div>
-  </div>
+    <div class="meta">DREAMCAR · BRAND BOOK</div>
+  </main>
 </body>
 </html>

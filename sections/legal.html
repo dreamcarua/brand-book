@@ -12,6 +12,8 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
@@ -99,7 +101,7 @@
   <div class="table-wrap">
     <table class="lex">
       <thead>
-        <tr><th style="width:25%">❌ Не вживай</th><th style="width:8%"></th><th style="width:25%">✅ Заміна</th><th scope="col">Чому</th></tr>
+        <tr><th scope="col" style="width:25%">❌ Не вживай</th><td aria-hidden="true" style="width:8%"></td><th scope="col" style="width:25%">✅ Заміна</th><th scope="col">Чому</th></tr>
       </thead>
       <tbody>
         <tr><td class="bad">розіграш</td><td class="arrow">→</td><td class="good">промоакція</td><td class="why">Маркер лотерейної діяльності</td></tr>
@@ -202,41 +204,10 @@
 </nav>
 </main>
 
+<script src="../assets/lexicon.js"></script>
 <script>
 (function(){
-  var BAD_WORDS = {
-    'розіграш': 'промоакція',
-    'розіграшу': 'промоакції',
-    'розіграші': 'промоакції',
-    'розіграшів': 'промоакцій',
-    'розігруємо': 'проводимо промоакцію',
-    'лотерея': 'промо',
-    'лотереї': 'промо',
-    'лотерейку': 'промо',
-    'виграй': 'отримай',
-    'виграти': 'отримати',
-    'виграш': 'отримання',
-    'виграє': 'отримає',
-    'переможець': 'власник',
-    'переможця': 'власника',
-    'переможці': 'власники',
-    'переможців': 'власників',
-    'шанс': 'можливість',
-    'шанси': 'можливості',
-    'шансів': 'можливостей',
-    'квиток': 'токен',
-    'квитка': 'токена',
-    'квитки': 'токени',
-    'квитків': 'токенів',
-    'азарт': 'мета',
-    'азартна': 'цілеспрямована',
-    'фарт': 'крок',
-    'удача': 'дія',
-    'удачі': 'дії',
-    'ставка': 'внесок',
-    'ставки': 'внески',
-    'ставку': 'внесок'
-  };
+  // Words and replacements: assets/lexicon.js (it follows the 11B table on this page)
 
   var input = document.getElementById('lintInput');
   var result = document.getElementById('lintResult');
@@ -245,26 +216,18 @@
   function lint(){
     var text = input.value;
     if (!text.trim()) { result.className = 'result'; return; }
+    var hits = window.DC_LEXICON ? window.DC_LEXICON.scan(text).filter(function(h){ return h.level === 'never'; }) : [];
     var found = [];
-    var highlighted = text;
-    var lower = text.toLowerCase();
-    Object.keys(BAD_WORDS).forEach(function(bad){
-      var re = new RegExp('\\b' + bad + '\\b', 'gi');
-      var matches = lower.match(re);
-      if (matches) {
-        matches.forEach(function(){
-          if (found.indexOf(bad) === -1) found.push(bad);
-        });
-        highlighted = highlighted.replace(new RegExp('\\b(' + bad + ')\\b', 'gi'), '<mark>$1</mark>');
-      }
-    });
+    hits.forEach(function(h){ if (found.indexOf(h.word) === -1) found.push(h.word); });
+    var highlighted = window.DC_LEXICON ? window.DC_LEXICON.highlight(text) : '';
     if (found.length === 0) {
       result.className = 'result show ok';
       result.innerHTML = '✅ <b>Чисто!</b> Заборонених слів не знайдено. Можеш публікувати.';
     } else {
       result.className = 'result show warn';
       var suggestions = found.map(function(w){
-        return '<b>' + w + '</b> → <span style="color:var(--success)">' + BAD_WORDS[w] + '</span>';
+        var r = hits.filter(function(h){ return h.word === w; })[0];
+        return '<b>' + w + '</b> → <span style="color:var(--success)">' + r.replace + '</span>';
       }).join(' · ');
       result.innerHTML = '🔴 <b>Знайдено заборонені слова (' + found.length + '):</b><br><br>' +
         suggestions + '<br><br>' +

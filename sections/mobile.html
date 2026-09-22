@@ -6,6 +6,8 @@
 <meta name="color-scheme" content="dark">
 <title>25 Mobile-First Spec · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
@@ -57,7 +59,7 @@
   </p>
 
   <!-- ============== ЦІЛЬОВІ ПРИСТРОЇ ============== -->
-  <h3 class="s-subtitle">/// ЦІЛЬОВІ <span class="red">ПРИСТРОЇ</span></h3>
+  <h2 class="s-subtitle">/// ЦІЛЬОВІ <span class="red">ПРИСТРОЇ</span></h2>
   <p class="s-desc">Це 95% нашої мобільної аудиторії (за даними GA + Mixpanel). Тестуй на цих breakpoint-ах ПЕРЕД продакшеном.</p>
 
   <div class="device-row">
@@ -100,8 +102,8 @@
   </div>
 
   <!-- ============== BREAKPOINTS ============== -->
-  <h3 class="s-subtitle">/// СТАНДАРТНІ <span class="red">BREAKPOINTS</span></h3>
-  <table class="bp-table">
+  <h2 class="s-subtitle">/// СТАНДАРТНІ <span class="red">BREAKPOINTS</span></h2>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
     <thead>
       <tr>
         <th scope="col">Назва</th>
@@ -142,10 +144,10 @@
         <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1440px)</code></td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <!-- ============== TOUCH TARGETS ============== -->
-  <h3 class="s-subtitle">/// TOUCH TARGETS — <span class="red">МІН 44×44 PX</span></h3>
+  <h2 class="s-subtitle">/// TOUCH TARGETS — <span class="red">МІН 44×44 PX</span></h2>
   <p class="s-desc">
     Apple HIG, Google Material і WCAG 2.5.5 рекомендують <strong style="color: var(--white);">мінімум 44×44 px (CSS) для будь-якого clickable елемента</strong>. У нас — так само. Менше — користувач промахується і дратується.
   </p>
@@ -173,7 +175,7 @@
   </p>
 
   <!-- ============== THUMB ZONES ============== -->
-  <h3 class="s-subtitle">/// THUMB ZONES — <span class="red">ДЕ ПАЛЕЦЬ ДОТЯГУЄТЬСЯ</span></h3>
+  <h2 class="s-subtitle">/// THUMB ZONES — <span class="red">ДЕ ПАЛЕЦЬ ДОТЯГУЄТЬСЯ</span></h2>
   <p class="s-desc">
     Більшість користувачів тримають телефон однією рукою. Це означає що нижня частина екрана = easy reach, а верхня = hard. Розміщуй критичні елементи (CTA, головна навігація) у easy zone.
   </p>
@@ -215,7 +217,7 @@
   </ul>
 
   <!-- ============== MOBILE PATTERNS ============== -->
-  <h3 class="s-subtitle">/// СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h3>
+  <h2 class="s-subtitle">/// СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h2>
   <div class="card-grid" style="margin-top: 20px;">
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// BOTTOM SHEET</span>
@@ -250,10 +252,10 @@
   </div>
 
   <!-- ============== TYPOGRAPHY MOBILE ============== -->
-  <h3 class="s-subtitle">/// ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h3>
+  <h2 class="s-subtitle">/// ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h2>
   <p class="s-desc">Скейлинг типографічної шкали з розділу 07 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
 
-  <table class="bp-table">
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
     <thead>
       <tr><th scope="col">Рівень</th><th scope="col">Desktop</th><th scope="col">Mobile</th><th scope="col">Line-height</th><th scope="col">Призначення</th></tr>
     </thead>
@@ -266,7 +268,7 @@
       <tr><td>SMALL</td><td>14px</td><td><strong style="color: var(--red);">14px</strong></td><td>1.5</td><td>Captions, meta</td></tr>
       <tr><td>TINY</td><td>12px</td><td><strong style="color: var(--red);">12px</strong></td><td>1.4</td><td>Юр. дисклеймери, footer</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <p class="s-desc" style="margin-top: 18px;">
     <strong style="color: var(--white);">Min font-size:</strong> 12px. Менше — нечитабельно навіть з ідеальним зором.<br>
@@ -275,7 +277,7 @@
   </p>
 
   <!-- ============== PERFORMANCE ============== -->
-  <h3 class="s-subtitle">/// PERFORMANCE — <span class="red">ШВИДКІСТЬ</span></h3>
+  <h2 class="s-subtitle">/// PERFORMANCE — <span class="red">ШВИДКІСТЬ</span></h2>
   <p class="s-desc">
     Аудиторія DC у Україні значна частка на 4G/3G (особливо у регіонах). <strong style="color: var(--white);">3 секунди до first paint</strong> — це наш бар. Більше — bounce rate стрибає на 50%+.
   </p>
@@ -314,7 +316,7 @@
   </div>
 
   <!-- ============== CHECKLIST ============== -->
-  <h3 class="s-subtitle">/// ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h3>
+  <h2 class="s-subtitle">/// ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h2>
 
   <div class="checklist-mobile">
     <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✅ 12 ПУНКТІВ</h4>

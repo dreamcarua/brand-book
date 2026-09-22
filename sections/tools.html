@@ -6,6 +6,8 @@
 <meta name="color-scheme" content="dark">
 <title>27 Brand Tools · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
@@ -23,7 +25,7 @@
   .lint-issue.warn { background: rgba(245,158,11,0.15); border-color: var(--warning); }
   .lint-issue.good { background: rgba(16,185,129,0.15); border-color: var(--success); }
   .lint-issue .level { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; margin-bottom: 4px; }
-  .lint-issue .word { font-family: 'Archivo Black', sans-serif; font-size: 14px; color: var(--white); }
+  .lint-issue .word { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 14px; color: var(--white); }
   .lint-issue .sugg { font-size: 12px; color: var(--bone); margin-top: 4px; }
   .linter-stats { display: flex; gap: 16px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; }
   .linter-stats .stat { padding: 8px 14px; background: var(--black); border: 1px solid var(--steel); border-radius: 4px; }
@@ -32,14 +34,14 @@
   .linter-stats .stat.success { border-color: var(--success); color: var(--success); }
 
   /* ====== COLOR CONTRAST CHECKER ====== */
-  .cc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: flex-start; margin-top: 16px; }
+  .cc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; align-items: flex-start; margin-top: 16px; }
   .cc-inputs { display: flex; flex-direction: column; gap: 14px; }
   .cc-input-row { display: flex; align-items: center; gap: 12px; }
   .cc-input-row input[type="color"] { width: 60px; height: 60px; border: 1px solid var(--steel); border-radius: 4px; cursor: pointer; background: transparent; }
   .cc-input-row input[type="text"] { background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; flex: 1; }
   .cc-input-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--bone); min-width: 80px; }
   .cc-preview { padding: 32px; border-radius: 8px; text-align: center; min-height: 200px; display: flex; flex-direction: column; justify-content: center; gap: 10px; transition: background 0.2s, color 0.2s; }
-  .cc-preview .big { font-family: 'Archivo Black', sans-serif; font-size: 28px; }
+  .cc-preview .big { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 28px; }
   .cc-preview .small { font-size: 14px; }
   .cc-result { padding: 18px; background: var(--black); border: 1px solid var(--steel); margin-top: 14px; }
   .cc-result .ratio { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--white); line-height: 1; }
@@ -72,6 +74,11 @@
   @media (max-width: 768px) {
     .linter-area, .cc-grid { grid-template-columns: 1fr; }
   }
+  .cc-input-row input { min-width: 0; }
+  .tool-card h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.01em; text-transform: uppercase; margin-bottom: 8px; }
+  .tool-sub { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400; color: var(--red-glow); letter-spacing: 0.15em; text-transform: uppercase; }
+  button.token { font: inherit; color: inherit; text-align: left; cursor: pointer; }
+  button.token .swatch, button.token .name, button.token .val { display: block; }
 </style>
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -92,11 +99,11 @@
 
   <!-- ============== VOICE LINTER ============== -->
   <div class="tool-card">
-    <h3>🔍 VOICE LINTER — ПЕРЕВІРКА ТЕКСТУ</h3>
+    <h2 id="voice-linter">Voice Linter — перевірка тексту</h2>
     <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="voice.html" style="color: var(--red);">розділу 11 DO/CAREFUL/NEVER</a>.</p>
 
     <div class="linter-area">
-      <textarea class="linter-input" id="lintInput" placeholder="Встав текст сюди... Наприклад: «Шанс виграти BMW за 249 грн! Купуй квиток!»" oninput="runLinter()">Шанс виграти BMW X5 за 249 грн! Купи квиток — твій шанс стати власником авто мрії! Поспішай, лотерея сьогодні!</textarea>
+      <textarea class="linter-input" id="lintInput" aria-label="Текст для перевірки" placeholder="Встав текст сюди... Наприклад: «Шанс виграти BMW за 249 грн! Купуй квиток!»" oninput="runLinter()">Шанс виграти BMW X5 за 249 грн! Купи квиток — твій шанс стати власником авто мрії! Поспішай, лотерея сьогодні!</textarea>
       <div class="linter-output" id="lintOutput"></div>
     </div>
     <div class="linter-stats" id="lintStats"></div>
@@ -107,20 +114,20 @@
 
   <!-- ============== COLOR CONTRAST CHECKER ============== -->
   <div class="tool-card">
-    <h3>🎨 COLOR CONTRAST CHECKER — WCAG 2.1</h3>
+    <h2 id="color-contrast">Перевірка контрасту — WCAG 2.1</h2>
     <p class="desc">Перевір чи комбінація кольорів проходить WCAG AA / AAA. <strong style="color: var(--white);">Контраст 4.5:1 для body тексту = мінімум.</strong> 7:1 = AAA (ідеально).</p>
 
     <div class="cc-grid">
       <div class="cc-inputs">
         <div class="cc-input-row">
           <span class="label">/// ТЕКСТ</span>
-          <input type="color" id="ccFg" value="#ffffff" oninput="updateCC()">
-          <input type="text" id="ccFgHex" value="#FFFFFF" oninput="updateCCFromHex('fg')">
+          <input type="color" id="ccFg" aria-label="Колір тексту" value="#ffffff" oninput="updateCC()">
+          <input type="text" id="ccFgHex" aria-label="Колір тексту, HEX" value="#FFFFFF" oninput="updateCCFromHex('fg')">
         </div>
         <div class="cc-input-row">
           <span class="label">/// ФОН</span>
-          <input type="color" id="ccBg" value="#0a0a0a" oninput="updateCC()">
-          <input type="text" id="ccBgHex" value="#0A0A0A" oninput="updateCCFromHex('bg')">
+          <input type="color" id="ccBg" aria-label="Колір фону" value="#0a0a0a" oninput="updateCC()">
+          <input type="text" id="ccBgHex" aria-label="Колір фону, HEX" value="#0A0A0A" oninput="updateCCFromHex('bg')">
         </div>
 
         <div class="cc-result">
@@ -156,39 +163,52 @@
 
   <!-- ============== TOKEN PICKER ============== -->
   <div class="tool-card">
-    <h3>🎟 DESIGN TOKENS — КЛІК = СКОПІЙОВАНО</h3>
-    <p class="desc">Кожен токен — клікни і отримай HEX (для дизайнерів) або CSS-змінну (для розробників). Холдер «Alt» при кліку = JSON value.</p>
+    <h2 id="design-tokens">Дизайн-токени — клік копіює</h2>
+    <p class="desc">Клік копіює HEX (для дизайнерів) або CSS-змінну (для розробників). З затиснутим Alt — рядок JSON. Значення беруться з <a href="../tokens/dreamcar-tokens.css" style="color:var(--link);">tokens/dreamcar-tokens.css</a> v4.2.0.</p>
 
-    <h4 style="margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// КОЛЬОРИ</h4>
+    <h3 class="tool-sub">/// Кольори · темна тема</h3>
     <div class="token-grid">
-      <div class="token" onclick="copyToken(this, '#0A0A0A', '--bg')"><div class="swatch" style="background: #0A0A0A; border: 1px solid var(--steel);"></div><div class="name">--bg</div><div class="val">#0A0A0A</div></div>
-      <div class="token" onclick="copyToken(this, '#E30613', '--red')"><div class="swatch" style="background: #E30613;"></div><div class="name">--red</div><div class="val">#E30613</div></div>
-      <div class="token" onclick="copyToken(this, '#FFFFFF', '--white')"><div class="swatch" style="background: #FFFFFF;"></div><div class="name">--white</div><div class="val">#FFFFFF</div></div>
-      <div class="token" onclick="copyToken(this, '#141414', '--coal')"><div class="swatch" style="background: #141414;"></div><div class="name">--coal</div><div class="val">#141414</div></div>
-      <div class="token" onclick="copyToken(this, '#262626', '--line')"><div class="swatch" style="background: #262626;"></div><div class="name">--line</div><div class="val">#262626</div></div>
-      <div class="token" onclick="copyToken(this, '#404040', '--steel')"><div class="swatch" style="background: #404040;"></div><div class="name">--steel</div><div class="val">#404040</div></div>
-      <div class="token" onclick="copyToken(this, '#DDDDDD', '--bone')"><div class="swatch" style="background: #DDDDDD;"></div><div class="name">--bone</div><div class="val">#DDDDDD</div></div>
-      <div class="token" onclick="copyToken(this, '#10B981', '--success')"><div class="swatch" style="background: #10B981;"></div><div class="name">--success</div><div class="val">#10B981</div></div>
-      <div class="token" onclick="copyToken(this, '#F59E0B', '--warning')"><div class="swatch" style="background: #F59E0B;"></div><div class="name">--warning</div><div class="val">#F59E0B</div></div>
-      <div class="token" onclick="copyToken(this, '#DC2626', '--danger')"><div class="swatch" style="background: #DC2626;"></div><div class="name">--danger</div><div class="val">#DC2626</div></div>
+      <button type="button" class="token" onclick="copyToken(this, '#0A0A0A', '--dc-black', event)"><span class="swatch" style="background: #0A0A0A; border: 1px solid var(--steel);"></span><span class="name">--dc-black</span><span class="val">#0A0A0A</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#141414', '--dc-coal', event)"><span class="swatch" style="background: #141414; border: 1px solid var(--steel);"></span><span class="name">--dc-coal</span><span class="val">#141414</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#1F1F1F', '--dc-graphite', event)"><span class="swatch" style="background: #1F1F1F; border: 1px solid var(--steel);"></span><span class="name">--dc-graphite</span><span class="val">#1F1F1F</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#2A2A2A', '--dc-steel', event)"><span class="swatch" style="background: #2A2A2A;"></span><span class="name">--dc-steel</span><span class="val">#2A2A2A</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#888888', '--dc-ash', event)"><span class="swatch" style="background: #888888;"></span><span class="name">--dc-ash</span><span class="val">#888888</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#DDDDDD', '--dc-bone', event)"><span class="swatch" style="background: #DDDDDD;"></span><span class="name">--dc-bone</span><span class="val">#DDDDDD</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#FFFFFF', '--dc-white', event)"><span class="swatch" style="background: #FFFFFF;"></span><span class="name">--dc-white</span><span class="val">#FFFFFF</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#E30613', '--dc-red', event)"><span class="swatch" style="background: #E30613;"></span><span class="name">--dc-red</span><span class="val">#E30613</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#B8050F', '--dc-red-deep', event)"><span class="swatch" style="background: #B8050F;"></span><span class="name">--dc-red-deep</span><span class="val">#B8050F</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#FF1A2B', '--dc-red-glow', event)"><span class="swatch" style="background: #FF1A2B;"></span><span class="name">--dc-red-glow</span><span class="val">#FF1A2B</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#10B981', '--dc-success', event)"><span class="swatch" style="background: #10B981;"></span><span class="name">--dc-success</span><span class="val">#10B981</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#F59E0B', '--dc-warning', event)"><span class="swatch" style="background: #F59E0B;"></span><span class="name">--dc-warning</span><span class="val">#F59E0B</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#DC2626', '--dc-danger', event)"><span class="swatch" style="background: #DC2626;"></span><span class="name">--dc-danger</span><span class="val">#DC2626</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#F87171', '--dc-danger-text', event)"><span class="swatch" style="background: #F87171;"></span><span class="name">--dc-danger-text</span><span class="val">#F87171</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#3B82F6', '--dc-info', event)"><span class="swatch" style="background: #3B82F6;"></span><span class="name">--dc-info</span><span class="val">#3B82F6</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '#60A5FA', '--dc-link', event)"><span class="swatch" style="background: #60A5FA;"></span><span class="name">--dc-link</span><span class="val">#60A5FA</span></button>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// SPACING (4px BASE)</h4>
+    <h3 class="tool-sub">/// Відступи (база 4px)</h3>
     <div class="token-grid">
-      <div class="token" onclick="copyToken(this, '4px', '--space-1')"><div class="swatch" style="background: var(--red); height: 4px;"></div><div class="name">--space-1</div><div class="val">4px</div></div>
-      <div class="token" onclick="copyToken(this, '8px', '--space-2')"><div class="swatch" style="background: var(--red); height: 8px;"></div><div class="name">--space-2</div><div class="val">8px</div></div>
-      <div class="token" onclick="copyToken(this, '16px', '--space-3')"><div class="swatch" style="background: var(--red); height: 16px;"></div><div class="name">--space-3</div><div class="val">16px</div></div>
-      <div class="token" onclick="copyToken(this, '24px', '--space-4')"><div class="swatch" style="background: var(--red); height: 24px;"></div><div class="name">--space-4</div><div class="val">24px</div></div>
-      <div class="token" onclick="copyToken(this, '32px', '--space-5')"><div class="swatch" style="background: var(--red); height: 32px;"></div><div class="name">--space-5</div><div class="val">32px</div></div>
-      <div class="token" onclick="copyToken(this, '48px', '--space-6')"><div class="swatch" style="background: var(--red); height: 48px;"></div><div class="name">--space-6</div><div class="val">48px</div></div>
+      <button type="button" class="token" onclick="copyToken(this, '4px', '--dc-s-1', event)"><span class="swatch" style="background: var(--red); height: 4px;"></span><span class="name">--dc-s-1</span><span class="val">4px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '8px', '--dc-s-2', event)"><span class="swatch" style="background: var(--red); height: 8px;"></span><span class="name">--dc-s-2</span><span class="val">8px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '12px', '--dc-s-3', event)"><span class="swatch" style="background: var(--red); height: 12px;"></span><span class="name">--dc-s-3</span><span class="val">12px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '16px', '--dc-s-4', event)"><span class="swatch" style="background: var(--red); height: 16px;"></span><span class="name">--dc-s-4</span><span class="val">16px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '24px', '--dc-s-5', event)"><span class="swatch" style="background: var(--red); height: 24px;"></span><span class="name">--dc-s-5</span><span class="val">24px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '32px', '--dc-s-6', event)"><span class="swatch" style="background: var(--red); height: 32px;"></span><span class="name">--dc-s-6</span><span class="val">32px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '48px', '--dc-s-7', event)"><span class="swatch" style="background: var(--red); height: 48px;"></span><span class="name">--dc-s-7</span><span class="val">48px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '64px', '--dc-s-8', event)"><span class="swatch" style="background: var(--red); height: 48px;"></span><span class="name">--dc-s-8</span><span class="val">64px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '96px', '--dc-s-9', event)"><span class="swatch" style="background: var(--red); height: 48px;"></span><span class="name">--dc-s-9</span><span class="val">96px</span></button>
+      <button type="button" class="token" onclick="copyToken(this, '128px', '--dc-s-10', event)"><span class="swatch" style="background: var(--red); height: 48px;"></span><span class="name">--dc-s-10</span><span class="val">128px</span></button>
     </div>
 
-    <button class="copy-action" onclick="downloadAllTokens()" style="margin-top: 16px;">⬇ DOWNLOAD tokens.json + tokens.css</button>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+      <a class="copy-action" href="../tokens/dreamcar-tokens.css" download>⇩ dreamcar-tokens.css</a>
+      <a class="copy-action" href="../tokens/dreamcar-tokens.json" download>⇩ dreamcar-tokens.json</a>
+    </div>
   </div>
 
   <!-- ============== ASSETS DOWNLOAD ============== -->
   <div class="tool-card">
-    <h3>📦 ASSET DOWNLOAD CENTER</h3>
+    <h2 id="assets">Файли бренду</h2>
     <p class="desc">Всі офіційні бренд-ассети в одному місці. Кожен — у потрібному форматі. Не використовуй ассети з інших джерел.</p>
 
     <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ЛОГОТИП</h4>
@@ -266,9 +286,9 @@
 
   <!-- ============== AI ASSISTANT PROMPT ============== -->
   <div class="tool-card">
-    <h3>🤖 BRAND AI ASSISTANT</h3>
+    <h2 id="ai-assistant">AI-асистент бренду</h2>
     <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Cкопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
-    <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">📋 СКОПІЮВАТИ AI SYSTEM PROMPT</button>
+    <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">Скопіювати AI system prompt</button>
     <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red);">розділі 22 AI-контент</a>.</p>
   </div>
 
@@ -300,59 +320,10 @@
 </nav>
 </main>
 
+<script src="../assets/lexicon.js"></script>
 <script>
 // ===== VOICE LINTER =====
-const NEVER_WORDS = {
-  'шанс': 'можливість / варіант',
-  'шанси': 'можливості',
-  'квиток': 'токен',
-  'квитка': 'токена',
-  'квитки': 'токени',
-  'квитків': 'токенів',
-  'квитку': 'токену',
-  'квитком': 'токеном',
-  'білет': 'токен',
-  'білетів': 'токенів',
-  'лотерея': 'промоакція',
-  'лотереї': 'промоакції',
-  'лотерею': 'промоакцію',
-  'розіграш': 'промоакція / прямий ефір',
-  'розіграшу': 'промоакції',
-  'розіграші': 'промоакції',
-  'виграти': 'отримати / забрати',
-  'виграє': 'отримує / забирає',
-  'вигравати': 'отримувати',
-  'вигравав': 'отримував',
-  'виграв': 'став власником / отримав',
-  'виграла': 'стала власницею / отримала',
-  'виграли': 'отримали',
-  'виграш': 'отримання авто',
-  'виграшу': 'отримання',
-  'виграші': 'фінали',
-  'виграй': 'отримай / забери',
-  'грати': 'брати участь',
-  'грали': 'брали участь',
-  'грає': 'бере участь',
-  'гра': 'промоакція',
-  'казино': '— не вживати взагалі',
-  'джекпот': '— не вживати',
-  'джекпоти': '— не вживати',
-  'халява': 'безкоштовно (з контекстом)',
-  'халявою': 'безкоштовно',
-  'ставка': 'токен',
-  'ставки': 'токени',
-  'азарт': '— не вживати',
-  'азартний': '— не вживати',
-  'програв': '— не вживати',
-  'програш': '— не вживати',
-  'удача': 'дія / крок',
-  'удачі': 'дій',
-  'фарт': 'крок / дія',
-  'фарту': 'кроку / дії',
-  'обираємо випадково': 'визначаємо за алгоритмом'
-};
-
-const CAREFUL_WORDS = ['переможець', 'переможця', 'переможці', 'переможцю', 'переможців', 'переможниця', 'приз', 'призу', 'призи'];
+// NEVER / CAREFUL words: see assets/lexicon.js (one source for the whole site)
 
 const DEAR_HEAVY = {
   'привіт': 'Доброго дня',
@@ -365,15 +336,9 @@ const DEAR_HEAVY = {
   'останній шанс': 'фінальний день промоакції'
 };
 
-const VI_PATTERNS = [
-  { re: /\bви\b/g, suggest: 'Ви (з великої)' },
-  { re: /\bвас\b/g, suggest: 'Вас (з великої)' },
-  { re: /\bвам\b/g, suggest: 'Вам (з великої)' },
-  { re: /\bваш\b/g, suggest: 'Ваш (з великої)' },
-  { re: /\bваша\b/g, suggest: 'Ваша (з великої)' },
-  { re: /\bваше\b/g, suggest: 'Ваше (з великої)' },
-  { re: /\bваші\b/g, suggest: 'Ваші (з великої)' }
-];
+const VI_PATTERNS = ['ви','вас','вам','ваш','ваша','ваше','ваші','вашого','вашої','вашим'].map(w => (
+  { re: new RegExp('(?<![\\p{L}\\p{N}])' + w + '(?![\\p{L}\\p{N}])', 'gu'), suggest: w.charAt(0).toUpperCase() + w.slice(1) + ' (з великої)' }
+));
 
 function runLinter() {
   const text = document.getElementById('lintInput').value;
@@ -390,37 +355,14 @@ function runLinter() {
   let issues = [];
   let neverCount = 0, warnCount = 0, viCount = 0;
 
-  // Перевірка NEVER слів
-  Object.entries(NEVER_WORDS).forEach(([bad, good]) => {
-    const re = new RegExp('\\b' + bad.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
-    const matches = text.match(re);
-    if (matches) {
-      matches.forEach(m => {
-        issues.push({
-          level: 'NEVER',
-          word: m,
-          suggest: '→ ' + good,
-          color: 'danger'
-        });
-        neverCount++;
-      });
-    }
-  });
-
-  // CAREFUL слова
-  CAREFUL_WORDS.forEach(w => {
-    const re = new RegExp('\\b' + w + '\\b', 'gi');
-    const matches = text.match(re);
-    if (matches) {
-      matches.forEach(m => {
-        issues.push({
-          level: 'CAREFUL',
-          word: m,
-          suggest: 'тільки у юр. документах; у маркетингу — заміни на "власник авто" / "учасник"',
-          color: 'warn'
-        });
-        warnCount++;
-      });
+  // NEVER і CAREFUL — спільний лексикон 11B (assets/lexicon.js), Unicode-межі слів
+  (window.DC_LEXICON ? window.DC_LEXICON.scan(text) : []).forEach(h => {
+    if (h.level === 'never') {
+      issues.push({ level: 'NEVER', word: h.match, suggest: '→ ' + h.replace + ' · ' + h.why, color: 'danger' });
+      neverCount++;
+    } else {
+      issues.push({ level: 'CAREFUL', word: h.match, suggest: '→ ' + h.replace + ' · ' + h.why, color: 'warn' });
+      warnCount++;
     }
   });
 
@@ -482,7 +424,7 @@ function runLinter() {
   if (issues.length === 0) {
     output.innerHTML = '<div class="lint-issue good"><div class="level" style="color: var(--success);">/// ✓ ВСЕ ЧИСТО</div><div class="sugg">Текст пройшов перевірку. Жодного слова з NEVER-списку, "Ви" з великої літери, нема спам-маркерів. Можна публікувати!</div></div>';
   } else {
-    output.innerHTML = issues.map(i => '<div class="lint-issue ' + (i.color === 'danger' ? '' : i.color) + '"><div class="level" style="color: var(--' + (i.color === 'danger' ? 'danger' : 'warning') + ');">/// ' + i.level + '</div><div class="word">' + i.word + '</div><div class="sugg">' + i.suggest + '</div></div>').join('');
+    output.innerHTML = issues.map(i => '<div class="lint-issue ' + (i.color === 'danger' ? '' : i.color) + '"><div class="level" style="color: var(--' + (i.color === 'danger' ? 'danger-text' : 'warning') + ');">/// ' + i.level + '</div><div class="word">' + DC_LEXICON.escapeHtml(i.word) + '</div><div class="sugg">' + DC_LEXICON.escapeHtml(i.suggest) + '</div></div>').join('');
   }
 
   // Stats
@@ -498,15 +440,16 @@ function clearLinter() {
 
 function copyFixed() {
   let text = document.getElementById('lintInput').value;
-  Object.entries(NEVER_WORDS).forEach(([bad, good]) => {
-    const replaceWith = good.split(' / ')[0].split(' (')[0];
-    const re = new RegExp('\\b' + bad.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
-    text = text.replace(re, replaceWith);
-  });
+  if (window.DC_LEXICON) {
+    window.DC_LEXICON.scan(text).filter(h => h.level === 'never' && h.replace !== 'не вживати').reverse().forEach(h => {
+      const rep = h.replace.split(' / ')[0];
+      text = text.slice(0, h.index) + rep + text.slice(h.index + h.match.length);
+    });
+  }
   Object.entries(DEAR_HEAVY).forEach(([bad, good]) => {
     text = text.replace(new RegExp(bad, 'gi'), good);
   });
-  text = text.replace(/\bви\b/g, 'Ви').replace(/\bвас\b/g, 'Вас').replace(/\bвам\b/g, 'Вам').replace(/\bваш\b/g, 'Ваш');
+  VI_PATTERNS.forEach(p => { text = text.replace(p.re, m => m.charAt(0).toUpperCase() + m.slice(1)); });
 
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('copyFixedBtn');
@@ -569,69 +512,35 @@ function setColors(fg, bg) {
 }
 
 // ===== TOKEN COPY =====
-function copyToken(el, val, name) {
-  const isAlt = event.altKey;
-  let toCopy;
-  if (isAlt) {
-    toCopy = '"' + name + '": "' + val + '"';
-  } else if (val.startsWith('#')) {
-    toCopy = val;
-  } else {
-    toCopy = 'var(' + name + ')';
-  }
+function copyToken(el, val, name, ev) {
+  const e = ev || window.event || {};
+  const toCopy = e.altKey ? '"' + name + '": "' + val + '"' : (val.startsWith('#') ? val : 'var(' + name + ')');
+  const v = el.querySelector('.val');
+  v.dataset.orig = v.dataset.orig || v.textContent;
   navigator.clipboard.writeText(toCopy).then(() => {
     el.classList.add('copied');
-    const orig = el.querySelector('.val').textContent;
-    el.querySelector('.val').textContent = '✓ скопійовано';
-    setTimeout(() => { el.classList.remove('copied'); el.querySelector('.val').textContent = orig; }, 1500);
-  });
-}
-
-function downloadAllTokens() {
-  const tokens = {
-    color: {
-      bg: '#0A0A0A', red: '#E30613', white: '#FFFFFF',
-      coal: '#141414', line: '#262626', steel: '#404040', bone: '#DDDDDD',
-      success: '#10B981', warning: '#F59E0B', danger: '#DC2626', info: '#3B82F6'
-    },
-    space: { 1: '4px', 2: '8px', 3: '16px', 4: '24px', 5: '32px', 6: '48px' },
-    fontFamily: {
-      heading: '"Oswald", sans-serif',
-      hero: '"Archivo Black", sans-serif',
-      body: '"Manrope", sans-serif',
-      mono: '"JetBrains Mono", monospace'
-    },
-    radius: { sm: '4px', md: '8px', lg: '12px', pill: '999px' }
-  };
-
-  const json = JSON.stringify(tokens, null, 2);
-  const css = Object.entries(tokens.color).map(([k,v]) => '  --' + k + ': ' + v + ';').join('\n') + '\n' +
-              Object.entries(tokens.space).map(([k,v]) => '  --space-' + k + ': ' + v + ';').join('\n');
-
-  const jsonBlob = new Blob([json], { type: 'application/json' });
-  const cssBlob = new Blob([':root {\n' + css + '\n}'], { type: 'text/css' });
-
-  ['tokens.json', 'tokens.css'].forEach((name, i) => {
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(i === 0 ? jsonBlob : cssBlob);
-    a.download = name;
-    a.click();
-  });
+    v.textContent = '✓ скопійовано';
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.classList.remove('copied'); v.textContent = v.dataset.orig; }, 1500);
+  }).catch(() => { v.textContent = 'не вдалося'; });
 }
 
 // ===== AI PROMPT =====
 function copyAIPrompt() {
-  const prompt = `Ти — копірайтер бренду DreamCar (Україна, авто-клуб). Пиши у нашому voice:
+  const never = window.DC_LEXICON ? window.DC_LEXICON.rules.filter(r => r.level === 'never').map(r => r.word + ' → ' + r.replace).join('; ') : '';
+  const prompt = `Ти — копірайтер бренду DreamCar (Україна, авто-клуб з 2016 року; вручення авто — з 2019). Пиши голосом бренду.
 
-ТОН: прямо, коротко, дієсловом. Конкретні цифри (21 авто, 249 ₴). "Ви" з великої. Без зменшувальних. Gender-neutral дієслова.
+ПРОДУКТ: учасники купують токени ШІ-сервісу ai.dreamcar.ua; автомобіль вручається серед учасників у прямому ефірі.
 
-ЗАБОРОНЕНО: шанс, лотерея, виграй, квиток, джекпот, халява, розіграш (у paid ads), казино.
+ТОН: прямо, коротко, дієсловами. Конкретика замість гасел. «Ви» з великої в сервісі, email і рекламі; «ти» — лише в Reels і масовому емоційному контенті. Без зменшувальних. Гендерно-нейтральні дієслова.
 
-ЗАМІСТЬ: квиток → токен, розіграш → промоакція, переможець → власник авто.
+ЗАБОРОНЕНО В БУДЬ-ЯКІЙ ФОРМІ І БЕЗ ВИНЯТКІВ (ліворуч — заборонене, праворуч — заміна): ${never}.
 
-ХОРОШІ ФРАЗИ: "Мрія за ціною чашки кави", "Бери. Дій. Володій.", "21 авто вже знайшло власника".
+ЦИФРИ: тільки ті, що дав автор завдання. Не вигадуй ціни, імена власників, кількість учасників чи відсотки.
 
-Завдання нижче — виконай у цьому voice.
+ФРАЗИ БРЕНДУ: «Мрія за ціною чашки кави», «Бери. Дій. Володій.»
+
+Завдання нижче — виконай цим голосом.
 
 ---
 [ТУТ ТВОЄ ЗАВДАННЯ]`;
@@ -639,7 +548,7 @@ function copyAIPrompt() {
     const btn = document.getElementById('aiPromptBtn');
     btn.classList.add('copied');
     btn.textContent = '✓ СКОПІЙОВАНО';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 СКОПІЮВАТИ AI SYSTEM PROMPT'; }, 2500);
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Скопіювати AI system prompt'; }, 2500);
   });
 }
 
