@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <meta name="supported-color-schemes" content="dark">
-<title>22 AI-контент · DreamCar Brand Book</title>
+<title>13 Робота з AI · DreamCar Brand Book</title>
 <meta name="description" content="DreamCar Brand Book — 22 AI-контент: правила використання генеративного AI.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
-  .ai-hero { padding: 32px; background: linear-gradient(135deg, rgba(34,211,238,0.12), transparent 60%); border-left: 3px solid var(--info); margin-bottom: 28px; }
+  .ai-hero { padding: 32px; background: var(--coal); border-top: 3px solid var(--info); border-left: 3px solid var(--info); margin-bottom: 28px; }
   .ai-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 24px; }
   .ai-cell { padding: 24px 26px; min-height: 280px; display: flex; flex-direction: column; }
   .ai-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
@@ -55,7 +55,7 @@
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
 <header class="topbar">
-  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub">· BRAND BOOK</span></a>
   <div class="topbar-actions">
     <a href="../print.html" class="topbar-pdf">PDF</a>
     <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button>
@@ -65,10 +65,10 @@
 <aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
-<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">22 · AI-контент</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">13 · Робота з AI</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 
 <section id="ai-content">
-  <div class="s-num">/// 22 — AI / ГЕНЕРАТИВНИЙ КОНТЕНТ</div>
+  <div class="s-num plate-k"><span class="pk-num">13</span><span class="pk-name">Робота з AI</span></div>
   <h1 class="s-title">AI — <span class="red">ПОМІЧНИК, А НЕ АВТОР</span></h1>
 
   <div class="ai-hero">
@@ -80,7 +80,7 @@
     </p>
   </div>
 
-  <h2 class="s-subtitle">/// ТРИ ЗОНИ — <span class="red">DO / VERIFY / NEVER</span></h2>
+  <h2 class="s-subtitle">Три зони: можна, перевір, не можна</h2>
   <p class="s-desc">Якщо завдання потрапляє у зелену зону — AI допомагає вільно. Жовта — обов'язкова перевірка людиною. Червона — заборонено повністю.</p>
 
   <div class="ai-3col">
@@ -133,7 +133,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle">/// КОЛИ ВКАЗУВАТИ <span class="red">ПРО AI</span></h2>
+  <h2 class="s-subtitle">КОЛИ ВКАЗУВАТИ <span class="red">ПРО AI</span></h2>
   <p class="s-desc">Прозорість важлива. EU AI Act і Ukraine media laws у 2026 вимагають розкриття AI-генерованого контенту у певних кейсах. Простіше за все — слідуй правилу:</p>
 
   <div class="disc-grid">
@@ -169,7 +169,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle">/// SYSTEM PROMPT — <span class="red">ДЛЯ AI ЯКОМУ ТРЕБА НАШ ГОЛОС</span></h2>
+  <h2 class="s-subtitle">Системний промпт для AI</h2>
   <p class="s-desc">
     Якщо використовуєш Claude, ChatGPT, Gemini чи інший LLM — починай з цього system prompt-у. Це передасть AI наш voice guide стиснуто. Після — давай конкретне завдання.
   </p>
@@ -219,25 +219,25 @@
     navigator.clipboard.writeText(t).then(() => {
       this.classList.add('copied');
       this.textContent = '✓ СКОПІЙОВАНО';
-      setTimeout(() => { this.classList.remove('copied'); this.textContent = '📋 СКОПІЮВАТИ PROMPT'; }, 2000);
+      setTimeout(() => { this.classList.remove('copied'); this.textContent = ' СКОПІЮВАТИ PROMPT'; }, 2000);
     });
-  ">📋 СКОПІЮВАТИ PROMPT</button>
+  ">СКОПІЮВАТИ PROMPT</button>
 
-  <h2 class="s-subtitle">/// ЧЕКЛИСТ ПЕРЕД ПУБЛІКАЦІЄЮ <span class="red">AI-DRAFT</span></h2>
+  <h2 class="s-subtitle">Чекліст перед публікацією AI-чернетки</h2>
   <p class="s-desc">Швидка перевірка кожного AI-згенерованого тексту перед публікацією. Click щоб відмітити (стан зберігається у сесії).</p>
 
   <div class="checklist">
-    <h4>📋 7 ПУНКТІВ ПЕРЕД SEND</h4>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 1. Жодного слова з NEVER-списку (шанс, лотерея, виграй, квиток, джекпот, халява)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 2. Всі цифри/дати/факти перевірені на достовірність (AI часто галюцинує статистику)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 3. «Ви» з великої літери, де треба — і ніде не випадково «ти»</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 4. Текст звучить як ми — не «дешевий маркетинг» («унікальна можливість», «терміново!»)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 5. Жодних згадок конкурентів поіменно / негативно</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 6. Якщо є зображення/відео — додано disclosure про AI-генерацію (якщо потрібно)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> 7. Хтось другий (HQ approver) погодив — не публікуй AI-draft без human review</label>
+    <h4> 7 ПУНКТІВ ПЕРЕД SEND</h4>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">1. Жодного слова з NEVER-списку (шанс, лотерея, виграй, квиток, джекпот, халява)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">2. Всі цифри/дати/факти перевірені на достовірність (AI часто галюцинує статистику)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">3. «Ви» з великої літери, де треба — і ніде не випадково «ти»</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">4. Текст звучить як ми — не «дешевий маркетинг» («унікальна можливість», «терміново!»)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">5. Жодних згадок конкурентів поіменно / негативно</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">6. Якщо є зображення/відео — додано disclosure про AI-генерацію (якщо потрібно)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">7. Хтось другий (HQ approver) погодив — не публікуй AI-draft без human review</label>
   </div>
 
-  <h2 class="s-subtitle">/// РЕКОМЕНДОВАНІ <span class="red">AI-ІНСТРУМЕНТИ</span></h2>
+  <h2 class="s-subtitle">РЕКОМЕНДОВАНІ <span class="red">AI-ІНСТРУМЕНТИ</span></h2>
   <p class="s-desc">Які платформи перевірені у нашому workflow. Можна користуватись альтернативами — але ці гарантовано дають результат у нашому voice.</p>
 
   <div class="card-grid" style="margin-top: 24px;">
@@ -273,7 +273,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle">/// ЮРИДИЧНІ <span class="red">РИЗИКИ AI</span></h2>
+  <h2 class="s-subtitle">ЮРИДИЧНІ <span class="red">РИЗИКИ AI</span></h2>
   <p class="s-desc">У 2026 ось які правові ризики треба тримати у голові:</p>
 
   <div class="card-grid">
@@ -311,9 +311,9 @@
 
 </section>
 
-<nav class="section-page-nav">
-<a href="support.html" class="prev"><span class="nav-label">← 21 ПОПЕРЕДНІЙ</span><span class="nav-title">Регламент підтримки</span></a>
-<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+<nav class="section-page-nav" aria-label="Попередній і наступний розділ">
+<a href="examples.html" class="prev"><span class="nav-label">← 12 ПОПЕРЕДНІЙ</span><span class="nav-title">Приклади: так і не так</span></a>
+<a href="localization.html" class="next"><span class="nav-label">14 НАСТУПНИЙ →</span><span class="nav-title">Локалізація</span></a>
 </nav>
 </main>
 

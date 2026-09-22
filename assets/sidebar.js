@@ -78,56 +78,61 @@
   }
 
   // ---- 4. Sidebar data + ALIASES + EXTERNAL ----
+  // ONE SOURCE for the sidebar, prev/next, landing TOC, print.html and search index
+  // (scripts/build_nav.py reads this block; keep the one-entry-per-line format).
   const SECTIONS = {
-    'На старт': [
-      { num: '00', name: 'Quick Start',         file: 'quickstart.html',         aliases: 'старт швидко шпаргалка cheatsheet' },
-      { num: '26', name: 'Onboarding 10хв',     file: 'onboarding.html',         aliases: 'onboarding введення нові працівники підрядники агенції training brand 10 хв слайди презентація' },
-      { num: '27', name: 'Brand Tools',          file: 'tools.html',              aliases: 'tools інструменти voice linter лінтер contrast checker контраст color picker tokens ai prompt download ассет ассети wcag aa aaa' },
-      { num: '28', name: 'Post Generator',       file: 'generator.html',          aliases: 'generator генератор post пост ig instagram tg telegram email імейл хештеги hashtags export svg png' },
+    'Старт': [
+      { num: '00', name: 'Швидкий старт', file: 'quickstart.html', desc: 'Шпаргалка на один екран: головні правила і файли.', aliases: 'старт швидко шпаргалка cheatsheet' },
+      { num: '01', name: 'Онбординг за 10 хв', file: 'onboarding.html', desc: '10 слайдів: бренд для нової людини в команді.', aliases: 'onboarding введення нові працівники підрядники агенції training brand 10 хв слайди презентація' },
+      { num: '02', name: 'Інструменти', file: 'tools.html', desc: 'Voice Linter, перевірка контрасту, токени, AI-промпт.', aliases: 'tools інструменти voice linter лінтер contrast checker контраст color picker tokens ai prompt download ассет ассети wcag aa aaa' },
+      { num: '03', name: 'Генератор постів', file: 'generator.html', desc: 'Параметри проєкту → пости для IG, TG, email і макет.', aliases: 'generator генератор post пост ig instagram tg telegram email імейл хештеги hashtags export svg png' },
     ],
-    'Стратегія': [
-      { num: '01', name: 'Маніфест',            file: 'manifesto.html',          aliases: 'manifesto душа бренду цінності філософія' },
-      { num: '02', name: 'Стратегія',           file: 'strategy.html',           aliases: 'strategy місія mission vision бачення архетип архетипи утп usp tagline гасло челенджер пірамід' },
-      { num: '03', name: 'Аудиторія',           file: 'personas.html',           aliases: 'personas audience портрети сегменти Іван Микола Ольга Дмитро опитування survey демографія психографія тригери' },
-      { num: '04', name: 'Контекст ринку',      file: 'compete.html',            aliases: 'compete конкуренти ринок market лотерея блогер позиціонування differentiation' },
+    'Основа бренду': [
+      { num: '04', name: 'Платформа бренду', file: 'platform.html', desc: 'Ідея, обіцянка, докази, характер, архітектура.', aliases: 'platform платформа бренду brand idea ідея обіцянка positioning позиціонування архітектура architecture характер personality' },
+      { num: '05', name: 'Маніфест', file: 'manifesto.html', desc: 'Те, на що звіряємось у кожному рішенні.', aliases: 'manifesto душа бренду цінності філософія' },
+      { num: '06', name: 'Стратегія', file: 'strategy.html', desc: 'Місія, бачення, цінності, позиціонування.', aliases: 'strategy місія mission vision бачення архетип архетипи утп usp tagline гасло челенджер пірамід' },
+      { num: '07', name: 'Аудиторія', file: 'personas.html', desc: 'Чотири портрети учасників за мотивами.', aliases: 'personas audience портрети сегменти Іван Микола Ольга Дмитро опитування survey демографія психографія тригери' },
+      { num: '08', name: 'Контекст ринку', file: 'compete.html', desc: 'Чим ми відрізняємось від інших форматів.', aliases: 'compete конкуренти ринок market лотерея блогер позиціонування differentiation' },
     ],
-    'Візуальна система': [
-      { num: '05', name: 'Логотип',             file: 'logo.html',               aliases: 'logo логотип лого racing plate avatar circle dc monogram бренд-знак svg png завантажити download' },
-      { num: '06', name: 'Кольори',             file: 'colors.html',             aliases: 'colors кольори palette палітра hex rgb cmyk red червоний black чорний white білий e30613 0a0a0a контраст wcag' },
-      { num: '07', name: 'Типографіка',         file: 'typo.html',               aliases: 'fonts шрифти typography типографіка oswald archivo black manrope jetbrains mono bebas display heading body розміри scale' },
-      { num: '08', name: 'Сітка та елементи',   file: 'spacing.html',            aliases: 'spacing сітка grid 12 колонок radius breakpoints іконки icons lucide патерни patterns 4px база' },
+    'Закон і голос': [
+      { num: '09', name: 'Legal-safe лексикон', file: 'legal.html', desc: 'Заборонені слова, заміни, перевірка тексту.', aliases: 'legal legal-safe юридичний лексикон заборонені слова словник замін краіл krail штраф ризик комплаєнс gambling лотерея розіграш шанс квиток linter  11b' },
+      { num: '10', name: 'Голос і мова', file: 'voice.html', desc: 'Тон, звертання, словник за каналами.', aliases: 'voice голос tone тон ти ви vy ty do dont never careful словник мова канали ig tg tt email звертання' },
+      { num: '11', name: 'Словник і правопис', file: 'glossary.html', desc: 'Терміни бренду, назви проєктів, правила набору.', aliases: 'glossary словник глосарій терміни правопис typography типографіка лапки апостроф тире проєкт назви naming' },
+      { num: '12', name: 'Приклади: так і не так', file: 'examples.html', desc: 'Реальні формати з розбором.', aliases: 'examples приклади кейси good bad cases ig email mockup' },
+      { num: '13', name: 'Робота з AI', file: 'ai-content.html', desc: 'Що можна, що перевіряти, чого не можна.', aliases: 'ai штучний інтелект ШІ claude chatgpt gpt midjourney sora elevenlabs deepfake prompt system prompt eu act copyright' },
+      { num: '14', name: 'Локалізація', file: 'localization.html', desc: 'EN · PL · CZ без втрати голосу.', aliases: 'localization локалізація переклад translation english polski čeština en pl cz мови експансія' },
     ],
-    'Інтерфейс': [
-      { num: '09', name: 'UI-компоненти',       file: 'components.html',         aliases: 'ui компоненти buttons кнопки cta forms форми inputs поля select empty states 404 500' },
-      { num: '10', name: 'Анімації',            file: 'motion.html',             aliases: 'motion анімації animation transitions переходи easing duration тривалість reduced-motion' },
-      { num: '25', name: 'Mobile-First',        file: 'mobile.html',             aliases: 'mobile мобільний telefon ios android iphone breakpoints touch targets thumb zones safe area pwa offline' },
+    'Візуальна ідентичність': [
+      { num: '15', name: 'Логотип і файли', file: 'logo.html', desc: 'Racing Plate, Avatar Circle, DC-монограма.', aliases: 'logo логотип лого racing plate avatar circle dc monogram бренд-знак svg png завантажити download' },
+      { num: '16', name: 'Кольори', file: 'colors.html', desc: 'Палітра, дві теми, графіки, контраст.', aliases: 'colors кольори palette палітра hex rgb cmyk red червоний black чорний white білий e30613 0a0a0a контраст wcag' },
+      { num: '17', name: 'Типографіка', file: 'typo.html', desc: 'Чотири гарнітури, шкала, правила набору.', aliases: 'fonts шрифти typography типографіка oswald archivo black manrope jetbrains mono bebas display heading body розміри scale' },
+      { num: '18', name: 'Сітка, іконки, патерни', file: 'spacing.html', desc: 'База 4 px, 12 колонок, іконки, патерни.', aliases: 'spacing сітка grid 12 колонок radius breakpoints іконки icons lucide патерни patterns 4px база' },
     ],
-    'Голос і контент': [
-      { num: '11', name: 'Голос і мова',        file: 'voice.html',              aliases: 'voice голос tone тон ти ви vy ty do dont never careful словник мова канали ig tg tt email звертання' },
-      { num: '11B', name: 'Legal-safe лексикон', file: 'legal.html',              aliases: 'legal legal-safe юридичний лексикон заборонені слова словник замін краіл krail штраф ризик комплаєнс gambling лотерея розіграш шанс квиток linter' },
-      { num: '12', name: 'Контент',             file: 'content.html',            aliases: 'content рубрики контент-план хештеги hashtags faq сторітелінг storytelling переможці winners trust' },
-      { num: '13', name: 'Кризові комунікації', file: 'crisis.html',             aliases: 'crisis criza кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
-      { num: '23', name: 'Examples Library',    file: 'examples.html',           aliases: 'examples приклади кейси good bad cases ig email mockup' },
-      { num: '30', name: 'Локалізація',         file: 'localization.html',       aliases: 'localization локалізація переклад translation english polski čeština en pl cz мови експансія' },
+    'Контент і канали': [
+      { num: '19', name: 'Рубрики і FAQ', file: 'content.html', desc: 'Про що говоримо і як відповідаємо на питання.', aliases: 'content рубрики контент-план хештеги hashtags faq сторітелінг storytelling переможці winners trust' },
+      { num: '20', name: 'Соцмережі', file: 'social.html', desc: 'Формати і правила для кожної платформи.', aliases: 'social соцмережі instagram tiktok telegram youtube facebook сітка grid stories reels шаблони templates' },
+      { num: '21', name: 'Відео', file: 'video.html', desc: 'Формати, титри, монтаж, ефір.', aliases: 'video відео reels tiktok stories shorts ефір титри субтитри lower third монтаж переходи експорт кодек ratio 9:16' },
+      { num: '22', name: 'Звук і фото-стиль', file: 'audio.html', desc: 'Звуковий логотип, музика, світло, кадр.', aliases: 'audio аудіо звук sonic logo jingle music музика photo фото lighting освітлення color grading lut' },
+      { num: '23', name: 'Бриф для фотографа', file: 'photography-brief.html', desc: 'Шаблон брифу і список кадрів.', aliases: 'photo фото фотограф photographer brief бриф shot list зйомка sony canon nikon raw release form' },
+      { num: '24', name: 'Церемонія вручення', file: 'ceremony.html', desc: 'Головний ритуал бренду: сценарій, кадр, слова.', aliases: 'ceremony церемонія вручення handover ключі ефір сценарій run of show ритуал власник' },
+      { num: '25', name: 'Точки контакту і email', file: 'touchpoints.html', desc: 'Шлях учасника і шаблони листів.', aliases: 'email імейл імейли розсилка mailing customer journey awareness consideration purchase delivery loyalty esputnik yespo mailchimp sendgrid newsletter шаблони шаблон letter лист' },
+      { num: '26', name: 'Мерч', file: 'merch.html', desc: 'Що отримує власник і як ми друкуємо.', aliases: 'merch мерч пакет власника коробка футболка hoodie худі кепка наклейки stickers упаковка packaging брелок сертифікат' },
     ],
-    'Партнери і довіра': [
-      { num: '14', name: 'Партнери',            file: 'partners.html',           aliases: 'partners партнери блогери агенції бриф brief co-branding workflow approval погодження' },
-      { num: '15', name: 'Довіра і доступність', file: 'trust.html',             aliases: 'trust довіра прозорість документи wcag accessibility доступність a11y aria gdpr privacy дані' },
+    'Люди і ситуації': [
+      { num: '27', name: 'Регламент підтримки', file: 'support.html', desc: 'Тон, SLA, готові фрази для підтримки.', aliases: 'support підтримка клієнт client sla scripts скрипти 4К stop протокол повернення refund tone' },
+      { num: '28', name: 'Кризові комунікації', file: 'crisis.html', desc: 'Сценарії і готові відповіді.', aliases: 'crisis criza кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
+      { num: '29', name: 'Партнери і блогери', file: 'partners.html', desc: 'Бриф, погодження, спільні логотипи.', aliases: 'partners партнери блогери агенції бриф brief co-branding workflow approval погодження' },
+      { num: '30', name: 'Довіра і доступність', file: 'trust.html', desc: 'Докази, вручення, WCAG, дані.', aliases: 'trust довіра прозорість документи wcag accessibility доступність a11y aria gdpr privacy дані' },
     ],
-    'Техніка': [
-      { num: '16', name: 'Дизайн-ресурси',      file: 'tokens.html',             aliases: 'design tokens токени дизайн-токени json css змінні variables figma export пакет ассети assets' },
-      { num: '17', name: 'Стиль медіа',         file: 'audio.html',              aliases: 'audio аудіо звук sonic logo jingle music музика photo фото lighting освітлення color grading lut' },
-      { num: '24', name: 'Photography Brief',   file: 'photography-brief.html',  aliases: 'photo фото фотограф photographer brief бриф shot list зйомка sony canon nikon raw release form' },
-      { num: '29', name: 'Відео',               file: 'video.html',              aliases: 'video відео reels tiktok stories shorts ефір титри субтитри lower third монтаж переходи експорт кодек ratio 9:16' },
+    'Продукт': [
+      { num: '31', name: 'Дизайн-токени і файли', file: 'tokens.html', desc: 'Токени JSON і CSS, файли бренду, версії.', aliases: 'design tokens токени дизайн-токени json css змінні variables figma export пакет ассети assets' },
+      { num: '32', name: 'UI-компоненти', file: 'components.html', desc: 'Кнопки, поля, пакети, порожні стани.', aliases: 'ui компоненти buttons кнопки cta forms форми inputs поля select empty states 404 500' },
+      { num: '33', name: 'Анімації', file: 'motion.html', desc: 'Тривалості, криві, фірмовий рух.', aliases: 'motion анімації animation transitions переходи easing duration тривалість reduced-motion' },
+      { num: '34', name: 'Mobile-first', file: 'mobile.html', desc: 'Брейкпоінти, зони дотику, безпечні зони.', aliases: 'mobile мобільний telefon ios android iphone breakpoints touch targets thumb zones safe area pwa offline' },
     ],
-    'Точки контакту': [
-      { num: '18', name: 'Точки контакту',      file: 'touchpoints.html',        aliases: 'email імейл імейли розсилка mailing customer journey awareness consideration purchase delivery loyalty esputnik yespo mailchimp sendgrid newsletter шаблони шаблон letter лист' },
-      { num: '19', name: 'Мерч',                file: 'merch.html',              aliases: 'merch мерч пакет власника коробка футболка hoodie худі кепка наклейки stickers упаковка packaging брелок сертифікат' },
-    ],
-    'Підсумки': [
-      { num: '20', name: 'Метрики · Roadmap',   file: 'metrics.html',            aliases: 'metrics метрики kpi roadmap nps awareness sov share of voice sentiment retention repeat пирамида' },
-      { num: '21', name: 'Регламент підтримки', file: 'support.html',            aliases: 'support підтримка клієнт client sla scripts скрипти 4К stop протокол повернення refund tone' },
-      { num: '22', name: 'AI-контент',          file: 'ai-content.html',         aliases: 'ai штучний інтелект ШІ claude chatgpt gpt midjourney sora elevenlabs deepfake prompt system prompt eu act copyright' },
+    'Керування брендом': [
+      { num: '35', name: 'Як ми працюємо з брендом', file: 'governance.html', desc: 'Хто погоджує, як змінюється книга, реєстр тверджень.', aliases: 'governance погодження approval raci версії versions change request claims реєстр тверджень faq підрядники' },
+      { num: '36', name: 'Метрики і roadmap', file: 'metrics.html', desc: 'Що міряємо і куди рухаємось.', aliases: 'metrics метрики kpi roadmap nps awareness sov share of voice sentiment retention repeat пирамида' },
     ],
     'Внутрішнє · Team Hub': [
       { name: 'Tasks (Kanban)',                  url: TEAM_ORIGIN + '/tasks/',      external: true, aliases: 'tasks завдання задачі kanban канбан to-do todo task manager' },

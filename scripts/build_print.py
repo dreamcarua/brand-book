@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Генерує print.html — усі 32 розділи однією сторінкою для Друк → Зберегти як PDF.
+Генерує print.html — усі розділи однією сторінкою для Друк → Зберегти як PDF.
 Запуск: python3 scripts/build_print.py (з будь-якої директорії)
 """
 import re, datetime
@@ -8,21 +8,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SECTIONS = ROOT / "sections"
-VERSION = "4.2"
+VERSION = "4.3"
 
-CATALOG = [
-    ("quickstart","00","Quick Start"),("manifesto","01","Маніфест"),("strategy","02","Стратегія"),
-    ("personas","03","Аудиторія"),("compete","04","Контекст ринку"),("logo","05","Логотип"),
-    ("colors","06","Кольори"),("typo","07","Типографіка"),("spacing","08","Сітка та елементи"),
-    ("components","09","UI-компоненти"),("motion","10","Анімації"),("voice","11","Голос і мова"),
-    ("legal","11B","Legal-safe лексикон"),("content","12","Контент"),("crisis","13","Кризові комунікації"),
-    ("partners","14","Партнери"),("trust","15","Довіра і доступність"),("tokens","16","Дизайн-ресурси"),
-    ("audio","17","Стиль медіа"),("touchpoints","18","Точки контакту"),("merch","19","Мерч"),
-    ("metrics","20","Метрики · Roadmap"),("support","21","Регламент підтримки"),("ai-content","22","AI-контент"),
-    ("examples","23","Examples Library"),("photography-brief","24","Photography Brief"),("mobile","25","Mobile-First"),
-    ("onboarding","26","Onboarding Deck"),("tools","27","Brand Tools"),("generator","28","Post Generator"),
-    ("video","29","Відео"),("localization","30","Локалізація"),
-]
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_nav import sections as _nav_sections
+CATALOG = [(it["file"][:-5], it["num"], it["name"]) for it in _nav_sections()]
 
 def extract(sid):
     h = (SECTIONS / f"{sid}.html").read_text(encoding="utf-8")
@@ -52,7 +43,7 @@ head = '''<!DOCTYPE html>
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <title>DreamCar Brand Book v''' + VERSION + ''' · Версія для друку</title>
-<meta name="description" content="DreamCar Brand Book v''' + VERSION + ''' — повна друкована версія всіх 32 розділів.">
+<meta name="description" content="DreamCar Brand Book v''' + VERSION + ''' — повна друкована версія всіх ''' + str(len(CATALOG)) + ''' розділів.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
@@ -102,7 +93,7 @@ head = '''<!DOCTYPE html>
 <div class="print-cover">
   <div class="ver">/// BRAND BOOK · V''' + VERSION + ''' · 07.2026</div>
   <h1>DREAM<span class="red">CAR</span></h1>
-  <div class="sub"><strong>МРІЯ. ЗА ЦІНОЮ ЧАШКИ КАВИ.</strong><br>Операційна система бренду — всі 32 розділи у друкованому форматі: стратегія, голос, візуальна система, юридично безпечна мова.</div>
+  <div class="sub"><strong>МРІЯ. ЗА ЦІНОЮ ЧАШКИ КАВИ.</strong><br>Уся книга бренду в друкованому форматі: ''' + str(len(CATALOG)) + ''' розділів — стратегія, голос, візуальна система, юридично безпечна мова.</div>
   <div class="meta">DREAMCAR · UA · EST. 2016 · 17 АВТО ВРУЧЕНО · 500K+ СПІЛЬНОТА</div>
 </div>
 

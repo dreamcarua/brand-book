@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <meta name="supported-color-schemes" content="dark">
-<title>16 Дизайн-ресурси · DreamCar Brand Book</title>
+<title>31 Дизайн-токени і файли · DreamCar Brand Book</title>
 <meta name="description" content="DreamCar Brand Book — 16 Дизайн-ресурси.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
@@ -19,7 +19,7 @@
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
 <header class="topbar">
-  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub"> · BRAND BOOK</span></a>
   <div class="topbar-actions">
     <a href="../print.html" class="topbar-pdf">PDF</a>
     <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button>
@@ -29,15 +29,15 @@
 <aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
-<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">16 · Дизайн-ресурси</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">31 · Дизайн-токени і файли</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 <section id="tokens">
-  <div class="s-num">/// 16 — DESIGN TOKENS</div>
+  <div class="s-num plate-k"><span class="pk-num">31</span><span class="pk-name">Дизайн-токени і файли</span></div>
   <h1 class="s-title">ТОКЕНИ ДЛЯ <span class="red">РОЗРОБНИКІВ</span></h1>
   <p class="s-desc">
     Усі змінні бренду — у форматах JSON та CSS, версія <strong>4.2.0 від 22.09.2026</strong>: темна тема (за замовчуванням), світла тема <code>[data-dc-theme="light"]</code>, палітра графіків, семантичні аліаси (<code>--dc-text</code>, <code>--dc-accent</code>…), які самі перемикаються між темами. Не копіюй значення руками — підключай файл: <a href="../tokens/dreamcar-tokens.css" style="color:var(--link);">dreamcar-tokens.css</a> · <a href="../tokens/dreamcar-tokens.json" style="color:var(--link);">dreamcar-tokens.json</a>. Імпорт у Figma — через плагін Tokens Studio із JSON.
   </p>
 
-  <h2 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h2>
+  <h2 class="s-subtitle">JSON — для Figma і бібліотек</h2>
   <div class="tokens-code">{
   <span class="key">"$meta"</span>: {
     <span class="key">"name"</span>: "DreamCar Design Tokens",
@@ -150,7 +150,7 @@
   }
 }</div>
 
-  <h2 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h2>
+  <h2 class="s-subtitle">CSS-змінні</h2>
   <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v4.2.0 · 22.09.2026 · https://brand.dreamcar.ua/tokens/dreamcar-tokens.css */</span>
 :root {
   <span class="comment">/* === COLORS · DARK (default) === */</span>
@@ -264,9 +264,8 @@
 
 
   <!-- merged from apps -->
-  <section id="apps">
-  <div class="s-num">/// 18 — ASSET LIBRARY</div>
-  <h2 class="s-title">ФАЙЛИ ТА <span class="red">ПОСИЛАННЯ</span></h2>
+  <div id="apps">
+  <h2 class="s-subtitle" style="margin-top:96px;">Файли і посилання</h2>
   <p class="s-desc">
     Усе для скачування: лого у всіх форматах, шрифти, шаблони, презентації. Доступ за посиланнями нижче — не обов'язково писати запит.
   </p>
@@ -374,7 +373,7 @@
 
   </div>
 
-  <h2 class="s-subtitle">/// ВЕРСІЇ АССЕТІВ — <span class="red">АКТУАЛЬНІ І ЗАСТАРІЛІ</span></h2>
+  <h2 class="s-subtitle">ВЕРСІЇ АССЕТІВ — <span class="red">АКТУАЛЬНІ І ЗАСТАРІЛІ</span></h2>
   <p class="s-desc">Підрядник, який знайшов старий файл у пошті чи на диску, звіряється з цією таблицею. Усе, чого немає в колонці «актуально», — не використовувати.</p>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Таблиця">
   <table class="a11y-table">
@@ -392,7 +391,7 @@
   </table>
   </div>
 
-  <h2 class="s-subtitle">/// СТРУКТУРА ПАПКИ БРЕНДУ</h2>
+  <h2 class="s-subtitle">СТРУКТУРА ПАПКИ БРЕНДУ</h2>
   <p class="s-desc">Рекомендована структура для Google Drive. Позначка «є» — файл уже лежить у цьому брендбуці й дублюється в папку як є.</p>
   <div class="tokens-code">dreamcar-brand/
 ├── 01-logo/                 є · assets/logo/ + dreamcar-logos.zip
@@ -417,7 +416,7 @@
 └── 07-brand-book/
     └── dreamcar-brand-book-v4.2.pdf   = print.html → «Зберегти як PDF»</div>
 
-  <h2 class="s-subtitle">/// ВЕРСІЇ ТА ЗМІНИ</h2>
+  <h2 class="s-subtitle">ВЕРСІЇ ТА ЗМІНИ</h2>
   <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
       <strong style="color: var(--red-glow);">v4.2 · 09.2026</strong> — Токени 4.2: світла тема, палітра графіків, --red-glow і --danger-text для контрасту; таблиця актуальних і застарілих ассетів; розділи 29 Відео і 30 Локалізація; «власник» замість «переможець» по всій книзі; Bebas Neue прибрано.
@@ -441,11 +440,11 @@
       <strong style="color: var(--ash);">v0.5 · 01.2026</strong> — Чорновик: маніфест, перші концепції.
     </div>
   </div>
+</div>
 </section>
-</section>
-<nav class="section-page-nav">
-<a href="trust.html" class="prev"><span class="nav-label">← 15 ПОПЕРЕДНІЙ</span><span class="nav-title">Довіра і доступність</span></a>
-<a href="audio.html" class="next"><span class="nav-label">17 НАСТУПНИЙ →</span><span class="nav-title">Стиль медіа</span></a>
+<nav class="section-page-nav" aria-label="Попередній і наступний розділ">
+<a href="trust.html" class="prev"><span class="nav-label">← 30 ПОПЕРЕДНІЙ</span><span class="nav-title">Довіра і доступність</span></a>
+<a href="components.html" class="next"><span class="nav-label">32 НАСТУПНИЙ →</span><span class="nav-title">UI-компоненти</span></a>
 </nav>
 </main>
 

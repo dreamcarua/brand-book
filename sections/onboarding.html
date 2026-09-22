@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>26 Onboarding Deck · DreamCar Brand Book</title>
+<title>01 Онбординг за 10 хв · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
-  .deck-intro { padding: 32px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent 60%); border-left: 3px solid var(--red); margin-bottom: 28px; }
+  .deck-intro { padding: 32px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red); margin-bottom: 28px; }
   .slide-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
   .slide { background: var(--coal); border: 1px solid var(--line); padding: 0; aspect-ratio: 16/9; width: 100%; max-width: 1080px; margin: 0 auto; position: relative; overflow: hidden; }
   .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
@@ -23,11 +23,11 @@
   .slide ul li::before { content: '▸ '; color: var(--red); font-weight: 700; }
   .slide .footer-mark { position: absolute; bottom: 24px; right: 32px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.18em; }
   .slide .corner-num { position: absolute; bottom: 24px; left: 32px; font-family: 'Archivo Black', sans-serif; font-size: 56px; color: var(--coal); line-height: 1; }
-  .slide.hero { background: linear-gradient(135deg, var(--red), #8B0000); }
+  .slide.hero { background: var(--red); }
   .slide.hero h2 { color: var(--white); font-size: 64px; }
   .slide.hero .lead { color: rgba(255,255,255,0.85); font-size: 20px; }
-  .slide.green { background: linear-gradient(135deg, rgba(16,185,129,0.15), transparent); border-color: var(--success); }
-  .slide.red { background: linear-gradient(135deg, rgba(220,38,38,0.15), transparent); border-color: var(--danger); }
+  .slide.green { background: var(--coal); border-top: 3px solid var(--success); border-color: var(--success); }
+  .slide.red { background: var(--coal); border-top: 3px solid var(--danger); border-color: var(--danger); }
   .slide.dark { background: var(--black); }
   .swatch-row { display: flex; gap: 14px; margin: 14px 0; }
   .swatch { width: 80px; height: 80px; border-radius: 4px; }
@@ -51,15 +51,15 @@
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
-<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub">· BRAND BOOK</span></a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
 
 <aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
-<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">26 · Onboarding Deck</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">01 · Онбординг за 10 хв</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 
 <section id="onboarding">
-  <div class="s-num">/// 26 — ONBOARDING DECK</div>
+  <div class="s-num plate-k"><span class="pk-num">01</span><span class="pk-name">Онбординг за 10 хв</span></div>
   <h1 class="s-title">BRAND ЗА <span class="red">10 ХВИЛИН</span></h1>
 
   <div class="deck-intro">
@@ -72,8 +72,8 @@
   </div>
 
   <div class="deck-actions">
-    <button class="deck-btn" onclick="document.documentElement.requestFullscreen ? document.documentElement.requestFullscreen() : alert('Fullscreen не підтримується')">🖥 ПОВНОЕКРАННА ПРЕЗЕНТАЦІЯ</button>
-    <button class="deck-btn" onclick="window.print()">📄 ДРУК / PDF</button>
+    <button class="deck-btn" onclick="document.documentElement.requestFullscreen ? document.documentElement.requestFullscreen() : alert('Fullscreen не підтримується')">ПОВНОЕКРАННА ПРЕЗЕНТАЦІЯ</button>
+    <button class="deck-btn" onclick="window.print()">ДРУК / PDF</button>
     <a class="deck-btn" href="../index.html">← НАЗАД ДО БРЕНДБУКУ</a>
   </div>
 
@@ -252,7 +252,7 @@
 
   </div>
 
-  <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
+  <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>На першому день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
@@ -272,9 +272,9 @@
   </div>
 </section>
 
-<nav class="section-page-nav">
-<a href="mobile.html" class="prev"><span class="nav-label">← 25 ПОПЕРЕДНІЙ</span><span class="nav-title">Mobile-First Spec</span></a>
-<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+<nav class="section-page-nav" aria-label="Попередній і наступний розділ">
+<a href="quickstart.html" class="prev"><span class="nav-label">← 00 ПОПЕРЕДНІЙ</span><span class="nav-title">Швидкий старт</span></a>
+<a href="tools.html" class="next"><span class="nav-label">02 НАСТУПНИЙ →</span><span class="nav-title">Інструменти</span></a>
 </nav>
 </main>
 

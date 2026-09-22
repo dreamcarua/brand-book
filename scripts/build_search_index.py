@@ -13,40 +13,9 @@ import sys
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 
-SECTION_TITLES = {
-    'quickstart.html':        'Quick Start',
-    'onboarding.html':        'Onboarding 10хв',
-    'tools.html':             'Brand Tools',
-    'generator.html':         'Post Generator',
-    'manifesto.html':         'Маніфест',
-    'strategy.html':          'Стратегія',
-    'personas.html':          'Аудиторія',
-    'compete.html':           'Контекст ринку',
-    'logo.html':              'Логотип',
-    'colors.html':            'Кольори',
-    'typo.html':              'Типографіка',
-    'spacing.html':           'Сітка та елементи',
-    'components.html':        'UI-компоненти',
-    'motion.html':            'Анімації',
-    'mobile.html':            'Mobile-First',
-    'voice.html':             'Голос і мова',
-    'legal.html':             'Legal-safe лексикон',
-    'content.html':           'Контент',
-    'crisis.html':            'Кризові комунікації',
-    'examples.html':          'Examples Library',
-    'partners.html':          'Партнери',
-    'trust.html':             'Довіра і доступність',
-    'tokens.html':            'Дизайн-ресурси',
-    'audio.html':             'Стиль медіа',
-    'photography-brief.html': 'Photography Brief',
-    'touchpoints.html':       'Точки контакту',
-    'merch.html':             'Мерч',
-    'metrics.html':           'Метрики · Roadmap',
-    'support.html':           'Регламент підтримки',
-    'ai-content.html':        'AI-контент',
-    'video.html':             'Відео',
-    'localization.html':      'Локалізація',
-}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from build_nav import sections as _nav_sections
+SECTION_TITLES = {it["file"]: f'{it["num"]} {it["name"]}' for it in _nav_sections()}
 
 HEADING_TAGS = {'h1', 'h2', 'h3', 'h4'}
 SKIP_TAGS = {'script', 'style', 'noscript', 'svg', 'template'}

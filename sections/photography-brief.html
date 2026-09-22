@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>24 Photography Brief · DreamCar Brand Book</title>
+<title>23 Бриф для фотографа · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,21 +38,21 @@
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
-<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub">· BRAND BOOK</span></a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
 
 <aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
-<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">24 · Photography Brief</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">23 · Бриф для фотографа</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 
 <section id="photography-brief">
-  <div class="s-num">/// 24 — PHOTOGRAPHY BRIEF</div>
+  <div class="s-num plate-k"><span class="pk-num">23</span><span class="pk-name">Бриф для фотографа</span></div>
   <h1 class="s-title">ШАБЛОН <span class="red">ДЛЯ ФОТОГРАФА</span></h1>
   <p class="s-desc">
     Перед кожною зйомкою — заповнюємо цей brief, надсилаємо фотографу за 7 днів до зйомки. Тоді на shoot не буде сюрпризів. <strong style="color: var(--white);">Якщо нема цього brief — не починаємо.</strong>
   </p>
 
-  <button class="copy-btn" id="copyBrief" onclick="copyBriefToClipboard()">📋 СКОПІЮВАТИ ШАБЛОН У БУФЕР</button>
+  <button class="copy-btn" id="copyBrief" onclick="copyBriefToClipboard()">СКОПІЮВАТИ ШАБЛОН У БУФЕР</button>
 
   <!-- ============== ШАБЛОН ============== -->
   <div class="brief-form" id="briefForm">
@@ -213,7 +213,7 @@
   </div>
 
   <!-- ============== TIPS ============== -->
-  <h2 class="s-subtitle">/// ПРАКТИЧНІ <span class="red">ПОРАДИ</span></h2>
+  <h2 class="s-subtitle">ПРАКТИЧНІ <span class="red">ПОРАДИ</span></h2>
   <div class="card-grid" style="margin-top: 20px;">
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// 01 · BACKUP</span>
@@ -257,9 +257,9 @@
   </div>
 </section>
 
-<nav class="section-page-nav">
-<a href="examples.html" class="prev"><span class="nav-label">← 23 ПОПЕРЕДНІЙ</span><span class="nav-title">Examples Library</span></a>
-<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+<nav class="section-page-nav" aria-label="Попередній і наступний розділ">
+<a href="audio.html" class="prev"><span class="nav-label">← 22 ПОПЕРЕДНІЙ</span><span class="nav-title">Звук і фото-стиль</span></a>
+<a href="ceremony.html" class="next"><span class="nav-label">24 НАСТУПНИЙ →</span><span class="nav-title">Церемонія вручення</span></a>
 </nav>
 </main>
 
@@ -271,7 +271,7 @@ function copyBriefToClipboard() {
     const btn = document.getElementById('copyBrief');
     btn.classList.add('copied');
     btn.textContent = '✓ СКОПІЙОВАНО';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 СКОПІЮВАТИ ШАБЛОН У БУФЕР'; }, 2000);
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = ' СКОПІЮВАТИ ШАБЛОН У БУФЕР'; }, 2000);
   });
 }
 </script>

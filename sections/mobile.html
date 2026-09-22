@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>25 Mobile-First Spec · DreamCar Brand Book</title>
+<title>34 Mobile-first · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,57 +44,51 @@
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
-<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
+<header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub">· BRAND BOOK</span></a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
 
 <aside class="sidebar" id="sb"></aside>
 
 <main class="main" id="main">
-<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">25 · Mobile-First Spec</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
+<div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">34 · Mobile-first</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 
 <section id="mobile">
-  <div class="s-num">/// 25 — MOBILE-FIRST SPEC</div>
+  <div class="s-num plate-k"><span class="pk-num">34</span><span class="pk-name">Mobile-first</span></div>
   <h1 class="s-title">МОБІЛЬНИЙ — <span class="red">ГОЛОВНИЙ ЕКРАН</span></h1>
   <p class="s-desc">
     <strong style="color: var(--white);">85% нашої аудиторії читає бренд з телефона.</strong> Дизайн який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані юзера — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 09 UI-компоненти.
   </p>
 
   <!-- ============== ЦІЛЬОВІ ПРИСТРОЇ ============== -->
-  <h2 class="s-subtitle">/// ЦІЛЬОВІ <span class="red">ПРИСТРОЇ</span></h2>
+  <h2 class="s-subtitle">ЦІЛЬОВІ <span class="red">ПРИСТРОЇ</span></h2>
   <p class="s-desc">Це 95% нашої мобільної аудиторії (за даними GA + Mixpanel). Тестуй на цих breakpoint-ах ПЕРЕД продакшеном.</p>
 
   <div class="device-row">
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">iPhone 15/16</div>
       <div class="px">393 × 852</div>
       <div class="share">~27%</div>
     </div>
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">iPhone 13/14</div>
       <div class="px">390 × 844</div>
       <div class="share">~19%</div>
     </div>
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">iPhone SE</div>
       <div class="px">375 × 667</div>
       <div class="share">~8%</div>
     </div>
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">Pixel / Samsung S</div>
       <div class="px">412 × 915</div>
       <div class="share">~24%</div>
     </div>
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">Older Android</div>
       <div class="px">360 × 800</div>
       <div class="share">~14%</div>
     </div>
     <div class="device">
-      <div class="icon">📱</div>
       <div class="name">iPad mini</div>
       <div class="px">744 × 1133</div>
       <div class="share">~3%</div>
@@ -102,7 +96,7 @@
   </div>
 
   <!-- ============== BREAKPOINTS ============== -->
-  <h2 class="s-subtitle">/// СТАНДАРТНІ <span class="red">BREAKPOINTS</span></h2>
+  <h2 class="s-subtitle">Стандартні брейкпоінти</h2>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
     <thead>
       <tr>
@@ -147,7 +141,7 @@
   </table></div>
 
   <!-- ============== TOUCH TARGETS ============== -->
-  <h2 class="s-subtitle">/// TOUCH TARGETS — <span class="red">МІН 44×44 PX</span></h2>
+  <h2 class="s-subtitle">Зони дотику — мінімум 44×44 px</h2>
   <p class="s-desc">
     Apple HIG, Google Material і WCAG 2.5.5 рекомендують <strong style="color: var(--white);">мінімум 44×44 px (CSS) для будь-якого clickable елемента</strong>. У нас — так само. Менше — користувач промахується і дратується.
   </p>
@@ -175,7 +169,7 @@
   </p>
 
   <!-- ============== THUMB ZONES ============== -->
-  <h2 class="s-subtitle">/// THUMB ZONES — <span class="red">ДЕ ПАЛЕЦЬ ДОТЯГУЄТЬСЯ</span></h2>
+  <h2 class="s-subtitle">Де дотягується палець</h2>
   <p class="s-desc">
     Більшість користувачів тримають телефон однією рукою. Це означає що нижня частина екрана = easy reach, а верхня = hard. Розміщуй критичні елементи (CTA, головна навігація) у easy zone.
   </p>
@@ -217,7 +211,7 @@
   </ul>
 
   <!-- ============== MOBILE PATTERNS ============== -->
-  <h2 class="s-subtitle">/// СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h2>
+  <h2 class="s-subtitle">СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h2>
   <div class="card-grid" style="margin-top: 20px;">
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// BOTTOM SHEET</span>
@@ -252,7 +246,7 @@
   </div>
 
   <!-- ============== TYPOGRAPHY MOBILE ============== -->
-  <h2 class="s-subtitle">/// ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h2>
+  <h2 class="s-subtitle">ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h2>
   <p class="s-desc">Скейлинг типографічної шкали з розділу 07 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
@@ -277,7 +271,7 @@
   </p>
 
   <!-- ============== PERFORMANCE ============== -->
-  <h2 class="s-subtitle">/// PERFORMANCE — <span class="red">ШВИДКІСТЬ</span></h2>
+  <h2 class="s-subtitle">Швидкість</h2>
   <p class="s-desc">
     Аудиторія DC у Україні значна частка на 4G/3G (особливо у регіонах). <strong style="color: var(--white);">3 секунди до first paint</strong> — це наш бар. Більше — bounce rate стрибає на 50%+.
   </p>
@@ -316,22 +310,22 @@
   </div>
 
   <!-- ============== CHECKLIST ============== -->
-  <h2 class="s-subtitle">/// ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h2>
+  <h2 class="s-subtitle">ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h2>
 
   <div class="checklist-mobile">
     <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✅ 12 ПУНКТІВ</h4>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Перевірив на 375px (iPhone SE) — найменший популярний</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Touch targets ≥ 44×44 px, spacing ≥ 8px між ними</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Primary CTA у easy thumb zone (нижня третина екрана)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Font-size ≥ 16px для body, мінімум 12px загалом</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Контраст ≥ 4.5:1 для body тексту (WCAG AA)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Hero LCP < 2.5 сек на 3G (PageSpeed Insights)</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Жодних horizontal scroll на жодному breakpoint</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Форми: тип input відповідає (tel, email, number) — мобільна клавіатура змінюється</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Input fields — autoCapitalize, autoCorrect налаштовані</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Sticky header не закриває контент при scroll</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Modals — bottom sheet, не full-screen</label>
-    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()"> Перевірив на реальному iPhone (не тільки Chrome DevTools)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Перевірив на 375px (iPhone SE) — найменший популярний</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Touch targets ≥ 44×44 px, spacing ≥ 8px між ними</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Primary CTA у easy thumb zone (нижня третина екрана)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Font-size ≥ 16px для body, мінімум 12px загалом</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Контраст ≥ 4.5:1 для body тексту (WCAG AA)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Hero LCP < 2.5 сек на 3G (PageSpeed Insights)</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Жодних horizontal scroll на жодному breakpoint</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Форми: тип input відповідає (tel, email, number) — мобільна клавіатура змінюється</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Input fields — autoCapitalize, autoCorrect налаштовані</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Sticky header не закриває контент при scroll</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Modals — bottom sheet, не full-screen</label>
+    <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Перевірив на реальному iPhone (не тільки Chrome DevTools)</label>
   </div>
 
   <div style="margin-top: 32px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
@@ -344,9 +338,9 @@
   </div>
 </section>
 
-<nav class="section-page-nav">
-<a href="photography-brief.html" class="prev"><span class="nav-label">← 24 ПОПЕРЕДНІЙ</span><span class="nav-title">Photography Brief</span></a>
-<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+<nav class="section-page-nav" aria-label="Попередній і наступний розділ">
+<a href="motion.html" class="prev"><span class="nav-label">← 33 ПОПЕРЕДНІЙ</span><span class="nav-title">Анімації</span></a>
+<a href="governance.html" class="next"><span class="nav-label">35 НАСТУПНИЙ →</span><span class="nav-title">Як ми працюємо з брендом</span></a>
 </nav>
 </main>
 

@@ -77,29 +77,20 @@
 </script>
 
 <style>
-  .install-prompt { position: fixed; bottom: 16px; right: 16px; background: var(--red); color: white; padding: 14px 20px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; box-shadow: 0 8px 32px rgba(227,6,19,0.4); display: none; z-index: 1000; }
+  .install-prompt { position: fixed; bottom: 16px; right: 16px; background: var(--red); color: var(--white); padding: 14px 20px; border: none;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; box-shadow: 4px 4px 0 var(--red-deep);
+    display: none; z-index: 1000; }
   .install-prompt.shown { display: block; }
-  .install-prompt:hover { background: #ff1a1a; }
-  .feature-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 24px 32px; background: linear-gradient(135deg, rgba(227,6,19,0.12), transparent 70%); border-bottom: 1px solid var(--line); }
-  .feature-card { background: var(--coal); border: 1px solid var(--line); padding: 22px; border-radius: 8px; transition: border-color 0.15s, transform 0.15s; cursor: pointer; text-decoration: none; color: var(--white); display: block; position: relative; overflow: hidden; }
-  .feature-card:hover { border-color: var(--red); transform: translateY(-2px); }
-  .feature-card .fc-badge { position: absolute; top: 8px; right: 8px; padding: 2px 8px; background: var(--red); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.15em; border-radius: 3px; }
-  .feature-card .fc-icon { font-size: 32px; margin-bottom: 10px; }
-  .feature-card .fc-title { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 4px; font-weight: 700; }
-  .feature-card .fc-desc { font-size: 12px; color: var(--bone); line-height: 1.5; }
-  @media (prefers-reduced-motion: reduce) {
-    .feature-card { transition: none; }
-    .feature-card:hover { transform: none; }
-  }
+  .install-prompt:hover { background: var(--red-deep); }
 </style>
 </head>
-<body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
+<body class="has-sidebar">
 
 <header class="topbar">
-  <a href="index.html" class="brand-mark">DREAM<span class="red">CAR</span> · BRAND BOOK</a>
+  <a href="index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub"> · BRAND BOOK</span></a>
   <div class="topbar-actions">
     <a href="print.html" class="topbar-pdf">PDF</a>
-    <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Меню">МЕНЮ</button>
+    <button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button>
   </div>
 </header>
 
@@ -110,110 +101,150 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-top">
-    <span class="hero-tag">/// БРЕНДБУК · ОПЕРАЦІЙНА СИСТЕМА БРЕНДУ</span>
-    <span class="hero-version">V4.0 · 07.2026</span>
+    <span class="hero-tag">/// БРЕНДБУК DREAMCAR</span>
+    <span class="hero-version">V4.3 · 09.2026</span>
   </div>
   <div class="hero-main">
-    <div style="margin-bottom: 32px;">
-      <div class="racing-h size-md">
-        <div class="ua-tag">UA</div>
-        <div class="text-block">DREAM<span class="red">CAR</span></div>
-      </div>
-    </div>
+    <img class="plate-img hero-plate" src="assets/logo/dreamcar-racing-plate.svg" width="720" height="200" alt="DreamCar — логотип Racing Plate">
     <h1 class="hero-title">МРІЯ.<br>ЗА ЦІНОЮ<br><span class="red">ЧАШКИ КАВИ.</span></h1>
     <p class="hero-sub">
-      <strong>Стратегія. Голос. Візуальна система. Закон.</strong><br>
-      Це не документація — це <strong>операційна система бренду</strong>: кожне правило — з прикладом, кожен інструмент — живий. Voice Linter перевіряє текст за секунду. Post Generator збирає пост за 30. Працює offline як додаток.
+      <strong>Як DreamCar виглядає, звучить і говорить.</strong><br>
+      Правила з прикладами, файли для завантаження і робочі інструменти: перевірка тексту, генератор постів, токени для розробників. Одне джерело правди для команди, підрядників і партнерів.
     </p>
   </div>
-
-  <div class="hero-bottom" style="margin-top:40px;">
-    <div class="hero-meta">
-      DREAMCAR · UA<br>
-      EST. 2016 · 10 РОКІВ<br>
-      500K+ СПІЛЬНОТА · 21 АВТО
-    </div>
-    <div class="hero-meta">↓ ЗМІСТ НИЖЧЕ</div>
+  <div class="hero-bottom" style="margin-top:40px;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+    <div class="hero-facts"><span>Клуб з <b>2016</b></span><span><b>21</b> авто вручено з 2019</span><span>Спільнота <b>500K+</b></span></div>
+    <a class="hero-jump" href="#start">↓ З ЧОГО ПОЧАТИ</a>
   </div>
 </div>
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>21 КЛЮЧ ВРУЧЕНО</span><span class="red">///</span>
-    <span>500K+ СПІЛЬНОТА</span><span class="red">///</span>
-    <span>ПРЯМИЙ ЕФІР</span><span class="red">///</span>
-    <span>10 РОКІВ ДОВІРИ</span><span class="red">///</span>
-    <span>21 КЛЮЧ ВРУЧЕНО</span><span class="red">///</span>
-    <span>500K+ СПІЛЬНОТА</span><span class="red">///</span>
-    <span>ПРЯМИЙ ЕФІР</span><span class="red">///</span>
-    <span>10 РОКІВ ДОВІРИ</span><span class="red">///</span>
+    <span>21 АВТО ВРУЧЕНО</span><span class="red">///</span><span>ПРЯМИЙ ЕФІР</span><span class="red">///</span><span>КЛУБ З 2016</span><span class="red">///</span><span>БЕРИ. ДІЙ. ВОЛОДІЙ.</span><span class="red">///</span><span>21 АВТО ВРУЧЕНО</span><span class="red">///</span><span>ПРЯМИЙ ЕФІР</span><span class="red">///</span><span>КЛУБ З 2016</span><span class="red">///</span><span>БЕРИ. ДІЙ. ВОЛОДІЙ.</span><span class="red">///</span><span>21 АВТО ВРУЧЕНО</span><span class="red">///</span><span>ПРЯМИЙ ЕФІР</span><span class="red">///</span><span>КЛУБ З 2016</span><span class="red">///</span><span>БЕРИ. ДІЙ. ВОЛОДІЙ.</span><span class="red">///</span><span>21 АВТО ВРУЧЕНО</span><span class="red">///</span><span>ПРЯМИЙ ЕФІР</span><span class="red">///</span><span>КЛУБ З 2016</span><span class="red">///</span><span>БЕРИ. ДІЙ. ВОЛОДІЙ.</span><span class="red">///</span>
   </div>
 </div>
 
-<!-- KILLER FEATURES SPOTLIGHT -->
-<div style="padding: 24px 32px 0; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent 70%);">
-  <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--red-glow); margin-bottom: 8px;">/// ІНСТРУМЕНТИ</div>
-  <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 28px; color: var(--white); line-height: 1.1;">БРЕНДБУК, ЯКИЙ <span style="color: var(--red);">ПРАЦЮЄ ЗА ТЕБЕ.</span></div>
-</div>
-
-<div class="feature-cards">
-  <a href="sections/generator.html" class="feature-card">
-    <span class="fc-badge">NEW</span>
-    <div class="fc-icon">🚀</div>
-    <div class="fc-title">POST GENERATOR</div>
-    <div class="fc-desc">Введи параметри промоакції — отримай готовий пост IG/TG/Email + PNG для Instagram за 30 секунд.</div>
-  </a>
-  <a href="sections/tools.html" class="feature-card">
-    <span class="fc-badge">TOOLS</span>
-    <div class="fc-icon">🛠</div>
-    <div class="fc-title">VOICE LINTER</div>
-    <div class="fc-desc">Встав текст — миттєвий аналіз NEVER-слів, «ви» з малої, спам-маркерів. Кнопка автофікс.</div>
-  </a>
-  <a href="sections/tools.html#color-contrast" class="feature-card">
-    <span class="fc-badge">WCAG</span>
-    <div class="fc-icon">🎨</div>
-    <div class="fc-title">CONTRAST CHECKER</div>
-    <div class="fc-desc">2 кольори → contrast ratio + AA/AAA grade + live preview. 5 бренд-пресетів.</div>
-  </a>
-  <a href="sections/examples.html" class="feature-card">
-    <span class="fc-badge">12</span>
-    <div class="fc-icon">📚</div>
-    <div class="fc-title">EXAMPLES LIBRARY</div>
-    <div class="fc-desc">12 реальних кейсів good vs bad з візуальними мокапами і червоними/зеленими тегами.</div>
-  </a>
-  <a href="sections/onboarding.html" class="feature-card">
-    <span class="fc-badge">10MIN</span>
-    <div class="fc-icon">🎓</div>
-    <div class="fc-title">ONBOARDING DECK</div>
-    <div class="fc-desc">10 повноекранних слайдів — Brand за 10 хв. Для нового працівника / підрядника.</div>
-  </a>
-  <a href="sections/ai-content.html" class="feature-card">
-    <span class="fc-badge">AI</span>
-    <div class="fc-icon">🤖</div>
-    <div class="fc-title">AI CONTENT GUIDE</div>
-    <div class="fc-desc">DO/VERIFY/NEVER + system prompt для Claude. 7-point чеклист перед публікацією.</div>
-  </a>
-</div>
-
-<div style="padding: 24px 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--coal); display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between;">
-  <div>
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--red-glow); margin-bottom: 6px;">/// PWA · OFFLINE</div>
-    <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.1; color: var(--white);">ВСТАНОВИ ЯК ДОДАТОК НА ТЕЛЕФОН</div>
-    <div style="font-size: 13px; color: var(--bone); line-height: 1.5; margin-top: 4px; max-width: 520px;">Працює offline. Швидкі ярлики (Voice Linter, Post Generator) одразу на головному екрані. Як native app.</div>
+<!-- ROLES -->
+<section class="lp-block" id="start" aria-labelledby="start-title">
+  <div class="plate-k"><span class="pk-num">01</span><span class="pk-name">З чого почати</span></div>
+  <h2 class="lp-title" id="start-title">Хто ти — і що тобі потрібно першим</h2>
+  <p class="lp-lead">П'ять маршрутів по книзі. Кожен — три-чотири розділи в тому порядку, в якому вони знадобляться.</p>
+  <div class="roles">
+    <div class="role"><h3>SMM і контент</h3><p>Пишеш пости, сторіс, Reels, розсилки.</p><ol>
+      <li><a href="sections/legal.html">Legal-safe лексикон</a></li><li><a href="sections/voice.html">Голос і мова</a></li><li><a href="sections/generator.html">Генератор постів</a></li><li><a href="sections/video.html">Відео</a></li></ol></div>
+    <div class="role"><h3>Дизайнер</h3><p>Макети, банери, мерч, презентації.</p><ol>
+      <li><a href="sections/logo.html">Логотип і файли</a></li><li><a href="sections/colors.html">Кольори</a></li><li><a href="sections/typo.html">Типографіка</a></li><li><a href="sections/spacing.html">Сітка і елементи</a></li></ol></div>
+    <div class="role"><h3>Розробник</h3><p>Сайт, лендінги, кабінет, дашборди.</p><ol>
+      <li><a href="sections/tokens.html">Дизайн-токени</a></li><li><a href="sections/components.html">UI-компоненти</a></li><li><a href="sections/mobile.html">Mobile-first</a></li><li><a href="sections/motion.html">Анімації</a></li></ol></div>
+    <div class="role"><h3>Підтримка</h3><p>Відповідаєш учасникам у чатах і пошті.</p><ol>
+      <li><a href="sections/support.html">Регламент підтримки</a></li><li><a href="sections/crisis.html">Кризові комунікації</a></li><li><a href="sections/legal.html">Legal-safe лексикон</a></li></ol></div>
+    <div class="role"><h3>Партнер і блогер</h3><p>Робиш інтеграцію або спільний проєкт.</p><ol>
+      <li><a href="sections/quickstart.html">Швидкий старт</a></li><li><a href="sections/partners.html">Партнери</a></li><li><a href="assets/dreamcar-logos.zip" download>Логотипи одним архівом</a></li><li><a href="sections/legal.html">Legal-safe лексикон</a></li></ol></div>
   </div>
-  <a href="print.html" class="print-btn" style="margin: 0; padding: 14px 22px; font-size: 12px;">📄 PDF ВЕРСІЯ</a>
-</div>
+</section>
 
-<!-- TOC --><section style="padding: 0 0 32px;"><div class="s-num" style="padding: 24px 32px 0;">/// ЗМІСТ</div><h2 class="s-title" style="padding: 0 32px 8px;">32 РОЗДІЛИ <span class="red">ОДНИМ КЛАЦАННЯМ</span></h2><div class="toc-grid"><a href="sections/quickstart.html" class="toc-card"><span class="num">/// 00</span><div class="name">QUICK START</div><div class="desc">Шпаргалка для підрядників на 1 екран.</div></a><a href="sections/manifesto.html" class="toc-card"><span class="num">/// 01</span><div class="name">МАНІФЕСТ</div><div class="desc">Душа бренду. Те, на що звіряємось.</div></a><a href="sections/strategy.html" class="toc-card"><span class="num">/// 02</span><div class="name">СТРАТЕГІЯ</div><div class="desc">Місія, бачення, цінності, УТП, архетип.</div></a><a href="sections/personas.html" class="toc-card"><span class="num">/// 03</span><div class="name">АУДИТОРІЯ</div><div class="desc">4 портрети за тригерами.</div></a><a href="sections/compete.html" class="toc-card"><span class="num">/// 04</span><div class="name">КОНТЕКСТ РИНКУ</div><div class="desc">Чим ми відрізняємось.</div></a><a href="sections/logo.html" class="toc-card"><span class="num">/// 05</span><div class="name">ЛОГОТИП</div><div class="desc">Racing Plate, Avatar Circle, DC Monogram.</div></a><a href="sections/colors.html" class="toc-card"><span class="num">/// 06</span><div class="name">КОЛЬОРИ</div><div class="desc">Палітра, пропорції, контраст.</div></a><a href="sections/typo.html" class="toc-card"><span class="num">/// 07</span><div class="name">ТИПОГРАФІКА</div><div class="desc">4 шрифти, 11-рівнева шкала.</div></a><a href="sections/spacing.html" class="toc-card"><span class="num">/// 08</span><div class="name">СІТКА</div><div class="desc">База 4px + іконки, патерни.</div></a><a href="sections/components.html" class="toc-card"><span class="num">/// 09</span><div class="name">UI-КОМПОНЕНТИ</div><div class="desc">Кнопки, форми, поля, empty states.</div></a><a href="sections/motion.html" class="toc-card"><span class="num">/// 10</span><div class="name">АНІМАЦІЇ</div><div class="desc">Тривалості, easing, переходи.</div></a><a href="sections/voice.html" class="toc-card"><span class="num">/// 11</span><div class="name">ГОЛОС І МОВА</div><div class="desc">Тон + словник DO/CAREFUL/NEVER.</div></a><a href="sections/legal.html" class="toc-card"><span class="num">/// 11B ⚖</span><div class="name">LEGAL-SAFE ЛЕКСИКОН</div><div class="desc">Словник замін + юр-ризики + linter.</div></a><a href="sections/content.html" class="toc-card"><span class="num">/// 12</span><div class="name">КОНТЕНТ</div><div class="desc">Рубрики, хештеги, FAQ.</div></a><a href="sections/crisis.html" class="toc-card"><span class="num">/// 13</span><div class="name">КРИЗОВІ КОМУНІКАЦІЇ</div><div class="desc">8 готових скриптів.</div></a><a href="sections/partners.html" class="toc-card"><span class="num">/// 14</span><div class="name">ПАРТНЕРИ</div><div class="desc">Бриф із 7 питань.</div></a><a href="sections/trust.html" class="toc-card"><span class="num">/// 15</span><div class="name">ДОВІРА</div><div class="desc">Trust + WCAG 2.1 AA.</div></a><a href="sections/tokens.html" class="toc-card"><span class="num">/// 16</span><div class="name">ДИЗАЙН-РЕСУРСИ</div><div class="desc">Design tokens JSON + CSS.</div></a><a href="sections/audio.html" class="toc-card"><span class="num">/// 17</span><div class="name">СТИЛЬ МЕДІА</div><div class="desc">Аудіо + фото-режисура.</div></a><a href="sections/touchpoints.html" class="toc-card"><span class="num">/// 18</span><div class="name">ТОЧКИ КОНТАКТУ</div><div class="desc">Customer journey + Email шаблони.</div></a><a href="sections/merch.html" class="toc-card"><span class="num">/// 19</span><div class="name">МЕРЧ</div><div class="desc">Що друкуємо і як.</div></a><a href="sections/metrics.html" class="toc-card"><span class="num">/// 20</span><div class="name">МЕТРИКИ · ROADMAP</div><div class="desc">Що міряємо + куди йдемо.</div></a><a href="sections/support.html" class="toc-card"><span class="num">/// 21</span><div class="name">РЕГЛАМЕНТ ПІДТРИМКИ</div><div class="desc">4К, STOP, готові фрази, SLA.</div></a><a href="sections/ai-content.html" class="toc-card"><span class="num">/// 22</span><div class="name">AI-КОНТЕНТ</div><div class="desc">DO/VERIFY/NEVER + system prompt.</div></a><a href="sections/examples.html" class="toc-card"><span class="num">/// 23</span><div class="name">EXAMPLES LIBRARY</div><div class="desc">12 кейсів good vs bad.</div></a><a href="sections/photography-brief.html" class="toc-card"><span class="num">/// 24</span><div class="name">PHOTOGRAPHY BRIEF</div><div class="desc">Шаблон для фотографа, shot list.</div></a><a href="sections/mobile.html" class="toc-card"><span class="num">/// 25</span><div class="name">MOBILE-FIRST</div><div class="desc">Breakpoints, touch targets, thumb zones.</div></a><a href="sections/onboarding.html" class="toc-card"><span class="num">/// 26</span><div class="name">ONBOARDING DECK</div><div class="desc">10 слайдів — Brand за 10 хв.</div></a><a href="sections/video.html" class="toc-card"><span class="num">/// 29</span><div class="name">ВІДЕО</div><div class="desc">Формати, титри, монтаж, ефір.</div></a><a href="sections/localization.html" class="toc-card"><span class="num">/// 30</span><div class="name">ЛОКАЛІЗАЦІЯ</div><div class="desc">EN · PL · CZ без втрати голосу.</div></a><a href="sections/tools.html" class="toc-card" style="background: linear-gradient(135deg, rgba(227,6,19,0.2), transparent); border-color: var(--red);"><span class="num">/// 27 🛠</span><div class="name">BRAND TOOLS</div><div class="desc">Voice Linter · Color Checker · Tokens · Assets.</div></a><a href="sections/generator.html" class="toc-card" style="background: linear-gradient(135deg, rgba(227,6,19,0.3), rgba(245,158,11,0.1)); border-color: var(--red); border-width: 2px;"><span class="num">/// 28 🚀</span><div class="name">POST GENERATOR</div><div class="desc">Параметри → IG/TG/Email + PNG за 30 сек.</div></a></div></section>
+<!-- BRAND IN 10 SECONDS -->
+<section class="lp-block" aria-labelledby="b10-title">
+  <div class="plate-k"><span class="pk-num">02</span><span class="pk-name">Бренд за 10 секунд</span></div>
+  <h2 class="lp-title" id="b10-title">Шість речей, які впізнають одразу</h2>
+  <div class="b10">
+    <div><span class="lbl">Знак</span><img class="plate-img" src="assets/logo/dreamcar-racing-plate.svg" width="720" height="200" alt="Racing Plate" style="width:100%;max-width:280px;"><span class="rule">Гоночний номерний знак: червоний UA-блок, біла рамка, жорстка тінь.</span></div>
+    <div><span class="lbl">Колір · 60 / 25 / 15</span><div class="ratio" role="img" aria-label="Пропорція кольорів: 60% чорного, 25% червоного, 15% білого"><span style="flex:60;background:#0A0A0A"></span><span style="flex:25;background:#E30613"></span><span style="flex:15;background:#FFFFFF"></span></div><span class="rule"><strong>#0A0A0A · #E30613 · #FFFFFF.</strong> Червоний — акцент, не фон.</span></div>
+    <div><span class="lbl">Шрифти</span><div class="fonts"><div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:30px;">ЗАГОЛОВОК</div><div style="font-family:'Manrope',sans-serif;font-size:16px;color:var(--bone);">Текст і кнопки — Manrope</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ash);letter-spacing:.2em;">/// МІТКИ — MONO</div></div></div>
+    <div><span class="lbl">Форма</span><div style="display:flex;gap:12px;align-items:center;"><span class="btn btn-primary" style="pointer-events:none;">ВЗЯТИ УЧАСТЬ →</span></div><span class="rule">Гострі кути. Кнопки прямокутні, радіус 0.</span></div>
+    <div><span class="lbl">Гасло</span><div class="slogan">Бери. Дій.<br><span style="color:var(--red)">Володій.</span></div></div>
+    <div><span class="lbl">Слово</span><span class="rule"><strong>Учасники, токени ШІ-сервісу, власник.</strong> Ніколи — «розіграш», «квиток», «шанс», «переможець». <a href="sections/legal.html" style="color:var(--link);">Повний лексикон →</a></span></div>
+  </div>
+</section>
 
-<footer style="padding: 32px; border-top: 1px solid var(--line); background: var(--coal); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.18em; line-height: 1.8;">
-  DREAMCAR · BRAND BOOK · V4.0 · PWA · OFFLINE-FIRST<br>
-  <a href="mailto:vg@dreamcar.ua" style="color: var(--bone); text-decoration: none;">VG@DREAMCAR.UA</a> · <a href="https://dreamcar.ua" style="color: var(--bone); text-decoration: none;">DREAMCAR.UA</a> · <a href="https://github.com/dreamcarua/brand-book" style="color: var(--bone); text-decoration: none;">GITHUB</a>
+<!-- TOOLS -->
+<section class="lp-block" aria-labelledby="tools-title">
+  <div class="plate-k"><span class="pk-num">03</span><span class="pk-name">Інструменти</span></div>
+  <h2 class="lp-title" id="tools-title">Брендбук, який працює за тебе</h2>
+  <div class="tool-links">
+    <a class="tool-link" href="sections/tools.html#voice-linter"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><path d="m15 17 2 2 4-4"/></svg><span class="t">Voice Linter</span><span class="d">Вставляєш текст — бачиш заборонені слова, «ви» з малої і спам-маркери. Виправлена версія в один клік.</span></a>
+    <a class="tool-link" href="sections/generator.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="16" cy="8" r="1.5"/></svg><span class="t">Генератор постів</span><span class="d">Параметри проєкту → текст для Instagram, Telegram і email та макет 1080×1080.</span></a>
+    <a class="tool-link" href="sections/tools.html#color-contrast"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg><span class="t">Перевірка контрасту</span><span class="d">Два кольори → коефіцієнт WCAG і оцінка AA/AAA з живим прикладом.</span></a>
+    <a class="tool-link" href="sections/tools.html#ai-assistant"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.5l-5.2 1.6L12 16l-1.8-4.9L5 9.5l5.2-1.6z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span class="t">AI-асистент</span><span class="d">Системний промпт для Claude або ChatGPT з голосом і лексиконом бренду.</span></a>
+  </div>
+</section>
+
+<!-- TOC:START -->
+<section class="lp-block" id="toc" aria-labelledby="toc-title">
+  <div class="plate-k"><span class="pk-num">04</span><span class="pk-name">Зміст</span></div>
+  <h2 class="lp-title" id="toc-title">37 розділів книги</h2>
+  <h3 class="toc-group">Старт</h3>
+  <div class="toc-grid">
+    <a href="sections/quickstart.html" class="toc-card"><span class="num">00</span><span class="name">Швидкий старт</span><span class="desc">Шпаргалка на один екран: головні правила і файли.</span></a>
+    <a href="sections/onboarding.html" class="toc-card"><span class="num">01</span><span class="name">Онбординг за 10 хв</span><span class="desc">10 слайдів: бренд для нової людини в команді.</span></a>
+    <a href="sections/tools.html" class="toc-card"><span class="num">02</span><span class="name">Інструменти</span><span class="desc">Voice Linter, перевірка контрасту, токени, AI-промпт.</span></a>
+    <a href="sections/generator.html" class="toc-card"><span class="num">03</span><span class="name">Генератор постів</span><span class="desc">Параметри проєкту → пости для IG, TG, email і макет.</span></a>
+  </div>
+  <h3 class="toc-group">Основа бренду</h3>
+  <div class="toc-grid">
+    <a href="sections/platform.html" class="toc-card"><span class="num">04</span><span class="name">Платформа бренду</span><span class="desc">Ідея, обіцянка, докази, характер, архітектура.</span></a>
+    <a href="sections/manifesto.html" class="toc-card"><span class="num">05</span><span class="name">Маніфест</span><span class="desc">Те, на що звіряємось у кожному рішенні.</span></a>
+    <a href="sections/strategy.html" class="toc-card"><span class="num">06</span><span class="name">Стратегія</span><span class="desc">Місія, бачення, цінності, позиціонування.</span></a>
+    <a href="sections/personas.html" class="toc-card"><span class="num">07</span><span class="name">Аудиторія</span><span class="desc">Чотири портрети учасників за мотивами.</span></a>
+    <a href="sections/compete.html" class="toc-card"><span class="num">08</span><span class="name">Контекст ринку</span><span class="desc">Чим ми відрізняємось від інших форматів.</span></a>
+  </div>
+  <h3 class="toc-group">Закон і голос</h3>
+  <div class="toc-grid">
+    <a href="sections/legal.html" class="toc-card"><span class="num">09</span><span class="name">Legal-safe лексикон</span><span class="desc">Заборонені слова, заміни, перевірка тексту.</span></a>
+    <a href="sections/voice.html" class="toc-card"><span class="num">10</span><span class="name">Голос і мова</span><span class="desc">Тон, звертання, словник за каналами.</span></a>
+    <a href="sections/glossary.html" class="toc-card"><span class="num">11</span><span class="name">Словник і правопис</span><span class="desc">Терміни бренду, назви проєктів, правила набору.</span></a>
+    <a href="sections/examples.html" class="toc-card"><span class="num">12</span><span class="name">Приклади: так і не так</span><span class="desc">Реальні формати з розбором.</span></a>
+    <a href="sections/ai-content.html" class="toc-card"><span class="num">13</span><span class="name">Робота з AI</span><span class="desc">Що можна, що перевіряти, чого не можна.</span></a>
+    <a href="sections/localization.html" class="toc-card"><span class="num">14</span><span class="name">Локалізація</span><span class="desc">EN · PL · CZ без втрати голосу.</span></a>
+  </div>
+  <h3 class="toc-group">Візуальна ідентичність</h3>
+  <div class="toc-grid">
+    <a href="sections/logo.html" class="toc-card"><span class="num">15</span><span class="name">Логотип і файли</span><span class="desc">Racing Plate, Avatar Circle, DC-монограма.</span></a>
+    <a href="sections/colors.html" class="toc-card"><span class="num">16</span><span class="name">Кольори</span><span class="desc">Палітра, дві теми, графіки, контраст.</span></a>
+    <a href="sections/typo.html" class="toc-card"><span class="num">17</span><span class="name">Типографіка</span><span class="desc">Чотири гарнітури, шкала, правила набору.</span></a>
+    <a href="sections/spacing.html" class="toc-card"><span class="num">18</span><span class="name">Сітка, іконки, патерни</span><span class="desc">База 4 px, 12 колонок, іконки, патерни.</span></a>
+  </div>
+  <h3 class="toc-group">Контент і канали</h3>
+  <div class="toc-grid">
+    <a href="sections/content.html" class="toc-card"><span class="num">19</span><span class="name">Рубрики і FAQ</span><span class="desc">Про що говоримо і як відповідаємо на питання.</span></a>
+    <a href="sections/social.html" class="toc-card"><span class="num">20</span><span class="name">Соцмережі</span><span class="desc">Формати і правила для кожної платформи.</span></a>
+    <a href="sections/video.html" class="toc-card"><span class="num">21</span><span class="name">Відео</span><span class="desc">Формати, титри, монтаж, ефір.</span></a>
+    <a href="sections/audio.html" class="toc-card"><span class="num">22</span><span class="name">Звук і фото-стиль</span><span class="desc">Звуковий логотип, музика, світло, кадр.</span></a>
+    <a href="sections/photography-brief.html" class="toc-card"><span class="num">23</span><span class="name">Бриф для фотографа</span><span class="desc">Шаблон брифу і список кадрів.</span></a>
+    <a href="sections/ceremony.html" class="toc-card"><span class="num">24</span><span class="name">Церемонія вручення</span><span class="desc">Головний ритуал бренду: сценарій, кадр, слова.</span></a>
+    <a href="sections/touchpoints.html" class="toc-card"><span class="num">25</span><span class="name">Точки контакту і email</span><span class="desc">Шлях учасника і шаблони листів.</span></a>
+    <a href="sections/merch.html" class="toc-card"><span class="num">26</span><span class="name">Мерч</span><span class="desc">Що отримує власник і як ми друкуємо.</span></a>
+  </div>
+  <h3 class="toc-group">Люди і ситуації</h3>
+  <div class="toc-grid">
+    <a href="sections/support.html" class="toc-card"><span class="num">27</span><span class="name">Регламент підтримки</span><span class="desc">Тон, SLA, готові фрази для підтримки.</span></a>
+    <a href="sections/crisis.html" class="toc-card"><span class="num">28</span><span class="name">Кризові комунікації</span><span class="desc">Сценарії і готові відповіді.</span></a>
+    <a href="sections/partners.html" class="toc-card"><span class="num">29</span><span class="name">Партнери і блогери</span><span class="desc">Бриф, погодження, спільні логотипи.</span></a>
+    <a href="sections/trust.html" class="toc-card"><span class="num">30</span><span class="name">Довіра і доступність</span><span class="desc">Докази, вручення, WCAG, дані.</span></a>
+  </div>
+  <h3 class="toc-group">Продукт</h3>
+  <div class="toc-grid">
+    <a href="sections/tokens.html" class="toc-card"><span class="num">31</span><span class="name">Дизайн-токени і файли</span><span class="desc">Токени JSON і CSS, файли бренду, версії.</span></a>
+    <a href="sections/components.html" class="toc-card"><span class="num">32</span><span class="name">UI-компоненти</span><span class="desc">Кнопки, поля, пакети, порожні стани.</span></a>
+    <a href="sections/motion.html" class="toc-card"><span class="num">33</span><span class="name">Анімації</span><span class="desc">Тривалості, криві, фірмовий рух.</span></a>
+    <a href="sections/mobile.html" class="toc-card"><span class="num">34</span><span class="name">Mobile-first</span><span class="desc">Брейкпоінти, зони дотику, безпечні зони.</span></a>
+  </div>
+  <h3 class="toc-group">Керування брендом</h3>
+  <div class="toc-grid">
+    <a href="sections/governance.html" class="toc-card"><span class="num">35</span><span class="name">Як ми працюємо з брендом</span><span class="desc">Хто погоджує, як змінюється книга, реєстр тверджень.</span></a>
+    <a href="sections/metrics.html" class="toc-card"><span class="num">36</span><span class="name">Метрики і roadmap</span><span class="desc">Що міряємо і куди рухаємось.</span></a>
+  </div>
+</section>
+<!-- TOC:END -->
+
+<footer class="lp-footer">
+  <span>DREAMCAR · BRAND BOOK · V4.3</span>
+  <span><a href="mailto:vg@dreamcar.ua">VG@DREAMCAR.UA</a> · <a href="https://dreamcar.ua">DREAMCAR.UA</a> · <a href="print.html">УСЯ КНИГА ДЛЯ ДРУКУ</a> · <a href="https://github.com/dreamcarua/brand-book">GITHUB</a></span>
 </footer>
 
 </main>
 
-<div class="install-prompt" id="installPrompt" onclick="installPWA()" role="button" aria-label="Встановити як додаток">📲 ВСТАНОВИТИ ЯК ДОДАТОК</div>
+<button type="button" class="install-prompt" id="installPrompt" onclick="installPWA()">ВСТАНОВИТИ ЯК ДОДАТОК</button>
 
 <script>
 // PWA install prompt
