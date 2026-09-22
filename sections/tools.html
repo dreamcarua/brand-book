@@ -35,7 +35,8 @@
 
   /* ====== COLOR CONTRAST CHECKER ====== */
   .cc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; align-items: flex-start; margin-top: 16px; }
-  .cc-inputs { display: flex; flex-direction: column; gap: 14px; }
+  .cc-inputs { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .cc-grid > * { min-width: 0; }
   .cc-input-row { display: flex; align-items: center; gap: 12px; }
   .cc-input-row input[type="color"] { width: 60px; height: 60px; border: 1px solid var(--steel); border-radius: 4px; cursor: pointer; background: transparent; }
   .cc-input-row input[type="text"] { background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; flex: 1; }
@@ -100,11 +101,11 @@
   <!-- ============== VOICE LINTER ============== -->
   <div class="tool-card">
     <h2 id="voice-linter">Voice Linter — перевірка тексту</h2>
-    <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="voice.html" style="color: var(--red);">розділу 10 DO/CAREFUL/NEVER</a>.</p>
+    <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="voice.html" style="color: var(--red-glow);">розділу 10 DO/CAREFUL/NEVER</a>.</p>
 
     <div class="linter-area">
       <textarea class="linter-input" id="lintInput" aria-label="Текст для перевірки" placeholder="Встав текст сюди... Наприклад: «Шанс виграти BMW за 249 грн! Купуй квиток!»" oninput="runLinter()">Шанс виграти BMW X5 за 249 грн! Купи квиток — твій шанс стати власником авто мрії! Поспішай, лотерея сьогодні!</textarea>
-      <div class="linter-output" id="lintOutput"></div>
+      <div class="linter-output" id="lintOutput" tabindex="0" role="region" aria-label="Результат перевірки" aria-live="polite"></div>
     </div>
     <div class="linter-stats" id="lintStats"></div>
 
@@ -289,7 +290,7 @@
     <h2 id="ai-assistant">AI-асистент бренду</h2>
     <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Скопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
     <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">Скопіювати AI system prompt</button>
-    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red);">розділі 13 AI-контент</a>.</p>
+    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red-glow);">розділі 13 AI-контент</a>.</p>
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
@@ -306,10 +307,10 @@
   <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
-      <li>→ <a href="voice.html" style="color: var(--red); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
-      <li>→ <a href="colors.html" style="color: var(--red); font-weight: 600; text-decoration: none;">06 Кольори</a> — повна палітра.</li>
-      <li>→ <a href="tokens.html" style="color: var(--red); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — повний набір design tokens у JSON / CSS.</li>
-      <li>→ <a href="ai-content.html" style="color: var(--red); font-weight: 600; text-decoration: none;">22 AI-контент</a> — детальний AI prompt + чеклисти.</li>
+      <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
+      <li>→ <a href="colors.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">06 Кольори</a> — повна палітра.</li>
+      <li>→ <a href="tokens.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — повний набір design tokens у JSON / CSS.</li>
+      <li>→ <a href="ai-content.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">22 AI-контент</a> — детальний AI prompt + чеклисти.</li>
     </ul>
   </div>
 </section>

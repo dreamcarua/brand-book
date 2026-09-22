@@ -232,7 +232,7 @@
     color: var(--ash);
     margin-bottom: 8px;
   }
-  .pyramid-level:nth-child(1) .layer { color: rgba(255,255,255,0.7); }
+  .pyramid-level:nth-child(1) .layer { color: #FFFFFF; }
   .pyramid-level .value {
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
@@ -245,7 +245,7 @@
     margin-top: 8px;
     line-height: 1.5;
   }
-  .pyramid-level:nth-child(1) .desc { color: rgba(255,255,255,0.85); }
+  .pyramid-level:nth-child(1) .desc { color: #FFFFFF; }
 
   /* === CARDS GENERIC === */
   .card-grid {
@@ -382,7 +382,6 @@
     font-size: 12px;
     letter-spacing: 0.15em;
     margin-top: 6px;
-    opacity: 0.85;
   }
   .persona-body {
     padding: 24px;
@@ -791,7 +790,8 @@
     border-right: 1px solid var(--line);
   }
   .a11y-table th {
-    background: var(--graphite);
+    background: var(--black);
+    border-bottom: 2px solid var(--red);
     font-size: 11px;
     letter-spacing: 0.15em;
     color: var(--red-glow);
@@ -936,7 +936,7 @@
     text-align: center;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red-glow);
+    color: var(--white);
   }
   .breakpoints {
     display: grid;
@@ -945,7 +945,7 @@
     margin-top: 24px;
   }
   .bp-card {
-    background: var(--graphite);
+    background: var(--coal);
     padding: 20px;
     border-left: 3px solid var(--red);
     font-family: 'JetBrains Mono', monospace;
@@ -1351,7 +1351,7 @@
     border-radius: 999px;
   }
   .hashtag.brand { background: var(--red); }
-  .hashtag.trend { border: 1px solid var(--red); background: transparent; color: var(--red); }
+  .hashtag.trend { border: 1px solid var(--red); background: transparent; color: var(--red-glow); }
 
   .faq-item {
     border: 1px solid var(--line);
@@ -2630,7 +2630,7 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
   transition: color var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out); }
 .copy-btn:hover { color: var(--white); border-color: var(--red); }
 .copy-btn[data-state="ok"] { color: var(--success); border-color: var(--success); }
-.color-cell .copy-btn { margin-top: 12px; border-color: currentColor; color: inherit; opacity: 0.85; }
+.color-cell .copy-btn { margin-top: 12px; border-color: currentColor; color: inherit; }
 
 /* Reduced motion: fewer and gentler, not broken */
 @media (prefers-reduced-motion: reduce) {
@@ -2656,7 +2656,13 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
 /* Tables and wide blocks never break the page at 390px */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 @media (max-width: 640px) {
-  .scale-sample { font-size: clamp(40px, 16vw, 96px) !important; }
+  .type-scale-row { grid-template-columns: 1fr !important; gap: 6px !important; }
+  .type-scale-row .scale-sample { min-width: 0; overflow-wrap: anywhere; }
+  .scale-sample[style*="font-size:96px"] { font-size: 48px !important; }
+  .scale-sample[style*="font-size:64px"] { font-size: 40px !important; }
+  .scale-sample[style*="font-size:48px"] { font-size: 32px !important; }
+  .scale-sample[style*="font-size:32px"] { font-size: 26px !important; }
+  .cc-input-row input { min-width: 0; }
 }
 .copy-row { display: flex; justify-content: flex-end; margin: 8px 0 -4px; }
 
