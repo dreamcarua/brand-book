@@ -1,6 +1,6 @@
 # Handoff — mid-task state
 
-Updated: 22.09.2026 22:05
+Updated: 23.09.2026
 
 ## Task verbatim
 «а давай тепер повний аудит - передусім візуальний, UI UX і сприйняття, запамʼятовуваність образу, цілісність … Щоб різні агенти покритикували … спеціальні скіли … СВІТОВОГО рівня … Додай все, чого може не вистачати, а що є - зроби ІДЕАЛЬНИМ! Працюй автономно - крок за кроком, розділ за розділом … 12 годин» — Вадим, 22.09.2026
@@ -37,5 +37,7 @@ E motion signature + copy buttons + motion demos; re-critique; DS artifact; repo
 
 - Phase B+D: new IA (37 sections, 8 groups) — SECTIONS in sidebar.js is the one source; scripts/build_nav.py writes landing TOC, titles, breadcrumbs, plate kickers, prev/next; build_print/search import it. New pages: platform, glossary, social, ceremony, governance. Landing rebuilt (roles, brand-in-10s, tool links, master SVG plate). Logo page rebuilt on master SVGs. Plate kicker + red-square h2 marker; EN/UA duplicate headings normalized; inner sub-heroes demoted; nested sections unnested; UI emoji stripped (11 files); decorative gradients flattened; .dont leak fixed.
 
+- Phase C: content fixes committed (d12f382): typos, mixed-script, #018 → #NN placeholders, 25–44, no superlatives, manifesto/trust/voice/support/touchpoints/examples.
+
 ## Next single action
-Phase C content: renumber prose refs to new numbers; fix contradictions/leaks list from content critic (voice CAREFUL tier, «можеш виграти», support product def, trust claims, stale #018, 19 разів, «за 10 років»), generator (car photo, reels, png, #20місяц10), motion page demos, colors desc, spacing labels, quickstart v2.
+Generator (car photo, reels/stories, PNG export, #20місяц10, neutral defaults), motion demos, colors desc, spacing labels → rebuild → second critique → deploy → DS artifact → report.

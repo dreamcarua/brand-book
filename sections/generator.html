@@ -11,79 +11,86 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
-  .gen-layout { display: grid; grid-template-columns: 380px 1fr; gap: 24px; margin-top: 24px; align-items: flex-start; }
-  .gen-form { background: var(--coal); border: 1px solid var(--line); padding: 24px; position: sticky; top: 24px; }
-  .gen-form h3 { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 16px; font-weight: 700; }
+  .gen-layout { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; gap: 32px; margin-top: 32px; align-items: start; }
+  .gen-form { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 24px; position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; }
+  .gen-form fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+  .gen-form legend { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--red-glow); margin-bottom: 12px; text-transform: uppercase; }
   .form-field { margin-bottom: 14px; }
-  .form-field label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--bone); margin-bottom: 6px; }
-  .form-field input, .form-field select, .form-field textarea { width: 100%; background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'Manrope', sans-serif; font-size: 14px; box-sizing: border-box; outline: none; transition: border-color 0.15s; }
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--red); }
-  .form-field textarea { resize: vertical; min-height: 60px; }
+  .form-field label, .seg-label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--bone); margin-bottom: 6px; }
+  .gen-form .hint { font-size: 12px; color: var(--ash); margin-top: 6px; line-height: 1.45; }
+  .form-field input, .form-field select { width: 100%; min-height: 44px; background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'Manrope', sans-serif; font-size: 15px; box-sizing: border-box; min-width: 0; border-radius: 0; transition: border-color 150ms ease; }
+  .form-field input::placeholder { color: #8A8A8A; }
+  .form-field input:focus-visible, .form-field select:focus-visible { outline: 2px solid var(--red); outline-offset: 0; border-color: var(--red); }
+  .form-field input[type=range] { padding: 0; min-height: 32px; accent-color: #E30613; background: transparent; border: 0; }
+  .file-pick { position: relative; }
+  .file-pick input[type=file] { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; min-height: 0; padding: 0; }
+  .file-pick .file-btn { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 14px; border: 1px dashed var(--steel); background: var(--black); color: var(--white); font-weight: 700; font-size: 14px; transition: border-color 150ms ease; }
+  .file-pick .file-btn span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .file-pick input:focus-visible + .file-btn { outline: 2px solid var(--red); }
+  @media (hover: hover) and (pointer: fine) { .file-pick:hover .file-btn { border-color: var(--red); } }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .gen-btn { width: 100%; padding: 14px; background: var(--red); color: var(--white); border: none; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em; cursor: pointer; margin-top: 8px; transition: background 0.15s; border-radius: 0; }
-  .gen-btn:hover { background: var(--red-deep); }
-  .preview-area { display: flex; flex-direction: column; gap: 24px; }
-  .channel-card { background: var(--coal); border: 1px solid var(--line); overflow: hidden; }
-  .channel-head { padding: 12px 18px; background: var(--black); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
-  .channel-head .ch-icon { font-size: 18px; }
-  .channel-head .ch-name { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--white); letter-spacing: 0.15em; flex: 1; }
-  .channel-head .copy-output { padding: 6px 12px; background: var(--coal); border: 1px solid var(--steel); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 10px; cursor: pointer; letter-spacing: 0.1em; transition: border-color 0.15s; }
-  .channel-head .copy-output:hover { border-color: var(--red); }
-  .channel-head .copy-output.copied { border-color: var(--success); color: var(--success); }
-  .channel-body { padding: 0; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--steel); }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label { margin: 0; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.08em; border-right: 1px solid var(--steel); transition: background-color 150ms ease, color 150ms ease; }
+  .seg label:last-of-type { border-right: 0; }
+  .seg label small { font-size: 10px; color: var(--ash); letter-spacing: 0.04em; }
+  .seg input:checked + label { background: var(--red); color: var(--white); }
+  .seg input:checked + label small { color: var(--white); }
+  .seg input:focus-visible + label { outline: 2px solid var(--white); outline-offset: -4px; }
 
-  /* ====== IG MOCKUP ====== */
-  .ig-mock { background: var(--black); border-bottom: 1px solid var(--line); }
-  .ig-mock-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
-  .ig-mock-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f09433, #dc2743, #cc2366, #bc1888); display: flex; align-items: center; justify-content: center; font-weight: 800; color: white; font-size: 13px; }
-  .ig-mock-name { font-weight: 700; color: var(--white); font-size: 13px; }
-  .ig-mock-tag { font-size: 11px; color: var(--ash); }
-  .ig-mock-media { aspect-ratio: 1; background: linear-gradient(180deg, #0a0a0a, #1a1a1a); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); padding: 24px; position: relative; }
-  .ig-mock-media .promo-num { position: absolute; top: 16px; left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; }
-  .ig-mock-media .car-emoji { font-size: 72px; margin-bottom: 18px; filter: drop-shadow(0 0 30px rgba(227,6,19,0.4)); }
-  .ig-mock-media .price-tag { font-family: 'Archivo Black', sans-serif; font-size: 42px; color: var(--white); line-height: 1; }
-  .ig-mock-media .price-sub { font-family: 'Manrope', sans-serif; font-size: 13px; color: var(--bone); margin-top: 8px; }
-  .ig-mock-actions { padding: 8px 14px; display: flex; gap: 16px; font-size: 18px; }
-  .ig-mock-caption { padding: 0 14px 14px; font-size: 13px; color: var(--white); line-height: 1.45; }
-  .ig-mock-caption .ig-name-inline { font-weight: 700; margin-right: 6px; }
-  .ig-mock-caption .ig-hash { color: #4a8db4; }
-  .ig-mock-caption .more { color: var(--ash); }
+  .preview-area { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .visual-card { background: var(--coal); border: 1px solid var(--line); padding: 20px; }
+  .visual-stage { display: flex; justify-content: center; background: var(--black); border: 1px solid var(--line); padding: 20px; }
+  .visual-stage canvas { display: block; width: 100%; height: auto; max-width: 440px; box-shadow: 8px 8px 0 var(--red-deep); }
+  .visual-stage.is-story canvas { max-width: 320px; }
+  .visual-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .visual-meta .spec { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ash); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .g-btn { min-height: 44px; padding: 12px 18px; background: var(--black); border: 1px solid var(--steel); color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color 150ms ease, background-color 150ms ease, transform 160ms ease-out; }
+  .g-btn.primary { background: var(--red); border-color: var(--red); }
+  .g-btn:active { transform: scale(0.97); }
+  .g-btn.done { border-color: var(--success); }
+  @media (hover: hover) and (pointer: fine) {
+    .g-btn:hover { border-color: var(--red); }
+    .g-btn.primary:hover { background: var(--red-deep); border-color: var(--red-deep); }
+  }
+  .no-photo-note { font-size: 13px; color: var(--warning); margin-top: 10px; }
 
-  /* ====== TG MOCKUP ====== */
-  .tg-mock { background: #17212B; padding: 16px; }
-  .tg-mock-bubble { background: #2B5278; max-width: 75%; padding: 10px 14px; border-radius: 12px 12px 12px 4px; color: white; font-size: 14px; line-height: 1.45; position: relative; }
-  .tg-mock-title { font-weight: 700; color: var(--white); margin-bottom: 4px; }
-  .tg-mock-cta { background: #5288c1; color: white; padding: 8px 16px; border-radius: 999px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; display: inline-block; margin-top: 8px; }
-  .tg-mock-time { font-size: 10px; color: rgba(255,255,255,0.7); float: right; margin-top: 4px; }
+  .out-card { background: var(--coal); border: 1px solid var(--line); }
+  .out-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--black); }
+  .out-head h3 { flex: 1; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--white); }
+  .out-head .who { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.08em; }
+  .out-head .g-btn { min-height: 36px; padding: 8px 14px; font-size: 12px; }
+  .out-body { padding: 18px 20px; color: var(--bone); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .out-body strong { color: var(--white); }
+  .out-body .tags { color: var(--link); }
+  .beats { list-style: none; margin: 0; padding: 0; white-space: normal; }
+  .beats li { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .beats li:last-child { border-bottom: 0; }
+  .beats .t { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red-glow); letter-spacing: 0.08em; padding-top: 2px; }
+  .email-sheet { background: #FFFFFF; color: #1A1A1A; white-space: normal; }
+  .email-sheet .subj { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.35; color: #0A0A0A; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid #E5E5E5; }
+  .email-sheet .from { font-size: 12px; color: #555; margin-bottom: 6px; }
+  .email-sheet p { margin: 0 0 12px; color: #333; }
+  .email-sheet .cta { display: inline-block; background: #E30613; color: #FFFFFF; padding: 12px 22px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-decoration: none; }
+  .email-sheet .legal { font-size: 12px; color: #666; margin-top: 18px; }
 
-  /* ====== EMAIL MOCKUP ====== */
-  .email-mock { background: white; color: black; }
-  .email-mock-head { background: #f4f4f4; padding: 16px; border-bottom: 1px solid #ddd; }
-  .email-mock-from { font-size: 12px; color: #666; margin-bottom: 4px; }
-  .email-mock-subject { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; color: #1a1a1a; line-height: 1.3; }
-  .email-mock-body { padding: 24px; }
-  .email-mock-body p { font-size: 14px; line-height: 1.6; color: #333; margin-bottom: 14px; }
-  .email-mock-cta { background: #E30613; color: white; padding: 12px 24px; border-radius: 0; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.08em; display: inline-block; text-decoration: none; }
-
-  /* ====== HASHTAGS LIST ====== */
-  .hash-list { background: var(--coal); border: 1px solid var(--line); padding: 16px; margin-top: 16px; }
-  .hash-list .hash-row { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--info); line-height: 1.9; word-wrap: break-word; }
-
-  /* ====== EXPORT ====== */
-  .export-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-  .export-btn { padding: 12px 18px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; transition: border-color 0.15s; }
-  .export-btn:hover { border-color: var(--red); }
-  .export-btn.copied { border-color: var(--success); color: var(--success); }
-  .voice-check { padding: 12px; margin-top: 10px; font-size: 12px; border-radius: 4px; }
-  .voice-check.ok { background: rgba(16,185,129,0.12); color: var(--success); border-left: 3px solid var(--success); }
-  .voice-check.warn { background: rgba(245,158,11,0.12); color: var(--warning); border-left: 3px solid var(--warning); }
+  .voice-check { padding: 12px 14px; margin-top: 4px; font-size: 13px; line-height: 1.5; border-left: 3px solid var(--success); background: var(--black); color: var(--bone); }
+  .voice-check.warn { border-left-color: var(--warning); }
+  .voice-check b { color: var(--white); }
 
   @media (max-width: 1024px) {
     .gen-layout { grid-template-columns: 1fr; }
-    .gen-form { position: static; }
+    .gen-form { position: static; max-height: none; }
+  }
+  @media (max-width: 480px) {
+    .visual-stage { padding: 12px; }
+    .beats li { grid-template-columns: 64px 1fr; }
+    .out-head .who { display: none; }
   }
 </style>
 </head>
+
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
 <header class="topbar"><a href="../index.html" class="brand-mark">DREAM<span class="red">CAR</span><span class="bm-sub"> · BRAND BOOK</span></a><div class="topbar-actions"><a href="../print.html" class="topbar-pdf">PDF</a><button class="menu-toggle" type="button" onclick="document.body.classList.toggle('sidebar-open')" aria-label="Відкрити меню розділів">МЕНЮ</button></div></header>
@@ -95,171 +102,145 @@
 
 <section id="generator">
   <div class="s-num plate-k"><span class="pk-num">03</span><span class="pk-name">Генератор постів</span></div>
-  <h1 class="s-title">ВВЕДИ ПАРАМЕТРИ — <span class="red">ГОТОВИЙ ПОСТ.</span></h1>
-  <p class="s-desc">
-    <strong style="color: var(--white);">Найкращий ефір — той, що відбувся.</strong> Цей інструмент за 30 секунд генерує готовий контент для IG / Telegram / Email з вашого voice guide. Жодного слова з NEVER-списку, правильна типографіка, бренд-CTA. Просто заповни форму ↓
-  </p>
+  <h1 class="s-title">ПОСТ ЗА <span class="red">30 СЕКУНД.</span></h1>
+  <p class="s-desc">Заповни проєкт, додай фото авто, обери формат. Генератор збирає візуал у PNG за сіткою бренду і тексти для Instagram, Reels, сторіс, Telegram і email: безпечні слова, правильна типографіка, юридичний рядок. Тексти перевіряються тим самим лексиконом, що й <a href="tools.html#voice-linter" style="color:var(--link);">Voice Linter</a>.</p>
+
+  <aside class="tldr" aria-label="Коротко"><div class="tldr-h">Коротко</div><ol>
+    <li>Фото авто — твоє: файл не залишає браузер, нікуди не завантажується.</li>
+    <li>Формат 4:5 — стрічка, 1:1 — Facebook і каруселі, 9:16 — обкладинка сторіс і Reels у безпечній зоні.</li>
+    <li>Перед публікацією звір цифри і дати з правилами проєкту: генератор нічого не вигадує, він підставляє твої дані.</li>
+  </ol></aside>
 
   <div class="gen-layout">
-    <!-- ============== FORM ============== -->
-    <div class="gen-form">
-      <h3>🎯 ПАРАМЕТРИ ПРОМОАКЦІЇ</h3>
-
-      <div class="form-field">
-        <label for="promoNum">НОМЕР ПРОМОАКЦІЇ</label>
-        <input type="number" id="promoNum" value="17" min="1" max="999" oninput="generate()">
-      </div>
-
-      <div class="form-row">
+    <form class="gen-form" id="genForm" onsubmit="return false" aria-label="Параметри поста">
+      <fieldset>
+        <legend>Що публікуємо</legend>
         <div class="form-field">
-          <label for="carBrand">МАРКА</label>
-          <input type="text" id="carBrand" value="BMW" placeholder="BMW" oninput="generate()">
+          <label for="postType">Тип поста</label>
+          <select id="postType">
+            <option value="launch">Старт проєкту</option>
+            <option value="reminder">Нагадування про ефір</option>
+            <option value="live">Ефір сьогодні</option>
+            <option value="final">Останній день участі</option>
+            <option value="handover">Вручення відбулося</option>
+          </select>
+        </div>
+        <span class="seg-label" id="fmtLabel">Формат візуалу</span>
+        <div class="seg" role="radiogroup" aria-labelledby="fmtLabel">
+          <input type="radio" name="fmt" id="fmt45" value="45" checked><label for="fmt45">4:5<small>стрічка</small></label>
+          <input type="radio" name="fmt" id="fmt11" value="11"><label for="fmt11">1:1<small>квадрат</small></label>
+          <input type="radio" name="fmt" id="fmt916" value="916"><label for="fmt916">9:16<small>сторіс</small></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Проєкт</legend>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="promoNum">Номер проєкту</label>
+            <input type="number" id="promoNum" min="1" max="999" inputmode="numeric" placeholder="NN">
+          </div>
+          <div class="form-field">
+            <label for="price">Ціна токена, ₴</label>
+            <input type="number" id="price" value="249" min="1" inputmode="numeric">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="carBrand">Марка</label>
+            <input type="text" id="carBrand" value="BMW" autocomplete="off">
+          </div>
+          <div class="form-field">
+            <label for="carModel">Модель</label>
+            <input type="text" id="carModel" value="X5" autocomplete="off">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="startDate">Старт</label>
+            <input type="date" id="startDate">
+          </div>
+          <div class="form-field">
+            <label for="airDate">Ефір</label>
+            <input type="date" id="airDate">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="airTime">Час ефіру (Київ)</label>
+            <input type="time" id="airTime" value="20:00">
+          </div>
+          <div class="form-field">
+            <label for="participants">Учасників</label>
+            <input type="number" id="participants" min="1" inputmode="numeric" placeholder="з CRM">
+          </div>
+        </div>
+        <p class="hint" style="margin:-6px 0 0;">Кількість учасників — тільки з CRM на дату публікації. Порожнє поле = рядок не з'явиться.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Фото авто</legend>
+        <div class="form-field">
+          <label for="photo">Файл: JPG або PNG, від 1080 px по ширині</label>
+          <div class="file-pick"><input type="file" id="photo" accept="image/*"><div class="file-btn" aria-hidden="true">Обрати фото авто <span id="photoName">файл не обрано</span></div></div>
+          <p class="hint">Авто цілком у кадрі, сухий фон, без сторонніх логотипів і номерів. Вимоги — <a href="photography-brief.html" style="color:var(--link);">бриф фотографу</a>.</p>
         </div>
         <div class="form-field">
-          <label for="carModel">МОДЕЛЬ</label>
-          <input type="text" id="carModel" value="X5 Hybrid" placeholder="X5" oninput="generate()">
+          <label for="focusY">Кадрування по вертикалі</label>
+          <input type="range" id="focusY" min="0" max="100" value="55" aria-valuetext="55%">
         </div>
-      </div>
+      </fieldset>
 
-      <div class="form-field">
-        <label for="carEmoji">EMOJI / ICON</label>
-        <select id="carEmoji" onchange="generate()">
-          <option value="🚙">🚙 SUV</option>
-          <option value="🚗">🚗 Sedan</option>
-          <option value="🏎️">🏎️ Sport</option>
-          <option value="🚕">🚕 Premium</option>
-          <option value="🛻">🛻 Pickup</option>
-          <option value="🚐">🚐 Van</option>
-        </select>
-      </div>
+      <div class="voice-check" id="voiceCheck" role="status" aria-live="polite">Перевірка лексикону…</div>
+    </form>
 
-      <div class="form-row">
-        <div class="form-field">
-          <label for="price">ЦІНА ТОКЕНА (₴)</label>
-          <input type="number" id="price" value="249" min="1" oninput="generate()">
-        </div>
-        <div class="form-field">
-          <label for="participants">УЧАСНИКИ</label>
-          <input type="number" id="participants" value="4800" min="100" oninput="generate()">
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label for="airDate">ДАТА ЕФІРУ</label>
-        <input type="date" id="airDate" oninput="generate()">
-      </div>
-
-      <div class="form-field">
-        <label for="airTime">ЧАС ЕФІРУ</label>
-        <input type="time" id="airTime" value="20:00" oninput="generate()">
-      </div>
-
-      <div class="form-field">
-        <label for="postType">ТИП ПОСТУ</label>
-        <select id="postType" onchange="generate()">
-          <option value="launch">🚀 Старт промоакції</option>
-          <option value="reminder">⏰ Нагадування</option>
-          <option value="final">🔥 Останній день</option>
-          <option value="winner">🏆 Анонс власника</option>
-        </select>
-      </div>
-
-      <button class="gen-btn" onclick="generate()">🚀 ЗГЕНЕРУВАТИ</button>
-
-      <div class="voice-check ok" id="voiceCheck">
-        ✓ Voice Lint: pass. NEVER слова не використано.
-      </div>
-    </div>
-
-    <!-- ============== PREVIEW ============== -->
     <div class="preview-area">
-
-      <!-- INSTAGRAM -->
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="ch-icon">📸</div>
-          <div class="ch-name">INSTAGRAM POST + CAPTION</div>
-          <div class="copy-output" onclick="copyText('igCaption', this)">📋 COPY</div>
-        </div>
-        <div class="ig-mock" id="igMock">
-          <div class="ig-mock-head">
-            <div class="ig-mock-avatar">DC</div>
-            <div>
-              <div class="ig-mock-name">dreamcar.ua</div>
-              <div class="ig-mock-tag">Sponsored</div>
-            </div>
-          </div>
-          <div class="ig-mock-media" id="igMedia">
-            <div class="promo-num" id="igPromoNum">/// ПРОМОАКЦІЯ №17</div>
-            <div class="car-emoji" id="igCarEmoji">🚙</div>
-            <div class="price-tag" id="igPriceTag">249 ₴</div>
-            <div class="price-sub" id="igPriceSub">BMW X5 Hybrid · ЗА ТОКЕН</div>
-          </div>
-          <div class="ig-mock-actions">❤️ 💬 📨 &nbsp;&nbsp;&nbsp; 🔖</div>
-          <div class="ig-mock-caption" id="igCaption"></div>
-        </div>
-        <div style="padding: 14px; background: var(--coal); border-top: 1px solid var(--line);">
-          <button class="export-btn" onclick="exportIGAsPNG()" id="exportPNGBtn">⬇ EXPORT AS PNG (1080×1080)</button>
-        </div>
-      </div>
-
-      <!-- TELEGRAM -->
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="ch-icon">💬</div>
-          <div class="ch-name">TELEGRAM CHANNEL POST</div>
-          <div class="copy-output" onclick="copyText('tgText', this)">📋 COPY</div>
-        </div>
-        <div class="tg-mock">
-          <div class="tg-mock-bubble">
-            <div id="tgText"></div>
+      <div class="visual-card">
+        <div class="visual-stage" id="stage"><canvas id="cv" width="1080" height="1350" role="img" aria-label="Візуал поста"></canvas></div>
+        <div class="visual-meta">
+          <span class="spec" id="spec">PNG · 1080×1350 · 4:5</span>
+          <div class="btn-row">
+            <button type="button" class="g-btn primary" id="dlBtn">Завантажити PNG</button>
+            <button type="button" class="g-btn" id="cpImgBtn" hidden>Копіювати зображення</button>
           </div>
         </div>
+        <p class="no-photo-note" id="noPhoto">Фото ще не додано: у PNG буде порожня зона кадру.</p>
       </div>
 
-      <!-- EMAIL -->
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="ch-icon">📧</div>
-          <div class="ch-name">EMAIL · SUBJECT + BODY</div>
-          <div class="copy-output" onclick="copyEmail(this)">📋 COPY ALL</div>
-        </div>
-        <div class="email-mock">
-          <div class="email-mock-head">
-            <div class="email-mock-from">від: <strong>DreamCar &lt;hello@dreamcar.ua&gt;</strong> · кому: ви@email.com</div>
-            <div class="email-mock-subject" id="emailSubject">Subject</div>
-          </div>
-          <div class="email-mock-body" id="emailBody"></div>
-        </div>
+      <article class="out-card">
+        <div class="out-head"><h3>INSTAGRAM · ПІДПИС</h3><span class="who">на «ти»</span><button type="button" class="g-btn" data-copy-from="igOut">Копіювати</button></div>
+        <div class="out-body" id="igOut"></div>
+      </article>
+
+      <article class="out-card">
+        <div class="out-head"><h3>REELS · 15 СЕКУНД</h3><span class="who">субтитри вшиті</span><button type="button" class="g-btn" data-copy-from="reelsOut">Копіювати</button></div>
+        <div class="out-body"><ol class="beats" id="reelsOut"></ol></div>
+      </article>
+
+      <article class="out-card">
+        <div class="out-head"><h3>СТОРІС · 3 КАДРИ</h3><span class="who">на «ти»</span><button type="button" class="g-btn" data-copy-from="storiesOut">Копіювати</button></div>
+        <div class="out-body"><ol class="beats" id="storiesOut"></ol></div>
+      </article>
+
+      <article class="out-card">
+        <div class="out-head"><h3>TELEGRAM-КАНАЛ</h3><span class="who">на «Ви»</span><button type="button" class="g-btn" data-copy-from="tgOut">Копіювати</button></div>
+        <div class="out-body" id="tgOut"></div>
+      </article>
+
+      <article class="out-card">
+        <div class="out-head"><h3>EMAIL</h3><span class="who">на «Ви»</span><button type="button" class="g-btn" data-copy-from="emailOut">Копіювати</button></div>
+        <div class="out-body email-sheet" id="emailOut"></div>
+      </article>
+
+      <div class="btn-row">
+        <button type="button" class="g-btn" id="copyAllBtn">Копіювати всі тексти</button>
+        <button type="button" class="g-btn" id="jsonBtn">Завантажити JSON</button>
       </div>
 
-      <!-- HASHTAGS -->
-      <div class="hash-list">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 10px;">/// ХЕШТЕГИ</div>
-        <div class="hash-row" id="hashtagsList"></div>
-        <button class="export-btn copy-output" onclick="copyText('hashtagsList', this)" style="margin-top: 10px;">📋 COPY HASHTAGS</button>
-      </div>
-
-      <!-- ALL EXPORTS -->
-      <div class="export-actions">
-        <button class="export-btn" onclick="copyAll(this)" id="copyAllBtn">📋 COPY ALL TEXT</button>
-        <button class="export-btn" onclick="downloadJSON()" id="downloadJSONBtn">⬇ DOWNLOAD JSON</button>
-      </div>
-
-      <div style="margin-top: 32px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// АЛГОРИТМ ГЕНЕРАЦІЇ</div>
-        <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
-          Кожен пост проходить через voice guide розділу 10. Жодне слово з NEVER-списку (шанс, виграй, лотерея, квиток, халява) не з'являється. CTA — стандартний «Взяти участь». Структура — наш voice: прямо, коротко, дієсловом.
-        </p>
-      </div>
-
-      <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ ІНСТРУМЕНТИ</div>
-        <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
-          <li>→ <a href="tools.html" style="color: var(--red); font-weight: 600; text-decoration: none;">27 Brand Tools</a> — Voice Linter (перевірка), Color Checker (WCAG), Asset Downloads.</li>
-          <li>→ <a href="voice.html" style="color: var(--red); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — правила за якими працює генератор.</li>
-          <li>→ <a href="ai-content.html" style="color: var(--red); font-weight: 600; text-decoration: none;">22 AI-контент</a> — як використовувати Claude/ChatGPT з нашим voice.</li>
-        </ul>
+      <div class="card" style="border-top:3px solid var(--red);">
+        <span class="label">/// Як це працює</span>
+        <h3>Шаблон, не вигадка</h3>
+        <p>Тексти зібрані за <a href="voice.html" style="color:var(--link);">голосом бренду</a> і <a href="social.html" style="color:var(--link);">анатомією поста</a>: факт у першому рядку, одна дія, правила окремим рядком. Кожен текст перевіряє <a href="legal.html" style="color:var(--link);">юридичний лексикон</a>. Для нестандартних постів — <a href="ai-content.html" style="color:var(--link);">промпт для ШІ</a>.</p>
       </div>
     </div>
   </div>
@@ -273,278 +254,342 @@
 
 <script src="../assets/lexicon.js"></script>
 <script>
-// Set default date to 4 weeks from today
-const def = new Date(); def.setDate(def.getDate() + 28);
-document.getElementById('airDate').value = def.toISOString().split('T')[0];
-
-// NEVER words: assets/lexicon.js
-
-function formatDate(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
-  const months = ['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
-  return d.getDate() + ' ' + months[d.getMonth()];
-}
-
-function formatDateShort(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
-  return String(d.getDate()).padStart(2,'0') + '.' + String(d.getMonth()+1).padStart(2,'0');
-}
-
-function generate() {
-  const num = document.getElementById('promoNum').value;
-  const brand = document.getElementById('carBrand').value.trim();
-  const model = document.getElementById('carModel').value.trim();
-  const emoji = document.getElementById('carEmoji').value;
-  const price = document.getElementById('price').value;
-  const participants = document.getElementById('participants').value;
-  const dateRaw = document.getElementById('airDate').value;
-  const time = document.getElementById('airTime').value;
-  const postType = document.getElementById('postType').value;
-
-  const carFull = brand + ' ' + model;
-  const dateUA = formatDate(dateRaw);
-  const dateShort = formatDateShort(dateRaw);
-  const dt = new Date(dateRaw);
-  const dayNames = ['неділя','понеділок','вівторок','середа','четвер','п\'ятниця','субота'];
-  const dayName = dt && !isNaN(dt) ? dayNames[dt.getDay()] : '';
-
-  // Update IG visual
-  document.getElementById('igPromoNum').textContent = '/// ПРОМОАКЦІЯ №' + num;
-  document.getElementById('igCarEmoji').textContent = emoji;
-  document.getElementById('igPriceTag').textContent = price + ' ₴';
-  document.getElementById('igPriceSub').textContent = carFull.toUpperCase() + ' · ЗА ТОКЕН';
-
-  // Generate copy by type
-  let igCaption, tgText, emailSubject, emailBody;
-
-  switch (postType) {
-    case 'launch':
-      igCaption = `<span class="ig-name-inline">dreamcar.ua</span>` +
-        `<strong style="color:#fff">${num}. ${carFull}.</strong><br>` +
-        `${price} ₴ за токен. ${participants} учасників. 1 авто.<br>` +
-        `Прямий ефір — ${dateUA}, ${dayName}, ${time}.<br>` +
-        `Бери токен.<br><br>` +
-        `<span class="ig-hash">#dreamcar #${brand.toLowerCase()} #${model.toLowerCase().replace(/\s/g,'')} #промоакція #дрімкар</span><br>` +
-        `<span class="more">...більше</span>`;
-      tgText = `<div class="tg-mock-title">🚀 Старт промоакції №${num} — ${carFull}</div>` +
-        `${price} ₴ за токен · ${participants} учасників · 1 ${carFull}.<br>` +
-        `Прямий ефір — ${dateUA}, ${dayName}, ${time}.<br><br>` +
-        `Бери токен зараз.<br>` +
-        `<a class="tg-mock-cta">ВЗЯТИ УЧАСТЬ →</a><span class="tg-mock-time">${time}</span>`;
-      emailSubject = `${carFull}. ${price} ₴. Прямий ефір — ${dateUA}, ${time}.`;
-      emailBody = `<p>Доброго дня,</p>` +
-        `<p>Стартувала промоакція №${num} — призове авто <strong>${carFull}</strong>.</p>` +
-        `<p><strong>Деталі:</strong></p>` +
-        `<ul style="padding-left:20px;line-height:1.8;">` +
-        `<li>Вартість токена: <strong>${price} ₴</strong></li>` +
-        `<li>Учасників: ${participants}</li>` +
-        `<li>Прямий ефір: <strong>${dateUA} (${dayName}) о ${time}</strong></li>` +
-        `</ul>` +
-        `<p>Бери токен зараз — фіксація бази закривається за 2 години до ефіру.</p>` +
-        `<p style="margin-top:20px"><a href="https://dreamcar.ua" class="email-mock-cta">ВЗЯТИ УЧАСТЬ</a></p>` +
-        `<p style="margin-top:30px;font-size:11px;color:#888">Промоакція №${num}. Організатор — DreamCar. Повні правила: dreamcar.ua/legal</p>`;
-      break;
-
-    case 'reminder':
-      igCaption = `<span class="ig-name-inline">dreamcar.ua</span>` +
-        `<strong style="color:#fff">⏰ ${dateUA} — день ${dayName}.</strong><br>` +
-        `Промоакція №${num}: ${carFull}.<br>` +
-        `${time} — прямий ефір.<br>` +
-        `Токен ще активний — ${price} ₴.<br><br>` +
-        `<span class="ig-hash">#dreamcar #${brand.toLowerCase()} #нагадування</span>`;
-      tgText = `<div class="tg-mock-title">⏰ ${dateShort} · ${time}</div>` +
-        `Прямий ефір промоакції №${num} — ${carFull}.<br>` +
-        `Залишилось ${Math.max(1, Math.ceil((dt - new Date()) / 86400000))} днів.<br><br>` +
-        `Токен ще можна взяти — ${price} ₴.<br>` +
-        `<a class="tg-mock-cta">ВЗЯТИ ТОКЕН →</a><span class="tg-mock-time">12:00</span>`;
-      emailSubject = `Нагадуємо: ${carFull} — прямий ефір ${dateShort} о ${time}`;
-      emailBody = `<p>Доброго дня,</p>` +
-        `<p>Нагадуємо: промоакція №${num} (<strong>${carFull}</strong>) завершується прямим ефіром <strong>${dateUA} о ${time}</strong>.</p>` +
-        `<p>Якщо ще не маєте токена — час брати. Зараз ${participants} учасників.</p>` +
-        `<p><a href="https://dreamcar.ua" class="email-mock-cta">ВЗЯТИ ТОКЕН — ${price} ₴</a></p>`;
-      break;
-
-    case 'final':
-      igCaption = `<span class="ig-name-inline">dreamcar.ua</span>` +
-        `<strong style="color:#fff">🔥 СЬОГОДНІ — ОСТАННІЙ ДЕНЬ.</strong><br>` +
-        `Промоакція №${num}: ${carFull}.<br>` +
-        `${time} — фіксація бази. Після — токени не активуються.<br>` +
-        `${price} ₴ — крайній термін.<br><br>` +
-        `<span class="ig-hash">#dreamcar #останнійдень #${model.toLowerCase().replace(/\s/g,'')}</span>`;
-      tgText = `<div class="tg-mock-title">🔥 ОСТАННІЙ ДЕНЬ ПРОМОАКЦІЇ №${num}</div>` +
-        `${carFull} · ${time} — фіксація бази.<br>` +
-        `Учасників: ${participants}.<br><br>` +
-        `Бери токен зараз — пізніше не зможеш.<br>` +
-        `<a class="tg-mock-cta">ВЗЯТИ ОСТАННІЙ ТОКЕН →</a>`;
-      emailSubject = `🔥 ${carFull}. Сьогодні — крайній термін.`;
-      emailBody = `<p>Доброго дня,</p>` +
-        `<p>Сьогодні останній день, коли можна взяти участь у промоакції №${num} (<strong>${carFull}</strong>).</p>` +
-        `<p>О ${time} — прямий ефір. База фіксується за 2 години до того, тобто о ${parseInt(time)-2}:00.</p>` +
-        `<p><a href="https://dreamcar.ua" class="email-mock-cta">ВЗЯТИ ТОКЕН — ${price} ₴</a></p>`;
-      break;
-
-    case 'winner':
-      igCaption = `<span class="ig-name-inline">dreamcar.ua</span>` +
-        `<strong style="color:#fff">🏆 ${carFull} — у нового власника.</strong><br>` +
-        `Промоакція №${num} завершена. Авто передано новому власнику в прямому ефірі ${dateUA}.<br>` +
-        `Дякуємо ${participants} учасникам.<br>` +
-        `Наступна промоакція — анонс скоро.<br><br>` +
-        `<span class="ig-hash">#dreamcar #нові_власники #${brand.toLowerCase()}</span>`;
-      tgText = `<div class="tg-mock-title">🏆 ${carFull} — у нового власника</div>` +
-        `Промоакція №${num} завершена ${dateUA}.<br>` +
-        `Авто передано в прямому ефірі.<br>` +
-        `${participants} учасників — дякуємо!<br><br>` +
-        `<a class="tg-mock-cta">АРХІВ ПРОМОАКЦІЙ →</a>`;
-      emailSubject = `${carFull} знайшов власника. Промоакція №${num} завершена.`;
-      emailBody = `<p>Доброго дня,</p>` +
-        `<p>Промоакція №${num} (<strong>${carFull}</strong>) завершена ${dateUA}.</p>` +
-        `<p>Авто передано власнику у прямому ефірі. Дякуємо ${participants} учасникам, що були з нами!</p>` +
-        `<p>Архів усіх вручень: <a href="https://dreamcar.ua/winners" style="color:#E30613">dreamcar.ua/winners</a></p>` +
-        `<p>Наступну промоакцію анонсуємо найближчим часом — слідкуйте за нашим Telegram-каналом.</p>`;
-      break;
-  }
-
-  document.getElementById('igCaption').innerHTML = igCaption;
-  document.getElementById('tgText').innerHTML = tgText;
-  document.getElementById('emailSubject').textContent = emailSubject;
-  document.getElementById('emailBody').innerHTML = emailBody;
-
-  // Hashtags
-  const hashtags = [
-    '#dreamcar',
-    '#дрімкар',
-    '#' + brand.toLowerCase(),
-    '#' + model.toLowerCase().replace(/\s+/g, ''),
-    '#промоакція' + num,
-    '#' + brand.toLowerCase() + model.toLowerCase().replace(/\s+/g, ''),
-    '#автоклуб',
-    '#українськийавтоклуб',
-    postType === 'launch' ? '#старт' : (postType === 'final' ? '#останнійдень' : (postType === 'winner' ? '#новийвласник' : '#нагадування')),
-    '#' + dateShort.replace('.', 'місяц')
-  ];
-  document.getElementById('hashtagsList').textContent = hashtags.join(' ');
-
-  // Voice check
-  const allText = (igCaption + ' ' + tgText + ' ' + emailSubject + ' ' + emailBody).replace(/<[^>]+>/g, ' ');
-  let bad = window.DC_LEXICON ? [...new Set(window.DC_LEXICON.scan(allText).filter(h => h.level === 'never').map(h => h.match))] : [];
-  const vc = document.getElementById('voiceCheck');
-  if (bad.length === 0) {
-    vc.className = 'voice-check ok';
-    vc.innerHTML = '✓ Voice Lint: PASS. Жодного слова з NEVER-списку.';
-  } else {
-    vc.className = 'voice-check warn';
-    vc.innerHTML = '⚠ Знайдено: ' + bad.join(', ') + '. Перевір текст.';
-  }
-}
-
-function copyText(elId, btn) {
-  const el = document.getElementById(elId);
-  const text = el.textContent || el.innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    btn.classList.add('copied');
-    btn.textContent = '✓ COPIED';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 COPY'; }, 1500);
-  });
-}
-
-function copyEmail(btn) {
-  const subj = document.getElementById('emailSubject').textContent;
-  const body = document.getElementById('emailBody').innerText;
-  const full = 'Subject: ' + subj + '\n\n' + body;
-  navigator.clipboard.writeText(full).then(() => {
-    btn.classList.add('copied');
-    btn.textContent = '✓ COPIED';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 COPY ALL'; }, 1500);
-  });
-}
-
-function copyAll(btn) {
-  const ig = document.getElementById('igCaption').innerText;
-  const tg = document.getElementById('tgText').innerText;
-  const subj = document.getElementById('emailSubject').textContent;
-  const body = document.getElementById('emailBody').innerText;
-  const hash = document.getElementById('hashtagsList').textContent;
-  const full = '=== INSTAGRAM CAPTION ===\n' + ig + '\n\n=== TELEGRAM ===\n' + tg + '\n\n=== EMAIL SUBJECT ===\n' + subj + '\n\n=== EMAIL BODY ===\n' + body + '\n\n=== HASHTAGS ===\n' + hash;
-  navigator.clipboard.writeText(full).then(() => {
-    btn.classList.add('copied');
-    btn.textContent = '✓ ALL COPIED';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 COPY ALL TEXT'; }, 1500);
-  });
-}
-
-function downloadJSON() {
-  const data = {
-    promoNumber: document.getElementById('promoNum').value,
-    car: document.getElementById('carBrand').value + ' ' + document.getElementById('carModel').value,
-    price: document.getElementById('price').value,
-    participants: document.getElementById('participants').value,
-    airDate: document.getElementById('airDate').value,
-    airTime: document.getElementById('airTime').value,
-    postType: document.getElementById('postType').value,
-    content: {
-      instagram_caption: document.getElementById('igCaption').innerText,
-      telegram: document.getElementById('tgText').innerText,
-      email_subject: document.getElementById('emailSubject').textContent,
-      email_body: document.getElementById('emailBody').innerText,
-      hashtags: document.getElementById('hashtagsList').textContent
-    },
-    generated_at: new Date().toISOString(),
-    brand_book_version: 'v4.2'
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const MONTHS = ['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+  const DAYS = ['неділя','понеділок','вівторок','середа','четвер','пʼятниця','субота'];
+  const FORMATS = {
+    '45':  { w: 1080, h: 1350, photoH: 820,  top: 64,  safeBottom: 64,  label: '4:5' },
+    '11':  { w: 1080, h: 1080, photoH: 560,  top: 56,  safeBottom: 56,  label: '1:1' },
+    '916': { w: 1080, h: 1920, photoH: 960, top: 250, safeBottom: 420, label: '9:16' }
   };
-  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `dreamcar-post-promo${data.promoNumber}.json`;
-  a.click();
-}
+  const logo = new Image();
+  logo.src = '../assets/logo/dreamcar-racing-plate.png';
+  let photo = null;
 
-function exportIGAsPNG() {
-  const mock = document.getElementById('igMedia');
-  const num = document.getElementById('promoNum').value;
-  const brand = document.getElementById('carBrand').value;
-  const model = document.getElementById('carModel').value;
-  const emoji = document.getElementById('carEmoji').value;
-  const price = document.getElementById('price').value;
-  const dataUri = renderIGtoSVG(num, brand, model, emoji, price);
-  const a = document.createElement('a');
-  a.href = dataUri;
-  a.download = `dreamcar-ig-promo${num}.svg`;
-  a.click();
-  const btn = document.getElementById('exportPNGBtn');
-  btn.classList.add('copied');
-  btn.textContent = '✓ DOWNLOADED (SVG · 1080×1080)';
-  setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '⬇ EXPORT AS PNG (1080×1080)'; }, 2500);
-}
+  // Defaults: start today, air in 4 weeks
+  const iso = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const air0 = new Date(today); air0.setDate(air0.getDate() + 28);
+  $('startDate').value = iso(today);
+  $('airDate').value = iso(air0);
 
-function renderIGtoSVG(num, brand, model, emoji, price) {
-  const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0a0a0a"/>
-      <stop offset="1" stop-color="#1a1a1a"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#E30613" stop-opacity="0.4"/>
-      <stop offset="1" stop-color="#E30613" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1080" height="1080" fill="url(#bg)"/>
-  <circle cx="540" cy="540" r="380" fill="url(#glow)"/>
-  <text x="60" y="80" font-family="JetBrains Mono, monospace" font-size="22" fill="#E30613" letter-spacing="4">/// ПРОМОАКЦІЯ №${num}</text>
-  <text x="540" y="500" font-size="280" text-anchor="middle">${emoji}</text>
-  <text x="540" y="720" font-family="Archivo Black, sans-serif" font-size="180" fill="#fff" text-anchor="middle" font-weight="900">${price} ₴</text>
-  <text x="540" y="790" font-family="Manrope, sans-serif" font-size="36" fill="#a8a8a8" text-anchor="middle" font-weight="600">${brand.toUpperCase()} ${model.toUpperCase()} · ЗА ТОКЕН</text>
-  <text x="60" y="1020" font-family="JetBrains Mono, monospace" font-size="18" fill="#a8a8a8" letter-spacing="3">DREAMCAR.UA</text>
-  <text x="1020" y="1020" font-family="Archivo Black, sans-serif" font-size="22" fill="#E30613" text-anchor="end">BEYOND DREAMS.</text>
-</svg>`;
-  return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
-}
+  function parseDate(v) { if (!v) return null; const [y, m, d] = v.split('-').map(Number); return new Date(y, m - 1, d); }
+  const dm = (d) => d ? String(d.getDate()).padStart(2, '0') + '.' + String(d.getMonth() + 1).padStart(2, '0') : 'ДД.ММ';
+  const longDate = (d) => d ? d.getDate() + ' ' + MONTHS[d.getMonth()] : '[дата]';
+  function plural(n, one, few, many) {
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return n + ' ' + one;
+    if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return n + ' ' + few;
+    return n + ' ' + many;
+  }
+  const camel = (s) => s.split(/[^\p{L}\p{N}]+/u).filter(Boolean).map((w) => w[0].toUpperCase() + w.slice(1)).join('');
 
-// Init
-generate();
+  function state() {
+    const d = {
+      type: $('postType').value,
+      fmt: (document.querySelector('input[name=fmt]:checked') || {}).value || '45',
+      num: $('promoNum').value.trim() || 'NN',
+      brand: $('carBrand').value.trim(),
+      model: $('carModel').value.trim(),
+      price: $('price').value.trim() || '[ціна]',
+      ppl: $('participants').value.trim(),
+      start: parseDate($('startDate').value),
+      air: parseDate($('airDate').value),
+      time: $('airTime').value || '[час]',
+      focus: Number($('focusY').value) / 100
+    };
+    d.car = (d.brand + ' ' + d.model).trim() || '[авто]';
+    d.days = d.air ? Math.max(0, Math.round((d.air - today) / 86400000)) : 0;
+    d.daysTxt = plural(d.days, 'день', 'дні', 'днів');
+    d.weekday = d.air ? DAYS[d.air.getDay()] : '';
+    d.legal = 'Промоакція DreamCar #' + d.num + ' триває з ' + dm(d.start) + ' до ' + dm(d.air) + '. Організатор — [реквізити]. Правила — dreamcar.ua';
+    const tags = ['#DreamCar', '#DreamCarUA'];
+    if (d.brand) tags.push('#' + camel(d.brand));
+    if (d.brand && d.model) tags.push('#' + camel(d.brand + ' ' + d.model));
+    if (d.type === 'handover') tags.push('#АвтоВручення');
+    d.tags = tags.join(' ');
+    return d;
+  }
+
+  // ---------- TEXTS ----------
+  function texts(d) {
+    const ppl = d.ppl ? d.ppl : '';
+    const T = {};
+    const air = longDate(d.air) + (d.weekday ? ', ' + d.weekday : '');
+    switch (d.type) {
+      case 'launch':
+        T.ig = `<strong>Проєкт #${d.num} стартував. ${esc(d.car)} вручається серед учасників ${longDate(d.air)}.</strong>\n\nТокен ШІ-сервісу — ${esc(d.price)} ₴. Прямий ефір — ${air}, о ${d.time} за Києвом.${ppl ? ' Уже ' + esc(ppl) + ' учасників.' : ''}\n\nБери. Дій. Володій. Посилання — у профілі.`;
+        T.tg = `<strong>Проєкт #${d.num}: ${esc(d.car)}</strong>\nАвто вручається серед учасників у прямому ефірі ${air}, о ${d.time} за Києвом.\n\nТокен ШІ-сервісу — ${esc(d.price)} ₴.\nВзяти участь: dreamcar.ua`;
+        T.subj = `${d.car}: проєкт #${d.num} стартував. Ефір — ${dm(d.air)}`;
+        T.mail = [`Проєкт #${d.num} стартував. ${esc(d.car)} вручається серед учасників у прямому ефірі <strong>${air}, о ${d.time}</strong> за Києвом.`, `Токен ШІ-сервісу — ${esc(d.price)} ₴. Умови участі — у правилах проєкту.`];
+        T.cta = 'ВЗЯТИ УЧАСТЬ';
+        break;
+      case 'reminder':
+        T.ig = `<strong>До ефіру проєкту #${d.num} — ${d.daysTxt}.</strong>\n\n${esc(d.car)} вручається серед учасників ${air}, о ${d.time} за Києвом. Токен — ${esc(d.price)} ₴.${ppl ? ' Учасників: ' + esc(ppl) + '.' : ''}\n\nПосилання — у профілі.`;
+        T.tg = `<strong>До ефіру — ${d.daysTxt}</strong>\nПроєкт #${d.num}, ${esc(d.car)}. Ефір — ${air}, о ${d.time}.\nВзяти участь: dreamcar.ua`;
+        T.subj = `До ефіру ${d.daysTxt}: ${d.car}, ${dm(d.air)} о ${d.time}`;
+        T.mail = [`Нагадуємо: ${esc(d.car)} вручається серед учасників проєкту #${d.num} у прямому ефірі <strong>${air}, о ${d.time}</strong>.`, `Якщо Ви ще не з нами — токен ШІ-сервісу коштує ${esc(d.price)} ₴.`];
+        T.cta = 'ВЗЯТИ УЧАСТЬ';
+        break;
+      case 'live':
+        T.ig = `<strong>Сьогодні о ${d.time} — прямий ефір проєкту #${d.num}.</strong>\n\n${esc(d.car)} вручається серед учасників наживо. Ефір — у профілі, запис залишиться без монтажу.`;
+        T.tg = `<strong>Сьогодні о ${d.time} — ефір проєкту #${d.num}</strong>\n${esc(d.car)} вручається серед учасників наживо.\nПосилання на трансляцію — у цьому каналі перед стартом.`;
+        T.subj = `Сьогодні о ${d.time}: ефір проєкту #${d.num}`;
+        T.mail = [`Сьогодні о <strong>${d.time}</strong> за Києвом — прямий ефір проєкту #${d.num}. ${esc(d.car)} вручається серед учасників наживо.`, 'Запис ефіру без монтажу залишиться на каналі.'];
+        T.cta = 'ДИВИТИСЬ ЕФІР';
+        break;
+      case 'final':
+        T.ig = `<strong>Останній день участі в проєкті #${d.num}.</strong>\n\n${esc(d.car)}. Прямий ефір — ${air}, о ${d.time} за Києвом. Токен — ${esc(d.price)} ₴.\n\nПосилання — у профілі.`;
+        T.tg = `<strong>Останній день участі в проєкті #${d.num}</strong>\n${esc(d.car)}. Ефір — ${air}, о ${d.time}.\nВзяти участь: dreamcar.ua`;
+        T.subj = `Останній день участі: ${d.car}`;
+        T.mail = [`Сьогодні — останній день участі в проєкті #${d.num}. ${esc(d.car)} вручається серед учасників у прямому ефірі <strong>${air}, о ${d.time}</strong>.`, `Токен ШІ-сервісу — ${esc(d.price)} ₴.`];
+        T.cta = 'ВЗЯТИ УЧАСТЬ';
+        break;
+      case 'handover':
+        T.ig = `<strong>${esc(d.car)} — у власника.</strong>\n\nПроєкт #${d.num} завершено: авто вручене в прямому ефірі ${longDate(d.air)}. Запис ефіру без монтажу — у профілі.${ppl ? '\nДякуємо ' + esc(ppl) + ' учасникам.' : ''}\n\nНаступний проєкт — скоро. Бери. Дій. Володій.`;
+        T.tg = `<strong>${esc(d.car)} — у власника</strong>\nПроєкт #${d.num} завершено ${longDate(d.air)}. Повний запис ефіру без монтажу: [посилання].${ppl ? '\nДякуємо ' + esc(ppl) + ' учасникам.' : ''}`;
+        T.subj = `${d.car} — у власника. Запис ефіру`;
+        T.mail = [`Проєкт #${d.num} завершено. ${esc(d.car)} вручене власнику в прямому ефірі ${longDate(d.air)}.`, `Повний запис ефіру — без монтажу.${ppl ? ' Дякуємо ' + esc(ppl) + ' учасникам.' : ''}`, 'Про наступний проєкт напишемо першими.'];
+        T.cta = 'ДИВИТИСЬ ЗАПИС';
+        break;
+    }
+    const legalLine = d.type === 'handover' ? '' : '\n\n' + esc(d.legal);
+    T.ig += legalLine + '\n\n<span class="tags">' + esc(d.tags) + '</span>';
+    T.tg += legalLine;
+    // Reels: 15 s
+    const hook = d.type === 'handover' ? 'КЛЮЧІ — У ВЛАСНИКА.' : `${d.car.toUpperCase()}. ПРОЄКТ #${d.num}.`;
+    const mid = d.type === 'handover'
+      ? `Кадр: вручення з ефіру, руки і ключі. Титр: «Вручення наживо ${dm(d.air)}. Запис без монтажу».`
+      : `Кадр: авто на чорному тлі. Титр: «Токен — ${d.price} ₴. Ефір — ${dm(d.air)}, ${d.time}».`;
+    T.reels = [
+      ['0–2 с', `Гачок. Кадр: авто цілком, рух камери. Титр: «${hook}»`],
+      ['2–7 с', 'Деталі: фари, салон, звук двигуна. Без музики поверх звуку авто перші 2 секунди.'],
+      ['7–12 с', mid],
+      ['12–15 с', 'Фінальний кадр 1 с: плашка DreamCar на чорному. Титр: «Бери. Дій. Володій.»']
+    ];
+    T.stories = d.type === 'handover'
+      ? [['Кадр 1', 'Візуал 9:16 з генератора. Титр: «Ключі — у власника».'], ['Кадр 2', 'Фрагмент вручення з ефіру, 5–10 с, з вшитими субтитрами.'], ['Кадр 3', 'Стікер-посилання «Запис ефіру». Титр: «Наступний проєкт — скоро».']]
+      : [['Кадр 1', `Візуал 9:16 з генератора. Титр: «Проєкт #${d.num} · ${d.car}».`], ['Кадр 2', `Титр: «Токен — ${d.price} ₴ · Ефір ${dm(d.air)} о ${d.time}». Стікер «Відлік» до ефіру.`], ['Кадр 3', `Стікер-посилання dreamcar.ua. Титр: «Бери. Дій. Володій.» Внизу дрібно: «${d.legal}».`]];
+    return T;
+  }
+
+  function renderTexts(d, T) {
+    $('igOut').innerHTML = T.ig;
+    $('tgOut').innerHTML = T.tg;
+    const beats = (arr) => arr.map(([t, x]) => `<li><span class="t">${t}</span><span>${esc(x)}</span></li>`).join('');
+    $('reelsOut').innerHTML = beats(T.reels);
+    $('storiesOut').innerHTML = beats(T.stories);
+    $('emailOut').innerHTML =
+      `<div class="from">Від: DreamCar &lt;hello@dreamcar.ua&gt;</div>` +
+      `<div class="subj">${esc(T.subj)}</div>` +
+      `<p>Доброго дня!</p>` + T.mail.map((p) => `<p>${p}</p>`).join('') +
+      `<p style="margin-top:18px"><a class="cta" href="https://dreamcar.ua">${T.cta}</a></p>` +
+      (d.type === 'handover' ? '' : `<p class="legal">${esc(d.legal)}</p>`);
+  }
+
+  // ---------- CANVAS ----------
+  function kickerText(d) {
+    switch (d.type) {
+      case 'launch': return `СТАРТ · ЕФІР ${dm(d.air)} · ${d.time}`;
+      case 'reminder': return `ЕФІР ЧЕРЕЗ ${d.daysTxt.toUpperCase()} · ${dm(d.air)} · ${d.time}`;
+      case 'live': return `ЕФІР СЬОГОДНІ · ${d.time}`;
+      case 'final': return `ОСТАННІЙ ДЕНЬ УЧАСТІ · ЕФІР ${dm(d.air)}`;
+      default: return `ВРУЧЕННЯ · ${dm(d.air)}`;
+    }
+  }
+  function spacing(ctx, px) { if ('letterSpacing' in ctx) ctx.letterSpacing = px + 'px'; }
+
+  function fitFont(ctx, text, weightFamily, max, min, width) {
+    let size = max;
+    for (; size > min; size -= 2) { ctx.font = `${weightFamily.replace('{s}', size)}`; if (ctx.measureText(text).width <= width) break; }
+    ctx.font = weightFamily.replace('{s}', size);
+    return size;
+  }
+
+  function draw(d) {
+    const F = FORMATS[d.fmt];
+    const cv = $('cv');
+    cv.width = F.w; cv.height = F.h;
+    const ctx = cv.getContext('2d');
+    const pad = 72, W = F.w, H = F.h;
+    ctx.fillStyle = '#0A0A0A'; ctx.fillRect(0, 0, W, H);
+
+    // Photo zone
+    if (photo) {
+      const r = Math.max(W / photo.width, F.photoH / photo.height);
+      const pw = photo.width * r, ph = photo.height * r;
+      const x = (W - pw) / 2, y = (F.photoH - ph) * d.focus;
+      ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, F.photoH); ctx.clip();
+      ctx.drawImage(photo, x, y, pw, ph); ctx.restore();
+    } else {
+      ctx.fillStyle = '#141414'; ctx.fillRect(0, 0, W, F.photoH);
+      ctx.strokeStyle = '#2A2A2A'; ctx.lineWidth = 2;
+      ctx.strokeRect(pad, F.top + 110, W - pad * 2, F.photoH - F.top - 110 - 40);
+      ctx.fillStyle = '#888888'; ctx.font = '400 26px "JetBrains Mono", monospace'; spacing(ctx, 4);
+      ctx.textAlign = 'center'; ctx.fillText('ФОТО АВТО', W / 2, F.photoH / 2 + 50); ctx.textAlign = 'left';
+    }
+    // Red rule between photo and band
+    ctx.fillStyle = '#E30613'; ctx.fillRect(0, F.photoH, W, 8);
+
+    // Plate kicker on photo: [#NN | ПРОЄКТ]
+    const kx = pad, ky = F.top, kh = 72;
+    ctx.font = '72px "Archivo Black", sans-serif'; spacing(ctx, 0);
+    ctx.font = '36px "Archivo Black", sans-serif';
+    const numTxt = '#' + d.num; const nw = ctx.measureText(numTxt).width + 44;
+    ctx.font = '700 32px Oswald, sans-serif'; spacing(ctx, 5);
+    const nameTxt = 'ПРОЄКТ'; const tw = ctx.measureText(nameTxt).width + 44;
+    ctx.fillStyle = '#B8050F'; ctx.fillRect(kx + 10, ky + 10, nw + tw, kh);
+    ctx.fillStyle = '#E30613'; ctx.fillRect(kx, ky, nw, kh);
+    ctx.fillStyle = '#0A0A0A'; ctx.fillRect(kx + nw, ky, tw, kh);
+    ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 4; ctx.strokeRect(kx + 2, ky + 2, nw + tw - 4, kh - 4);
+    ctx.fillStyle = '#FFFFFF'; ctx.textBaseline = 'middle';
+    spacing(ctx, 0); ctx.font = '36px "Archivo Black", sans-serif'; ctx.fillText(numTxt, kx + 22, ky + kh / 2 + 2);
+    spacing(ctx, 5); ctx.font = '700 32px Oswald, sans-serif'; ctx.fillText(nameTxt, kx + nw + 22, ky + kh / 2 + 2);
+    ctx.textBaseline = 'alphabetic';
+
+    // Band
+    const bandTop = F.photoH + 8;
+    const bottom = H - F.safeBottom;
+    const inner = W - pad * 2;
+    let y = bandTop + (d.fmt === '11' ? 64 : 84);
+    ctx.fillStyle = '#FF1A2B'; spacing(ctx, 4); ctx.font = '700 26px "JetBrains Mono", monospace';
+    ctx.fillText(kickerText(d), pad, y);
+    // Car name
+    const name = d.car.toUpperCase();
+    spacing(ctx, 1);
+    const maxName = d.fmt === '11' ? 104 : 132;
+    const size = fitFont(ctx, name, '700 {s}px Oswald, sans-serif', maxName, 56, inner);
+    y += size * 0.95 + 18;
+    ctx.fillStyle = '#FFFFFF'; ctx.fillText(name, pad, y);
+    // Info line
+    y += d.fmt === '11' ? 64 : 76;
+    if (d.type === 'handover') {
+      spacing(ctx, 1); ctx.font = '800 44px Manrope, sans-serif'; ctx.fillStyle = '#FFFFFF';
+      ctx.fillText('КЛЮЧІ — У ВЛАСНИКА.', pad, y);
+    } else {
+      spacing(ctx, 0); ctx.font = '52px "Archivo Black", sans-serif'; ctx.fillStyle = '#FFFFFF';
+      ctx.fillText(d.price, pad, y); let x = pad + ctx.measureText(d.price).width + 10;
+      ctx.font = '800 50px Manrope, sans-serif'; ctx.fillText('₴', x, y); x += ctx.measureText('₴').width + 20;
+      spacing(ctx, 3); ctx.font = '700 24px "JetBrains Mono", monospace'; ctx.fillStyle = '#DDDDDD';
+      ctx.fillText('ТОКЕН ШІ-СЕРВІСУ', x, y - 6);
+    }
+    // Bottom row: logo + rhythm
+    const microY = y + (d.fmt === '11' ? 46 : 58);
+    const lh = d.fmt === '11' ? 64 : 76, lw = lh * 3.6;
+    const ly = Math.max(bottom - lh, microY + 40);
+    if (logo.complete && logo.naturalWidth) ctx.drawImage(logo, pad, ly, lw, lh);
+    spacing(ctx, 1); ctx.font = '800 30px Manrope, sans-serif'; ctx.textAlign = 'right';
+    const by = ly + lh / 2 + 4;
+    ctx.fillStyle = '#E30613'; ctx.fillText('ВОЛОДІЙ.', W - pad, by);
+    const vw = ctx.measureText('ВОЛОДІЙ.').width;
+    ctx.fillStyle = '#FFFFFF'; ctx.fillText('БЕРИ. ДІЙ. ', W - pad - vw, by);
+    ctx.textAlign = 'left';
+    // Legal micro line
+    spacing(ctx, 2); ctx.font = '400 19px "JetBrains Mono", monospace'; ctx.fillStyle = '#888888';
+    const micro = d.type === 'handover' ? 'ЗАПИС ЕФІРУ БЕЗ МОНТАЖУ · DREAMCAR.UA' : `ПРОМОАКЦІЯ DREAMCAR #${d.num} · ПРАВИЛА НА DREAMCAR.UA`;
+    ctx.fillText(micro, pad, microY);
+    spacing(ctx, 0);
+
+    $('stage').classList.toggle('is-story', d.fmt === '916');
+    $('spec').textContent = `PNG · ${W}×${H} · ${F.label}`;
+    cv.setAttribute('aria-label', `Візуал ${F.label}: ${kickerText(d)}, ${d.car}`);
+    $('noPhoto').hidden = !!photo;
+  }
+
+  // ---------- LEXICON CHECK ----------
+  function check(d, T) {
+    const all = [T.ig, T.tg, T.subj, T.mail.join(' '), T.reels.map((b) => b[1]).join(' '), T.stories.map((b) => b[1]).join(' '), kickerText(d)].join(' ').replace(/<[^>]+>/g, ' ');
+    const L = window.DC_LEXICON;
+    const bad = L ? [...new Set(L.scan(all).filter((h) => h.level === 'never').map((h) => h.match))] : [];
+    const vc = $('voiceCheck');
+    const warnNum = d.num === 'NN' ? ' Номер проєкту не вказано — у текстах стоїть «NN».' : '';
+    if (!L) { vc.className = 'voice-check warn'; vc.textContent = 'Лексикон не завантажився: перевір тексти у Voice Linter.'; return; }
+    if (bad.length) { vc.className = 'voice-check warn'; vc.innerHTML = '<b>Знайдено заборонене:</b> ' + esc(bad.join(', ')) + '. Прибери з полів марки і моделі.'; return; }
+    vc.className = 'voice-check' + (warnNum ? ' warn' : '');
+    vc.innerHTML = '<b>Лексикон: чисто.</b> 6 текстів і візуал без заборонених слів.' + warnNum;
+  }
+
+  let lastT = null, lastD = null, raf = 0;
+  function update() {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const d = state(), T = texts(d);
+      lastD = d; lastT = T;
+      renderTexts(d, T); draw(d); check(d, T);
+      $('focusY').setAttribute('aria-valuetext', $('focusY').value + '%');
+    });
+  }
+
+  // ---------- EVENTS ----------
+  $('genForm').addEventListener('input', update);
+  $('genForm').addEventListener('change', update);
+  $('photo').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    $('photoName').textContent = f ? f.name : 'файл не обрано';
+    if (!f) { photo = null; update(); return; }
+    const url = URL.createObjectURL(f);
+    const img = new Image();
+    img.onload = () => { photo = img; update(); };
+    img.src = url;
+  });
+  logo.onload = update;
+
+  function flash(btn, txt) {
+    const old = btn.dataset.label || btn.textContent;
+    btn.dataset.label = old; btn.textContent = txt; btn.classList.add('done');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  }
+  document.querySelectorAll('[data-copy-from]').forEach((b) => b.addEventListener('click', () => {
+    const el = $(b.dataset.copyFrom);
+    navigator.clipboard.writeText(el.innerText.trim()).then(() => flash(b, 'Скопійовано'));
+  }));
+  $('copyAllBtn').addEventListener('click', (e) => {
+    const parts = [['INSTAGRAM', 'igOut'], ['REELS', 'reelsOut'], ['СТОРІС', 'storiesOut'], ['TELEGRAM', 'tgOut'], ['EMAIL', 'emailOut']]
+      .map(([h, id]) => '=== ' + h + ' ===\n' + $(id).innerText.trim());
+    navigator.clipboard.writeText(parts.join('\n\n')).then(() => flash(e.currentTarget, 'Скопійовано'));
+  });
+  const fileBase = () => `dreamcar-${lastD.num}-${lastD.type}-${FORMATS[lastD.fmt].label.replace(':', 'x')}`;
+  $('dlBtn').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    $('cv').toBlob((blob) => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = fileBase() + '.png'; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      flash(btn, 'Готово');
+    }, 'image/png');
+  });
+  if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+    $('cpImgBtn').hidden = false;
+    $('cpImgBtn').addEventListener('click', (e) => {
+      const btn = e.currentTarget;
+      $('cv').toBlob((blob) => navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]).then(() => flash(btn, 'Скопійовано')), 'image/png');
+    });
+  }
+  $('jsonBtn').addEventListener('click', () => {
+    const d = lastD, T = lastT;
+    const data = {
+      project: d.num, type: d.type, format: FORMATS[d.fmt].label, car: d.car, price_uah: d.price, participants: d.ppl || null,
+      start: $('startDate').value, air: $('airDate').value, air_time_kyiv: d.time,
+      instagram: $('igOut').innerText.trim(), reels: T.reels, stories: T.stories,
+      telegram: $('tgOut').innerText.trim(), email: { subject: T.subj, body: $('emailOut').innerText.trim() },
+      hashtags: d.tags, legal: d.legal, generated_at: new Date().toISOString(), brand_book: 'v4.3'
+    };
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+    a.download = fileBase() + '.json'; a.click();
+  });
+
+  // Fonts first, then draw (canvas does not wait for web fonts)
+  const fontLoads = [
+    ['700 132px Oswald', 'ПРОЄКТ BMW'], ['36px "Archivo Black"', '#0123456789'],
+    ['800 44px Manrope', 'БЕРИ ₴ КЛЮЧІ'], ['700 26px "JetBrains Mono"', 'СТАРТ ЕФІР'], ['400 19px "JetBrains Mono"', 'ПРОМОАКЦІЯ']
+  ].map(([f, t]) => document.fonts ? document.fonts.load(f, t).catch(() => null) : null);
+  update();
+  Promise.all(fontLoads).then(update);
+})();
 </script>
 <script src="../assets/sidebar.js" defer></script>
 </body>
