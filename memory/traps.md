@@ -144,3 +144,16 @@ gh secret list -R dreamcarua/brand-book
 **Cause:** візуальні правила писалися окремо від продукту і не звірялись з ним.
 **Do:** перед тим як записати візуальне правило — `getComputedStyle` на живому ai.dreamcar.ua через Chrome. Продукт — джерело правди для UI.
 **Seen:** 22.09.2026 · ✅
+
+
+## archivo-black-no-cyrillic
+**Симптом:** кириличні кнопки й тікер виглядають «іншим шрифтом» у різних людей. **Причина:** Archivo Black не має кириличних гліфів — браузер тихо бере fallback. **Що робити:** Archivo — лише цифри, `#`, латиниця; кирилиця великими — Manrope 800. 22.09.2026.
+
+## js-word-boundary-cyrillic
+**Симптом:** Voice Linter і лінтер пропускали «розіграш», «Переможці». **Причина:** `\b` у JS і в Python `re` без Unicode-логіки не бачить межу кириличного слова. **Що робити:** межі `(?<![\p{L}\p{N}])…(?![\p{L}\p{N}])` з прапором `u`; єдиний список — `assets/lexicon.js`. 22.09.2026.
+
+## body-overflow-hides-horizontal-scroll
+**Симптом:** на 390 px `scrollWidth` > 390, але прокрутки не видно; текст просто обрізаний. **Причина:** `body { overflow-x: hidden }` переноситься на viewport і ховає переповнення, а не усуває його. **Що робити:** міряти `document.documentElement.scrollWidth` і шукати елемент поза `.table-scroll`; не довіряти «на око». 22.09.2026.
+
+## build-nav-rewrites-headers
+**Симптом:** правка `<title>`, крихт, плашки чи prev/next у розділі зникає. **Причина:** `scripts/build_nav.py` переписує їх із `SECTIONS`. **Що робити:** назву чи опис міняти в `assets/sidebar.js`, потім запускати build_nav → search → print → lint. 22.09.2026.
