@@ -100,7 +100,7 @@
 - Інші бренди / суміжні проекти кольори
 
 **Інше:**
-- **Заголовки** — `Oswald`/`Bebas Neue`/`Impact` (sans-serif). Не використовувати serif!
+- **Заголовки** — `Oswald`/`Impact` (sans-serif). Не використовувати serif!
 - **CTA** — `Archivo Black`/`Arial Black`. Завжди UPPERCASE. Завжди з стрілкою `→`.
 - **Логотип у header** — повноцінний Racing Plate (UA-блок + DREAMCAR з білою рамкою).
 - **Логотип у footer** — кругла DC monogram (avatar mark).

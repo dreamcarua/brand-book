@@ -44,6 +44,8 @@ SECTION_TITLES = {
     'metrics.html':           'Метрики · Roadmap',
     'support.html':           'Регламент підтримки',
     'ai-content.html':        'AI-контент',
+    'video.html':             'Відео',
+    'localization.html':      'Локалізація',
 }
 
 HEADING_TAGS = {'h1', 'h2', 'h3', 'h4'}

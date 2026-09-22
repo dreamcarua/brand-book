@@ -1,0 +1,109 @@
+/* DreamCar Design Tokens v4.2.0 · 22.09.2026 · https://brand.dreamcar.ua/tokens/dreamcar-tokens.css */
+:root {
+  /* === COLORS · DARK (default) === */
+  --dc-black: #0A0A0A;
+  --dc-coal: #141414;
+  --dc-graphite: #1F1F1F;
+  --dc-steel: #2A2A2A;
+  --dc-ash: #888888;
+  --dc-bone: #DDDDDD;
+  --dc-white: #FFFFFF;
+  --dc-red: #E30613;
+  --dc-red-deep: #B8050F;
+  --dc-red-glow: #FF1A2B;
+  --dc-success: #10B981;
+  --dc-warning: #F59E0B;
+  --dc-danger: #DC2626;
+  --dc-danger-text: #F87171;
+  --dc-info: #3B82F6;
+  --dc-link: #60A5FA;
+  /* semantic aliases: use these in components */
+  --dc-bg: var(--dc-black);
+  --dc-surface: var(--dc-coal);
+  --dc-surface-2: var(--dc-graphite);
+  --dc-border: var(--dc-steel);
+  --dc-text: var(--dc-white);
+  --dc-text-muted: var(--dc-bone);
+  --dc-text-subtle: var(--dc-ash);
+  --dc-accent: var(--dc-red);
+  --dc-accent-text: var(--dc-red-glow);
+  --dc-on-accent: var(--dc-white);
+  --dc-error-text: var(--dc-danger-text);
+  --dc-link-color: var(--dc-link);
+  /* data viz, fixed order: series 1 = our / key metric */
+  --dc-viz-1: #E30613;
+  --dc-viz-2: #60A5FA;
+  --dc-viz-3: #FBBF24;
+  --dc-viz-4: #10B981;
+  --dc-viz-5: #A78BFA;
+  --dc-viz-6: #BBBBBB;
+  /* === SPACING === */
+  --dc-s-1: 4px;
+  --dc-s-2: 8px;
+  --dc-s-3: 12px;
+  --dc-s-4: 16px;
+  --dc-s-5: 24px;
+  --dc-s-6: 32px;
+  --dc-s-7: 48px;
+  --dc-s-8: 64px;
+  --dc-s-9: 96px;
+  --dc-s-10: 128px;
+  /* === RADIUS === */
+  --dc-r-none: 0px;
+  --dc-r-sm: 4px;
+  --dc-r-md: 8px;
+  --dc-r-lg: 16px;
+  --dc-r-pill: 999px;
+  /* === TYPOGRAPHY === */
+  --dc-font-display: 'Oswald', sans-serif;
+  --dc-font-brand: 'Archivo Black', sans-serif;
+  --dc-font-body: 'Manrope', sans-serif;
+  --dc-font-mono: 'JetBrains Mono', monospace;
+  --dc-fs-display: 96px;
+  --dc-fs-h1: 64px;
+  --dc-fs-h2: 48px;
+  --dc-fs-h3: 32px;
+  --dc-fs-h4: 24px;
+  --dc-fs-h5: 18px;
+  --dc-fs-body-lg: 18px;
+  --dc-fs-body: 16px;
+  --dc-fs-body-sm: 14px;
+  --dc-fs-caption: 13px;
+  --dc-fs-mono: 11px;
+  /* === MOTION === */
+  --dc-d-fast: 150ms;
+  --dc-d-base: 300ms;
+  --dc-d-slow: 500ms;
+  --dc-e-out: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dc-e-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* === SHADOWS === */
+  --dc-shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
+  --dc-shadow-md: 0 8px 16px rgba(0,0,0,0.4);
+  --dc-shadow-lg: 0 20px 40px rgba(0,0,0,0.5);
+  --dc-shadow-glow-red: 0 0 0 3px #E30613;
+  --dc-container: 1280px;
+}
+
+/* === LIGHT THEME: documents, email light mode, print, partner decks, dashboards === */
+[data-dc-theme="light"] {
+  --dc-bg: #FAFAFA;
+  --dc-surface: #FFFFFF;
+  --dc-surface-2: #FAFAFA;
+  --dc-border: #E1E1E6;
+  --dc-text: #0A0A0A;
+  --dc-text-muted: #3C3C43;
+  --dc-text-subtle: #6B6B73;
+  --dc-accent: #E30613;
+  --dc-accent-text: #B8050F;
+  --dc-on-accent: #FFFFFF;
+  --dc-error-text: #B91C1C;
+  --dc-link-color: #1E40AF;
+  --dc-success: #047857;
+  --dc-warning: #A16207;
+  --dc-danger: #B91C1C;
+  --dc-info: #1E40AF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

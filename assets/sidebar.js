@@ -100,6 +100,7 @@
       { num: '12', name: 'Контент',             file: 'content.html',            aliases: 'content рубрики контент-план хештеги hashtags faq сторітелінг storytelling переможці winners trust' },
       { num: '13', name: 'Кризові комунікації', file: 'crisis.html',             aliases: 'crisis criza кризи pr скандал блокування sla скрипти scripts реакція платіжна data breach фейк акаунт' },
       { num: '23', name: 'Examples Library',    file: 'examples.html',           aliases: 'examples приклади кейси good bad cases ig email mockup' },
+      { num: '30', name: 'Локалізація',         file: 'localization.html',       aliases: 'localization локалізація переклад translation english polski čeština en pl cz мови експансія' },
     ],
     'Партнери і довіра': [
       { num: '14', name: 'Партнери',            file: 'partners.html',           aliases: 'partners партнери блогери агенції бриф brief co-branding workflow approval погодження' },
@@ -109,10 +110,11 @@
       { num: '16', name: 'Дизайн-ресурси',      file: 'tokens.html',             aliases: 'design tokens токени дизайн-токени json css змінні variables figma export пакет ассети assets' },
       { num: '17', name: 'Стиль медіа',         file: 'audio.html',              aliases: 'audio аудіо звук sonic logo jingle music музика photo фото lighting освітлення color grading lut' },
       { num: '24', name: 'Photography Brief',   file: 'photography-brief.html',  aliases: 'photo фото фотограф photographer brief бриф shot list зйомка sony canon nikon raw release form' },
+      { num: '29', name: 'Відео',               file: 'video.html',              aliases: 'video відео reels tiktok stories shorts ефір титри субтитри lower third монтаж переходи експорт кодек ratio 9:16' },
     ],
     'Точки контакту': [
       { num: '18', name: 'Точки контакту',      file: 'touchpoints.html',        aliases: 'email імейл імейли розсилка mailing customer journey awareness consideration purchase delivery loyalty esputnik yespo mailchimp sendgrid newsletter шаблони шаблон letter лист' },
-      { num: '19', name: 'Мерч',                file: 'merch.html',              aliases: 'merch мерч пакет переможця коробка футболка hoodie худі кепка наклейки stickers упаковка packaging брелок сертифікат' },
+      { num: '19', name: 'Мерч',                file: 'merch.html',              aliases: 'merch мерч пакет власника коробка футболка hoodie худі кепка наклейки stickers упаковка packaging брелок сертифікат' },
     ],
     'Підсумки': [
       { num: '20', name: 'Метрики · Roadmap',   file: 'metrics.html',            aliases: 'metrics метрики kpi roadmap nps awareness sov share of voice sentiment retention repeat пирамида' },
@@ -249,7 +251,7 @@
 
     sb.innerHTML = `
 <a href="${upPrefix}index.html" class="brand-mark">DREAM<span class="red">CAR</span></a>
-<span class="brand-tag">BRAND BOOK · v4.0</span>
+<span class="brand-tag">BRAND BOOK · v4.2</span>
 <div class="sidebar-search"><input type="text" id="sb-search" placeholder="Пошук по брендбуку…  ( / або ⌘K )" aria-label="Повнотекстовий пошук" autocomplete="off"></div>
 <div class="sidebar-search-results" id="sb-results" aria-live="polite"></div>
 ${groups}

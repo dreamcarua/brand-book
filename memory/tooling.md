@@ -51,7 +51,7 @@
 |---|---|---|
 | Домен | `brand.dreamcar.ua` | CNAME, robots, sitemap, canonical, OG |
 | Supabase project ref | `wotghlaehnvxyeacznvv` | глобальний пошук, Edge Function |
-| Версія кешу SW | `dreamcar-brand-v19` | `service-worker.js`, bump при кожній правці ассетів |
+| Версія кешу SW | `dreamcar-brand-v22` | `service-worker.js`, bump при кожній правці ассетів |
 | Бренд-червоний | `#E30613` | токени, лінк-акценти |
 | Пошта бренду | `vg@dreamcar.ua` | `humans.txt`, `.well-known/security.txt`, футери |
 
@@ -118,3 +118,9 @@ gh secret list -R dreamcarua/brand-book
 - **`global-header.js`** інжектиться через `assets/sidebar.js` з квері-версією: бампати GH_VERSION лише при зміні самого хедера, а SW CACHE — при будь-якій зміні контенту.
 - **`email-templates/`** — живі робочі шаблони (eSputnik/Yespo), їх копіюють у розсилки.
 - **Хто ще змінює репо:** інші Cowork-сесії Вадима.
+
+## Дизайн-токени файлами (з 22.09.2026)
+
+- Джерело правди — `tokens/dreamcar-tokens.json` і `tokens/dreamcar-tokens.css` (v4.2.0, дві теми, `--dc-viz-1…6`). Розділ 16 показує їх вміст копією: змінив файл — онови блоки JSON/CSS у `sections/tokens.html` тим самим комітом.
+- `assets/styles.css` досі має власні короткі імена (`--red`, `--red-glow`, `--danger-text`…) без префікса `--dc-`; значення мають збігатися з файлами токенів.
+- Ті самі токени живуть у дизайн-системі DreamCar в артефакті Claude (claude.ai/code/artifact/6aa4ab7e-9783-4ec7-854d-0593eeabb54c) — при зміні кольорів оновити і її.

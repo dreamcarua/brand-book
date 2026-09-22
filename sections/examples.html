@@ -16,13 +16,13 @@
   .ex-cell.bad { background: rgba(220,38,38,0.08); }
   .ex-cell.good { background: rgba(16,185,129,0.08); }
   .ex-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
-  .ex-cell.bad .head { color: var(--danger); }
+  .ex-cell.bad .head { color: var(--danger-text); }
   .ex-cell.good .head { color: var(--success); }
   .ex-mockup { background: var(--black); border: 1px solid var(--steel); padding: 18px; margin-bottom: 14px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; border-radius: 4px; }
   .ex-note { font-size: 13px; color: var(--bone); line-height: 1.6; margin-top: auto; }
   .ex-note strong { color: var(--white); }
   .annotation { display: inline-block; padding: 3px 8px; background: var(--coal); border: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; margin-right: 4px; margin-bottom: 4px; border-radius: 3px; }
-  .annotation.red { background: rgba(220,38,38,0.15); border-color: var(--danger); color: var(--danger); }
+  .annotation.red { background: rgba(220,38,38,0.15); border-color: var(--danger); color: var(--danger-text); }
   .annotation.green { background: rgba(16,185,129,0.15); border-color: var(--success); color: var(--success); }
   .mock-ig { background: linear-gradient(135deg, #f09433, #dc2743, #cc2366, #bc1888); padding: 0; border-radius: 12px; overflow: hidden; }
   .mock-ig .ig-head { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--black); }
@@ -292,7 +292,7 @@
       <div class="head">/// ✅ ДОБРЕ</div>
       <div class="ex-mockup" style="background: linear-gradient(180deg, #1a1a1a, #2a2a2a); padding: 0; min-height: 180px; justify-content: center; align-items: center; position: relative;">
         <div style="font-size: 60px; filter: drop-shadow(0 0 20px rgba(227,6,19,0.4));">🚙</div>
-        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono'; font-size: 9px; color: var(--red); letter-spacing: 0.2em;">/// #017 · BMW X5 · OUR FLEET</div>
+        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono'; font-size: 9px; color: var(--red-glow); letter-spacing: 0.2em;">/// #017 · BMW X5 · OUR FLEET</div>
       </div>
       <div class="ex-note">
         <span class="annotation green">наше авто</span><span class="annotation green">бренд-tagging</span><span class="annotation green">темний background</span><span class="annotation green">cinematic</span><br>
@@ -390,7 +390,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 12px;">/// КЛЮЧ ДО ДОБРИХ ПРИКЛАДІВ</div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px;">/// КЛЮЧ ДО ДОБРИХ ПРИКЛАДІВ</div>
     <p style="font-size: 15px; color: var(--white); line-height: 1.6;">
       Якщо стоїш перед вибором «як написати/намалювати X» — спочатку відкрий цю секцію, шукай схожий кейс, копіюй структуру з правої колонки. <strong>10 хвилин тут економить 1 годину переробок пізніше.</strong>
     </p>

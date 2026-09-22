@@ -30,7 +30,7 @@
   table.lex td { padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
   table.lex tr:last-child td { border-bottom: none; }
   table.lex .bad { color: #ff6577; font-weight: 600; font-family: 'JetBrains Mono', monospace; text-decoration: line-through; opacity: 0.85; }
-  table.lex .good { color: #4ade80; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+  table.lex .good { color: var(--success); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
   table.lex .why { color: #aaa; font-size: 13px; }
   table.lex .arrow { color: #555; font-size: 18px; text-align: center; }
 
@@ -38,27 +38,27 @@
   .ex-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .ex-card { background: var(--coal); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; }
   .ex-card.bad { border-left: 4px solid var(--red); }
-  .ex-card.good { border-left: 4px solid #4ade80; }
+  .ex-card.good { border-left: 4px solid var(--success); }
   .ex-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
   .ex-card.bad .label { color: #ff6577; }
-  .ex-card.good .label { color: #4ade80; }
+  .ex-card.good .label { color: var(--success); }
   .ex-card .ex-text { font-size: 13px; color: #ddd; line-height: 1.5; }
   .ex-card .ex-text mark.bad { background: rgba(204,0,0,0.25); color: #ff6577; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
-  .ex-card .ex-text mark.good { background: rgba(74,222,128,0.2); color: #4ade80; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .ex-card .ex-text mark.good { background: rgba(74,222,128,0.2); color: var(--success); padding: 1px 4px; border-radius: 3px; font-weight: 600; }
 
   .checklist { background: var(--coal); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
   .checklist h3 { margin-top: 0; }
   .checklist ul { list-style: none; padding: 0; margin: 0; }
   .checklist li { padding: 10px 0 10px 32px; position: relative; border-bottom: 1px solid var(--line); font-size: 14px; }
   .checklist li:last-child { border-bottom: none; }
-  .checklist li::before { content: '☐'; position: absolute; left: 0; top: 10px; color: #4ade80; font-size: 18px; font-weight: bold; }
+  .checklist li::before { content: '☐'; position: absolute; left: 0; top: 10px; color: var(--success); font-size: 18px; font-weight: bold; }
 
   .voice-linter { background: var(--coal); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
   .voice-linter textarea { width: 100%; min-height: 140px; background: var(--black); border: 1px solid var(--line); border-radius: 8px; color: #fff; padding: 14px 16px; font-family: Manrope; font-size: 14px; resize: vertical; }
   .voice-linter textarea:focus { outline: none; border-color: var(--red); }
   .voice-linter .result { margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 13px; display: none; }
   .voice-linter .result.show { display: block; }
-  .voice-linter .result.ok { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); color: #4ade80; }
+  .voice-linter .result.ok { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); color: var(--success); }
   .voice-linter .result.warn { background: rgba(204,0,0,0.1); border: 1px solid rgba(204,0,0,0.3); color: #ff6577; }
   .voice-linter .result mark { background: rgba(204,0,0,0.3); color: #ff9999; padding: 1px 4px; border-radius: 3px; }
 
@@ -264,7 +264,7 @@
     } else {
       result.className = 'result show warn';
       var suggestions = found.map(function(w){
-        return '<b>' + w + '</b> → <span style="color:#4ade80">' + BAD_WORDS[w] + '</span>';
+        return '<b>' + w + '</b> → <span style="color:var(--success)">' + BAD_WORDS[w] + '</span>';
       }).join(' · ');
       result.innerHTML = '🔴 <b>Знайдено заборонені слова (' + found.length + '):</b><br><br>' +
         suggestions + '<br><br>' +

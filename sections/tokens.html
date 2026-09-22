@@ -32,165 +32,233 @@
   <div class="s-num">/// 16 — DESIGN TOKENS</div>
   <h1 class="s-title">ТОКЕНИ ДЛЯ <span class="red">РОЗРОБНИКІВ</span></h1>
   <p class="s-desc">
-    Усі змінні бренду — у форматах JSON та CSS. Просто скопіюй у проєкт. Імпорт у Figma через плагін Tokens Studio. Single source of truth.
+    Усі змінні бренду — у форматах JSON та CSS, версія <strong>4.2.0 від 22.09.2026</strong>: темна тема (за замовчуванням), світла тема <code>[data-dc-theme="light"]</code>, палітра графіків, семантичні аліаси (<code>--dc-text</code>, <code>--dc-accent</code>…), які самі перемикаються між темами. Не копіюй значення руками — підключай файл: <a href="../tokens/dreamcar-tokens.css" style="color:var(--link);">dreamcar-tokens.css</a> · <a href="../tokens/dreamcar-tokens.json" style="color:var(--link);">dreamcar-tokens.json</a>. Імпорт у Figma — через плагін Tokens Studio із JSON.
   </p>
 
   <h3 class="s-subtitle">/// JSON — <span class="red">ДЛЯ ФІГМИ ТА БІБЛІОТЕК</span></h3>
   <div class="tokens-code">{
-  <span class="comment">// КОЛЬОРИ — ПЕРВИННІ</span>
+  <span class="key">"$meta"</span>: {
+    <span class="key">"name"</span>: "DreamCar Design Tokens",
+    <span class="key">"version"</span>: "4.2.0",
+    <span class="key">"updated"</span>: "2026-09-22",
+    <span class="key">"source"</span>: "https://brand.dreamcar.ua/sections/tokens.html",
+    <span class="key">"themes"</span>: [
+      "dark (default)",
+      "light"
+    ]
+  },
   <span class="key">"color"</span>: {
-    <span class="key">"black"</span>:        { <span class="key">"value"</span>: <span class="str">"#0A0A0A"</span> },
-    <span class="key">"coal"</span>:         { <span class="key">"value"</span>: <span class="str">"#141414"</span> },
-    <span class="key">"graphite"</span>:     { <span class="key">"value"</span>: <span class="str">"#1F1F1F"</span> },
-    <span class="key">"steel"</span>:        { <span class="key">"value"</span>: <span class="str">"#2A2A2A"</span> },
-    <span class="key">"ash"</span>:          { <span class="key">"value"</span>: <span class="str">"#888888"</span> },
-    <span class="key">"bone"</span>:         { <span class="key">"value"</span>: <span class="str">"#DDDDDD"</span> },
-    <span class="key">"white"</span>:        { <span class="key">"value"</span>: <span class="str">"#FFFFFF"</span> },
-    <span class="key">"red"</span>:          { <span class="key">"value"</span>: <span class="str">"#E30613"</span> },
-    <span class="key">"red-deep"</span>:     { <span class="key">"value"</span>: <span class="str">"#B8050F"</span> },
-
-    <span class="comment">// КОЛЬОРИ — СЛУЖБОВІ (UI states)</span>
-    <span class="key">"success"</span>:      { <span class="key">"value"</span>: <span class="str">"#10B981"</span> },
-    <span class="key">"warning"</span>:      { <span class="key">"value"</span>: <span class="str">"#F59E0B"</span> },
-    <span class="key">"danger"</span>:       { <span class="key">"value"</span>: <span class="str">"#DC2626"</span> },
-    <span class="key">"info"</span>:         { <span class="key">"value"</span>: <span class="str">"#3B82F6"</span> }
+    <span class="key">"dark"</span>: {
+      <span class="key">"black"</span>: "#0A0A0A",
+      <span class="key">"coal"</span>: "#141414",
+      <span class="key">"graphite"</span>: "#1F1F1F",
+      <span class="key">"steel"</span>: "#2A2A2A",
+      <span class="key">"ash"</span>: "#888888",
+      <span class="key">"bone"</span>: "#DDDDDD",
+      <span class="key">"white"</span>: "#FFFFFF",
+      <span class="key">"red"</span>: "#E30613",
+      <span class="key">"red-deep"</span>: "#B8050F",
+      <span class="key">"red-glow"</span>: "#FF1A2B",
+      <span class="key">"success"</span>: "#10B981",
+      <span class="key">"warning"</span>: "#F59E0B",
+      <span class="key">"danger"</span>: "#DC2626",
+      <span class="key">"danger-text"</span>: "#F87171",
+      <span class="key">"info"</span>: "#3B82F6",
+      <span class="key">"link"</span>: "#60A5FA"
+    },
+    <span class="key">"light"</span>: {
+      <span class="key">"page"</span>: "#FAFAFA",
+      <span class="key">"surface"</span>: "#FFFFFF",
+      <span class="key">"line"</span>: "#E1E1E6",
+      <span class="key">"ink"</span>: "#0A0A0A",
+      <span class="key">"ink-muted"</span>: "#3C3C43",
+      <span class="key">"ink-subtle"</span>: "#6B6B73",
+      <span class="key">"red"</span>: "#E30613",
+      <span class="key">"red-text"</span>: "#B8050F",
+      <span class="key">"success"</span>: "#047857",
+      <span class="key">"warning"</span>: "#A16207",
+      <span class="key">"danger"</span>: "#B91C1C",
+      <span class="key">"info"</span>: "#1E40AF"
+    },
+    <span class="key">"dataviz"</span>: [
+      "#E30613",
+      "#60A5FA",
+      "#FBBF24",
+      "#10B981",
+      "#A78BFA",
+      "#BBBBBB"
+    ]
   },
-
-  <span class="comment">// SPACING SCALE — БАЗА 4PX</span>
-  <span class="key">"spacing"</span>: {
-    <span class="key">"1"</span>: { <span class="key">"value"</span>: <span class="val">"4px"</span> },
-    <span class="key">"2"</span>: { <span class="key">"value"</span>: <span class="val">"8px"</span> },
-    <span class="key">"3"</span>: { <span class="key">"value"</span>: <span class="val">"12px"</span> },
-    <span class="key">"4"</span>: { <span class="key">"value"</span>: <span class="val">"16px"</span> },
-    <span class="key">"5"</span>: { <span class="key">"value"</span>: <span class="val">"24px"</span> },
-    <span class="key">"6"</span>: { <span class="key">"value"</span>: <span class="val">"32px"</span> },
-    <span class="key">"7"</span>: { <span class="key">"value"</span>: <span class="val">"48px"</span> },
-    <span class="key">"8"</span>: { <span class="key">"value"</span>: <span class="val">"64px"</span> },
-    <span class="key">"9"</span>: { <span class="key">"value"</span>: <span class="val">"96px"</span> },
-    <span class="key">"10"</span>: { <span class="key">"value"</span>: <span class="val">"128px"</span> }
-  },
-
-  <span class="comment">// ТИПОГРАФІЯ — ШРИФТИ</span>
   <span class="key">"font"</span>: {
-    <span class="key">"display"</span>: { <span class="key">"value"</span>: <span class="str">"'Oswald', 'Bebas Neue', sans-serif"</span> },
-    <span class="key">"brand"</span>:   { <span class="key">"value"</span>: <span class="str">"'Archivo Black', sans-serif"</span> },
-    <span class="key">"body"</span>:    { <span class="key">"value"</span>: <span class="str">"'Manrope', sans-serif"</span> },
-    <span class="key">"mono"</span>:    { <span class="key">"value"</span>: <span class="str">"'JetBrains Mono', monospace"</span> }
+    <span class="key">"display"</span>: "'Oswald', sans-serif",
+    <span class="key">"brand"</span>: "'Archivo Black', sans-serif",
+    <span class="key">"body"</span>: "'Manrope', sans-serif",
+    <span class="key">"mono"</span>: "'JetBrains Mono', monospace"
   },
-
-  <span class="comment">// ТИПОГРАФІЯ — ШКАЛА</span>
   <span class="key">"fontSize"</span>: {
-    <span class="key">"display"</span>:  { <span class="key">"value"</span>: <span class="val">"96px"</span> },
-    <span class="key">"h1"</span>:       { <span class="key">"value"</span>: <span class="val">"64px"</span> },
-    <span class="key">"h2"</span>:       { <span class="key">"value"</span>: <span class="val">"48px"</span> },
-    <span class="key">"h3"</span>:       { <span class="key">"value"</span>: <span class="val">"32px"</span> },
-    <span class="key">"h4"</span>:       { <span class="key">"value"</span>: <span class="val">"24px"</span> },
-    <span class="key">"h5"</span>:       { <span class="key">"value"</span>: <span class="val">"18px"</span> },
-    <span class="key">"body-lg"</span>:  { <span class="key">"value"</span>: <span class="val">"18px"</span> },
-    <span class="key">"body"</span>:     { <span class="key">"value"</span>: <span class="val">"16px"</span> },
-    <span class="key">"body-sm"</span>:  { <span class="key">"value"</span>: <span class="val">"14px"</span> },
-    <span class="key">"caption"</span>:  { <span class="key">"value"</span>: <span class="val">"13px"</span> },
-    <span class="key">"mono"</span>:     { <span class="key">"value"</span>: <span class="val">"11px"</span> }
+    <span class="key">"display"</span>: "96px",
+    <span class="key">"h1"</span>: "64px",
+    <span class="key">"h2"</span>: "48px",
+    <span class="key">"h3"</span>: "32px",
+    <span class="key">"h4"</span>: "24px",
+    <span class="key">"h5"</span>: "18px",
+    <span class="key">"body-lg"</span>: "18px",
+    <span class="key">"body"</span>: "16px",
+    <span class="key">"body-sm"</span>: "14px",
+    <span class="key">"caption"</span>: "13px",
+    <span class="key">"mono"</span>: "11px"
   },
-
-  <span class="comment">// РАДІУСИ</span>
+  <span class="key">"spacing"</span>: {
+    <span class="key">"1"</span>: "4px",
+    <span class="key">"2"</span>: "8px",
+    <span class="key">"3"</span>: "12px",
+    <span class="key">"4"</span>: "16px",
+    <span class="key">"5"</span>: "24px",
+    <span class="key">"6"</span>: "32px",
+    <span class="key">"7"</span>: "48px",
+    <span class="key">"8"</span>: "64px",
+    <span class="key">"9"</span>: "96px",
+    <span class="key">"10"</span>: "128px"
+  },
   <span class="key">"radius"</span>: {
-    <span class="key">"none"</span>: { <span class="key">"value"</span>: <span class="val">"0px"</span> },
-    <span class="key">"sm"</span>:   { <span class="key">"value"</span>: <span class="val">"4px"</span> },
-    <span class="key">"md"</span>:   { <span class="key">"value"</span>: <span class="val">"8px"</span> },
-    <span class="key">"lg"</span>:   { <span class="key">"value"</span>: <span class="val">"16px"</span> },
-    <span class="key">"pill"</span>: { <span class="key">"value"</span>: <span class="val">"999px"</span> }
+    <span class="key">"none"</span>: "0px",
+    <span class="key">"sm"</span>: "4px",
+    <span class="key">"md"</span>: "8px",
+    <span class="key">"lg"</span>: "16px",
+    <span class="key">"pill"</span>: "999px"
   },
-
-  <span class="comment">// АНІМАЦІЇ</span>
   <span class="key">"motion"</span>: {
-    <span class="key">"fast"</span>:    { <span class="key">"value"</span>: <span class="val">"150ms"</span> },
-    <span class="key">"base"</span>:    { <span class="key">"value"</span>: <span class="val">"300ms"</span> },
-    <span class="key">"slow"</span>:    { <span class="key">"value"</span>: <span class="val">"500ms"</span> },
-    <span class="key">"easeOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.2, 0.9, 0.3, 1)"</span> },
-    <span class="key">"easeInOut"</span>: { <span class="key">"value"</span>: <span class="str">"cubic-bezier(0.4, 0, 0.2, 1)"</span> }
+    <span class="key">"fast"</span>: "150ms",
+    <span class="key">"base"</span>: "300ms",
+    <span class="key">"slow"</span>: "500ms",
+    <span class="key">"easeOut"</span>: "cubic-bezier(0.2, 0.9, 0.3, 1)",
+    <span class="key">"easeInOut"</span>: "cubic-bezier(0.4, 0, 0.2, 1)"
   },
-
-  <span class="comment">// ТІНІ</span>
   <span class="key">"shadow"</span>: {
-    <span class="key">"sm"</span>: { <span class="key">"value"</span>: <span class="str">"0 2px 4px rgba(0,0,0,0.5)"</span> },
-    <span class="key">"md"</span>: { <span class="key">"value"</span>: <span class="str">"0 8px 16px rgba(0,0,0,0.4)"</span> },
-    <span class="key">"lg"</span>: { <span class="key">"value"</span>: <span class="str">"0 20px 40px rgba(0,0,0,0.5)"</span> },
-    <span class="key">"glow-red"</span>: { <span class="key">"value"</span>: <span class="str">"0 0 0 3px #E30613"</span> }
+    <span class="key">"sm"</span>: "0 2px 4px rgba(0,0,0,0.5)",
+    <span class="key">"md"</span>: "0 8px 16px rgba(0,0,0,0.4)",
+    <span class="key">"lg"</span>: "0 20px 40px rgba(0,0,0,0.5)",
+    <span class="key">"glow-red"</span>: "0 0 0 3px #E30613"
   },
-
-  <span class="comment">// БРЕЙКПОЙНТИ</span>
   <span class="key">"breakpoint"</span>: {
-    <span class="key">"mobile"</span>:  { <span class="key">"value"</span>: <span class="val">"640px"</span> },
-    <span class="key">"tablet"</span>:  { <span class="key">"value"</span>: <span class="val">"1024px"</span> },
-    <span class="key">"desktop"</span>: { <span class="key">"value"</span>: <span class="val">"1440px"</span> }
+    <span class="key">"mobile"</span>: "640px",
+    <span class="key">"tablet"</span>: "1024px",
+    <span class="key">"desktop"</span>: "1440px",
+    <span class="key">"container"</span>: "1280px"
   }
 }</div>
 
   <h3 class="s-subtitle">/// CSS VARIABLES — <span class="red">ПРОДАКШН READY</span></h3>
-  <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v4.0 */</span>
+  <div class="tokens-code"><span class="comment">/* DreamCar Design Tokens v4.2.0 · 22.09.2026 · https://brand.dreamcar.ua/tokens/dreamcar-tokens.css */</span>
 :root {
-  <span class="comment">/* === COLORS === */</span>
-  --dc-black:        #0A0A0A;
-  --dc-coal:         #141414;
-  --dc-graphite:     #1F1F1F;
-  --dc-steel:        #2A2A2A;
-  --dc-ash:          #888888;
-  --dc-bone:         #DDDDDD;
-  --dc-white:        #FFFFFF;
-  --dc-red:          #E30613;
-  --dc-red-deep:     #B8050F;
-
-  <span class="comment">/* UI states */</span>
-  --dc-success:      #10B981;
-  --dc-warning:      #F59E0B;
-  --dc-danger:       #DC2626;
-  --dc-info:         #3B82F6;
-
+  <span class="comment">/* === COLORS · DARK (default) === */</span>
+  --dc-black: #0A0A0A;
+  --dc-coal: #141414;
+  --dc-graphite: #1F1F1F;
+  --dc-steel: #2A2A2A;
+  --dc-ash: #888888;
+  --dc-bone: #DDDDDD;
+  --dc-white: #FFFFFF;
+  --dc-red: #E30613;
+  --dc-red-deep: #B8050F;
+  --dc-red-glow: #FF1A2B;
+  --dc-success: #10B981;
+  --dc-warning: #F59E0B;
+  --dc-danger: #DC2626;
+  --dc-danger-text: #F87171;
+  --dc-info: #3B82F6;
+  --dc-link: #60A5FA;
+  <span class="comment">/* semantic aliases: use these in components */</span>
+  --dc-bg: var(--dc-black);
+  --dc-surface: var(--dc-coal);
+  --dc-surface-2: var(--dc-graphite);
+  --dc-border: var(--dc-steel);
+  --dc-text: var(--dc-white);
+  --dc-text-muted: var(--dc-bone);
+  --dc-text-subtle: var(--dc-ash);
+  --dc-accent: var(--dc-red);
+  --dc-accent-text: var(--dc-red-glow);
+  --dc-on-accent: var(--dc-white);
+  --dc-error-text: var(--dc-danger-text);
+  --dc-link-color: var(--dc-link);
+  <span class="comment">/* data viz, fixed order: series 1 = our / key metric */</span>
+  --dc-viz-1: #E30613;
+  --dc-viz-2: #60A5FA;
+  --dc-viz-3: #FBBF24;
+  --dc-viz-4: #10B981;
+  --dc-viz-5: #A78BFA;
+  --dc-viz-6: #BBBBBB;
   <span class="comment">/* === SPACING === */</span>
-  --dc-s-1:  4px;   --dc-s-2:  8px;
-  --dc-s-3:  12px;  --dc-s-4:  16px;
-  --dc-s-5:  24px;  --dc-s-6:  32px;
-  --dc-s-7:  48px;  --dc-s-8:  64px;
-  --dc-s-9:  96px;  --dc-s-10: 128px;
-
+  --dc-s-1: 4px;
+  --dc-s-2: 8px;
+  --dc-s-3: 12px;
+  --dc-s-4: 16px;
+  --dc-s-5: 24px;
+  --dc-s-6: 32px;
+  --dc-s-7: 48px;
+  --dc-s-8: 64px;
+  --dc-s-9: 96px;
+  --dc-s-10: 128px;
   <span class="comment">/* === RADIUS === */</span>
-  --dc-r-none: 0;   --dc-r-sm: 4px;
-  --dc-r-md:   8px; --dc-r-lg: 16px;
+  --dc-r-none: 0px;
+  --dc-r-sm: 4px;
+  --dc-r-md: 8px;
+  --dc-r-lg: 16px;
   --dc-r-pill: 999px;
-
   <span class="comment">/* === TYPOGRAPHY === */</span>
-  --dc-font-display: 'Oswald', 'Bebas Neue', sans-serif;
-  --dc-font-brand:   'Archivo Black', sans-serif;
-  --dc-font-body:    'Manrope', sans-serif;
-  --dc-font-mono:    'JetBrains Mono', monospace;
-
+  --dc-font-display: 'Oswald', sans-serif;
+  --dc-font-brand: 'Archivo Black', sans-serif;
+  --dc-font-body: 'Manrope', sans-serif;
+  --dc-font-mono: 'JetBrains Mono', monospace;
+  --dc-fs-display: 96px;
+  --dc-fs-h1: 64px;
+  --dc-fs-h2: 48px;
+  --dc-fs-h3: 32px;
+  --dc-fs-h4: 24px;
+  --dc-fs-h5: 18px;
+  --dc-fs-body-lg: 18px;
+  --dc-fs-body: 16px;
+  --dc-fs-body-sm: 14px;
+  --dc-fs-caption: 13px;
+  --dc-fs-mono: 11px;
   <span class="comment">/* === MOTION === */</span>
   --dc-d-fast: 150ms;
   --dc-d-base: 300ms;
   --dc-d-slow: 500ms;
-  --dc-e-out:  cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dc-e-out: cubic-bezier(0.2, 0.9, 0.3, 1);
   --dc-e-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-
   <span class="comment">/* === SHADOWS === */</span>
-  --dc-shadow-sm:  0 2px 4px rgba(0, 0, 0, 0.5);
-  --dc-shadow-md:  0 8px 16px rgba(0, 0, 0, 0.4);
-  --dc-shadow-lg:  0 20px 40px rgba(0, 0, 0, 0.5);
-  --dc-glow-red:   0 0 0 3px var(--dc-red);
-
-  <span class="comment">/* === BREAKPOINTS (use in JS) === */</span>
-  --dc-bp-mobile:  640px;
-  --dc-bp-tablet:  1024px;
-  --dc-bp-desktop: 1440px;
+  --dc-shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
+  --dc-shadow-md: 0 8px 16px rgba(0,0,0,0.4);
+  --dc-shadow-lg: 0 20px 40px rgba(0,0,0,0.5);
+  --dc-shadow-glow-red: 0 0 0 3px #E30613;
+  --dc-container: 1280px;
 }
 
-<span class="comment">/* === Reduced motion === */</span>
+<span class="comment">/* === LIGHT THEME: documents, email light mode, print, partner decks, dashboards === */</span>
+[data-dc-theme="light"] {
+  --dc-bg: #FAFAFA;
+  --dc-surface: #FFFFFF;
+  --dc-surface-2: #FAFAFA;
+  --dc-border: #E1E1E6;
+  --dc-text: #0A0A0A;
+  --dc-text-muted: #3C3C43;
+  --dc-text-subtle: #6B6B73;
+  --dc-accent: #E30613;
+  --dc-accent-text: #B8050F;
+  --dc-on-accent: #FFFFFF;
+  --dc-error-text: #B91C1C;
+  --dc-link-color: #1E40AF;
+  --dc-success: #047857;
+  --dc-warning: #A16207;
+  --dc-danger: #B91C1C;
+  --dc-info: #1E40AF;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}</div>
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</div>
 
 
   <!-- merged from apps -->
@@ -204,153 +272,171 @@
   <div class="assets">
     <div class="asset">
       <h4>/// ЛОГОТИП</h4>
-      <div class="name">DREAMCAR LOGO PACK</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Горизонтальний + кругла аватарка у всіх форматах та кольорах.</p>
-      <code>TBD — посилання незабаром</code>
+      <div class="name">DREAMCAR LOGO PACK v3.4</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Racing Plate (primary), Avatar Circle, DC Monogram. Кожен варіант у SVG, PDF, PNG (прозорий фон) і JPG (білий фон). EPS або AI — на запит vg@dreamcar.ua.</p>
+      <code><a href="../assets/dreamcar-logos.zip" style="color:var(--link);">dreamcar-logos.zip</a> · <a href="logo.html" style="color:var(--link);">розділ 05</a></code>
       <div class="formats">
-        <span class="format-tag">SVG</span>
-        <span class="format-tag">PNG · 256/512/1024/2048</span>
-        <span class="format-tag">EPS · CMYK + RGB</span>
-        <span class="format-tag">AI</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">SVG</span><span class="format-tag">PDF</span><span class="format-tag">PNG · 1024/1440</span><span class="format-tag">JPG</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ШРИФТИ</h4>
       <div class="name">FONT FAMILY</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Усі 4 шрифти безкоштовно через Google Fonts.</p>
-      <code>fonts.google.com — Bebas Neue + Archivo Black + Manrope + JetBrains Mono</code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Oswald, Archivo Black, Manrope, JetBrains Mono — безкоштовно через Google Fonts, усі з кирилицею. Інших гарнітур у бренді немає.</p>
+      <code>fonts.google.com — Oswald + Archivo Black + Manrope + JetBrains Mono</code>
       <div class="formats">
-        <span class="format-tag">WOFF2 · WEB</span>
-        <span class="format-tag">TTF · PRINT</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">WOFF2 · WEB</span><span class="format-tag">TTF · PRINT</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// ДИЗАЙН-ТОКЕНИ</h4>
+      <div class="name">TOKENS v4.2.0</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Кольори обох тем, типографічна шкала, відступи, радіуси, рух, тіні, палітра графіків. Один файл — одне джерело правди.</p>
+      <code><a href="../tokens/dreamcar-tokens.css" style="color:var(--link);">dreamcar-tokens.css</a> · <a href="../tokens/dreamcar-tokens.json" style="color:var(--link);">.json</a></code>
+      <div class="formats">
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">CSS</span><span class="format-tag">JSON</span><span class="format-tag">TOKENS STUDIO</span>
+      </div>
+    </div>
+
+    <div class="asset">
+      <h4>/// EMAIL</h4>
+      <div class="name">EMAIL TEMPLATES</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Майстер-шаблон запуску акції і приклад заповнення для eSputnik/Yespo. Таблична верстка, інлайн-стилі.</p>
+      <code><a href="../email-templates/dreamcar-master-launch.html" style="color:var(--link);">master-launch.html</a> · <a href="../email-templates/README.md" style="color:var(--link);">README</a></code>
+      <div class="formats">
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">HTML</span><span class="format-tag">ESPUTNIK</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ШАБЛОНИ ДЛЯ SMM</h4>
-      <div class="name">CANVA · FIGMA TEMPLATES</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Готові шаблони Instagram постів, stories, reels covers.</p>
-      <code>TBD — посилання незабаром</code>
+      <div class="name">POST GENERATOR</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Готових Canva/Figma-шаблонів ще немає. Замість них — генератор у розділі 28: параметри акції → текст для IG/TG/Email + PNG.</p>
+      <code><a href="generator.html" style="color:var(--link);">розділ 28 · Post Generator</a></code>
       <div class="formats">
-        <span class="format-tag">FIGMA</span>
-        <span class="format-tag">CANVA</span>
-        <span class="format-tag">PSD</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">ЗАМІНА</span><span class="format-tag">PNG</span><span class="format-tag">TEXT</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ПРЕЗЕНТАЦІЇ</h4>
       <div class="name">DECK TEMPLATES</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Шаблони для пітчів, корпоративних презентацій, медіа-кітів.</p>
-      <code>TBD — посилання незабаром</code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Шаблонів пітчів і медіа-кітів у бренді ще немає. До появи — чорне тло, Oswald-заголовки, одна думка на слайд, правила розділу 08.</p>
+      <code>не опубліковано · запит на vg@dreamcar.ua</code>
       <div class="formats">
-        <span class="format-tag">KEYNOTE</span>
-        <span class="format-tag">POWERPOINT</span>
-        <span class="format-tag">GOOGLE SLIDES</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">НЕМАЄ</span><span class="format-tag">KEYNOTE</span><span class="format-tag">PPTX</span><span class="format-tag">SLIDES</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ВІДЕО · BRAND PACK</h4>
       <div class="name">MOTION ASSETS</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Анімований логотип, заставки, lower thirds, фінальні картки.</p>
-      <code>TBD — посилання незабаром</code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Анімованого лого й плашок як файлів ще немає. Правила кадру, титрів і субтитрів — у розділі 29.</p>
+      <code><a href="video.html" style="color:var(--link);">розділ 29 · Відео</a></code>
       <div class="formats">
-        <span class="format-tag">MP4 · 4K</span>
-        <span class="format-tag">AFTER EFFECTS</span>
-        <span class="format-tag">LOTTIE JSON</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">НЕМАЄ</span><span class="format-tag">MP4</span><span class="format-tag">LOTTIE</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ICON LIBRARY</h4>
       <div class="name">LUCIDE ICONS</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">1000+ іконок у єдиному стилі. MIT-ліцензія, безкоштовно.</p>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Outline, штрих 1.5px, сітка 24×24. MIT-ліцензія. Emoji в інтерфейсах не використовуємо.</p>
       <code>lucide.dev — npm install lucide-react</code>
       <div class="formats">
-        <span class="format-tag">SVG</span>
-        <span class="format-tag">REACT</span>
-        <span class="format-tag">VUE</span>
-        <span class="format-tag">FIGMA</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">SVG</span><span class="format-tag">REACT</span><span class="format-tag">FIGMA</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ФОТОГРАФІЇ</h4>
       <div class="name">BRAND PHOTO BANK</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Архів фото переможців (з дозволу), студійні зйомки авто, behind-the-scenes.</p>
-      <code>TBD — посилання незабаром</code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Фото власників — тільки з їхнього письмового дозволу, тому банк не публічний. Доступ для підрядників — за запитом.</p>
+      <code>запит на vg@dreamcar.ua</code>
       <div class="formats">
-        <span class="format-tag">JPG · 4K</span>
-        <span class="format-tag">RAW</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">ЗА ЗАПИТОМ</span><span class="format-tag">JPG · 4K</span><span class="format-tag">RAW</span>
       </div>
     </div>
 
     <div class="asset">
       <h4>/// ЦЕЙ БРЕНДБУК</h4>
-      <div class="name">BRAND BOOK V2.1</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">PDF + HTML версії цього документа. Завжди останній актуальний.</p>
-      <code>TBD — посилання незабаром</code>
+      <div class="name">BRAND BOOK v4.2</div>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Уся книга однією сторінкою для друку або збереження в PDF; HTML-розділи — завжди остання версія.</p>
+      <code><a href="../print.html" style="color:var(--link);">print.html</a> · <a href="../index.html" style="color:var(--link);">brand.dreamcar.ua</a></code>
       <div class="formats">
-        <span class="format-tag">PDF</span>
-        <span class="format-tag">HTML</span>
-        <span class="format-tag">NOTION</span>
+        <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">PDF</span><span class="format-tag">HTML</span><span class="format-tag">PWA</span>
       </div>
     </div>
+
   </div>
 
-  <h3 class="s-subtitle">/// СТРУКТУРА GOOGLE DRIVE / NOTION</h3>
-  <div class="tokens-code">📁 dreamcar-brand/
-├── 📁 01-logo/
-│   ├── horizontal/
-│   │   ├── on-black.svg, on-white.svg, on-red.svg
-│   │   └── png-pack/ (256, 512, 1024, 2048)
-│   ├── circle-avatar/
-│   │   └── ig-profile-320.png, app-icon-1024.png, favicon-32.ico
-│   └── construction-grid.pdf
+  <h3 class="s-subtitle">/// ВЕРСІЇ АССЕТІВ — <span class="red">АКТУАЛЬНІ І ЗАСТАРІЛІ</span></h3>
+  <p class="s-desc">Підрядник, який знайшов старий файл у пошті чи на диску, звіряється з цією таблицею. Усе, чого немає в колонці «актуально», — не використовувати.</p>
+  <div class="table-scroll">
+  <table class="a11y-table">
+    <thead><tr><th scope="col">Ассет</th><th scope="col">Актуально</th><th scope="col">Застаріло — не використовувати</th><th scope="col">З якої дати</th></tr></thead>
+    <tbody>
+      <tr><td>Логотип</td><td>Racing Plate, Avatar Circle, DC Monogram · logo pack v3.4</td><td>Будь-які логотипи до Racing Plate (версії брендбука 1.x–2.0)</td><td>04.2026</td></tr>
+      <tr><td>Заголовковий шрифт</td><td>Oswald 500/700</td><td>Bebas Neue (немає кирилиці), Inter</td><td>25.05.2026 · 22.09.2026</td></tr>
+      <tr><td>Гасло CTA</td><td>«Бери. Дій. Володій.»</td><td>Будь-яке гасло з «виграй»</td><td>04.09.2026</td></tr>
+      <tr><td>Кого показуємо</td><td>«власник авто», OWNER</td><td>«переможець», WINNER, DRAW у мітках і мерчі</td><td>22.09.2026</td></tr>
+      <tr><td>Червоний текст дрібним кеглем</td><td>RED GLOW #FF1A2B</td><td>DC RED #E30613 для тексту менше 24px на темному</td><td>22.09.2026</td></tr>
+      <tr><td>Токени</td><td>v4.2.0 (обидві теми, data viz)</td><td>v4.0 і раніше: без світлої теми, без <code>--red-glow</code>, з Bebas Neue</td><td>22.09.2026</td></tr>
+      <tr><td>Брендбук PDF</td><td>print.html поточної версії</td><td>Будь-які PDF v2.x і v3.x</td><td>04.09.2026</td></tr>
+      <tr><td>Юридичні реквізити в матеріалах</td><td>просто «DreamCar»; реквізити — лише в офіційних правилах акції</td><td>назви юросіб і коди ЄДРПОУ в креативах</td><td>05.2026</td></tr>
+    </tbody>
+  </table>
+  </div>
 
-├── 📁 02-fonts/
-│   ├── bebas-neue/, archivo-black/, inter/, jetbrains-mono/
+  <h3 class="s-subtitle">/// СТРУКТУРА ПАПКИ БРЕНДУ</h3>
+  <p class="s-desc">Рекомендована структура для Google Drive. Позначка «є» — файл уже лежить у цьому брендбуці й дублюється в папку як є.</p>
+  <div class="tokens-code">dreamcar-brand/
+├── 01-logo/                 є · assets/logo/ + dreamcar-logos.zip
+│   ├── racing-plate.svg · .pdf · .png · .jpg
+│   ├── avatar-circle.svg · .pdf · .png · .jpg
+│   └── avatar-mark.svg · .pdf · .png · .jpg
+├── 02-fonts/
+│   ├── oswald/, archivo-black/, manrope/, jetbrains-mono/
 │   └── google-fonts-link.txt
-
-├── 📁 03-design-system/
-│   ├── tokens.json, tokens.css
-│   ├── figma-library.fig
-│   └── components-storybook.html
-
-├── 📁 04-templates/
-│   ├── smm-instagram/, smm-tiktok/, smm-telegram/
-│   ├── presentations/
-│   └── email-signatures/
-
-├── 📁 05-content/
-│   ├── photo-bank/ (winners, cars, bts)
-│   ├── video-archive/ (live-streams 2016-2026)
-│   └── motion-pack/ (logo-anim, lower-thirds)
-
-├── 📁 06-legal/
+├── 03-design-system/        є · tokens/
+│   └── dreamcar-tokens.json, dreamcar-tokens.css
+├── 04-templates/
+│   ├── email/               є · email-templates/
+│   ├── smm/                 ще немає
+│   └── presentations/       ще немає
+├── 05-content/
+│   ├── photo-bank/ (owners, cars, bts)   за згодою власників
+│   └── video-archive/ (ефіри вручень, з 2019)
+├── 06-legal/
 │   ├── public-offer.pdf
-│   ├── winner-contract-template.pdf
-│   └── edrpou-statement.pdf
-
-└── 📁 07-brand-book/
-    ├── v2.1-final.pdf
-    ├── v2.1-final.html
-    └── changelog.md</div>
+│   └── owner-contract-template.pdf
+└── 07-brand-book/
+    └── dreamcar-brand-book-v4.2.pdf   = print.html → «Зберегти як PDF»</div>
 
   <h3 class="s-subtitle">/// ВЕРСІЇ ТА ЗМІНИ</h3>
   <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
-      <strong style="color: var(--red);">v2.1 · 04.2026</strong> — Розширення: аудіо-айдентика, email-шаблони, touchpoints, фото-напрямок, мерч-правила, empty states, бренд-метрики, roadmap. Виправлено пропорції круглої аватарки (DREAMCAR піднято і збільшено).
+      <strong style="color: var(--red-glow);">v4.2 · 09.2026</strong> — Токени 4.2: світла тема, палітра графіків, --red-glow і --danger-text для контрасту; таблиця актуальних і застарілих ассетів; розділи 29 Відео і 30 Локалізація; «власник» замість «переможець» по всій книзі; Bebas Neue прибрано.
     </div>
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
-      <strong style="color: var(--ash);">v2.1 · 04.2026</strong> — Повне оновлення. Додано: персони, конкуренти, secondary палітра, accessibility, design tokens, кризові скрипти, партнерські гайдлайни. Зміна логотипу на Racing Plate.
+      <strong style="color: var(--ash);">v4.1 · 09.2026</strong> — Дані з реальності (21 авто, 500K+), самолінт у CI, PWA, доступність фокусу.
     </div>
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
-      <strong style="color: var(--ash);">v1.0 · 03.2026</strong> — Перша версія. Базовий лого, кольори, типографіка.
+      <strong style="color: var(--ash);">v4.0 «Etalon» · 09.2026</strong> — Аудит усіх 30 розділів: гасло «Бери. Дій. Володій.», розділ 11B Legal-safe лексикон, ієрархія ЗАКОН → ГОЛОС → ВІЗУАЛ.
+    </div>
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--ash);">v3.9 · 05.2026</strong> — Регламент підтримки, Onboarding, Brand Tools, Post Generator, універсальний sidebar і SEO.
+    </div>
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--ash);">v2.x · 03–04.2026</strong> — Персони, конкуренти, службова палітра, токени, кризові сценарії; логотип змінено на Racing Plate.
+    </div>
+    <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
+      <strong style="color: var(--ash);">v1.0 · 03.2026</strong> — Перша версія: логотип, кольори, типографіка.
     </div>
     <div>
-      <strong style="color: var(--ash);">v0.5 · 01.2026</strong> — Чорновик. Маніфест, перші концепції.
+      <strong style="color: var(--ash);">v0.5 · 01.2026</strong> — Чорновик: маніфест, перші концепції.
     </div>
   </div>
 </section>

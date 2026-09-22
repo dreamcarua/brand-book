@@ -79,6 +79,27 @@
       </div>
       <div class="codes">HEX #FFFFFF<br>RGB 255·255·255<br>CMYK 0·0·0·0</div>
     </div>
+    <div class="color-cell" style="background:#2A2A2A;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">LINE · РАМКИ</div>
+        <div class="name">DC STEEL</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #2A2A2A<br>RGB 42·42·42<br>CMYK 0·0·0·84</div>
+    </div>
+    <div class="color-cell" style="background:#888888;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.85;">MUTED · ДОПОМІЖНИЙ</div>
+        <div class="name">DC ASH</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #888888<br>RGB 136·136·136<br>CMYK 0·0·0·47</div>
+    </div>
+    <div class="color-cell" style="background:#DDDDDD;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.85;">SOFT · ВТОРИННИЙ ТЕКСТ</div>
+        <div class="name">DC BONE</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #DDDDDD<br>RGB 221·221·221<br>CMYK 0·0·0·13</div>
+    </div>
   </div>
 
   <div class="color-ratio">
@@ -128,7 +149,7 @@
 
   <h3 class="s-subtitle">/// ACCESSIBILITY — <span class="red">КОНТРАСТНІСТЬ</span></h3>
   <p class="s-desc">
-    Перевірка по WCAG 2.1 AA. Усі основні комбінації мають проходити мінімум 4.5:1 для звичайного тексту і 3:1 для крупного.
+    Перевірка по WCAG 2.1 AA: мінімум <strong>4.5:1</strong> для звичайного тексту і <strong>3:1</strong> для великого (від 24px, або від 18.7px жирним), для рамок полів, фокус-кілець та іконок. Значення перераховані 22.09.2026 за формулою відносної яскравості WCAG; попередня таблиця завищувала «білий на червоному» (5.4 замість 4.9) і занижувала «червоний на чорному» (3.7 замість 4.1).
   </p>
   <div class="table-scroll-hint">ГОРТАЙ ТАБЛИЦЮ ВПРАВО</div>
   <div class="table-scroll">
@@ -146,44 +167,16 @@
       <tr>
         <td>WHITE #FFFFFF</td>
         <td>BLACK #0A0A0A</td>
-        <td><span class="ratio">19.5:1</span></td>
+        <td><span class="ratio">19.8:1</span></td>
         <td><span class="pass">PASS AAA</span></td>
         <td><span class="demo" style="background:#0A0A0A;color:#FFFFFF;">Текст приклад</span></td>
       </tr>
       <tr>
-        <td>WHITE #FFFFFF</td>
-        <td>RED #E30613</td>
-        <td><span class="ratio">5.4:1</span></td>
-        <td><span class="pass">PASS AA</span></td>
-        <td><span class="demo" style="background:#E30613;color:#FFFFFF;">Текст приклад</span></td>
-      </tr>
-      <tr>
-        <td>BLACK #0A0A0A</td>
-        <td>WHITE #FFFFFF</td>
-        <td><span class="ratio">19.5:1</span></td>
-        <td><span class="pass">PASS AAA</span></td>
-        <td><span class="demo" style="background:#FFFFFF;color:#0A0A0A;">Текст приклад</span></td>
-      </tr>
-      <tr>
-        <td>RED #E30613</td>
-        <td>WHITE #FFFFFF</td>
-        <td><span class="ratio">5.4:1</span></td>
-        <td><span class="pass">PASS AA</span></td>
-        <td><span class="demo" style="background:#FFFFFF;color:#E30613;font-weight:700;">Текст приклад</span></td>
-      </tr>
-      <tr>
         <td>BONE #DDDDDD</td>
         <td>BLACK #0A0A0A</td>
-        <td><span class="ratio">14.4:1</span></td>
+        <td><span class="ratio">14.6:1</span></td>
         <td><span class="pass">PASS AAA</span></td>
         <td><span class="demo" style="background:#0A0A0A;color:#DDDDDD;">Текст приклад</span></td>
-      </tr>
-      <tr>
-        <td>RED #E30613</td>
-        <td>BLACK #0A0A0A</td>
-        <td><span class="ratio">3.7:1</span></td>
-        <td><span class="pass">PASS LARGE</span></td>
-        <td><span class="demo" style="background:#0A0A0A;color:#E30613;font-size:18px;font-weight:700;">Великий текст ОК</span></td>
       </tr>
       <tr>
         <td>ASH #888888</td>
@@ -192,6 +185,275 @@
         <td><span class="pass">PASS AA</span></td>
         <td><span class="demo" style="background:#0A0A0A;color:#888888;">Допоміжний текст</span></td>
       </tr>
+      <tr>
+        <td>ASH #888888</td>
+        <td>GRAPHITE #1F1F1F</td>
+        <td><span class="ratio">4.7:1</span></td>
+        <td><span class="pass">PASS AA · межа</span></td>
+        <td><span class="demo" style="background:#1F1F1F;color:#888888;">Лише ≥ 13px</span></td>
+      </tr>
+      <tr>
+        <td>ASH #888888</td>
+        <td>STEEL #2A2A2A</td>
+        <td><span class="ratio">4.1:1</span></td>
+        <td><span class="fail">ЛИШЕ ВЕЛИКИЙ</span></td>
+        <td><span class="demo" style="background:#2A2A2A;color:#888888;font-size:18px;font-weight:700;">≥ 18.7px bold</span></td>
+      </tr>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>RED #E30613</td>
+        <td><span class="ratio">4.9:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#E30613;color:#FFFFFF;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>RED DEEP #B8050F</td>
+        <td><span class="ratio">6.9:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#B8050F;color:#FFFFFF;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>RED #E30613</td>
+        <td>WHITE #FFFFFF</td>
+        <td><span class="ratio">4.9:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#FFFFFF;color:#E30613;font-weight:700;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>RED #E30613</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">4.1:1</span></td>
+        <td><span class="fail">ЛИШЕ ВЕЛИКИЙ</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#E30613;font-size:24px;font-weight:700;">≥ 24px</span></td>
+      </tr>
+      <tr>
+        <td>RED #E30613</td>
+        <td>COAL #141414</td>
+        <td><span class="ratio">3.8:1</span></td>
+        <td><span class="fail">ЛИШЕ ВЕЛИКИЙ</span></td>
+        <td><span class="demo" style="background:#141414;color:#E30613;font-size:24px;font-weight:700;">≥ 24px</span></td>
+      </tr>
+      <tr>
+        <td>RED GLOW #FF1A2B</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">5.1:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#FF1A2B;font-size:12px;">/// МІТКА 11–16PX</span></td>
+      </tr>
+      <tr>
+        <td>RED GLOW #FF1A2B</td>
+        <td>COAL #141414</td>
+        <td><span class="ratio">4.8:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#141414;color:#FF1A2B;font-size:12px;">/// МІТКА НА КАРТЦІ</span></td>
+      </tr>
+      <tr>
+        <td>DANGER #DC2626</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">4.1:1</span></td>
+        <td><span class="fail">ЛИШЕ ВЕЛИКИЙ</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#DC2626;font-size:24px;font-weight:700;">≥ 24px</span></td>
+      </tr>
+      <tr>
+        <td>DANGER TEXT #F87171</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">7.2:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#F87171;">Помилка оплати</span></td>
+      </tr>
+      <tr>
+        <td>BLACK #0A0A0A</td>
+        <td>SUCCESS #10B981</td>
+        <td><span class="ratio">7.8:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#10B981;color:#0A0A0A;font-weight:700;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>SUCCESS #10B981</td>
+        <td><span class="ratio">2.5:1</span></td>
+        <td><span class="fail">FAIL</span></td>
+        <td><span class="demo" style="background:#10B981;color:#FFFFFF;">Не використовувати</span></td>
+      </tr>
+      <tr>
+        <td>BLACK #0A0A0A</td>
+        <td>INFO #3B82F6</td>
+        <td><span class="ratio">5.4:1</span></td>
+        <td><span class="pass">PASS AA</span></td>
+        <td><span class="demo" style="background:#3B82F6;color:#0A0A0A;font-weight:700;">Текст приклад</span></td>
+      </tr>
+      <tr>
+        <td>WHITE #FFFFFF</td>
+        <td>INFO #3B82F6</td>
+        <td><span class="ratio">3.7:1</span></td>
+        <td><span class="fail">ЛИШЕ ВЕЛИКИЙ</span></td>
+        <td><span class="demo" style="background:#3B82F6;color:#FFFFFF;font-size:18px;font-weight:700;">≥ 18.7px bold</span></td>
+      </tr>
+      <tr>
+        <td>LINK #60A5FA</td>
+        <td>BLACK #0A0A0A</td>
+        <td><span class="ratio">7.8:1</span></td>
+        <td><span class="pass">PASS AAA</span></td>
+        <td><span class="demo" style="background:#0A0A0A;color:#60A5FA;text-decoration:underline;">Посилання</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="color: var(--ash); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em; line-height: 1.8;">
+    /// ПРАВИЛО ЧЕРВОНОГО ТЕКСТУ: DC RED (#E30613) як колір тексту — тільки від 24px. Мітки, номери, лінки 11–16px на темному — RED GLOW (#FF1A2B, токен <code>--red-glow</code>). Текст помилки на темному — DANGER TEXT (#F87171, токен <code>--danger-text</code>). Білий текст на SUCCESS не ставимо ніколи — тільки чорний.
+  </p>
+
+  <h3 class="s-subtitle">/// LIGHT — <span class="red">СВІТЛА ТЕМА</span></h3>
+  <p class="s-desc">
+    Бренд живе на чорному: сайт, соцмережі, ефіри, мерч. Світла тема — для носіїв, де тло біле за замовчуванням: документи, договори, email-клієнти зі світлим режимом, презентації партнерам, друк на офісному принтері, внутрішні дашборди. Значення синхронізовані з темою <code>data-dc-theme="light"</code> у <code>dashboard.dreamcar.ua</code>. Правило 60·25·15 тут інверсне: 60% білого, 25% чорного, 15% червоного, і червоний — ще рідше, ніж на темному.
+  </p>
+  <div class="colors-grid">
+    <div class="color-cell" style="background:#FAFAFA;color:#0A0A0A;border:1px solid #E1E1E6;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.85;">BG · СТОРІНКА</div>
+        <div class="name">PAGE</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #FAFAFA<br>Тло сторінки у світлій темі</div>
+    </div>
+    <div class="color-cell" style="background:#FFFFFF;color:#0A0A0A;border:1px solid #E1E1E6;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.85;">КАРТКИ · ПАНЕЛІ</div>
+        <div class="name">SURFACE</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #FFFFFF<br>Картки, таблиці, модалки</div>
+    </div>
+    <div class="color-cell" style="background:#E1E1E6;color:#0A0A0A;border:1px solid #E1E1E6;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.85;">ЛІНІЇ · РАМКИ</div>
+        <div class="name">LINE</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #E1E1E6<br>Розділювачі, рамки полів</div>
+    </div>
+    <div class="color-cell" style="background:#0A0A0A;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ТЕКСТ</div>
+        <div class="name">INK</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #0A0A0A<br>Основний текст: 19.0:1</div>
+    </div>
+    <div class="color-cell" style="background:#3C3C43;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ДОПОМІЖНИЙ</div>
+        <div class="name">INK MUTED</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #3C3C43<br>Підписи, мета: 10.5:1</div>
+    </div>
+    <div class="color-cell" style="background:#6B6B73;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ПЛЕЙСХОЛДЕРИ</div>
+        <div class="name">INK SUBTLE</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #6B6B73<br>Лише ≥ 13px: 5.1:1</div>
+    </div>
+    <div class="color-cell" style="background:#E30613;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">АКЦЕНТ · CTA</div>
+        <div class="name">RED</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #E30613<br>Кнопка, великий акцент: 4.7:1</div>
+    </div>
+    <div class="color-cell" style="background:#B8050F;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ЧЕРВОНИЙ ТЕКСТ</div>
+        <div class="name">RED TEXT</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #B8050F<br>Мітки й лінки < 24px: 6.6:1</div>
+    </div>
+    <div class="color-cell" style="background:#047857;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">УСПІХ</div>
+        <div class="name">SUCCESS</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #047857<br>Текст статусу: 5.3:1</div>
+    </div>
+    <div class="color-cell" style="background:#A16207;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">УВАГА</div>
+        <div class="name">WARNING</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #A16207<br>Текст статусу: 4.9:1</div>
+    </div>
+    <div class="color-cell" style="background:#B91C1C;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ПОМИЛКА</div>
+        <div class="name">DANGER</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #B91C1C<br>Текст помилки: 6.5:1</div>
+    </div>
+    <div class="color-cell" style="background:#1E40AF;color:#FFFFFF;">
+      <div>
+        <div class="role" style="color:#FFFFFF;opacity:.85;">ІНФО · ЛІНК</div>
+        <div class="name">INFO</div>
+      </div>
+      <div class="codes" style="color:#FFFFFF;">HEX #1E40AF<br>Посилання: 8.7:1</div>
+    </div>
+  </div>
+
+  <h3 class="s-subtitle">/// DATA VIZ — <span class="red">ГРАФІКИ І ДАШБОРДИ</span></h3>
+  <p class="s-desc">
+    Одна палітра для всіх графіків DreamCar: дашборд, звіти, презентації, пости з цифрами. Порядок фіксований: перша серія завжди червона і завжди означає «наше» або головну метрику. Більше шести серій не показуємо — решту згортаємо в «Інше» сірим. Кольори вже використовуються в <code>dashboard.dreamcar.ua</code>; усі шість дають щонайменше 7:1 на чорному тлі.
+  </p>
+  <div class="colors-grid">
+    <div class="color-cell" style="background:#E30613;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">1 · RED</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #E30613<br>Наша метрика, головна серія</div>
+    </div>
+    <div class="color-cell" style="background:#60A5FA;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">2 · BLUE</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #60A5FA<br>Порівняння, попередній період</div>
+    </div>
+    <div class="color-cell" style="background:#FBBF24;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">3 · GOLD</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #FBBF24<br>Третя серія</div>
+    </div>
+    <div class="color-cell" style="background:#10B981;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">4 · GREEN</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #10B981<br>Четверта серія; ріст</div>
+    </div>
+    <div class="color-cell" style="background:#A78BFA;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">5 · VIOLET</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #A78BFA<br>Пʼята серія</div>
+    </div>
+    <div class="color-cell" style="background:#BBBBBB;color:#0A0A0A;">
+      <div>
+        <div class="role" style="color:#0A0A0A;opacity:.8;">DATA · СЕРІЯ</div>
+        <div class="name">6 · GREY</div>
+      </div>
+      <div class="codes" style="color:#0A0A0A;">HEX #BBBBBB<br>Інше, решта, фон-серія</div>
+    </div>
+  </div>
+  <div class="table-scroll">
+  <table class="a11y-table">
+    <thead><tr><th scope="col">Елемент</th><th scope="col">Темна тема</th><th scope="col">Світла тема</th><th scope="col">Правило</th></tr></thead>
+    <tbody>
+      <tr><td>Сітка</td><td>STEEL #2A2A2A, 1px</td><td>LINE #E1E1E6, 1px</td><td>Тільки горизонтальні лінії; вертикальних немає</td></tr>
+      <tr><td>Осі й підписи</td><td>ASH #888888</td><td>INK MUTED #3C3C43</td><td>JetBrains Mono 11px, tracking +100, великі літери для назв осей</td></tr>
+      <tr><td>Значення на графіку</td><td>WHITE #FFFFFF</td><td>INK #0A0A0A</td><td>Manrope 700, 13px; тисячі через пробіл: 12 400</td></tr>
+      <tr><td>Ріст / падіння</td><td>#10B981 / #F87171</td><td>#047857 / #B91C1C</td><td>Колір ніколи не єдиний сигнал: завжди ще стрілка ▲▼ або знак +/−</td></tr>
+      <tr><td>Порожні дані</td><td>ASH, пунктир</td><td>INK SUBTLE, пунктир</td><td>Текст «Немає даних за період», не нуль і не порожній графік</td></tr>
+      <tr><td>Помилка завантаження</td><td>DANGER TEXT #F87171</td><td>DANGER #B91C1C</td><td>Що сталось + кнопка «Оновити»; без технічного коду в заголовку</td></tr>
+      <tr><td>Послідовна шкала (теплова карта)</td><td>#2A0306 → #E30613 → #FF8A93</td><td>#FDE7E9 → #E30613 → #7A030A</td><td>Одна гама, 5 кроків; діверґентну не робимо</td></tr>
     </tbody>
   </table>
   </div>

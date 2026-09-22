@@ -10,7 +10,8 @@
     --white: #FFFFFF;
     --red: #E30613;
     --red-deep: #B8050F;
-    --red-glow: #FF1A2B;
+    --red-glow: #FF1A2B;   /* червоний ТЕКСТ < 24px на темному: 5.1:1 */
+    --danger-text: #F87171; /* текст помилки на темному: 7.2:1 */
     /* Secondary palette — статуси */
     --success: #10B981;
     --warning: #F59E0B;
@@ -61,7 +62,7 @@
     align-items: center;
   }
   nav .nav-logo {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     letter-spacing: 0.2em;
   }
@@ -101,7 +102,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.3em;
-    color: var(--red);
+    color: var(--red-glow);
   }
   .hero-version {
     font-family: 'JetBrains Mono', monospace;
@@ -111,7 +112,7 @@
   }
   .hero-main { margin: auto 0; position: relative; z-index: 2; }
   .hero-title {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: clamp(56px, 14vw, 220px);
     line-height: 0.85;
     letter-spacing: -0.02em;
@@ -195,12 +196,12 @@
   .s-num {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.3em;
     margin-bottom: 16px;
   }
   .s-title {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: clamp(48px, 8vw, 120px);
     line-height: 0.9;
     margin-bottom: 24px;
@@ -215,7 +216,7 @@
     line-height: 1.6;
   }
   .s-subtitle {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 32px;
     margin: 60px 0 24px;
     letter-spacing: 0.05em;
@@ -225,7 +226,7 @@
   .s-eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 12px;
     margin-top: 40px;
@@ -235,7 +236,7 @@
   /* === MANIFESTO === */
   .manifesto {
     max-width: 1100px;
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: clamp(28px, 4.5vw, 56px);
     line-height: 1.05;
     letter-spacing: 0.01em;
@@ -271,7 +272,7 @@
   }
   .pyramid-level:nth-child(1) .layer { color: rgba(255,255,255,0.7); }
   .pyramid-level .value {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 28px;
     line-height: 1;
     letter-spacing: 0.03em;
@@ -303,7 +304,7 @@
     display: block;
   }
   .card h4 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 28px;
     letter-spacing: 0.03em;
     margin-bottom: 12px;
@@ -317,7 +318,7 @@
   .card .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 8px;
   }
@@ -342,12 +343,12 @@
   .strategy-cell .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 12px;
   }
   .strategy-cell .heading {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 32px;
     line-height: 1;
     margin-bottom: 14px;
@@ -409,7 +410,7 @@
     margin-bottom: 16px;
   }
   .persona-head .name {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 32px;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -433,7 +434,7 @@
   .persona-section .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 8px;
   }
@@ -454,7 +455,7 @@
     font-weight: 700;
   }
   .persona-quote {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     line-height: 1.2;
     color: var(--white);
@@ -482,7 +483,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.15em;
-    color: var(--red);
+    color: var(--red-glow);
     text-transform: uppercase;
   }
   .compete-table td {
@@ -689,7 +690,7 @@
     letter-spacing: 0.1em;
   }
   .construction .mark strong {
-    color: var(--red);
+    color: var(--red-glow);
     display: block;
     font-size: 14px;
     margin-bottom: 4px;
@@ -766,7 +767,7 @@
     opacity: 0.6;
   }
   .color-cell .name {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 28px;
     line-height: 1;
     margin-top: 8px;
@@ -782,10 +783,10 @@
   .color-cell.cl-red { background: var(--red); color: var(--white); }
   .color-cell.cl-red-deep { background: var(--red-deep); color: var(--white); }
   .color-cell.cl-white { background: var(--white); color: var(--black); }
-  .color-cell.cl-success { background: var(--success); color: var(--white); }
+  .color-cell.cl-success { background: var(--success); color: var(--black); }
   .color-cell.cl-warning { background: var(--warning); color: var(--black); }
   .color-cell.cl-danger { background: var(--danger); color: var(--white); }
-  .color-cell.cl-info { background: var(--info); color: var(--white); }
+  .color-cell.cl-info { background: var(--info); color: var(--black); }
 
   .color-ratio {
     margin-top: 40px;
@@ -831,7 +832,7 @@
     background: var(--graphite);
     font-size: 11px;
     letter-spacing: 0.15em;
-    color: var(--red);
+    color: var(--red-glow);
     text-transform: uppercase;
   }
   .a11y-table td .ratio {
@@ -841,7 +842,7 @@
     color: var(--white);
   }
   .a11y-table .pass { color: var(--success); font-weight: 700; }
-  .a11y-table .fail { color: var(--danger); font-weight: 700; }
+  .a11y-table .fail { color: var(--danger-text); font-weight: 700; }
   .a11y-table .demo {
     padding: 8px 14px;
     border-radius: 2px;
@@ -871,7 +872,7 @@
     font-size: 13px;
     margin-bottom: 8px;
   }
-  .type-display { font-family: 'Oswald', 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 96px); line-height: 0.9; letter-spacing: 0.01em; }
+  .type-display { font-family: 'Oswald', sans-serif; font-size: clamp(48px, 7vw, 96px); line-height: 0.9; letter-spacing: 0.01em; }
   .type-headline { font-family: 'Archivo Black', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 0.9; letter-spacing: 0.02em; }
   .type-headline .red { color: var(--red); }
   .type-body { font-family: 'Manrope', sans-serif; font-size: 18px; line-height: 1.6; max-width: 700px; }
@@ -896,7 +897,7 @@
   .type-scale-row .scale-name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.15em;
   }
   .type-scale-row .scale-sample {
@@ -930,7 +931,7 @@
   .spacing-row .name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
-    color: var(--red);
+    color: var(--red-glow);
     font-weight: 700;
   }
   .spacing-row .px {
@@ -973,7 +974,7 @@
     text-align: center;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red);
+    color: var(--red-glow);
   }
   .breakpoints {
     display: grid;
@@ -987,7 +988,7 @@
     border-left: 3px solid var(--red);
     font-family: 'JetBrains Mono', monospace;
   }
-  .bp-card .name { color: var(--red); font-size: 11px; letter-spacing: 0.15em; margin-bottom: 8px; }
+  .bp-card .name { color: var(--red-glow); font-size: 11px; letter-spacing: 0.15em; margin-bottom: 8px; }
   .bp-card .val { color: var(--white); font-size: 18px; font-weight: 700; }
   .bp-card .desc { color: var(--ash); font-size: 10px; margin-top: 4px; line-height: 1.4; }
 
@@ -1026,7 +1027,7 @@
     background: var(--red);
     color: var(--white);
     padding: 16px 32px;
-    border-radius: 999px;
+    border-radius: 0;
     font-family: 'Archivo Black', sans-serif;
     font-size: 16px;
     letter-spacing: 0.1em;
@@ -1081,7 +1082,7 @@
   .mono-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
-    color: var(--red);
+    color: var(--red-glow);
     border: 1px solid var(--red);
     padding: 8px 14px;
     letter-spacing: 0.2em;
@@ -1175,7 +1176,7 @@
     display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 8px;
   }
@@ -1197,7 +1198,7 @@
   .form-input::placeholder { color: var(--ash); }
   .form-help { font-size: 12px; color: var(--ash); margin-top: 6px; }
   .form-input.error { border-color: var(--danger); }
-  .form-error { font-size: 12px; color: var(--danger); margin-top: 6px; }
+  .form-error { font-size: 12px; color: var(--danger-text); margin-top: 6px; }
 
   /* === MOTION === */
   .motion-grid {
@@ -1237,7 +1238,7 @@
   .motion-card .name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.15em;
     margin-bottom: 4px;
   }
@@ -1316,7 +1317,7 @@
     font-size: 18px;
   }
   .channel .ch-name {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 24px;
     letter-spacing: 0.05em;
   }
@@ -1324,7 +1325,7 @@
     margin-bottom: 12px;
   }
   .channel .row strong {
-    color: var(--red);
+    color: var(--red-glow);
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.15em;
@@ -1348,12 +1349,12 @@
   .rubric .tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.15em;
     margin-bottom: 8px;
   }
   .rubric h4 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 26px;
     letter-spacing: 0.03em;
     margin-bottom: 10px;
@@ -1446,7 +1447,7 @@
     letter-spacing: 0.1em;
   }
   .arc-step h4 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 28px;
     margin: 12px 0 8px;
   }
@@ -1476,7 +1477,7 @@
     margin-bottom: 8px;
   }
   .crisis-card h4 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 24px;
     margin-bottom: 12px;
   }
@@ -1496,7 +1497,7 @@
     font-style: normal;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--red);
+    color: var(--red-glow);
     letter-spacing: 0.2em;
     margin-bottom: 8px;
   }
@@ -1526,7 +1527,7 @@
     display: block;
   }
   .trust-card .name {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 22px;
     margin-bottom: 8px;
   }
@@ -1606,7 +1607,7 @@
   }
   .ig-post .main { position: relative; z-index: 2; }
   .ig-post .headline {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: clamp(38px, 7vw, 72px);
     line-height: 0.85;
   }
@@ -1725,7 +1726,7 @@
     opacity: 0.7;
   }
   .ig-story .center .headline {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 52px;
     line-height: 0.85;
   }
@@ -1761,9 +1762,9 @@
     margin-bottom: 12px;
   }
   .partner-rule.allow .head { color: var(--success); }
-  .partner-rule.deny .head { color: var(--danger); }
+  .partner-rule.deny .head { color: var(--danger-text); }
   .partner-rule h5 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 22px;
     margin-bottom: 8px;
   }
@@ -1779,7 +1780,7 @@
   }
   .partner-rule li:last-child { border-bottom: none; }
   .partner-rule.allow li::before { content: '✓'; color: var(--success); }
-  .partner-rule.deny li::before { content: '✕'; color: var(--danger); }
+  .partner-rule.deny li::before { content: '✕'; color: var(--danger-text); }
 
   .brief-template {
     background: var(--coal);
@@ -1835,7 +1836,7 @@
   }
   .tokens-code .comment { color: var(--ash); }
   .tokens-code .key { color: var(--red); }
-  .tokens-code .val { color: #4ade80; }
+  .tokens-code .val { color: var(--success); }
   .tokens-code .str { color: var(--warning); }
 
   /* === ASSETS === */
@@ -1853,11 +1854,11 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.2em;
-    color: var(--red);
+    color: var(--red-glow);
     margin-bottom: 12px;
   }
   .asset .name {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 28px;
     margin-bottom: 16px;
   }
@@ -1866,7 +1867,7 @@
     padding: 8px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: #4ade80;
+    color: var(--success);
     display: block;
     margin-top: 8px;
     border-left: 2px solid var(--red);
@@ -1901,7 +1902,7 @@
     margin-bottom: 60px;
   }
   .footer-title {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 56px;
     line-height: 0.9;
   }
@@ -1946,7 +1947,7 @@
     section, .hero, footer { background: #0A0A0A !important; }
     .s-desc, .hero-sub, .manifesto, .card p, .strategy-cell .body { color: #DDDDDD !important; }
     .type-body, .asset p { color: #FFFFFF !important; }
-    .asset code { background: #0A0A0A !important; color: #4ade80 !important; }
+    .asset code { background: #0A0A0A !important; color: var(--success) !important; }
 
     .hero-title { font-size: 56px !important; line-height: 0.9 !important; }
     .s-title { font-size: 48px !important; line-height: 0.9 !important; }
@@ -2190,7 +2191,7 @@ body.has-sidebar { display: flex; min-height: 100vh; }
 
 .sidebar .group { margin-bottom: 18px; }
 .sidebar .group-title {
-  color: var(--red);
+  color: var(--red-glow);
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -2307,11 +2308,11 @@ body.has-sidebar { display: flex; min-height: 100vh; }
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.2em;
-  color: var(--red);
+  color: var(--red-glow);
   margin-bottom: 6px;
 }
 .section-page-nav .nav-title {
-  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.1;
@@ -2369,12 +2370,12 @@ body.has-sidebar { display: flex; min-height: 100vh; }
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.22em;
-  color: var(--red);
+  color: var(--red-glow);
   display: block;
   margin-bottom: 8px;
 }
 .toc-card .name {
-  font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.1;
@@ -2431,7 +2432,7 @@ body.has-sidebar { display: flex; min-height: 100vh; }
 /* === SIDEBAR SEARCH · повнотекстові результати (v3.9.2) === */
 .sidebar-search-results { display: flex; flex-direction: column; gap: 6px; margin: 0 0 14px; }
 .sidebar-search-results:empty { margin: 0; }
-.sb-res-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); padding: 8px 0 4px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.sb-res-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-glow); padding: 8px 0 4px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
 .sb-res-head.sb-res-loading { color: var(--ash); border-color: transparent; text-align: center; }
 .sb-res { display: block; padding: 8px 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-left: 2px solid var(--red); text-decoration: none; color: var(--white); transition: background 120ms, border-color 120ms; }
 .sb-res:hover { background: rgba(227,6,19,0.08); border-color: var(--red); }
@@ -2557,7 +2558,7 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
   content: '⇩';
   font-size: 16px;
   line-height: 1;
-  color: var(--red);
+  color: var(--red-glow);
 }
 .sidebar .group.pdf-group nav a .num { display: none; }
 

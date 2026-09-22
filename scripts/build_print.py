@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Генерує print.html — усі 30 розділів однією сторінкою для Друк → Зберегти як PDF.
+Генерує print.html — усі 32 розділи однією сторінкою для Друк → Зберегти як PDF.
 Запуск: python3 scripts/build_print.py (з будь-якої директорії)
 """
 import re, datetime
@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SECTIONS = ROOT / "sections"
-VERSION = "4.0"
+VERSION = "4.2"
 
 CATALOG = [
     ("quickstart","00","Quick Start"),("manifesto","01","Маніфест"),("strategy","02","Стратегія"),
@@ -21,6 +21,7 @@ CATALOG = [
     ("metrics","20","Метрики · Roadmap"),("support","21","Регламент підтримки"),("ai-content","22","AI-контент"),
     ("examples","23","Examples Library"),("photography-brief","24","Photography Brief"),("mobile","25","Mobile-First"),
     ("onboarding","26","Onboarding Deck"),("tools","27","Brand Tools"),("generator","28","Post Generator"),
+    ("video","29","Відео"),("localization","30","Локалізація"),
 ]
 
 def extract(sid):
@@ -51,7 +52,7 @@ head = '''<!DOCTYPE html>
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
 <title>DreamCar Brand Book v''' + VERSION + ''' · Версія для друку</title>
-<meta name="description" content="DreamCar Brand Book v''' + VERSION + ''' — повна друкована версія всіх 30 розділів.">
+<meta name="description" content="DreamCar Brand Book v''' + VERSION + ''' — повна друкована версія всіх 32 розділів.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
@@ -64,7 +65,7 @@ head = '''<!DOCTYPE html>
 .print-toolbar .btn-link:hover { border-color: var(--red); color: var(--white); }
 .print-cover { padding: 96px 32px; text-align: center; border-bottom: 1px solid var(--line); }
 .print-cover .ver { font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 12px; letter-spacing: 0.3em; margin-bottom: 24px; }
-.print-cover h1 { font-family: 'Oswald', 'Bebas Neue', sans-serif; font-weight: 700; font-size: 84px; line-height: 0.9; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
+.print-cover h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 84px; line-height: 0.9; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
 .print-cover h1 .red { color: var(--red); }
 .print-cover .sub { font-size: 14px; color: var(--bone); margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 .print-cover .meta { margin-top: 48px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
@@ -101,7 +102,7 @@ head = '''<!DOCTYPE html>
 <div class="print-cover">
   <div class="ver">/// BRAND BOOK · V''' + VERSION + ''' · 07.2026</div>
   <h1>DREAM<span class="red">CAR</span></h1>
-  <div class="sub"><strong>МРІЯ. ЗА ЦІНОЮ ЧАШКИ КАВИ.</strong><br>Операційна система бренду — всі 30 розділів у друкованому форматі: стратегія, голос, візуальна система, юридично безпечна мова.</div>
+  <div class="sub"><strong>МРІЯ. ЗА ЦІНОЮ ЧАШКИ КАВИ.</strong><br>Операційна система бренду — всі 32 розділи у друкованому форматі: стратегія, голос, візуальна система, юридично безпечна мова.</div>
   <div class="meta">DREAMCAR · UA · EST. 2016 · 17 АВТО ВРУЧЕНО · 500K+ СПІЛЬНОТА</div>
 </div>
 

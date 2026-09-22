@@ -1,4 +1,4 @@
-# DreamCar Brand Book v4.0 «Etalon»
+# DreamCar Brand Book v4.2 «Etalon»
 
 [![Brand Lint](https://github.com/dreamcarua/brand-book/actions/workflows/brand-lint.yml/badge.svg)](https://github.com/dreamcarua/brand-book/actions/workflows/brand-lint.yml)
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 📚 Що всередині — 30 розділів
+## 📚 Що всередині — 32 розділи
 
 | Блок | Розділи |
 |---|---|
@@ -18,9 +18,9 @@
 | **Стратегія** | 01 Маніфест · 02 Стратегія · 03 Аудиторія · 04 Контекст ринку |
 | **Візуальна система** | 05 Логотип · 06 Кольори · 07 Типографіка · 08 Сітка та елементи |
 | **Інтерфейс** | 09 UI-компоненти · 10 Анімації · 25 Mobile-First |
-| **Голос і контент** | 11 Голос і мова · **11B Legal-safe лексикон** · 12 Контент · 13 Кризові комунікації · 23 Examples Library |
+| **Голос і контент** | 11 Голос і мова · **11B Legal-safe лексикон** · 12 Контент · 13 Кризові комунікації · 23 Examples Library · 30 Локалізація |
 | **Партнери і довіра** | 14 Партнери · 15 Довіра і доступність (WCAG 2.1 AA) |
-| **Техніка** | 16 Дизайн-ресурси · 17 Стиль медіа · 24 Photography Brief |
+| **Техніка** | 16 Дизайн-ресурси · 17 Стиль медіа · 24 Photography Brief · 29 Відео |
 | **Точки контакту** | 18 Touchpoints · 19 Мерч |
 | **Підсумки** | 20 Метрики · Roadmap · 21 Регламент підтримки · 22 AI-контент |
 
@@ -29,7 +29,7 @@
 - **Voice Linter** — миттєва перевірка тексту на NEVER-слова + автофікс
 - **Post Generator** — параметри акції → готовий пост IG/TG/Email + PNG
 - **Color Contrast Checker** — WCAG 2.1 AA/AAA
-- **Design Tokens** — JSON + CSS, клік = скопійовано
+- **Design Tokens v4.2** — `tokens/dreamcar-tokens.css` і `.json`: темна + світла тема, палітра графіків
 - **PWA** — працює offline, встановлюється як додаток
 
 ## ⚖ Ієрархія правил
@@ -41,14 +41,14 @@
 
 ```bash
 python3 scripts/build_search_index.py   # assets/search-index.json
-python3 scripts/build_print.py          # print.html (усі 30 розділів)
+python3 scripts/build_print.py          # print.html (усі 32 розділи)
 ```
 
 ## 📦 Структура
 
 ```
 index.html            — лендінг + TOC
-sections/*.html       — 30 розділів (кожен самодостатній)
+sections/*.html       — 32 розділи (кожен самодостатній)
 print.html            — версія для друку/PDF (генерується)
 assets/styles.css     — єдина дизайн-система
 assets/sidebar.js     — сайдбар + пошук + SEO-мета + global-header

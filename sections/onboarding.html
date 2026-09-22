@@ -14,7 +14,7 @@
   .slide { background: var(--coal); border: 1px solid var(--line); padding: 0; aspect-ratio: 16/9; max-width: 1080px; margin: 0 auto; position: relative; overflow: hidden; }
   .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
   .slide-content { padding: 48px 56px; height: 100%; display: flex; flex-direction: column; position: relative; }
-  .slide-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 12px; }
+  .slide-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px; }
   .slide h2 { font-family: 'Archivo Black', sans-serif; font-size: 48px; color: var(--white); line-height: 1.05; margin-bottom: 24px; }
   .slide .lead { font-size: 18px; color: var(--bone); line-height: 1.5; max-width: 720px; margin-bottom: 24px; }
   .slide ul { list-style: none; padding: 0; line-height: 1.9; font-size: 16px; color: var(--bone); }
@@ -133,7 +133,7 @@
         </div>
         <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--bone); letter-spacing: 0.1em; margin-top: 8px;">#0A0A0A · #E30613 · #FFFFFF</p>
         <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap; align-items: baseline;">
-          <span style="font-family: 'Oswald', 'Bebas Neue', sans-serif; font-weight: 700; font-size: 22px; color: var(--white);">OSWALD</span>
+          <span style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; color: var(--white);">OSWALD</span>
           <span style="font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--white);">ARCHIVO</span>
           <span style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 22px; color: var(--white);">Manrope</span>
           <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; color: var(--white);">JetBrains Mono</span>
@@ -163,17 +163,17 @@
     <!-- SLIDE 6: NEVER WORDS -->
     <div class="slide red">
       <div class="slide-content">
-        <div class="slide-num" style="color: var(--danger);">/// 06 / 10 — ЦІ СЛОВА — НІКОЛИ</div>
-        <h2>ЗАБОРОНЕНИЙ <span style="color: var(--danger);">СЛОВНИК.</span></h2>
+        <div class="slide-num" style="color: var(--danger-text);">/// 06 / 10 — ЦІ СЛОВА — НІКОЛИ</div>
+        <h2>ЗАБОРОНЕНИЙ <span style="color: var(--danger-text);">СЛОВНИК.</span></h2>
         <p class="lead">Юридичні ризики, блокування реклами, втрата довіри. Якщо хтось бачить ці слова — повертаємо матеріал на переробку. Без винятків.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--danger);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Archivo Black', sans-serif; font-size: 18px; color: var(--danger-text);">
           <div>✕ ШАНС</div><div>✕ ЛОТЕРЕЯ</div>
           <div>✕ ВИГРАЙ</div><div>✕ КАЗИНО</div>
           <div>✕ КВИТОК</div><div>✕ ДЖЕКПОТ</div>
           <div>✕ ХАЛЯВА</div><div>✕ СТАВКА</div>
         </div>
         <p style="margin-top: 20px; font-size: 14px; color: var(--bone);"><strong style="color: var(--white);">Замість «квитки» — «токени». Замість «розіграш» — «промоакція».</strong></p>
-        <div class="footer-mark" style="color: var(--danger);">DREAMCAR · NEVER WORDS</div>
+        <div class="footer-mark" style="color: var(--danger-text);">DREAMCAR · NEVER WORDS</div>
         <div class="corner-num">06</div>
       </div>
     </div>
@@ -251,7 +251,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>На першому день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
     </p>

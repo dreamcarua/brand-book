@@ -37,7 +37,7 @@
   .ig-mock-name { font-weight: 700; color: var(--white); font-size: 13px; }
   .ig-mock-tag { font-size: 11px; color: var(--ash); }
   .ig-mock-media { aspect-ratio: 1; background: linear-gradient(180deg, #0a0a0a, #1a1a1a); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); padding: 24px; position: relative; }
-  .ig-mock-media .promo-num { position: absolute; top: 16px; left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.18em; }
+  .ig-mock-media .promo-num { position: absolute; top: 16px; left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; }
   .ig-mock-media .car-emoji { font-size: 72px; margin-bottom: 18px; filter: drop-shadow(0 0 30px rgba(227,6,19,0.4)); }
   .ig-mock-media .price-tag { font-family: 'Archivo Black', sans-serif; font-size: 42px; color: var(--white); line-height: 1; }
   .ig-mock-media .price-sub { font-family: 'Manrope', sans-serif; font-size: 13px; color: var(--bone); margin-top: 8px; }
@@ -233,7 +233,7 @@
 
       <!-- HASHTAGS -->
       <div class="hash-list">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.18em; margin-bottom: 10px;">/// ХЕШТЕГИ</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 10px;">/// ХЕШТЕГИ</div>
         <div class="hash-row" id="hashtagsList"></div>
         <button class="export-btn copy-output" onclick="copyText('hashtagsList', this)" style="margin-top: 10px;">📋 COPY HASHTAGS</button>
       </div>
@@ -245,7 +245,7 @@
       </div>
 
       <div style="margin-top: 32px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.12), transparent); border-left: 3px solid var(--red);">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// АЛГОРИТМ ГЕНЕРАЦІЇ</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// АЛГОРИТМ ГЕНЕРАЦІЇ</div>
         <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
           Кожен пост проходить через voice guide розділу 11. Жодне слово з NEVER-списку (шанс, виграй, лотерея, квиток, халява) не з'являється. CTA — стандартний «Взяти участь». Структура — наш voice: прямо, коротко, дієсловом.
         </p>
@@ -265,7 +265,7 @@
 
 <nav class="section-page-nav">
 <a href="tools.html" class="prev"><span class="nav-label">← 27 ПОПЕРЕДНІЙ</span><span class="nav-title">Brand Tools</span></a>
-<a href="../index.html" class="next"><span class="nav-label">↑ ДО ЗМІСТУ</span><span class="nav-title">Brand Book</span></a>
+<a href="video.html" class="next"><span class="nav-label">29 НАСТУПНИЙ →</span><span class="nav-title">Відео</span></a>
 </nav>
 </main>
 
@@ -385,7 +385,7 @@ function generate() {
     case 'winner':
       igCaption = `<span class="ig-name-inline">dreamcar.ua</span>` +
         `<strong style="color:#fff">🏆 ${carFull} — у нового власника.</strong><br>` +
-        `Промоакція №${num} завершена. Авто передано переможцю в прямому ефірі ${dateUA}.<br>` +
+        `Промоакція №${num} завершена. Авто передано новому власнику в прямому ефірі ${dateUA}.<br>` +
         `Дякуємо ${participants} учасникам.<br>` +
         `Наступна промоакція — анонс скоро.<br><br>` +
         `<span class="ig-hash">#dreamcar #нові_власники #${brand.toLowerCase()}</span>`;
@@ -488,7 +488,7 @@ function downloadJSON() {
       hashtags: document.getElementById('hashtagsList').textContent
     },
     generated_at: new Date().toISOString(),
-    brand_book_version: 'v3.9'
+    brand_book_version: 'v4.2'
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
   const a = document.createElement('a');

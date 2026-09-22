@@ -27,7 +27,7 @@
   .lint-issue .sugg { font-size: 12px; color: var(--bone); margin-top: 4px; }
   .linter-stats { display: flex; gap: 16px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; }
   .linter-stats .stat { padding: 8px 14px; background: var(--black); border: 1px solid var(--steel); border-radius: 4px; }
-  .linter-stats .stat.danger { border-color: var(--danger); color: var(--danger); }
+  .linter-stats .stat.danger { border-color: var(--danger); color: var(--danger-text); }
   .linter-stats .stat.warning { border-color: var(--warning); color: var(--warning); }
   .linter-stats .stat.success { border-color: var(--success); color: var(--success); }
 
@@ -45,7 +45,7 @@
   .cc-result .ratio { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--white); line-height: 1; }
   .cc-grade { display: inline-block; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; margin-left: 8px; border-radius: 3px; }
   .cc-grade.aaa { background: var(--success); color: var(--black); }
-  .cc-grade.aa { background: var(--info); color: var(--white); }
+  .cc-grade.aa { background: var(--info); color: var(--black); }
   .cc-grade.fail { background: var(--danger); color: var(--white); }
 
   /* ====== ASSETS DOWNLOAD ====== */
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <h4 style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red);">/// ПРЕСЕТИ — НАШІ БРЕНДОВІ ПАРИ</h4>
+    <h4 style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red-glow);">/// ПРЕСЕТИ — НАШІ БРЕНДОВІ ПАРИ</h4>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 12px;">
       <button class="copy-action" onclick="setColors('#FFFFFF','#0A0A0A')">⚪ Білий на чорному</button>
       <button class="copy-action" onclick="setColors('#FFFFFF','#E30613')">⚪ Білий на червоному</button>
@@ -159,7 +159,7 @@
     <h3>🎟 DESIGN TOKENS — КЛІК = СКОПІЙОВАНО</h3>
     <p class="desc">Кожен токен — клікни і отримай HEX (для дизайнерів) або CSS-змінну (для розробників). Холдер «Alt» при кліку = JSON value.</p>
 
-    <h4 style="margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// КОЛЬОРИ</h4>
+    <h4 style="margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// КОЛЬОРИ</h4>
     <div class="token-grid">
       <div class="token" onclick="copyToken(this, '#0A0A0A', '--bg')"><div class="swatch" style="background: #0A0A0A; border: 1px solid var(--steel);"></div><div class="name">--bg</div><div class="val">#0A0A0A</div></div>
       <div class="token" onclick="copyToken(this, '#E30613', '--red')"><div class="swatch" style="background: #E30613;"></div><div class="name">--red</div><div class="val">#E30613</div></div>
@@ -173,7 +173,7 @@
       <div class="token" onclick="copyToken(this, '#DC2626', '--danger')"><div class="swatch" style="background: #DC2626;"></div><div class="name">--danger</div><div class="val">#DC2626</div></div>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// SPACING (4px BASE)</h4>
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// SPACING (4px BASE)</h4>
     <div class="token-grid">
       <div class="token" onclick="copyToken(this, '4px', '--space-1')"><div class="swatch" style="background: var(--red); height: 4px;"></div><div class="name">--space-1</div><div class="val">4px</div></div>
       <div class="token" onclick="copyToken(this, '8px', '--space-2')"><div class="swatch" style="background: var(--red); height: 8px;"></div><div class="name">--space-2</div><div class="val">8px</div></div>
@@ -191,7 +191,7 @@
     <h3>📦 ASSET DOWNLOAD CENTER</h3>
     <p class="desc">Всі офіційні бренд-ассети в одному місці. Кожен — у потрібному форматі. Не використовуй ассети з інших джерел.</p>
 
-    <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// ЛОГОТИП</h4>
+    <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ЛОГОТИП</h4>
     <div class="asset-grid">
       <a class="asset" href="../favicon.svg" download="dreamcar-logo.svg">
         <div class="asset-icon">🏁</div>
@@ -220,7 +220,7 @@
       </a>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// PDF / БРИФИ</h4>
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// PDF / БРИФИ</h4>
     <div class="asset-grid">
       <a class="asset" href="../print.html" target="_blank" rel="noopener">
         <div class="asset-icon">📄</div>
@@ -239,7 +239,7 @@
       </a>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red);">/// ШРИФТИ (Google Fonts)</h4>
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ШРИФТИ (Google Fonts)</h4>
     <div class="asset-grid">
       <a class="asset" href="https://fonts.google.com/specimen/Oswald" target="_blank" rel="noopener">
         <div class="asset-icon" style="font-family: 'Oswald'; font-weight: 700;">Aa</div>
@@ -273,7 +273,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: linear-gradient(135deg, rgba(227,6,19,0.16), transparent); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>Voice Linter</strong> — 1 хв замість 10 хв ручної перевірки.<br>
       <strong>Contrast Checker</strong> — 5 сек замість пошуку онлайн-калькулятора.<br>
@@ -596,7 +596,7 @@ function downloadAllTokens() {
     },
     space: { 1: '4px', 2: '8px', 3: '16px', 4: '24px', 5: '32px', 6: '48px' },
     fontFamily: {
-      heading: '"Oswald", "Bebas Neue", sans-serif',
+      heading: '"Oswald", sans-serif',
       hero: '"Archivo Black", sans-serif',
       body: '"Manrope", sans-serif',
       mono: '"JetBrains Mono", monospace'

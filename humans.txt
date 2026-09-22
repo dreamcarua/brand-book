@@ -8,7 +8,7 @@
   COO: Давид
 
 /* SITE */
-  Last update: 2026-07-07
+  Last update: 2026-09-22
   Standards: HTML5, CSS3, ES2020, WCAG 2.1 AA
   Components: PWA, Service Worker, IndexedDB-free (memory-first)
   Software: Pure HTML/CSS/JS (no build step)

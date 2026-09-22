@@ -1,0 +1,111 @@
+{
+  "$meta": {
+    "name": "DreamCar Design Tokens",
+    "version": "4.2.0",
+    "updated": "2026-09-22",
+    "source": "https://brand.dreamcar.ua/sections/tokens.html",
+    "themes": [
+      "dark (default)",
+      "light"
+    ]
+  },
+  "color": {
+    "dark": {
+      "black": "#0A0A0A",
+      "coal": "#141414",
+      "graphite": "#1F1F1F",
+      "steel": "#2A2A2A",
+      "ash": "#888888",
+      "bone": "#DDDDDD",
+      "white": "#FFFFFF",
+      "red": "#E30613",
+      "red-deep": "#B8050F",
+      "red-glow": "#FF1A2B",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#DC2626",
+      "danger-text": "#F87171",
+      "info": "#3B82F6",
+      "link": "#60A5FA"
+    },
+    "light": {
+      "page": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "line": "#E1E1E6",
+      "ink": "#0A0A0A",
+      "ink-muted": "#3C3C43",
+      "ink-subtle": "#6B6B73",
+      "red": "#E30613",
+      "red-text": "#B8050F",
+      "success": "#047857",
+      "warning": "#A16207",
+      "danger": "#B91C1C",
+      "info": "#1E40AF"
+    },
+    "dataviz": [
+      "#E30613",
+      "#60A5FA",
+      "#FBBF24",
+      "#10B981",
+      "#A78BFA",
+      "#BBBBBB"
+    ]
+  },
+  "font": {
+    "display": "'Oswald', sans-serif",
+    "brand": "'Archivo Black', sans-serif",
+    "body": "'Manrope', sans-serif",
+    "mono": "'JetBrains Mono', monospace"
+  },
+  "fontSize": {
+    "display": "96px",
+    "h1": "64px",
+    "h2": "48px",
+    "h3": "32px",
+    "h4": "24px",
+    "h5": "18px",
+    "body-lg": "18px",
+    "body": "16px",
+    "body-sm": "14px",
+    "caption": "13px",
+    "mono": "11px"
+  },
+  "spacing": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "24px",
+    "6": "32px",
+    "7": "48px",
+    "8": "64px",
+    "9": "96px",
+    "10": "128px"
+  },
+  "radius": {
+    "none": "0px",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "pill": "999px"
+  },
+  "motion": {
+    "fast": "150ms",
+    "base": "300ms",
+    "slow": "500ms",
+    "easeOut": "cubic-bezier(0.2, 0.9, 0.3, 1)",
+    "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "shadow": {
+    "sm": "0 2px 4px rgba(0,0,0,0.5)",
+    "md": "0 8px 16px rgba(0,0,0,0.4)",
+    "lg": "0 20px 40px rgba(0,0,0,0.5)",
+    "glow-red": "0 0 0 3px #E30613"
+  },
+  "breakpoint": {
+    "mobile": "640px",
+    "tablet": "1024px",
+    "desktop": "1440px",
+    "container": "1280px"
+  }
+}

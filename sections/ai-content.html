@@ -23,12 +23,12 @@
   .ai-cell.amber { background: rgba(245,158,11,0.10); }
   .ai-cell.amber .head { color: var(--warning); }
   .ai-cell.red { background: rgba(220,38,38,0.10); }
-  .ai-cell.red .head { color: var(--danger); }
+  .ai-cell.red .head { color: var(--danger-text); }
   .ai-cell h4 { font-family: 'Oswald', sans-serif; font-size: 17px; color: var(--white); margin-bottom: 12px; font-weight: 700; }
   .ai-cell ul { list-style: none; padding: 0; line-height: 1.9; font-size: 14px; color: var(--bone); }
   .ai-cell.green li::before { content: '✓ '; color: var(--success); }
   .ai-cell.amber li::before { content: '⚠ '; color: var(--warning); }
-  .ai-cell.red li::before { content: '✕ '; color: var(--danger); }
+  .ai-cell.red li::before { content: '✕ '; color: var(--danger-text); }
   .prompt-block { background: var(--black); border: 1px solid var(--steel); padding: 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--bone); line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin-top: 14px; border-radius: 4px; max-height: 480px; overflow-y: auto; }
   .prompt-block .keyword { color: var(--red); }
   .copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; margin-top: 10px; transition: border-color 0.15s; }
@@ -117,14 +117,14 @@
       <div class="head">/// ✕ ЧЕРВОНА — НІКОЛИ</div>
       <h4>ЗАБОРОНЕНО ПОВНІСТЮ</h4>
       <ul>
-        <li>Deepfake / AI-обличчя переможців (катастрофа довіри)</li>
+        <li>Deepfake / AI-обличчя власників (катастрофа довіри)</li>
         <li>AI-генеровані відгуки клієнтів (юр. порушення)</li>
         <li>AI-фото авто яке ми «нібито» розіграємо (фрод)</li>
         <li>AI-голос реальних співробітників без явної згоди</li>
         <li>Підробка скріншотів TG / IG / банку</li>
         <li>AI-стилізація фото під чужий бренд (Audi, BMW logo manipulation)</li>
         <li>Юридичні документи / договори (тільки юрист)</li>
-        <li>Розрахунки виплат / сум переможців (тільки бухгалтерія)</li>
+        <li>Розрахунки виплат / сум власникам (тільки бухгалтерія)</li>
         <li>Відповіді що містять обіцянку виграшу («ви виграєте», «ваш виграш»)</li>
         <li>Auto-reply без supervision на кризові звернення (P1)</li>
       </ul>
@@ -288,7 +288,7 @@
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label">/// PERSONALITY RIGHTS</span>
       <h4>ОБЛИЧЧЯ І ГОЛОС</h4>
-      <p>AI-обличчя чи голос реальної людини без її згоди — порушення прав. Це особисто переможців теж стосується.</p>
+      <p>AI-обличчя чи голос реальної людини без її згоди — порушення прав. Це особисто власників теж стосується.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label">/// TRADEMARK</span>
