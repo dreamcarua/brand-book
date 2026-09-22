@@ -80,6 +80,12 @@ def update_sections():
         s = p.read_text(encoding="utf-8")
         label = f'{it["num"]} {it["name"]}'
         s = re.sub(r"<title>.*?</title>", f"<title>{esc(label)} · DreamCar Brand Book</title>", s, count=1, flags=re.S)
+        # meta description from SECTIONS (one source)
+        meta = esc(f'{it["num"]} {it["name"]}. {it["desc"]} DreamCar Brand Book v{VERSION}.').replace('"', '&quot;')
+        if re.search(r'<meta name="description"[^>]*>', s):
+            s = re.sub(r'<meta name="description"[^>]*>', f'<meta name="description" content="{meta}">', s, count=1)
+        else:
+            s = s.replace('<title>', f'<meta name="description" content="{meta}">\n<title>', 1)
         # breadcrumb current item
         s = re.sub(r'(<div class="section-bread">.*?<span style="color:var\(--white\);">)(.*?)(</span>)',
                    lambda m: m.group(1) + f'{it["num"]} · {esc(it["name"])}' + m.group(3), s, count=1, flags=re.S)

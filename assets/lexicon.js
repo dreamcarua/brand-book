@@ -1,6 +1,6 @@
 // =====================================================================
 // DreamCar — legal-safe lexicon, one source for every checker on the site
-// Canon: sections/legal.html (11B). Replacements follow the 11B table;
+// Canon: sections/legal.html (section 09, formerly 11B). Replacements follow the section 09 table;
 // білет / джекпот / казино / халява come from AGENTS.md and brand_lint.py.
 // Matching is Unicode-aware: JS \b does not see Cyrillic letters, so every
 // pattern uses (?<![\p{L}\p{N}]) … (?![\p{L}\p{N}]) boundaries.

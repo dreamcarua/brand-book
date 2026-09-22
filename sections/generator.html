@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
+<meta name="description" content="03 Генератор постів. Параметри проєкту → пости для IG, TG, email і макет. DreamCar Brand Book v4.3.">
 <title>03 Генератор постів · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@
   .file-pick .file-btn span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .file-pick input:focus-visible + .file-btn { outline: 2px solid var(--red); }
   @media (hover: hover) and (pointer: fine) { .file-pick:hover .file-btn { border-color: var(--red); } }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--steel); }
   .seg input { position: absolute; opacity: 0; pointer-events: none; }
   .seg label { margin: 0; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.08em; border-right: 1px solid var(--steel); transition: background-color 150ms ease, color 150ms ease; }
@@ -54,7 +55,8 @@
     .g-btn:hover { border-color: var(--red); }
     .g-btn.primary:hover { background: var(--red-deep); border-color: var(--red-deep); }
   }
-  .no-photo-note { font-size: 13px; color: var(--warning); margin-top: 10px; }
+  .no-photo-note { font-size: 13px; color: var(--bone); margin-top: 10px; }
+  .no-photo-note::before { content: '— '; color: var(--red-glow); }
 
   .out-card { background: var(--coal); border: 1px solid var(--line); }
   .out-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--black); }
@@ -63,7 +65,7 @@
   .out-head .g-btn { min-height: 36px; padding: 8px 14px; font-size: 12px; }
   .out-body { padding: 18px 20px; color: var(--bone); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
   .out-body strong { color: var(--white); }
-  .out-body .tags { color: var(--link); }
+  .out-body .tags { color: var(--bone); }
   .beats { list-style: none; margin: 0; padding: 0; white-space: normal; }
   .beats li { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
   .beats li:last-child { border-bottom: 0; }
@@ -72,11 +74,12 @@
   .email-sheet .subj { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.35; color: #0A0A0A; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid #E5E5E5; }
   .email-sheet .from { font-size: 12px; color: #555; margin-bottom: 6px; }
   .email-sheet p { margin: 0 0 12px; color: #333; }
+  .email-sheet strong { color: #0A0A0A; }
   .email-sheet .cta { display: inline-block; background: #E30613; color: #FFFFFF; padding: 12px 22px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-decoration: none; }
   .email-sheet .legal { font-size: 12px; color: #666; margin-top: 18px; }
 
   .voice-check { padding: 12px 14px; margin-top: 4px; font-size: 13px; line-height: 1.5; border-left: 3px solid var(--success); background: var(--black); color: var(--bone); }
-  .voice-check.warn { border-left-color: var(--warning); }
+  .voice-check.warn { border-left-color: var(--red); }
   .voice-check b { color: var(--white); }
 
   @media (max-width: 1024px) {
@@ -175,7 +178,7 @@
             <input type="number" id="participants" min="1" inputmode="numeric" placeholder="з CRM">
           </div>
         </div>
-        <p class="hint" style="margin:-6px 0 0;">Кількість учасників — тільки з CRM на дату публікації. Порожнє поле = рядок не з'явиться.</p>
+        <p class="hint" style="margin:-6px 0 0;">Кількість учасників — тільки з CRM на дату публікації. Порожнє поле = рядок не зʼявиться.</p>
       </fieldset>
 
       <fieldset>

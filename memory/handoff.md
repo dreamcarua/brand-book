@@ -39,5 +39,8 @@ E motion signature + copy buttons + motion demos; re-critique; DS artifact; repo
 
 - Phase C: content fixes committed (d12f382): typos, mixed-script, #018 → #NN placeholders, 25–44, no superlatives, manifesto/trust/voice/support/touchpoints/examples.
 
+- Generator rebuilt (canvas PNG 4:5/1:1/9:16, own photo, Reels/Stories), motion page (lanes + Stamp/Plate/Count), spacing elements, colors intro, README/AGENTS/CHANGELOG/sitemap/SW v23, axe contrast pass 290→demo-only, mobile reflow fixes. Commits up to 'contrast pass'.
+- Second critique (23.09): visual (ac5b4a8f) + UX/content (a10f87e5) reports received.
+
 ## Next single action
-Generator (car photo, reels/stories, PNG export, #20місяц10, neutral defaults), motion demos, colors desc, spacing labels → rebuild → second critique → deploy → DS artifact → report.
+Apply critique batch: stale numbered links via SECTIONS, meta descriptions in build_nav, ти/Ви matrix, typos/apostrophes/ranges/russisms, links styling, text-wrap balance, emoji status marks, legal/examples visual, colors .role leak, generator email strong + mobile form-row, glows in styles.css (.ig-post), grids auto-fit. Owner flags: legal ✅ examples (more tokens=more possibilities, «Отримай авто»), /winners, trust table 20 rows vs 21, support hours vs 20:00 ефір, КРАІЛ fine, @dreamcar_brand.

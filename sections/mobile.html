@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
+<meta name="description" content="34 Mobile-first. Брейкпоінти, зони дотику, безпечні зони. DreamCar Brand Book v4.3.">
 <title>34 Mobile-first · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +56,7 @@
   <div class="s-num plate-k"><span class="pk-num">34</span><span class="pk-name">Mobile-first</span></div>
   <h1 class="s-title">МОБІЛЬНИЙ&nbsp;— <span class="red">ГОЛОВНИЙ ЕКРАН</span></h1>
   <p class="s-desc">
-    <strong style="color: var(--white);">85% нашої аудиторії читає бренд з телефона.</strong> Дизайн який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані юзера — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 32 UI-компоненти.
+    <strong style="color: var(--white);">Більшість нашої аудиторії читає бренд з телефона.</strong> Дизайн, який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані користувача — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 32 UI-компоненти.
   </p>
 
   <!-- ============== ЦІЛЬОВІ ПРИСТРОЇ ============== -->
@@ -128,7 +129,7 @@
       <tr>
         <td>LG</td>
         <td><strong style="color: var(--red-glow);">1024-1439</strong></td>
-        <td>Стандартні десктопи. 3-4 column. Sidebar з'являється.</td>
+        <td>Стандартні десктопи. 3-4 column. Sidebar зʼявляється.</td>
         <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1024px)</code></td>
       </tr>
       <tr>
@@ -148,17 +149,17 @@
 
   <div class="touch-grid">
     <div class="touch-card bad">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.18em; margin-bottom: 14px;">/// ❌ ПОГАНО — 24×24px</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✕ ПОГАНО — 24×24px</div>
       <div class="touch-target" style="width: 24px; height: 24px; padding: 0; text-align: center; line-height: 24px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Кнопка закриття 24px. На iPhone Pro = 9pt — складно потрапити пальцем. Фрустрація = вийде з flow.</p>
     </div>
     <div class="touch-card good">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✅ ДОБРЕ — 44×44px (видимий 24px)</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ДОБРЕ — 44×44px (видимий 24px)</div>
       <div class="touch-target" style="width: 44px; height: 44px; padding: 0; text-align: center; line-height: 44px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Видимий icon 24px, але hit area 44×44. Padding робить кнопку фізично кліклабельною.</p>
     </div>
     <div class="touch-card good">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✅ ІДЕАЛЬНО — 48×48px (Material)</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ІДЕАЛЬНО — 48×48px (Material)</div>
       <div class="touch-target" style="width: 48px; height: 48px; padding: 0; text-align: center; line-height: 48px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">48px = Material Design recommendation. На дрібних екранах (iPhone SE) — особливо комфортно.</p>
     </div>
@@ -177,7 +178,7 @@
   <div class="thumb-demo">
     <div class="phone-mock">
       <div class="phone-screen">
-        <div class="zone hard" style="top: 0; height: 30%;"><div class="zone-label">⚠ HARD ZONE</div></div>
+        <div class="zone hard" style="top: 0; height: 30%;"><div class="zone-label">HARD ZONE</div></div>
         <div class="zone" style="top: 30%; height: 30%; background: rgba(245,158,11,0.18);"><div class="zone-label" style="color: var(--warning);">~ STRETCH</div></div>
         <div class="zone easy" style="bottom: 0; height: 40%;"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
       </div>
@@ -185,14 +186,14 @@
     </div>
     <div class="phone-mock">
       <div class="phone-screen">
-        <div class="zone hard" style="top: 0; height: 30%; clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);"><div class="zone-label">⚠ HARD</div></div>
+        <div class="zone hard" style="top: 0; height: 30%; clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);"><div class="zone-label">HARD</div></div>
         <div class="zone easy" style="bottom: 0; height: 60%; clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);"><div class="zone-label" style="color: var(--success);">✓ EASY</div></div>
       </div>
       <div class="phone-label">LEFT HAND THUMB</div>
     </div>
     <div class="phone-mock">
       <div class="phone-screen">
-        <div class="zone hard" style="top: 0; height: 20%;"><div class="zone-label">⚠ HARD</div></div>
+        <div class="zone hard" style="top: 0; height: 20%;"><div class="zone-label">HARD</div></div>
         <div class="zone easy" style="bottom: 0; top: 20%; background: rgba(16,185,129,0.20);"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
       </div>
       <div class="phone-label">TWO HANDS</div>
@@ -236,7 +237,7 @@
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// STICKY HEADER</span>
       <h4>ШАПКА ПРИ SCROLL</h4>
-      <p>Чорна шапка з лого і CTA "Взяти участь" — sticky зверху при scroll вниз. Зникає при scroll up.</p>
+      <p>Чорна шапка з лого і CTA «Взяти участь» — sticky зверху при scroll вниз. Зникає при scroll up.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// INFINITE SCROLL</span>
@@ -247,7 +248,7 @@
 
   <!-- ============== TYPOGRAPHY MOBILE ============== -->
   <h2 class="s-subtitle">ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h2>
-  <p class="s-desc">Скейлинг типографічної шкали з розділу 17 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
+  <p class="s-desc">Масштабування типографічної шкали з розділу 17 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
     <thead>
@@ -267,7 +268,7 @@
   <p class="s-desc" style="margin-top: 18px;">
     <strong style="color: var(--white);">Min font-size:</strong> 12px. Менше — нечитабельно навіть з ідеальним зором.<br>
     <strong style="color: var(--white);">Line-height:</strong> 1.5 для body — комфортний для читання довгих текстів.<br>
-    <strong style="color: var(--white);">Max characters per line:</strong> 65-70 на десктопі, ~30-40 на мобільному.
+    <strong style="color: var(--white);">Max characters per line:</strong> 65-70 на десктопі, ~30–40 на мобільному.
   </p>
 
   <!-- ============== PERFORMANCE ============== -->
@@ -290,7 +291,7 @@
     <div class="card" style="border-left: 3px solid var(--success);">
       <span class="label">/// CLS</span>
       <h4>< 0.1</h4>
-      <p>Cumulative Layout Shift — макет не "стрибає" при загрузці.</p>
+      <p>Cumulative Layout Shift — макет не «стрибає» під час завантаження.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--warning);">
       <span class="label">/// IMAGES</span>
@@ -313,7 +314,7 @@
   <h2 class="s-subtitle">ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h2>
 
   <div class="checklist-mobile">
-    <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✅ 12 ПУНКТІВ</h4>
+    <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✓ 12 ПУНКТІВ</h4>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Перевірив на 375px (iPhone SE) — найменший популярний</label>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Touch targets ≥ 44×44 px, spacing ≥ 8px між ними</label>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Primary CTA у easy thumb zone (нижня третина екрана)</label>
@@ -329,11 +330,11 @@
   </div>
 
   <div style="margin-top: 32px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
-      <li>→ <a href="components.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">09 UI-компоненти</a> — буттони, форми, поля + їх мобільна версія.</li>
-      <li>→ <a href="trust.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">15 Довіра і доступність</a> — WCAG 2.1 AA — touch targets частина a11y.</li>
-      <li>→ <a href="tokens.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — design tokens для responsive дизайнів.</li>
+      <li>→ <a href="components.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">32 UI-компоненти</a> — буттони, форми, поля + їх мобільна версія.</li>
+      <li>→ <a href="trust.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">30 Довіра і доступність</a> — WCAG 2.1 AA — touch targets частина a11y.</li>
+      <li>→ <a href="tokens.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">31 Дизайн-токени і файли</a> — design tokens для responsive дизайнів.</li>
     </ul>
   </div>
 </section>

@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0A0A0A">
 <meta name="supported-color-schemes" content="dark">
 <title>24 Церемонія вручення · DreamCar Brand Book</title>
-<meta name="description" content="DreamCar Brand Book — Церемонія вручення. Головний ритуал бренду: сценарій, кадр, слова, згода власника.">
+<meta name="description" content="24 Церемонія вручення. Головний ритуал бренду: сценарій, кадр, слова. DreamCar Brand Book v4.3.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -44,10 +44,10 @@
   <table class="a11y-table">
     <thead><tr><th scope="col">Момент</th><th scope="col">Так</th><th scope="col">Не так</th></tr></thead>
     <tbody>
-      <tr><td>Вступ</td><td>«Сьогодні автомобіль проєкту #21 вручається серед учасників.»</td><td>❌ «Сьогодні розіграш Audi!»</td></tr>
-      <tr><td>Механіка</td><td>«Номер учасника визначається зараз, у прямому ефірі. Запис лишиться в архіві.»</td><td>❌ «Рандомайзер обирає переможця»</td></tr>
-      <tr><td>Момент</td><td>«Номер учасника — …! Вітаємо нового власника.»</td><td>❌ «У нас є переможець!»</td></tr>
-      <tr><td>Фінал</td><td>«Наступний проєкт — на dreamcar.ua. Бери. Дій. Володій.»</td><td>❌ «Не пропусти свій шанс!»</td></tr>
+      <tr><td>Вступ</td><td>«Сьогодні автомобіль проєкту #21 вручається серед учасників.»</td><td>✕ «Сьогодні розіграш Audi!»</td></tr>
+      <tr><td>Механіка</td><td>«Номер учасника визначається зараз, у прямому ефірі. Запис лишиться в архіві.»</td><td>✕ «Рандомайзер обирає переможця»</td></tr>
+      <tr><td>Момент</td><td>«Номер учасника — …! Вітаємо нового власника.»</td><td>✕ «У нас є переможець!»</td></tr>
+      <tr><td>Фінал</td><td>«Наступний проєкт — на dreamcar.ua. Бери. Дій. Володій.»</td><td>✕ «Не пропусти свій шанс!»</td></tr>
     </tbody>
   </table>
   </div>
@@ -58,6 +58,34 @@
     <div class="card"><span class="label">/// Плашка</span><h3>Номер проєкту</h3><p>Мінімальна плашка «Проєкт #NN · Авто» у стилі MonoTag. Без таймерів і падаючих монет.</p></div>
     <div class="card"><span class="label">/// Титри</span><h3>Імена — з дозволу</h3><p>Плашка імені: Oswald 700 великими, під нею «/// ВЛАСНИК · ПРОЄКТ NN». Тримаємо 3–4 секунди.</p></div>
   </div>
+
+  <figure class="bc-frame" aria-label="Макет кадру ефіру: лого, плашка проєкту, титр власника">
+    <div class="bc-screen">
+      <img src="../assets/logo/dreamcar-racing-plate.svg" alt="" class="bc-logo" width="144" height="40">
+      <div class="bc-live"><span></span>НАЖИВО</div>
+      <div class="bc-photo">КАДР: АВТО І ВЛАСНИК, КЛЮЧІ В РУЦІ</div>
+      <div class="bc-lower">
+        <div class="plate-k plate-k-sm" style="margin:0;"><span class="pk-num">NN</span><span class="pk-name">Проєкт</span></div>
+        <div class="bc-name">[ІМʼЯ ВЛАСНИКА]</div>
+        <div class="bc-role">ВЛАСНИК · [МАРКА МОДЕЛЬ] · [МІСТО]</div>
+      </div>
+    </div>
+    <figcaption>Кадр ефіру 16:9. Лого — верхній лівий кут, «НАЖИВО» — верхній правий, титр — нижня третина, 3–4 секунди. Імʼя і місто — тільки з письмової згоди власника.</figcaption>
+  </figure>
+  <style>
+    .bc-frame { margin: 28px 0 8px; }
+    .bc-screen { position: relative; aspect-ratio: 16 / 9; background: var(--graphite); border: 1px solid var(--line); overflow: hidden; }
+    .bc-logo { position: absolute; top: 5%; left: 4%; width: 18%; height: auto; }
+    .bc-live { position: absolute; top: 6%; right: 4%; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--white); background: var(--black); padding: 6px 10px; }
+    .bc-live span { width: 10px; height: 10px; background: var(--red); display: inline-block; }
+    .bc-photo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
+    .bc-lower { position: absolute; left: 4%; bottom: 8%; background: var(--black); border-left: 6px solid var(--red); padding: 14px 20px 14px 16px; box-shadow: 6px 6px 0 var(--red-deep); display: grid; gap: 6px; max-width: 70%; }
+    .bc-lower .plate-k { justify-self: start; }
+    .bc-name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(20px, 3.2vw, 36px); line-height: 1; text-transform: uppercase; color: var(--white); }
+    .bc-role { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: var(--bone); }
+    .bc-frame figcaption { margin-top: 12px; color: var(--bone); font-size: 14px; line-height: 1.55; max-width: 760px; }
+    @media (max-width: 640px) { .bc-lower { padding: 8px 10px; gap: 4px; max-width: 86%; } .bc-lower .plate-k { display: none; } .bc-role { font-size: 9px; } .bc-live { font-size: 9px; padding: 4px 6px; } }
+  </style>
 
   <h2 class="s-subtitle">ЗГОДА ВЛАСНИКА</h2>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Рівні згоди власника">

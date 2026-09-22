@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
+<meta name="description" content="02 Інструменти. Voice Linter, перевірка контрасту, токени, AI-промпт. DreamCar Brand Book v4.3.">
 <title>02 Інструменти · DreamCar Brand Book</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +96,7 @@
   <div class="s-num plate-k"><span class="pk-num">02</span><span class="pk-name">Інструменти</span></div>
   <h1 class="s-title">ІНТЕРАКТИВНІ <span class="red">ІНСТРУМЕНТИ</span></h1>
   <p class="s-desc">
-    Не документація — а <strong style="color: var(--white);">робочі інструменти</strong>. Вичищай текст одним кліком. Перевір контраст одним кліком. Скачай асет одним кліком. Те що раніше займало 10 хвилин — тут за 10 секунд.
+    Не документація — а <strong style="color: var(--white);">робочі інструменти</strong>. Вичищай текст одним кліком. Перевір контраст одним кліком. Завантаж асет одним кліком. Те що раніше займало 10 хвилин — тут за 10 секунд.
   </p>
 
   <!-- ============== VOICE LINTER ============== -->
@@ -110,7 +111,7 @@
     <div class="linter-stats" id="lintStats"></div>
 
     <button class="copy-action" onclick="clearLinter()">ОЧИСТИТИ</button>
-    <button class="copy-action" onclick="copyFixed()" id="copyFixedBtn">✨ ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ</button>
+    <button class="copy-action" onclick="copyFixed()" id="copyFixedBtn">ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ</button>
   </div>
 
   <!-- ============== COLOR CONTRAST CHECKER ============== -->
@@ -133,22 +134,22 @@
 
         <div class="cc-result">
           <div class="ratio" id="ccRatio">21.00</div>
-          <div style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em;">CONTRAST RATIO</div>
+          <div style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em;">КОЕФІЦІЄНТ КОНТРАСТУ</div>
           <div style="margin-top: 12px;">
-            <span id="ccAA" class="cc-grade">AA Normal</span>
-            <span id="ccAAA" class="cc-grade">AAA Normal</span>
+            <span id="ccAA" class="cc-grade">AA текст</span>
+            <span id="ccAAA" class="cc-grade">AAA текст</span>
           </div>
           <div style="margin-top: 8px;">
-            <span id="ccAALarge" class="cc-grade">AA Large</span>
-            <span id="ccAAALarge" class="cc-grade">AAA Large</span>
+            <span id="ccAALarge" class="cc-grade">AA великий</span>
+            <span id="ccAAALarge" class="cc-grade">AAA великий</span>
           </div>
         </div>
       </div>
 
       <div class="cc-preview" id="ccPreview" style="background: #0A0A0A; color: #FFFFFF;">
         <div class="big">МРІЯ.</div>
-        <div class="small">За ціною чашки кави. Big text vs small text перевірка.</div>
-        <div style="font-size: 10px; opacity: 0.7;">Це 10px — найменший допустимий розмір</div>
+        <div class="small">Так виглядає дрібний текст: 16 px, звичайна вага.</div>
+        <div style="font-size: 11px;">11 px — мінімум для міток</div>
       </div>
     </div>
 
@@ -210,7 +211,7 @@
   <!-- ============== ASSETS DOWNLOAD ============== -->
   <div class="tool-card">
     <h2 id="assets">Файли бренду</h2>
-    <p class="desc">Всі офіційні бренд-ассети в одному місці. Кожен — у потрібному форматі. Не використовуй ассети з інших джерел.</p>
+    <p class="desc">Всі офіційні бренд-файли бренду в одному місці. Кожен — у потрібному форматі. Не використовуй файли бренду з інших джерел.</p>
 
     <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ЛОГОТИП</h4>
     <div class="asset-grid">
@@ -270,7 +271,7 @@
       <a class="asset" href="https://fonts.google.com/specimen/Archivo+Black" target="_blank" rel="noopener">
         <div class="asset-icon" style="font-family: 'Archivo Black'; font-weight: 900;">Aa</div>
         <div class="asset-name">Archivo Black</div>
-        <div class="asset-meta">900 · Hero / CTA</div>
+        <div class="asset-meta">400 · логотип і цифри, лише латиниця</div>
       </a>
       <a class="asset" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener">
         <div class="asset-icon" style="font-family: 'Manrope'; font-weight: 800;">Aa</div>
@@ -290,27 +291,27 @@
     <h2 id="ai-assistant">AI-асистент бренду</h2>
     <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Скопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
     <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">Скопіювати AI system prompt</button>
-    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red-glow);">розділі 13 AI-контент</a>.</p>
+    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="ai-content.html" style="color: var(--red-glow);">розділі 13 «Робота з AI»</a>.</p>
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>Voice Linter</strong> — 1 хв замість 10 хв ручної перевірки.<br>
-      <strong>Contrast Checker</strong> — 5 сек замість пошуку онлайн-калькулятора.<br>
-      <strong>Token Picker</strong> — клік замість «де ця CSS-змінна».<br>
-      <strong>Asset Download</strong> — все офіційне в одному місці, без пошуку в Google Drive.<br>
+      <strong>Перевірка контрасту</strong> — 5 сек замість пошуку онлайн-калькулятора.<br>
+      <strong>Дизайн-токени</strong> — клік замість «де ця CSS-змінна».<br>
+      <strong>Файли бренду</strong> — все офіційне в одному місці, без пошуку в Google Drive.<br>
       <strong>AI Prompt</strong> — мінус 5 хв на ручне формулювання промпта.
     </p>
   </div>
 
   <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВ'ЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
-      <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">11 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
-      <li>→ <a href="colors.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">06 Кольори</a> — повна палітра.</li>
-      <li>→ <a href="tokens.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">16 Дизайн-ресурси</a> — повний набір design tokens у JSON / CSS.</li>
-      <li>→ <a href="ai-content.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">22 AI-контент</a> — детальний AI prompt + чеклисти.</li>
+      <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">10 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
+      <li>→ <a href="colors.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">16 Кольори</a> — повна палітра.</li>
+      <li>→ <a href="tokens.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">31 Дизайн-токени і файли</a> — повний набір design tokens у JSON / CSS.</li>
+      <li>→ <a href="ai-content.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">13 Робота з AI</a> — детальний AI prompt + чеклисти.</li>
     </ul>
   </div>
 </section>
@@ -356,7 +357,7 @@ function runLinter() {
   let issues = [];
   let neverCount = 0, warnCount = 0, viCount = 0;
 
-  // NEVER і CAREFUL — спільний лексикон 11B (assets/lexicon.js), Unicode-межі слів
+  // NEVER і CAREFUL — спільний лексикон ,section 09 (assets/lexicon.js), Unicode-межі слів
   (window.DC_LEXICON ? window.DC_LEXICON.scan(text) : []).forEach(h => {
     if (h.level === 'never') {
       issues.push({ level: 'NEVER', word: h.match, suggest: '→ ' + h.replace + ' · ' + h.why, color: 'danger' });
@@ -456,7 +457,7 @@ function copyFixed() {
     const btn = document.getElementById('copyFixedBtn');
     btn.classList.add('copied');
     btn.textContent = '✓ СКОПІЙОВАНО ВИПРАВЛЕНУ ВЕРСІЮ';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '✨ ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ'; }, 2500);
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'ОТРИМАТИ ВИПРАВЛЕНУ ВЕРСІЮ'; }, 2500);
   });
 }
 
@@ -494,10 +495,10 @@ function updateCC() {
     el.textContent = label + ' ' + (pass ? '✓' : '✕');
     el.className = 'cc-grade ' + (pass ? (id.includes('AAA') ? 'aaa' : 'aa') : 'fail');
   };
-  setGrade('ccAA', ratio >= 4.5, 'AA Normal (4.5)');
-  setGrade('ccAAA', ratio >= 7, 'AAA Normal (7)');
-  setGrade('ccAALarge', ratio >= 3, 'AA Large (3)');
-  setGrade('ccAAALarge', ratio >= 4.5, 'AAA Large (4.5)');
+  setGrade('ccAA', ratio >= 4.5, 'AA текст 4,5');
+  setGrade('ccAAA', ratio >= 7, 'AAA текст 7');
+  setGrade('ccAALarge', ratio >= 3, 'AA великий 3');
+  setGrade('ccAAALarge', ratio >= 4.5, 'AAA великий 4,5');
 }
 function updateCCFromHex(which) {
   const val = document.getElementById('cc' + (which === 'fg' ? 'Fg' : 'Bg') + 'Hex').value;

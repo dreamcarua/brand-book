@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0A0A0A">
 <meta name="supported-color-schemes" content="dark">
 <title>18 Сітка, іконки, патерни · DreamCar Brand Book</title>
-<meta name="description" content="DreamCar Brand Book — 08 Сітка та елементи.">
+<meta name="description" content="18 Сітка, іконки, патерни. База 4 px, 12 колонок, іконки, патерни. DreamCar Brand Book v4.3.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -32,7 +32,7 @@
 <div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">18 · Сітка, іконки, патерни</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 <section id="spacing">
   <div class="s-num plate-k"><span class="pk-num">18</span><span class="pk-name">Сітка, іконки, патерни</span></div>
-  <h1 class="s-title">SPACING <span class="red">SCALE</span></h1>
+  <h1 class="s-title">СІТКА <span class="red">І ВІДСТУПИ.</span></h1>
   <p class="s-desc">
     Усі відступи з шкали. Не пиши "padding: 18px" — це означає що ти не знаєш системи. Базова одиниця — 4px.
   </p>
@@ -71,7 +71,7 @@
     </div>
     <div class="bp-card">
       <div class="name">/// TABLET</div>
-      <div class="val">640-1024px</div>
+      <div class="val">640–1024px</div>
       <div class="desc">2-3 колонки<br>Padding 32px</div>
     </div>
     <div class="bp-card">
@@ -88,27 +88,23 @@
 
   <h2 class="s-subtitle">Радіуси</h2>
   <div class="card-grid">
-    <div class="card" style="text-align:center;">
-      <div style="width:80px;height:80px;background:var(--red);border-radius:0;margin:16px auto;"></div>
-      <h4>NONE · 0PX</h4>
-      <p>За замовчуванням. Картки, секції, лого. Це базова естетика бренду — гострі кути.</p>
+    <div class="card" style="text-align:center;border-top:3px solid var(--red);">
+      <div style="width:80px;height:80px;background:var(--red);border-radius:0;margin:16px auto;box-shadow:6px 6px 0 var(--red-deep);"></div>
+      <h4>0 PX · БРЕНД</h4>
+      <p>Усе: кнопки, картки, плашки, банери, модальні вікна, лого. Гострий кут і жорстка тінь — підпис бренду.</p>
     </div>
     <div class="card" style="text-align:center;">
-      <div style="width:80px;height:80px;background:var(--red);border-radius:4px;margin:16px auto;"></div>
-      <h4>SM · 4PX</h4>
-      <p>Form input, теги, маленькі чіпи.</p>
+      <div style="width:80px;height:80px;background:var(--graphite);border:1px solid var(--steel);border-radius:4px;margin:16px auto;"></div>
+      <h4>4 PX · ТІЛЬКИ ПРОДУКТ</h4>
+      <p>Поля вводу і чіпи фільтрів у дашбордах, де вже діє системний UI. У маркетингу — ні.</p>
     </div>
     <div class="card" style="text-align:center;">
-      <div style="width:80px;height:80px;background:var(--red);border-radius:8px;margin:16px auto;"></div>
-      <h4>MD · 8PX</h4>
-      <p>Modal, картки в продукті, плашки.</p>
-    </div>
-    <div class="card" style="text-align:center;">
-      <div style="width:80px;height:80px;background:var(--red);border-radius:999px;margin:16px auto;"></div>
-      <h4>PILL · 999PX</h4>
-      <p>Статусні плашки, аватарки, лічильники. Кнопки — ні: CTA у бренді прямокутні, радіус 0 (як на ai.dreamcar.ua).</p>
+      <div style="width:80px;height:80px;background:var(--white);border-radius:999px;margin:16px auto;"></div>
+      <h4>КОЛО · ТІЛЬКИ АВАТАР</h4>
+      <p>Аватар у соцмережах і круглі індикатори стану. Кнопки-пігулки — ні.</p>
     </div>
   </div>
+  <p class="s-desc" style="margin-top:16px;">Токени <code>--dc-r-md</code>, <code>--dc-r-lg</code> і <code>--dc-r-pill</code> залишені у файлі для сумісності зі старими екранами. У нових макетах не використовуємо.</p>
 
 
   <!-- merged from elements -->
