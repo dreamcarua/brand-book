@@ -15,7 +15,64 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .mo-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 18px; }
+  .mo-btn { min-height: 44px; padding: 10px 18px; background: var(--black); color: var(--white); border: 1px solid var(--steel); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color var(--d-fast) var(--e-out), transform 120ms var(--e-out); }
+  .mo-btn.primary { background: var(--red); border-color: var(--red); }
+  .mo-btn:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) { .mo-btn:hover { border-color: var(--red); } .mo-btn.primary:hover { background: var(--red-deep); border-color: var(--red-deep); } }
+  .mo-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--ash); }
+
+  .lanes { border: 1px solid var(--line); background: var(--coal); }
+  .lane { display: grid; grid-template-columns: 280px 1fr; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .lane:last-child { border-bottom: 0; }
+  .lane:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .lane-meta b { display: block; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.04em; color: var(--white); }
+  .lane-meta span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.06em; }
+  .track { position: relative; height: 40px; background: var(--black); border: 1px solid var(--line); overflow: hidden; }
+  .track::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: var(--steel); }
+  .puck { position: absolute; left: 4px; top: 4px; width: 30px; height: 30px; background: var(--red); box-shadow: 3px 3px 0 var(--red-deep); transform: translateX(0); will-change: transform; }
+  @media (max-width: 640px) { .lane { grid-template-columns: 1fr; gap: 10px; } }
+
+  .sig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .sig { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .sig .plate-k { align-self: flex-start; margin: 0; }
+  .sig .mo-btn { align-self: flex-start; }
+  .sig h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
+  .sig p { color: var(--bone); font-size: 14px; line-height: 1.6; margin: 0; }
+  .sig .stage { min-height: 150px; display: flex; align-items: center; justify-content: center; background: var(--black); border: 1px solid var(--line); padding: 20px; }
+  .sig code { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); background: var(--black); padding: 10px 12px; display: block; white-space: pre-wrap; border: 1px solid var(--line); }
+
+  /* Signature 1: STAMP — the plate presses into its own shadow */
+  .stamp { position: relative; padding: 16px 26px; background: var(--red); color: var(--white); border: 2px solid var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.08em; cursor: pointer; border-radius: 0;
+    box-shadow: 6px 6px 0 var(--red-deep); transition: transform 120ms var(--e-out), box-shadow 120ms var(--e-out); }
+  .stamp:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--red-deep); }
+  .stamp:focus-visible { outline: 2px solid var(--white); outline-offset: 6px; }
+
+  /* Signature 2: PLATE WIPE — red plate wipes in, then the word is revealed */
+  .wipe { position: relative; display: inline-block; padding: 10px 18px; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); white-space: nowrap; }
+  .wipe::before { content: ''; position: absolute; inset: 0; background: var(--red); box-shadow: 6px 6px 0 var(--red-deep); clip-path: inset(0 0 0 0); }
+  .wipe span { position: relative; display: inline-block; clip-path: inset(0 0 0 0); }
+  .wipe.play::before { animation: dcWipe 320ms var(--e-in-out) both; }
+  .wipe.play span { animation: dcWipe 260ms var(--e-out) 200ms both; }
+  @keyframes dcWipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+  /* Signature 3: NUMBER TICK — digits roll up once, on first view */
+  .tick { display: inline-flex; font-family: 'Archivo Black', sans-serif; font-size: 64px; line-height: 1; color: var(--white); }
+  .tick .d { display: inline-block; height: 1em; overflow: hidden; }
+  .tick .d i { display: block; font-style: normal; transform: translateY(0); }
+  .tick.play .d i { animation: dcTick 600ms var(--e-out) both; }
+  .tick.play .d:nth-child(2) i { animation-delay: 60ms; }
+  @keyframes dcTick { from { transform: translateY(-90%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .freq td:first-child { font-weight: 700; color: var(--white); }
+  @media (prefers-reduced-motion: reduce) {
+    .stamp:active { transform: none; box-shadow: 0 0 0 3px var(--white); }
+    .wipe.play::before, .wipe.play span, .tick.play .d i { animation: none; }
+  }
+</style>
 </head>
+
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
 
 <header class="topbar">
@@ -32,73 +89,87 @@
 <div class="section-bread"><a href="../index.html">DREAMCAR BRAND BOOK</a> &nbsp;/&nbsp; <span style="color:var(--white);">33 · Анімації</span><span class="br-spacer"></span><button class="print-btn" type="button" onclick="window.print()" aria-label="Зберегти сторінку як PDF">PDF</button></div>
 <section id="motion">
   <div class="s-num plate-k"><span class="pk-num">33</span><span class="pk-name">Анімації</span></div>
-  <h1 class="s-title">MOTION <span class="red">SYSTEM</span></h1>
-  <p class="s-desc">
-    Стандартні тривалості та easing-функції. Не вигадуй довільні. Наведи курсор на демо — побачиш різницю.
-  </p>
+  <h1 class="s-title">РУХ <span class="red">З ПРИЧИНОЮ.</span></h1>
+  <p class="s-desc">Анімація в DreamCar — це відповідь інтерфейсу, а не прикраса. Три тривалості, дві криві, три фірмові моменти. Натисни на доріжку або кнопку — побачиш різницю наживо.</p>
 
-  <h2 class="s-subtitle">Тривалості</h2>
-  <div class="motion-grid">
-    <div class="motion-card" data-speed="fast">
-      <div class="name">/// FAST</div>
-      <div class="val">150ms</div>
-      <div class="demo"><div class="ball"></div></div>
-      <div class="desc">Hover, focus, малі transitions. Швидкі мікро-взаємодії — наведення на кнопку, зміна кольору іконки.</div>
-    </div>
-    <div class="motion-card" data-speed="base">
-      <div class="name">/// BASE</div>
-      <div class="val">300ms</div>
-      <div class="demo"><div class="ball"></div></div>
-      <div class="desc">Стандартні переходи — поява/зникнення модалок, accordion, dropdown. Найчастіше вживане.</div>
-    </div>
-    <div class="motion-card" data-speed="slow">
-      <div class="name">/// SLOW</div>
-      <div class="val">500ms</div>
-      <div class="demo"><div class="ball"></div></div>
-      <div class="desc">Драматичні переходи — поява hero-секції, перехід між сторінками. Використовуй обережно.</div>
-    </div>
+  <aside class="tldr" aria-label="Коротко"><div class="tldr-h">Коротко</div><ol>
+    <li>Що бачать сто разів на день — не анімуємо. Пошук, гарячі клавіші, перемикання вкладок — миттєво.</li>
+    <li>Рухаємо тільки <code>transform</code> і <code>opacity</code>. Інтерфейс — до 300 мс, вихід швидший за вхід.</li>
+    <li>Фірмові моменти — «Штамп», «Плашка», «Відлік». Жодних bounce, glow і довільних кривих.</li>
+  </ol></aside>
+
+  <h2 class="s-subtitle" id="durations">Тривалості</h2>
+  <div class="mo-toolbar"><button type="button" class="mo-btn primary" data-play="dur">Запустити всі</button><span class="mo-note">або натисни на доріжку</span></div>
+  <div class="lanes" id="dur">
+    <div class="lane" tabindex="0" role="button" aria-label="Показати 150 мілісекунд"><div class="lane-meta"><b>FAST · 150 мс</b><span>--dc-d-fast · hover, focus, натискання</span></div><div class="track"><div class="puck" style="transition: transform 150ms var(--e-out);"></div></div></div>
+    <div class="lane" tabindex="0" role="button" aria-label="Показати 300 мілісекунд"><div class="lane-meta"><b>BASE · 300 мс</b><span>--dc-d-base · меню, модалки, акордеон</span></div><div class="track"><div class="puck" style="transition: transform 300ms var(--e-out);"></div></div></div>
+    <div class="lane" tabindex="0" role="button" aria-label="Показати 500 мілісекунд"><div class="lane-meta"><b>SLOW · 500 мс</b><span>--dc-d-slow · титри відео, перша поява hero</span></div><div class="track"><div class="puck" style="transition: transform 500ms var(--e-out);"></div></div></div>
   </div>
 
-  <h2 class="s-subtitle">Криві руху</h2>
+  <h2 class="s-subtitle" id="easing">Криві</h2>
+  <div class="mo-toolbar"><button type="button" class="mo-btn primary" data-play="ease">Порівняти</button><span class="mo-note">однакові 900 мс, уповільнено для наочності</span></div>
+  <div class="lanes" id="ease">
+    <div class="lane" tabindex="0" role="button" aria-label="Показати ease-out"><div class="lane-meta"><b>EASE-OUT · СТАНДАРТ</b><span>cubic-bezier(0.2, 0.9, 0.3, 1)</span></div><div class="track"><div class="puck" style="transition: transform 900ms cubic-bezier(0.2, 0.9, 0.3, 1);"></div></div></div>
+    <div class="lane" tabindex="0" role="button" aria-label="Показати ease-in-out"><div class="lane-meta"><b>EASE-IN-OUT · ПЕРЕМІЩЕННЯ</b><span>cubic-bezier(0.4, 0, 0.2, 1)</span></div><div class="track"><div class="puck" style="transition: transform 900ms cubic-bezier(0.4, 0, 0.2, 1);"></div></div></div>
+    <div class="lane" tabindex="0" role="button" aria-label="Показати linear"><div class="lane-meta"><b>LINEAR · БЕЗПЕРЕРВНЕ</b><span>тільки стрічка, прогрес</span></div><div class="track"><div class="puck" style="transition: transform 900ms linear;"></div></div></div>
+  </div>
+  <p class="mo-note" style="margin-top:12px;">EASE-IN (повільний старт) не використовуємо в інтерфейсі: він здається загальмованим.</p>
+
+  <h2 class="s-subtitle" id="signature">Фірмові моменти</h2>
+  <div class="sig-grid">
+    <article class="sig">
+      <div class="plate-k plate-k-sm"><span class="pk-num">01</span><span class="pk-name">Штамп</span></div>
+      <h3>Плашка тисне в свою тінь</h3>
+      <div class="stage"><button type="button" class="stamp">БЕРИ. ДІЙ. ВОЛОДІЙ.</button></div>
+      <p>Кнопка-плашка при натисканні зсувається на 6 px у свою червону тінь: фізичний клік, як печатка. 120 мс, ease-out. Тільки для головної дії на екрані.</p>
+      <code>.stamp { box-shadow: 6px 6px 0 var(--dc-red-deep);
+  transition: transform 120ms var(--dc-e-out), box-shadow 120ms var(--dc-e-out); }
+.stamp:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--dc-red-deep); }</code>
+    </article>
+    <article class="sig">
+      <div class="plate-k plate-k-sm"><span class="pk-num">02</span><span class="pk-name">Плашка</span></div>
+      <h3>Червона плашка входить першою</h3>
+      <div class="stage"><span class="wipe" id="wipeDemo"><span>ЕФІР СЬОГОДНІ</span></span></div>
+      <button type="button" class="mo-btn" data-replay="wipeDemo">Повторити</button>
+      <p>Плашка відкривається зліва направо (320 мс, ease-in-out), слово — слідом з затримкою 200 мс. Для титрів відео, заставок ефіру і першої появи заголовка. Раз на екран.</p>
+    </article>
+    <article class="sig">
+      <div class="plate-k plate-k-sm"><span class="pk-num">03</span><span class="pk-name">Відлік</span></div>
+      <h3>Цифри прокручуються один раз</h3>
+      <div class="stage"><span class="tick" id="tickDemo" aria-label="21"><span class="d"><i>2</i></span><span class="d"><i>1</i></span></span></div>
+      <button type="button" class="mo-btn" data-replay="tickDemo">Повторити</button>
+      <p>Великі числа (номер проєкту, кількість вручених авто) з'являються знизу вгору з кроком 60 мс між цифрами. Тільки при першій появі на екрані, ніколи в циклі.</p>
+    </article>
+  </div>
+
+  <h2 class="s-subtitle" id="frequency">Що анімуємо</h2>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Що анімуємо залежно від частоти">
+  <table class="a11y-table freq">
+    <thead><tr><th scope="col">Як часто бачать</th><th scope="col">Приклад</th><th scope="col">Рішення</th></tr></thead>
+    <tbody>
+      <tr><td>Сотні разів на день</td><td>Пошук «/», гарячі клавіші, перемикання вкладок</td><td>Без анімації. Миттєво.</td></tr>
+      <tr><td>Десятки разів</td><td>Hover, focus, натискання</td><td>150 мс, тільки колір, рамка або scale 0.97</td></tr>
+      <tr><td>Кілька разів</td><td>Меню, модальне вікно, тост, акордеон</td><td>200–300 мс ease-out; закриття швидше за відкриття</td></tr>
+      <tr><td>Раз на сесію</td><td>Заставка ефіру, титри, перша поява hero</td><td>До 500 мс, фірмовий момент «Плашка» або «Відлік»</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 class="s-subtitle" id="rules">Правила</h2>
   <div class="card-grid">
-    <div class="card">
-      <span class="label">/// EASE-OUT</span>
-      <h4>RESPONSIVE</h4>
-      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:var(--success);margin:12px 0;">cubic-bezier(0.2, 0.9, 0.3, 1)</code>
-      <p>Стандарт для всього. Швидкий старт, плавне завершення. Відчувається "натуральним".</p>
-    </div>
-    <div class="card">
-      <span class="label">/// EASE-IN-OUT</span>
-      <h4>SMOOTH</h4>
-      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:var(--success);margin:12px 0;">cubic-bezier(0.4, 0, 0.2, 1)</code>
-      <p>Для довгих і безперервних анімацій. Плавний старт і фініш.</p>
-    </div>
-    <div class="card">
-      <span class="label">/// EASE-LINEAR</span>
-      <h4>CONTINUOUS</h4>
-      <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:var(--success);margin:12px 0;">linear</code>
-      <p>Тільки для безперервних рухів — ticker, прогрес-бари, спінери.</p>
-    </div>
+    <div class="card"><span class="label">/// Властивості</span><h3>Тільки transform і opacity</h3><p>Не анімуємо <code>left</code>, <code>width</code>, <code>height</code>, <code>margin</code>: вони перераховують верстку і смикаються на телефоні.</p></div>
+    <div class="card"><span class="label">/// Поява</span><h3>Нічого не з'являється з нуля</h3><p>Старт — <code>scale(0.95)</code> і <code>opacity: 0</code>, не <code>scale(0)</code>. Поповери ростуть від кнопки, яка їх відкрила.</p></div>
+    <div class="card"><span class="label">/// Тач</span><h3>Hover — тільки для миші</h3><p>Ефекти наведення загорнуті в <code>@media (hover: hover) and (pointer: fine)</code>, щоб на телефоні не «залипали» після тапу.</p></div>
+    <div class="card"><span class="label">/// Доступність</span><h3>Менше руху — не нуль</h3><p>При <code>prefers-reduced-motion</code> прибираємо переміщення і прокрутку стрічки, залишаємо зміну кольору і прозорості.</p></div>
   </div>
 
-  <h2 class="s-subtitle">ПРИНЦИПИ</h2>
-  <div class="card-grid">
-    <div class="card">
-      <span class="label">/// PURPOSE</span>
-      <h4>АНІМАЦІЯ З ПРИЧИНОЮ</h4>
-      <p>Кожна анімація має ціль — підказати, привернути увагу, дати feedback. Не анімуй для краси.</p>
-    </div>
-    <div class="card">
-      <span class="label">/// SPEED</span>
-      <h4>ШВИДКО — ЗАВЖДИ КРАЩЕ</h4>
-      <p>Користувач прийшов по авто, а не дивитись на твою анімацію. Базовий час — 300ms максимум.</p>
-    </div>
-    <div class="card">
-      <span class="label">/// REDUCED MOTION</span>
-      <h4>ПОВАГА ДО НАЛАШТУВАНЬ</h4>
-      <p>Завжди враховуй <code style="background:var(--black);padding:2px 6px;color:var(--success);font-size:11px;">prefers-reduced-motion</code>. Деякі люди мають вестибулярні розлади.</p>
-    </div>
-  </div>
+  <h2 class="s-subtitle" id="tokens">Токени</h2>
+  <pre class="tokens-code">--dc-d-fast: 150ms;
+--dc-d-base: 300ms;
+--dc-d-slow: 500ms;
+--dc-e-out: cubic-bezier(0.2, 0.9, 0.3, 1);
+--dc-e-in-out: cubic-bezier(0.4, 0, 0.2, 1);</pre>
+  <p class="mo-note" style="margin-top:12px;">Повний файл — <a href="tokens.html" style="color:var(--link);">31 Дизайн-токени</a>. Рух у відео і титрах — <a href="video.html" style="color:var(--link);">21 Відео</a>.</p>
 </section>
 <nav class="section-page-nav" aria-label="Попередній і наступний розділ">
 <a href="components.html" class="prev"><span class="nav-label">← 32 ПОПЕРЕДНІЙ</span><span class="nav-title">UI-компоненти</span></a>
@@ -106,7 +177,27 @@
 </nav>
 </main>
 
+<script>
+(function () {
+  function replay(el) { el.classList.remove('play'); void el.offsetWidth; el.classList.add('play'); }
+  function setPuck(l, on) { var p = l.querySelector('.puck'); var d = l.querySelector('.track').clientWidth - 40; p.style.transform = on ? 'translateX(' + d + 'px)' : 'translateX(0)'; p.dataset.on = on ? '1' : '0'; }
+  function isOn(l) { return l.querySelector('.puck').dataset.on === '1'; }
+  document.querySelectorAll('[data-play]').forEach(function (b) { b.addEventListener('click', function () {
+    var lanes = document.querySelectorAll('#' + b.dataset.play + ' .lane'); var target = ![].every.call(lanes, isOn);
+    lanes.forEach(function (l) { setPuck(l, target); });
+  }); });
+  document.querySelectorAll('.lane').forEach(function (l) {
+    function go() { setPuck(l, !isOn(l)); }
+    l.addEventListener('click', go);
+    l.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+  document.querySelectorAll('[data-replay]').forEach(function (b) { b.addEventListener('click', function () { replay(document.getElementById(b.dataset.replay)); }); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('play'); io.unobserve(e.target); } }); }, { threshold: 0.6 });
+    ['wipeDemo', 'tickDemo'].forEach(function (id) { io.observe(document.getElementById(id)); });
+  }
+})();
+</script>
 <script src="../assets/sidebar.js" defer></script>
-
 </body>
 </html>
