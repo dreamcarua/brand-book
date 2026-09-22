@@ -106,86 +106,62 @@
 <main class="main" style="margin-left:0;">
 <!-- ========== 00 · Швидкий старт ========== -->
 
-<section id="quickstart" style="background: var(--coal); border-top: 3px solid var(--red); border-bottom: 4px solid var(--red);">
+<section id="quickstart">
   <div class="s-num plate-k"><span class="pk-num">00</span><span class="pk-name">Швидкий старт</span></div>
-  <h1 class="s-title">QUICK <span class="red">START</span></h1>
-  <p class="s-desc">Якщо у тебе 5 хвилин і одне завдання — читай тільки цю сторінку. Решта брендбука — для глибокого занурення.</p>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 32px;">
-
-    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 12px;">/// 01 · ЛОГОТИП</div>
-      <div style="margin: 12px 0;"><div class="racing-h size-sm"><div class="ua-tag">UA</div><div class="text-block">DREAM<span class="red">CAR</span></div></div></div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">Горизонталь — для всього де є місце. Кругла «DC» — для соцмереж і favicon. SVG-файли — у пакеті ассетів. <strong>НІКОЛИ</strong> не змінюй пропорції чи кольори.</p>
+  <h1 class="s-title">ОДИН ЕКРАН. <span class="red">УСЕ ГОЛОВНЕ.</span></h1>
+  <p class="s-desc">Якщо у тебе п'ять хвилин і одне завдання — прочитай тільки цю сторінку. Решта книги — для глибини і перевірки деталей.</p>
+  <div class="qs-grid">
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>01</span>Що ми робимо</div>
+      <p class="qs-big" data-copy="Учасники купують токени ШІ-сервісу ai.dreamcar.ua. Автомобіль вручається серед учасників у прямому ефірі.">Учасники купують токени ШІ-сервісу ai.dreamcar.ua. Автомобіль вручається серед учасників у прямому ефірі.</p>
+      <p class="qs-p">Це речення — дослівно, скрізь. Детальніше — <a href="sections/platform.html">Платформа бренду</a>.</p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 12px;">/// 02 · КОЛЬОРИ</div>
-      <div style="display: flex; gap: 8px; margin: 12px 0;">
-        <div style="width: 40px; height: 40px; background: #0A0A0A; border: 1px solid var(--steel);"></div>
-        <div style="width: 40px; height: 40px; background: #E30613;"></div>
-        <div style="width: 40px; height: 40px; background: #FFFFFF;"></div>
-      </div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;"><strong style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">#0A0A0A · #E30613 · #FFFFFF</strong><br>Пропорція 60/25/15. Червоний — акцент, не фон. Жодних інших кольорів у бренд-комунікації.</p>
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>02</span>Логотип</div>
+      <img class="plate-img" src="assets/logo/dreamcar-racing-plate.svg" width="720" height="200" alt="DreamCar Racing Plate" style="width:220px;margin:4px 0 14px;">
+      <p class="qs-p">Горизонтальний знак — всюди, де є місце від 80 px. Круглий «DC» — аватарки і favicon. Не змінюй пропорції, кольори, не додавай ефектів.</p>
+      <p class="qs-links"><a href="assets/dreamcar-logos.zip" download>Усі файли · ZIP</a> <a href="sections/logo.html">Правила</a></p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 12px;">/// 03 · ШРИФТИ — 4 ШТ</div>
-      <div style="margin: 12px 0; display: flex; flex-direction: column; gap: 6px;">
-        <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 26px; line-height: 1;">OSWALD <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.1em; font-weight: 400;">· DISPLAY</span></div>
-        <div style="font-family: 'Archivo Black', sans-serif; font-size: 16px;">ARCHIVO BLACK <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.1em; font-weight: 400;">· LOGO + CTA</span></div>
-        <div style="font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 14px;">Manrope <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.1em; font-weight: 400;">· BODY</span></div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px;">JetBrains Mono <span style="font-size: 10px; color: var(--ash); letter-spacing: 0.1em; font-weight: 400;">· МІТКИ</span></div>
-      </div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">Усі 4 шрифти безкоштовні через Google Fonts. <strong>НЕ замінюй</strong> на схожі (Bebas Neue, Inter тощо).</p>
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>03</span>Кольори</div>
+      <div class="qs-sw"><span style="background:#0A0A0A;border:1px solid var(--steel)"></span><span style="background:#E30613"></span><span style="background:#FFFFFF"></span></div>
+      <p class="qs-p"><strong>#0A0A0A</strong> · <strong>#E30613</strong> · <strong>#FFFFFF</strong>. Пропорція 60 / 25 / 15. Червоний — акцент, не фон. Дрібний червоний текст — #FF1A2B.</p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--success); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 12px;">/// 04 · 5 ДОЗВОЛЕНИХ ФРАЗ</div>
-      <ul style="list-style: none; font-size: 13px; line-height: 1.8;">
-        <li style="color: var(--white);">«Мрія за ціною чашки кави»</li>
-        <li style="color: var(--white);">«Бери. Дій. Володій.»</li>
-        <li style="color: var(--white);">«21 авто вже знайшло власника»</li>
-        <li style="color: var(--white);">«Прямий ефір [дата] о [час]»</li>
-        <li style="color: var(--white);">«Твій токен активовано»</li>
-      </ul>
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>04</span>Шрифти</div>
+      <p class="qs-p" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;color:var(--white);line-height:1.1;margin-bottom:6px;">OSWALD — ЗАГОЛОВКИ</p>
+      <p class="qs-p"><strong>Manrope</strong> — текст і кнопки. <strong>JetBrains Mono</strong> — мітки й номери. <strong>Archivo Black</strong> — тільки латиниця і цифри (логотип, номери): кирилиці в ньому немає. Усі — з Google Fonts, замін не робимо.</p>
     </div>
-
-    <div style="background: var(--danger); color: var(--white); border-left: 3px solid var(--white); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.85;">/// 05 · 8 ЗАБОРОНЕНИХ ФРАЗ · <a href="sections/legal.html" style="color: var(--red); text-decoration: none;">ПОВНИЙ СЛОВНИК →</a></div>
-      <ul style="list-style: none; font-size: 14px; line-height: 1.8; font-weight: 600;">
-        <li>«шанс» (у будь-якому контексті)</li>
-        <li>«гарантовано виграєш»</li>
-        <li>«інвестиція в надію»</li>
-        <li>«казино», «лотерея»</li>
-        <li>«останній шанс»</li>
-        <li>«ставка», «азарт»</li>
-        <li>«купи більше = більше шансів»</li>
-        <li>«100 токенів = майже перемога»</li>
-      </ul>
-      <p style="margin-top: 12px; font-size: 12px; opacity: 0.85; line-height: 1.5;">Якщо побачив будь-яке з цих слів — це автоматичний редірект на переробку.</p>
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>05</span>Кнопка</div>
+      <p style="margin:6px 0 14px;"><span class="btn btn-primary" style="pointer-events:none;">ВЗЯТИ УЧАСТЬ →</span></p>
+      <p class="qs-p">Червона, прямокутна, радіус 0, Manrope 800 великими літерами. Одна головна кнопка на екран.</p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--red); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 12px;">/// 06 · CTA · ЄДИНИЙ ФОРМАТ</div>
-      <div style="margin: 16px 0;"><div style="background: var(--red); color: var(--white); padding: 12px 24px; border-radius: 0; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em; display: inline-block;">ВЗЯТИ УЧАСТЬ →</div></div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">Червона прямокутна кнопка (радіус 0), Manrope 800 великими літерами, стрілка справа. Тільки один CTA на сторінці.</p>
+    <div class="qs-card" style="border-top-color:var(--success);">
+      <div class="qs-h"><span>06</span>Слова: так</div>
+      <p class="qs-p qs-list">учасники · токени ШІ-сервісу · номер участі · проєкт · автомобіль вручається серед учасників · прямий ефір · власник</p>
+      <p class="qs-p">«Ви» з великої — у сервісі, листах і рекламі. «Ти» — лише в Reels і сторіс.</p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--warning); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 12px;">/// 07 · ОБОВ'ЯЗКОВИЙ ДИСКЛЕЙМЕР</div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6; font-style: italic;">«Промоакція триває з [дата] по [дата]. Організатор — [юридична особа з реквізитами]. Повні правила участі — на dreamcar.ua»</p>
-      <p style="font-size: 12px; color: var(--ash); margin-top: 8px;">Маленьким шрифтом унизу макету. Юридично обов'язково.</p>
+    <div class="qs-card" style="border-top-color:var(--danger);">
+      <div class="qs-h"><span>07</span>Слова: ніколи</div>
+      <p class="qs-p qs-list" style="color:var(--white);">❌ розіграш · лотерея · квиток · білет · шанс · виграй / виграти · переможець · джекпот · казино · азарт · ставка · фарт · удача · халява · draw · raffle · lottery · ticket · win · winner</p>
+      <p class="qs-p">Без винятків і в будь-якій формі слова. Заміни — у <a href="sections/legal.html">Legal-safe лексиконі</a>, перевірка тексту — у <a href="sections/tools.html#voice-linter">Voice Linter</a>.</p>
     </div>
-
-    <div style="background: var(--coal); border-left: 3px solid var(--info); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--info); letter-spacing: 0.2em; margin-bottom: 12px;">/// 08 · ПОГОДЖЕННЯ ТА КОНТАКТ</div>
-      <p style="font-size: 13px; color: var(--bone); line-height: 1.6;"><strong style="color: var(--white);">Дедлайн узгодження:</strong> мінімум 5 робочих днів.<br><strong style="color: var(--white);">Контакт:</strong> <span style="font-family: 'JetBrains Mono', monospace; color: var(--success);">vg@dreamcar.ua</span></p>
+    <div class="qs-card" style="border-top-color:var(--warning);">
+      <div class="qs-h"><span>08</span>Дисклеймер</div>
+      <p class="qs-p" style="font-style:italic;color:var(--white);" data-copy="Промоакція триває з [дата] по [дата]. Організатор — [юридична особа з реквізитами]. Повні правила участі — на dreamcar.ua">«Промоакція триває з [дата] по [дата]. Організатор — [юридична особа з реквізитами]. Повні правила участі — на dreamcar.ua»</p>
+      <p class="qs-p">Обовʼязково в рекламі. Окремим рядком або слайдом, а не дрібним шрифтом у куті.</p>
+    </div>
+    <div class="qs-card" style="border-top-color:var(--red);">
+      <div class="qs-h"><span>09</span>Погодження</div>
+      <p class="qs-p">Мінімум за <strong>5 робочих днів</strong> до публікації — на <a href="mailto:vg@dreamcar.ua">vg@dreamcar.ua</a>. Відповідь — протягом 24 годин у робочі дні.</p>
+      <p class="qs-links"><a href="sections/governance.html">Як ми працюємо з брендом</a></p>
     </div>
   </div>
 
-  <div style="margin-top: 32px; padding: 24px; background: var(--black); border: 2px solid var(--red); text-align: center;">
-    <p style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.05em; line-height: 1.2;">ВСЕ ЯСНО? <span class="red">МОЖЕШ ПОЧИНАТИ.</span><br><span style="font-family: 'Manrope'; font-size: 13px; color: var(--bone); font-weight: 400; letter-spacing: 0;">Якщо щось не зрозуміло — деталі у розділах 5-15.</span></p>
+  <div class="qs-next">
+    <span class="qs-h" style="margin:0;"><span>→</span>Далі</span>
+    <a href="sections/platform.html">Платформа бренду</a><a href="sections/legal.html">Legal-safe лексикон</a><a href="sections/logo.html">Логотип і файли</a><a href="sections/social.html">Соцмережі</a>
   </div>
 </section>
 <nav class="section-page-nav" aria-label="Попередній і наступний розділ">
@@ -241,7 +217,7 @@
 
   <div class="deck-intro">
     <p style="font-size: 15px; color: var(--white); line-height: 1.65; max-width: 720px;">
-      <strong>10 слайдів. 10 хвилин. Усе найважливіше з 26-розділового брендбуку.</strong> Для нових працівників, підрядників, агенцій. Покажи перед першим завданням — і людина не зробить найпоширеніших помилок.
+      <strong>10 слайдів. 10 хвилин. Усе найважливіше з 37 розділів брендбуку.</strong> Для нових працівників, підрядників, агенцій. Покажи перед першим завданням — і людина не зробить найпоширеніших помилок.
     </p>
     <p style="font-size: 13px; color: var(--bone); margin-top: 12px;">
       Кожен слайд — окрема ідея. Прокручуй вниз або натисни «Презентація» для повноекранного режиму.
@@ -262,7 +238,7 @@
       <div class="slide-content">
         <div class="slide-num" style="color: rgba(255,255,255,0.6);">/// 01 / 10 — ВІТАЄМО У DREAMCAR</div>
         <h2 style="margin-top: auto;">МРІЯ.<br>ЗА ЦІНОЮ<br>ЧАШКИ КАВИ.</h2>
-        <p class="lead" style="margin-top: 20px;">DreamCar — український авто-клуб з 10-річною історією. 21 авто вручено. 500K+ спільнота. Один з найдовговічних клубів цього формату в Європі.</p>
+        <p class="lead" style="margin-top: 20px;">DreamCar — український авто-клуб з 2016 року. 21 авто вручено з 2019 року. Спільнота 500K+.</p>
         <div class="footer-mark" style="color: rgba(255,255,255,0.5);">DREAMCAR BRAND ONBOARDING · 2026</div>
       </div>
     </div>
@@ -271,12 +247,12 @@
     <div class="slide">
       <div class="slide-content">
         <div class="slide-num">/// 02 / 10 — НАША МІСІЯ</div>
-        <h2>ВЕРНУТИ <span style="color: var(--red);">МРІЮ</span> УКРАЇНЦЯМ.</h2>
+        <h2>ПОВЕРНУТИ <span style="color: var(--red);">МРІЮ</span> УКРАЇНЦЯМ.</h2>
         <p class="lead">Авто — більше ніж транспорт. Це символ свободи, успіху, маленьких перемог. Ми робимо це доступним для тих, хто не може купити Audi за свою зарплату — але має право на цю мрію.</p>
         <ul style="margin-top: 20px;">
           <li><strong style="color: var(--white);">Хто ми:</strong> авто-клуб, не «лотерея»</li>
           <li><strong style="color: var(--white);">Що даємо:</strong> доступ + досвід + спільноту</li>
-          <li><strong style="color: var(--white);">Чим відрізняємось:</strong> 10 років без зривів</li>
+          <li><strong style="color: var(--white);">Чим відрізняємось:</strong> з 2016 року, кожне вручення публічно і з доказами</li>
         </ul>
         <div class="footer-mark">DREAMCAR · MISSION</div>
         <div class="corner-num">02</div>
@@ -287,7 +263,7 @@
     <div class="slide">
       <div class="slide-content">
         <div class="slide-num">/// 03 / 10 — НАША АУДИТОРІЯ</div>
-        <h2>ЧОЛОВІК <span style="color: var(--red);">25-45</span>, УКРАЇНА.</h2>
+        <h2>ЧОЛОВІК <span style="color: var(--red);">25–44</span>, УКРАЇНА.</h2>
         <p class="lead">Працює, заробляє, мріє. Не очікує «легких грошей» — поважає чесний обмін. Слідкує за авто-новинами. Серйозний як клієнт — серйозне ставлення у відповідь.</p>
         <ul style="margin-top: 20px;">
           <li>Розуміється на машинах — не обдуриш «гарантованим виграшем»</li>
@@ -398,13 +374,13 @@
       <div class="slide-content">
         <div class="slide-num">/// 09 / 10 — ДЕ ДЕТАЛІ</div>
         <h2>BRAND.DREAMCAR.UA</h2>
-        <p class="lead">Повний брендбук на 26 розділів. Якщо є питання — спочатку шукай тут (працює пошук «/»). Якщо немає відповіді — пиши.</p>
+        <p class="lead">Повний брендбук на 37 розділів. Якщо є питання — спочатку шукай тут (працює пошук «/»). Якщо немає відповіді — пиши.</p>
         <ul style="margin-top: 20px;">
-          <li><strong style="color: var(--white);">Voice guide:</strong> розділ 11 — DO/CAREFUL/NEVER, матриця по 6 каналах</li>
-          <li><strong style="color: var(--white);">Examples:</strong> розділ 23 — 12 прикладів good vs bad</li>
-          <li><strong style="color: var(--white);">Кризи:</strong> розділ 13 — 8 готових скриптів</li>
-          <li><strong style="color: var(--white);">AI:</strong> розділ 22 — як використовувати Claude/ChatGPT</li>
-          <li><strong style="color: var(--white);">Mobile:</strong> розділ 25 — breakpoints і touch targets</li>
+          <li><strong style="color: var(--white);">Voice guide:</strong> розділ 10 — DO/CAREFUL/NEVER, матриця по 6 каналах</li>
+          <li><strong style="color: var(--white);">Examples:</strong> розділ 12 — 12 прикладів good vs bad</li>
+          <li><strong style="color: var(--white);">Кризи:</strong> розділ 28 — 8 готових скриптів</li>
+          <li><strong style="color: var(--white);">AI:</strong> розділ 13 — як використовувати Claude/ChatGPT</li>
+          <li><strong style="color: var(--white);">Mobile:</strong> розділ 34 — breakpoints і touch targets</li>
         </ul>
         <div class="footer-mark">DREAMCAR · LEARN MORE</div>
         <div class="corner-num">09</div>
@@ -416,7 +392,7 @@
       <div class="slide-content">
         <div class="slide-num" style="color: rgba(255,255,255,0.6);">/// 10 / 10 — ВПЕРЕД</div>
         <h2 style="margin-top: auto;">ГОТОВО?<br><span style="color: rgba(255,255,255,0.8);">ПИШИ.</span></h2>
-        <p class="lead" style="margin-top: 20px;">Будь-які питання — звертайся. Краще запитати 10 раз і зробити правильно, ніж зробити неправильно і переробляти.</p>
+        <p class="lead" style="margin-top: 20px;">Будь-які питання — звертайся. Краще запитати 10 разів і зробити правильно, ніж зробити неправильно і переробляти.</p>
         <ul style="margin-top: 20px;">
           <li><strong>Email:</strong> vg@dreamcar.ua</li>
           <li><strong>Telegram:</strong> @dreamcar_brand</li>
@@ -432,7 +408,7 @@
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
-      <strong>На першому день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
+      <strong>У перший день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
     </p>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6; margin-top: 10px;">
       <strong>Друк:</strong> кнопка «Друк/PDF» зверху — кожен слайд на окремій сторінці. Ідеально для офлайн-зустрічей з агенціями.
@@ -532,13 +508,13 @@
   <div class="s-num plate-k"><span class="pk-num">02</span><span class="pk-name">Інструменти</span></div>
   <h1 class="s-title">ІНТЕРАКТИВНІ <span class="red">ІНСТРУМЕНТИ</span></h1>
   <p class="s-desc">
-    Не документація — а <strong style="color: var(--white);">робочі інструменти</strong>. Vчирай текст одним кліком. Перевір контраст одним кліком. Скачай асет одним кліком. Те що раніше займало 10 хвилин — тут за 10 секунд.
+    Не документація — а <strong style="color: var(--white);">робочі інструменти</strong>. Вичищай текст одним кліком. Перевір контраст одним кліком. Скачай асет одним кліком. Те що раніше займало 10 хвилин — тут за 10 секунд.
   </p>
 
   <!-- ============== VOICE LINTER ============== -->
   <div class="tool-card">
     <h2 id="voice-linter">Voice Linter — перевірка тексту</h2>
-    <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="sections/voice.html" style="color: var(--red);">розділу 11 DO/CAREFUL/NEVER</a>.</p>
+    <p class="desc">Вставляй будь-який текст — отримуй миттєвий список ризикованих слів з рекомендаціями для заміни. Сканує по словнику <a href="sections/voice.html" style="color: var(--red);">розділу 10 DO/CAREFUL/NEVER</a>.</p>
 
     <div class="linter-area">
       <textarea class="linter-input" id="lintInput" aria-label="Текст для перевірки" placeholder="Встав текст сюди... Наприклад: «Шанс виграти BMW за 249 грн! Купуй квиток!»" oninput="runLinter()">Шанс виграти BMW X5 за 249 грн! Купи квиток — твій шанс стати власником авто мрії! Поспішай, лотерея сьогодні!</textarea>
@@ -683,7 +659,7 @@
       <a class="asset" href="print.html" target="_blank" rel="noopener">
         <div class="asset-icon"></div>
         <div class="asset-name">Brand Book PDF</div>
-        <div class="asset-meta">всі 27 розділів</div>
+        <div class="asset-meta">усі розділи</div>
       </a>
       <a class="asset" href="sections/photography-brief.html" target="_blank" rel="noopener">
         <div class="asset-icon"></div>
@@ -725,9 +701,9 @@
   <!-- ============== AI ASSISTANT PROMPT ============== -->
   <div class="tool-card">
     <h2 id="ai-assistant">AI-асистент бренду</h2>
-    <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Cкопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
+    <p class="desc">Готовий system prompt для Claude/ChatGPT/Gemini. Скопіюй, встав на початку діалогу — AI буде відповідати у нашому voice.</p>
     <button class="copy-action" onclick="copyAIPrompt()" id="aiPromptBtn">Скопіювати AI system prompt</button>
-    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="sections/ai-content.html" style="color: var(--red);">розділі 22 AI-контент</a>.</p>
+    <p style="font-size: 12px; color: var(--ash); margin-top: 10px;">Повна версія промпта + чеклист перед публікацією — у <a href="sections/ai-content.html" style="color: var(--red);">розділі 13 AI-контент</a>.</p>
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
@@ -990,7 +966,7 @@
       <div style="margin-top: 32px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// АЛГОРИТМ ГЕНЕРАЦІЇ</div>
         <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
-          Кожен пост проходить через voice guide розділу 11. Жодне слово з NEVER-списку (шанс, виграй, лотерея, квиток, халява) не з'являється. CTA — стандартний «Взяти участь». Структура — наш voice: прямо, коротко, дієсловом.
+          Кожен пост проходить через voice guide розділу 10. Жодне слово з NEVER-списку (шанс, виграй, лотерея, квиток, халява) не з'являється. CTA — стандартний «Взяти участь». Структура — наш voice: прямо, коротко, дієсловом.
         </p>
       </div>
 
@@ -1099,9 +1075,9 @@
     а компас. Якщо щось не б'ється з ним — викидаємо.
   </p>
   <div class="manifesto">
-    Ми не <span class="strike">лотерея</span>. Не <span class="strike">казино</span>. Не <span class="strike">розвага</span>.<br>
+    Ми не <span class="strike">обіцянка</span>. Не <span class="strike">випадок</span>. Не <span class="strike">розвага</span>.<br>
     Ми — <span class="red">спільнота тих, хто діє</span>.<br>
-    Поки інші чекають "правильного моменту",<br>
+    Поки інші чекають «правильного моменту»,<br>
     наші учасники <span class="red">забирають ключі</span>.<br>
     Кожен токен — це крок до того,<br>
     щоб ти став наступним.
@@ -1109,7 +1085,7 @@
 
   <div style="max-width: 760px; margin: 40px 0 0; font-size: 17px; line-height: 1.75; color: var(--bone);">
     <p style="margin: 0 0 20px;">Хтось збирає на авто десять років. Хтось бере кредит — і віддає його ще десять. А наш учасник робить крок за ціною чашки кави — і у прямому ефірі дивиться, як ключі забирає такий самий, як він. <strong style="color: var(--white);">Наступним може бути він сам.</strong></p>
-    <p style="margin: 0 0 20px;">19 разів ми вручали ключі. 19 разів — по-справжньому: з договором, документами і прямим ефіром без монтажу. Жодного «дрібним шрифтом». Жодного «умови змінились». <strong style="color: var(--white);">Десять років — слово в слово.</strong></p>
+    <p style="margin: 0 0 20px;">21 раз ми вручали ключі. 21 раз — по-справжньому: з договором, документами і прямим ефіром без монтажу. Жодного «дрібним шрифтом». Жодного «умови змінились». <strong style="color: var(--white);">З 2016 року — слово в слово.</strong></p>
     <p style="margin: 0;">Мрія — не розкіш і не випадок. Мрія — це рішення. Токен не обіцяє тобі авто. Він обіцяє чесний фінал, справжні ключі та спільноту, яка дивиться той самий ефір і вболіває за тебе. <strong style="color: var(--white);">Ми будуємо бренд, якому вірять навіть ті, хто не вірить нікому.</strong></p>
   </div>
 
@@ -1192,7 +1168,7 @@
       <div class="label">/// УТП — УНІКАЛЬНА ТОРГОВА ПРОПОЗИЦІЯ</div>
       <div class="heading">АВТОМОБІЛЬ МРІЇ<br>ЗА ЦІНОЮ <span class="red">ЧАШКИ КАВИ.</span></div>
       <div class="body">
-        За 249 ₴ ти отримуєш доступ до акції та номер участі. 21 реальна людина за 10 років забрала ключі — підтверджено документами та прямим ефіром.
+        За 249 ₴ ти отримуєш доступ до акції та номер участі. 21 реальна людина з 2019 року отримала ключі — підтверджено документами та прямим ефіром.
       </div>
     </div>
 
@@ -1290,7 +1266,7 @@
   <div class="persona-grid">
     <div class="persona"><div class="persona-head"><div class="avatar">IT</div><div class="name">Іван (IT)</div><div class="age">СТАБІЛЬНИЙ ДОХІД · НЕ ХОЧЕ КРЕДИТУ</div></div><div class="persona-body"><div class="persona-section"><div class="label">/// СИТУАЦІЯ</div><p>Заробляє стабільно вище середнього. Хоче кращу машину, але не готовий заморозити велику суму у пасиві або на 5–7 років влізти в кредит. Логіка: «гроші мають працювати, а не стояти на парковці».</p></div><div class="persona-section"><div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div><p>Здебільшого щоб <strong>відключитися</strong> після роботи: Reels, огляди техніки, авто-тести.</p></div><div class="persona-section"><div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div><ul><li>Подивився YouTube-огляд тачки мрії</li><li>Зайшла зарплата</li><li>Колега з'явився на новій машині</li><li>Реклама зловила у правильному настрої (вечір п'ятниці)</li></ul></div><div class="persona-section"><div class="label">/// ЩО РУХАЄ</div><p>Драйв без фінансового рабства. Раціональний шлях до мрії, де ризик чітко обмежений сумою токена.</p></div><div class="persona-section"><div class="label">/// ЯК ВПЛИВАТИ</div><ul><li>Цифри і порівняння: «249 ₴ vs 3 роки кредиту»</li><li>Прозорість: документи, ЄДРПОУ, ефір</li><li>Соцдоказ: реальні власники з близького середовища</li></ul></div><blockquote class="persona-quote">«Усе чесно — і ризик обмежений 249 ₴. Чому ні.»</blockquote></div></div>
     <div class="persona"><div class="persona-head"><div class="avatar">SMB</div><div class="name">Микола (СМБ-власник)</div><div class="age">СВОЯ СПРАВА · СІМ'Я · ПРАГМАТИК</div></div><div class="persona-body"><div class="persona-section"><div class="label">/// СИТУАЦІЯ</div><p>Має невеликий бізнес (СТО, магазин, сервіс). Сім'я: дружина + діти. Авто старше 7 років, потрібен апгрейд для родини. Великі сімейні витрати: садок, ремонт, відпустка.</p></div><div class="persona-section"><div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div><p>Здебільшого щоб <strong>вирішити проблему</strong>: знайти запчастину, підрядника, рекламу. Менше для розваг — більше для роботи.</p></div><div class="persona-section"><div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div><ul><li>Чергова поломка старого авто (раптовий рахунок ремонту)</li><li>Розмова з дружиною: «треба нову машину»</li><li>Друг розповів про свій вдалий випадок</li><li>Бачить, що організатор — ТОВ, а не блогер</li></ul></div><div class="persona-section"><div class="label">/// ЩО РУХАЄ</div><p>Сімейне рішення «без шкоди для бюджету». Хоче, щоб дружина схвалила, а не сприйняла як авантюру.</p></div><div class="persona-section"><div class="label">/// ЯК ВПЛИВАТИ</div><ul><li>Сімейні історії власників («тато привіз ключі додому»)</li><li>Чітко по податках, оформленню, документах</li><li>Тарифи від 1–3 токенів (низький поріг)</li></ul></div><blockquote class="persona-quote">«Якщо це не казино, а легальна акція — і дружина не злиться — спробую один токен.»</blockquote></div></div>
-    <div class="persona"><div class="persona-head"><div class="avatar">P</div><div class="name">Ольга (продуктовий профі)</div><div class="age">КАР'ЄРА · ЕСТЕТИКА · ВТОМА</div></div><div class="persona-body"><div class="persona-section"><div class="label">/// СИТУАЦІЯ</div><p>Робота у медіа, маркетингу, продукті чи дизайні. Уважна до естетики бренду. Власне авто може бути, може не бути — не маркер. Маркер: вона не «грає», але любить красиві історії.</p></div><div class="persona-section"><div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div><p>Здебільшого для <strong>натхнення і відключення</strong>: Stories, Pinterest, lifestyle-пости. Не любить кричущу рекламу.</p></div><div class="persona-section"><div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div><ul><li>Естетична реклама / красиво знятий ефір</li><li>Жіноча історія власниці авто (а не «парень з гаража»)</li><li>Рекомендація подруги</li><li>«Чому б ні» в момент втоми / після робочого дня</li></ul></div><div class="persona-section"><div class="label">/// ЩО РУХАЄ</div><p>Хоче відчувати, що це «її формат», а не «чоловіча історія». Цінує приватність — щоб ніхто не змусив виходити на камеру.</p></div><div class="persona-section"><div class="label">/// ЯК ВПЛИВАТИ</div><ul><li>Жінки-власниці у комунікаціях</li><li>Естетика бренду — не «гаражна», елегантна</li><li>Опція приватності («не хочу у відео — не покажуть»)</li></ul></div><blockquote class="persona-quote">«Це більше схоже на клуб, ніж на авантюру. І зроблено зі смаком — спробую.»</blockquote></div></div>
+    <div class="persona"><div class="persona-head"><div class="avatar">P</div><div class="name">Ольга (продуктовий профі)</div><div class="age">КАР'ЄРА · ЕСТЕТИКА · ВТОМА</div></div><div class="persona-body"><div class="persona-section"><div class="label">/// СИТУАЦІЯ</div><p>Робота у медіа, маркетингу, продукті чи дизайні. Уважна до естетики бренду. Власне авто може бути, може не бути — не маркер. Маркер: вона не «грає», але любить красиві історії.</p></div><div class="persona-section"><div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div><p>Здебільшого для <strong>натхнення і відключення</strong>: Stories, Pinterest, lifestyle-пости. Не любить кричущу рекламу.</p></div><div class="persona-section"><div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div><ul><li>Естетична реклама / красиво знятий ефір</li><li>Жіноча історія власниці авто (а не «хлопець з гаража»)</li><li>Рекомендація подруги</li><li>«Чому б ні» в момент втоми / після робочого дня</li></ul></div><div class="persona-section"><div class="label">/// ЩО РУХАЄ</div><p>Хоче відчувати, що це «її формат», а не «чоловіча історія». Цінує приватність — щоб ніхто не змусив виходити на камеру.</p></div><div class="persona-section"><div class="label">/// ЯК ВПЛИВАТИ</div><ul><li>Жінки-власниці у комунікаціях</li><li>Естетика бренду — не «гаражна», елегантна</li><li>Опція приватності («не хочу у відео — не покажуть»)</li></ul></div><blockquote class="persona-quote">«Це більше схоже на клуб, ніж на авантюру. І зроблено зі смаком — спробую.»</blockquote></div></div>
     <div class="persona"><div class="persona-head"><div class="avatar">Z</div><div class="name">Дмитро (молодий, без авто)</div><div class="age">МАЛИЙ ДОХІД · ХОЧЕ ЗМІНИ</div></div><div class="persona-body"><div class="persona-section"><div class="label">/// СИТУАЦІЯ</div><p>Студент чи перші роки роботи. Авто немає. Живе з батьками або в орендованій кімнаті. 249 ₴ — реальна сума, не дрібниця.</p></div><div class="persona-section"><div class="label">/// НАВІЩО В СОЦМЕРЕЖАХ</div><p>Здебільшого щоб <strong>вбити час</strong>: TikTok, Reels, Twitch. Реклама працює, якщо зловила за 2 секунди.</p></div><div class="persona-section"><div class="label">/// ТРИГЕР «ОПЛАТИТИ»</div><ul><li>Бачить мемне відео власника-однолітка</li><li>Друзі обговорюють у компанії</li><li>Зайшла перша зарплата / стипендія</li><li>Розрив з дівчиною / момент «треба щось змінити»</li></ul></div><div class="persona-section"><div class="label">/// ЩО РУХАЄ</div><p>Незалежність і повагу серед однолітків. Не вірить у «казки», але вірить у конкретні історії.</p></div><div class="persona-section"><div class="label">/// ЯК ВПЛИВАТИ</div><ul><li>Тарифи від 1 токена</li><li>Молоді власники 20–25 років</li><li>TikTok-формат, мемний контент, прямий монтаж</li></ul></div><blockquote class="persona-quote">«За 249 ₴ — спробую. Інакше така машина мені не світить найближчі 5 років.»</blockquote></div></div>
   </div>
 
@@ -1306,7 +1282,7 @@
 <section id="compete">
   <div class="s-num plate-k"><span class="pk-num">08</span><span class="pk-name">Контекст ринку</span></div>
   <h1 class="s-title">ЧИМ МИ <span class="red">ВІДРІЗНЯЄМОСЬ</span></h1>
-  <p class="s-desc">На ринку існують різні формати «недорогої перемоги»: ліцензовані лотереї, безкоштовні розіграші у соцмережах, інші платні моделі. У таблиці порівнюємо нашу пропозицію з категоріями (не з конкретними гравцями) — щоб було зрозуміло, де наше місце.</p>
+  <p class="s-desc">На ринку існують різні формати, де людина за невеликі гроші може отримати щось велике: ліцензовані лотереї, безкоштовні розіграші у соцмережах, інші платні моделі. У таблиці порівнюємо нашу пропозицію з категоріями (не з конкретними гравцями) — щоб було зрозуміло, де наше місце.</p>
 
   <div class="table-scroll-hint">ГОРТАЙ ТАБЛИЦЮ ВПРАВО</div>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Таблиця">
@@ -1322,9 +1298,9 @@
     </thead>
     <tbody>
       <tr class="us"><td>Поріг входу</td><td><strong>249 ₴</strong></td><td>20–50 ₴</td><td>Безкоштовно (за лайк/підписку)</td><td>Залежить від платформи</td></tr>
-      <tr class="us"><td>Прозорість процедури</td><td><span class="check">✓ Прямий ефір з рандомайзером</span></td><td>Закон + комісія</td><td>Не завжди верифіковано</td><td>Варіюється</td></tr>
-      <tr class="us"><td>Документи власника</td><td><span class="check">✓ Договір купівлі-продажу + ПТС</span></td><td>За правилами оператора</td><td>За домовленістю</td><td>Не стандартизовано</td></tr>
-      <tr class="us"><td>Тип призу</td><td><strong>Авто</strong></td><td>Грошові виплати</td><td>Дрібні товари / гроші</td><td>Залежить від моделі</td></tr>
+      <tr class="us"><td>Прозорість процедури</td><td><span class="check">✓ Прямий ефір, визначення номера учасника на очах у всіх</span></td><td>Закон + комісія</td><td>Не завжди верифіковано</td><td>Варіюється</td></tr>
+      <tr class="us"><td>Документи власника</td><td><span class="check">✓ Документи на авто оформлюються на власника</span></td><td>За правилами оператора</td><td>За домовленістю</td><td>Не стандартизовано</td></tr>
+      <tr class="us"><td>Що вручається</td><td><strong>Авто</strong></td><td>Грошові виплати</td><td>Дрібні товари / гроші</td><td>Залежить від моделі</td></tr>
       <tr class="us"><td>Спільнота</td><td><span class="check">Постійний клуб власників</span></td><td>Немає</td><td>Тимчасова за акцію</td><td>Залежить</td></tr>
       <tr class="us"><td>Юридична форма</td><td><strong>Публічна оферта + повні правила</strong></td><td>Ліцензія</td><td>Сіра зона / договір з блогером</td><td>Залежить</td></tr>
       <tr class="us"><td><strong>УТП</strong></td><td><strong>Авто за 249 ₴ + прозорий ефір</strong></td><td>Дозвілля з державою</td><td>Підписка/охоплення замість грошей</td><td>Різне</td></tr>
@@ -1572,7 +1548,7 @@
   <div class="card" style="background: var(--coal); border-top: 3px solid var(--red); border-color: var(--red); padding: 24px; margin-top: 24px;">
     <span class="label">/// ОСОБЛИВЕ ПРАВИЛО — ЗАБОРОНЕНЕ СЛОВО</span>
     <h4 style="margin-top: 8px;">«ШАНС» — НІКОЛИ НЕ ВИКОРИСТОВУЄМО</h4>
-    <p style="margin-top: 8px;">«Шанс» — це слово лотереї та казино. Воно знецінює нашу позицію. Ми не пропонуємо «шанс» — ми пропонуємо <strong>конкретну дію</strong>: купити токен, прийти на ефір, забрати ключі. Замість «шанс виграти» — кажи «можеш виграти». Замість «твій шанс» — «твій крок». Це правило непорушне для всіх каналів — від Instagram до прес-релізів.</p>
+    <p style="margin-top: 8px;">«Шанс» — це слово лотереї та казино. Воно знецінює нашу позицію. Ми не пропонуємо «шанс» — ми пропонуємо <strong>конкретну дію</strong>: купити токен, прийти на ефір, забрати ключі. Замість «шанс виграти» — кажи «участь у проєкті». Замість «твій шанс» — «твій крок». Це правило непорушне для всіх каналів — від Instagram до прес-релізів.</p>
   </div>
 
   <h2 class="s-subtitle">ТОН ГОЛОСУ — <span class="red">ПО КАНАЛАХ</span></h2>
@@ -1588,7 +1564,7 @@
       </div>
       <div class="row">
         <strong>ТОН</strong>
-        <span>Драйв і азарт. Емоція, не пояснення. Короткі фрази, великі заголовки.</span>
+        <span>Драйв і передчуття. Емоція, не пояснення. Короткі фрази, великі заголовки.</span>
       </div>
       <div class="row">
         <strong>ДОВЖИНА</strong>
@@ -1596,7 +1572,7 @@
       </div>
       <div class="row">
         <strong>ПРИКЛАД</strong>
-        <span style="font-style: italic;">«#018. Audi e-tron. 249 ₴ за токен. Прямий ефір — [дата], 20:00. Бери.»</span>
+        <span style="font-style: italic;">«Проєкт #NN. [Авто]. [Ціна] ₴ за токен. Прямий ефір — [дата], 20:00. Бери.»</span>
       </div>
     </div>
 
@@ -1623,7 +1599,7 @@
       </div>
       <div class="row">
         <strong>ПРИКЛАД</strong>
-        <span style="font-style: italic;">« Ось і він. Audi e-tron #018. Старт продажу токенів — завтра 10:00.»</span>
+        <span style="font-style: italic;">«Ось і він. [Авто], проєкт #NN. Старт — завтра о 10:00.»</span>
       </div>
     </div>
 
@@ -1654,7 +1630,7 @@
       </div>
       <div class="row">
         <strong>ПРИКЛАД (ТРИГЕРНИЙ)</strong>
-        <span style="font-style: italic;">«Доброго дня, Іване. Дякуємо за оплату. Ваш токен #018-A4F2 активовано. Прямий ефір — 19.04 о 20:00 у нашому Instagram.»</span>
+        <span style="font-style: italic;">«Доброго дня, Іване. Дякуємо за оплату. Ваш токен #NN-A4F2 активовано. Прямий ефір — [дата] о 20:00 у нашому Instagram.»</span>
       </div>
     </div>
 
@@ -1673,7 +1649,7 @@
       </div>
       <div class="row">
         <strong>ПРИКЛАДИ</strong>
-        <span style="font-style: italic;">Короткий: «249 ₴. Ефір. Ключі.» (3 кадри з реальним власником).<br>Розгорнутий: «Розбираю Audi e-tron #018: усі комплектації, чим відрізняється, що отримує переможець» (2 хв 40 сек).</span>
+        <span style="font-style: italic;">Короткий: «249 ₴. Ефір. Ключі.» (3 кадри з реальним власником).<br>Розгорнутий: «Розбираю [авто] проєкту #NN: усі комплектації, чим відрізняється, що отримує переможець» (2 хв 40 сек).</span>
       </div>
     </div>
 
@@ -1727,7 +1703,7 @@
   <div style="background: var(--coal); border-top: 3px solid var(--red); border: 1px solid var(--red); padding: 22px 26px; margin: 0 0 28px;">
     <div class="s-eyebrow" style="margin-top:0;">/// ІЄРАРХІЯ ПРАВИЛ — ЩО ГОЛОВНІШЕ ПРИ КОНФЛІКТІ</div>
     <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;color:var(--white);margin-bottom:10px;">ЗАКОН <span class="red">→</span> ГОЛОС <span class="red">→</span> ВІЗУАЛ</div>
-    <p style="font-size:13px;color:var(--bone);line-height:1.65;margin:0;">Коли правила сперечаються між собою, перемагає вищий рівень: спершу <a href="sections/legal.html" style="color:var(--white);"><strong>Legal-safe лексикон (11B)</strong></a> — його не перекриває ніщо, навіть найкраще гасло; далі — цей розділ (Голос); далі — візуальні правила. Приклад: фраза звучить потужніше зі словом із NEVER-списку? Фраза програє. Саме тому з v4.0 канонічний CTA-ритм бренду — <strong style="color:var(--white);">«Бери. Дій. Володій.»</strong> (замість ретированого «…Виграй»).</p>
+    <p style="font-size:13px;color:var(--bone);line-height:1.65;margin:0;">Коли правила сперечаються між собою, перемагає вищий рівень: спершу <a href="sections/legal.html" style="color:var(--white);"><strong>Legal-safe лексикон (розділ 09)</strong></a> — його не перекриває ніщо, навіть найкраще гасло; далі — цей розділ (Голос); далі — візуальні правила. Приклад: фраза звучить потужніше зі словом із NEVER-списку? Фраза програє. Саме тому з v4.0 канонічний CTA-ритм бренду — <strong style="color:var(--white);">«Бери. Дій. Володій.»</strong> (замість ретированого «…Виграй»).</p>
   </div>
 
   <h2 class="s-subtitle">Три рівні слів</h2>
@@ -1753,16 +1729,15 @@
     </div>
 
     <div style="background: rgba(245,158,11,0.08); padding: 24px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 16px;">/// ⚠ CAREFUL — ВУЗЬКО І РІДКО</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 16px;">/// ⚠ ЗАМІНЮЙ ЗАВЖДИ</div>
       <ul style="list-style: none; line-height: 2;">
-        <li style="color: var(--white); font-weight: 600;">розіграш</li>
-        <li style="color: var(--white); font-weight: 600;">виграш</li>
-        <li style="color: var(--white); font-weight: 600;">переможець</li>
-        <li style="color: var(--white); font-weight: 600;">приз</li>
+        <li style="color: var(--white); font-weight: 600;">❌ розіграш → промоакція</li>
+        <li style="color: var(--white); font-weight: 600;">❌ виграш → отримання авто</li>
+        <li style="color: var(--white); font-weight: 600;">❌ переможець → власник</li>
+        <li style="color: var(--white); font-weight: 600;">приз → авто проєкту / подарунок</li>
       </ul>
       <p style="font-size: 12px; color: var(--bone); margin-top: 16px; line-height: 1.5; font-style: italic;">
-        <strong style="color: var(--warning);">Принцип: де можна — заміняй (на «акція», «вручення», «учасник», «авто»), де критично — залишай.</strong> Допустимо тільки в живих сторіс/Reels та в офіційних юридичних документах (де термін має юридичне значення). У hero, footer, hashtags, brief, FAQ, checkout, paid ads — НЕ використовуй.
-      </p>
+        <strong style="color: var(--warning);">Принцип: заміняй завжди.</strong> Ці слова не вживаємо в жодному каналі — ні в сторіс, ні в Reels, ні в ефірі. Юридичні терміни в офіційних правилах проєкту формулює юрист, а не маркетинг.</p>
     </div>
 
     <div style="background: var(--danger); padding: 24px;">
@@ -1784,7 +1759,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle"> ЖОРСТКЕ ТАБУ — <span class="red">КАНАЛИ ЯК ОДИН</span></h2>
+  <h2 class="s-subtitle">Табу для всіх каналів</h2>
   <p class="s-desc">Слова з цього списку не використовуємо ніде, де їх можуть прочитати модерація платіжних систем, рекламні алгоритми або юридичні комплаєнс-офіцери. Один прокол може коштувати блокування акаунта рекламного кабінету або заморожування платежів.</p>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 20px;">
 
@@ -1810,7 +1785,7 @@
         <li>приз / подарунок за покупку</li>
         <li>квиток / білет ⚠ дуже тригерить</li>
         <li>учасник розіграшу</li>
-        <li>розіграш (у paid-каналах)</li>
+        <li>розіграш (у будь-якому каналі)</li>
         <li>гарантований виграш / гарантія</li>
       </ul>
     </div>
@@ -1843,7 +1818,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle"> ОКРЕМО — <span class="red">ПЛАТІЖНІ СИСТЕМИ</span></h2>
+  <h2 class="s-subtitle">ОКРЕМО — <span class="red">ПЛАТІЖНІ СИСТЕМИ</span></h2>
   <p class="s-desc">У призначенні платежу, описі мерчанта, тексті офіційних квитанцій — ці слова автоматично активують комплаєнс-перевірку і можуть призвести до зупинки коштів. Перевіряй кожне посилання на вартість токена і кожен листок-квитанцію.</p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 18px;">
@@ -1869,7 +1844,7 @@
     </div>
   </div>
 
-  <h2 class="s-subtitle"> ЗОЛОТИЙ СТАНДАРТ — <span class="red">SAFE-СЛОВНИК</span></h2>
+  <h2 class="s-subtitle">Безпечний словник</h2>
   <p class="s-desc">Принцип, що за все відповідає: ми не продаємо «шанс виграти». Ми даємо <strong style="color: var(--white);">доступ до цифрового продукту і клубу</strong> — спільнота, контент, досвід. Авто — частина екосистеми, а не причина покупки. У цій логіці кожне слово з лівої колонки переписується в праву.</p>
 
   <div class="table-scroll" style="margin-top: 18px;">
@@ -1965,7 +1940,7 @@
     <div class="card" style="border-left: 3px solid var(--warning);">
       <span class="label">/// ОРГАНІКА · BALANCED</span>
       <h4>INSTAGRAM · TELEGRAM · TIKTOK</h4>
-      <p>DO + CAREFUL у живих сторіс/Reels (вузько і рідко). У статичних постах і обкладинках — DO-словник. Юридичну інформацію виносимо в окрему сторіс/слайд, не дрібним рядком знизу.</p>
+      <p>Тільки безпечний словник — як і всюди. Живі сторіс і Reels вільніші за тоном, але не за словами. Юридичну інформацію виносимо в окрему сторіс/слайд, не дрібним рядком знизу.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// САЙТ · LEGAL FIRST</span>
@@ -1975,7 +1950,7 @@
     <div class="card" style="border-left: 3px solid var(--red);">
       <span class="label">/// ЕФІР · LIVE</span>
       <h4>INSTAGRAM LIVE</h4>
-      <p>Найвільніший контекст. CAREFUL-слова допустимі, але без надужитку.</p>
+      <p>Найвільніший за тоном контекст. Слова — ті самі: лексикон діє і в усній мові ведучого.</p>
     </div>
   </div>
 
@@ -2154,7 +2129,7 @@
         <div class="tg-time">14:32</div>
       </div>
       <div class="ex-note">
-        <span class="annotation red">Привіт замість Доброго дня</span><span class="annotation red">«ти»</span><span class="annotation red">«квитків»</span><span class="annotation red">gender реveal</span><span class="annotation red">русизми</span><br>
+        <span class="annotation red">Привіт замість Доброго дня</span><span class="annotation red">«ти»</span><span class="annotation red">«квитків»</span><span class="annotation red">gender reveal</span><span class="annotation red">русизми</span><br>
         <strong>Проблеми:</strong> ламає formal tone, юр.ризик «квитки», emoji-сміття. Видає некомпетентність.
       </div>
     </div>
@@ -2193,7 +2168,7 @@
       </div>
       <div class="ex-note">
         <span class="annotation green">факти</span><span class="annotation green">конкретна ціна</span><span class="annotation green">дата/час</span><span class="annotation green">особистий sender</span><br>
-        <strong>Чому працює:</strong> читається як новина, не як спам. Високий open-rate (тестовано +37%).
+        <strong>Чому працює:</strong> читається як новина, не як спам. Open-rate перевіряйте A/B-тестом на своїй базі.
       </div>
     </div>
   </div>
@@ -2265,7 +2240,7 @@
     <div class="ex-cell good">
       <div class="head">/// ✅ ДОБРЕ</div>
       <div class="ex-mockup mock-tg" style="padding: 12px;">
-        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;"><strong style="color:var(--white);">🔥 Старт промоакції № 17 — BMW X5 Hybrid</strong><br><br>249 ₴ за токен · 4 800 учасників · 1 BMW.<br>Прямий ефір вручення — 19.04.2026, субота, 20:00.<br><br>Бери токен зараз.</div>
+        <div style="color: var(--bone); font-size: 13px; line-height: 1.6;"><strong style="color:var(--white);">Старт проєкту #17 — BMW X5 Hybrid</strong><br><br>249 ₴ за токен · 4 800 учасників · 1 BMW.<br>Прямий ефір вручення — 19.04.2026, субота, 20:00.<br><br>Бери токен зараз.</div>
         <div style="margin-top: 10px;"><button style="background: var(--red); padding: 8px 16px; border-radius: 0; color: #fff; border: none; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button></div>
       </div>
       <div class="ex-note">
@@ -2297,11 +2272,11 @@
         <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@user123 (1 год тому):</div>
         <div style="color: var(--bone); font-size: 12px; font-style: italic; margin-bottom: 12px;">«Це все обман, переможців не існує»</div>
         <div style="color: var(--ash); font-size: 12px; margin-bottom: 6px;">@dreamcar.ua:</div>
-        <div style="color: var(--bone); font-size: 12px;">Доброго дня. Питання зрозуміле — у мережі справді багато сумнівних схем. Тому всі наші вручення проходять у прямому ефірі: архів відкритий за <span style="color: var(--info);">dreamcar.ua/winners</span>. 21 власник за 10 років, контакти доступні. Якщо лишаються конкретні питання — напишіть на vg@dreamcar.ua.</div>
+        <div style="color: var(--bone); font-size: 12px;">Доброго дня. Питання зрозуміле — у мережі справді багато сумнівних схем. Тому всі наші вручення проходять у прямому ефірі: архів відкритий за <span style="color: var(--info);">dreamcar.ua/winners</span>. 21 власник з 2019 року, контакти доступні. Якщо лишаються конкретні питання — напишіть на vg@dreamcar.ua.</div>
       </div>
       <div class="ex-note">
         <span class="annotation green">Доброго дня</span><span class="annotation green">визнаєм проблему</span><span class="annotation green">факти</span><span class="annotation green">прозорість</span><span class="annotation green">офер escalation</span><br>
-        <strong>Чому працює:</strong> класичний crisis-протокол з розділу 13. Знімає напругу, виходить гідно.
+        <strong>Чому працює:</strong> класичний crisis-протокол з розділу 28. Знімає напругу, виходить гідно.
       </div>
     </div>
   </div>
@@ -2323,12 +2298,12 @@
     <div class="ex-cell good">
       <div class="head">/// ✅ ДОБРЕ</div>
       <div class="ex-mockup" style="background: var(--white); color: #000; padding: 16px; justify-content: flex-start; font-family: Manrope;">
-        <div style="font-weight: 800; font-size: 13px; margin-bottom: 8px;">DreamCar оголошує промоакцію №17 з призовим авто BMW X5</div>
-        <div style="font-size: 11px; line-height: 1.5;">Київ, 22.03.2026. Український авто-клуб DreamCar відкриває реєстрацію учасників промоакції №17. Призове авто — BMW X5 xDrive 40i Hybrid (2026 рік випуску). Вартість токена участі — 249 ₴. Прямий ефір вручення авто переможцю — 19.04.2026 о 20:00 в Instagram.</div>
+        <div style="font-weight: 800; font-size: 13px; margin-bottom: 8px;">DreamCar оголошує проєкт #17: BMW X5 вручається серед учасників</div>
+        <div style="font-size: 11px; line-height: 1.5;">Київ, 22.03.2026. Український авто-клуб DreamCar запускає проєкт #17. Автомобіль проєкту — BMW X5 xDrive 40i Hybrid. Вартість токена ШІ-сервісу — 249 ₴. Прямий ефір, у якому автомобіль вручається серед учасників, — 19.04.2026 о 20:00 в Instagram.</div>
       </div>
       <div class="ex-note">
         <span class="annotation green">«промоакція»</span><span class="annotation green">конкретний номер</span><span class="annotation green">технічна назва</span><span class="annotation green">факти</span><br>
-        <strong>Чому працює:</strong> прес-секретар візьме. ЗМІ копіюють. Юр-чисто. Стиль ТАСС/УНІАН.
+        <strong>Чому працює:</strong> прес-секретар візьме. ЗМІ копіюють. Юр-чисто. Стиль Укрінформ/УНІАН.
       </div>
     </div>
   </div>
@@ -2438,7 +2413,7 @@
       <div class="ex-mockup" style="background: #fff; color: #000; padding: 14px; justify-content: flex-start; gap: 6px;">
         <div style="font-size: 11px; color: #777;">Sponsored · DreamCar</div>
         <div style="font-weight: 700; font-size: 13px; margin: 4px 0;">BMW X5 — твій новий клуб</div>
-        <div style="font-size: 11px; color: #444;">DreamCar — український авто-клуб з 10-річною історією. Доступ за 249 ₴. Прямий ефір вручення — 19.04.</div>
+        <div style="font-size: 11px; color: #444;">DreamCar — український авто-клуб з 2016 року. Доступ за 249 ₴. Прямий ефір вручення — 19.04.</div>
         <div style="margin-top: 8px; background: #5ab560; color: #fff; padding: 4px 8px; font-size: 10px; display: inline-block; border-radius: 4px;">✓ AD APPROVED</div>
       </div>
       <div class="ex-note">
@@ -2533,7 +2508,7 @@
       <ul>
         <li>Brainstorming ідей для постів</li>
         <li>Чорнові draft-и текстів (далі редагуємо)</li>
-        <li>Переклад наших текстів (UA → EN / RU / PL)</li>
+        <li>Чернетка перекладу (UA → EN / PL / CZ) — фінал робить носій мови</li>
         <li>Резюмування довгих документів</li>
         <li>Reformulate існуючого тексту (зробити коротшим, формальнішим)</li>
         <li>Code/SQL для внутрішніх систем (HQ, аналітика)</li>
@@ -2564,7 +2539,7 @@
       <ul>
         <li>Deepfake / AI-обличчя власників (катастрофа довіри)</li>
         <li>AI-генеровані відгуки клієнтів (юр. порушення)</li>
-        <li>AI-фото авто яке ми «нібито» розіграємо (фрод)</li>
+        <li>AI-фото авто, яке ми «нібито» вручатимемо (фрод)</li>
         <li>AI-голос реальних співробітників без явної згоди</li>
         <li>Підробка скріншотів TG / IG / банку</li>
         <li>AI-стилізація фото під чужий бренд (Audi, BMW logo manipulation)</li>
@@ -2617,43 +2592,40 @@
     Якщо використовуєш Claude, ChatGPT, Gemini чи інший LLM — починай з цього system prompt-у. Це передасть AI наш voice guide стиснуто. Після — давай конкретне завдання.
   </p>
 
-  <div class="prompt-block" id="aiPrompt">Ти — копірайтер бренду DreamCar (Україна, авто-клуб з 10-річною історією). Пиши у нашому стилі.
+  <div class="prompt-block" id="aiPrompt" tabindex="0">Ти — копірайтер бренду DreamCar (Україна, авто-клуб з 2016 року; автомобілі вручаються з 2019). Пиши голосом бренду.
+
+ПРОДУКТ (дослівно): учасники купують токени ШІ-сервісу ai.dreamcar.ua; автомобіль вручається серед учасників у прямому ефірі.
 
 ТОН ГОЛОСУ:
-- Прямо, коротко, дієсловом
-- Конкретні цифри: 21 авто, 249 ₴, дати
-- "Ви" з великої літери у звертанні (формальне ВИ, ВАМ, ВАШ)
-- "Ти" тільки у Reels/TikTok-влогах і memах
+- Прямо, коротко, дієсловами. Конкретика замість гасел
+- Цифри — тільки ті, що дав автор завдання. Не вигадуй ціни, імена, відсотки
+- «Ви» з великої в сервісі, листах і рекламі; «ти» — тільки в Reels, TikTok і сторіс
 - Без зменшувальних слів (кошти, не грошики)
-- Gender-neutral дієслова ("перевіряю", не "перевірив(ла)")
+- Гендерно-нейтральні дієслова («перевіряю», не «перевірив(ла)»)
+- Лапки «ялинки», апостроф ʼ, тире «—»
 
-ЗАБОРОНЕНІ СЛОВА (юр.ризик, блокування реклами):
-- шанс, шанс виграти
-- лотерея, raffle, giveaway, casino
-- квиток, білет — кажи "токен"
-- джекпот, гарантовано виграєш
-- халява, стань багатим
-- виграй / виграш (тільки у юр.документах)
-- розіграш (тільки у юр.документах)
+ЗАБОРОНЕНІ СЛОВА — у будь-якій формі, у будь-якому каналі, без винятків:
+розіграш, лотерея, квиток, білет, шанс, виграти / виграш / виграй, переможець, джекпот, казино, азарт, ставка, фарт, удача, халява, draw, raffle, lottery, giveaway, ticket, winner, jackpot, casino
 
-БЕЗПЕЧНА АЛЬТЕРНАТИВА:
-- замість "квиток" → "токен"
-- замість "розіграш" → "промоакція / прямий ефір"
-- замість "переможець" → "власник авто / фінальний учасник"
-- замість "виграй" → "забирай / отримай / стань учасником"
+ЗАМІНИ:
+- розіграш → промоакція / проєкт
+- квиток → токен ШІ-сервісу
+- переможець → власник
+- виграти → отримати / стати власником
+- шанс → участь (або прибери фразу)
 
-ПРИКЛАДИ ХОРОШИХ ФРАЗ:
-- "17. Audi e-tron. 249 ₴ за токен. Прямий ефір 19 квітня. Бери."
-- "Мрія за ціною чашки кави"
-- "Бери. Дій. Володій."
-- "Доброго дня! Вже перевіряю Ваші токени."
+ПРИКЛАДИ ФРАЗ:
+- «Проєкт #NN. [Авто]. Прямий ефір — [дата] о 20:00. Бери.»
+- «Мрія за ціною чашки кави»
+- «Бери. Дій. Володій.»
+- «Доброго дня! Вже перевіряю Ваші токени.»
 
 ФОРМАТ ВІДПОВІДІ:
-- Без передмов "Ось ваш текст:"
+- Без передмов «Ось ваш текст:»
 - Тільки чистий результат
-- Якщо ризикові слова неминучі — попередь і запропонуй альтернативу
+- Якщо завдання вимагає забороненого слова — не використовуй його, запропонуй заміну
 
-Завдання нижче — виконай у цьому voice.
+Завдання нижче — виконай цим голосом.
 
 ---
 [ТУТ ТВОЄ ЗАВДАННЯ]</div>
@@ -2723,7 +2695,7 @@
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label">/// EU AI ACT (2024-2026)</span>
       <h4>МАРКУВАННЯ AI КОНТЕНТУ</h4>
-      <p>З 2025 deepfakes і AI-генерований контент обов'язково мають маркіруватись. Штрафи до 7% обороту. Стосується EU аудиторії.</p>
+      <p>З 2025 deepfakes і AI-генерований контент обов'язково мають маркуватися. Штрафи до 7% обороту. Стосується EU аудиторії.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label">/// COPYRIGHT</span>
@@ -2818,7 +2790,7 @@
   <table class="a11y-table">
     <thead><tr><th scope="col">Мова</th><th scope="col">Звертання</th><th scope="col">Чому</th></tr></thead>
     <tbody>
-      <tr><td>UA</td><td>«Ви» з великої в сервісі; «ти» тільки в масовому емоційному контенті (розділ 11)</td><td>Канон бренду</td></tr>
+      <tr><td>UA</td><td>«Ви» з великої в сервісі; «ти» тільки в масовому емоційному контенті (розділ 10)</td><td>Канон бренду</td></tr>
       <tr><td>EN</td><td>you; без сленгу і без «guys»</td><td>Англійська не розрізняє форми — ввічливість тримаємо лексикою і тоном</td></tr>
       <tr><td>PL</td><td>Pan / Pani в підтримці й документах; у рекламі — рішення перекладача-носія до запуску</td><td>Польська реклама часто на «ty», сервіс — ні; фіксуємо один вибір на ринок</td></tr>
       <tr><td>CZ</td><td>vy (vykání) скрізь</td><td>Чеське «ty» у бренді звучить фамільярно</td></tr>
@@ -3659,7 +3631,7 @@
       <div class="label">SKEW -12° · WHITE BG</div>
     </div>
     <div class="element-card">
-      <div class="label">NUMBER · ПРОЕКТИ</div>
+      <div class="label">NUMBER · ПРОЄКТИ</div>
       <div class="demo"><div class="num-badge">17</div></div>
       <div class="label">CIRCLE · ARCHIVO BLACK</div>
     </div>
@@ -3788,7 +3760,7 @@
   <div class="rubric-grid">
     <div class="rubric">
       <div class="tag">#ANATOMY</div>
-      <h4>АНАТОМІЯ ПРИЗУ</h4>
+      <h4>АНАТОМІЯ АВТО</h4>
       <p>Розглядаємо авто акції з усіх сторін: потужність, опції, кольори, історія моделі. 1 пост = 1 деталь.</p>
       <div class="freq">/// 2-3 РАЗИ НА ТИЖДЕНЬ · АКЦІЯ</div>
     </div>
@@ -3801,13 +3773,13 @@
     <div class="rubric">
       <div class="tag">#BACKSTAGE</div>
       <h4>ЗАКУЛІССЯ</h4>
-      <p>Як готується ефір. Хто такі засновники. Як працює рандомайзер. Прозорість — наша валюта.</p>
+      <p>Як готується ефір. Хто такі засновники. Як визначається власник. Прозорість — наша валюта.</p>
       <div class="freq">/// 1-2 РАЗИ НА ТИЖДЕНЬ</div>
     </div>
     <div class="rubric">
       <div class="tag">#TRUST</div>
       <h4>ПРОЗОРІСТЬ</h4>
-      <p>Юридичні документи, ліцензії, сертифікати. Відповіді на сумніви — без слова «лохотрон». Прямі цифри, прямі факти.</p>
+      <p>Правила проєкту, записи ефірів, таблиця вручень. Відповіді на сумніви — без слова «лохотрон». Прямі цифри, прямі факти.</p>
       <div class="freq">/// 1 РАЗ НА ТИЖДЕНЬ</div>
     </div>
     <div class="rubric">
@@ -3819,7 +3791,7 @@
     <div class="rubric">
       <div class="tag">#LIVE</div>
       <h4>ПРЯМІ ЕФІРИ</h4>
-      <p>Кілька форматів за акцію: основний ефір з врученням ключів, окремі ефіри з додатковими призами, Q&amp;A з аудиторією, закуліси, спілкування «без сценарію». Чим частіше — тим тісніший зв'язок зі спільнотою.</p>
+      <p>Кілька форматів за акцію: основний ефір з врученням ключів, окремі ефіри з подарунками учасникам, Q&amp;A з аудиторією, закуліси, спілкування «без сценарію». Чим частіше — тим тісніший зв'язок зі спільнотою.</p>
       <div class="freq">/// 3–5 ЕФІРІВ НА АКЦІЮ + РЕГУЛЯРНІ Q&amp;A</div>
     </div>
     <div class="rubric">
@@ -3844,7 +3816,7 @@
     <span class="hashtag brand">#DreamCar</span>
     <span class="hashtag brand">#DreamCarUA</span>
     <span class="hashtag brand">#МріяПрокачка</span>
-    <span class="hashtag brand">#DreamCar018</span>
+    <span class="hashtag brand">#DreamCar21</span>
   </div>
 
   <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТЕМАТИЧНІ — за рубрикою</p>
@@ -3852,9 +3824,9 @@
     <span class="hashtag">#АудіУкраїна</span>
     <span class="hashtag">#BMWUkraine</span>
     <span class="hashtag">#ЕлектроАвто</span>
-    <span class="hashtag">#АвтоПодарунок</span>
-    <span class="hashtag">#АкціяDreamCar</span>
     <span class="hashtag">#АвтоВручення</span>
+    <span class="hashtag">#АкціяDreamCar</span>
+    
   </div>
 
   <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ГЕО — за регіоном</p>
@@ -3875,47 +3847,47 @@
   </div>
 
   <h2 class="s-subtitle">Питання і відповіді</h2>
-  <p class="s-desc">6 найчастіших питань з відповідями у стилі бренду. Базовий набір для контенту, відповідей у DM, шаблонів для агенцій. Список розширюємо, коли в підтримці з'являється повторюване нове питання.</p>
+  <p class="s-desc">6 найчастіших питань з відповідями у стилі бренду, на «Ви». Базовий набір для контенту, відповідей у DM, шаблонів для агенцій. Список розширюємо, коли в підтримці з'являється повторюване нове питання.</p>
 
   <details class="faq-item">
     <summary>Як я можу впевнитися, що це не обман?</summary>
     <div class="answer">
-      <strong>Вручення проходить у прямому ефірі</strong> в нашому Instagram — будь-хто може спостерігати в реальному часі. 21 власник за 10 років — реальні люди, з якими ти можеш зв'язатись напряму. Усі юридичні документи доступні на сайті у розділі «Прозорість». Організатор — [організатор з реквізитами у публічній оферті]
+      <strong>Вручення проходить у прямому ефірі</strong> в нашому Instagram — будь-хто може дивитися в реальному часі. 21 власник з 2019 року — реальні люди, з якими (з їхньої згоди) можна звʼязатися напряму. Усі юридичні документи доступні на сайті у розділі «Прозорість». Організатор — [організатор з реквізитами у публічній оферті]
     </div>
   </details>
 
   <details class="faq-item">
     <summary>Чому так дешево — 249 ₴ за токен?</summary>
     <div class="answer">
-      Бо ми <strong>не лотерея</strong> — ми клуб. Ми не намагаємось зробити максимум прибутку з одної людини. Ми робимо так, щоб максимум людей могли долучитись. Чим більше учасників — тим більше довіри і впізнаваності бренду. А значить — більше акцій, більше власників.
+      Бо ми <strong>клуб</strong>. Ми не намагаємось зробити максимум прибутку з одної людини. Ми робимо так, щоб максимум людей могли долучитись. Чим більше учасників — тим більше довіри і впізнаваності бренду. А значить — більше акцій, більше власників.
     </div>
   </details>
 
   <details class="faq-item">
     <summary>А податки? Хто їх платить?</summary>
     <div class="answer">
-      <strong>Податки бере на себе DreamCar.</strong> Ти отримуєш авто без додаткових витрат. Усі формальності з оподаткуванням отриманого авто — наша зона відповідальності. Це прописано в публічній оферті.
+      Порядок оподаткування описаний у правилах проєкту на dreamcar.ua. Якщо лишились питання — підтримка пояснить Ваш випадок особисто.
     </div>
   </details>
 
   <details class="faq-item">
     <summary>Що якщо я з-за кордону?</summary>
     <div class="answer">
-      Купити токени можна звідусіль. Але <strong>отримати авто можна тільки на території України</strong> — оформлення документів вимагає особистої присутності. Якщо ти переможець, ми допомагаємо з логістикою.
+      Токени можна придбати з будь-якої країни. Але <strong>отримати авто можна тільки в Україні</strong> — оформлення документів вимагає особистої присутності. Якщо Ви стали власником, ми допоможемо з логістикою.
     </div>
   </details>
 
   <details class="faq-item">
     <summary>Як визначається власник авто?</summary>
     <div class="answer">
-      <strong>Прозорий рандомайзер у прямому ефірі.</strong> Кожен токен = унікальний номер. Програма випадково обирає номер серед усіх куплених. Ефір на сторінці @dreamcar.ua, дата і час — на сайті за тиждень до події.
+      <strong>Номер учасника визначається в прямому ефірі.</strong> Кожен токен має унікальний номер участі. Весь процес видно в ефірі, запис лишається в архіві. Ефір на сторінці @dreamcar.ua, дата і час — на сайті за тиждень до події.
     </div>
   </details>
 
   <details class="faq-item">
     <summary>А якщо я стану власником і не хочу публічності?</summary>
     <div class="answer">
-      <strong>Твоє рішення.</strong> Ми обов'язково повідомляємо про нового власника, але форму комунікації обираєш ти: повне інтерв'ю, тільки фото з ключами, або просто згадка імені без фото. Конфіденційність гарантуємо.
+      <strong>Ваше рішення.</strong> Ми повідомляємо про нового власника, але форму обираєте Ви: повне інтервʼю, лише фото з ключами, лише імʼя без фото або тільки номер учасника. Рівні згоди — у розділі «Церемонія вручення».
     </div>
   </details>
 
@@ -3925,17 +3897,17 @@
     <div class="arc-step">
       <div class="num">1</div>
       <h4>ДО — МРІЯ</h4>
-      <p>Хто він був до DreamCar? Який його контекст? Яка була мрія? <strong>Конкретно:</strong> «Микола, СТО-механік з Дніпра, мріяв про Audi Q5 з 2014 року».</p>
+      <p>Хто він був до DreamCar? Який його контекст? Яка була мрія? <strong>Конкретно:</strong> «[Імʼя], [професія] з [міста], мріяв(ла) про [авто] з [року]» — лише зі слів власника і з його письмової згоди.</p>
     </div>
     <div class="arc-step">
       <div class="num">2</div>
       <h4>МОМЕНТ — КЛЮЧІ</h4>
-      <p>Що він зробив? Як це сталось? Що відчував коли почув своє ім'я? <strong>Конкретно:</strong> «Купив 5 токенів на 1245 ₴. Дивився ефір з дружиною. Коли почули номер — заплакали».</p>
+      <p>Що він зробив? Як це сталось? Що відчував коли почув своє ім'я? <strong>Конкретно:</strong> «Дивився(лась) ефір з [ким]. Коли почули номер — [реакція]». Цифри покупок не публікуємо.</p>
     </div>
     <div class="arc-step">
       <div class="num">3</div>
       <h4>ПІСЛЯ — ЗМІНА</h4>
-      <p>Як змінилось життя? Куди він поїхав? Що тепер? <strong>Конкретно:</strong> «Тепер Микола їздить на Audi на роботу. Дітей вози в школу. Каже: ‘Це не просто авто — це віра в те, що мрії можна досягти’».</p>
+      <p>Як змінилось життя? Куди він поїхав? Що тепер? <strong>Конкретно:</strong> «Тепер [імʼя] [що змінилось]». Цитата — дослівно, погоджена з власником. Вигадані імена й цитати — ніколи, навіть у макетах.</p>
     </div>
   </div>
 </section>
@@ -4005,7 +3977,7 @@
   <div class="s-num plate-k"><span class="pk-num">21</span><span class="pk-name">Відео</span></div>
   <h1 class="s-title">VIDEO <span class="red">STYLE GUIDE</span></h1>
   <p class="s-desc">
-    Відео DreamCar виходить щотижня: Reels, TikTok, сторіс, анонси, прямі ефіри вручень. Цей розділ збирає правила кадру, титрів і монтажу в одному місці. Звук — у розділі <a href="sections/audio.html" style="color:var(--link);">17</a>, колір і світло — у <a href="sections/photography-brief.html" style="color:var(--link);">24</a>, слова в кадрі й за кадром — у <a href="sections/legal.html" style="color:var(--link);">11B</a>.
+    Відео DreamCar виходить щотижня: Reels, TikTok, сторіс, анонси, прямі ефіри вручень. Цей розділ збирає правила кадру, титрів і монтажу в одному місці. Звук — у розділі <a href="sections/audio.html" style="color:var(--link);">17</a>, колір і світло — у <a href="sections/photography-brief.html" style="color:var(--link);">24</a>, слова в кадрі й за кадром — у <a href="sections/legal.html" style="color:var(--link);">09</a>.
   </p>
 
   <h2 class="s-subtitle">Формати і розміри</h2>
@@ -4036,7 +4008,7 @@
     <div class="card">
       <span class="label">/// ФІНАЛ · 2 С</span>
       <h4>КІНЦЕВА КАРТКА</h4>
-      <p>Чорне тло, Racing Plate по центру, під ним «Бери. Дій. Володій.» і dreamcar.ua. Sonic logo з розділу 17 — тут або на старті, не двічі.</p>
+      <p>Чорне тло, Racing Plate по центру, під ним «Бери. Дій. Володій.» і dreamcar.ua. Sonic logo з розділу 22 — тут або на старті, не двічі.</p>
     </div>
   </div>
 
@@ -4049,7 +4021,7 @@
       <tr><td>Ключове слово в субтитрі</td><td>Manrope 800</td><td>RED GLOW #FF1A2B</td><td>Одне слово на фразу, не більше</td></tr>
       <tr><td>Плашка імені (lower third)</td><td>Oswald 700 CAPS + JetBrains Mono 400</td><td>Білий; мітка — RED GLOW</td><td>Рядок 1: імʼя і місто. Рядок 2: <code>/// ВЛАСНИК · ПРОЄКТ 20</code>. Тримати 3–4 с, вхід 300ms ease-out</td></tr>
       <tr><td>Цифри і дати</td><td>JetBrains Mono 700</td><td>Білий</td><td>Формат дати ДД.ММ.РРРР, час з поясом: 20:00 за Києвом</td></tr>
-      <tr><td>Великий заголовок</td><td>Oswald 700, від 96px</td><td>Білий, акцент DC RED</td><td>Червоний у тексті від 24px — інакше RED GLOW (розділ 06)</td></tr>
+      <tr><td>Великий заголовок</td><td>Oswald 700, від 96px</td><td>Білий, акцент DC RED</td><td>Червоний у тексті від 24px — інакше RED GLOW (розділ 16)</td></tr>
     </tbody>
   </table>
   </div>
@@ -4064,7 +4036,7 @@
     <div class="card">
       <span class="label">/// ✓ АКЦЕНТ</span>
       <h4>ДІАГОНАЛЬ −12°</h4>
-      <p>Червона смуга під кутом −12° (патерн «швидкість» з розділу 08), 300ms. Не частіше одного разу на ролик.</p>
+      <p>Червона смуга під кутом −12° (патерн «швидкість» з розділу 18), 300ms. Не частіше одного разу на ролик.</p>
     </div>
     <div class="card">
       <span class="label">/// ✕ НЕ ВИКОРИСТОВУЄМО</span>
@@ -4087,7 +4059,7 @@
     </div>
     <div class="card">
       <span class="label">/// СЛОВА</span>
-      <h4>ЛЕКСИКОН 11B</h4>
+      <h4>ЛЕКСИКОН</h4>
       <p>Ведучий і титри кажуть «учасники», «токени ШІ-сервісу», «авто вручається», «власник». Список NEVER-слів діє і в усній мові.</p>
     </div>
   </div>
@@ -4261,11 +4233,11 @@
 
   <!-- ============== ШАБЛОН ============== -->
   <div class="brief-form" id="briefForm">
-    <h3 style="font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--white); margin-bottom: 8px;">PHOTOGRAPHY BRIEF — [НАЗВА ПРОЕКТУ]</h3>
+    <h3 style="font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--white); margin-bottom: 8px;">PHOTOGRAPHY BRIEF — [НАЗВА ПРОЄКТУ]</h3>
     <p style="color: var(--bone); font-size: 13px; margin-bottom: 18px;">DreamCar · <span style="color: var(--ash);">v1.0 · автор: [імʼя] · дата: [DD.MM.YYYY]</span></p>
 
     <div class="field-block">
-      <label class="field-label">/// 1 — ПРОЕКТ І КОНТЕКСТ</label>
+      <label class="field-label">/// 1 — ПРОЄКТ І КОНТЕКСТ</label>
       <p class="field-value">
         <strong style="color: var(--white);">Назва промоакції:</strong> <span class="placeholder">[наприклад, Промоакція №18 — Audi e-tron]</span><br>
         <strong style="color: var(--white);">Авто:</strong> <span class="placeholder">[марка, модель, рік, VIN опційно]</span><br>
@@ -4298,7 +4270,7 @@
         <div class="mood-cell"><div class="mood-swatch" style="background: #0A0A0A;"></div><div class="mood-name">CARBON · #0A0A0A</div><div class="mood-desc">Глибокий чорний фон / темне освітлення</div></div>
         <div class="mood-cell"><div class="mood-swatch" style="background: #E30613;"></div><div class="mood-name">RACING RED · #E30613</div><div class="mood-desc">Акцент — тільки наш червоний</div></div>
         <div class="mood-cell"><div class="mood-swatch" style="background: #FFFFFF;"></div><div class="mood-name">WHITE · #FFFFFF</div><div class="mood-desc">Контрастні зони, хром, прожектори</div></div>
-        <div class="mood-cell"><div class="mood-swatch" style="background: #FFD700;"></div><div class="mood-name">GOLD HOUR · #FFD700</div><div class="mood-desc">Тільки для outdoor sunset shots</div></div>
+        <div class="mood-cell"><div class="mood-swatch" style="background: #FFD700;"></div><div class="mood-name">GOLD HOUR · СВІТЛО, НЕ КОЛІР БРЕНДУ</div><div class="mood-desc">Тільки для outdoor sunset shots</div></div>
       </div>
       <p class="field-value" style="margin-top: 14px;">
         <strong style="color: var(--white);">Mood references:</strong> <span class="placeholder">[лінки на Behance/Pinterest moodboard — мін 10 референсів]</span><br>
@@ -4326,7 +4298,7 @@
         <strong style="color: var(--white);">Skin tones:</strong> <span class="placeholder">природні, без orange/teal trend.</span><br>
         <strong style="color: var(--white);">Background cleanup:</strong> <span class="placeholder">обовʼязково. Жодних провідних знаків, людей, машин з не-DC.</span><br>
         <strong style="color: var(--white);">Watermark:</strong> <span class="placeholder">НЕ додавай — ми робимо самі</span><br>
-        <strong style="color: var(--white);">Сертифікат подачі:</strong> <span class="placeholder">JPEG + PSD (з шарами) у Google Drive.</span>
+        <strong style="color: var(--white);">Формат здачі:</strong> <span class="placeholder">JPEG + PSD (з шарами) у Google Drive.</span>
       </p>
     </div>
 
@@ -4403,7 +4375,7 @@
       <p class="field-value">
         <strong style="color: var(--white);">Креатив-директор:</strong> <span class="placeholder">[імʼя, телефон, telegram, email]</span><br>
         <strong style="color: var(--white);">На локації (день shoot):</strong> <span class="placeholder">[імʼя, телефон]</span><br>
-        <strong style="color: var(--white);">Затвердження кадрів:</strong> <span class="placeholder">Vadym Hryshyn · vg@dreamcar.ua · 24h reply</span><br>
+        <strong style="color: var(--white);">Затвердження кадрів:</strong> <span class="placeholder">Vadym Gryshyn · vg@dreamcar.ua · 24h reply</span><br>
         <strong style="color: var(--white);">Платіжки:</strong> <span class="placeholder">[bookkeeper email]</span>
       </p>
     </div>
@@ -4535,7 +4507,7 @@
       <div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 6px;">/// AWARENESS · ПЕРШИЙ КОНТАКТ</div>
         <h4 style="font-family: 'Oswald', sans-serif; font-size: 26px; margin-bottom: 8px;">РЕКЛАМА В INSTAGRAM / TIKTOK</h4>
-        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина прокручує feed і бачить наш рекламний пост або reel. <strong>Завдання точки:</strong> зачепити за 2 секунди — конкретний приз, конкретна ціна, конкретна дата. <strong>Емоція:</strong> зацікавленість + здивування.</p>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина прокручує feed і бачить наш рекламний пост або reel. <strong>Завдання точки:</strong> зачепити за 2 секунди — конкретне авто, конкретна ціна, конкретна дата. <strong>Емоція:</strong> зацікавленість + здивування.</p>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
@@ -4543,7 +4515,7 @@
       <div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 6px;">/// CONSIDERATION · ПЕРЕВІРКА</div>
         <h4 style="font-family: 'Oswald', sans-serif; font-size: 26px; margin-bottom: 8px;">ПРОФІЛЬ + САЙТ</h4>
-        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина переходить у наш профіль, потім на сайт. Шукає: «чи це лохотрон?». <strong>Завдання точки:</strong> trust-сигнали (відеоархів, документи, переможці) + перші відповіді на FAQ. <strong>Емоція:</strong> впевненість.</p>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Людина переходить у наш профіль, потім на сайт. Шукає: «чи це лохотрон?». <strong>Завдання точки:</strong> докази довіри (відеоархів, правила, власники) + перші відповіді на FAQ. <strong>Емоція:</strong> впевненість.</p>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
@@ -4583,7 +4555,7 @@
       <div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 6px;">/// DELIVERY · ПЕРЕДАЧА АВТО</div>
         <h4 style="font-family: 'Oswald', sans-serif; font-size: 26px; margin-bottom: 8px;">ВІД РУК ДО РУК</h4>
-        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Тільки для власника авто. <strong>Завдання точки:</strong> ВАУ-досвід. Брендоване packaging ключів, фотозйомка, відеосторі для соцмереж. Цей момент — головний UGC-актив. <strong>Емоція:</strong> сльози, недовіра, щастя.</p>
+        <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">Тільки для власника авто. <strong>Завдання точки:</strong> досвід, який хочеться показати. Брендоване пакування ключів, фотозйомка, відеосторі для соцмереж. Цей момент — головний UGC-актив. <strong>Емоція:</strong> сльози, недовіра, щастя.</p>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: 80px 1fr; background: var(--coal); padding: 24px;">
@@ -4671,18 +4643,16 @@
   <div style="background: var(--white); color: var(--black); padding: 32px; max-width: 540px; font-family: 'Manrope', sans-serif; border: 1px solid var(--line);">
     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
       <div style="width: 64px; height: 64px; flex-shrink: 0;">
-        <div class="avatar-mark size-sm">
-          <div class="dc">D<span class="red">C</span></div>
-        </div>
+        <img src="assets/logo/dreamcar-avatar-mark.svg" width="64" height="64" alt="DreamCar">
       </div>
       <div>
-        <div style="font-size: 16px; font-weight: 800; color: #000;">Володимир Котляр</div>
-        <div style="font-size: 13px; color: #666;">Brand Manager · DreamCar</div>
+        <div style="font-size: 16px; font-weight: 800; color: #000;">[Імʼя Прізвище]</div>
+        <div style="font-size: 13px; color: #595959;">[Посада] · DreamCar</div>
       </div>
     </div>
     <div style="border-top: 2px solid var(--red); padding-top: 12px; font-size: 12px; line-height: 1.7;">
-      <div style="font-family: 'JetBrains Mono', monospace; color: var(--red-glow); letter-spacing: 0.1em; font-size: 10px; margin-bottom: 4px;">/// CONTACT</div>
-      <div style="color: #000;">vg@dreamcar.ua · t.me/dreamcar_brand</div>
+      <div style="font-family: 'JetBrains Mono', monospace; color: #B8050F; letter-spacing: 0.1em; font-size: 10px; margin-bottom: 4px;">/// КОНТАКТИ</div>
+      <div style="color: #000;">[пошта]@dreamcar.ua · [телефон]</div>
       <div style="color: #000;">dreamcar.ua · @dreamcar.ua</div>
     </div>
     <div style="margin-top: 16px; font-size: 10px; color: #888; line-height: 1.5; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">
@@ -4713,8 +4683,8 @@
       <p>«Цього разу не вийшло. Наступна акція — [дата]. Ось як підготуватись».</p>
     </div>
     <div class="rubric">
-      <div class="tag">VICTORY</div>
-      <h4>ТИ ВЛАСНИК! </h4>
+      <div class="tag">OWNER</div>
+      <h4>ВИ — ВЛАСНИК</h4>
       <p>Особливий шаблон. Інструкція що далі: контакт менеджера, документи, передача.</p>
     </div>
     <div class="rubric">
@@ -4742,7 +4712,7 @@
   <div style="margin: 16px 0 28px; padding: 18px 22px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red); display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
     <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--red-glow); font-weight: 700;">/// СТАТУС</span>
     <span style="color: var(--white); font-weight: 700; font-size: 14px;">У РОБОТІ</span>
-    <span style="color: var(--bone); font-size: 13px; line-height: 1.5;">Цей розділ описує цільовий стан. Підрядники для дерев'яних коробок, гравіровки і друку — підбираються. Запуск — на акції #019 або #020.</span>
+    <span style="color: var(--bone); font-size: 13px; line-height: 1.5;">Цей розділ описує цільовий стан. Підрядники для дерев'яних коробок, гравіровки і друку — підбираються. Дата запуску — за рішенням власника бренду.</span>
   </div>
 
   <h2 class="s-subtitle"><span class="red">ПАКЕТ ВЛАСНИКА</span></h2>
@@ -4757,7 +4727,7 @@
     <div class="card">
       <span class="label">/// 02</span>
       <h4>БРЕЛОК</h4>
-      <p>Метал, лазерне гравірування. Логотип «DC» з одного боку, номер акції і дата з іншого («#018 · 19.04.2026»).</p>
+      <p>Метал, лазерне гравірування. Логотип «DC» з одного боку, номер акції і дата з іншого («#NN · ДД.ММ.РРРР»).</p>
     </div>
     <div class="card">
       <span class="label">/// 03</span>
@@ -4788,12 +4758,12 @@
     <div class="card">
       <span class="label">/// CAP</span>
       <h4>КЕПКА</h4>
-      <p>Чорна snapback. Червона вишивка «DC» спереду. Печатна етикетка «DREAMCAR · UA» ззаду.</p>
+      <p>Чорна snapback. Червона вишивка «DC» спереду. Друкована етикетка «DREAMCAR · UA» ззаду.</p>
     </div>
     <div class="card">
       <span class="label">/// HOODIE</span>
       <h4>ХУДІ</h4>
-      <p>Чорне, важке (350+ г/м²). Великий логотип Racing Plate спереду. Лозунг «БЕРИ. ДІЙ. ВОЛОДІЙ.» на спині.</p>
+      <p>Чорне, важке (350+ г/м²). Великий логотип Racing Plate спереду. Гасло «БЕРИ. ДІЙ. ВОЛОДІЙ.» на спині.</p>
     </div>
     <div class="card">
       <span class="label">/// STICKERS</span>
@@ -4894,7 +4864,7 @@
 
   <h2 class="s-subtitle">1 — <span class="red">ЗАБОРОНЕНА ТЕРМІНОЛОГІЯ</span></h2>
   <p class="s-desc">
-    <strong style="color: var(--white);">Ми ніколи не граємо в лотерею. Ми продаємо знання.</strong> Слова нижче заборонені у будь-якій комунікації з клієнтом — як з його боку, так і з нашого. Якщо клієнт вживає заборонене слово — ми не повторюємо за ним, а перекладаємо у безпечну термінологію.
+    <strong style="color: var(--white);">Ми — клуб учасників ШІ-сервісу. Кожне вручення — у прямому ефірі.</strong> Слова нижче заборонені у будь-якій комунікації з клієнтом — як з його боку, так і з нашого. Якщо клієнт вживає заборонене слово — ми не повторюємо за ним, а перекладаємо у безпечну термінологію.
   </p>
 
   <div class="term-grid">
@@ -4913,10 +4883,10 @@
       <div class="head">/// ✅ ЗАВЖДИ КАЖЕМО</div>
       <ul>
         <li>токен / токени</li>
-        <li>доступ до гайдів</li>
-        <li>бонусні коди</li>
-        <li>участь в акції</li>
-        <li>DreamCar Credits</li>
+        <li>доступ до ШІ-сервісу ai.dreamcar.ua</li>
+        <li>номер участі</li>
+        <li>участь у проєкті</li>
+        <li>автомобіль вручається серед учасників</li>
         <li>підтвердження покупки</li>
       </ul>
     </div>
@@ -4925,7 +4895,7 @@
   <div class="card" style="background: var(--coal); border-left: 3px solid var(--white); padding: 20px 24px; margin-top: 20px;">
     <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 8px;">/// ЯКЩО ПИТАЮТЬ «ЩО ВИ ПРОДАЄТЕ?»</div>
     <p style="font-size: 14px; color: var(--bone); line-height: 1.6; font-style: italic;">
-      «Ми продаємо цифрові інфо-продукти (гайди / чек-листи) про авто. А участь в акції з машиною — це приємний бонус для наших покупців.»
+      «Учасники купують токени ШІ-сервісу ai.dreamcar.ua — вони дають доступ до AI-консультацій щодо вибору авто. Автомобіль проєкту вручається серед учасників у прямому ефірі.»
     </p>
   </div>
 
@@ -5016,7 +4986,7 @@
       <div class="stop-letter">S</div>
       <div class="stop-label">/// STABILIZE</div>
       <div class="stop-title">ЗАСПОКОЇТИ</div>
-      <div class="stop-quote">«Я Вас почув. Це неприємна ситуація — зараз розберемося.»</div>
+      <div class="stop-quote">«Розумію Вас. Це неприємна ситуація — зараз розберемося.»</div>
     </div>
     <div class="stop-card">
       <div class="stop-letter">T</div>
@@ -5186,7 +5156,7 @@
         </tr>
         <tr>
           <td>Клієнт капсом і агресивно</td>
-          <td>«Я Вас почув. Це справді неприємно. Зараз все перевірю і повернуся з конкретною відповіддю — потрібно до 10 хвилин.»</td>
+          <td>«Розумію Вас. Це справді неприємно. Зараз все перевірю і повернуся з конкретною відповіддю — потрібно до 10 хвилин.»</td>
         </tr>
         <tr>
           <td>Клієнт перейшов на «ти»</td>
@@ -5221,12 +5191,12 @@
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label">/// P1 — КРИЗА</span>
       <h4>5 ХВ + CEO</h4>
-      <p>Публічний скандал, погроза публікації, питання про шахрайство. Підключається CEO + кризова комунікація (розділ 13).</p>
+      <p>Публічний скандал, погроза публікації, питання про шахрайство. Підключається CEO + кризова комунікація (розділ 28).</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--info);">
       <span class="label">/// ПОЗА ГОДИНАМИ</span>
       <h4>09:00 НАСТУПНОГО ДНЯ</h4>
-      <p>Після 20:00 і у вихідні — auto-reply про час відкриття. Критичні (P1) — на vg@dreamcar.ua з пометкою URGENT.</p>
+      <p>Після 20:00 і у вихідні — auto-reply про час відкриття. Критичні (P1) — на vg@dreamcar.ua з позначкою URGENT.</p>
     </div>
   </div>
 
@@ -5276,7 +5246,7 @@
     <div class="crisis-card">
       <div class="scenario">/// СЦЕНАРІЙ #2 — ВИСОКА ЙМОВІРНІСТЬ · ВИСОКИЙ ВПЛИВ</div>
       <h4>ТЕХНІЧНИЙ ЗБІЙ ПІД ЧАС ЕФІРУ</h4>
-      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Instagram впав, рандомайзер не вантажиться, звук пропав. Глядачі бачать «технічну тишу» — починаються звинувачення в маніпуляції.</p>
+      <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Instagram впав, інструмент визначення номера не вантажиться, звук пропав. Глядачі бачать «технічну тишу» — починаються звинувачення в маніпуляції.</p>
       <div class="response">
         <strong>Холдинг (5 хв, через коментарі live + сторіс):</strong> «Технічний збій. Працюємо. Ефір продовжимо протягом 30 хвилин. Усі токени активні. Дякуємо за терпіння.»<br><br>
         <strong>Якщо не вдається відновити в той самий день:</strong> публічно переносимо ефір на найближчу доступну дату, публікуємо новий час, відкриваємо опцію повного повернення коштів за всіма токенами для тих, хто не може дочекатись. Окремо викладаємо post-mortem: що сталось, чому, що зробимо інакше.
@@ -5289,7 +5259,7 @@
       <h4>СУМНІВИ В КОМЕНТАРЯХ ТА DM</h4>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Користувачі ставлять під сумнів реальність акцій («це обман», «реальних переможців не існує»). Не одиничні — 5+ повідомлень за день під одним постом. Впливає на конверсію нових учасників.</p>
       <div class="response">
-        <strong>Скрипт відповіді (на «Ви», без виправдань):</strong> «Доброго дня. Ваше питання зрозуміле — у мережі справді багато сумнівних схем. Тому всі вручення ми проводимо у прямому ефірі: будь-хто може спостерігати в реальному часі, архів усіх ефірів відкритий [посилання]. 21 учасник за 10 років отримав ключі, контакти більшості з них (за згодою) у розділі «Прозорість» на dreamcar.ua. Якщо лишаються конкретні питання — напишіть на vg@dreamcar.ua, відповімо особисто.»
+        <strong>Скрипт відповіді (на «Ви», без виправдань):</strong> «Доброго дня. Ваше питання зрозуміле — у мережі справді багато сумнівних схем. Тому всі вручення ми проводимо у прямому ефірі: будь-хто може спостерігати в реальному часі, архів усіх ефірів відкритий [посилання]. 21 учасник з 2019 року отримав ключі, контакти більшості з них (за згодою) у розділі «Прозорість» на dreamcar.ua. Якщо лишаються конкретні питання — напишіть на vg@dreamcar.ua, відповімо особисто.»
       </div>
       <div class="timeline">/// РЕАКЦІЯ: 30 ХВ · КАНАЛИ: КОМЕНТАР / DM</div>
     </div>
@@ -5299,7 +5269,7 @@
       <h4>«ОПЛАТА ПРОЙШЛА, ТОКЕН НЕ ПРИЙШОВ»</h4>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Найчастіша операційна криза. Учасник пише в DM/Telegram/email. Якщо реакція довша 30 хв — людина починає публічно скаржитись.</p>
       <div class="response">
-        <strong>Скрипт підтримки (на «Ви»):</strong> «Доброго дня. Бачимо ваше повідомлення. Зараз перевіряємо транзакцію — потрібно до 10 хвилин. Просимо надіслати, будь ласка, номер платежу або скрін квитанції — це пришвидшить пошук. Якщо помилка з нашого боку — додамо бонусний токен. Якщо банк не списав кошти — підкажемо, як це перевірити.»
+        <strong>Скрипт підтримки (на «Ви»):</strong> «Доброго дня. Бачимо Ваше повідомлення. Зараз перевіряємо транзакцію — потрібно до 10 хвилин. Просимо надіслати, будь ласка, номер платежу або скрін квитанції — це пришвидшить пошук. Якщо помилка з нашого боку — додамо бонусний токен. Якщо банк не списав кошти — підкажемо, як це перевірити.»
       </div>
       <div class="timeline">/// РЕАКЦІЯ: 15 ХВ · КАНАЛИ: DM / EMAIL / TG-ПІДТРИМКА</div>
     </div>
@@ -5320,10 +5290,10 @@
       <h4>ЗАТРИМКА ПЕРЕДАЧІ АВТО ВЛАСНИКУ</h4>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.6;">Логістика, митниця, ремонт, документи. Громадськість ще не знає, але якщо власник напише публічно — буде хвиля.</p>
       <div class="response">
-        <strong>Випереджаємо публічно (24 год від моменту коли стало ясно):</strong> «Передача авто власнику акції #018 затримується на [N] днів через [конкретна причина: митне оформлення / технічна підготовка / документи]. Юридичні зобов'язання перед власником виконуємо повністю — підтверджено особисто з ним. Як тільки авто буде готове — публічна передача у прямому ефірі. Дякуємо за розуміння.»<br><br>
+        <strong>Випереджаємо публічно (24 год від моменту коли стало ясно):</strong> «Передача авто власнику проєкту #NN затримується на [N] днів через [конкретна причина: митне оформлення / технічна підготовка / документи]. Юридичні зобов'язання перед власником виконуємо повністю — підтверджено особисто з ним. Як тільки авто буде готове — публічна передача у прямому ефірі. Дякуємо за розуміння.»<br><br>
         <strong>Принцип:</strong> ніколи не приховуємо. Краще ми самі розкажемо як є, ніж власник запостить «де моє авто».
       </div>
-      <div class="timeline">/// РЕАКЦІЯ: 24 ГОД ВІД ЯСНОСТІ · КАНАЛИ: ПОСТ + СТОРІС + ОСОБИСТЕ ПОВІДОМЛЕННЯ ВЛАСНОЖЦЮ</div>
+      <div class="timeline">/// РЕАКЦІЯ: 24 ГОД ВІД ЯСНОСТІ · КАНАЛИ: ПОСТ + СТОРІС + ОСОБИСТЕ ПОВІДОМЛЕННЯ ВЛАСНИКОВІ</div>
     </div>
 
     <div class="crisis-card">
@@ -5391,14 +5361,14 @@
   <div class="s-num plate-k"><span class="pk-num">29</span><span class="pk-name">Партнери і блогери</span></div>
   <h1 class="s-title">ПАРТНЕРИ <span class="red">ТА АГЕНЦІЇ</span></h1>
   <p class="s-desc">
-    Усе для тих, хто з нами працює іззовні: блогери, агенції, продакшн-студії, фрілансери. Brief-template, правила використання логотипу, co-branding. Чим зрозуміліше для них — тим швидше і якісніше.
+    Усе для тих, хто з нами працює ззовні: блогери, агенції, продакшн-студії, фрілансери. Brief-template, правила використання логотипу, co-branding. Чим зрозуміліше для них — тим швидше і якісніше.
   </p>
 
   <h2 class="s-subtitle">КОРОТКИЙ БРИФ — <span class="red">7 ПИТАНЬ НА СТАРТ</span></h2>
   <p class="s-desc">Цей мінімальний шаблон надсилаємо блогерам, агенціям, фрілансерам на початку розмови. Сім полів — щоб не лякати «п'ятирівневим узгодженням». Усе інше уточнюється в переговорах і фіксується в розширеному брифі вже після згоди працювати разом.</p>
 
   <div class="brief-template">
-    <div class="field"><span class="key">/// 1 · ПРОЄКТ</span><span class="placeholder">DreamCar #018 — Audi e-tron / коротка назва кампанії</span></div>
+    <div class="field"><span class="key">/// 1 · ПРОЄКТ</span><span class="placeholder">Проєкт #NN — [авто] / коротка назва кампанії</span></div>
     <div class="field"><span class="key">/// 2 · ФОРМАТ</span><span class="placeholder">Reels / IG-пост / TikTok / стаття / сторіс — що саме потрібно</span></div>
     <div class="field"><span class="key">/// 3 · ЦІЛЬ</span><span class="placeholder">1 речення: продаж токенів / охоплення / довіра / запуск</span></div>
     <div class="field"><span class="key">/// 4 · АУДИТОРІЯ</span><span class="placeholder">Одна з персон + ситуація / тригер</span></div>
@@ -5489,7 +5459,7 @@
       /// CLEAR SPACE МІЖ ЛОГОТИПАМИ — МІНІМУМ 60PX (4×X)<br>
       /// ВЕРТИКАЛЬНА ВІСЬ ВИРІВНЮВАННЯ — ЦЕНТР<br>
       /// ОПТИЧНІ РОЗМІРИ ВИРІВНЯНІ (НЕ МАТЕМАТИЧНІ)<br>
-      /// ЗНАК × — BEBAS NEUE 60% OPACITY · СІРИЙ
+      /// ЗНАК × — OSWALD 500 · 60% OPACITY · СІРИЙ
     </div>
   </div>
 
@@ -5499,7 +5469,7 @@
       <span class="label">/// БРЕНД-МЕНЕДЖЕР</span>
       <h4>ЗАГАЛЬНІ ПИТАННЯ</h4>
       <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
-      <p style="margin-top: 8px;">Будь-які питання щодо брендингу, тонкої налаштування матеріалів, узгоджень. Відповідь — до 24 годин.</p>
+      <p style="margin-top: 8px;">Будь-які питання щодо брендингу, тонкого налаштування матеріалів, узгоджень. Відповідь — до 24 годин.</p>
     </div>
     <div class="card">
       <span class="label">/// PR + ЗМІ</span>
@@ -5537,7 +5507,7 @@
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
       <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">3</div>
       <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПРАВКИ</h4>
-      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Коментарі повертаються. Підрядник правит. До 2 кіл правок входять у вартість.</p>
+      <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Коментарі повертаються. Підрядник править. До 2 кіл правок входять у вартість.</p>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
       <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">4</div>
@@ -5568,7 +5538,7 @@
   <div class="trust-grid">
     <div class="trust-card">
       <div class="name">ВІДЕО АРХІВ</div>
-      <p>Усі ефіри за 10 років зберігаються відкрито. Кожен може переглянути будь-яку акцію.</p>
+      <p>Записи ефірів вручень зберігаються відкрито. Кожен може переглянути будь-який фінал.</p>
     </div>
     <div class="trust-card">
       <div class="name">ЮРИДИЧНІ ДОКУМЕНТИ</div>
@@ -5592,7 +5562,7 @@
     </div>
     <div class="trust-card">
       <div class="name">500K+ У СПІЛЬНОТІ</div>
-      <p>Сумарно в соцмережах — найбільша клубна спільнота навколо авто-акцій в Україні. Кожен підписник — свідок.</p>
+      <p>Сумарно на всіх майданчиках: кілька акаунтів Instagram, YouTube, TikTok, Facebook та інші. Кожен підписник — свідок.</p>
     </div>
     <div class="trust-card">
       <div class="name">21 ВЛАСНИК</div>
@@ -5652,7 +5622,7 @@
     <div class="card">
       <span class="label">/// 02 LIVE</span>
       <h4>ПРЯМИЙ ЕФІР</h4>
-      <p>Власника визначають у прямому ефірі на очах тисяч учасників, через прозорий рандомайзер. Записи ефірів лишаються в акаунті.</p>
+      <p>Власника визначають у прямому ефірі на очах тисяч учасників, у прозорій процедурі визначення номера учасника. Записи ефірів лишаються в акаунті.</p>
     </div>
     <div class="card">
       <span class="label">/// 03 NAMES</span>
@@ -5675,7 +5645,7 @@
     <div class="card">
       <span class="label">/// CONTRAST</span>
       <h4>КОНТРАСТНІСТЬ</h4>
-      <p>4.5:1 для звичайного тексту, 3:1 для крупного. Усі комбінації перевірені (див. розділ 06).</p>
+      <p>4.5:1 для звичайного тексту, 3:1 для крупного. Усі комбінації перевірені (див. розділ 16).</p>
     </div>
     <div class="card">
       <span class="label">/// FOCUS</span>
@@ -5986,7 +5956,7 @@
       <h4>/// ЛОГОТИП</h4>
       <div class="name">DREAMCAR LOGO PACK v3.4</div>
       <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Racing Plate (primary), Avatar Circle, DC Monogram. Кожен варіант у SVG, PDF, PNG (прозорий фон) і JPG (білий фон). EPS або AI — на запит vg@dreamcar.ua.</p>
-      <code><a href="assets/dreamcar-logos.zip" style="color:var(--link);">dreamcar-logos.zip</a> · <a href="sections/logo.html" style="color:var(--link);">розділ 05</a></code>
+      <code><a href="assets/dreamcar-logos.zip" style="color:var(--link);">dreamcar-logos.zip</a> · <a href="sections/logo.html" style="color:var(--link);">розділ 15</a></code>
       <div class="formats">
         <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">АКТУАЛЬНО</span><span class="format-tag">SVG</span><span class="format-tag">PDF</span><span class="format-tag">PNG · 1024/1440</span><span class="format-tag">JPG</span>
       </div>
@@ -6025,8 +5995,8 @@
     <div class="asset">
       <h4>/// ШАБЛОНИ ДЛЯ SMM</h4>
       <div class="name">POST GENERATOR</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Готових Canva/Figma-шаблонів ще немає. Замість них — генератор у розділі 28: параметри акції → текст для IG/TG/Email + PNG.</p>
-      <code><a href="sections/generator.html" style="color:var(--link);">розділ 28 · Post Generator</a></code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Готових Canva/Figma-шаблонів ще немає. Замість них — генератор у розділі 03: параметри акції → текст для IG/TG/Email + PNG.</p>
+      <code><a href="sections/generator.html" style="color:var(--link);">розділ 03 · Post Generator</a></code>
       <div class="formats">
         <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">ЗАМІНА</span><span class="format-tag">PNG</span><span class="format-tag">TEXT</span>
       </div>
@@ -6035,7 +6005,7 @@
     <div class="asset">
       <h4>/// ПРЕЗЕНТАЦІЇ</h4>
       <div class="name">DECK TEMPLATES</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Шаблонів пітчів і медіа-кітів у бренді ще немає. До появи — чорне тло, Oswald-заголовки, одна думка на слайд, правила розділу 08.</p>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Шаблонів пітчів і медіа-кітів у бренді ще немає. До появи — чорне тло, Oswald-заголовки, одна думка на слайд, правила розділу 18.</p>
       <code>не опубліковано · запит на vg@dreamcar.ua</code>
       <div class="formats">
         <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">НЕМАЄ</span><span class="format-tag">KEYNOTE</span><span class="format-tag">PPTX</span><span class="format-tag">SLIDES</span>
@@ -6045,8 +6015,8 @@
     <div class="asset">
       <h4>/// ВІДЕО · BRAND PACK</h4>
       <div class="name">MOTION ASSETS</div>
-      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Анімованого лого й плашок як файлів ще немає. Правила кадру, титрів і субтитрів — у розділі 29.</p>
-      <code><a href="sections/video.html" style="color:var(--link);">розділ 29 · Відео</a></code>
+      <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Анімованого лого й плашок як файлів ще немає. Правила кадру, титрів і субтитрів — у розділі 21.</p>
+      <code><a href="sections/video.html" style="color:var(--link);">розділ 21 · Відео</a></code>
       <div class="formats">
         <span class="format-tag" style="border-color:var(--red-glow);color:var(--red-glow);">НЕМАЄ</span><span class="format-tag">MP4</span><span class="format-tag">LOTTIE</span>
       </div>
@@ -6251,7 +6221,7 @@
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
       <div style="font-family: 'Oswald', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">500</div>
       <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">У НАС<br>ТЕХНІЧНИЙ ЗБІЙ.</h3>
-      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Працюємо. Якщо ти намагався купити токен — гроші не списались. Спробуй за 5 хвилин.</p>
+      <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Працюємо. Якщо оплата не пройшла — гроші не списались. Спробуй за 5 хвилин.</p>
       <button class="btn btn-secondary" style="margin: 0 auto;">ОНОВИТИ →</button>
     </div>
 
@@ -6407,7 +6377,7 @@
   <div class="s-num plate-k"><span class="pk-num">34</span><span class="pk-name">Mobile-first</span></div>
   <h1 class="s-title">МОБІЛЬНИЙ — <span class="red">ГОЛОВНИЙ ЕКРАН</span></h1>
   <p class="s-desc">
-    <strong style="color: var(--white);">85% нашої аудиторії читає бренд з телефона.</strong> Дизайн який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані юзера — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 09 UI-компоненти.
+    <strong style="color: var(--white);">85% нашої аудиторії читає бренд з телефона.</strong> Дизайн який добре виглядає на 27"-моніторі дизайнера і ламається на 6"-екрані юзера — це провал. Цей розділ — стандарти для мобільної версії, що доповнюють розділ 32 UI-компоненти.
   </p>
 
   <!-- ============== ЦІЛЬОВІ ПРИСТРОЇ ============== -->
@@ -6517,7 +6487,7 @@
   </div>
 
   <p class="s-desc" style="margin-top: 20px;">
-    <strong style="color: var(--white);">Spacing between touch targets:</strong> мін 8px (idеально 12px). Якщо кнопки впритул — користувач промахується на сусідню.
+    <strong style="color: var(--white);">Spacing between touch targets:</strong> мін 8px (ідеально 12px). Якщо кнопки впритул — користувач промахується на сусідню.
   </p>
 
   <!-- ============== THUMB ZONES ============== -->
@@ -6557,7 +6527,7 @@
   <ul style="line-height: 2; font-size: 14px; padding-left: 22px; color: var(--bone);">
     <li><strong style="color: var(--white);">Primary CTA</strong> — внизу екрана (sticky bottom bar або bottom modal).</li>
     <li><strong style="color: var(--white);">Bottom navigation</strong> — у самому низу (де natural thumb position).</li>
-    <li><strong style="color: var(--white);">Verхні елементи</strong> — статус, breadcrumb, заголовок секції (не критичні дії).</li>
+    <li><strong style="color: var(--white);">Верхні елементи</strong> — статус, breadcrumb, заголовок секції (не критичні дії).</li>
     <li><strong style="color: var(--white);">Бургер-меню</strong> — top-left = compromise, але виправдане якщо є sticky bottom.</li>
     <li><strong style="color: var(--white);">Назад-кнопка</strong> — top-left (iOS swipe-back + visible button).</li>
   </ul>
@@ -6599,7 +6569,7 @@
 
   <!-- ============== TYPOGRAPHY MOBILE ============== -->
   <h2 class="s-subtitle">ТИПОГРАФІКА <span class="red">НА МОБІЛЬНОМУ</span></h2>
-  <p class="s-desc">Скейлинг типографічної шкали з розділу 07 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
+  <p class="s-desc">Скейлинг типографічної шкали з розділу 17 для mobile. Базовий розмір на мобільному — 16px (Apple/Google default).</p>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Брейкпоінти"><table class="bp-table">
     <thead>
@@ -6854,7 +6824,7 @@
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">ЗАРАЗ</div>
       </div>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
-        Виправити основу: ребрендинг, accessibility, design system, brand book. Запустити DreamCar Club. Збільшити частоту фіналів до щомісячного циклу.
+        Виправити основу: ребрендинг, accessibility, design system, brand book. Запустити DreamCar Club. Утримати щомісячний ритм фіналів.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
         <div style="background: var(--graphite); padding: 12px; font-size: 12px; color: var(--bone);">✓ Запуск нового брендбуку</div>
@@ -6886,7 +6856,7 @@
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 32px; opacity: 0.85;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 03 · 2028</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 03 · НЕ ЗАТВЕРДЖЕНО</div>
           <h3 style="font-family: 'Oswald', sans-serif; font-size: 36px; margin-top: 4px;">ВИХІД В ЄС</h3>
         </div>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+24 МІСЯЦІ</div>

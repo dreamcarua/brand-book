@@ -2791,3 +2791,18 @@ mark.q-hit { background: rgba(227,6,19,0.32); color: inherit; padding: 0 1px; bo
 /* Section headings: plate-square marker instead of "///" */
 .s-subtitle { position: relative; padding-left: 22px; text-transform: uppercase; }
 .s-subtitle::before { content: ''; position: absolute; left: 0; top: 0.32em; width: 10px; height: 10px; background: var(--red); }
+
+/* Quick start v2 */
+.qs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.qs-card { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 22px 24px 24px; }
+.qs-h { display: flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; margin-bottom: 14px; }
+.qs-h > span { font-family: 'Archivo Black', sans-serif; font-size: 11px; background: var(--red); color: var(--white); padding: 3px 7px; }
+.qs-p { color: var(--bone); font-size: 14px; line-height: 1.6; margin-bottom: 8px; }
+.qs-p strong { color: var(--white); }
+.qs-p a, .qs-links a, .qs-next a { color: var(--link); }
+.qs-big { color: var(--white); font-size: 17px; line-height: 1.5; font-weight: 700; margin-bottom: 10px; }
+.qs-sw { display: flex; gap: 8px; margin-bottom: 14px; } .qs-sw span { width: 44px; height: 44px; display: block; }
+.qs-list { font-weight: 700; }
+.qs-links { display: flex; gap: 16px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.qs-next { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 20px 24px; border: 1px solid var(--line); background: var(--black); }
+.qs-next a { font-size: 14px; }
