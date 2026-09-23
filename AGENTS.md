@@ -1,6 +1,6 @@
 # DreamCar Brand Book
 
-Brand Book DreamCar v4 «Etalon» — the operating system of the DreamCar brand (Ukrainian car club, est. 2016; 21 cars handed over (source: sections/trust.html), 500K+ community). 37 self-contained sections in `sections/*.html` (8 groups; the one navigation source is `SECTIONS` in `assets/sidebar.js`, applied by `scripts/build_nav.py`) plus a landing, a generated print version and a PWA. Pure HTML/CSS/JS, no build step; `assets/sidebar.js` injects navigation, search and SEO meta at runtime; `.github/workflows/brand-lint.yml` runs `scripts/brand_lint.py` on every push and PR and blocks the merge on forbidden vocabulary and broken links.
+Brand Book DreamCar v4 «Etalon» — the operating system of the DreamCar brand (Ukrainian car club, est. 2016; 22 cars handed over since 2019 (source: sections/trust.html), 500K+ community). 37 self-contained sections in `sections/*.html` (8 groups; the one navigation source is `SECTIONS` in `assets/sidebar.js`, applied by `scripts/build_nav.py`) plus a landing, a generated print version and a PWA. Pure HTML/CSS/JS, no build step; `assets/sidebar.js` injects navigation, search and SEO meta at runtime; `.github/workflows/brand-lint.yml` runs `scripts/brand_lint.py` on every push and PR and blocks the merge on forbidden vocabulary and broken links.
 Memory carrier: `github.com/dreamcarua/brand-book` (this repo), folder `memory/`. GitHub Pages serves this repo from the ROOT to `brand.dreamcar.ua`, so every file here is public — see Rules.
 Project hub: `github.com/dreamcarua/dreamcar-memory` — project-level memory (launches, marketing, strategy, team, business decisions). `memory/` here is about this repo only.
 Owner: Vadym (vg@abrisart.com, vg@dreamcar.ua for brand matters). Tasks are closed by whoever set them; we hand over.
@@ -71,7 +71,7 @@ An archive is never read on entry, only when a question points back in time. Wha
 Answer out loud in the reply. No answer to a line = no action.
 
 1. WHOSE. Who else changes this? `assets/global-header.js` and `assets/styles.css` are used by other DreamCar systems — is anyone editing them right now?
-2. SOURCE. Number · source · date. Facts about the club (21 cars, 500K+, owner names) come from `sections/trust.html` and the hub, not from memory.
+2. SOURCE. Number · source · date. Facts about the club (22 cars, 500K+, owner names) come from `sections/trust.html` and the hub, not from memory.
 3. WHOLE. All 37 sections or the one you opened? A wording change is almost never local.
 4. WORST. Which single check, if it came out differently, would cancel this? Usually: `python3 scripts/brand_lint.py`.
 5. ROLLBACK. Exact command. Backup made and verified.
