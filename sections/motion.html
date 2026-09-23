@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,22 +14,22 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .mo-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 18px; }
-  .mo-btn { min-height: 44px; padding: 10px 18px; background: var(--black); color: var(--white); border: 1px solid var(--steel); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color var(--d-fast) var(--e-out), transform 120ms var(--e-out); }
+  .mo-btn { min-height: 44px; padding: 10px 18px; background: var(--black); color: var(--white); border: 1px solid var(--steel); font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color var(--d-fast) var(--e-out), transform 120ms var(--e-out); }
   .mo-btn.primary { background: var(--red); border-color: var(--red); }
   .mo-btn:active { transform: scale(0.97); }
   @media (hover: hover) and (pointer: fine) { .mo-btn:hover { border-color: var(--red); } .mo-btn.primary:hover { background: var(--red-deep); border-color: var(--red-deep); } }
-  .mo-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--ash); }
+  .mo-note { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--ash); }
 
   .lanes { border: 1px solid var(--line); background: var(--coal); }
   .lane { display: grid; grid-template-columns: 280px 1fr; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); cursor: pointer; }
   .lane:last-child { border-bottom: 0; }
   .lane:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
-  .lane-meta b { display: block; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.04em; color: var(--white); }
-  .lane-meta span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.06em; }
+  .lane-meta b { display: block; font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.04em; color: var(--white); }
+  .lane-meta span { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.06em; }
   .track { position: relative; height: 40px; background: var(--black); border: 1px solid var(--line); overflow: hidden; }
   .track::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: var(--steel); }
   .puck { position: absolute; left: 4px; top: 4px; width: 30px; height: 30px; background: var(--red); box-shadow: 3px 3px 0 var(--red-deep); transform: translateX(0); will-change: transform; }
@@ -38,19 +39,19 @@
   .sig { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
   .sig .plate-k { align-self: flex-start; margin: 0; }
   .sig .mo-btn { align-self: flex-start; }
-  .sig h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
+  .sig h3 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
   .sig p { color: var(--bone); font-size: 14px; line-height: 1.6; margin: 0; }
   .sig .stage { min-height: 150px; display: flex; align-items: center; justify-content: center; background: var(--black); border: 1px solid var(--line); padding: 20px; }
-  .sig code { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); background: var(--black); padding: 10px 12px; display: block; white-space: pre-wrap; border: 1px solid var(--line); }
+  .sig code { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); background: var(--black); padding: 10px 12px; display: block; white-space: pre-wrap; border: 1px solid var(--line); }
 
   /* Signature 1: STAMP — the plate presses into its own shadow */
-  .stamp { position: relative; padding: 16px 26px; background: var(--red); color: var(--white); border: 2px solid var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.08em; cursor: pointer; border-radius: 0;
+  .stamp { position: relative; padding: 16px 26px; background: var(--red); color: var(--white); border: 2px solid var(--white); font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.08em; cursor: pointer; border-radius: 0;
     box-shadow: 6px 6px 0 var(--red-deep); transition: transform 120ms var(--e-out), box-shadow 120ms var(--e-out); }
   .stamp:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--red-deep); }
   .stamp:focus-visible { outline: 2px solid var(--white); outline-offset: 6px; }
 
   /* Signature 2: PLATE WIPE — red plate wipes in, then the word is revealed */
-  .wipe { position: relative; display: inline-block; padding: 10px 18px; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); white-space: nowrap; }
+  .wipe { position: relative; display: inline-block; padding: 10px 18px; font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); white-space: nowrap; }
   .wipe::before { content: ''; position: absolute; inset: 0; background: var(--red); box-shadow: 6px 6px 0 var(--red-deep); clip-path: inset(0 0 0 0); }
   .wipe span { position: relative; display: inline-block; clip-path: inset(0 0 0 0); }
   .wipe.play::before { animation: dcWipe 320ms var(--e-in-out) both; }

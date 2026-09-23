@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -90,7 +91,7 @@
   <div class="card-grid">
     <div class="card" style="text-align:center;border-top:3px solid var(--red);">
       <div style="width:80px;height:80px;background:var(--red);border-radius:0;margin:16px auto;box-shadow:6px 6px 0 var(--red-deep);"></div>
-      <h4>0 PX · БРЕНД</h4>
+      <h4 aria-level="3">0 PX · БРЕНД</h4>
       <p>Усе: кнопки, картки, плашки, банери, модальні вікна, лого. Гострий кут і жорстка тінь — підпис бренду.</p>
     </div>
     <div class="card" style="text-align:center;">
@@ -123,7 +124,7 @@
     </div>
     <div class="element-card">
       <div class="label">КНОПКА ДІЇ · ШТАМП</div>
-      <div class="demo"><span style="display:inline-block;padding:14px 22px;background:var(--red);color:var(--white);border:2px solid var(--white);box-shadow:6px 6px 0 var(--red-deep);font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;">ВЗЯТИ УЧАСТЬ</span></div>
+      <div class="demo"><span style="display:inline-block;padding:14px 22px;background:var(--red);color:var(--white);border:2px solid var(--white);box-shadow:6px 6px 0 var(--red-deep);font-family:'Manrope','Manrope Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;">ВЗЯТИ УЧАСТЬ</span></div>
       <div class="label">MANROPE 800 · RADIUS 0 · ТІНЬ 6 PX</div>
     </div>
     <div class="element-card">
@@ -211,7 +212,7 @@
     <div class="card" style="padding: 0; overflow: hidden;">
       <div style="height: 200px; background: repeating-linear-gradient(-12deg, var(--red) 0px, var(--red) 8px, var(--black) 8px, var(--black) 24px);"></div>
       <div style="padding: 24px;">
-        <h4>DIAGONAL <span class="red">ШВИДКІСТЬ</span></h4>
+        <h4 aria-level="3">DIAGONAL <span class="red">ШВИДКІСТЬ</span></h4>
         <p>Гонкові смуги під кутом -12°. Для динамічних композицій, banner'ів, брендованої упаковки.</p>
       </div>
     </div>

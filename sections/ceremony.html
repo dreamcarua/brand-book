@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -75,14 +76,14 @@
   <style>
     .bc-frame { margin: 28px 0 8px; }
     .bc-screen { position: relative; aspect-ratio: 16 / 9; background: var(--graphite); border: 1px solid var(--line); overflow: hidden; }
-    .bc-logo { position: absolute; top: 5%; left: 4%; width: 18%; height: auto; }
-    .bc-live { position: absolute; top: 6%; right: 4%; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--white); background: var(--black); padding: 6px 10px; }
+    .bc-logo { position: absolute; top: 5%; left: 4%; width: 18%; height: auto; aspect-ratio: 720 / 200; }
+    .bc-live { position: absolute; top: 6%; right: 4%; display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--white); background: var(--black); padding: 6px 10px; }
     .bc-live span { width: 10px; height: 10px; background: var(--red); display: inline-block; }
-    .bc-photo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
+    .bc-photo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
     .bc-lower { position: absolute; left: 4%; bottom: 8%; background: var(--black); border-left: 6px solid var(--red); padding: 14px 20px 14px 16px; box-shadow: 6px 6px 0 var(--red-deep); display: grid; gap: 6px; max-width: 70%; }
     .bc-lower .plate-k { justify-self: start; }
-    .bc-name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(20px, 3.2vw, 36px); line-height: 1; text-transform: uppercase; color: var(--white); }
-    .bc-role { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: var(--bone); }
+    .bc-name { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: clamp(20px, 3.2vw, 36px); line-height: 1; text-transform: uppercase; color: var(--white); }
+    .bc-role { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.16em; color: var(--bone); }
     .bc-frame figcaption { margin-top: 12px; color: var(--bone); font-size: 14px; line-height: 1.55; max-width: 760px; }
     @media (max-width: 640px) { .bc-lower { padding: 8px 10px; gap: 4px; max-width: 86%; } .bc-lower .plate-k { display: none; } .bc-role { font-size: 9px; } .bc-live { font-size: 9px; padding: 4px 6px; } }
   </style>

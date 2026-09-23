@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -11,13 +12,13 @@
 <link rel="icon" sizes="32x32" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body {
     background: #0A0A0A;
     color: #FFFFFF;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', 'Manrope Fallback', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -48,14 +49,14 @@
     z-index: 2;
   }
   .tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
     font-size: 11px;
     letter-spacing: 0.3em;
     color: #FF1A2B;
     margin-bottom: 24px;
   }
   .number {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', 'Oswald Fallback', sans-serif;
     font-weight: 700;
     font-size: clamp(120px, 25vw, 240px);
     line-height: 0.85;
@@ -65,7 +66,7 @@
     margin-bottom: 24px;
   }
   .title {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', 'Oswald Fallback', sans-serif;
     font-weight: 700;
     font-size: clamp(32px, 6vw, 56px);
     line-height: 1;
@@ -85,7 +86,7 @@
     background: #E30613;
     color: #FFFFFF;
     padding: 16px 28px;
-    font-family: 'Manrope', sans-serif; font-weight: 800;
+    font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800;
     font-size: 13px;
     letter-spacing: 0.1em;
     text-decoration: none;
@@ -109,7 +110,7 @@
     border-radius: 4px;
   }
   .shortcuts .lbl {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
     font-size: 10px;
     letter-spacing: 0.22em;
     color: #888;
@@ -125,7 +126,7 @@
     background: #141414;
     border: 1px solid #2A2A2A;
     color: #DDDDDD;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
     font-size: 11px;
     letter-spacing: 0.08em;
     text-decoration: none;
@@ -136,7 +137,7 @@
 
   .meta {
     margin-top: 40px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
     font-size: 10px;
     color: #888;
     letter-spacing: 0.2em;
@@ -152,7 +153,7 @@
   .search404 { margin: 40px 0 8px; max-width: 560px; }
   .search404-row { display: flex; gap: 8px; margin-top: 10px; }
   .search404 input { flex: 1; min-width: 0; background: #0A0A0A; border: 1px solid #2A2A2A; color: #fff; padding: 14px 16px;
-    font-family: 'Manrope', sans-serif; font-size: 15px; }
+    font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-size: 15px; }
   .search404 input:focus-visible { outline: 2px solid #E30613; outline-offset: 0; }
 </style>
 </head>

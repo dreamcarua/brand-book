@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -38,7 +39,7 @@
   </p>
 
   <h2 class="s-subtitle">Основна палітра</h2>
-  <div class="colors-grid">
+  <div class="colors-grid g-odd">
     <div class="color-cell cl-black">
       <div>
         <div class="role">PRIMARY · ОСНОВА</div>
@@ -55,7 +56,7 @@
     </div>
     <div class="color-cell cl-red-deep">
       <div>
-        <div class="role">DEPTH · ГРАДІЄНТ</div>
+        <div class="role">DEPTH · ЖОРСТКА ТІНЬ</div>
         <div class="name">DC DEEP</div>
       </div>
       <div class="codes">HEX #B8050F<br>RGB 184·5·15<br>CMYK 15·100·100·15</div>
@@ -115,7 +116,7 @@
   <p class="s-desc">
     Для UI-станів (інтерфейс): успіх, попередження, помилка, інформація. Не використовуються в брендингу — тільки в продукті.
   </p>
-  <div class="colors-grid">
+  <div class="colors-grid g4">
     <div class="color-cell cl-success">
       <div>
         <div class="role">UI · УСПІХ</div>
@@ -145,7 +146,7 @@
       <div class="codes">HEX #3B82F6<br>USE: посилання, нотатки, підказки</div>
     </div>
   </div>
-  <p style="color: var(--ash); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em;">
+  <p style="color: var(--ash); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em;">
     /// УВАГА: DANGER (#DC2626) ≠ DC RED (#E30613). Бренд-червоний не використовуємо для помилок — це порушує ієрархію.
   </p>
 
@@ -302,7 +303,7 @@
     </tbody>
   </table>
   </div>
-  <p style="color: var(--ash); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em; line-height: 1.8;">
+  <p style="color: var(--ash); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em; line-height: 1.8;">
     /// ПРАВИЛО ЧЕРВОНОГО ТЕКСТУ: DC RED (#E30613) як колір тексту — тільки від 24px. Мітки, номери, лінки 11–16px на темному — RED GLOW (#FF1A2B, токен <code>--red-glow</code>). Текст помилки на темному — DANGER TEXT (#F87171, токен <code>--danger-text</code>). Білий текст на SUCCESS не ставимо ніколи — тільки чорний.
   </p>
 

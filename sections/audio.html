@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -40,13 +41,13 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// SONIC LOGO</span>
-      <h4>ЗВУК ЛОГОТИПУ</h4>
+      <h4 aria-level="2">ЗВУК ЛОГОТИПУ</h4>
       <p>1.5 секунди. Низький бас → металевий клік (як замок авто) → коротке ревіння двигуна → тиша. Грає на початку кожного відео, ефіру, ролика.</p>
       <code style="background:var(--black);padding:8px 12px;display:block;font-size:11px;color:var(--success);margin-top:12px;">audio/sonic-logo-1.5s.wav</code>
     </div>
     <div class="card">
       <span class="label">/// HOLD MUSIC</span>
-      <h4>МУЗИКА ОЧІКУВАННЯ</h4>
+      <h4 aria-level="3">МУЗИКА ОЧІКУВАННЯ</h4>
       <p>Ambient electronic, темп 90-100 BPM. Мінорні акорди з електронними елементами. Грає в підтримці та перед стартом ефіру.</p>
       <p style="margin-top: 8px; font-size: 12px; color: var(--ash);">Тривалість: 2-хвилинний loop. Без вокалу.</p>
     </div>
@@ -83,7 +84,7 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// LIGHTING</span>
-      <h4>ОСВІТЛЕННЯ</h4>
+      <h4 aria-level="3">ОСВІТЛЕННЯ</h4>
       <p>Контрастне, «cinematic». Бічне світло з одного боку, контрастна тінь з іншого. Уникати «плоского» рівного освітлення. Час — golden hour або студія.</p>
     </div>
     <div class="card">
@@ -117,7 +118,7 @@
   <div class="card-grid">
     <div class="card" style="border-left: 3px solid var(--danger);">
       <span class="label" style="color: var(--danger-text);">/// ✕ DON'T</span>
-      <h4>ШИРОКОПОСМІШКОВІ STOCK-ФОТО</h4>
+      <h4 aria-level="3">ШИРОКОПОСМІШКОВІ STOCK-ФОТО</h4>
       <p>Фото з іноземних стоків з людьми у костюмах і неможливо ідеальними посмішками. Виглядає фейково — підриває довіру.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--warning);">

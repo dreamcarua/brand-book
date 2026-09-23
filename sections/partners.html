@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -51,7 +52,7 @@
   </div>
 
   <div style="margin-top: 18px; padding: 16px 20px; background: var(--coal); border-left: 3px solid var(--ash);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 8px;">/// РОЗШИРЕНІ ПОЛЯ — ПІСЛЯ ЗГОДИ ПРАЦЮВАТИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 8px;">/// РОЗШИРЕНІ ПОЛЯ — ПІСЛЯ ЗГОДИ ПРАЦЮВАТИ</div>
     <p style="font-size: 13px; color: var(--bone); line-height: 1.6;">
       Технічні деталі (deliverables у мегабайтах, канали публікації, точні розміри, sticker pack, час відповіді менеджера, штрафи за дедлайн тощо) виносимо в окремий «розширений бриф», який підписуємо разом із договором. На етапі знайомства такі поля відлякують: блогер просто не пише як довго відповідатиме і чи робить sticker pack — це обговорюємо живцем.
     </p>
@@ -62,7 +63,7 @@
 
     <div class="partner-rule allow">
       <div class="head">/// МОЖНА</div>
-      <h5>ВИКОРИСТАННЯ ЛОГОТИПУ</h5>
+      <h5 aria-level="3">ВИКОРИСТАННЯ ЛОГОТИПУ</h5>
       <ul>
         <li>Згадка у позитивному/нейтральному контексті</li>
         <li>Логотип у точно тих кольорах що в брендбуку</li>
@@ -75,7 +76,7 @@
 
     <div class="partner-rule deny">
       <div class="head">/// НЕ МОЖНА</div>
-      <h5>ЗАБОРОНЕНО АБСОЛЮТНО</h5>
+      <h5 aria-level="4">ЗАБОРОНЕНО АБСОЛЮТНО</h5>
       <ul>
         <li>Зміна кольорів, форми чи пропорцій</li>
         <li>Використання на еротичному контенті</li>
@@ -121,14 +122,14 @@
 
   <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px; margin-top: 24px;">
     <div style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap;">
-      <div style="font-family: 'Manrope', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); letter-spacing: 0.05em;">BMW</div>
-      <div style="font-family: 'Oswald', sans-serif; font-size: 32px; color: var(--ash); opacity: 0.5;">×</div>
+      <div style="font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); letter-spacing: 0.05em;">BMW</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; color: var(--ash); opacity: 0.5;">×</div>
       <div class="racing-h size-md">
         <div class="ua-tag">UA</div>
         <div class="text-block">DREAM<span class="red">CAR</span></div>
       </div>
     </div>
-    <div style="margin-top: 40px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em; line-height: 1.8;">
+    <div style="margin-top: 40px; text-align: center; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em; line-height: 1.8;">
       /// CLEAR SPACE МІЖ ЛОГОТИПАМИ — МІНІМУМ 60PX (4×X)<br>
       /// ВЕРТИКАЛЬНА ВІСЬ ВИРІВНЮВАННЯ — ЦЕНТР<br>
       /// ОПТИЧНІ РОЗМІРИ ВИРІВНЯНІ (НЕ МАТЕМАТИЧНІ)<br>
@@ -140,26 +141,26 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// БРЕНД-МЕНЕДЖЕР</span>
-      <h4>ЗАГАЛЬНІ ПИТАННЯ</h4>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
+      <h4 aria-level="3">ЗАГАЛЬНІ ПИТАННЯ</h4>
+      <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
       <p style="margin-top: 8px;">Будь-які питання щодо брендингу, тонкого налаштування матеріалів, узгоджень. Відповідь — до 24 годин.</p>
     </div>
     <div class="card">
       <span class="label">/// PR + ЗМІ</span>
       <h4>ПРЕС-КОНТАКТ</h4>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
+      <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
       <p style="margin-top: 8px;">Для журналістів, інтервʼю, коментарів. Відповідь — до 4 годин у робочий час.</p>
     </div>
     <div class="card">
       <span class="label">/// ПАРТНЕРСТВО</span>
       <h4>КОЛАБИ ТА СПОНСОРСТВО</h4>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
+      <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
       <p style="margin-top: 8px;">Пропозиції про спільні проєкти, спонсорство, бартер. Відповідь — до 48 годин.</p>
     </div>
     <div class="card">
       <span class="label">/// ЮРИДИЧНИЙ</span>
       <h4>КОНТРАКТИ ТА ДОКУМЕНТИ</h4>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
+      <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--success);">vg@dreamcar.ua</p>
       <p style="margin-top: 8px;">Договори, NDA, юридичні запити. [організатор з реквізитами у публічній оферті]</p>
     </div>
   </div>
@@ -168,28 +169,28 @@
   <p class="s-desc">Хто погоджує дизайн перед публікацією. Це економить тижні переробок.</p>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 16px;">
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">1</div>
-      <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПЕРШИЙ ДРАФТ</h4>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">1</div>
+      <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;" aria-level="3">ПЕРШИЙ ДРАФТ</h4>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Підрядник надсилає в email. Дедлайн — за 5 робочих днів до публікації.</p>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">2</div>
-      <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">BRAND CHECK</h4>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">2</div>
+      <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">BRAND CHECK</h4>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Бренд-менеджер перевіряє: лого, кольори, тон, повідомлення. 24 год.</p>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">3</div>
-      <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПРАВКИ</h4>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">3</div>
+      <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПРАВКИ</h4>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Коментарі повертаються. Підрядник править. До 2 кіл правок входять у вартість.</p>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">4</div>
-      <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">FINAL APPROVAL</h4>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">4</div>
+      <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">FINAL APPROVAL</h4>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Письмове підтвердження. Тільки після цього — публікація.</p>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; text-align: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">5</div>
-      <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПУБЛІКАЦІЯ</h4>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 48px; color: var(--red); line-height: 1;">5</div>
+      <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; margin: 8px 0; letter-spacing: 0.05em;">ПУБЛІКАЦІЯ</h4>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5;">Підрядник публікує + надсилає лінки. Аналітика — через тиждень.</p>
     </div>
   </div>

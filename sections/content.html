@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -41,7 +42,7 @@
   <div class="rubric-grid">
     <div class="rubric">
       <div class="tag">#ANATOMY</div>
-      <h4>АНАТОМІЯ АВТО</h4>
+      <h4 aria-level="3">АНАТОМІЯ АВТО</h4>
       <p>Розглядаємо авто акції з усіх сторін: потужність, опції, кольори, історія моделі. 1 пост = 1 деталь.</p>
       <div class="freq">/// 2-3 РАЗИ НА ТИЖДЕНЬ · АКЦІЯ</div>
     </div>
@@ -92,7 +93,7 @@
   <h2 class="s-subtitle">ХЕШТЕГ-СТРАТЕГІЯ</h2>
   <p class="s-desc">3 рівні: брендові (завжди), тематичні (за рубриками), геолокаційні (для локального охоплення).</p>
 
-  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// БРЕНДОВІ — на КОЖНИЙ пост</p>
+  <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// БРЕНДОВІ — на КОЖНИЙ пост</p>
   <div class="hashtags">
     <span class="hashtag brand">#DreamCar</span>
     <span class="hashtag brand">#DreamCarUA</span>
@@ -100,7 +101,7 @@
     <span class="hashtag brand">#DreamCar21</span>
   </div>
 
-  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТЕМАТИЧНІ — за рубрикою</p>
+  <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТЕМАТИЧНІ — за рубрикою</p>
   <div class="hashtags">
     <span class="hashtag">#АудіУкраїна</span>
     <span class="hashtag">#BMWUkraine</span>
@@ -110,7 +111,7 @@
     
   </div>
 
-  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ГЕО — за регіоном</p>
+  <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ГЕО — за регіоном</p>
   <div class="hashtags">
     <span class="hashtag">#Kyiv</span>
     <span class="hashtag">#Lviv</span>
@@ -120,7 +121,7 @@
     <span class="hashtag">#УкраїнаОнлайн</span>
   </div>
 
-  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТРЕНДИ — мінливо, моніторити щотижня</p>
+  <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-top: 24px; margin-bottom: 8px;">/// ТРЕНДИ — мінливо, моніторити щотижня</p>
   <div class="hashtags">
     <span class="hashtag trend">#trending</span>
     <span class="hashtag trend">#fyp</span>
@@ -177,7 +178,7 @@
   <div class="story-arc">
     <div class="arc-step">
       <div class="num">1</div>
-      <h4>ДО — МРІЯ</h4>
+      <h4 aria-level="3">ДО — МРІЯ</h4>
       <p>Хто він був до DreamCar? Який його контекст? Яка була мрія? <strong>Конкретно:</strong> «[Імʼя], [професія] з [міста], мріяв(ла) про [авто] з [року]» — лише зі слів власника і з його письмової згоди.</p>
     </div>
     <div class="arc-step">

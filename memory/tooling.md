@@ -124,3 +124,8 @@ gh secret list -R dreamcarua/brand-book
 - Джерело правди — `tokens/dreamcar-tokens.json` і `tokens/dreamcar-tokens.css` (v4.2.0, дві теми, `--dc-viz-1…6`). Розділ 16 показує їх вміст копією: змінив файл — онови блоки JSON/CSS у `sections/tokens.html` тим самим комітом.
 - `assets/styles.css` досі має власні короткі імена (`--red`, `--red-glow`, `--danger-text`…) без префікса `--dc-`; значення мають збігатися з файлами токенів.
 - Ті самі токени живуть у дизайн-системі DreamCar в артефакті Claude (claude.ai/code/artifact/6aa4ab7e-9783-4ec7-854d-0593eeabb54c) — при зміні кольорів оновити і її.
+
+
+## Lighthouse (з 23.09.2026)
+- У пісочниці: `npm i lighthouse@12` у scratchpad, `CHROME_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome lighthouse <url> --chrome-flags="--headless=new --no-sandbox"` проти `python3 -m http.server 8765`. Локально best-practices 93 через `ERR_BLOCKED_BY_RESPONSE.NotSameOrigin` лого глобальної шапки з проду — на проді same-origin, не баг.
+- CSP живе в `scripts/csp.txt`; `build_nav.py` і `build_print.py` вставляють її в кожну сторінку. Новий зовнішній хост (картинки, API) — спершу в csp.txt, інакше браузер тихо заблокує.

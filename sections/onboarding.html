@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="01 Онбординг за 10 хв. 10 слайдів: бренд для нової людини в команді. DreamCar Brand Book v4.3.">
@@ -9,34 +10,36 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .deck-intro { padding: 32px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red); margin-bottom: 28px; }
   .slide-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
-  .slide { background: var(--coal); border: 1px solid var(--line); padding: 0; aspect-ratio: 16/9; width: 100%; max-width: 1080px; margin: 0 auto; position: relative; overflow: hidden; }
+  .slide { background: var(--coal); border: 1px solid var(--line); padding: 0; min-height: 340px; width: 100%; max-width: 1080px; margin: 0 auto; position: relative; overflow: hidden; }
   .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
-  .slide-content { padding: 48px 56px; height: 100%; display: flex; flex-direction: column; position: relative; }
-  .slide-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px; }
-  .slide h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 48px; color: var(--white); line-height: 1.05; margin-bottom: 24px; }
+  .slide-content { padding: 48px 56px 72px; min-height: 340px; display: flex; flex-direction: column; position: relative; }
+  .slide-num { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px; }
+  .slide h2 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: clamp(32px, 5vw, 56px); text-transform: uppercase; color: var(--white); line-height: 1.04; margin-bottom: 24px; text-wrap: balance; }
   .slide .lead { font-size: 18px; color: var(--bone); line-height: 1.5; max-width: 720px; margin-bottom: 24px; }
   .slide ul { list-style: none; padding: 0; line-height: 1.9; font-size: 16px; color: var(--bone); }
   .slide ul li::before { content: '▸ '; color: var(--red); font-weight: 700; }
-  .slide .footer-mark { position: absolute; bottom: 24px; right: 32px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.18em; }
+  .slide .footer-mark { position: absolute; bottom: 24px; right: 32px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; color: var(--ash); letter-spacing: 0.18em; }
   .slide .corner-num { position: absolute; bottom: 24px; left: 32px; font-family: 'Archivo Black', sans-serif; font-size: 56px; color: var(--coal); line-height: 1; }
   .slide.hero { background: var(--red); }
-  .slide.hero h2 { color: var(--white); font-size: 64px; }
+  .slide.hero h2 { color: var(--white); font-size: clamp(40px, 6vw, 72px); }
   .slide.hero .lead { color: #FFFFFF; font-size: 20px; }
   .slide.hero ul, .slide.hero li { color: #FFFFFF; }
-  .slide.green { background: var(--coal); border-top: 3px solid var(--success); border-color: var(--success); }
-  .slide.red { background: var(--coal); border-top: 3px solid var(--danger); border-color: var(--danger); }
+  .slide.green { background: var(--coal); }
+  .slide.red { background: var(--black); }
+  .slide.red::before { background: var(--steel); }
   .slide.dark { background: var(--black); }
   .swatch-row { display: flex; gap: 14px; margin: 14px 0; }
-  .swatch { width: 80px; height: 80px; border-radius: 4px; }
+  .swatch { width: 80px; height: 80px; border-radius: 0; }
   .deck-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
-  .deck-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.15em; cursor: pointer; text-decoration: none; transition: border-color 0.15s; }
-  .deck-btn:hover { border-color: var(--red); color: var(--red); }
+  .deck-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px; letter-spacing: 0.15em; cursor: pointer; text-decoration: none; transition: border-color 0.15s; }
+  @media (hover: hover) and (pointer: fine) { .deck-btn:hover { border-color: var(--red); } }
   @media print {
+    .slide { aspect-ratio: 16/9; min-height: 0; }
     body { background: white; color: black; }
     .sidebar, .topbar, .section-bread, .section-page-nav, .deck-actions { display: none !important; }
     .main { padding: 0; }
@@ -99,7 +102,7 @@
         <h2>ПОВЕРНУТИ <span style="color: var(--red-glow);">МРІЮ</span> УКРАЇНЦЯМ.</h2>
         <p class="lead">Авто — більше ніж транспорт. Це символ свободи, успіху, маленьких перемог. Ми робимо це доступним для тих, хто не може купити Audi за свою зарплату — але має право на цю мрію.</p>
         <ul style="margin-top: 20px;">
-          <li><strong style="color: var(--white);">Хто ми:</strong> авто-клуб, не «лотерея»</li>
+          <li><strong style="color: var(--white);">Хто ми:</strong> авто-клуб, де ключі вручають у прямому ефірі</li>
           <li><strong style="color: var(--white);">Що даємо:</strong> доступ + досвід + спільноту</li>
           <li><strong style="color: var(--white);">Чим відрізняємось:</strong> з 2016 року, кожне вручення публічно і з доказами</li>
         </ul>
@@ -135,12 +138,12 @@
           <div class="swatch" style="background: #E30613;"></div>
           <div class="swatch" style="background: #FFFFFF;"></div>
         </div>
-        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--bone); letter-spacing: 0.1em; margin-top: 8px;">#0A0A0A · #E30613 · #FFFFFF</p>
+        <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--bone); letter-spacing: 0.1em; margin-top: 8px;">#0A0A0A · #E30613 · #FFFFFF</p>
         <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap; align-items: baseline;">
-          <span style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; color: var(--white);">OSWALD</span>
+          <span style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 22px; color: var(--white);">OSWALD</span>
           <span style="font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--white);">ARCHIVO</span>
-          <span style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 22px; color: var(--white);">Manrope</span>
-          <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; color: var(--white);">JetBrains Mono</span>
+          <span style="font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 22px; color: var(--white);">Manrope</span>
+          <span style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-weight: 700; font-size: 18px; color: var(--white);">JetBrains Mono</span>
         </div>
         <p class="lead" style="margin-top: 24px; font-size: 14px;">Три кольори бренду і чотири шрифти. Службові кольори — лише для станів інтерфейсу (розділ 16). Це не порада — це закон.</p>
         <div class="footer-mark">DREAMCAR · VISUAL</div>
@@ -170,7 +173,7 @@
         <div class="slide-num" style="color: var(--danger-text);">/// 06 / 10 — ЦІ СЛОВА — НІКОЛИ</div>
         <h2>ЗАБОРОНЕНИЙ <span style="color: var(--danger-text);">СЛОВНИК.</span></h2>
         <p class="lead">Юридичні ризики, блокування реклами, втрата довіри. Якщо хтось бачить ці слова — повертаємо матеріал на переробку. Без винятків.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; color: var(--danger-text);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 18px; color: var(--danger-text);">
           <div>✕ ШАНС</div><div>✕ ЛОТЕРЕЯ</div>
           <div>✕ ВИГРАЙ</div><div>✕ КАЗИНО</div>
           <div>✕ КВИТОК</div><div>✕ ДЖЕКПОТ</div>
@@ -188,7 +191,7 @@
         <div class="slide-num" style="color: var(--success);">/// 07 / 10 — А ЦІ — ЗАВЖДИ</div>
         <h2>БЕЗПЕЧНИЙ <span style="color: var(--success);">СЛОВНИК.</span></h2>
         <p class="lead">Юридично чисто, проходить Meta/Google ads, не лякає платоспроможну аудиторію.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; color: var(--success);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin-top: 18px; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 18px; color: var(--success);">
           <div>✓ ПРОМОАКЦІЯ</div><div>✓ ТОКЕН</div>
           <div>✓ ВЛАСНИК АВТО</div><div>✓ УЧАСНИК</div>
           <div>✓ ПРЯМИЙ ЕФІР</div><div>✓ ДОСТУП</div>
@@ -255,7 +258,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЯК ВИКОРИСТОВУВАТИ</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>У перший день нового працівника / нового підрядника:</strong> відкрий цю сторінку, дай 10 хвилин на прочитання. Потім — перевір розуміння Slide 6 (NEVER слова) і Slide 7 (SAFE слова) — 2-хвилинне інтервʼю. Якщо не пройшов — підучаємо.
     </p>
@@ -265,7 +268,7 @@
   </div>
 
   <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
       <li>→ <a href="quickstart.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">00 Швидкий старт</a> — шпаргалка на один екран: тримай відкритою поруч з роботою.</li>
       <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">10 Голос і мова</a> — глибше про NEVER/SAFE words.</li>

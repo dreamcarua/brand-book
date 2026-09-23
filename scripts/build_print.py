@@ -42,31 +42,32 @@ head = '''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
-<title>DreamCar Brand Book v''' + VERSION + ''' · Версія для друку</title>
+<title>DreamCar Brand Book v'''
+head = head.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n' + (ROOT / "scripts" / "csp.txt").read_text(encoding="utf-8").strip(), 1) + VERSION + ''' · Версія для друку</title>
 <meta name="description" content="DreamCar Brand Book v''' + VERSION + ''' — повна друкована версія всіх ''' + str(len(CATALOG)) + ''' розділів.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/styles.css">
 <style>
 .print-toolbar { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 1px solid var(--line); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.print-toolbar .info { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--bone); }
+.print-toolbar .info { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--bone); }
 .print-toolbar .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.print-toolbar .btn-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; padding: 8px 16px; border: 1px solid var(--line); color: var(--bone); background: transparent; text-decoration: none; cursor: pointer; }
+.print-toolbar .btn-link { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.16em; padding: 8px 16px; border: 1px solid var(--line); color: var(--bone); background: transparent; text-decoration: none; cursor: pointer; }
 .print-toolbar .btn-link.primary { background: var(--red); color: var(--white); border-color: var(--red); }
 .print-toolbar .btn-link:hover { border-color: var(--red); color: var(--white); }
 .print-cover { padding: 96px 32px; text-align: center; border-bottom: 1px solid var(--line); }
-.print-cover .ver { font-family: 'JetBrains Mono', monospace; color: var(--red); font-size: 12px; letter-spacing: 0.3em; margin-bottom: 24px; }
-.print-cover h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 84px; line-height: 0.9; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
+.print-cover .ver { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; color: var(--red); font-size: 12px; letter-spacing: 0.3em; margin-bottom: 24px; }
+.print-cover h1 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 84px; line-height: 0.9; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
 .print-cover h1 .red { color: var(--red); }
 .print-cover .sub { font-size: 14px; color: var(--bone); margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-.print-cover .meta { margin-top: 48px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
+.print-cover .meta { margin-top: 48px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ash); }
 .print-toc { padding: 32px; border-bottom: 1px solid var(--line); }
-.print-toc h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
+.print-toc h2 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; }
 .print-toc ol { list-style: none; padding: 0; column-count: 2; column-gap: 32px; }
 .print-toc li { break-inside: avoid; margin-bottom: 6px; }
 .print-toc li a { color: var(--bone); text-decoration: none; font-size: 14px; line-height: 1.7; }
 .print-toc li a:hover { color: var(--white); }
-.print-toc .num { color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-right: 10px; letter-spacing: 0.16em; }
+.print-toc .num { color: var(--red); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; margin-right: 10px; letter-spacing: 0.16em; }
 @media (max-width: 700px) { .print-toc ol { column-count: 1; } .print-cover h1 { font-size: 56px; } }
 @media print {
   .print-toolbar { display: none !important; }
@@ -114,7 +115,7 @@ for sid, num, title in CATALOG:
 footer = f'''
 </main>
 
-<footer style="padding: 32px; border-top: 1px solid var(--line); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.18em; line-height: 1.8;">
+<footer style="padding: 32px; border-top: 1px solid var(--line); text-align: center; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.18em; line-height: 1.8;">
   DREAMCAR · BRAND BOOK · V{VERSION} · ЗГЕНЕРОВАНО {datetime.date.today().strftime('%d.%m.%Y')}<br>
   BRAND.DREAMCAR.UA
 </footer>

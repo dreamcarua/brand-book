@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -38,7 +39,7 @@
   </p>
 
   <div style="margin: 16px 0 28px; padding: 18px 22px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red); display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--red-glow); font-weight: 700;">/// СТАТУС</span>
+    <span style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--red-glow); font-weight: 700;">/// СТАТУС</span>
     <span style="color: var(--white); font-weight: 700; font-size: 14px;">У РОБОТІ</span>
     <span style="color: var(--bone); font-size: 13px; line-height: 1.5;">Цей розділ описує цільовий стан. Підрядники для деревʼяних коробок, гравіровки і друку — підбираються. Дата запуску — за рішенням власника бренду.</span>
   </div>
@@ -49,7 +50,7 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// 01</span>
-      <h4>ДЕРЕВʼЯНА КОРОБКА</h4>
+      <h4 aria-level="3">ДЕРЕВʼЯНА КОРОБКА</h4>
       <p>Дуб або горіх. Розмір 30×20×8 см. Гравірований логотип DreamCar на кришці. Усередині оксамитова обкладинка для ключів.</p>
     </div>
     <div class="card">
@@ -85,7 +86,7 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// CAP</span>
-      <h4>КЕПКА</h4>
+      <h4 aria-level="3">КЕПКА</h4>
       <p>Чорна snapback. Червона вишивка «DC» спереду. Друкована етикетка «DREAMCAR · UA» ззаду.</p>
     </div>
     <div class="card">
@@ -109,7 +110,7 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// QUALITY</span>
-      <h4>ТІЛЬКИ ПРЕМІУМ</h4>
+      <h4 aria-level="3">ТІЛЬКИ ПРЕМІУМ</h4>
       <p>Краще менше і дорожче. Дешевий мерч = дешевий бренд. Якщо немає бюджету — не виробляємо взагалі.</p>
     </div>
     <div class="card">

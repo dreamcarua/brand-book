@@ -15,6 +15,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SIDEBAR = ROOT / "assets" / "sidebar.js"
 VERSION = "4.3"
+CSP_TAG = (ROOT / "scripts" / "csp.txt").read_text(encoding="utf-8").strip()
+
+
+def with_csp(s):
+    """One CSP for every page (meta: GitHub Pages cannot send headers)."""
+    s = re.sub(r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?', "", s)
+    return s.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n' + CSP_TAG, 1)
+
 
 
 def groups():
@@ -63,7 +71,12 @@ def update_index():
         s = re.sub(r"<!-- TOC:START -->.*?<!-- TOC:END -->", lambda m: toc, s, flags=re.S)
     else:
         s = re.sub(r"<!-- TOC -->.*?(?=\n\n<footer)", lambda m: toc, s, count=1, flags=re.S)
+    s = with_csp(s)
     p.write_text(s, encoding="utf-8")
+    for extra in ("404.html", "legal-safe-lexicon.html"):
+        q = ROOT / extra
+        if q.exists():
+            q.write_text(with_csp(q.read_text(encoding="utf-8")), encoding="utf-8")
 
 
 def plate(num, name):
@@ -80,6 +93,7 @@ def update_sections():
         s = p.read_text(encoding="utf-8")
         label = f'{it["num"]} {it["name"]}'
         s = re.sub(r"<title>.*?</title>", f"<title>{esc(label)} · DreamCar Brand Book</title>", s, count=1, flags=re.S)
+        s = with_csp(s)
         # meta description from SECTIONS (one source)
         meta = esc(f'{it["num"]} {it["name"]}. {it["desc"]} DreamCar Brand Book v{VERSION}.').replace('"', '&quot;')
         if re.search(r'<meta name="description"[^>]*>', s):

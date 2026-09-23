@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -12,7 +13,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -55,34 +56,34 @@
   <h2 class="s-subtitle" style="margin-top: 56px;">КОМПАС — <span class="red">5 ПРИНЦИПІВ, ЗВІРЯЙ КОЖНЕ РІШЕННЯ</span></h2>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px;">
     <div style="background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 01</div>
-      <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">ДІЯ > ОЧІКУВАННЯ</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 01</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">ДІЯ > ОЧІКУВАННЯ</div>
       <div style="font-size: 12.5px; color: var(--bone); line-height: 1.55;">Ми не продаємо мрію «колись». Кожен меседж кличе зробити крок сьогодні — конкретний, маленький, реальний.</div>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 02</div>
-      <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">ПРОЗОРІСТЬ > ОБІЦЯНКИ</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 02</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">ПРОЗОРІСТЬ > ОБІЦЯНКИ</div>
       <div style="font-size: 12.5px; color: var(--bone); line-height: 1.55;">Прямий ефір, документи, відкритий архів. Те, що можна перевірити, не потребує реклами.</div>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 03</div>
-      <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">КОНКРЕТИКА > ГАСЛА</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 03</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">КОНКРЕТИКА > ГАСЛА</div>
       <div style="font-size: 12.5px; color: var(--bone); line-height: 1.55;">Цифри, дати, імена. «22 авто вручено» сильніше за будь-який суперлатив.</div>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 04</div>
-      <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">СПІЛЬНОТА > АУДИТОРІЯ</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 04</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">СПІЛЬНОТА > АУДИТОРІЯ</div>
       <div style="font-size: 12.5px; color: var(--bone); line-height: 1.55;">Учасник — не «трафік», а член клубу. З ним говорять як з рівним — і він приводить наступного.</div>
     </div>
     <div style="background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 05</div>
-      <div style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">МРІЯ > ТРАНСПОРТ</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--ash); margin-bottom: 8px;">/// 05</div>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); margin-bottom: 8px;">МРІЯ > ТРАНСПОРТ</div>
       <div style="font-size: 12.5px; color: var(--bone); line-height: 1.55;">Ми вручаємо не засіб пересування, а доказ: великі речі стаються зі звичайними людьми.</div>
     </div>
   </div>
 
   <div style="margin-top: 40px; border-left: 3px solid var(--red); padding: 18px 24px; background: var(--coal);">
-    <p style="margin: 0; font-family: 'Oswald', sans-serif; font-size: 20px; line-height: 1.4; color: var(--white);">ЯКЩО ТЕКСТ, МАКЕТ ЧИ ІДЕЯ СУПЕРЕЧАТЬ ЦЬОМУ МАНІФЕСТУ — ЇХ <span class="red">ВИКИДАЮТЬ</span>. НЕЗАЛЕЖНО ВІД БЮДЖЕТУ, ДЕДЛАЙНУ ЧИ АВТОРА.</p>
+    <p style="margin: 0; font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 20px; line-height: 1.4; color: var(--white);">ЯКЩО ТЕКСТ, МАКЕТ ЧИ ІДЕЯ СУПЕРЕЧАТЬ ЦЬОМУ МАНІФЕСТУ — ЇХ <span class="red">ВИКИДАЮТЬ</span>. НЕЗАЛЕЖНО ВІД БЮДЖЕТУ, ДЕДЛАЙНУ ЧИ АВТОРА.</p>
   </div>
 </section>
 <nav class="section-page-nav" aria-label="Попередній і наступний розділ">

@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -53,7 +54,7 @@
     </div>
     <div class="qs-card" style="border-top-color:var(--red);">
       <div class="qs-h"><span>04</span>Шрифти</div>
-      <p class="qs-p" style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;color:var(--white);line-height:1.1;margin-bottom:6px;">OSWALD — ЗАГОЛОВКИ</p>
+      <p class="qs-p" style="font-family:'Oswald','Oswald Fallback',sans-serif;font-weight:700;font-size:24px;color:var(--white);line-height:1.1;margin-bottom:6px;">OSWALD — ЗАГОЛОВКИ</p>
       <p class="qs-p"><strong>Manrope</strong> — текст і кнопки. <strong>JetBrains Mono</strong> — мітки й номери. <strong>Archivo Black</strong> — тільки латиниця і цифри (логотип, номери): кирилиці в ньому немає. Усі — з Google Fonts, замін не робимо.</p>
     </div>
     <div class="qs-card" style="border-top-color:var(--red);">

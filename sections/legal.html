@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -14,23 +15,23 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .legal-wrap { max-width: 1080px; padding: 0; }
-  .legal-wrap h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.02em; margin: 28px 0 12px; color: #fff; }
-  .sub { color: var(--ash); font-size: 14px; margin-bottom: 32px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+  .legal-wrap h3 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.02em; margin: 28px 0 12px; color: #fff; }
+  .sub { color: var(--ash); font-size: 14px; margin-bottom: 32px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
   .warn-card { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); border-radius: 0; padding: 20px 24px; margin-bottom: 24px; }
-  .warn-card h3 { margin-top: 0; color: var(--white); font-size: 16px; }
+  .warn-card h3, .warn-card .warn-h { margin: 0; color: var(--white); font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; }
   .warn-card p { margin: 8px 0 0; color: #ddd; font-size: 14px; }
 
   .table-wrap { background: var(--coal); border: 1px solid var(--line); border-radius: 0; overflow: hidden; margin-bottom: 24px; }
   table.lex { width: 100%; border-collapse: collapse; }
-  table.lex th { background: #1a1a1a; padding: 14px 18px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ash); border-bottom: 1px solid var(--line); }
+  table.lex th { background: #1a1a1a; padding: 14px 18px; text-align: left; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ash); border-bottom: 1px solid var(--line); }
   table.lex td { padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
   table.lex tr:last-child td { border-bottom: none; }
-  table.lex .bad { color: var(--bone); font-weight: 600; font-family: 'JetBrains Mono', monospace; text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
-  table.lex .good { color: var(--white); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+  table.lex .bad { color: var(--bone); font-weight: 600; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+  table.lex .good { color: var(--white); font-weight: 700; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; }
   table.lex .why { color: var(--bone); font-size: 13px; }
   table.lex .arrow { color: var(--red-glow); font-size: 18px; text-align: center; }
 
@@ -39,7 +40,7 @@
   .ex-card { background: var(--coal); border: 1px solid var(--line); border-radius: 0; padding: 16px 20px; }
   .ex-card.bad { border-left: 4px solid var(--steel); }
   .ex-card.good { border-left: 4px solid var(--white); }
-  .ex-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+  .ex-card .label { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
   .ex-card.bad .label { color: var(--ash); }
   .ex-card.good .label { color: var(--white); }
   .ex-card .ex-text { font-size: 13px; color: #ddd; line-height: 1.5; }
@@ -90,7 +91,7 @@
   <p class="s-desc">Що НЕ говорити у комунікаціях DreamCar — і що сказати замість. Превентивний інструмент для команди.</p>
 
   <div class="warn-card">
-    <h3>КОНТЕКСТ — чому це важливо</h3>
+    <h2 class="warn-h">КОНТЕКСТ — чому це важливо</h2>
     <p>DreamCar — це <b>промоакція до сервісу токенів ai.dreamcar.ua</b>, а НЕ лотерея чи розіграш. Слова-маркери азартних ігор суперечать самій суті формату і створюють <b>прямий юридичний ризик</b> (штраф PlayCity до 750 000 ₴ + блокування реклами Meta/Google за ToS).</p>
     <p style="margin-top:12px;">Якщо сумніваєшся щодо слова — використовуй Voice Linter нижче або питай у Вадима.</p>
   </div>

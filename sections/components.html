@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -61,21 +62,21 @@
       <label class="form-label" style="margin-bottom: 12px; display:block;">/// ОБЕРИ ПАКЕТ</label>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px;">
         <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white);">1 токен</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">249 ₴</div>
+          <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 22px; color: var(--white);">1 токен</div>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">249 ₴</div>
         </div>
         <div style="border: 1px solid var(--red); background: rgba(227,6,19,0.08); padding: 12px; text-align: center;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white);">5 токенів</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red-glow); margin-top: 4px;">ПОПУЛЯРНИЙ</div>
+          <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 22px; color: var(--white);">5 токенів</div>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 9px; color: var(--red-glow); margin-top: 4px;">ПОПУЛЯРНИЙ</div>
         </div>
         <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white);">15 токенів</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
+          <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 22px; color: var(--white);">15 токенів</div>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
         </div>
         <div style="border: 1px solid var(--line); padding: 12px; text-align: center;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white);">50 токенів</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
+          <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 22px; color: var(--white);">50 токенів</div>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); margin-top: 4px;">тариф проєкту</div>
         </div>
       </div>
       <div class="form-group">
@@ -112,43 +113,43 @@
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 32px;">
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">404</div>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">МАШИНУ<br>ВЖЕ ЗАБРАЛИ.</h3>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">404</div>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin: 16px 0;">МАШИНУ<br>ВЖЕ ЗАБРАЛИ.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Сторінки, яку ти шукаєш, не існує — або вона переїхала. На головній є те, що тобі потрібно.</p>
       <button class="btn btn-primary" style="margin: 0 auto;">НА ГОЛОВНУ →</button>
     </div>
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">500</div>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">У НАС<br>ТЕХНІЧНИЙ ЗБІЙ.</h3>
+      <div style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 120px; line-height: 0.85; color: var(--red);">500</div>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin: 16px 0;">У НАС<br>ТЕХНІЧНИЙ ЗБІЙ.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Працюємо. Якщо оплата не пройшла — гроші не списались. Спробуй за 5 хвилин.</p>
       <button class="btn btn-secondary" style="margin: 0 auto;">ОНОВИТИ →</button>
     </div>
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto;color:var(--ash);opacity:0.6;"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3"/><path d="m16 7 3 3"/><path d="m18 5 2 2"/></svg>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">ТУТ ПОКИ<br>ПОРОЖНЬО.</h3>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin: 16px 0;">ТУТ ПОКИ<br>ПОРОЖНЬО.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">У тебе ще немає токенів на активну акцію. Що зараз у проєкті — на головній dreamcar.ua.</p>
       <button class="btn btn-primary" style="margin: 0 auto;">КУПИТИ ТОКЕН →</button>
     </div>
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 12px;">/// АКЦІЯ · № ПОПЕРЕДНЬОГО ПРОЄКТУ</div>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin-bottom: 16px;">ЗАВЕРШЕНА.</h3>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.2em; margin-bottom: 12px;">/// АКЦІЯ · № ПОПЕРЕДНЬОГО ПРОЄКТУ</div>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin-bottom: 16px;">ЗАВЕРШЕНА.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Ключі вручено у прямому ефірі — запис відкритий в архіві. Наступна — на dreamcar.ua: номер, авто, дати. У макеті номер завжди підставляється з даних, ніколи не пишеться руками.</p>
       <button class="btn btn-ghost" style="margin: 0 auto;">ЗАПИС ЕФІРУ →</button>
     </div>
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto;color:var(--ash);opacity:0.7;"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">ТЕХНІЧНА<br>ПЕРЕРВА.</h3>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin: 16px 0;">ТЕХНІЧНА<br>ПЕРЕРВА.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Сайт оновлюється. Повертаємось через 30 хвилин. Усі токени та оплати в безпеці.</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em;">/// FOLLOW: @dreamcar.ua</p>
+      <p style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.15em;">/// FOLLOW: @dreamcar.ua</p>
     </div>
 
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 60px 32px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto;color:var(--ash);opacity:0.7;"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.8"/><path d="M19 12.9a10 10 0 0 0-2.3-1.8"/><path d="M2 8.8a15 15 0 0 1 4.2-2.6"/><path d="M22 8.8A15 15 0 0 0 11 5"/><circle cx="12" cy="20" r=".5"/></svg>
-      <h3 style="font-family: 'Oswald', sans-serif; font-size: 32px; margin: 16px 0;">НЕМАЄ<br>ІНТЕРНЕТУ.</h3>
+      <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 32px; margin: 16px 0;">НЕМАЄ<br>ІНТЕРНЕТУ.</h3>
       <p style="color: var(--bone); font-size: 14px; max-width: 280px; margin: 0 auto 24px; line-height: 1.6;">Перевір підключення. Якщо ти на ефірі — він автоматично відновиться при поверненні звʼязку.</p>
       <button class="btn btn-secondary" style="margin: 0 auto;">СПРОБУВАТИ ЗНОВУ →</button>
     </div>

@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -45,7 +46,7 @@
 <!-- Preconnect — оптимізація завантаження шрифтів -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/styles.css">
 
 <!-- Schema.org — TechArticle / Organization -->
@@ -78,7 +79,7 @@
 
 <style>
   .install-prompt { position: fixed; bottom: 16px; right: 16px; background: var(--red); color: var(--white); padding: 14px 20px; border: none;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; box-shadow: 4px 4px 0 var(--red-deep);
+    font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; box-shadow: 4px 4px 0 var(--red-deep);
     display: none; z-index: 1000; }
   .install-prompt.shown { display: block; }
   .install-prompt:hover { background: var(--red-deep); }
@@ -150,7 +151,7 @@
   <div class="b10">
     <div><span class="lbl">Знак</span><img class="plate-img" src="assets/logo/dreamcar-racing-plate.svg" width="720" height="200" alt="Racing Plate" style="width:100%;max-width:280px;"><span class="rule">Гоночний номерний знак: червоний UA-блок, біла рамка, жорстка тінь.</span></div>
     <div><span class="lbl">Колір · 60 / 25 / 15</span><div class="ratio" role="img" aria-label="Пропорція кольорів: 60% чорного, 25% червоного, 15% білого"><span style="flex:60;background:#0A0A0A"></span><span style="flex:25;background:#E30613"></span><span style="flex:15;background:#FFFFFF"></span></div><span class="rule"><strong>#0A0A0A · #E30613 · #FFFFFF.</strong> Червоний — акцент, не фон.</span></div>
-    <div><span class="lbl">Шрифти</span><div class="fonts"><div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:30px;">ЗАГОЛОВОК</div><div style="font-family:'Manrope',sans-serif;font-size:16px;color:var(--bone);">Текст і кнопки — Manrope</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ash);letter-spacing:.2em;">/// МІТКИ — MONO</div></div></div>
+    <div><span class="lbl">Шрифти</span><div class="fonts"><div style="font-family:'Oswald','Oswald Fallback',sans-serif;font-weight:700;font-size:30px;">ЗАГОЛОВОК</div><div style="font-family:'Manrope','Manrope Fallback',sans-serif;font-size:16px;color:var(--bone);">Текст і кнопки — Manrope</div><div style="font-family:'JetBrains Mono','JetBrains Mono Fallback',monospace;font-size:11px;color:var(--ash);letter-spacing:.2em;">/// МІТКИ — MONO</div></div></div>
     <div><span class="lbl">Форма</span><div style="display:flex;gap:12px;align-items:center;"><span class="btn btn-primary" style="pointer-events:none;">ВЗЯТИ УЧАСТЬ →</span></div><span class="rule">Гострі кути. Кнопки прямокутні, радіус 0.</span></div>
     <div><span class="lbl">Гасло</span><div class="slogan">Бери. Дій.<br><span style="color:var(--red)">Володій.</span></div></div>
     <div><span class="lbl">Слово</span><span class="rule"><strong>Учасники, токени ШІ-сервісу, власник.</strong> Ніколи — «розіграш», «квиток», «шанс», «переможець». <a href="sections/legal.html" style="color:var(--link);">Повний лексикон →</a></span></div>
@@ -262,6 +263,14 @@ function installPWA() {
     deferredPrompt = null;
   });
 }
+</script>
+<script>
+// Pause the ticker while it is off screen or the tab is hidden (saves battery on phones)
+(function () {
+  var t = document.querySelector('.ticker'); if (!t) return;
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { t.classList.toggle('is-offscreen', !e[0].isIntersecting); }).observe(t);
+  document.addEventListener('visibilitychange', function () { t.classList.toggle('is-offscreen', document.hidden); });
+})();
 </script>
 <script src="assets/sidebar.js" defer></script>
 </body>

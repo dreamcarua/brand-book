@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,48 +14,49 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .support-hero { padding: 32px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red); margin-bottom: 28px; }
-  .support-hero .schedule { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--bone); letter-spacing: 0.18em; margin-top: 12px; }
+  .support-hero .schedule { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px; color: var(--bone); letter-spacing: 0.18em; margin-top: 12px; }
   .term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 16px; }
   .term-cell { padding: 22px 26px; background: var(--coal); }
-  .term-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 16px; }
-  .term-cell.bad { background: rgba(220,38,38,0.08); }
-  .term-cell.bad .head { color: var(--danger-text); }
-  .term-cell.good { background: rgba(16,185,129,0.08); }
-  .term-cell.good .head { color: var(--success); }
+  .term-cell .head { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 16px; }
+  .term-cell.bad { background: var(--black); }
+  .term-cell.bad .head { color: var(--ash); }
+  .term-cell.bad li { color: var(--bone); text-decoration: line-through; text-decoration-color: var(--red); }
+  .term-cell.good { background: var(--coal); box-shadow: inset 0 3px 0 var(--red); }
+  .term-cell.good .head { color: var(--white); }
   .term-cell ul { list-style: none; padding: 0; line-height: 2.1; }
   .term-cell li { color: var(--white); font-weight: 600; font-size: 14px; }
-  .term-cell.bad li::before { content: '⛔  '; color: var(--danger-text); }
-  .term-cell.good li::before { content: '✅  '; color: var(--success); }
+  .term-cell.bad li::before { content: '✕  '; color: var(--red-glow); display: inline-block; text-decoration: none; }
+  .term-cell.good li::before { content: '✓  '; color: var(--white); }
   .k-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
   .k-card { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 20px; min-height: 200px; display: flex; flex-direction: column; }
-  .k-card .k-num { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
-  .k-card .k-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.18em; margin-bottom: 14px; }
-  .k-card .k-title { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+  .k-card .k-num { font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
+  .k-card .k-label { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.18em; margin-bottom: 14px; }
+  .k-card .k-title { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
   .k-card .k-quote { font-size: 13px; color: var(--bone); line-height: 1.55; font-style: italic; padding: 10px 12px; background: var(--black); border-left: 2px solid var(--red); margin-top: auto; }
   .stop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
   .stop-card { background: var(--coal); border: 1px solid var(--line); padding: 22px; position: relative; }
   .stop-card .stop-letter { position: absolute; top: 14px; right: 18px; font-family: 'Archivo Black', sans-serif; font-size: 46px; color: rgba(227,6,19,0.25); line-height: 1; }
-  .stop-card .stop-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 8px; }
-  .stop-card .stop-title { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 10px; }
+  .stop-card .stop-label { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 8px; }
+  .stop-card .stop-title { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 10px; }
   .stop-card .stop-quote { font-size: 13px; color: var(--bone); line-height: 1.55; font-style: italic; }
   .step-row { display: grid; grid-template-columns: 60px 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line); }
   .step-row:last-child { border-bottom: none; }
   .step-row .step-num { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--red); line-height: 1; }
-  .step-row .step-content h4 { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
+  .step-row .step-content h4 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
   .step-row .step-content p { font-size: 14px; color: var(--bone); line-height: 1.6; margin-bottom: 8px; }
   .step-row .step-content ul { padding-left: 22px; line-height: 1.8; color: var(--bone); font-size: 14px; }
   .step-row .step-content ul li { margin-bottom: 4px; }
-  .step-row .step-content .step-note { padding: 12px 16px; background: var(--coal); border-left: 2px solid var(--warning); margin-top: 10px; font-size: 13px; color: var(--bone); line-height: 1.6; }
-  .step-row .step-content .step-link { display: inline-block; padding: 10px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-decoration: none; margin-top: 10px; transition: border-color 0.15s; }
+  .step-row .step-content .step-note { padding: 12px 16px; background: var(--coal); border-left: 2px solid var(--red); margin-top: 10px; font-size: 13px; color: var(--bone); line-height: 1.6; }
+  .step-row .step-content .step-link { display: inline-block; padding: 10px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.15em; text-decoration: none; margin-top: 10px; transition: border-color 0.15s; }
   .step-row .step-content .step-link:hover { border-color: var(--red); }
   .phrase-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
-  .phrase-table th { background: var(--coal); padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red-glow); border-bottom: 2px solid var(--red); text-align: left; }
+  .phrase-table th { background: var(--coal); padding: 14px 16px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red-glow); border-bottom: 2px solid var(--red); text-align: left; }
   .phrase-table td { padding: 16px; border-bottom: 1px solid var(--line); background: var(--black); }
-  .phrase-table td:first-child { font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--white); font-weight: 600; letter-spacing: 0.04em; width: 28%; }
+  .phrase-table td:first-child { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 14px; color: var(--white); font-weight: 600; letter-spacing: 0.04em; width: 28%; }
   .phrase-table td:last-child { font-style: italic; color: var(--bone); font-size: 14px; line-height: 1.6; }
   @media (max-width: 768px) {
     .k-grid, .stop-grid, .term-grid { grid-template-columns: 1fr; }
@@ -119,14 +121,14 @@
   </div>
 
   <div class="card" style="background: var(--coal); border-left: 3px solid var(--white); padding: 20px 24px; margin-top: 20px;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 8px;">/// ЯКЩО ПИТАЮТЬ «ЩО ВИ ПРОДАЄТЕ?»</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--white); letter-spacing: 0.2em; margin-bottom: 8px;">/// ЯКЩО ПИТАЮТЬ «ЩО ВИ ПРОДАЄТЕ?»</div>
     <p style="font-size: 14px; color: var(--bone); line-height: 1.6; font-style: italic;">
       «Учасники купують токени ШІ-сервісу ai.dreamcar.ua — вони дають доступ до AI-консультацій щодо вибору авто. Автомобіль проєкту вручається серед учасників у прямому ефірі.»
     </p>
   </div>
 
-  <div class="card" style="background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 20px 24px; margin-top: 14px;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--warning); letter-spacing: 0.2em; margin-bottom: 10px;">///  ВНУТРІШНІ ЗАМІНИ (термінологія)</div>
+  <div class="card" style="background: var(--coal); border-top: 3px solid var(--red); padding: 20px 24px; margin-top: 14px;">
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 10px;">///  ВНУТРІШНІ ЗАМІНИ (термінологія)</div>
     <p style="font-size: 13px; color: var(--bone); line-height: 1.7; margin-bottom: 10px;">Слово «квитки» у будь-якому відмінку — скрізь замінюється на «токени» / «токен»:</p>
     <ul style="list-style: none; padding: 0; line-height: 1.9; font-size: 14px;">
       <li><span style="color: var(--danger-text);">✕ «квитки не знайдено»</span> &nbsp;→&nbsp; <span style="color: var(--success);">✓ «токени не знайдено»</span></li>
@@ -142,7 +144,7 @@
   </p>
 
   <div class="card" style="background: var(--coal); border-left: 3px solid var(--red); padding: 22px 26px; margin-top: 18px;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">///  КЛЮЧОВЕ ПРАВИЛО</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">///  КЛЮЧОВЕ ПРАВИЛО</div>
     <p style="font-size: 16px; color: var(--white); line-height: 1.5; font-weight: 600;">
       Ведемо всі діалоги виключно на «Ви» (з великої літери). Ніякого «ти» — навіть якщо клієнт спілкується неформально.
     </p>
@@ -197,8 +199,8 @@
     </div>
   </div>
 
-  <div class="card" style="background: var(--coal); border-top: 3px solid var(--success); border-left: 3px solid var(--success); padding: 20px 24px; margin-top: 22px;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.2em; margin-bottom: 8px;">///  ФІКСАЦІЯ ОБРОБКИ</div>
+  <div class="card" style="background: var(--coal); border-top: 3px solid var(--red); padding: 20px 24px; margin-top: 22px;">
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em; margin-bottom: 8px;">///  ФІКСАЦІЯ ОБРОБКИ</div>
     <p style="font-size: 14px; color: var(--bone); line-height: 1.6;">
       Після закриття кожного звернення — постав  на повідомлення у Telegram-чаті команди, щоб усі бачили, що звернення оброблено.
     </p>
@@ -240,7 +242,7 @@
   </p>
 
   <div class="card" style="background: rgba(220,38,38,0.08); border-left: 3px solid var(--danger); padding: 20px 24px; margin-top: 18px;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.2em; margin-bottom: 12px;">/// КОЛИ СТАВИТИ ПИТАННЯ ПРО ПОВЕРНЕННЯ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.2em; margin-bottom: 12px;">/// КОЛИ СТАВИТИ ПИТАННЯ ПРО ПОВЕРНЕННЯ</div>
     <ul style="list-style: none; padding: 0; line-height: 1.9; font-size: 14px; color: var(--bone);">
       <li>• Клієнт звинувачує компанію у шахрайстві</li>
       <li>• Клієнт погрожує скаргами або публічним розголосом</li>
@@ -252,7 +254,7 @@
     <div class="step-row">
       <div class="step-num">1</div>
       <div class="step-content">
-        <h4>ЗАПРОПОНУВАТИ ПОВЕРНЕННЯ</h4>
+        <h4 aria-level="3">ЗАПРОПОНУВАТИ ПОВЕРНЕННЯ</h4>
         <p style="font-style: italic; color: var(--bone);">«Мені шкода, що у Вас залишилося таке враження. Щоб не витрачати Ваш час — уточнюю можливість повернення коштів.»</p>
       </div>
     </div>
@@ -280,7 +282,7 @@
   <div class="step-row">
     <div class="step-num">1</div>
     <div class="step-content">
-      <h4>ПРИЙОМ ЗВЕРНЕННЯ</h4>
+      <h4 aria-level="3">ПРИЙОМ ЗВЕРНЕННЯ</h4>
       <p>Подякувати клієнту та запросити обовʼязкові дані:</p>
       <ul>
         <li>Номер телефону</li>
@@ -404,12 +406,12 @@
   <p class="s-desc">Час реакції залежить від тяжкості. Якщо не вкладаємось — пишемо клієнту проміжний статус.</p>
 
   <div class="card-grid">
-    <div class="card" style="border-left: 3px solid var(--success);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// P3 — СТАНДАРТ</span>
-      <h4>30 ХВ У РОБОЧИЙ ЧАС</h4>
+      <h4 aria-level="3">30 ХВ У РОБОЧИЙ ЧАС</h4>
       <p>Запит на токени, питання по тарифу, загальна інформація. Відповідає черговий оператор.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--warning);">
+    <div class="card" style="border-top: 3px solid var(--steel);">
       <span class="label">/// P2 — ВАЖЛИВО</span>
       <h4>15 ХВ + ПЕРЕДАЧА ТЕХН.</h4>
       <p>Не пройшла оплата, помилка авторизації, скарга. Оператор → технічний відділ → відповідь клієнту.</p>
@@ -419,7 +421,7 @@
       <h4>5 ХВ + CEO</h4>
       <p>Публічний скандал, погроза публікації, питання про шахрайство. Підключається CEO + кризова комунікація (розділ 28).</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// ПОЗА ГОДИНАМИ</span>
       <h4>09:00 НАСТУПНОГО ДНЯ</h4>
       <p>Після 20:00 і у вихідні — auto-reply про час відкриття. Критичні (P1) — на vg@dreamcar.ua з позначкою URGENT.</p>
@@ -427,7 +429,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
       <li>→ <a href="voice.html" style="color: var(--red-glow); text-decoration: none; font-weight: 600;">10 Голос і мова</a> &nbsp; — повний словник DO/CAREFUL/NEVER, матриця «ти/Ви» по каналах.</li>
       <li>→ <a href="crisis.html" style="color: var(--red-glow); text-decoration: none; font-weight: 600;">28 Кризові комунікації</a> &nbsp; — для P1-сценаріїв і ескалацій.</li>

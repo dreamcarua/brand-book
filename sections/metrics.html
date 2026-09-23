@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -40,9 +41,9 @@
   <div class="card-grid">
     <div class="card">
       <span class="label">/// AWARENESS</span>
-      <h4>BRAND AWARENESS</h4>
+      <h4 aria-level="2">BRAND AWARENESS</h4>
       <p>«Чи чули ви про DreamCar?» серед цільової аудиторії. Опитування щокварталу через Gradus / Re-volt.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">25%</div>
         <div style="color: var(--ash); font-size: 11px;">серед 25–44, Україна</div>
@@ -50,9 +51,9 @@
     </div>
     <div class="card">
       <span class="label">/// NPS</span>
-      <h4>NET PROMOTER SCORE</h4>
+      <h4 aria-level="3">NET PROMOTER SCORE</h4>
       <p>«Наскільки ймовірно ви порекомендуєте DreamCar?» від 0 до 10. Опитування після кожного фіналу.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">+50</div>
         <div style="color: var(--ash); font-size: 11px;">benchmark luxury: +30 / e-comm: +40</div>
@@ -62,7 +63,7 @@
       <span class="label">/// SOV</span>
       <h4>SHARE OF VOICE</h4>
       <p>Скільки розмов про DreamCar у соцмережах vs конкуренти. Brand24 / YouScan моніторинг.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">35%</div>
         <div style="color: var(--ash); font-size: 11px;">у сегменті авто-промоакцій</div>
@@ -72,7 +73,7 @@
       <span class="label">/// REPEAT</span>
       <h4>REPEAT PARTICIPATION</h4>
       <p>% учасників, які купили токен у 2+ акціях поспіль. Прямий показник лояльності.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">40%</div>
         <div style="color: var(--ash); font-size: 11px;">2026 baseline: 28%</div>
@@ -82,7 +83,7 @@
       <span class="label">/// ORGANIC</span>
       <h4>ORGANIC TRAFFIC</h4>
       <p>% трафіку без реклами. Показник сили бренду — людей не треба «купляти», вони шукають нас самі.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">45%</div>
         <div style="color: var(--ash); font-size: 11px;">brand searches + direct</div>
@@ -92,7 +93,7 @@
       <span class="label">/// SENTIMENT</span>
       <h4>SENTIMENT ANALYSIS</h4>
       <p>Тональність згадок у соцмережах: позитив / нейтрал / негатив. Відстежуємо щотижня.</p>
-      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+      <div style="margin-top: 16px; padding: 12px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px;">
         <div style="color: var(--red-glow);">ЦІЛЬ 2026:</div>
         <div style="color: var(--white); font-size: 18px; font-weight: 700;">75% +</div>
         <div style="color: var(--ash); font-size: 11px;">не менше 75% позитивних</div>
@@ -113,10 +114,10 @@
     <div style="background: var(--coal); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 32px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 01 · 2026</div>
-          <h3 style="font-family: 'Oswald', sans-serif; font-size: 36px; margin-top: 4px;">УКРІПЛЕННЯ ОСНОВИ</h3>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 01 · 2026</div>
+          <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 36px; margin-top: 4px;">УКРІПЛЕННЯ ОСНОВИ</h3>
         </div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">ЗАРАЗ</div>
+        <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">ЗАРАЗ</div>
       </div>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
         Виправити основу: ребрендинг, accessibility, design system, brand book. Запустити DreamCar Club. Утримати щомісячний ритм фіналів.
@@ -132,10 +133,10 @@
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 32px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 02 · 2027</div>
-          <h3 style="font-family: 'Oswald', sans-serif; font-size: 36px; margin-top: 4px;">МАСШТАБУВАННЯ КАТЕГОРІЇ</h3>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 02 · 2027</div>
+          <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 36px; margin-top: 4px;">МАСШТАБУВАННЯ КАТЕГОРІЇ</h3>
         </div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+12 МІСЯЦІВ</div>
+        <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+12 МІСЯЦІВ</div>
       </div>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
         Розширення продукту: окрім авто — нерухомість (квартири у Києві, Львові), електроніка (MacBook Pro, iPhone), подорожі. Запуск суб-бренду «DreamLife».
@@ -151,10 +152,10 @@
     <div style="background: var(--coal); border: 1px solid var(--line); padding: 32px; opacity: 0.85;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 03 · НЕ ЗАТВЕРДЖЕНО</div>
-          <h3 style="font-family: 'Oswald', sans-serif; font-size: 36px; margin-top: 4px;">ВИХІД В ЄС</h3>
+          <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.2em;">/// PHASE 03 · НЕ ЗАТВЕРДЖЕНО</div>
+          <h3 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 36px; margin-top: 4px;">ВИХІД В ЄС</h3>
         </div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+24 МІСЯЦІ</div>
+        <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; color: var(--ash); letter-spacing: 0.1em;">+24 МІСЯЦІ</div>
       </div>
       <p style="color: var(--bone); font-size: 14px; line-height: 1.7; margin-bottom: 16px;">
         Експансія на ринки Польщі та Чехії — країни з великими українськими діаспорами. Локалізація бренду — DreamCar.pl, DreamCar.cz. Adapted brand book для нових ринків.

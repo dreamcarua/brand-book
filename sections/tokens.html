@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body class="has-sidebar" style="background:#0A0A0A;color:#FFFFFF;">
@@ -92,10 +93,10 @@
     ]
   },
   <span class="key">"font"</span>: {
-    <span class="key">"display"</span>: "'Oswald', sans-serif",
+    <span class="key">"display"</span>: "'Oswald', 'Oswald Fallback', sans-serif",
     <span class="key">"brand"</span>: "'Archivo Black', sans-serif",
-    <span class="key">"body"</span>: "'Manrope', sans-serif",
-    <span class="key">"mono"</span>: "'JetBrains Mono', monospace"
+    <span class="key">"body"</span>: "'Manrope', 'Manrope Fallback', sans-serif",
+    <span class="key">"mono"</span>: "'JetBrains Mono', 'JetBrains Mono Fallback', monospace"
   },
   <span class="key">"fontSize"</span>: {
     <span class="key">"display"</span>: "96px",
@@ -208,10 +209,10 @@
   --dc-r-lg: 16px;
   --dc-r-pill: 999px;
   <span class="comment">/* === TYPOGRAPHY === */</span>
-  --dc-font-display: 'Oswald', sans-serif;
+  --dc-font-display: 'Oswald', 'Oswald Fallback', sans-serif;
   --dc-font-brand: 'Archivo Black', sans-serif;
-  --dc-font-body: 'Manrope', sans-serif;
-  --dc-font-mono: 'JetBrains Mono', monospace;
+  --dc-font-body: 'Manrope', 'Manrope Fallback', sans-serif;
+  --dc-font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace;
   --dc-fs-display: 96px;
   --dc-fs-h1: 64px;
   --dc-fs-h2: 48px;
@@ -272,7 +273,7 @@
 
   <div class="assets">
     <div class="asset">
-      <h4>/// ЛОГОТИП</h4>
+      <h4 aria-level="3">/// ЛОГОТИП</h4>
       <div class="name">DREAMCAR LOGO PACK v3.4</div>
       <p style="color: var(--bone); font-size: 13px; line-height: 1.6;">Racing Plate (primary), Avatar Circle, DC Monogram. Кожен варіант у SVG, PDF, PNG (прозорий фон) і JPG (білий фон). EPS або AI — на запит vg@dreamcar.ua.</p>
       <code><a href="../assets/dreamcar-logos.zip" style="color:var(--link);">dreamcar-logos.zip</a> · <a href="logo.html" style="color:var(--link);">розділ 15</a></code>
@@ -417,7 +418,7 @@
     └── dreamcar-brand-book-v4.2.pdf   = print.html → «Зберегти як PDF»</div>
 
   <h2 class="s-subtitle">ВЕРСІЇ ТА ЗМІНИ</h2>
-  <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
+  <div style="background: var(--coal); border: 1px solid var(--line); padding: 24px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 13px; line-height: 1.8; color: var(--bone);">
     <div style="border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 12px;">
       <strong style="color: var(--red-glow);">v4.2 · 09.2026</strong> — Токени 4.2: світла тема, палітра графіків, --red-glow і --danger-text для контрасту; таблиця актуальних і застарілих ассетів; розділи 29 Відео і 30 Локалізація; «власник» замість «переможець» по всій книзі; Bebas Neue прибрано.
     </div>

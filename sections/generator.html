@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="03 Генератор постів. Параметри проєкту → пости для IG, TG, email і макет. DreamCar Brand Book v4.3.">
@@ -9,30 +10,30 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .gen-layout { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; gap: 32px; margin-top: 32px; align-items: start; }
   .gen-form { background: var(--coal); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 24px; position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; }
   .gen-form fieldset { border: 0; padding: 0; margin: 0 0 22px; }
-  .gen-form legend { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--red-glow); margin-bottom: 12px; text-transform: uppercase; }
+  .gen-form legend { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--red-glow); margin-bottom: 12px; text-transform: uppercase; }
   .form-field { margin-bottom: 14px; }
-  .form-field label, .seg-label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--bone); margin-bottom: 6px; }
+  .form-field label, .seg-label { display: block; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--bone); margin-bottom: 6px; }
   .gen-form .hint { font-size: 12px; color: var(--ash); margin-top: 6px; line-height: 1.45; }
-  .form-field input, .form-field select { width: 100%; min-height: 44px; background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'Manrope', sans-serif; font-size: 15px; box-sizing: border-box; min-width: 0; border-radius: 0; transition: border-color 150ms ease; }
+  .form-field input, .form-field select { width: 100%; min-height: 44px; background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-size: 15px; box-sizing: border-box; min-width: 0; border-radius: 0; transition: border-color 150ms ease; }
   .form-field input::placeholder { color: #8A8A8A; }
   .form-field input:focus-visible, .form-field select:focus-visible { outline: 2px solid var(--red); outline-offset: 0; border-color: var(--red); }
   .form-field input[type=range] { padding: 0; min-height: 32px; accent-color: #E30613; background: transparent; border: 0; }
   .file-pick { position: relative; }
   .file-pick input[type=file] { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; min-height: 0; padding: 0; }
   .file-pick .file-btn { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 10px 14px; border: 1px dashed var(--steel); background: var(--black); color: var(--white); font-weight: 700; font-size: 14px; transition: border-color 150ms ease; }
-  .file-pick .file-btn span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .file-pick .file-btn span { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .file-pick input:focus-visible + .file-btn { outline: 2px solid var(--red); }
   @media (hover: hover) and (pointer: fine) { .file-pick:hover .file-btn { border-color: var(--red); } }
   .form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--steel); }
   .seg input { position: absolute; opacity: 0; pointer-events: none; }
-  .seg label { margin: 0; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.08em; border-right: 1px solid var(--steel); transition: background-color 150ms ease, color 150ms ease; }
+  .seg label { margin: 0; min-height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.08em; border-right: 1px solid var(--steel); transition: background-color 150ms ease, color 150ms ease; }
   .seg label:last-of-type { border-right: 0; }
   .seg label small { font-size: 10px; color: var(--ash); letter-spacing: 0.04em; }
   .seg input:checked + label { background: var(--red); color: var(--white); }
@@ -45,9 +46,9 @@
   .visual-stage canvas { display: block; width: 100%; height: auto; max-width: 440px; box-shadow: 8px 8px 0 var(--red-deep); }
   .visual-stage.is-story canvas { max-width: 320px; }
   .visual-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 16px; }
-  .visual-meta .spec { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ash); }
+  .visual-meta .spec { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ash); }
   .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
-  .g-btn { min-height: 44px; padding: 12px 18px; background: var(--black); border: 1px solid var(--steel); color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color 150ms ease, background-color 150ms ease, transform 160ms ease-out; }
+  .g-btn { min-height: 44px; padding: 12px 18px; background: var(--black); border: 1px solid var(--steel); color: var(--white); font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; cursor: pointer; border-radius: 0; transition: border-color 150ms ease, background-color 150ms ease, transform 160ms ease-out; }
   .g-btn.primary { background: var(--red); border-color: var(--red); }
   .g-btn:active { transform: scale(0.97); }
   .g-btn.done { border-color: var(--success); }
@@ -60,8 +61,8 @@
 
   .out-card { background: var(--coal); border: 1px solid var(--line); }
   .out-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--black); }
-  .out-head h3 { flex: 1; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--white); }
-  .out-head .who { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.08em; }
+  .out-head h3 { flex: 1; margin: 0; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--white); }
+  .out-head .who { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--ash); letter-spacing: 0.08em; }
   .out-head .g-btn { min-height: 36px; padding: 8px 14px; font-size: 12px; }
   .out-body { padding: 18px 20px; color: var(--bone); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
   .out-body strong { color: var(--white); }
@@ -69,13 +70,13 @@
   .beats { list-style: none; margin: 0; padding: 0; white-space: normal; }
   .beats li { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
   .beats li:last-child { border-bottom: 0; }
-  .beats .t { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red-glow); letter-spacing: 0.08em; padding-top: 2px; }
+  .beats .t { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 12px; color: var(--red-glow); letter-spacing: 0.08em; padding-top: 2px; }
   .email-sheet { background: #FFFFFF; color: #1A1A1A; white-space: normal; }
-  .email-sheet .subj { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.35; color: #0A0A0A; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid #E5E5E5; }
+  .email-sheet .subj { font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.35; color: #0A0A0A; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid #E5E5E5; }
   .email-sheet .from { font-size: 12px; color: #555; margin-bottom: 6px; }
   .email-sheet p { margin: 0 0 12px; color: #333; }
   .email-sheet strong { color: #0A0A0A; }
-  .email-sheet .cta { display: inline-block; background: #E30613; color: #FFFFFF; padding: 12px 22px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-decoration: none; }
+  .email-sheet .cta { display: inline-block; background: #E30613; color: #FFFFFF; padding: 12px 22px; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-decoration: none; }
   .email-sheet .legal { font-size: 12px; color: #666; margin-top: 18px; }
 
   .voice-check { padding: 12px 14px; margin-top: 4px; font-size: 13px; line-height: 1.5; border-left: 3px solid var(--success); background: var(--black); color: var(--bone); }
@@ -211,7 +212,7 @@
       </div>
 
       <article class="out-card">
-        <div class="out-head"><h3>INSTAGRAM · ПІДПИС</h3><span class="who">на «ти»</span><button type="button" class="g-btn" data-copy-from="igOut">Копіювати</button></div>
+        <div class="out-head"><h3 aria-level="2">INSTAGRAM · ПІДПИС</h3><span class="who">на «ти»</span><button type="button" class="g-btn" data-copy-from="igOut">Копіювати</button></div>
         <div class="out-body" id="igOut"></div>
       </article>
 
@@ -470,12 +471,12 @@
     // Info line
     y += d.fmt === '11' ? 64 : 76;
     if (d.type === 'handover') {
-      spacing(ctx, 1); ctx.font = '800 44px Manrope, sans-serif'; ctx.fillStyle = '#FFFFFF';
+      spacing(ctx, 1); ctx.font = '800 44px Manrope, 'Manrope Fallback', sans-serif'; ctx.fillStyle = '#FFFFFF';
       ctx.fillText('КЛЮЧІ — У ВЛАСНИКА.', pad, y);
     } else {
       spacing(ctx, 0); ctx.font = '52px "Archivo Black", sans-serif'; ctx.fillStyle = '#FFFFFF';
       ctx.fillText(d.price, pad, y); let x = pad + ctx.measureText(d.price).width + 10;
-      ctx.font = '800 50px Manrope, sans-serif'; ctx.fillText('₴', x, y); x += ctx.measureText('₴').width + 20;
+      ctx.font = '800 50px Manrope, 'Manrope Fallback', sans-serif'; ctx.fillText('₴', x, y); x += ctx.measureText('₴').width + 20;
       spacing(ctx, 3); ctx.font = '700 24px "JetBrains Mono", monospace'; ctx.fillStyle = '#DDDDDD';
       ctx.fillText('ТОКЕН ШІ-СЕРВІСУ', x, y - 6);
     }
@@ -484,7 +485,7 @@
     const lh = d.fmt === '11' ? 64 : 76, lw = lh * 3.6;
     const ly = Math.max(bottom - lh, microY + 40);
     if (logo.complete && logo.naturalWidth) ctx.drawImage(logo, pad, ly, lw, lh);
-    spacing(ctx, 1); ctx.font = '800 30px Manrope, sans-serif'; ctx.textAlign = 'right';
+    spacing(ctx, 1); ctx.font = '800 30px Manrope, 'Manrope Fallback', sans-serif'; ctx.textAlign = 'right';
     const by = ly + lh / 2 + 4;
     ctx.fillStyle = '#E30613'; ctx.fillText('ВОЛОДІЙ.', W - pad, by);
     const vw = ctx.measureText('ВОЛОДІЙ.').width;

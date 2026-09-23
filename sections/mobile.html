@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="34 Mobile-first. Брейкпоінти, зони дотику, безпечні зони. DreamCar Brand Book v4.3.">
@@ -9,32 +10,32 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .bp-table { width: 100%; border-collapse: collapse; margin-top: 18px; background: var(--coal); border: 1px solid var(--line); }
-  .bp-table th { padding: 14px 16px; background: var(--black); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; text-align: left; border-bottom: 2px solid var(--red); }
+  .bp-table th { padding: 14px 16px; background: var(--black); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; text-align: left; border-bottom: 2px solid var(--red); }
   .bp-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--bone); }
   .bp-table td:first-child { font-family: 'Archivo Black', sans-serif; color: var(--white); font-size: 16px; }
   .device-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 22px; }
   .device { background: var(--coal); border: 1px solid var(--line); padding: 18px; text-align: center; }
   .device .icon { font-size: 36px; margin-bottom: 8px; }
-  .device .name { font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--white); margin-bottom: 4px; font-weight: 700; }
-  .device .px { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.1em; }
+  .device .name { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 14px; color: var(--white); margin-bottom: 4px; font-weight: 700; }
+  .device .px { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.1em; }
   .device .share { font-size: 11px; color: var(--ash); margin-top: 4px; }
   .thumb-demo { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 22px; }
   .phone-mock { background: var(--coal); border: 2px solid var(--steel); border-radius: 24px; padding: 14px; aspect-ratio: 9/19; position: relative; overflow: hidden; }
   .phone-mock .phone-screen { background: var(--black); border-radius: 12px; height: 100%; padding: 12px; display: flex; flex-direction: column; gap: 8px; position: relative; }
-  .phone-mock .phone-label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--bone); letter-spacing: 0.15em; }
-  .phone-mock .zone { position: absolute; left: 0; right: 0; background: rgba(220,38,38,0.20); }
-  .phone-mock .zone.easy { background: rgba(16,185,129,0.20); }
-  .phone-mock .zone.hard { background: rgba(220,38,38,0.20); }
-  .phone-mock .zone-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--white); padding: 4px 8px; }
+  .phone-mock .phone-label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 9px; color: var(--bone); letter-spacing: 0.15em; }
+  .phone-mock .zone { position: absolute; left: 0; right: 0; background: var(--graphite); }
+  .phone-mock .zone.easy { background: rgba(227,6,19,0.35); }
+  .phone-mock .zone.hard { background: var(--graphite); }
+  .phone-mock .zone-label { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 9px; color: var(--white); padding: 4px 8px; }
   .touch-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 18px; }
   .touch-card { background: var(--coal); border: 1px solid var(--line); padding: 18px; }
   .touch-card.bad { border-color: var(--danger); }
-  .touch-card.good { border-color: var(--success); }
-  .touch-target { background: var(--red); color: var(--white); display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; }
+  .touch-card.good { border-color: var(--white); }
+  .touch-target { background: var(--red); color: var(--white); display: inline-block; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; cursor: pointer; }
   .checklist-mobile { background: var(--coal); border-left: 3px solid var(--red); padding: 22px; margin-top: 22px; }
   .checklist-mobile label { display: block; padding: 10px 12px; cursor: pointer; font-size: 14px; color: var(--bone); border-bottom: 1px solid var(--line); }
   .checklist-mobile label:last-child { border-bottom: none; }
@@ -112,31 +113,31 @@
         <td>XS</td>
         <td><strong style="color: var(--red-glow);">320-374</strong></td>
         <td>Найменші екрани. Single column. Тільки essentials.</td>
-        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (max-width: 374px)</code></td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--bone);">@media (max-width: 374px)</code></td>
       </tr>
       <tr>
         <td>SM</td>
         <td><strong style="color: var(--red-glow);">375-767</strong></td>
         <td>Основні смартфони. Single column, повна типографіка.</td>
-        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (max-width: 767px)</code></td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--bone);">@media (max-width: 767px)</code></td>
       </tr>
       <tr>
         <td>MD</td>
         <td><strong style="color: var(--red-glow);">768-1023</strong></td>
         <td>Планшети + малі ноутбуки. 2-column layout.</td>
-        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 768px)</code></td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--bone);">@media (min-width: 768px)</code></td>
       </tr>
       <tr>
         <td>LG</td>
         <td><strong style="color: var(--red-glow);">1024-1439</strong></td>
         <td>Стандартні десктопи. 3-4 column. Sidebar зʼявляється.</td>
-        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1024px)</code></td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--bone);">@media (min-width: 1024px)</code></td>
       </tr>
       <tr>
         <td>XL</td>
         <td><strong style="color: var(--red-glow);">1440+</strong></td>
         <td>Великі монітори. Max-width 1280px, контейнер центрований.</td>
-        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--info);">@media (min-width: 1440px)</code></td>
+        <td><code style="background: var(--black); padding: 2px 6px; font-family: monospace; color: var(--bone);">@media (min-width: 1440px)</code></td>
       </tr>
     </tbody>
   </table></div>
@@ -149,17 +150,17 @@
 
   <div class="touch-grid">
     <div class="touch-card bad">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✕ ПОГАНО — 24×24px</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--danger-text); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✕ ПОГАНО — 24×24px</div>
       <div class="touch-target" style="width: 24px; height: 24px; padding: 0; text-align: center; line-height: 24px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Кнопка закриття 24px. На iPhone Pro = 9pt — складно потрапити пальцем. Фрустрація = вийде з flow.</p>
     </div>
     <div class="touch-card good">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ДОБРЕ — 44×44px (видимий 24px)</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ДОБРЕ — 44×44px (видимий 24px)</div>
       <div class="touch-target" style="width: 44px; height: 44px; padding: 0; text-align: center; line-height: 44px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">Видимий icon 24px, але hit area 44×44. Padding робить кнопку фізично кліклабельною.</p>
     </div>
     <div class="touch-card good">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--success); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ІДЕАЛЬНО — 48×48px (Material)</div>
+      <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.18em; margin-bottom: 14px;">/// ✓ ІДЕАЛЬНО — 48×48px (Material)</div>
       <div class="touch-target" style="width: 48px; height: 48px; padding: 0; text-align: center; line-height: 48px;">×</div>
       <p style="font-size: 12px; color: var(--bone); line-height: 1.5; margin-top: 12px;">48px = Material Design recommendation. На дрібних екранах (iPhone SE) — особливо комфортно.</p>
     </div>
@@ -179,22 +180,22 @@
     <div class="phone-mock">
       <div class="phone-screen">
         <div class="zone hard" style="top: 0; height: 30%;"><div class="zone-label">HARD ZONE</div></div>
-        <div class="zone" style="top: 30%; height: 30%; background: rgba(245,158,11,0.18);"><div class="zone-label" style="color: var(--warning);">~ STRETCH</div></div>
-        <div class="zone easy" style="bottom: 0; height: 40%;"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
+        <div class="zone" style="top: 30%; height: 30%; background: #2A2A2A;"><div class="zone-label" style="color: var(--white);">~ STRETCH</div></div>
+        <div class="zone easy" style="bottom: 0; height: 40%;"><div class="zone-label" style="color: var(--white);">✓ EASY ZONE</div></div>
       </div>
       <div class="phone-label">RIGHT HAND THUMB</div>
     </div>
     <div class="phone-mock">
       <div class="phone-screen">
         <div class="zone hard" style="top: 0; height: 30%; clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);"><div class="zone-label">HARD</div></div>
-        <div class="zone easy" style="bottom: 0; height: 60%; clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);"><div class="zone-label" style="color: var(--success);">✓ EASY</div></div>
+        <div class="zone easy" style="bottom: 0; height: 60%; clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);"><div class="zone-label" style="color: var(--white);">✓ EASY</div></div>
       </div>
       <div class="phone-label">LEFT HAND THUMB</div>
     </div>
     <div class="phone-mock">
       <div class="phone-screen">
         <div class="zone hard" style="top: 0; height: 20%;"><div class="zone-label">HARD</div></div>
-        <div class="zone easy" style="bottom: 0; top: 20%; background: rgba(16,185,129,0.20);"><div class="zone-label" style="color: var(--success);">✓ EASY ZONE</div></div>
+        <div class="zone easy" style="bottom: 0; top: 20%;"><div class="zone-label" style="color: var(--white);">✓ EASY ZONE</div></div>
       </div>
       <div class="phone-label">TWO HANDS</div>
     </div>
@@ -214,32 +215,32 @@
   <!-- ============== MOBILE PATTERNS ============== -->
   <h2 class="s-subtitle">СТАНДАРТНІ <span class="red">МОБІЛЬНІ ПАТЕРНИ</span></h2>
   <div class="card-grid" style="margin-top: 20px;">
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// BOTTOM SHEET</span>
-      <h4>ЗАМІСТЬ MODAL</h4>
+      <h4 aria-level="3">ЗАМІСТЬ MODAL</h4>
       <p>На мобільному — bottom sheet (як у Maps). Swipe-down закриває. Less aggressive ніж full-screen modal.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// PULL-TO-REFRESH</span>
       <h4>СТАНДАРТНИЙ ПАТЕРН</h4>
       <p>Лента постів / запитів — обовʼязково pull-to-refresh. Користувачі очікують, що це є.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// SWIPE ACTIONS</span>
       <h4>SWIPE LEFT/RIGHT</h4>
       <p>Списки = swipe для дій. swipe-right = approve/like, swipe-left = delete/decline. Як у Mail/Telegram.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// FAB</span>
       <h4>FLOATING ACTION BUTTON</h4>
       <p>Primary action як FAB у bottom-right (Material). Завжди видимий. Для DC — червоний квадратний FAB з іконкою.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// STICKY HEADER</span>
       <h4>ШАПКА ПРИ SCROLL</h4>
       <p>Чорна шапка з лого і CTA «Взяти участь» — sticky зверху при scroll вниз. Зникає при scroll up.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--info);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// INFINITE SCROLL</span>
       <h4>НА ФІДАХ</h4>
       <p>Лента постів / архів промоакцій — infinite scroll з spinner внизу. Не пагінація на мобільному.</p>
@@ -278,32 +279,32 @@
   </p>
 
   <div class="card-grid" style="margin-top: 20px;">
-    <div class="card" style="border-left: 3px solid var(--success);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// LCP</span>
-      <h4>< 2.5 СЕК</h4>
+      <h4 aria-level="3">< 2.5 СЕК</h4>
       <p>Largest Contentful Paint — головна картинка/заголовок видна за 2.5 сек на 3G.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--success);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// FID</span>
       <h4>< 100 МС</h4>
       <p>First Input Delay — кнопки реагують через 100ms максимум.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--success);">
+    <div class="card" style="border-top: 3px solid var(--red);">
       <span class="label">/// CLS</span>
       <h4>< 0.1</h4>
       <p>Cumulative Layout Shift — макет не «стрибає» під час завантаження.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--warning);">
+    <div class="card" style="border-top: 3px solid var(--steel);">
       <span class="label">/// IMAGES</span>
       <h4>WEBP + LAZY</h4>
       <p>Всі зображення у WebP (фолбек JPEG). Lazy-load для below-fold. Розмір ≤200KB на hero.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--warning);">
+    <div class="card" style="border-top: 3px solid var(--steel);">
       <span class="label">/// FONTS</span>
       <h4>SUBSET</h4>
       <p>Google Fonts через display=swap + preload. Latin + Cyrillic subset. Не вантажити italics якщо не використовуєш.</p>
     </div>
-    <div class="card" style="border-left: 3px solid var(--warning);">
+    <div class="card" style="border-top: 3px solid var(--steel);">
       <span class="label">/// JS BUNDLE</span>
       <h4>< 200KB GZIP</h4>
       <p>Початковий JS bundle — макс 200KB. Інше — lazy-load (code splitting).</p>
@@ -314,7 +315,7 @@
   <h2 class="s-subtitle">ЧЕКЛИСТ <span class="red">ПЕРЕД РЕЛІЗОМ НА МОБІЛЬНОМУ</span></h2>
 
   <div class="checklist-mobile">
-    <h4 style="font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;">✓ 12 ПУНКТІВ</h4>
+    <h4 style="font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 18px; color: var(--white); margin-bottom: 14px;" aria-level="3">✓ 12 ПУНКТІВ</h4>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Перевірив на 375px (iPhone SE) — найменший популярний</label>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Touch targets ≥ 44×44 px, spacing ≥ 8px між ними</label>
     <label onclick="this.classList.toggle('checked'); this.querySelector('input').click();"><input type="checkbox" onclick="event.stopPropagation()">Primary CTA у easy thumb zone (нижня третина екрана)</label>
@@ -330,7 +331,7 @@
   </div>
 
   <div style="margin-top: 32px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
       <li>→ <a href="components.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">32 UI-компоненти</a> — буттони, форми, поля + їх мобільна версія.</li>
       <li>→ <a href="trust.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">30 Довіра і доступність</a> — WCAG 2.1 AA — touch targets частина a11y.</li>

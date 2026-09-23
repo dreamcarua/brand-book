@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
@@ -10,7 +11,7 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
@@ -19,13 +20,13 @@
   .ex-cell.bad { background: var(--black); }
   .ex-cell.bad .ex-mockup { filter: grayscale(0.85); opacity: 0.9; }
   .ex-cell.good { background: var(--coal); box-shadow: inset 0 3px 0 var(--red); }
-  .ex-cell .head { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
+  .ex-cell .head { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
   .ex-cell.bad .head { color: var(--ash); }
   .ex-cell.good .head { color: var(--white); }
   .ex-mockup { background: var(--black); border: 1px solid var(--steel); padding: 18px; margin-bottom: 14px; min-height: 140px; display: flex; flex-direction: column; justify-content: center; border-radius: 0; }
   .ex-note { font-size: 13px; color: var(--bone); line-height: 1.6; margin-top: auto; }
   .ex-note strong { color: var(--white); }
-  .annotation { display: inline-block; padding: 3px 8px; background: var(--coal); border: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; margin-right: 4px; margin-bottom: 4px; border-radius: 0; }
+  .annotation { display: inline-block; padding: 3px 8px; background: var(--coal); border: 1px solid var(--line); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.1em; margin-right: 4px; margin-bottom: 4px; border-radius: 0; }
   .annotation.red { background: transparent; border-color: var(--steel); color: var(--bone); text-decoration: line-through; text-decoration-color: var(--red); }
   .annotation.green { background: var(--black); border-color: var(--red); color: var(--white); }
   .mock-ig { background: var(--black); border: 1px solid var(--steel); padding: 0; overflow: hidden; }
@@ -159,7 +160,7 @@
     <div class="ex-cell good">
       <div class="head">/// ✓ ДОБРЕ</div>
       <div class="ex-mockup" style="align-items: center;">
-        <button style="background: var(--red); color: #fff; padding: 14px 28px; border: none; border-radius: 0; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button>
+        <button style="background: var(--red); color: #fff; padding: 14px 28px; border: none; border-radius: 0; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button>
       </div>
       <div class="ex-note">
         <span class="annotation green">Manrope 800, великі</span><span class="annotation green">бренд-червоний</span><span class="annotation green">радіус 0</span><span class="annotation green">стрілка</span><span class="annotation green">безпечна мова</span><br>
@@ -184,7 +185,7 @@
     <div class="ex-cell good">
       <div class="head">/// ✓ ДОБРЕ</div>
       <div class="ex-mockup" style="background: #000; align-items: center; padding: 24px;">
-        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 32px; color: #fff; line-height: 1; text-align: center;">МРІЯ.<br>ЗА ЦІНОЮ<br><span style="color: var(--red-glow);">ЧАШКИ КАВИ.</span></div>
+        <div style="font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 32px; color: #fff; line-height: 1; text-align: center;">МРІЯ.<br>ЗА ЦІНОЮ<br><span style="color: var(--red-glow);">ЧАШКИ КАВИ.</span></div>
       </div>
       <div class="ex-note">
         <span class="annotation green">бренд-tagline</span><span class="annotation green">Archivo Black</span><span class="annotation green">бренд-кольори</span><span class="annotation green">3 рядки</span><br>
@@ -211,7 +212,7 @@
       <div class="head">/// ✓ ДОБРЕ</div>
       <div class="ex-mockup mock-tg" style="padding: 12px;">
         <div style="color: var(--bone); font-size: 13px; line-height: 1.6;"><strong style="color:var(--white);">Старт проєкту #17 — BMW X5 Hybrid</strong><br><br>249 ₴ за токен · 4 800 учасників · 1 BMW.<br>Прямий ефір вручення — 19.04.2026, неділя, 20:00.<br><br>Бери токен зараз.</div>
-        <div style="margin-top: 10px;"><button style="background: var(--red); padding: 8px 16px; border-radius: 0; color: #fff; border: none; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button></div>
+        <div style="margin-top: 10px;"><button style="background: var(--red); padding: 8px 16px; border-radius: 0; color: #fff; border: none; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.1em;">ВЗЯТИ УЧАСТЬ →</button></div>
       </div>
       <div class="ex-note">
         <span class="annotation green">номер промо</span><span class="annotation green">факти</span><span class="annotation green">дата ефіру</span><span class="annotation green">бренд-CTA</span><br>
@@ -295,9 +296,9 @@
     <div class="ex-cell good">
       <div class="head">/// ✓ ДОБРЕ</div>
       <div class="ex-mockup" style="background: var(--black); padding: 0; min-height: 180px; position: relative; display: block;">
-        <div style="height: 128px; background: var(--graphite); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--bone);">ВЛАСНЕ ФОТО · АВТО ЦІЛКОМ · ЧОРНЕ ТЛО</div>
+        <div style="height: 128px; background: var(--graphite); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--bone);">ВЛАСНЕ ФОТО · АВТО ЦІЛКОМ · ЧОРНЕ ТЛО</div>
         <div style="height: 4px; background: var(--red);"></div>
-        <div style="padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red-glow); letter-spacing: 0.2em;">ПРОЄКТ #NN · [МАРКА МОДЕЛЬ]</div>
+        <div style="padding: 10px 12px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; color: var(--red-glow); letter-spacing: 0.2em;">ПРОЄКТ #NN · [МАРКА МОДЕЛЬ]</div>
         <div class="plate-k plate-k-sm" style="position: absolute; top: 10px; left: 10px; margin: 0;"><span class="pk-num">NN</span><span class="pk-name">Проєкт</span></div>
       </div>
       <div class="ex-note">
@@ -396,14 +397,14 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px;">/// КЛЮЧ ДО ДОБРИХ ПРИКЛАДІВ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 12px;">/// КЛЮЧ ДО ДОБРИХ ПРИКЛАДІВ</div>
     <p style="font-size: 15px; color: var(--white); line-height: 1.6;">
       Якщо стоїш перед вибором «як написати/намалювати X» — спочатку відкрий цю секцію, шукай схожий кейс, копіюй структуру з правої колонки. <strong>10 хвилин тут економить 1 годину переробок пізніше.</strong>
     </p>
   </div>
 
   <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
       <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">10 Голос і мова</a> — повний словник DO/CAREFUL/NEVER.</li>
       <li>→ <a href="components.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">32 UI-компоненти</a> — стандарт CTA-кнопок.</li>

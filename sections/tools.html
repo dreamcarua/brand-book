@@ -2,6 +2,7 @@
 <html lang="uk" style="background:#0A0A0A;color-scheme:dark;">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.dreamcar.ua https://dreamcar.ua; connect-src 'self' https://*.supabase.co https://brand.dreamcar.ua; frame-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="02 Інструменти. Voice Linter, перевірка контрасту, токени, AI-промпт. DreamCar Brand Book v4.3.">
@@ -9,26 +10,26 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Archivo+Black&family=Manrope:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/styles.css">
 <style>
   .tool-card { background: var(--coal); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 28px; margin-top: 24px; }
-  .tool-card h3 { font-family: 'Oswald', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
+  .tool-card h3 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
   .tool-card .desc { font-size: 14px; color: var(--bone); line-height: 1.6; margin-bottom: 18px; }
 
   /* ====== VOICE LINTER ====== */
   .linter-area { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-  .linter-input, .linter-output { background: var(--black); border: 1px solid var(--steel); padding: 16px; min-height: 240px; font-family: 'Manrope', sans-serif; font-size: 14px; color: var(--white); line-height: 1.6; }
+  .linter-input, .linter-output { background: var(--black); border: 1px solid var(--steel); padding: 16px; min-height: 240px; font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-size: 14px; color: var(--white); line-height: 1.6; }
   .linter-input { resize: vertical; width: 100%; outline: none; }
   .linter-input:focus { border-color: var(--red); }
   .linter-output { overflow-y: auto; max-height: 480px; }
   .lint-issue { background: rgba(220,38,38,0.15); border-left: 3px solid var(--danger); padding: 10px 12px; margin-bottom: 8px; }
   .lint-issue.warn { background: rgba(245,158,11,0.15); border-color: var(--warning); }
   .lint-issue.good { background: rgba(16,185,129,0.15); border-color: var(--success); }
-  .lint-issue .level { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; margin-bottom: 4px; }
-  .lint-issue .word { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 14px; color: var(--white); }
+  .lint-issue .level { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.15em; margin-bottom: 4px; }
+  .lint-issue .word { font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 14px; color: var(--white); }
   .lint-issue .sugg { font-size: 12px; color: var(--bone); margin-top: 4px; }
-  .linter-stats { display: flex; gap: 16px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; }
+  .linter-stats { display: flex; gap: 16px; margin-top: 14px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.1em; }
   .linter-stats .stat { padding: 8px 14px; background: var(--black); border: 1px solid var(--steel); border-radius: 4px; }
   .linter-stats .stat.danger { border-color: var(--danger); color: var(--danger-text); }
   .linter-stats .stat.warning { border-color: var(--warning); color: var(--warning); }
@@ -40,14 +41,14 @@
   .cc-grid > * { min-width: 0; }
   .cc-input-row { display: flex; align-items: center; gap: 12px; }
   .cc-input-row input[type="color"] { width: 60px; height: 60px; border: 1px solid var(--steel); border-radius: 4px; cursor: pointer; background: transparent; }
-  .cc-input-row input[type="text"] { background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; flex: 1; }
-  .cc-input-row .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--bone); min-width: 80px; }
+  .cc-input-row input[type="text"] { background: var(--black); border: 1px solid var(--steel); color: var(--white); padding: 10px 12px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 14px; flex: 1; }
+  .cc-input-row .label { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--bone); min-width: 80px; }
   .cc-preview { padding: 32px; border-radius: 8px; text-align: center; min-height: 200px; display: flex; flex-direction: column; justify-content: center; gap: 10px; transition: background 0.2s, color 0.2s; }
-  .cc-preview .big { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 28px; }
+  .cc-preview .big { font-family: 'Manrope', 'Manrope Fallback', sans-serif; font-weight: 800; font-size: 28px; }
   .cc-preview .small { font-size: 14px; }
   .cc-result { padding: 18px; background: var(--black); border: 1px solid var(--steel); margin-top: 14px; }
   .cc-result .ratio { font-family: 'Archivo Black', sans-serif; font-size: 36px; color: var(--white); line-height: 1; }
-  .cc-grade { display: inline-block; padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; margin-left: 8px; border-radius: 3px; }
+  .cc-grade { display: inline-block; padding: 4px 12px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; letter-spacing: 0.18em; margin-left: 8px; border-radius: 3px; }
   .cc-grade.aaa { background: var(--success); color: var(--black); }
   .cc-grade.aa { background: var(--info); color: var(--black); }
   .cc-grade.fail { background: var(--danger); color: var(--white); }
@@ -57,19 +58,19 @@
   .asset { background: var(--black); border: 1px solid var(--steel); padding: 20px; transition: border-color 0.15s; cursor: pointer; text-align: center; text-decoration: none; color: var(--white); }
   .asset:hover { border-color: var(--red); }
   .asset .asset-icon { font-size: 36px; margin-bottom: 10px; }
-  .asset .asset-name { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-  .asset .asset-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em; }
+  .asset .asset-name { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .asset .asset-meta { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; color: var(--bone); letter-spacing: 0.1em; }
 
   /* ====== TOKEN PICKER ====== */
   .token-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 14px; }
   .token { background: var(--black); border: 1px solid var(--steel); padding: 12px; cursor: pointer; transition: border-color 0.15s; }
   .token:hover { border-color: var(--red); }
   .token .swatch { height: 50px; border-radius: 4px; margin-bottom: 8px; }
-  .token .name { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--white); margin-bottom: 2px; }
-  .token .val { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ash); }
+  .token .name { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--white); margin-bottom: 2px; }
+  .token .val { font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 10px; color: var(--ash); }
   .token.copied { border-color: var(--success); }
 
-  .copy-action { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; transition: border-color 0.15s; margin-top: 10px; }
+  .copy-action { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--coal); border: 1px solid var(--line); color: var(--white); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.15em; cursor: pointer; transition: border-color 0.15s; margin-top: 10px; }
   .copy-action:hover { border-color: var(--red); }
   .copy-action.copied { border-color: var(--success); color: var(--success); }
 
@@ -77,8 +78,8 @@
     .linter-area, .cc-grid { grid-template-columns: 1fr; }
   }
   .cc-input-row input { min-width: 0; }
-  .tool-card h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.01em; text-transform: uppercase; margin-bottom: 8px; }
-  .tool-sub { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400; color: var(--red-glow); letter-spacing: 0.15em; text-transform: uppercase; }
+  .tool-card h2 { font-family: 'Oswald', 'Oswald Fallback', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.01em; text-transform: uppercase; margin-bottom: 8px; }
+  .tool-sub { margin-top: 16px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; font-weight: 400; color: var(--red-glow); letter-spacing: 0.15em; text-transform: uppercase; }
   button.token { font: inherit; color: inherit; text-align: left; cursor: pointer; }
   button.token .swatch, button.token .name, button.token .val { display: block; }
 </style>
@@ -134,7 +135,7 @@
 
         <div class="cc-result">
           <div class="ratio" id="ccRatio">21.00</div>
-          <div style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em;">КОЕФІЦІЄНТ КОНТРАСТУ</div>
+          <div style="margin-top: 4px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.1em;">КОЕФІЦІЄНТ КОНТРАСТУ</div>
           <div style="margin-top: 12px;">
             <span id="ccAA" class="cc-grade">AA текст</span>
             <span id="ccAAA" class="cc-grade">AAA текст</span>
@@ -153,7 +154,7 @@
       </div>
     </div>
 
-    <h4 style="margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red-glow);">/// ПРЕСЕТИ — НАШІ БРЕНДОВІ ПАРИ</h4>
+    <h4 style="margin-top: 22px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--red-glow);" aria-level="3">/// ПРЕСЕТИ — НАШІ БРЕНДОВІ ПАРИ</h4>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 12px;">
       <button class="copy-action" onclick="setColors('#FFFFFF','#0A0A0A')">Білий на чорному</button>
       <button class="copy-action" onclick="setColors('#FFFFFF','#E30613')">Білий на червоному</button>
@@ -213,7 +214,7 @@
     <h2 id="assets">Файли бренду</h2>
     <p class="desc">Всі офіційні бренд-файли бренду в одному місці. Кожен — у потрібному форматі. Не використовуй файли бренду з інших джерел.</p>
 
-    <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ЛОГОТИП</h4>
+    <h4 style="margin-top: 14px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow);" aria-level="3">/// ЛОГОТИП</h4>
     <div class="asset-grid">
       <a class="asset" href="../favicon.svg" download="dreamcar-logo.svg">
         <div class="asset-icon"></div>
@@ -242,7 +243,7 @@
       </a>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// PDF / БРИФИ</h4>
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow);">/// PDF / БРИФИ</h4>
     <div class="asset-grid">
       <a class="asset" href="../print.html" target="_blank" rel="noopener">
         <div class="asset-icon"></div>
@@ -261,7 +262,7 @@
       </a>
     </div>
 
-    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow);">/// ШРИФТИ (Google Fonts)</h4>
+    <h4 style="margin-top: 18px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow);">/// ШРИФТИ (Google Fonts)</h4>
     <div class="asset-grid">
       <a class="asset" href="https://fonts.google.com/specimen/Oswald" target="_blank" rel="noopener">
         <div class="asset-icon" style="font-family: 'Oswald'; font-weight: 700;">Aa</div>
@@ -295,7 +296,7 @@
   </div>
 
   <div style="margin-top: 40px; padding: 24px; background: var(--coal); border-top: 3px solid var(--red); border-left: 3px solid var(--red);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--red-glow); letter-spacing: 0.22em; margin-bottom: 10px;">/// ЦІ ІНСТРУМЕНТИ ЕКОНОМЛЯТЬ ЧАС</div>
     <p style="font-size: 14px; color: var(--white); line-height: 1.6;">
       <strong>Voice Linter</strong> — 1 хв замість 10 хв ручної перевірки.<br>
       <strong>Перевірка контрасту</strong> — 5 сек замість пошуку онлайн-калькулятора.<br>
@@ -306,7 +307,7 @@
   </div>
 
   <div style="margin-top: 22px; padding: 22px 26px; background: var(--coal); border: 1px solid var(--line);">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
+    <div style="font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', monospace; font-size: 11px; color: var(--bone); letter-spacing: 0.2em; margin-bottom: 12px;">/// ПОВʼЯЗАНІ РОЗДІЛИ</div>
     <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px;">
       <li>→ <a href="voice.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">10 Голос і мова</a> — повний словник DO/CAREFUL/NEVER, на основі якого працює Voice Linter.</li>
       <li>→ <a href="colors.html" style="color: var(--red-glow); font-weight: 600; text-decoration: none;">16 Кольори</a> — повна палітра.</li>
