@@ -29,6 +29,7 @@
   // #307 (10.06.2026): новий порядок BRAND→PROJECTS→TASKS→SMM→RETENTION→ONBOARDING→INFO→DASHBOARD.
   // #352 (12.06.2026): INVENTORY прибрано з top меню — лишається лише блок на /info.html.
   const LINKS = [
+    { key: 'general',   label: 'GENERAL',     short: 'GENERAL',   icon: '🗓', url: TEAM_BASE + '/general/',           active: isTeam && path.startsWith('/general') },
     { key: 'brand',     label: 'BRAND BOOK',  short: 'BRAND',     icon: '📘', url: BRAND_BASE + '/',                  active: isBrand },
     { key: 'projects',  label: 'ПРОЄКТИ',     short: 'PROJECTS',  icon: '📁', url: TEAM_BASE + '/projects/',          active: isTeam && path.startsWith('/projects') },
     { key: 'tasks',     label: 'TASKS',       short: 'TASKS',     icon: '✅', url: TEAM_BASE + '/tasks/',             active: isTeam && path.startsWith('/tasks') },
